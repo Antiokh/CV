@@ -15,15 +15,23 @@ Formatting rules for project descriptions: [CASE_STUDY_FORMAT.md](./CASE_STUDY_F
 
 ### Ready
 
+- [AIS MosRazvitie](./ais_mosrazvitie/README.md)
+- [Cashdesk Accounting](./cashdesk_bubble/README.md)
+- [Dobri Tours](./dobri_tours/README.md)
+- [Dobri Visarun](./dobri_visarun/README.md)
+- [Educate Online](./educate_online/README.md)
+- [Exit Lead](./exit_lead/README.md)
 - [MetaFox Strengths Explorer](./metafox_strengths_explorer/README.md)
 - [PromptlessPress](./promptlesspress/README.md)
+- [QR Cloud](./qr_cloud/README.md)
+- [RuskaJela](./ruskajela/README.md)
+- [Vencer Autismo](./vencer_autismo/README.md)
 
 ### Draft / Empty
 
-- `exit_lead`
 - `mama_hana`
+- `makemelook`
 - `sefcast`
-- `vencer_autismo`
 
 ## Purpose
 
