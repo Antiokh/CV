@@ -110,6 +110,7 @@ This project demonstrates the ability to design and build a multi-surface operat
 ## Additional Notes
 
 - Demo video: https://www.youtube.com/watch?v=3sFy9YI7p20
+- Local demo file: [Desktop5-22-202411-26-24PM-ezgif.com-gif-maker.webm](./Desktop5-22-202411-26-24PM-ezgif.com-gif-maker.webm)
 
 ---
 
