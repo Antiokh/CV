@@ -4,9 +4,15 @@
 
 Educate Online is a corporate assessment system designed for large-scale employee testing, mood analysis, and opinion-gap detection inside organizations.
 
-The product had to support multilingual use, large volumes of response data, and mathematically aggregated results while remaining usable for everyday participants and administrators.
+The product had to support multilingual use, large volumes of response data, and mathematically aggregated results while remaining usable for everyday participants and administrators. The project was completed in roughly three weeks.
 
 The main challenge of the project was building a scalable testing and analytics workflow on top of Bubble despite platform limitations around complex calculations.
+
+---
+
+## My Role
+
+Designer, Developer
 
 ---
 
@@ -18,6 +24,7 @@ The main challenge of the project was building a scalable testing and analytics 
 - Analyze team mood and alignment
 - Detect differences in perception across participants
 - Present results through a visual reporting interface
+- Provide a stylized test-taking flow and post-test results experience
 
 ---
 
@@ -38,13 +45,18 @@ A key part of the system is mathematical processing of answer sets in order to p
 
 ---
 
-### Custom UX for Responses
-The interface uses styled sliders and tailored interaction patterns to make testing more intuitive and visually consistent.
+### Stylized Test Interface
+Input and output of answers were implemented through stylized sliders and visual cues, helping the testing flow feel more productized than a generic form.
 
 ---
 
 ### Visual Results Layer
 Results are presented through a visual output system rather than raw tabular data, improving readability for non-technical stakeholders.
+
+---
+
+### Branding and Differentiation
+The project used a strict monochromatic visual theme with color accents to differentiate between managers and employees, creating a cleaner and more deliberate product identity.
 
 ---
 
@@ -54,6 +66,7 @@ Results are presented through a visual output system rather than raw tabular dat
 - **Integrations:** Bing Translate API
 - **Logic:** Custom external processing for complex calculations
 - **UI:** Custom sliders and visual results interface
+- **Skills:** API integration, UX/UI, web design, multilingual translation
 
 ---
 
@@ -74,31 +87,63 @@ The product needed to make both answer input and result interpretation clear, wh
 
 ---
 
+### Fast Delivery Under Constraint
+The system had to solve meaningful product and analytics problems while still being delivered in a short time frame.
+
+---
+
 ## Result
 
 A fully scalable corporate testing and feedback system launched in roughly three weeks and prepared for international use.
 
 The product replaced a potentially fragmented internal process with a structured assessment workflow that could support many users and many languages without changing the underlying system model.
 
+As an additional bonus for the client, integration with the Bing Translate API provided automatic baseline translations for newly added languages.
+
 ---
 
 ## Key Takeaway
 
-This project demonstrates fast delivery of a business-critical internal system under platform constraints, combining low-code speed with custom logic where the platform alone was not sufficient.
+This project demonstrates fast delivery of a business-critical internal system under platform constraints, combining low-code speed with custom logic, multilingual scalability, and deliberate interface design.
+
+---
+
+## Additional Notes
+
+- Public app reference: https://teamassessment.educate-online.in/
+- Upwork portfolio reference: https://www.upwork.com/freelancers/antiokh?p=1684878907346489344
 
 ---
 
 ## Screenshots
 
-### Mobile View
+### Cover
 
-![Educate Online mobile view](./iPad%20Mini%20Educate%20new.png)
+![Educate Online cover](./iPad%20Mini%20Educate%20new.png)
 
 ---
 
 ### Main Interface
 
 ![Educate Online main interface](./iMac%2024%20incheducate-unlinie-2.png)
+
+---
+
+### Passing the Test
+
+![Educate Online passing the test](./interface_passing_the_test.png)
+
+---
+
+### Test Flow
+
+![Educate Online test flow](./interface_working_passthrough.gif)
+
+---
+
+### Results View
+
+![Educate Online results view](./interface_results.png)
 
 ---
 
@@ -116,12 +161,13 @@ This project demonstrates fast delivery of a business-critical internal system u
 
 ### Admin Interface
 
-![Educate Online admin interface](./intrface_admin.png)
+![Educate Online admin interface](./interface_admin.png)
 
 ---
 
 ### Additional Images
 
+- [Passing the test - variant](./interface_passing_the_test2.png)
 - [Educate Online 1 cover](./Educate%20Online%201cover.png)
 - [Educate Online 1](./Educate%20Online%201.png)
 - [Educate Online 2](./Educate%20Online%202.png)
