@@ -37,6 +37,8 @@ I operate best in roles where I can act as a **“playing coach”** — alignin
 
 Based on professional experience and strengths assessment:
 
+Detailed personality and strengths reference: [Metafox Strengths Report](./Metafox_Strengths_Report.md)
+
 - **Visionary** — able to define and communicate long-term technical direction  
 - **Analyst** — strong ability to break down complex systems and decisions  
 - **Pragmatist** — focus on real-world results over theory  
