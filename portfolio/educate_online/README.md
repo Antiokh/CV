@@ -102,6 +102,24 @@ This project demonstrates fast delivery of a business-critical internal system u
 
 ---
 
+### Onboarding Flow
+
+![Educate Online onboarding](./interface_onboarding.png)
+
+---
+
+### Team Interface
+
+![Educate Online team interface](./interface_myteam.png)
+
+---
+
+### Admin Interface
+
+![Educate Online admin interface](./intrface_admin.png)
+
+---
+
 ### Additional Images
 
 - [Educate Online 1 cover](./Educate%20Online%201cover.png)
