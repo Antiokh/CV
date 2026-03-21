@@ -1,16 +1,17 @@
-# MakeMeLook - Interaction-Driven Webflow Landing Page
+# MakeMeLook - AI Fashion Stylist Landing Page
 
 ## Overview
 
-MakeMeLook was a simple landing-page project with a strong interaction hook: vertical scrolling was used to rotate the site horizontally.
+MakeMeLook was a landing-page project for an AI clothing stylist concept, built around a strong interaction hook: vertical scrolling was used to drive a horizontal site experience.
 
-The project was less about complex business logic and more about creating a memorable browsing experience through motion and layout behavior. It stands out in the portfolio as my main Webflow-based project and as an example of interaction-focused frontend work.
+The project was less about complex business logic and more about creating a memorable browsing experience through motion, floating elements, and layout behavior. It stands out in the portfolio as my main Webflow-based project and as an example of interaction-focused frontend work.
 
 ---
 
 ## What the System Does
 
 - Present a landing page with an unconventional scroll experience
+- Present an AI clothing-stylist concept through a landing page
 - Translate vertical scrolling into horizontal site rotation
 - Create a more dynamic and memorable page interaction
 - Use motion and layout as the main product differentiator
@@ -21,6 +22,16 @@ The project was less about complex business logic and more about creating a memo
 
 ### Scroll-to-Rotation Interaction
 The key idea of the landing page was that normal vertical scrolling controlled a horizontal visual movement, giving the site a more unusual and engaging feel.
+
+---
+
+### Floating Elements and Framed Layout
+The design used floating interface elements and a framed composition to reinforce the horizontal browsing idea and make the page feel more kinetic.
+
+---
+
+### Custom Sliders
+The landing also included custom slider components positioned inside the main visual frame to support the concept and interaction model.
 
 ---
 
@@ -64,6 +75,14 @@ The project demonstrates comfort with Webflow and an ability to use motion as th
 ## Key Takeaway
 
 This case shows that even a small landing page can become portfolio-worthy when the interaction model is intentional and well executed.
+
+---
+
+## Additional Notes
+
+- Upwork portfolio reference: https://www.upwork.com/freelancers/antiokh?p=1767665454036197376
+- Demo video: [demo.webm](./demo.webm)
+- Mobile demo video: [demo_mobile.webm](./demo_mobile.webm)
 
 ---
 
