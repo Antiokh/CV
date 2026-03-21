@@ -96,6 +96,7 @@ This project demonstrates how a lightweight product can solve a very practical c
 ## Additional Notes
 
 - Public app reference: https://network.glide.page/
+- Upwork portfolio reference: https://www.upwork.com/freelancers/antiokh?p=1656619311343656960
 
 ---
 
