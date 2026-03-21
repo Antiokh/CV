@@ -25,6 +25,7 @@ Formatting rules for project descriptions: [CASE_STUDY_FORMAT.md](./CASE_STUDY_F
 - [PromptlessPress](./promptlesspress/README.md)
 - [QR Cloud](./qr_cloud/README.md)
 - [RuskaJela](./ruskajela/README.md)
+- [Sefcast](./sefcast/README.md)
 - [tgs.py](./tgs.py/README.md)
 - [Vencer Autismo](./vencer_autismo/README.md)
 
@@ -32,7 +33,6 @@ Formatting rules for project descriptions: [CASE_STUDY_FORMAT.md](./CASE_STUDY_F
 
 - `mama_hana`
 - `makemelook`
-- `sefcast`
 
 ## Purpose
 
