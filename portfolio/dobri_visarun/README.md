@@ -103,7 +103,9 @@ This project shows how low-code automation and product thinking can unlock major
 
 ## Additional Notes
 
-- Public app reference: https://dobri-visarun.glideapp.io
+- Public app reference: http://dobri-visarun.glideapp.io/
+- Public site reference: https://visarun.rs
+- Upwork portfolio reference: https://www.upwork.com/freelancers/antiokh?p=1655586725784567808
 
 ---
 
