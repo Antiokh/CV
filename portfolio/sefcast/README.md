@@ -49,7 +49,9 @@ The interface was clearly intended to work as a full application shell rather th
 
 ## Tech Stack
 
-- **Frontend Role:** Frontend development
+- **Frontend:** WeWeb
+- **Backend:** Xano
+- **My Role:** Frontend development only
 - **Core Contribution:** Custom components and UI Kit
 - **Product Type:** SEO analytics SaaS / AI-assisted product
 
