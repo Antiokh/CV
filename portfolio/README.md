@@ -28,6 +28,7 @@ Formatting rules for project descriptions: [CASE_STUDY_FORMAT.md](./CASE_STUDY_F
 - [Sefcast](./sefcast/README.md)
 - [tgs.py](./tgs.py/README.md)
 - [Vencer Autismo](./vencer_autismo/README.md)
+- [Space AI Demo](./space_ai_demo/README.md)
 
 ### Draft / Empty
 
