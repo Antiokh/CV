@@ -10,6 +10,12 @@ This makes the project more than a simple Telegram utility script. It is an oper
 
 ---
 
+## My Role
+
+Developer
+
+---
+
 ## What the System Does
 
 - Configure and authorize Telegram accounts through Telethon
@@ -37,7 +43,7 @@ The main entrypoint is a full CLI, but the repository also includes a structured
 ---
 
 ### Export and Data Preservation
-The toolkit can export Telegram content into multiple formats, including rich SQLite dumps with users, messages, metadata, and optional media handling.
+The toolkit can export Telegram group data, including users, messages, images, and videos, into txt, json, csv, and SQLite outputs, including richer SQLite dumps with metadata and optional media handling.
 
 ---
 
@@ -105,7 +111,6 @@ This project demonstrates the ability to turn a utility script into a real tooli
 
 ## Additional Notes
 
-- Repository: [`D:\\Git\\tgs.py`](D:\Git\tgs.py)
 - Public code reference: https://github.com/Antiokh/tgs.py
 
 ---
