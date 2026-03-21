@@ -112,6 +112,7 @@ This project demonstrates the ability to turn a utility script into a real tooli
 ## Additional Notes
 
 - Public code reference: https://github.com/Antiokh/tgs.py
+- Upwork portfolio reference: https://www.upwork.com/freelancers/antiokh?p=1853484668795068416
 
 ---
 
