@@ -10,6 +10,21 @@ The main challenge of the project was evolving a legacy IBM Domino-based system 
 
 ---
 
+## My Role
+
+I was involved end-to-end across both product and technical ownership.
+
+My work included:
+
+- stakeholder communication and requirements gathering
+- documentation and system design materials
+- implementation and ongoing development
+- architecture decisions and form design
+- user training and webinar-based feedback collection
+- server setup, maintenance, and backup configuration
+
+---
+
 ## What the System Does
 
 - Store and manage institution, address, event, and activity records
@@ -102,7 +117,7 @@ The platform enabled distributed data entry, centralized moderation, structured 
 
 ## Key Takeaway
 
-This project demonstrates the ability to work on large operational systems with messy real-world constraints: legacy architecture, complex workflows, formal reporting requirements, access-control concerns, and the need to balance day-to-day usability with long-term system structure.
+This project demonstrates full-spectrum ownership of a large operational system: stakeholder work, architecture, implementation, documentation, user education, and infrastructure responsibility, all inside a complex real-world government context.
 
 ---
 
