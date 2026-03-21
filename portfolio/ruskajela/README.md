@@ -6,7 +6,7 @@ RuskaJela was a personal side project: a marketplace for local homemade cuisine 
 
 The concept was similar to a lightweight Glovo-style product, but focused on a specific audience and a narrower use case: discovering local food offers nearby and connecting customers with sellers through a location-aware mobile experience.
 
-The project was built as a product experiment rather than a client delivery. It did not gain traction, mainly because there was no marketing budget to support acquisition and distribution.
+The project was built as a product experiment rather than a client delivery. The goal was to create a user-friendly mobile marketplace for home-cooked meals, help local home cooks expand their customer base, and make it easier for customers to browse and order dishes in their area. It did not gain traction, mainly because there was no marketing budget to support acquisition and distribution.
 
 ---
 
@@ -42,10 +42,17 @@ As a side project, it served as an exploration of how to package a hyperlocal ma
 
 ---
 
+### Seller Enablement
+The product was also designed as a growth channel for local home cooks, giving them a new avenue for sales and customer discovery.
+
+---
+
 ## Tech Stack
 
 - **Platform:** Glide
+- **Automation:** Make
 - **Core Capability:** Geolocation-based marketplace flow
+- **Focus Areas:** Project management, UX/UI
 
 ---
 
@@ -70,7 +77,7 @@ When a product depends on nearby offers and geographic relevance, growth is hard
 
 A working side-project marketplace concept with geolocation and mobile-first browsing, built as a focused experiment around local cuisine discovery.
 
-The product itself was functional, but it did not take off commercially due to lack of marketing resources rather than purely technical limitations.
+The product itself was functional, with a simple and intuitive interface that made local food offers more accessible and gave home cooks an additional sales channel. It did not take off commercially due to lack of marketing resources rather than purely technical limitations.
 
 ---
 
@@ -91,3 +98,14 @@ This project demonstrates product initiative, niche-market experimentation, and 
 ### Mobile View
 
 ![RuskaJela mobile view](./iPhone%2013%20Pro-ruskajela.png)
+
+---
+
+### Additional Interface Views
+
+- [Interface 1](./interface_1.png)
+- [Interface 2](./interface_2.png)
+- [Interface 3](./interface_3.png)
+- [Interface 4](./interface_4.png)
+- [Interface 5](./interface_5.png)
+- [Interface 6](./interface_6.png)
