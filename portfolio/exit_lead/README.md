@@ -107,11 +107,17 @@ This project demonstrates the ability to design and build a multi-surface operat
 
 ---
 
+## Additional Notes
+
+- Demo video: https://www.youtube.com/watch?v=3sFy9YI7p20
+
+---
+
 ## Screenshots
 
 ### Client Portal
 
-![Exit Lead client portal](./ExitLead%20MacBook%20Pro%2016.png)
+![Exit Lead client portal map](./client_interface_dark_map.png)
 
 ---
 
@@ -124,3 +130,13 @@ This project demonstrates the ability to design and build a multi-surface operat
 ### Automation
 
 ![Exit Lead automation workflow](./n8n_screenshot.JPG)
+
+---
+
+### Additional Client Views
+
+- [Client interface - objects](./client_interface_dark_objects.png)
+- [Client interface - apartments](./client_interface_dark_apts.png)
+- [Client interface - inspections](./client_interface_dark_inspections.png)
+- [Client interface - light theme](./client_interface_light.png)
+- [Client interface - desktop mockup](./ExitLead%20MacBook%20Pro%2016.png)
