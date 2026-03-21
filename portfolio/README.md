@@ -29,6 +29,7 @@ Formatting rules for project descriptions: [CASE_STUDY_FORMAT.md](./CASE_STUDY_F
 - [QR Cloud](./qr_cloud/README.md)
 - [RuskaJela](./ruskajela/README.md)
 - [Sefcast](./sefcast/README.md)
+- [Serbia Networking App](./serbia_networking_app/README.md)
 - [tgs.py](./tgs.py/README.md)
 - [Vencer Autismo](./vencer_autismo/README.md)
 - [Space AI Demo](./space_ai_demo/README.md)
