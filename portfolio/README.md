@@ -16,6 +16,7 @@ Formatting rules for project descriptions: [CASE_STUDY_FORMAT.md](./CASE_STUDY_F
 ### Ready
 
 - [AIS MosRazvitie](./ais_mosrazvitie/README.md)
+- [Business Directory](./business_directory/README.md)
 - [Cashdesk Accounting](./cashdesk_bubble/README.md)
 - [Dobri Tours](./dobri_tours/README.md)
 - [Dobri Visarun](./dobri_visarun/README.md)
