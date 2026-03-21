@@ -22,6 +22,7 @@ Formatting rules for project descriptions: [CASE_STUDY_FORMAT.md](./CASE_STUDY_F
 - [Dobri Visarun](./dobri_visarun/README.md)
 - [Educate Online](./educate_online/README.md)
 - [Exit Lead](./exit_lead/README.md)
+- [Flower Shop](./flowershop/README.md)
 - [MetaFox Strengths Explorer](./metafox_strengths_explorer/README.md)
 - [PromptlessPress](./promptlesspress/README.md)
 - [QR Cloud](./qr_cloud/README.md)
