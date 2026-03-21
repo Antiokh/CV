@@ -10,11 +10,19 @@ The result was a platform that combined catalog, lead capture, participation log
 
 ---
 
+## My Role
+
+Developer, Database Architect
+
+---
+
 ## What the System Does
 
 - Present available tours in a structured catalog
 - Show descriptions, pricing, and key trip information
+- Show language-specific tours and pricing based on the user's choice
 - Let users submit applications and join tours
+- Let active agents organize or book tours for customers
 - Support ratings and reviews
 - Encourage repeat participation through loyalty mechanics
 - Publish tour announcements through social integrations
@@ -33,13 +41,18 @@ Users can express interest, submit requests, and join tours through the platform
 
 ---
 
+### Agent Booking Workflow
+The system supports active agents who can help organize and book tours for customers, reducing the in-house coordination burden on the travel business.
+
+---
+
 ### Ratings and Reviews
 The product includes social proof and community feedback to support trust and engagement.
 
 ---
 
 ### Loyalty Program
-The system rewards participation and organization, helping create repeat usage and stronger retention.
+The system rewards participation and organization through points and discount logic, helping create repeat usage and stronger retention.
 
 ---
 
@@ -52,7 +65,7 @@ Tour announcements can be pushed into social channels via Make.com, reducing man
 
 - **Platform:** Glide
 - **Automation:** Make.com
-- **Integrations:** Social media announcement workflows
+- **Integrations:** Social media announcement workflows, Telegram bot, Google Sheets, webhooks
 
 ---
 
@@ -73,6 +86,11 @@ The project needed to create not only transaction flow, but also engagement and 
 
 ---
 
+### Delegation and Incentive Logic
+The business wanted to delegate more booking activity to active agents and individuals, which required building referral- and reward-like mechanics instead of a basic static catalog.
+
+---
+
 ## Result
 
 The platform centralized the business, improved user engagement, and introduced user-driven sales behavior, including people creating tours themselves.
@@ -84,6 +102,13 @@ It turned a fragmented offering into a reusable product environment with clearer
 ## Key Takeaway
 
 This project demonstrates how a low-code platform can become more than a catalog by combining operations, growth mechanics, and community-driven participation in one system.
+
+---
+
+## Additional Notes
+
+- Public app reference: https://serbia-tours.glideapp.io/
+- Upwork portfolio reference: https://www.upwork.com/freelancers/antiokh?p=1656596089952133120
 
 ---
 
