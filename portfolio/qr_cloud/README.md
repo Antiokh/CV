@@ -6,7 +6,7 @@ QR Cloud is a mobile-first web system for creating, storing, and publicly sharin
 
 The product was built for Andronevskaya Management Company as a structured alternative to printed business cards, scattered contact files, and manual contact sharing. Instead of a simple landing page, the project was designed as a small B2B product with profile management, public card pages, QR access, and company-level presentation.
 
-The system later expanded into a broader client-facing information environment for the same customer, which makes this case more interesting than a one-off contact page build.
+The system was conceived not only as a digital business-card tool, but also as a foundation for a future cloud-based service for managing extended company information and business assets. It later expanded into a broader client-facing information environment for the same customer, which makes this case more interesting than a one-off contact page build.
 
 ---
 
@@ -19,6 +19,7 @@ The system later expanded into a broader client-facing information environment f
 - Generate shareable public links for each card
 - Display company profile information alongside employee cards
 - Surface cloud-file links, social links, and contact actions
+- Support paperless business-card exchange during meetings
 
 ---
 
@@ -36,6 +37,11 @@ The system included a dedicated form for creating and editing cards rather than 
 
 ### QR and Public-Link Distribution
 Every card could be accessed through a shareable public URL and a QR code, making contact exchange fast in offline and mobile scenarios.
+
+---
+
+### Contact Saving Flow
+Recipients could save contact information more easily, including bookmark-style access and compact VCF-style contact sharing tied to richer online company information.
 
 ---
 
@@ -74,6 +80,11 @@ The system needed to feel like a proper company tool, not a generic digital card
 
 ---
 
+### Paperless Networking Use Case
+The product had to replace the practical function of physical business cards and printed company materials while still feeling convenient during real business meetings.
+
+---
+
 ### Product Evolution
 The initial card platform later grew into a broader offline-access information portal for the same client, showing that the first release had to serve as a base for future expansion.
 
@@ -83,7 +94,7 @@ The initial card platform later grew into a broader offline-access information p
 
 A compact but complete B2B web product for publishing digital employee and company business cards through public links and QR codes.
 
-The system reduced friction in contact sharing, created a centralized and branded way to present company information, and provided a foundation for later expansion into a wider client information portal.
+The system reduced friction in contact sharing, supported a paperless networking workflow, created a centralized and branded way to present company information, and provided a foundation for later expansion into a wider client information portal.
 
 ---
 
@@ -96,6 +107,7 @@ This project demonstrates the ability to turn a simple-looking business request 
 ## Additional Notes
 
 - Supporting PDFs: [QR Cloud 1](./QR%20Cloud%201.pdf), [QR Cloud 2](./QR%20Cloud%202.pdf), [QR Cloud 3](./QR%20Cloud%203.pdf)
+- Upwork portfolio reference: https://www.upwork.com/freelancers/antiokh?p=1687090792171257856
 
 ---
 
