@@ -10,6 +10,12 @@ The project demonstrates how a simple but well-structured automation system can 
 
 ---
 
+## My Role
+
+Developer
+
+---
+
 ## What the System Does
 
 - Collect customer registrations through a central form
@@ -17,6 +23,8 @@ The project demonstrates how a simple but well-structured automation system can 
 - Reduce communication chaos across channels
 - Trigger operational notifications through Telegram
 - Provide access through browser, mobile, and home-screen bookmark
+- Show upcoming trips and key travel information
+- Present the service through a mobile-friendly marketing-first landing flow
 
 ---
 
@@ -29,6 +37,11 @@ The product replaced scattered inbound communication with one structured entry p
 
 ### PWA Access Model
 Users could access the system through browser and mobile bookmark, making it lightweight and easy to adopt without app-store dependency.
+
+---
+
+### Marketing-Driven Landing Experience
+The first screen was designed not just as a utility page, but as a conversion layer: owner introduction, service description, price, USP, and destination visuals helped reposition the trip from an administrative problem into a more appealing experience.
 
 ---
 
@@ -46,6 +59,8 @@ What had been a fully manual and fragmented process became a trackable workflow 
 
 - **Platform:** Glide
 - **Delivery Model:** PWA
+- **Automation:** Make
+- **Data Layer:** Google Sheets
 - **Integrations:** Telegram bot
 
 ---
@@ -67,6 +82,11 @@ Without a systemized intake process, the business was losing time at the top of 
 
 ---
 
+### Weak Product Presentation
+The service also needed better packaging from a marketing perspective, because price advantage alone was not enough if the experience still felt like a purely unpleasant border-run task.
+
+---
+
 ## Result
 
 The system helped drive roughly 10x revenue growth in about three months, while sharply reducing the time required to process each client.
@@ -78,6 +98,12 @@ Growth was achieved organically, without advertising, by replacing chaos with a 
 ## Key Takeaway
 
 This project shows how low-code automation and product thinking can unlock major business growth even in a small service business with limited starting infrastructure.
+
+---
+
+## Additional Notes
+
+- Public app reference: https://dobri-visarun.glideapp.io
 
 ---
 
