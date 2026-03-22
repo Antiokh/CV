@@ -50,6 +50,7 @@ Users can define:
 - SQL-driven prompt composition and generation snapshots  
 - clear separation between intent, execution, assets, and mockups  
 - reproducible configuration stored as generation state  
+- generation settings persisted as a decision snapshot for reproducibility and downstream execution  
 
 ---
 
@@ -57,6 +58,13 @@ Users can define:
 - repository-level instructions for AI agents working in VS Code / Codex  
 - explicit architecture boundaries between database, edge functions, and frontend  
 - task contracts and documentation rules to keep AI-assisted changes consistent  
+
+---
+
+### Edge Helper Layer and SQL Discipline
+- shared helper layer for Supabase Edge Functions covering env access, auth, CORS, internal calls, and debugging  
+- one-way database-to-git synchronization for canonical PostgreSQL definitions  
+- explicit workflow for pushing SQL function definitions back into the repository for version visibility and review  
 
 ---
 
@@ -77,6 +85,7 @@ Users can define:
 ### Debug & Iteration Tools
 - internal interface for reviewing failed or rejected generations  
 - ability to inspect and refine generation inputs  
+- debug UI that can automatically prefill image-debug prompts from generation context  
 - designed to support continuous improvement of results  
 
 ---
@@ -105,6 +114,11 @@ A significant part of the work involved refining inputs to achieve consistent vi
 
 ### Architecture Discipline Around AI
 To keep the system stable, AI generation logic had to be constrained by explicit architecture rules, documented data flow, and controlled extension points rather than informal prompt hacking.
+
+---
+
+### SQL and Execution Auditability
+Because generation logic spans SQL, Edge Functions, and AI execution, the system was structured to keep canonical PostgreSQL definitions auditable in git rather than letting critical logic drift only inside the database.
 
 ---
 

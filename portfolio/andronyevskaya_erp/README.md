@@ -64,6 +64,11 @@ The project also relied on custom WeWeb capabilities rather than only stock bloc
 
 ---
 
+### Shared Edge Helper Contracts
+The implementation followed a structured helper layer for Supabase Edge Functions, with reusable patterns for env access, typed CORS handling, internal function calls, auth separation, and centralized debugging.
+
+---
+
 ## Tech Stack
 
 - **Frontend:** WeWeb
@@ -72,6 +77,7 @@ The project also relied on custom WeWeb capabilities rather than only stock bloc
 - **Backend Logic:** Supabase Edge Functions
 - **Infrastructure:** Self-hosted deployment
 - **Custom Frontend Work:** Leaflet map component, Telegram WebApp bridge, and other reusable WeWeb extensions from a broader in-house component toolkit
+- **Helper Pattern:** shared `_shared` helper layer for Supabase Edge Functions
 
 ---
 

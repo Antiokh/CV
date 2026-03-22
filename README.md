@@ -63,6 +63,7 @@ Nov 2022 - Present
 - Delivered rapid MVP-to-production transitions for SaaS, internal tools, portals, automation systems, and operational platforms
 - Consulted founders on product structure, delivery approach, infrastructure, and cost optimization
 - Built repository-level AI instructions, coding guardrails, and task contracts for agent-assisted development in VS Code
+- Built reusable helper layers for Supabase Edge Functions covering env access, auth separation, CORS, internal calls, and debugging
 
 **Key achievements:**
 - Reduced service time from hours to minutes through automation
@@ -70,6 +71,7 @@ Nov 2022 - Present
 - Built PWA-based products that removed dependency on App Stores
 - Delivered end-to-end systems across backend, frontend, automation, UX, and operations
 - Developed custom WeWeb components and integration bridges for capabilities not available out of the box
+- Improved PostgreSQL function versioning and database-to-git synchronization workflows for auditable SQL change management
 
 ---
 
@@ -227,6 +229,7 @@ Highlighted case studies:
 - Telegram integrations
 - fal.ai
 - OpenAI
+- Supabase Edge Functions
 
 **Code / scripting / infra:**
 - JavaScript
@@ -251,6 +254,7 @@ Highlighted case studies:
 - Team leadership and mentoring
 - Stakeholder management
 - AI-assisted engineering workflows and repository guardrail design
+- helper-layer design for Supabase Edge Functions and auditable SQL workflows
 
 ---
 
