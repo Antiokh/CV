@@ -183,6 +183,13 @@ Highlighted case studies:
 - LLM-assisted workflows, AI-powered product experiments, and fal.ai generation pipelines
 - AI-assisted and agentic development with repository-specific instructions and guardrails
 
+### **AI & Applied Automation**
+- AI-native development in VS Code with repository instructions, task contracts, and architectural guardrails
+- fal.ai-powered image generation workflows and prompt-debug interfaces
+- structured prompt composition and decision snapshots for reproducible generation pipelines
+- auditable SQL and Supabase Edge Function workflows with helper layers and database-to-git synchronization
+- practical AI usage focused on shipping products faster without losing engineering discipline
+
 ### **Startup & Product Work**
 - MetaFox Strengths Explorer
 - PromptlessPress
