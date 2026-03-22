@@ -2,7 +2,6 @@
 **CTO / Head of Engineering / Systems Architect / Tech Lead**
 
 Location: Belgrade, Serbia  
-Email: lordzlis@gmail.com  
 Phone: +381 62 979 5315  
 Telegram: @antiokh  
 LinkedIn: https://www.linkedin.com/in/nazarovanton/  

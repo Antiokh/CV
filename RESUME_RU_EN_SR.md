@@ -4,7 +4,6 @@
 
 **CTO / Head of Engineering / Systems Architect / Tech Lead**  
 **Location:** Belgrade, Serbia  
-**Email:** lordzlis@gmail.com  
 **Phone:** +381 62 979 5315  
 **Telegram:** @antiokh  
 **LinkedIn:** https://www.linkedin.com/in/nazarovanton/  
@@ -64,7 +63,6 @@ Technology leader and systems architect with experience across startups, corpora
 
 **CTO / Head of Engineering / Systems Architect / Tech Lead**  
 **Локация:** Белград, Сербия  
-**Email:** lordzlis@gmail.com  
 **Телефон:** +381 62 979 5315  
 **Telegram:** @antiokh  
 **LinkedIn:** https://www.linkedin.com/in/nazarovanton/  
@@ -124,7 +122,6 @@ Technology leader and systems architect with experience across startups, corpora
 
 **CTO / Head of Engineering / Systems Architect / Tech Lead**  
 **Lokacija:** Beograd, Srbija  
-**Email:** lordzlis@gmail.com  
 **Telefon:** +381 62 979 5315  
 **Telegram:** @antiokh  
 **LinkedIn:** https://www.linkedin.com/in/nazarovanton/  
