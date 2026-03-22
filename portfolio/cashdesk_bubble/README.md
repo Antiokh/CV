@@ -132,7 +132,7 @@ This project demonstrates the ability to redesign a business-critical internal t
 
 ### Large-Screen View
 
-![Cashdesk large-screen view](./media/iMac%2024%20inch%20cashdesk.png)
+![Cashdesk large-screen view](./media/cashdesk-imac-main.png)
 
 ---
 
@@ -143,4 +143,4 @@ This project demonstrates the ability to redesign a business-critical internal t
 - [Cashdesk 3](./media/Cashdesk%203.png)
 - [Cashdesk 4](./media/Cashdesk%204.png)
 - [Cashdesk 5](./media/Cashdesk%205.png)
-- [Alternative iMac mockup](./media/iMac%2024%20inchcashdesk.png)
+- [Alternative iMac mockup](./media/cashdesk-imac-alt.png)

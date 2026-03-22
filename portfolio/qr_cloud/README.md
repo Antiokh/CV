@@ -115,7 +115,7 @@ This project demonstrates the ability to turn a simple-looking business request 
 
 ### Mobile Preview
 
-![QR Cloud mobile view](./media/iPhone%2013%20Pro%20qrcloud.png)
+![QR Cloud mobile view](./media/qr-cloud-mobile.png)
 
 ---
 

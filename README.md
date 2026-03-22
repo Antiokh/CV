@@ -6,11 +6,21 @@ Phone: +381 62 979 5315
 Telegram: @antiokh  
 LinkedIn: https://www.linkedin.com/in/nazarovanton/  
 
+## NAVIGATION
+
+- [Short Resume](./RESUME.md)
+- [Multilingual Resume](./RESUME_RU_EN_SR.md)
+- [Portfolio Index](./portfolio/README.md)
+- [Detailed Experience](./details/anton_nazarov_experience_full.md)
+- [Profile Suggestions](./details/AI_PROFILE_SUGGESTIONS.md)
+- [Personality / Strengths Reference](./details/Metafox_Strengths_Report.md)
+- [Career Profile Reference](./details/Comprehensive_Psychological_&_Career_Profile.md)
+
 ---
 
 ## PROFILE
 
-Technology leader and systems architect with 15+ years of experience across startups, corporate, and government environments.
+Technology leader and systems architect with 18 years of professional experience across startups, corporate, and government environments.
 
 I build and restructure complex systems at the intersection of **engineering, business, and operations**, taking ownership of architecture, delivery, automation, scalability, and long-term technical direction.
 
@@ -36,7 +46,7 @@ I also work comfortably in **AI-native and agentic development workflows**, usin
 
 Based on professional experience and strengths assessment:
 
-Detailed personality and strengths reference: [Metafox Strengths Report](./Metafox_Strengths_Report.md)
+Detailed personality and strengths reference: [Metafox Strengths Report](./details/Metafox_Strengths_Report.md)
 
 - **Visionary** - able to define and communicate long-term technical direction
 - **Analyst** - strong ability to break down complex systems and decisions

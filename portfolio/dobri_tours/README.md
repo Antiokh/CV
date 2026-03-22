@@ -116,7 +116,7 @@ This project demonstrates how a low-code platform can become more than a catalog
 
 ### Cover
 
-![Dobri Tours cover](./media/Dobri%20Tours%20Cover.png)
+![Dobri Tours cover](./media/dobri-tours-cover.png)
 
 ---
 

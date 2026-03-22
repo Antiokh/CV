@@ -110,7 +110,7 @@ This project demonstrates the ability to design and build a multi-surface operat
 ## Additional Notes
 
 - Demo video: https://www.youtube.com/watch?v=3sFy9YI7p20
-- Local demo file: [Desktop5-22-202411-26-24PM-ezgif.com-gif-maker.webm](./media/Desktop5-22-202411-26-24PM-ezgif.com-gif-maker.webm)
+- Local demo file: [demo.webm](./media/demo.webm)
 
 ---
 
@@ -124,13 +124,13 @@ This project demonstrates the ability to design and build a multi-surface operat
 
 ### Internal Interface
 
-![Exit Lead interface](./media/exit%20lead.png)
+![Exit Lead interface](./media/internal-interface.png)
 
 ---
 
 ### Automation
 
-![Exit Lead automation workflow](./media/n8n_screenshot.JPG)
+![Exit Lead automation workflow](./media/automation-workflow.jpg)
 
 ---
 
@@ -140,4 +140,4 @@ This project demonstrates the ability to design and build a multi-surface operat
 - [Client interface - apartments](./media/client_interface_dark_apts.png)
 - [Client interface - inspections](./media/client_interface_dark_inspections.png)
 - [Client interface - light theme](./media/client_interface_light.png)
-- [Client interface - desktop mockup](./media/ExitLead%20MacBook%20Pro%2016.png)
+- [Client interface - desktop mockup](./media/client-desktop-mockup.png)

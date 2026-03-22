@@ -91,13 +91,13 @@ This project demonstrates product initiative, niche-market experimentation, and 
 
 ### Desktop View
 
-![RuskaJela desktop view](./media/MacBook%20Pro%2016ruskajela.png)
+![RuskaJela desktop view](./media/ruskajela-desktop.png)
 
 ---
 
 ### Mobile View
 
-![RuskaJela mobile view](./media/iPhone%2013%20Pro-ruskajela.png)
+![RuskaJela mobile view](./media/ruskajela-mobile.png)
 
 ---
 

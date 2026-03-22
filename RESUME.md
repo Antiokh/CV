@@ -9,7 +9,7 @@ Portfolio: [Portfolio Index](./portfolio/README.md)
 
 ## Profile
 
-Technology leader and systems architect with 15+ years of experience across startups, enterprise, and government environments. I build and restructure products and internal systems at the intersection of engineering, business, and operations, with strong ownership of architecture, delivery, automation, and long-term technical direction.
+Technology leader and systems architect with 18 years of professional experience across startups, enterprise, and government environments. I build and restructure products and internal systems at the intersection of engineering, business, and operations, with strong ownership of architecture, delivery, automation, and long-term technical direction.
 
 Strongest pattern: turning fragmented workflows and weak tooling into scalable systems teams can actually run.
 

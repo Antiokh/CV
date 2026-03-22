@@ -104,20 +104,20 @@ This project demonstrates how a lightweight product can solve a very practical c
 
 ### Desktop View
 
-![Serbia Networking App desktop view](./media/MacBook%20Pro%2016serbilisti.png)
+![Serbia Networking App desktop view](./media/networking-desktop.png)
 
 ---
 
 ### Mobile View
 
-![Serbia Networking App mobile view](./media/iPhone%2013-networking.png)
+![Serbia Networking App mobile view](./media/networking-mobile-main.png)
 
 ---
 
 ### Additional Mobile Screens
 
-- [iPhone 12 Pro - variant 1](./media/iPhone%2012%20Pro-network.png)
-- [iPhone 12 Pro - variant 2](./media/iPhone%2012%20Pronetworking.png)
-- [iPhone 13 Pro](./media/iPhone%2013%20Pronetworking.png)
-- [iPhone 13 - alternative](./media/iPhone%2013networking.png)
+- [iPhone 12 Pro - variant 1](./media/networking-mobile-iphone12-1.png)
+- [iPhone 12 Pro - variant 2](./media/networking-mobile-iphone12-2.png)
+- [iPhone 13 Pro](./media/networking-mobile-iphone13-pro.png)
+- [iPhone 13 - alternative](./media/networking-mobile-iphone13-alt.png)
 - [Galaxy Note 20 Ultra](./media/Galaxy%20Note%2020%20Ultra-network.png)

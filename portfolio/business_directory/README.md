@@ -84,10 +84,10 @@ This case shows how a simple local-directory idea can become more useful when th
 
 ### Mobile View
 
-![Business Directory mobile view](./media/iPhone%2013-rusinserb.png)
+![Business Directory mobile view](./media/business-directory-mobile-main.png)
 
 ---
 
 ### Alternative Mobile View
 
-![Business Directory alternative mobile view](./media/iPhone%2012%20Proserbirus.png)
+![Business Directory alternative mobile view](./media/business-directory-mobile-alt.png)

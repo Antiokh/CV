@@ -119,13 +119,13 @@ This project demonstrates fast delivery of a business-critical internal system u
 
 ### Cover
 
-![Educate Online cover](./media/iPad%20Mini%20Educate%20new.png)
+![Educate Online cover](./media/educate-online-ipad-current.png)
 
 ---
 
 ### Main Interface
 
-![Educate Online main interface](./media/iMac%2024%20incheducate-unlinie-2.png)
+![Educate Online main interface](./media/educate-online-imac-main.png)
 
 ---
 
@@ -176,8 +176,8 @@ This project demonstrates fast delivery of a business-critical internal system u
 - [Educate Online 5](./media/Educate%20Online%205.png)
 - [Educate Online 6](./media/Educate%20Online%206.png)
 - [Educate Online mockup](./media/Educate%20Online%20Mockup.png)
-- [iMac mockup 1](./media/iMac%2024%20incheducate-unlinie.png)
-- [iMac mockup 2](./media/iMac%2024%20incheducate-unlinie-1.png)
-- [iMac mockup 3](./media/iMac%2024%20incheducate-unlinie-3.png)
-- [iPad mockup - current](./media/iPad%20Mini%20Educate%20new.png)
-- [iPad mockup - old interface](./media/iPad%20Mini%20eduonline.png)
+- [iMac mockup 1](./media/educate-online-imac-alt-1.png)
+- [iMac mockup 2](./media/educate-online-imac-alt-2.png)
+- [iMac mockup 3](./media/educate-online-imac-alt-3.png)
+- [iPad mockup - current](./media/educate-online-ipad-current.png)
+- [iPad mockup - old interface](./media/educate-online-ipad-old.png)

@@ -90,13 +90,13 @@ This project demonstrates early hands-on exploration of generative AI in a produ
 
 ### Desktop Landing View
 
-![Space AI Demo desktop view](./media/MacBook%20Pro%2016-spaceai.png)
+![Space AI Demo desktop view](./media/space-ai-desktop.png)
 
 ---
 
 ### Mobile / Tablet View
 
-![Space AI Demo tablet view](./media/iPad%20Mini-spaceai.png)
+![Space AI Demo tablet view](./media/space-ai-tablet-main.png)
 
 ---
 
@@ -110,5 +110,5 @@ This project demonstrates early hands-on exploration of generative AI in a produ
 - [Landing frame 6](./media/landing_frame6.png)
 - [Landing frame 7](./media/landing_frame7.png)
 - [Slide menu](./media/slide_menu.png)
-- [iPad variant 1](./media/iPad%20Minispaceai.png)
-- [iPad variant 2](./media/iPad%20Minispaceai2.png)
+- [iPad variant 1](./media/space-ai-tablet-alt-1.png)
+- [iPad variant 2](./media/space-ai-tablet-alt-2.png)
