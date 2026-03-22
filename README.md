@@ -227,7 +227,7 @@ Highlighted case studies:
 ## LANGUAGES
 
 - Russian — Native  
-- English — C1  
+- English — Fluent  
 - Serbian — Working proficiency  
 
 ---
