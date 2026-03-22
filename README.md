@@ -18,6 +18,8 @@ My strongest pattern is turning fragmented workflows, weak tooling, and operatio
 
 I work best as a **playing coach**: hands-on enough to ship, senior enough to align product, architecture, and business goals.
 
+I also work comfortably in **AI-native and agentic development workflows**, using VS Code, repository-specific instructions, architectural guardrails, and structured tasking to speed up implementation without losing technical discipline.
+
 ---
 
 ## CORE VALUE
@@ -60,12 +62,14 @@ Nov 2022 - Present
 - Built low-code, no-code, and hybrid systems using WeWeb, Supabase, Xano, Bubble, Glide, n8n, Make, and custom integrations
 - Delivered rapid MVP-to-production transitions for SaaS, internal tools, portals, automation systems, and operational platforms
 - Consulted founders on product structure, delivery approach, infrastructure, and cost optimization
+- Built repository-level AI instructions, coding guardrails, and task contracts for agent-assisted development in VS Code
 
 **Key achievements:**
 - Reduced service time from hours to minutes through automation
 - Increased client revenue up to **x13** through system redesign and process restructuring
 - Built PWA-based products that removed dependency on App Stores
 - Delivered end-to-end systems across backend, frontend, automation, UX, and operations
+- Developed custom WeWeb components and integration bridges for capabilities not available out of the box
 
 ---
 
@@ -161,6 +165,7 @@ Highlighted case studies:
 - [Andronyevskaya ERP](./portfolio/andronyevskaya_erp/README.md)
 - [AIS MosRazvitie](./portfolio/ais_mosrazvitie/README.md)
 - [French Plumbers ERP](./portfolio/french_plumbers_erp/README.md)
+- [PromptlessPress](./portfolio/promptlesspress/README.md)
 - [Vencer Autismo](./portfolio/vencer_autismo/README.md)
 
 ### **Automation & Digital Transformation**
@@ -172,7 +177,8 @@ Highlighted case studies:
 - WeWeb + Supabase architectures
 - Bubble and Glide products
 - automation pipelines with n8n, Make, APIs, and Telegram
-- LLM-assisted workflows and AI-powered product experiments
+- LLM-assisted workflows, AI-powered product experiments, and fal.ai generation pipelines
+- AI-assisted and agentic development with repository-specific instructions and guardrails
 
 ### **Startup & Product Work**
 - MetaFox Strengths Explorer
@@ -202,6 +208,13 @@ Highlighted case studies:
 - Glide
 - Webflow
 
+**Custom component work:**
+- WeWeb custom components and forks
+- Leaflet / map components
+- Telegram Mini App bridges
+- QR and barcode tools
+- searchable selects, editable lists, notifications, and multi-language UI elements
+
 **Backend / data / automation:**
 - Supabase
 - Xano
@@ -211,6 +224,8 @@ Highlighted case studies:
 - n8n
 - Make
 - Telegram integrations
+- fal.ai
+- OpenAI
 
 **Code / scripting / infra:**
 - JavaScript
@@ -234,6 +249,7 @@ Highlighted case studies:
 - Product strategy and MVP -> scaling
 - Team leadership and mentoring
 - Stakeholder management
+- AI-assisted engineering workflows and repository guardrail design
 
 ---
 

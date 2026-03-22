@@ -59,6 +59,11 @@ The backend was designed around self-hosted Supabase and Edge Functions, includi
 
 ---
 
+### Custom WeWeb Extensions
+The project also relied on custom WeWeb capabilities rather than only stock blocks, including map-driven UI and Telegram-specific frontend integration where the default editor feature set was not enough.
+
+---
+
 ## Tech Stack
 
 - **Frontend:** WeWeb
@@ -66,6 +71,7 @@ The backend was designed around self-hosted Supabase and Edge Functions, includi
 - **Auth / Messaging:** Telegram Mini App, Telegram Bot API
 - **Backend Logic:** Supabase Edge Functions
 - **Infrastructure:** Self-hosted deployment
+- **Custom Frontend Work:** Leaflet map component, Telegram WebApp bridge, and other reusable WeWeb extensions
 
 ---
 
@@ -83,6 +89,11 @@ QR-based entry points had to connect real equipment in the field with digital ca
 
 ### Telegram-Driven Access and Notifications
 Using Telegram as both a login surface and an operational notification channel added product convenience, but also introduced non-trivial auth, webhook, and delivery design work.
+
+---
+
+### Working Beyond Stock WeWeb Capabilities
+Parts of the product required custom frontend extensions and integration bridges, especially around maps, Telegram behaviors, QR-driven entry points, and more advanced operational UI patterns.
 
 ---
 

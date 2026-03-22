@@ -10,6 +10,12 @@ The main challenge of the project was building a system that works reliably with
 
 ---
 
+## My Role
+
+Builder, Architect, AI Workflow Designer
+
+---
+
 ## What the System Does
 
 - Generate product visuals based on structured inputs  
@@ -17,6 +23,7 @@ The main challenge of the project was building a system that works reliably with
 - Create realistic mockups (lifestyle, flat lay, etc.)  
 - Generate product metadata (titles, descriptions, tags)  
 - Export ready-to-sell product bundles  
+- Support iterative generation rather than one-shot prompting  
 
 ---
 
@@ -35,6 +42,21 @@ Users can define:
 - automated image generation  
 - multiple preview variations  
 - regeneration and refinement workflow  
+- fal.ai-backed execution pipeline with structured settings rather than ad-hoc prompting  
+
+---
+
+### Structured Prompt Composition
+- SQL-driven prompt composition and generation snapshots  
+- clear separation between intent, execution, assets, and mockups  
+- reproducible configuration stored as generation state  
+
+---
+
+### AI Agent Guardrails
+- repository-level instructions for AI agents working in VS Code / Codex  
+- explicit architecture boundaries between database, edge functions, and frontend  
+- task contracts and documentation rules to keep AI-assisted changes consistent  
 
 ---
 
@@ -65,6 +87,7 @@ Users can define:
 - **Backend:** Supabase (Postgres, Auth, Storage, Edge Functions)  
 - **AI:** OpenAI, fal.ai  
 - **Payments:** Stripe  
+- **Development Pattern:** AI-assisted / agentic workflow with repository-specific instructions and guardrails  
 
 ---
 
@@ -77,6 +100,11 @@ AI results are not deterministic, which required building a system that supports
 
 ### Prompt Iteration
 A significant part of the work involved refining inputs to achieve consistent visual quality. This process is experimental and cannot be fully automated.
+
+---
+
+### Architecture Discipline Around AI
+To keep the system stable, AI generation logic had to be constrained by explicit architecture rules, documented data flow, and controlled extension points rather than informal prompt hacking.
 
 ---
 
@@ -95,7 +123,13 @@ The system is designed to scale and evolve, while acknowledging that final outpu
 
 ## Key Takeaway
 
-This project demonstrates how to build a structured product system on top of probabilistic AI, balancing automation with human-driven refinement.
+This project demonstrates how to build a structured product system on top of probabilistic AI, balancing automation with human-driven refinement while also using AI-native engineering workflows to speed up implementation safely.
+
+---
+
+## Additional Notes
+
+Internal AI/agent workflow reference: `D:\Git\supabase-promptlesspress`
 
 ---
 
