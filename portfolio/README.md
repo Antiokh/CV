@@ -25,6 +25,7 @@ Formatting rules for project descriptions: [CASE_STUDY_FORMAT.md](./CASE_STUDY_F
 - [Flower Shop](./flowershop/README.md)
 - [MakeMeLook](./makemelook/README.md)
 - [MetaFox Strengths Explorer](./metafox_strengths_explorer/README.md)
+- [MommyHana MBO](./mommy_hana/README.md)
 - [PromptlessPress](./promptlesspress/README.md)
 - [QR Cloud](./qr_cloud/README.md)
 - [RuskaJela](./ruskajela/README.md)
@@ -33,10 +34,6 @@ Formatting rules for project descriptions: [CASE_STUDY_FORMAT.md](./CASE_STUDY_F
 - [tgs.py](./tgs.py/README.md)
 - [Vencer Autismo](./vencer_autismo/README.md)
 - [Space AI Demo](./space_ai_demo/README.md)
-
-### Draft / Empty
-
-- `mama_hana`
 
 ## Purpose
 
