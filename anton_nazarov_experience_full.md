@@ -99,6 +99,288 @@ Examples documented in the portfolio include:
 - Serbia Networking App
 - RuskaJela
 
+## Detailed Project Experience
+
+The roles above become much more concrete when viewed through the projects themselves. The following cases are the clearest proof points of Anton's delivery style, technical range, and decision-making.
+
+### PromptlessPress
+**Type:** AI-assisted visual content platform  
+**Typical role:** Builder / Architect / AI workflow designer
+
+PromptlessPress was built as an AI-assisted content generation product with a strong emphasis on image workflows, prompt composition, reproducibility, and operational clarity. The product was not just a front-end shell around image generation APIs. It was designed as a structured system for managing generation settings, execution logic, debugging, and content workflows.
+
+Anton's contribution included:
+- defining the product architecture across Supabase, Edge Functions, SQL, and frontend behavior
+- building repository-level AI instructions and coding guardrails for agent-assisted development
+- establishing shared helper layers for Supabase Edge Functions
+- designing structured prompt composition and decision snapshots for reproducible generation pipelines
+- integrating fal.ai-backed image generation flows
+- building UI logic that automatically prepares debug prompts for generation troubleshooting
+- formalizing the boundary between database logic, edge execution, and frontend behavior
+
+What makes this case especially important is that it demonstrates Anton not only as a builder of products, but as a designer of engineering operating systems: architecture docs, helper contracts, AI instructions, SQL discipline, and debug workflows.
+
+### MetaFox Strengths Explorer
+**Type:** Assessment and coaching platform  
+**Typical role:** Developer / Project Manager
+
+MetaFox Strengths Explorer is a browser-based strengths assessment and reporting product built for coaching, workshops, and self-reflection. The product includes self-assessment, PDF reporting, strengths categorization, and peer-feedback mechanics.
+
+Anton's role included:
+- developing the application structure and key product logic
+- supporting the evolution of the strengths model
+- implementing normalization and categorization behavior
+- helping shape assessment and reporting flows
+- working on report-generation and user-facing logic
+- contributing to a product that combines structured psychology-style scoring with coaching workflows
+
+This project is important because it shows Anton's ability to work in a product that is not just operationally complex, but conceptually complex: one where the product model itself evolves and the system has to remain understandable to end users.
+
+### Exit Lead
+**Type:** Inspection and reporting platform  
+**Typical role:** Builder / Architect / Designer
+
+Exit Lead was a multi-surface system built around environmental inspection operations. It used:
+- Glide for internal role-based interfaces for inspectors, dispatchers, and administrators
+- WeWeb for the client-facing portal
+- Supabase as the shared backend
+- DocsAutomator and n8n for report generation and distribution
+
+The internal workflow allowed inspectors to:
+- see daily schedules
+- visit locations
+- upload report photos
+- fill digital forms
+- complete inspection records in the field
+
+The client-facing side included:
+- maps of buildings
+- lists of properties and apartments
+- access to reports and requests
+
+Anton also worked on:
+- ingestion and matching of lead and mold device data
+- automation around report generation and branded document delivery
+- migration of approximately 70,000 historical documents from Google Drive into Supabase
+- use of OpenAI during migration to help parse contact data from legacy documents
+
+This case demonstrates Anton's strength in designing dual-interface systems with shared data models, operational workflows, automation, and migration-heavy backend work.
+
+### Andronyevskaya ERP
+**Type:** Self-hosted ERP for property technical support  
+**Typical role:** Developer / DevOps / Project Manager
+
+This project was a self-hosted ERP for technical support operations across managed properties. The system included three main role modules:
+- Executor
+- Manager
+- Administrator
+
+Executors could:
+- scan QR codes to access equipment cards
+- view and complete tasks
+- communicate through internal real-time chat
+
+Managers and administrators handled:
+- role-based assignment and review
+- hierarchy and asset management
+- site and structure administration
+
+Telegram Mini App login allowed seamless password-free entry, while Supabase supported backend logic, alerts, and real-time workflows.
+
+Anton's contribution included:
+- system design and role architecture
+- self-hosted backend and deployment thinking
+- WeWeb frontend design and implementation
+- shared helper patterns for Edge Functions
+- Telegram integration and Mini App logic
+- custom WeWeb component work and expansion beyond stock platform capabilities
+
+This case shows Anton's ability to build operational systems that combine field work, asset logic, real-time communication, role structure, and self-hosted infrastructure concerns.
+
+### AIS MosRazvitie
+**Type:** Government-scale information system  
+**Typical role:** Architect / analyst / developer / trainer / operational owner
+
+AIS MosRazvitie was a major internal system for the Directorate of Cultural Centers of Moscow. It handled:
+- structured institutional data
+- workflows and moderation
+- reporting and exports
+- surveys and questionnaires
+- integrations
+- analytics and interactive maps
+
+Anton's role was unusually broad and included:
+- stakeholder communication
+- documentation
+- implementation
+- form development
+- architecture
+- user training
+- webinars with feedback
+- server setup and backups
+
+Technically, the project combined:
+- IBM Domino and web access
+- modular design
+- report-generation logic
+- security redesign
+- Yandex Maps integration
+- form and filter generators
+- migration and operational support
+
+This case is one of the strongest pieces of evidence that Anton can own a large, legacy-heavy, politically complex information system end to end.
+
+### Vencer Autismo
+**Type:** Assessment and recommendation platform  
+**Typical role:** Full-stack builder
+
+Vencer Autismo was a full-stack web application built around child assessment and parental recommendations. The core logic included:
+- structured multi-level tests
+- weighted scoring
+- normalized results
+- radar charts and longitudinal history
+- recommendation logic tied to score ranges
+- repeated sessions every two weeks
+
+Anton built a product that was more than a test interface. It was effectively an assessment and recommendation platform with user lifecycle, analytics, and content-based guidance.
+
+This project demonstrates:
+- product thinking around retention and repeated use
+- ability to translate structured methodology into user-facing logic
+- comfort with WeWeb + Supabase as a full-stack product system
+
+### Educate Online
+**Type:** Corporate assessment and mood / opinion analysis system  
+**Typical role:** Designer / Developer
+
+Educate Online addressed the challenge of mass employee testing, mood analysis, and opinion-gap detection inside organizations.
+
+The key challenges included:
+- multilingual scalability with potentially unlimited languages
+- mathematical processing of large volumes of responses
+- platform limitations in Bubble
+- clear UX for testing and results
+
+Anton delivered the project in roughly three weeks and implemented:
+- stylized sliders and response interfaces
+- result visualizations
+- external logic to overcome Bubble's computational limitations
+- Bing Translate integration for automatic base translation into new languages
+
+This case demonstrates Anton's ability to move quickly under platform constraints while still designing a polished user-facing system.
+
+### QR Cloud
+**Type:** Digital business card and company profile platform  
+**Typical role:** Product builder
+
+QR Cloud was designed as a mobile-first web system for creating and publishing digital business cards for employees and companies. It went beyond a simple contact page and worked as a compact branded contact and content platform.
+
+The solution included:
+- profile creation and editing
+- public business-card pages
+- QR generation
+- shareable public links
+- company profile pages
+- social and messenger links
+- cloud-file links
+
+The product was intended to replace printed business cards and static materials with a scalable, paperless alternative and had potential to grow into a broader cloud service.
+
+This case demonstrates Anton's ability to package a small B2B problem into a coherent product with identity, structure, and growth potential.
+
+### Cashdesk Accounting
+**Type:** Internal financial operations system  
+**Typical role:** Developer / Designer
+
+This project involved rebuilding an inefficient accounting and cash-desk system into a cleaner, more controlled internal tool.
+
+The project included:
+- role management for cashier, auditor, and administrator
+- tracking of income, costs, and currency conversion
+- CSV exports
+- security improvements such as automatic logout
+- UX redesign from a poorly structured legacy baseline
+
+This case shows Anton's ability to take a vague, underdefined financial operations problem, analyze the old system, and rebuild it into something more secure, scalable, and understandable.
+
+### Dobri Visarun
+**Type:** Service-business automation / PWA  
+**Typical role:** Developer
+
+Dobri Visarun addressed a small-service business with heavy manual lead handling, registration, and communication. The solution centralized customer registration, trip selection, and internal alerts in a lightweight PWA with Telegram bot integration.
+
+The documented outcome was highly business-relevant:
+- drastically lower handling time per client
+- revenue growth up to x10-x13 depending on source phrasing
+- organic growth without large marketing spend
+
+This is a strong case of practical operational automation with direct business impact.
+
+### Dobri Tours
+**Type:** Tour management and loyalty platform  
+**Typical role:** Developer / Database Architect
+
+Dobri Tours was designed to turn a fragmented travel offering into a usable product platform. The system included:
+- a language-specific tour catalog
+- structured pricing
+- request and joining mechanics
+- ratings and reviews
+- agent booking workflows
+- a loyalty system with points and discounts
+- social distribution through Make.com
+
+This project shows Anton's product thinking around marketplace dynamics, agent incentives, and lightweight platform economics.
+
+### French Plumbers ERP
+**Type:** ERP for a trade-services business  
+**Typical role:** Full-stack developer
+
+This was an ERP system for a French plumbing business, built with WeWeb and Supabase. Even with limited public detail, it clearly fits Anton's repeated delivery pattern:
+- internal process structuring
+- operational interface design
+- full-stack ownership
+- backend and file management logic
+- practical business tooling rather than brochureware
+
+### Sefcast
+**Type:** AI-assisted SEO analytics platform  
+**Typical role:** Frontend developer
+
+Sefcast is important because it shows Anton can also contribute effectively in a narrower execution scope when needed. In this project, he focused on frontend work:
+- custom components
+- UI kit work
+- implementation in WeWeb
+
+The backend was handled separately in Xano. This case supports the claim that Anton can plug into a larger delivery setup when the role is more specialized, while still bringing strong product and interface sense.
+
+### Serbia Networking App
+**Type:** Event networking product  
+**Typical role:** Creator / Developer
+
+This app was built to solve a real networking problem: event attendees do not have enough time to meet everyone and exchange contact details during an event.
+
+The product included:
+- a database of upcoming events
+- event-join flows
+- participant information capture
+- post-event virtual business cards
+- ongoing event updates
+- Telegram channel integration
+
+This case highlights Anton's strength in identifying friction in real human interactions and turning it into a small but coherent product.
+
+### RuskaJela
+**Type:** Side project / local food marketplace  
+**Typical role:** Creator / Builder
+
+RuskaJela was a local food marketplace for Russian-speaking users, built on Glide with geolocation and marketplace logic inspired by delivery services such as Glovo.
+
+Its goal was to connect local home cooks with nearby customers and make discovery of home-cooked food easier. The project did not scale commercially due to lack of marketing budget, but it remains a valuable product case because it shows:
+- marketplace thinking
+- hyperlocal product design
+- willingness to test product hypotheses independently
+- honesty about commercial constraints
+
 ## OTUS Online Education
 **Moscow**  
 **Sep 2023 - Dec 2023**  
