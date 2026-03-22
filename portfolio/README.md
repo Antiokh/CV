@@ -15,6 +15,7 @@ Formatting rules for project descriptions: [CASE_STUDY_FORMAT.md](./CASE_STUDY_F
 
 ### Ready
 
+- [Andronyevskaya ERP](./andronyevskaya_erp/README.md)
 - [AIS MosRazvitie](./ais_mosrazvitie/README.md)
 - [Business Directory](./business_directory/README.md)
 - [Cashdesk Accounting](./cashdesk_bubble/README.md)
