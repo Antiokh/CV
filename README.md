@@ -13,6 +13,7 @@ LinkedIn: https://www.linkedin.com/in/nazarovanton/
 - [Portfolio Index](./portfolio/README.md)
 - [Detailed Experience](./details/anton_nazarov_experience_full.md)
 - [Profile Suggestions](./details/AI_PROFILE_SUGGESTIONS.md)
+- [Application Workflow](./details/APPLICATION_WORKFLOW.md)
 - [Personality / Strengths Reference](./details/Metafox_Strengths_Report.md)
 - [Career Profile Reference](./details/Comprehensive_Psychological_&_Career_Profile.md)
 
