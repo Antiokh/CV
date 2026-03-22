@@ -1,10 +1,10 @@
 # Anton Nazarov
 **CTO / Head of Engineering / Systems Architect / Tech Lead**
 
-📍 Belgrade, Serbia  
-📧 lordzlis@gmail.com  
-📱 +381 62 979 5315  
-🔗 LinkedIn: https://www.linkedin.com/in/nazarovanton/  
+Location: Belgrade, Serbia  
+Email: lordzlis@gmail.com  
+Phone: +381 62 979 5315  
+LinkedIn: https://www.linkedin.com/in/nazarovanton/  
 
 ---
 
@@ -12,22 +12,19 @@
 
 Technology leader and systems architect with 15+ years of experience across startups, corporate, and government environments.
 
-I specialize in building and restructuring complex systems at the intersection of **engineering, business, and operations** — taking full ownership of architecture, scalability, and long-term technical decisions.
+I build and restructure complex systems at the intersection of **engineering, business, and operations**, taking ownership of architecture, delivery, automation, scalability, and long-term technical direction.
 
-My core strength is combining:
-- **systems thinking**
-- **pragmatic execution**
-- **business-oriented engineering**
+My strongest pattern is turning fragmented workflows, weak tooling, and operational chaos into structured systems that teams can actually run.
 
-I operate best in roles where I can act as a **“playing coach”** — aligning teams, architecture, and business goals.
+I work best as a **playing coach**: hands-on enough to ship, senior enough to align product, architecture, and business goals.
 
 ---
 
 ## CORE VALUE
 
-- Bridging **business ↔ technology ↔ operations**
-- Designing **scalable architectures and systems**
-- Driving **process automation and cost optimization**
+- Bridging **business <-> technology <-> operations**
+- Designing **scalable architectures and internal systems**
+- Driving **automation, cost optimization, and process clarity**
 - Leading teams in **uncertain and high-pressure environments**
 - Turning chaos into **structured, working systems**
 
@@ -39,17 +36,17 @@ Based on professional experience and strengths assessment:
 
 Detailed personality and strengths reference: [Metafox Strengths Report](./Metafox_Strengths_Report.md)
 
-- **Visionary** — able to define and communicate long-term technical direction  
-- **Analyst** — strong ability to break down complex systems and decisions  
-- **Pragmatist** — focus on real-world results over theory  
-- **Motivator** — energizes teams and drives momentum  
-- **Guardian** — high integrity, ownership, and responsibility  
+- **Visionary** - able to define and communicate long-term technical direction
+- **Analyst** - strong ability to break down complex systems and decisions
+- **Pragmatist** - focused on real-world results over theory
+- **Motivator** - able to create momentum and keep teams moving
+- **Guardian** - high integrity, ownership, and responsibility
 
 These strengths translate into:
-- strategic decision-making under uncertainty  
-- system-level thinking  
-- leadership through influence, not bureaucracy  
-- balancing innovation with execution :contentReference[oaicite:0]{index=0}  
+- strategic decision-making under uncertainty
+- system-level thinking
+- leadership through influence, not bureaucracy
+- balancing innovation with execution
 
 ---
 
@@ -57,100 +54,100 @@ These strengths translate into:
 
 ### **Founder / CTO / Systems Architect**
 **NeedleBit (Serbia)**  
-Nov 2022 — Present
+Nov 2022 - Present
 
-- Defined technical strategy and architecture for multiple client products
-- Built low-code / no-code / hybrid systems (WeWeb, Supabase, automation stacks)
-- Delivered rapid MVP → scalable systems transitions
-- Consulted founders on product, infrastructure, and cost optimization
+- Defined technical strategy and architecture for multiple client and internal products
+- Built low-code, no-code, and hybrid systems using WeWeb, Supabase, Xano, Bubble, Glide, n8n, Make, and custom integrations
+- Delivered rapid MVP-to-production transitions for SaaS, internal tools, portals, automation systems, and operational platforms
+- Consulted founders on product structure, delivery approach, infrastructure, and cost optimization
 
 **Key achievements:**
-- Reduced client service time from hours to minutes via automation
-- Increased client revenue up to **x13** through system redesign :contentReference[oaicite:1]{index=1}  
-- Built PWA-based solutions removing dependency on App Stores  
-- Designed end-to-end systems: backend → frontend → automation → UX  
+- Reduced service time from hours to minutes through automation
+- Increased client revenue up to **x13** through system redesign and process restructuring
+- Built PWA-based products that removed dependency on App Stores
+- Delivered end-to-end systems across backend, frontend, automation, UX, and operations
 
 ---
 
 ### **Implementation Curator / Product Manager**
 **New Business Environment**  
-Aug 2022 — Nov 2022
+Aug 2022 - Nov 2022
 
-- Led ERP/CRM implementations (PlanFix)
-- Developed implementation methodology and scaling approach
-- Coached managers and improved internal processes
+- Led ERP/CRM implementations in PlanFix
+- Developed implementation methodology and internal scaling approach
+- Coached managers and improved delivery discipline
 
 **Results:**
-- Eliminated responsibility gaps in company structure  
-- Improved project delivery model  
-- Increased system adoption and team engagement :contentReference[oaicite:2]{index=2}  
+- Eliminated responsibility gaps in company structure
+- Improved project delivery model
+- Increased system adoption and team engagement
 
 ---
 
 ### **Head of IT**
 **ZIL Cultural Center (Moscow)**  
-Mar 2020 — Jun 2022
+Mar 2020 - Jun 2022
 
-- Owned full IT infrastructure (140+ workstations, servers, security systems)
-- Led engineers, vendors, and cross-functional projects
-- Defined IT strategy and security policies
+- Owned full IT infrastructure for 140+ workstations, servers, and security systems
+- Led engineers, vendors, and cross-functional initiatives
+- Defined IT strategy, support model, and security policies
 
 **Key achievements:**
 - Migrated 100+ employees to remote work during COVID
-- Implemented HelpDesk and asset tracking system (GLPI)
+- Implemented HelpDesk and asset tracking with GLPI
 - Introduced Active Directory, security policies, and infrastructure modernization
-- Built automation-ready business processes
+- Built automation-ready internal processes
 
 ---
 
 ### **Senior Manager / IT Architect / Analyst**
 **Directorate of Cultural Centers of Moscow**  
-Jan 2017 — May 2023
+Jan 2017 - May 2023
 
-- Developed and maintained industry-level information system
-- Designed modular architecture and reporting tools
+- Designed, rebuilt, and maintained an industry-level information system for cultural institutions
+- Combined stakeholder work, documentation, architecture, implementation, training, webinars, server setup, and backups
 - Acted as IT expert for government-level projects
 
 **Results:**
-- Built scalable web system with reporting and analytics
-- Improved security and access control frameworks
+- Built a scalable web system with reporting, analytics, and interactive maps
+- Improved security, authorization, and access control
 - Identified and eliminated system vulnerabilities
-- Designed interactive data systems and maps :contentReference[oaicite:3]{index=3}  
+- Enabled parallel report generation and better operational independence across departments
 
 ---
 
 ### **Deputy Head of IT Department (Acting Head)**
 **Moscow Social Development Agency**  
-Sep 2019 — Mar 2020
+Sep 2019 - Mar 2020
 
 - Built IT infrastructure from scratch for a new organization
 - Led IT team and defined technical roadmap
 
 **Results:**
-- Launched full IT operations (infrastructure, support, documentation)
+- Launched full IT operations including infrastructure, support, and documentation
 - Implemented HelpDesk and internal systems
-- Delivered audit and optimization of processes
+- Delivered audit and process optimization
 
 ---
 
 ### **Lead Software Developer / Systems Architect**
 **Banking Sector (Settlement and Savings Bank)**  
-2013 — 2015
+2013 - 2015
 
-- Designed and implemented document management system from scratch
-- Integrated systems with 1C
+- Designed and implemented a document management system from scratch
+- Integrated internal systems with 1C
 - Led development and trained staff
 
 ---
 
-### **Early Career: Developer → System Specialist**
-2008 — 2013
+### **Early Career: Developer -> System Specialist**
+2008 - 2013
 
 - Lotus Notes / Domino development
-- Corporate systems, automation, integrations
+- Corporate systems, automation, and integrations
 - Infrastructure and backend development
 
-Started coding in **2005**, professional experience since **2008**
+Started coding in **2005**, professional experience since **2008**.
 
 ---
 
@@ -161,105 +158,129 @@ Detailed portfolio case studies: [Portfolio Index](./portfolio/README.md)
 Highlighted case studies:
 - [MetaFox Strengths Explorer](./portfolio/metafox_strengths_explorer/README.md)
 - [Exit Lead](./portfolio/exit_lead/README.md)
+- [Andronyevskaya ERP](./portfolio/andronyevskaya_erp/README.md)
 - [AIS MosRazvitie](./portfolio/ais_mosrazvitie/README.md)
-- [PromptlessPress](./portfolio/promptlesspress/README.md)
+- [French Plumbers ERP](./portfolio/french_plumbers_erp/README.md)
 - [Vencer Autismo](./portfolio/vencer_autismo/README.md)
 
 ### **Automation & Digital Transformation**
-- CRM / ERP systems
+- ERP, CRM, and internal operations systems
 - business process automation
-- integration of communication channels into unified systems
+- communication and document workflows unified into single systems
 
 ### **Low-Code / AI Systems**
 - WeWeb + Supabase architectures
-- automation pipelines (n8n, Make, APIs)
-- LLM-based workflows
+- Bubble and Glide products
+- automation pipelines with n8n, Make, APIs, and Telegram
+- LLM-assisted workflows and AI-powered product experiments
 
 ### **Startup & Product Work**
-- MetaFox Strengths Explorer  
-- Autismify  
-- Dobri Visarun (major efficiency and revenue growth case)
+- MetaFox Strengths Explorer
+- PromptlessPress
+- Vencer Autismo
+- Dobri Visarun
+- QR Cloud
 
 ### **Infrastructure & Enterprise Systems**
-- government-level IT systems
+- government-level information systems
 - banking document management
-- distributed infrastructure and security systems
+- distributed infrastructure, security, and support systems
 
 ---
 
 ## TECH STACK
 
-**Core:**
-- JavaScript, SQL, APIs
-- System architecture & infrastructure design
+**Architecture / product delivery:**
+- system architecture
+- product discovery and restructuring
+- process design
+- stakeholder communication
 
-**Low-code / no-code:**
-- WeWeb, Supabase, Xano, n8n, Make
+**Frontend / app builders:**
+- WeWeb
+- Bubble.io
+- Glide
+- Webflow
 
-**Backend & infra:**
-- PostgreSQL, Node.js, REST
-- Docker, Linux, networking
+**Backend / data / automation:**
+- Supabase
+- Xano
+- PostgreSQL
+- SQL
+- REST APIs
+- n8n
+- Make
+- Telegram integrations
+
+**Code / scripting / infra:**
+- JavaScript
+- Python
+- Node.js
+- Docker
+- Linux
+- networking
 
 **Legacy / enterprise:**
 - IBM Domino / Lotus Notes
-- Active Directory, Windows Server
+- Active Directory
+- Windows Server
 
 ---
 
 ## BUSINESS SKILLS
 
-- System thinking & architecture design  
-- Process optimization & cost reduction  
-- Product strategy & MVP → scaling  
-- Team leadership & mentoring  
-- Stakeholder management  
+- System thinking and architecture design
+- Process optimization and cost reduction
+- Product strategy and MVP -> scaling
+- Team leadership and mentoring
+- Stakeholder management
 
 ---
 
 ## EDUCATION
 
-- Bachelor in Management (Small Business Management)  
-- Professional retraining: IT in Economics & Government  
-- Background in Accounting & Finance  
+- Bachelor in Management (Small Business Management)
+- Professional retraining: IT in Economics and Government
+- Background in Accounting and Finance
 
 ---
 
 ## LANGUAGES
 
-- Russian — Native  
-- English — Fluent  
-- Serbian — Working proficiency  
+- Russian - Native
+- English - Fluent
+- Serbian - Working proficiency
 
 ---
 
 ## ADDITIONAL
 
 - Experience organizing events up to **10,000+ participants**
-- Strong cross-domain thinking (IT + business + marketing + operations)
-- MBTI: ENTJ
+- Strong cross-domain thinking across IT, business, marketing, and operations
+- Built both public-facing products and internal systems for real operational use
 
 ---
 
-## WHAT I’M LOOKING FOR
+## WHAT I'M LOOKING FOR
 
-- CTO / Head of Engineering / Platform / Systems roles  
-- Strong teams with real product vision  
-- Ownership of architecture and technical direction  
-- Ability to influence product and business decisions  
+- CTO, Head of Engineering, Platform, or Systems roles
+- Strong teams with real product vision
+- Ownership of architecture and technical direction
+- Ability to influence product and business decisions
 
 Preferred format:
-- team environment over solo work  
-- meaningful problems over microtasks  
-- long-term impact over short-term execution  
+- team environment over solo execution
+- meaningful problems over microtasks
+- long-term impact over short-term delivery
 
 ---
 
 ## SUMMARY
 
 I build systems that:
-- scale  
-- reduce costs  
-- eliminate chaos  
-- and actually work in real life  
+- scale
+- reduce costs
+- eliminate chaos
+- and work in real life
 
-If your product is growing but your architecture is holding it back — we should talk.
+If your product, operations, or internal tooling are growing faster than your architecture, I can help bring them back under control.
