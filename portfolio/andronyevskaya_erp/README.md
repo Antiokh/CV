@@ -60,7 +60,7 @@ The backend was designed around self-hosted Supabase and Edge Functions, includi
 ---
 
 ### Custom WeWeb Extensions
-The project also relied on custom WeWeb capabilities rather than only stock blocks, including map-driven UI and Telegram-specific frontend integration where the default editor feature set was not enough.
+The project also relied on custom WeWeb capabilities rather than only stock blocks, including map-driven UI and Telegram-specific frontend integration where the default editor feature set was not enough. This work sits on top of a broader custom component practice that includes map components, Telegram handlers, searchable selects, editable lists, QR tooling, notifications, and other reusable extensions.
 
 ---
 
@@ -71,7 +71,7 @@ The project also relied on custom WeWeb capabilities rather than only stock bloc
 - **Auth / Messaging:** Telegram Mini App, Telegram Bot API
 - **Backend Logic:** Supabase Edge Functions
 - **Infrastructure:** Self-hosted deployment
-- **Custom Frontend Work:** Leaflet map component, Telegram WebApp bridge, and other reusable WeWeb extensions
+- **Custom Frontend Work:** Leaflet map component, Telegram WebApp bridge, and other reusable WeWeb extensions from a broader in-house component toolkit
 
 ---
 

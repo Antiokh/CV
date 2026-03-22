@@ -210,10 +210,11 @@ Highlighted case studies:
 
 **Custom component work:**
 - WeWeb custom components and forks
-- Leaflet / map components
-- Telegram Mini App bridges
-- QR and barcode tools
-- searchable selects, editable lists, notifications, and multi-language UI elements
+- Leaflet / map components (`leaflet-map`, `leaflet-map-advanced`, `osm-map`)
+- Telegram Mini App bridges (`telegram-handler`)
+- QR and barcode tools (`qr-code-generator`, `qr-code-scanner`, `barcode-generator`)
+- form and UI components (`select-with-search`, `editable-list`, `dynamic-list`, `custom-switch`, `tags-input-with-search`, `rating-component`)
+- media and utility components (`lottie-animation`, `image-cropper-pro`, `multilang-text-display`, audio player integrations)
 
 **Backend / data / automation:**
 - Supabase
