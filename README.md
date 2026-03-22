@@ -64,6 +64,7 @@ Nov 2022 - Present
 - Consulted founders on product structure, delivery approach, infrastructure, and cost optimization
 - Built repository-level AI instructions, coding guardrails, and task contracts for agent-assisted development in VS Code
 - Built reusable helper layers for Supabase Edge Functions covering env access, auth separation, CORS, internal calls, and debugging
+- Built internal playbooks for database architecture, Telegram Mini Apps, and repeatable WeWeb/Supabase delivery patterns
 
 **Key achievements:**
 - Reduced service time from hours to minutes through automation
