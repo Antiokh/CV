@@ -119,65 +119,65 @@ This project demonstrates fast delivery of a business-critical internal system u
 
 ### Cover
 
-![Educate Online cover](./iPad%20Mini%20Educate%20new.png)
+![Educate Online cover](./media/iPad%20Mini%20Educate%20new.png)
 
 ---
 
 ### Main Interface
 
-![Educate Online main interface](./iMac%2024%20incheducate-unlinie-2.png)
+![Educate Online main interface](./media/iMac%2024%20incheducate-unlinie-2.png)
 
 ---
 
 ### Passing the Test
 
-![Educate Online passing the test](./interface_passing_the_test.png)
+![Educate Online passing the test](./media/interface_passing_the_test.png)
 
 ---
 
 ### Test Flow
 
-![Educate Online test flow](./interface_working_passthrough.gif)
+![Educate Online test flow](./media/interface_working_passthrough.gif)
 
 ---
 
 ### Results View
 
-![Educate Online results view](./interface_results.png)
+![Educate Online results view](./media/interface_results.png)
 
 ---
 
 ### Onboarding Flow
 
-![Educate Online onboarding](./interface_onboarding.png)
+![Educate Online onboarding](./media/interface_onboarding.png)
 
 ---
 
 ### Team Interface
 
-![Educate Online team interface](./interface_myteam.png)
+![Educate Online team interface](./media/interface_myteam.png)
 
 ---
 
 ### Admin Interface
 
-![Educate Online admin interface](./interface_admin.png)
+![Educate Online admin interface](./media/interface_admin.png)
 
 ---
 
 ### Additional Images
 
-- [Passing the test - variant](./interface_passing_the_test2.png)
-- [Educate Online 1 cover](./Educate%20Online%201cover.png)
-- [Educate Online 1](./Educate%20Online%201.png)
-- [Educate Online 2](./Educate%20Online%202.png)
-- [Educate Online 3](./Educate%20Online%203.png)
-- [Educate Online 4](./Educate%20Online%204.png)
-- [Educate Online 5](./Educate%20Online%205.png)
-- [Educate Online 6](./Educate%20Online%206.png)
-- [Educate Online mockup](./Educate%20Online%20Mockup.png)
-- [iMac mockup 1](./iMac%2024%20incheducate-unlinie.png)
-- [iMac mockup 2](./iMac%2024%20incheducate-unlinie-1.png)
-- [iMac mockup 3](./iMac%2024%20incheducate-unlinie-3.png)
-- [iPad mockup - current](./iPad%20Mini%20Educate%20new.png)
-- [iPad mockup - old interface](./iPad%20Mini%20eduonline.png)
+- [Passing the test - variant](./media/interface_passing_the_test2.png)
+- [Educate Online 1 cover](./media/Educate%20Online%201cover.png)
+- [Educate Online 1](./media/Educate%20Online%201.png)
+- [Educate Online 2](./media/Educate%20Online%202.png)
+- [Educate Online 3](./media/Educate%20Online%203.png)
+- [Educate Online 4](./media/Educate%20Online%204.png)
+- [Educate Online 5](./media/Educate%20Online%205.png)
+- [Educate Online 6](./media/Educate%20Online%206.png)
+- [Educate Online mockup](./media/Educate%20Online%20Mockup.png)
+- [iMac mockup 1](./media/iMac%2024%20incheducate-unlinie.png)
+- [iMac mockup 2](./media/iMac%2024%20incheducate-unlinie-1.png)
+- [iMac mockup 3](./media/iMac%2024%20incheducate-unlinie-3.png)
+- [iPad mockup - current](./media/iPad%20Mini%20Educate%20new.png)
+- [iPad mockup - old interface](./media/iPad%20Mini%20eduonline.png)

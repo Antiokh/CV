@@ -90,30 +90,30 @@ This project demonstrates how early generative-AI workflows can be used producti
 
 ### Desktop View
 
-![Flower Shop desktop view](./MacBook%20Pro%2016.png)
+![Flower Shop desktop view](./media/MacBook%20Pro%2016.png)
 
 ---
 
 ### Tablet View
 
-![Flower Shop tablet view](./iPad%20Mini.png)
+![Flower Shop tablet view](./media/iPad%20Mini.png)
 
 ---
 
 ### UI Kit
 
-![Flower Shop UI Kit](./UI%20Kit.png)
+![Flower Shop UI Kit](./media/UI%20Kit.png)
 
 ---
 
 ### Additional Landing Frames
 
-- [Slice 1](./Slice%201flowershop.png)
-- [Slice 2](./Slice%202flowershop.png)
-- [Slice 3](./Slice%203flowershop.png)
-- [Slice 4](./Slice%204flowershop.png)
-- [Slice 5](./Slice%205flowershop.png)
-- [Slice 6](./Slice%206flowershop.png)
-- [Slice 7](./Slice%207flowershop.png)
-- [Slice 8](./Slice%208flowershop.png)
-- [Slice 9](./Slice%209flowershop.png)
+- [Slice 1](./media/Slice%201flowershop.png)
+- [Slice 2](./media/Slice%202flowershop.png)
+- [Slice 3](./media/Slice%203flowershop.png)
+- [Slice 4](./media/Slice%204flowershop.png)
+- [Slice 5](./media/Slice%205flowershop.png)
+- [Slice 6](./media/Slice%206flowershop.png)
+- [Slice 7](./media/Slice%207flowershop.png)
+- [Slice 8](./media/Slice%208flowershop.png)
+- [Slice 9](./media/Slice%209flowershop.png)

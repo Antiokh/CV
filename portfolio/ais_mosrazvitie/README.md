@@ -156,24 +156,24 @@ This case study is based on project documentation, resume context, and implement
 
 ### Cover Mockup
 
-![AIS MosRazvitie cover](./cover_mockup.png)
+![AIS MosRazvitie cover](./media/cover_mockup.png)
 
 ---
 
 ### Main Interface
 
-![AIS MosRazvitie interface](./interface.png)
+![AIS MosRazvitie interface](./media/interface.png)
 
 ---
 
 ### Interactive Map
 
-![AIS MosRazvitie map of libraries](./map_of_libraries.png)
+![AIS MosRazvitie map of libraries](./media/map_of_libraries.png)
 
 ---
 
 ### Additional Views
 
-- [Desktop mockup](./MacBook%20Pro%2016-ais.png)
-- [iPhone mockup 1](./AIS-iPhone%2012%20Pro.png)
-- [iPhone mockup 2](./iPhone%2012%20Pro-ais.png)
+- [Desktop mockup](./media/MacBook%20Pro%2016-ais.png)
+- [iPhone mockup 1](./media/AIS-iPhone%2012%20Pro.png)
+- [iPhone mockup 2](./media/iPhone%2012%20Pro-ais.png)

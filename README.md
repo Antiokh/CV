@@ -156,6 +156,15 @@ Started coding in **2005**, professional experience since **2008**
 
 ## SELECTED PROJECTS
 
+Detailed portfolio case studies: [Portfolio Index](./portfolio/README.md)
+
+Highlighted case studies:
+- [MetaFox Strengths Explorer](./portfolio/metafox_strengths_explorer/README.md)
+- [Exit Lead](./portfolio/exit_lead/README.md)
+- [AIS MosRazvitie](./portfolio/ais_mosrazvitie/README.md)
+- [PromptlessPress](./portfolio/promptlesspress/README.md)
+- [Vencer Autismo](./portfolio/vencer_autismo/README.md)
+
 ### **Automation & Digital Transformation**
 - CRM / ERP systems
 - business process automation

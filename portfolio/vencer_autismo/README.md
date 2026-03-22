@@ -113,4 +113,4 @@ This project demonstrates the ability to build an assessment product as a real p
 
 ### Main Product View
 
-![Vencer Autismo main view](./vencer.png)
+![Vencer Autismo main view](./media/vencer.png)

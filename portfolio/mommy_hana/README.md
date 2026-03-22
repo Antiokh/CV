@@ -101,22 +101,22 @@ This case demonstrates the ability to build non-trivial business logic systems w
 
 ### Main Mockup
 
-![MommyHana mockup](./mommyhana-mockup.png)
+![MommyHana mockup](./media/mommyhana-mockup.png)
 
 ---
 
 ### Dashboard
 
-![MommyHana dashboard](./dashboard.png)
+![MommyHana dashboard](./media/dashboard.png)
 
 ---
 
 ### Interface Demo
 
-![MommyHana interface](./interface.gif)
+![MommyHana interface](./media/interface.gif)
 
 ---
 
 ### Video Demo
 
-- [Demo video](./demo.webm)
+- [Demo video](./media/demo.webm)

@@ -106,7 +106,7 @@ This project demonstrates the ability to turn a simple-looking business request 
 
 ## Additional Notes
 
-- Supporting PDFs: [QR Cloud 1](./QR%20Cloud%201.pdf), [QR Cloud 2](./QR%20Cloud%202.pdf), [QR Cloud 3](./QR%20Cloud%203.pdf)
+- Supporting PDFs: [QR Cloud 1](./media/QR%20Cloud%201.pdf), [QR Cloud 2](./media/QR%20Cloud%202.pdf), [QR Cloud 3](./media/QR%20Cloud%203.pdf)
 - Upwork portfolio reference: https://www.upwork.com/freelancers/antiokh?p=1687090792171257856
 
 ---
@@ -115,15 +115,15 @@ This project demonstrates the ability to turn a simple-looking business request 
 
 ### Mobile Preview
 
-![QR Cloud mobile view](./iPhone%2013%20Pro%20qrcloud.png)
+![QR Cloud mobile view](./media/iPhone%2013%20Pro%20qrcloud.png)
 
 ---
 
 ### Additional Images
 
-- [Slice 2](./Slice%202.png)
-- [Slice 2-1](./Slice%202-1.png)
-- [Slice 2-2](./Slice%202-2.png)
-- [Slice 3](./Slice%203.png)
-- [Slice 4](./Slice%204.png)
-- [Slice 4-1](./Slice%204-1.png)
+- [Slice 2](./media/Slice%202.png)
+- [Slice 2-1](./media/Slice%202-1.png)
+- [Slice 2-2](./media/Slice%202-2.png)
+- [Slice 3](./media/Slice%203.png)
+- [Slice 4](./media/Slice%204.png)
+- [Slice 4-1](./media/Slice%204-1.png)

@@ -81,8 +81,8 @@ This case shows that even a small landing page can become portfolio-worthy when 
 ## Additional Notes
 
 - Upwork portfolio reference: https://www.upwork.com/freelancers/antiokh?p=1767665454036197376
-- Demo video: [demo.webm](./demo.webm)
-- Mobile demo video: [demo_mobile.webm](./demo_mobile.webm)
+- Demo video: [demo.webm](./media/demo.webm)
+- Mobile demo video: [demo_mobile.webm](./media/demo_mobile.webm)
 
 ---
 
@@ -90,4 +90,4 @@ This case shows that even a small landing page can become portfolio-worthy when 
 
 ### Main View
 
-![MakeMeLook main view](./MakeMeLook.png)
+![MakeMeLook main view](./media/MakeMeLook.png)

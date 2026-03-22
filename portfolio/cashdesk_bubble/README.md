@@ -114,33 +114,33 @@ This project demonstrates the ability to redesign a business-critical internal t
 
 ### New Main Screen
 
-![Cashdesk dashboard](./dashboard.png)
+![Cashdesk dashboard](./media/dashboard.png)
 
 ---
 
 ### Transaction View
 
-![Cashdesk transactions view](./transactions.png)
+![Cashdesk transactions view](./media/transactions.png)
 
 ---
 
 ### Legacy Reference System
 
-![Cashdesk old system reference](./reference_system_old.png)
+![Cashdesk old system reference](./media/reference_system_old.png)
 
 ---
 
 ### Large-Screen View
 
-![Cashdesk large-screen view](./iMac%2024%20inch%20cashdesk.png)
+![Cashdesk large-screen view](./media/iMac%2024%20inch%20cashdesk.png)
 
 ---
 
 ### Additional Images
 
-- [Cashdesk 1](./Cashdesk%201.png)
-- [Cashdesk 2](./Cashdesk%202.png)
-- [Cashdesk 3](./Cashdesk%203.png)
-- [Cashdesk 4](./Cashdesk%204.png)
-- [Cashdesk 5](./Cashdesk%205.png)
-- [Alternative iMac mockup](./iMac%2024%20inchcashdesk.png)
+- [Cashdesk 1](./media/Cashdesk%201.png)
+- [Cashdesk 2](./media/Cashdesk%202.png)
+- [Cashdesk 3](./media/Cashdesk%203.png)
+- [Cashdesk 4](./media/Cashdesk%204.png)
+- [Cashdesk 5](./media/Cashdesk%205.png)
+- [Alternative iMac mockup](./media/iMac%2024%20inchcashdesk.png)

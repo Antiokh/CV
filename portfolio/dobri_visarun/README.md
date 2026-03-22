@@ -113,19 +113,19 @@ This project shows how low-code automation and product thinking can unlock major
 
 ### Cover
 
-![Dobri Visarun cover](./Dobri%20Visarun%20Cover.png)
+![Dobri Visarun cover](./media/Dobri%20Visarun%20Cover.png)
 
 ---
 
 ### Mobile View
 
-![Dobri Visarun mobile view](./dobri%20-%20Galaxy%20S21%20Ultra.png)
+![Dobri Visarun mobile view](./media/dobri%20-%20Galaxy%20S21%20Ultra.png)
 
 ---
 
 ### Additional Images
 
-- [Dobri Visarun 1](./Dobri%20Visarun%201.png)
-- [Dobri Visarun 2](./Dobri%20Visarun%202.png)
-- [Dobri Visarun 3](./Dobri%20Visarun%203.png)
-- [Dobri Visarun 4](./Dobri%20Visarun%204.png)
+- [Dobri Visarun 1](./media/Dobri%20Visarun%201.png)
+- [Dobri Visarun 2](./media/Dobri%20Visarun%202.png)
+- [Dobri Visarun 3](./media/Dobri%20Visarun%203.png)
+- [Dobri Visarun 4](./media/Dobri%20Visarun%204.png)

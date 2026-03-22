@@ -92,16 +92,16 @@ This case shows the ability to contribute to a SaaS frontend through system-leve
 
 ### Dashboard View
 
-![Sefcast dashboard](./msedge_VbXYW7Vixi.png)
+![Sefcast dashboard](./media/msedge_VbXYW7Vixi.png)
 
 ---
 
 ### SEO Goal Builder
 
-![Sefcast SEO goal builder](./msedge_YAGJlHbTiJ.png)
+![Sefcast SEO goal builder](./media/msedge_YAGJlHbTiJ.png)
 
 ---
 
 ### Profile / Account View
 
-![Sefcast profile view](./msedge_9khFT9M1le.png)
+![Sefcast profile view](./media/msedge_9khFT9M1le.png)

@@ -90,25 +90,25 @@ This project demonstrates early hands-on exploration of generative AI in a produ
 
 ### Desktop Landing View
 
-![Space AI Demo desktop view](./MacBook%20Pro%2016-spaceai.png)
+![Space AI Demo desktop view](./media/MacBook%20Pro%2016-spaceai.png)
 
 ---
 
 ### Mobile / Tablet View
 
-![Space AI Demo tablet view](./iPad%20Mini-spaceai.png)
+![Space AI Demo tablet view](./media/iPad%20Mini-spaceai.png)
 
 ---
 
 ### Full Landing Sequence
 
-- [Landing frame 1](./landing_frame1.png)
-- [Landing frame 2](./landing_frame2.png)
-- [Landing frame 3](./landing_frame3.png)
-- [Landing frame 4](./landing_frame4.png)
-- [Landing frame 5](./landing_frame5.png)
-- [Landing frame 6](./landing_frame6.png)
-- [Landing frame 7](./landing_frame7.png)
-- [Slide menu](./slide_menu.png)
-- [iPad variant 1](./iPad%20Minispaceai.png)
-- [iPad variant 2](./iPad%20Minispaceai2.png)
+- [Landing frame 1](./media/landing_frame1.png)
+- [Landing frame 2](./media/landing_frame2.png)
+- [Landing frame 3](./media/landing_frame3.png)
+- [Landing frame 4](./media/landing_frame4.png)
+- [Landing frame 5](./media/landing_frame5.png)
+- [Landing frame 6](./media/landing_frame6.png)
+- [Landing frame 7](./media/landing_frame7.png)
+- [Slide menu](./media/slide_menu.png)
+- [iPad variant 1](./media/iPad%20Minispaceai.png)
+- [iPad variant 2](./media/iPad%20Minispaceai2.png)

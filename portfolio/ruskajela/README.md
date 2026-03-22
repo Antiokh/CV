@@ -91,21 +91,21 @@ This project demonstrates product initiative, niche-market experimentation, and 
 
 ### Desktop View
 
-![RuskaJela desktop view](./MacBook%20Pro%2016ruskajela.png)
+![RuskaJela desktop view](./media/MacBook%20Pro%2016ruskajela.png)
 
 ---
 
 ### Mobile View
 
-![RuskaJela mobile view](./iPhone%2013%20Pro-ruskajela.png)
+![RuskaJela mobile view](./media/iPhone%2013%20Pro-ruskajela.png)
 
 ---
 
 ### Additional Interface Views
 
-- [Interface 1](./interface_1.png)
-- [Interface 2](./interface_2.png)
-- [Interface 3](./interface_3.png)
-- [Interface 4](./interface_4.png)
-- [Interface 5](./interface_5.png)
-- [Interface 6](./interface_6.png)
+- [Interface 1](./media/interface_1.png)
+- [Interface 2](./media/interface_2.png)
+- [Interface 3](./media/interface_3.png)
+- [Interface 4](./media/interface_4.png)
+- [Interface 5](./media/interface_5.png)
+- [Interface 6](./media/interface_6.png)

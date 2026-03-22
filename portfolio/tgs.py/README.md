@@ -120,16 +120,16 @@ This project demonstrates the ability to turn a utility script into a real tooli
 
 ### CLI Workflow
 
-![tgs.py CLI](./cli.png)
+![tgs.py CLI](./media/cli.png)
 
 ---
 
 ### Database / Export View
 
-![tgs.py database view](./database.png)
+![tgs.py database view](./media/database.png)
 
 ---
 
 ### GUI Preview
 
-![tgs.py GUI](./tgs_gui.png)
+![tgs.py GUI](./media/tgs_gui.png)

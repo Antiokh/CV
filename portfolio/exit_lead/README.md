@@ -110,7 +110,7 @@ This project demonstrates the ability to design and build a multi-surface operat
 ## Additional Notes
 
 - Demo video: https://www.youtube.com/watch?v=3sFy9YI7p20
-- Local demo file: [Desktop5-22-202411-26-24PM-ezgif.com-gif-maker.webm](./Desktop5-22-202411-26-24PM-ezgif.com-gif-maker.webm)
+- Local demo file: [Desktop5-22-202411-26-24PM-ezgif.com-gif-maker.webm](./media/Desktop5-22-202411-26-24PM-ezgif.com-gif-maker.webm)
 
 ---
 
@@ -118,26 +118,26 @@ This project demonstrates the ability to design and build a multi-surface operat
 
 ### Client Portal
 
-![Exit Lead client portal map](./client_interface_dark_map.png)
+![Exit Lead client portal map](./media/client_interface_dark_map.png)
 
 ---
 
 ### Internal Interface
 
-![Exit Lead interface](./exit%20lead.png)
+![Exit Lead interface](./media/exit%20lead.png)
 
 ---
 
 ### Automation
 
-![Exit Lead automation workflow](./n8n_screenshot.JPG)
+![Exit Lead automation workflow](./media/n8n_screenshot.JPG)
 
 ---
 
 ### Additional Client Views
 
-- [Client interface - objects](./client_interface_dark_objects.png)
-- [Client interface - apartments](./client_interface_dark_apts.png)
-- [Client interface - inspections](./client_interface_dark_inspections.png)
-- [Client interface - light theme](./client_interface_light.png)
-- [Client interface - desktop mockup](./ExitLead%20MacBook%20Pro%2016.png)
+- [Client interface - objects](./media/client_interface_dark_objects.png)
+- [Client interface - apartments](./media/client_interface_dark_apts.png)
+- [Client interface - inspections](./media/client_interface_dark_inspections.png)
+- [Client interface - light theme](./media/client_interface_light.png)
+- [Client interface - desktop mockup](./media/ExitLead%20MacBook%20Pro%2016.png)

@@ -116,18 +116,18 @@ This project demonstrates how a low-code platform can become more than a catalog
 
 ### Cover
 
-![Dobri Tours cover](./Dobri%20Tours%20Cover.png)
+![Dobri Tours cover](./media/Dobri%20Tours%20Cover.png)
 
 ---
 
 ### Main View
 
-![Dobri Tours main view](./Dobri%20Tours%201.png)
+![Dobri Tours main view](./media/Dobri%20Tours%201.png)
 
 ---
 
 ### Additional Images
 
-- [Dobri Tours 2](./Dobri%20Tours%202.png)
-- [Dobri Tours 3](./Dobri%20Tours%203.png)
-- [Dobri Tours 4](./Dobri%20Tours%204.png)
+- [Dobri Tours 2](./media/Dobri%20Tours%202.png)
+- [Dobri Tours 3](./media/Dobri%20Tours%203.png)
+- [Dobri Tours 4](./media/Dobri%20Tours%204.png)

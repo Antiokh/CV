@@ -103,23 +103,23 @@ This project demonstrates how to build a structured product system on top of pro
 
 ### Landing Page
 
-![PromptlessPress landing page](./landing.png)
+![PromptlessPress landing page](./media/landing.png)
 
 ---
 
 ### Generation Workflow
 
-![PromptlessPress generation workflow](./fullpage_generation_mockups_1.png)
+![PromptlessPress generation workflow](./media/fullpage_generation_mockups_1.png)
 
 ---
 
 ### Additional Images
 
-- [Landing page](./landing.png)
-- [Generation workflow - full page 1](./fullpage_generation_mockups_1.png)
-- [Generation workflow - full page 2](./fullpage_generation_mockups_2.png)
-- [Planner example](./planner_example.webp)
-- [Planner mockup 1](./planner_mockup_1.png)
-- [Planner mockup 2](./planner_mockup_2.png)
-- [Planner mockup 3](./planner_mockup_3.png)
-- [Postcard example](./postcard_example.png)
+- [Landing page](./media/landing.png)
+- [Generation workflow - full page 1](./media/fullpage_generation_mockups_1.png)
+- [Generation workflow - full page 2](./media/fullpage_generation_mockups_2.png)
+- [Planner example](./media/planner_example.webp)
+- [Planner mockup 1](./media/planner_mockup_1.png)
+- [Planner mockup 2](./media/planner_mockup_2.png)
+- [Planner mockup 3](./media/planner_mockup_3.png)
+- [Postcard example](./media/postcard_example.png)
