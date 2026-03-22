@@ -1,8 +1,15 @@
-# Anton Nazarov — Full Professional Experience (Detailed English Version)
+# Anton Nazarov - Full Professional Experience
 
 This document is a consolidated English-language version of Anton Nazarov's full professional experience, based on the repository CV, portfolio case studies, long-form source materials, and expanded resume files.
 
 It is intentionally more detailed than a standard CV. The goal is to preserve breadth, context, responsibilities, representative achievements, and recurring patterns across roles.
+
+It is designed to work as a source document for:
+- long-form executive profiles
+- tailored resumes
+- recruiter and hiring-manager conversations
+- cover letters and application answers
+- profile rewriting for public platforms
 
 ## Professional Profile
 
