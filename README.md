@@ -4,6 +4,7 @@
 Location: Belgrade, Serbia  
 Email: lordzlis@gmail.com  
 Phone: +381 62 979 5315  
+Telegram: @antiokh  
 LinkedIn: https://www.linkedin.com/in/nazarovanton/  
 
 ---
@@ -255,6 +256,7 @@ Highlighted case studies:
 
 ## ADDITIONAL
 
+- Work authorization: Serbian sole proprietor (preduzetnik)
 - Experience organizing events up to **10,000+ participants**
 - Strong cross-domain thinking across IT, business, marketing, and operations
 - Built both public-facing products and internal systems for real operational use
