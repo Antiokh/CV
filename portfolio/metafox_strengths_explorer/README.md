@@ -10,6 +10,12 @@ The core challenge of the project was translating an evolving psychometric metho
 
 ---
 
+## My Role
+
+Developer, Project Manager
+
+---
+
 ## What the System Does
 
 - Run structured self-assessment sessions
@@ -110,8 +116,34 @@ Detailed internal case study: [metafox_strengths_explorer_case_study.md](./metaf
 
 Public product reference: https://metafox.eu/en-us/products/strengths-explorer-app-online-assessment-for-strengths-coaching
 
+Upwork portfolio reference: https://www.upwork.com/freelancers/antiokh?p=1980790662367457280
+
+Demo video: https://www.youtube.com/watch?v=Sz4BfwE8WTE
+
+Sample generated report: [Anton Nazarov MetaFox Strengths Explorer 2026 PDF](../../anton_nazarov_metaFox_Strengths_Explorer_2026.pdf)
+
 ---
 
 ## Screenshots
 
-_Add screenshots here_
+### Main Interface
+
+![MetaFox main interface](./media/main.png)
+
+---
+
+### Assessment Flow
+
+![MetaFox assessment flow](./media/passing.png)
+
+---
+
+### Results View
+
+![MetaFox results view](./media/results.png)
+
+---
+
+### Report Example
+
+![MetaFox report example](./media/report.png)
