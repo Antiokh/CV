@@ -129,6 +129,12 @@ Local demo video: [demo.mp4](./media/demo.mp4)
 
 ---
 
+### Standalone Interface
+
+![Andronyevskaya ERP standalone interface](./media/interface_standalone.png)
+
+---
+
 ### Demo
 
 Open the local demo file: [demo.mp4](./media/demo.mp4)
