@@ -49,17 +49,18 @@ Based on professional experience and strengths assessment:
 
 Detailed personality and strengths reference: [Metafox Strengths Report](./details/Metafox_Strengths_Report.md)
 
-- **Visionary** - able to define and communicate long-term technical direction
-- **Analyst** - strong ability to break down complex systems and decisions
-- **Pragmatist** - focused on real-world results over theory
-- **Motivator** - able to create momentum and keep teams moving
-- **Guardian** - high integrity, ownership, and responsibility
+- **Communicator** - creates shared understanding through clear summaries, precise wording, and aligned interpretation
+- **Examiner** - verifies assumptions, catches inconsistencies, and spots risks early
+- **Inventor** - generates original solutions, connects ideas, and experiments with new approaches
+- **Learner** - improves quickly through feedback, reflection, and repeated practice
+- **Decision Maker** - brings clarity by choosing direction, naming tradeoffs, and closing open loops
 
 These strengths translate into:
-- strategic decision-making under uncertainty
-- system-level thinking
-- leadership through influence, not bureaucracy
-- balancing innovation with execution
+- structured communication in complex technical and business environments
+- system-level analysis with strong quality control
+- fast learning and adaptation in changing product contexts
+- invention balanced by practical decision-making
+- leadership through clarity, influence, and follow-through
 
 ---
 
