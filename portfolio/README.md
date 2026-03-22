@@ -10,6 +10,7 @@ Each project lives in its own folder and should contain:
 - optional supporting files such as detailed notes, screenshots, links, or internal drafts
 
 Formatting rules for project descriptions: [CASE_STUDY_FORMAT.md](./CASE_STUDY_FORMAT.md)
+Workflow for adding new cases: [NEW_PROJECT_WORKFLOW.md](./NEW_PROJECT_WORKFLOW.md)
 
 ## Project Listing
 
