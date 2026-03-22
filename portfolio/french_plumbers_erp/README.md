@@ -77,8 +77,24 @@ This project demonstrates full-stack delivery of an internal business system in 
 
 Upwork portfolio reference: https://www.upwork.com/freelancers/antiokh?p=1796176807847473152
 
+Local demo video: [demo.mp4](./media/demo.mp4)
+
 ---
 
 ## Screenshots
 
-_Add screenshots here_
+### Main Interface
+
+![French Plumbers ERP interface](./media/interface.png)
+
+---
+
+### File Manager
+
+![French Plumbers ERP file manager](./media/file_manager.png)
+
+---
+
+### Demo
+
+Open the local demo file: [demo.mp4](./media/demo.mp4)
