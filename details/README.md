@@ -8,5 +8,6 @@ This folder contains long-form and supporting profile materials that are useful 
 - [AI Profile Suggestions](./AI_PROFILE_SUGGESTIONS.md)
 - [Application Workflow](./APPLICATION_WORKFLOW.md)
 - [Application Agent Guide](./APPLICATION_AGENT_GUIDE.md)
+- [Job Targeting Guide](./JOB_TARGETING_GUIDE.md)
 - [Metafox Strengths Report](./Metafox_Strengths_Report.md)
 - [Comprehensive Psychological & Career Profile](./Comprehensive_Psychological_&_Career_Profile.md)
