@@ -2,9 +2,9 @@
 
 ## Overview
 
-Vencer Autismo is a web application for recurring user assessments and personalized recommendations based on test results.
+Vencer Autismo is a web application for child assessment and parental recommendations based on recurring test results.
 
-The product combines structured testing, weighted scoring, result normalization, visual analytics, recommendation logic, and repeat-session tracking. In practice, this makes it closer to an early-stage assessment SaaS product than to a simple site with a questionnaire.
+The product combines structured testing, weighted scoring, result normalization, visual analytics, recommendation logic, and repeat-session tracking. It is built to help parents or guardians evaluate a child's development and receive practical, personalized guidance based on the assessment output. In practice, this makes it closer to an early-stage assessment SaaS product than to a simple site with a questionnaire.
 
 The main idea of the system is a recurring loop: complete an assessment, receive recommendations, return after two weeks, and compare progress over time.
 
@@ -16,7 +16,7 @@ The main idea of the system is a recurring loop: complete an assessment, receive
 - Calculate weighted scores across multiple scales
 - Normalize results for more meaningful comparison
 - Visualize outcomes through radar charts and history views
-- Generate personalized recommendations linked to content
+- Generate personalized recommendations for parents linked to content
 - Store user profiles and child-related profile data
 - Support repeat testing every two weeks
 - Provide admin tools for managing assessment logic and content
@@ -46,7 +46,7 @@ Results are presented through radar charts, historical views, and normalized dat
 ---
 
 ### Personalized Recommendation System
-Recommendations are mapped to score ranges and linked to content such as articles or videos, creating a structured path from assessment to action.
+Recommendations are mapped to score ranges and linked to content such as articles or videos, creating a structured path from child assessment to practical parental guidance.
 
 ---
 
@@ -59,7 +59,10 @@ Admins can manage test structure, questions, scales, normalization logic, and re
 
 - **Frontend:** WeWeb
 - **Backend:** Supabase
-- **Integrations:** Airtable-compatible CMS workflows, email-system integration, data export
+- **Charts / Analytics:** Chart.js
+- **Data Layer:** PostgreSQL / PostgreSQL programming
+- **Auth / Integrations:** OAuth, Airtable-compatible CMS workflows, email-system integration, data export
+- **Skills Involved:** API integration, frontend development, UX/UI, responsive web application design
 
 ---
 
@@ -89,13 +92,20 @@ Because test structure and recommendation rules are part of the product itself, 
 
 A full-stack assessment and recommendation platform with recurring user sessions, weighted scoring, personalized content delivery, and progress tracking over time.
 
-The product created a reusable lifecycle instead of a one-off test flow, making it suitable for retention-oriented assessment use cases.
+The product created a reusable lifecycle instead of a one-off test flow, making it suitable for retention-oriented assessment use cases and ongoing parental support.
 
 ---
 
 ## Key Takeaway
 
 This project demonstrates the ability to build an assessment product as a real platform: structured data collection, scoring logic, analytics, content-based recommendations, repeat engagement, and admin-controlled product logic.
+
+---
+
+## Additional Notes
+
+- Upwork portfolio reference: https://www.upwork.com/freelancers/antiokh?p=1767683624413745152
+- Demo video: https://www.youtube.com/watch?v=z4UduwmOTRA
 
 ---
 
