@@ -66,7 +66,7 @@ Because the product itself was a simple landing page, the main challenge was to 
 
 ## Result
 
-A simple but distinctive landing page built around an interaction gimmick that made the browsing experience stand out.
+A simple but distinctive landing page built around an interaction hook that made the browsing experience stand out.
 
 The project demonstrates comfort with Webflow and an ability to use motion as the main differentiator in a lightweight promotional site.
 
@@ -83,6 +83,7 @@ This case shows that even a small landing page can become portfolio-worthy when 
 - Upwork portfolio reference: https://www.upwork.com/freelancers/antiokh?p=1767665454036197376
 - Demo video: [demo.webm](./media/demo.webm)
 - Mobile demo video: [demo_mobile.webm](./media/demo_mobile.webm)
+- The live site was later modified by the client, so the original anchor-scroll behavior is no longer fully represented there.
 
 ---
 

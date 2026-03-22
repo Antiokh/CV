@@ -4,7 +4,7 @@
 
 Business Directory was a Glide-based local discovery product built for finding nearby businesses and services in Belgrade.
 
-The core idea was to prioritize business location over generic service-category browsing. Instead of asking only “who provides this service,” the product was designed to answer “what relevant business is close to me right now.” This made it especially useful for local independent business owners and small operators.
+The core idea was to prioritize business location over generic service-category browsing. Instead of asking only "who provides this service," the product was designed to answer "what relevant business is close to me right now." This made it especially useful for local independent business owners and small operators.
 
 The project focused on hyperlocal usability, geolocation, and fast practical discovery rather than on broad marketplace complexity.
 
@@ -42,6 +42,11 @@ The target audience leaned toward small and independent business owners, giving 
 
 ---
 
+### Practical Discovery Layer
+The value of the product was not in marketplace complexity, but in making nearby useful businesses easier to discover in real situations where location matters more than a long service taxonomy.
+
+---
+
 ## Tech Stack
 
 - **Platform:** Glide
@@ -70,13 +75,13 @@ To be useful for independent operators, the product needed to feel practical and
 
 A working local-directory concept for Belgrade that used geolocation to make nearby business discovery more practical and context-aware.
 
-The project demonstrates a product approach focused on proximity, local relevance, and lightweight execution for small-business discovery.
+The project demonstrates a product approach focused on proximity, local relevance, and lightweight execution for small-business discovery rather than broad catalog complexity.
 
 ---
 
 ## Key Takeaway
 
-This case shows how a simple local-directory idea can become more useful when the product is structured around location and real-world proximity instead of generic category browsing alone.
+This case shows how a simple local-directory idea can become more useful when the product is structured around location, nearby relevance, and immediate utility instead of generic category browsing alone.
 
 ---
 

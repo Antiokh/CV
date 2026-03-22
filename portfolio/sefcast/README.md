@@ -47,6 +47,11 @@ The interface was clearly intended to work as a full application shell rather th
 
 ---
 
+### Frontend System Contribution
+This was not page-by-page styling work. The value was in building reusable product surfaces that could support dashboards, builders, navigation patterns, and account areas inside one coherent SaaS frontend.
+
+---
+
 ## Tech Stack
 
 - **Frontend:** WeWeb
@@ -78,13 +83,13 @@ For SaaS analytics tools, interface quality strongly affects perceived product m
 
 A structured frontend layer for an SEO analytics platform, with custom components and a reusable UI Kit supporting the main product workflows.
 
-The project demonstrates frontend work at the product-system level rather than isolated page implementation.
+The project demonstrates frontend work at the product-system level rather than isolated page implementation, which matters more in a multi-screen analytics product.
 
 ---
 
 ## Key Takeaway
 
-This case shows the ability to contribute to a SaaS frontend through system-level UI work: reusable components, visual consistency, and support for more complex product interactions such as dashboards and goal-building workflows.
+This case shows the ability to contribute to a SaaS frontend through system-level UI work: reusable components, visual consistency, and support for more complex product interactions such as dashboards and goal-building workflows inside an existing product architecture.
 
 ---
 

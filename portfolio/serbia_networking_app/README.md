@@ -54,6 +54,11 @@ The platform is connected to a Telegram channel that announces new events, helpi
 
 ---
 
+### Before / During / After Event Continuity
+The product was useful because it connected the whole networking cycle: discovering events beforehand, joining and identifying yourself during the process, and reviewing contacts afterward.
+
+---
+
 ## Tech Stack
 
 - **Platform:** Glide
@@ -83,7 +88,7 @@ For local communities, the product had to stay simple and mobile-friendly so use
 
 A functioning networking app that made local events easier to discover, join, and follow up on.
 
-The product combined event visibility, participant onboarding, virtual business cards, and Telegram-based community updates into a single networking workflow.
+The product combined event visibility, participant onboarding, virtual business cards, and Telegram-based community updates into a single networking workflow instead of leaving those steps fragmented across chats and memory.
 
 ---
 

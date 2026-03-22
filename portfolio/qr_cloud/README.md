@@ -106,7 +106,6 @@ This project demonstrates the ability to turn a simple-looking business request 
 
 ## Additional Notes
 
-- Supporting PDFs: [QR Cloud 1](./media/QR%20Cloud%201.pdf), [QR Cloud 2](./media/QR%20Cloud%202.pdf), [QR Cloud 3](./media/QR%20Cloud%203.pdf)
 - Upwork portfolio reference: https://www.upwork.com/freelancers/antiokh?p=1687090792171257856
 
 ---

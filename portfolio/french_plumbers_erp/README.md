@@ -6,6 +6,8 @@ This project was an ERP system for a French plumbing business, built with WeWeb 
 
 The product was positioned as an internal operational platform rather than a public-facing website, with the goal of supporting business workflows in a more structured and scalable way.
 
+Even with limited public detail, the visible product surfaces show that this was an operational system for a trade-services company: interface-heavy, workflow-oriented, and centered on internal execution rather than presentation.
+
 ---
 
 ## My Role
@@ -40,6 +42,11 @@ Part of the value in the project was translating product and interface design in
 
 ---
 
+### Operational Interface Surface
+The system includes more than a dashboard shell. The interface and file-management views indicate a product used to support day-to-day internal operations, documentation, and structured task handling.
+
+---
+
 ## Tech Stack
 
 - **Frontend:** WeWeb
@@ -65,11 +72,13 @@ The project required moving from interface design into a usable operational prod
 
 A working ERP-oriented product foundation for a French plumbing business, built with WeWeb and Supabase as a practical internal system rather than a superficial prototype.
 
+The project shows the ability to turn an operational need in a traditional service business into a structured digital workspace with both backend discipline and usable frontend surfaces.
+
 ---
 
 ## Key Takeaway
 
-This project demonstrates full-stack delivery of an internal business system in a modern low-code stack, combining frontend execution, backend structure, and design-to-code implementation.
+This project demonstrates full-stack delivery of an internal business system in a modern low-code stack, combining frontend execution, backend structure, and design-to-code implementation for a real trade-services workflow.
 
 ---
 
