@@ -1,590 +1,576 @@
-# Антон Назаров — опыт работы (максимально подробно)
+# Anton Nazarov — Full Professional Experience (Detailed English Version)
 
-Собрано и консолидировано из загруженных версий резюме, презентаций и showcase-материалов без намеренного сокращения формулировок. Повторы сведены, но содержательные детали сохранены.
+This document is a consolidated English-language version of Anton Nazarov's full professional experience, based on the repository CV, portfolio case studies, long-form source materials, and expanded resume files.
 
----
+It is intentionally more detailed than a standard CV. The goal is to preserve breadth, context, responsibilities, representative achievements, and recurring patterns across roles.
 
-## Профессиональный профиль по опыту
+## Professional Profile
 
-Технический руководитель, системный архитектор, проектный менеджер и разработчик с опытом в стартапах, корпоративных и государственных структурах. Работал на стыке архитектуры, инфраструктуры, автоматизации, разработки, внедрения, управления командами, документации и организационных процессов. В ряде ролей совмещал функции CIO, CTO, Head of IT, Systems Architect, Product/Implementation Manager, ведущего разработчика и внутреннего консультанта.
+Anton Nazarov is a technology leader, systems architect, project manager, and hands-on builder with experience across startups, internal product teams, enterprise environments, and public-sector institutions. His work repeatedly sits at the intersection of architecture, product delivery, infrastructure, automation, implementation, documentation, and organizational change.
 
-Ключевые сквозные темы опыта:
-- проектирование и развитие информационных систем;
-- цифровая трансформация и автоматизация процессов;
-- управление ИТ-инфраструктурой и безопасностью;
-- внедрение ERP/CRM и внутренних платформ;
-- проектирование модульной архитектуры и интеграций;
-- работа с подрядчиками, стейкхолдерами и органами власти;
-- построение документации, регламентов и управляемых процессов;
-- обучение сотрудников, менторство и развитие команд.
+Across different stages of his career, he has operated in roles equivalent to:
+- CTO / Head of Engineering
+- Systems Architect / Solutions Architect
+- CIO / Head of IT
+- Technical Product Lead
+- Project / Implementation Manager
+- Senior Developer / Full-Stack Builder
+- Internal consultant and expert for cross-functional and government-level initiatives
 
----
+His strongest recurring pattern is turning fragmented workflows, weak tooling, and operational chaos into structured systems that organizations can actually run, maintain, and scale.
 
-## NeedleBit, автоматизация, сайты, мобильные приложения / rapid mobile development
-**Сербия**  
-**Ноябрь 2022 — настоящее время**  
-**Роли в разных версиях профиля:** Менеджер проекта / CIO / Founder / CTO / Systems Architect
+## Cross-Cutting Themes Throughout the Career
 
-### Основной фокус
-- Скоростная разработка современных мобильных и веб-приложений на основе Progressive Web Apps.
-- Построение решений, не зависящих от Google Play / Apple Store.
-- Автоматизация процессов на low-code платформах.
-- Интеграция каналов коммуникации и клиентских данных в единый контур.
-- Работа напрямую с владельцами бизнеса и фаундерами.
-- Определение технической стратегии и архитектуры продуктов.
-- Запуск и реструктуризация продуктов на стадиях роста и кризиса.
-- Финальная ответственность за архитектурные и технические решения и их последствия.
+The following themes consistently appear across Anton's work:
 
-### Что именно делал
-- Разрабатывал и продвигал концепцию PWA как альтернативы классическим мобильным приложениям.
-- Выстраивал решения, которые запускаются в мобильном браузере и устанавливаются на главный экран независимо от платформы, включая Windows.
-- Проектировал автоматизацию процессов на low-code стеке.
-- Интегрировал email, соцсети и CRM в единую систему.
-- Прорабатывал архитектуру клиентских систем и сценариев взаимодействия.
-- Работал на стыке продукта, архитектуры, бизнес-модели и клиентских задач.
-- Формировал техническую стратегию и логику масштабирования.
-- Выступал как основатель/технический лидер агентства/студии быстрой разработки.
+- designing and rebuilding information systems
+- digital transformation and process automation
+- technical strategy in operationally messy environments
+- combining architecture with direct implementation
+- documentation, regulations, and process formalization
+- infrastructure management and information security
+- ERP / CRM and internal platform implementation
+- modular architecture and integration design
+- stakeholder coordination across business, technical, and institutional layers
+- hiring, onboarding, mentoring, and team development
+- user training, webinars, and knowledge transfer
+- AI-assisted engineering and repository-level delivery discipline
 
-### Ценность и результаты, явно зафиксированные в материалах
-- Высокая скорость и низкая стоимость разработки.
-- Снижение временных и финансовых затрат клиентов на работу с клиентскими запросами.
-- Формирование единой точки работы с данными, вместо разрозненных чатов, соцсетей, почты и звонков.
-- Помощь бизнесу в удержании аудитории в собственном приложении, а не в шумной среде мессенджеров и соцсетей.
-- Запуск и сопровождение решений для малого бизнеса и сервисных кейсов.
+## NeedleBit / Independent Product, Automation, and Application Development
+**Serbia**  
+**Nov 2022 - Present**  
+**Typical roles across materials:** Founder / CTO / Systems Architect / Project Manager
 
-### Технологический и продуктовый контекст
-- PWA
-- Low-code платформы
-- Glide
-- WeWeb
-- Bubble
-- Xano
-- Make.com / Zapier / Webhooks / Firebase / Directual
+### Scope of Work
 
----
+Anton founded and ran a practice focused on rapid development of mobile and web applications, operational systems, PWA products, and automation-heavy business tools. The work covered both client projects and internal product development.
 
-## OTUS Онлайн образование
-**Москва**  
-**Сентябрь 2023 — Декабрь 2023**  
-**Преподаватель**
+The core focus included:
+- rapid delivery of modern mobile and web products through Progressive Web Apps
+- building solutions independent from App Store / Google Play approval cycles
+- automation of business processes on low-code and hybrid stacks
+- integrating communication channels, customer touchpoints, and data flows into a single system
+- working directly with founders and business owners
+- defining technical strategy, system architecture, and scaling logic
+- restructuring products during growth, instability, or crisis
 
-### Что делал
-- Преподавал разработку на Bubble.
-- Преподавал проектирование в Figma.
-- Преподавал использование нейросетей.
-- Преподавал выход на международные маркетинговые площадки.
+### Delivery Pattern
 
-### Что это добавляет к профилю
-- Способность структурировать прикладочные знания.
-- Опыт передачи знаний в формате обучения взрослых.
-- Умение объяснять low-code, продуктовую упаковку и прикладное использование AI.
+Within NeedleBit, Anton repeatedly operated as a full-system owner:
+- clarifying business goals and weak points in operations
+- designing product structure and information architecture
+- selecting and combining platforms such as WeWeb, Supabase, Xano, Bubble, Glide, n8n, Make, and APIs
+- building user-facing products, admin interfaces, data models, automations, and integrations
+- improving architecture and delivery discipline
+- establishing documentation, rules, and reusable engineering patterns
 
----
+### Representative Outcomes
 
-## ГКУК г. Москвы «Дирекция культурных центров» / Directorate of Cultural Centers of Moscow
-**Москва**  
-**Январь 2017 — Май 2023**  
-**Роли в разных версиях профиля:** Ведущий менеджер / Senior Manager / IT Architect / Analyst / developer + PM / эксперт
+Across projects documented in this repository, the work led to:
+- significant reduction of service time and manual operations
+- measurable revenue growth, including cases up to x13 after system redesign and automation
+- replacement of fragmented communication across social media, email, chat, and calls with centralized systems
+- delivery of PWA products that reduced dependency on app marketplaces
+- creation of operationally useful products for SMBs, internal teams, and niche service businesses
 
-### Формат роли
-Это была не узкая роль «менеджера», а гибридная позиция, включавшая:
-- fullstack-разработку и сопровождение отраслевой информационной системы;
-- управление задачами и людьми;
-- аналитическую и архитектурную работу;
-- экспертизу по ИТ-проектам для отрасли;
-- взаимодействие с руководителями ИТ-направлений подведомственных учреждений;
-- проектирование документации и регламентов;
-- сопровождение инфраструктурной и организационной части системы.
+### Engineering and AI Workflow Layer
 
-### Основные обязанности
-- Разработка и обслуживание интернет-портала отраслевой информационной системы в сфере культуры на базе IBM Domino.
-- Fullstack-разработка на стеке IBM Domino / NoSQL / JS / VBS / Java / Web2.
-- Разработка документации по сети учреждения и внутренним процессам.
-- Поддержание работоспособности серверов HP ProLiant, включая окружения на VMWare и CentOS 7.
-- Руководство переходом IBM Domino с Windows на CentOS + nginx.
-- Распределение задач между сотрудниками.
-- Взаимодействие с органами исполнительной власти города Москвы.
-- Подбор и адаптация сотрудников отдела.
-- Кураторство стажёров.
-- Составление и контроль планов прохождения испытательного срока.
-- Проработка технических заданий по ИТ-проектам Дирекции.
-- Взаимодействие с ИТ-директорами и начальниками ИТ-отделов подведомственных учреждений, числом более 100.
-- Участие в проектах по интеграции информационных систем.
-- Консультационная поддержка отделов Дирекции и подведомственных учреждений.
-- Руководство проектом внедрения приложений на базе IBM Domino.
-- Экспертное участие в проектах Департамента культуры Москвы.
+More recently, Anton extended this work into AI-native delivery practices:
+- repository-specific AI instructions and task contracts
+- architectural guardrails for AI-assisted development in VS Code
+- reusable helper layers for Supabase Edge Functions
+- auditable SQL workflows and database-to-git synchronization for PostgreSQL functions
+- prompt systems, generation pipelines, and debug interfaces in AI-assisted products
 
-### Что было сделано по системе и архитектуре
-- Разработана веб-версия информационной системы на базе прежней базы данных.
-- Построена модульная архитектура.
-- Реализованы генераторы отчётов.
-- Реализована возможность смены идентификационных данных.
-- При разработке учтён увеличивающийся объём данных.
-- В составе решения использовались XPages, JavaScript, Java, CSS, HTML, XML и БД IBM Domino.
-- Проведена аналитика информации в базе.
-- Разработана интерактивная карта объектов с подгрузкой актуальной информации на базе API Яндекс.Карт.
-- Разработан генератор кода полей.
-- Разработан конструктор выгрузок и фильтров.
-- Выполнена миграция.
-- Проведено обучение пользователей через вебинары.
+### Representative Projects Under This Umbrella
 
-### Что было сделано по безопасности и управляемости
-- Разработаны и внедрены регламенты контроля доступа.
-- Разработаны и внедрены регламенты внесения доработок в систему.
-- Проведено исследование существующей системы сбора данных на базе IBM Domino.
-- Выявлены угрозы безопасности.
-- Выявлены проблемы в структуре кода и в реализации системы в целом.
-- Портал системы был исключён из блок-листов Google, Bitdefender, Quttera, Sangfor по подозрению на фишинг.
+Examples documented in the portfolio include:
+- PromptlessPress
+- MetaFox Strengths Explorer
+- Exit Lead
+- Andronyevskaya ERP
+- French Plumbers ERP
+- Vencer Autismo
+- QR Cloud
+- Dobri Visarun
+- Dobri Tours
+- Educate Online
+- Cashdesk Accounting
+- Serbia Networking App
+- RuskaJela
 
-### Что было сделано по процессам и инфраструктуре
-- Пересмотрен и оптимизирован перечень необходимой техники и ПО для Дирекции.
-- Достигнуто подключение Дирекции к проекту цифровой телефонии по сервисной модели.
-- Техподдержка переведена с телефона и email на Tawk.to.
+## OTUS Online Education
+**Moscow**  
+**Sep 2023 - Dec 2023**  
+**Role:** Instructor
 
-### Организационная и управленческая составляющая
-- Работал на стыке разработки, архитектуры, проектного менеджмента и отраслевой ИТ-экспертизы.
-- Координировал взаимодействие с большим числом учреждений и их ИТ-руководителей.
-- Совмещал техническую и организационную роли.
-- Выступал внутренним экспертом в проектах Департамента культуры.
+Anton taught applied digital product development topics in an educational setting.
 
----
+### Areas Taught
 
-## Новая Бизнес Среда (ИП Бабаев М.Е.) / New Business Environment
-**Центральный**  
-**Август 2022 — Ноябрь 2022**  
-**Куратор внедрения / Implementation Curator / Product Manager**
+- Bubble development
+- interface and product design in Figma
+- practical use of AI / neural networks in digital work
+- positioning and entering international marketplaces
 
-### Контекст роли
-Работа в бирюзовой компании, занимавшейся коммерческой разработкой на платформе PlanFix.
+### What This Adds to the Profile
 
-### Основные обязанности
-- Руководство внедрением.
-- Руководство кругом внедрения.
-- Разработка методологии внедрения ERP и CRM.
-- Разработка и тестирование гипотез по вовлечению персонала в работу с информационными системами.
-- Проведение обучения по продукту.
-- Коучинг руководителей.
-- Контроль качества разработанных решений.
-- Работа как куратора внедрения и менеджера продукта.
+This role demonstrates the ability to:
+- structure applied knowledge into teachable systems
+- communicate technical and product topics clearly
+- train adults in practical digital workflows
+- explain low-code, AI, and product packaging in accessible terms
 
-### Достигнутые результаты
-- Проведены брейнштормы, выявившие слабые точки в продаже и защите разрабатываемого ПО.
-- Изменена корпоративная культура для ликвидации серых зон ответственности.
-- Внедрена новая схема работы над проектами.
-- Улучшена автоматизация ведения проектов.
-- Улучшено проектное управление.
+It also confirms that Anton's knowledge is not only executional, but transferable and formalizable.
 
-### Что это раскрывает в опыте
-- Опыт внедрения бизнес-систем, а не только их разработки.
-- Понимание adoption-проблем и поведения сотрудников в процессе цифровых изменений.
-- Работа с управленческой средой и организационной культурой.
+## Directorate of Cultural Centers of Moscow
+**Moscow**  
+**Jan 2017 - May 2023**  
+**Typical role labels across materials:** Senior Manager / IT Architect / Analyst / Developer + PM / Expert
 
----
+This was not a narrow "manager" position. In practice, it was a hybrid role combining system design, full-stack development, documentation, implementation, project coordination, internal consulting, training, and technical leadership.
 
-## ГАУК г. Москвы «Культурный центр ЗИЛ» / ZIL Cultural Center
-**Москва**  
-**Март 2020 — Июнь 2022**  
-**Начальник ИТ-отдела / Head of IT**
+### Organizational Context
 
-### Формат роли
-В материалах роль описана как сочетание CIO и CTO.
+The Directorate operated at a public-sector / city-scale level and interacted with a large network of subordinate institutions. Anton worked not only on the internal system itself, but also on requirements, communication, training, and coordination across a broad institutional landscape.
 
-### Общая зона ответственности
-- Стратегия развития информационных технологий.
-- Техническое обеспечение бэк-офиса организации.
-- Сетевая инфраструктура.
-- Найм технических специалистов.
-- Все информационные системы организации.
-- Технологический парк организации.
-- ИТ-документация.
+### Core Responsibilities
 
-### Управленческий контекст
-- Создал доброжелательную атмосферу в команде.
-- Организовал и поддерживал обмен знаниями.
-- Поддерживал развитие сотрудников в желаемых направлениях.
-- По мере возможностей регулировал конфликты интересов.
-- Оберегал команду от политических игр.
+- designing, developing, and maintaining an industry-level information system in the cultural sector
+- supporting and evolving a web portal built on IBM Domino
+- writing documentation for network structure, processes, and internal operational logic
+- maintaining server infrastructure, including HP ProLiant hardware, VMware environments, and CentOS 7
+- leading IBM Domino migration from Windows to CentOS with nginx
+- distributing tasks between team members
+- interacting with executive authorities of the city of Moscow
+- drafting technical requirements for internal IT projects
+- working with IT directors and heads of IT across more than 100 subordinate institutions
+- consulting internal departments and subordinate organizations
+- managing implementation initiatives based on IBM Domino
+- acting as an IT expert in broader Department of Culture projects
+- hiring, onboarding, adapting, and mentoring staff and interns
+- designing probation and onboarding processes
 
-### Основные обязанности
-- Обеспечение стабильного функционирования и модернизация технологического парка учреждения.
-- В зоне ответственности: 140 АРМ, серверы, видеонаблюдение, СКУД.
-- Руководство инженерами.
-- Подготовка проектной документации.
-- Менеджмент ИТ-проектов.
-- Поиск поставщиков и подрядчиков.
-- Оформление технической и организационной документации.
-- Коммуникация с вышестоящими ОИВ.
-- Проведение исследований применимости новых технологий.
-- Создание и тестирование гипотез.
-- Внедрение ИТ-продуктов.
-- Проведение обучения сотрудников по ИТ.
-- Обеспечение информационной безопасности.
+### Systems and Architecture Work
 
-### Подробные результаты
-- Провёл реорганизацию отдела и его документов.
-- Модернизировал систему видеонаблюдения.
-- Модернизировал компьютерный парк.
-- Запустил HelpDesk для ИТ и ещё 7 служб технического блока на базе GLPI с автоматической инвентаризацией техники.
-- В пандемию перевёл всех на дистанционный режим работы.
-- Организовал работу для 100 человек с помощью SoftEther VPN и Яндекс.Диска.
-- Провёл работу с сайтом.
-- Адаптировал сайт под мобильные устройства.
-- Внедрил технологию Progressive Web Apps.
-- Провёл обследование рынка билетных систем.
-- Подготовил документы для заключения контракта.
-- Подготовил техническое задание на сайт.
-- Руководил разработкой сайта, выполняемой сторонней организацией.
-- Провёл натуральную инвентаризацию.
-- Разобрал склады, утилизировав ненужную технику.
-- Перевёл файлообменные ресурсы в домен с возможностью управления доступом.
-- Внедрил домен Active Directory и политики безопасности.
-- Провёл аудит информационной безопасности и проблем ИСПДн.
-- Подготовил и реализовал предложения по устранению недостатков.
-- Восстановил документацию по коммуникациям.
-- Разработал документацию отдела, должностные инструкции, положение и регламент.
-- Подготовил проекты модернизации оргтехники, компьютерного парка и ПО.
-- Подготовил алгоритмы бизнес-процессов для автоматизации на базе Битрикс24.
-- Провёл анализ рынка CRM и билетных систем.
-- Провёл тестовую эксплуатацию.
-- Выявил подходящие решения.
+Anton's work on the information system included:
+- building a web-based version of the system on top of an existing data layer
+- introducing modular architecture
+- designing report generators
+- supporting changing identification data and growing data volumes
+- using IBM Domino, XPages, JavaScript, Java, CSS, HTML, XML, and related technologies
+- analyzing the existing codebase and system structure
+- identifying security threats and structural weaknesses
+- designing generators for fields, exports, and filters
+- building an interactive object map using Yandex Maps API with live data
+- migrating the system and training users through webinars
 
-### Применённые продукты и технологии
+### Security, Support, and Operational Improvements
+
+Anton also:
+- developed and implemented access control rules and procedures for system changes
+- improved codebase structure and governance around system modifications
+- expanded the range of required hardware and software
+- connected the organization to a digital telephony project through a service model
+- moved support from phone and email to Tawk.to instant messaging
+- worked to remove the system portal from Google, Bitdefender, Quttera, and Sangfor phishing blocklists
+
+### Why This Role Matters
+
+This period strongly demonstrates Anton's ability to:
+- combine technical depth with institutional coordination
+- work in politically and organizationally complex environments
+- modernize legacy systems without losing operational continuity
+- handle architecture, implementation, governance, support, and user adoption together
+
+## ZIL Cultural Center
+**Moscow**  
+**Mar 2020 - Jun 2022**  
+**Role:** Head of IT Department
+
+This role combined responsibilities similar to Head of IT, CIO, and operational CTO for a large cultural organization.
+
+### Scope
+
+Anton was responsible for:
+- IT strategy and technical development of the organization
+- back-office technical support
+- network infrastructure
+- hiring technical specialists
+- information systems and the broader technology park
+- IT documentation
+- security and support processes
+
+The operational scale included:
+- around 140 workstations
+- servers
+- CCTV
+- access control systems
+
+### Core Responsibilities
+
+- ensuring stable operation and modernization of the technical environment
+- managing engineers
+- preparing project documentation
+- running IT projects
+- selecting vendors and contractors
+- producing technical and organizational documents
+- communicating with higher-level public authorities
+- researching and testing new technologies
+- introducing IT products and improvements
+- training staff
+- ensuring information security
+
+### Key Achievements
+
+Anton:
+- reorganized the department and its documentation
+- modernized the video surveillance system
+- modernized the computer fleet
+- launched a HelpDesk for IT and seven additional support services based on GLPI with automated asset inventory
+- moved 100+ employees to remote work during the pandemic using SoftEther VPN and Yandex Disk
+- improved the website, adapted it for mobile use, and introduced Progressive Web App technology
+- researched ticketing systems and prepared procurement-related documentation
+- prepared a technical specification for a new website and supervised third-party development
+- conducted physical inventory
+- cleaned up storage and disposed of obsolete equipment
+- moved file exchange resources into a domain-managed environment
+- introduced Active Directory and security policies
+- audited information security and personal-data handling issues, then prepared and implemented remediation proposals
+- restored documentation for communications and network logic
+- developed departmental regulations, role descriptions, and internal procedures
+- prepared modernization initiatives for office equipment, software, and computer infrastructure
+- designed business-process algorithms for future automation in Bitrix24
+- assessed CRM and ticketing systems through market analysis and pilot use
+
+### Technology Context
+
+Examples of technologies and products used during this role:
 - Windows Server 2012
-- Windows 7–10
+- Windows 7-10
 - CentOS 7
-- Ubuntu 12.12–21.04 (+ Mint + Lubuntu)
+- Ubuntu and related distributions
 - Hikvision
-- Axxonnext
+- AxxonNext
 - GLPI
 - Zabbix
-- Nethserver
+- NethServer
 - Hyper-V
 - Synology
-- Octagram
 - IBM / HCL Domino
 - Odoo
 - Docker
 
----
+### Why This Role Matters
 
-## АНО «Московское агентство соцразвития» / Moscow Social Development Agency
-**Москва**  
-**Сентябрь 2019 — Март 2020**  
-**Заместитель начальника отдела цифрового развития и информационных технологий / Deputy Head of IT Department**
+This role demonstrates Anton's ability to run the full IT function of a complex institution, combining infrastructure, support, procurement, vendor management, documentation, staff development, and security.
 
-### Формат роли
-- Исполнял обязанности начальника ИТ-отдела.
+## Moscow Social Development Agency
+**Moscow**  
+**Sep 2019 - Mar 2020**  
+**Role:** Deputy Head of Digital Development and IT / Acting Head of IT
 
-### Основные обязанности
-- Руководство сотрудниками ИТ-отдела.
-- Планирование деятельности отдела и контроль исполнения задач.
-- Исполнение функций ИТ-архитектора, включая сеть и информационные системы.
-- Аудит ИТ-инфраструктуры.
-- Создание плана решения проблем и оптимизации бизнес-процессов.
-- Контроль выдачи и перемещения техники.
-- Курирование ИТ-проектов.
-- Формирование и реализация политики информационной безопасности.
-- Организация технической поддержки сотрудников.
-- Контроль ведения учётных записей в Active Directory, телефонии и почтовом домене.
-- Разработка регламентов и должностных инструкций.
-- Контроль лицензирования техники и ПО.
-- Оптимизация политик Active Directory для целей обеспечения безопасности.
+Anton joined a newly created organization and helped build its IT function from scratch.
 
-### Подробные результаты
-- Участвовал в создании новой организации.
-- Произвёл подбор оборудования и ПО для закупки: ПК, МФУ, серверное и коммутационное оборудование.
-- Подготовил должностные инструкции на себя и сотрудников отдела.
-- Руководил внедрением HelpDesk на базе GLPI с автоматической инвентаризацией техники.
-- Руководил внедрением телефонного справочника с отображением карты сотрудников и синхронизацией с AD.
-- Посещал конференции и подбирал подрядчиков для автоматизации бизнес-процессов организации.
-- Участвовал в формировании ТЗ по автоматизации.
-- Входил в инвентаризационную комиссию.
-- Навёл порядок в документах по технике, контрактам на Интернет и телефонию.
-- Входил в приёмочную комиссию по проектам АНО, включая «Здоровая Москва» и «Мой социальный центр».
-- В англоязычной версии также отражено, что удалось успешно организовать функционирование новой организации.
-- Проведена натуральная инвентаризация всего технического парка.
+### Core Responsibilities
 
-### Что это означает по уровню опыта
-- Опыт развёртывания ИТ-функции почти с нуля.
-- Опыт соединения инфраструктуры, процессов, закупок, безопасности и автоматизации.
-- Опыт работы в публичном секторе с формальными процедурами и комиссиями.
+- leading the IT team
+- planning departmental activity and controlling task execution
+- acting as IT architect for infrastructure and information systems
+- auditing the existing IT situation and defining a remediation / optimization plan
+- controlling hardware distribution and movement
+- supervising IT projects
+- defining and implementing information security policy
+- organizing technical support
+- controlling Active Directory, telephony, and mail-domain accounts
+- preparing regulations and role descriptions
+- overseeing software and hardware licensing
+- optimizing Active Directory policies for security
 
----
+### Key Achievements
 
-## Синергия, ОАО / Beluga Group
-**Москва**  
-**Ноябрь 2016 — Март 2017**  
-**Программист Lotus / Lotus Developer**
+Anton:
+- participated in building the new organization from the ground up
+- selected hardware and software for procurement, including workstations, MFPs, servers, and networking equipment
+- prepared departmental documentation and role descriptions
+- led HelpDesk implementation based on GLPI with automated asset inventory
+- led implementation of a phone directory with employee mapping and Active Directory synchronization
+- participated in conferences and contractor selection for business-process automation
+- contributed to drafting automation requirements
+- organized documentation around equipment, Internet contracts, and telephony
+- participated in full physical inventory work
+- served on acceptance commissions for major agency projects, including "Healthy Moscow" and "My Social Center"
 
-### Основные обязанности
-- Поддержание и развитие самописной системы документооборота на базе Lotus Domino.
-- Fullstack-разработка на платформе IBM Domino.
-- Стек в англоязычной версии: NoSQL, VBA, LS, JavaScript, Java.
-- Поддержка внутренней системы документооборота для более чем 3000 пользователей.
-- 3-я линия технической поддержки.
-- Выполнение доработок по внутренней системе обращений.
-- Разбор и реализация накопленных доработок с 2013 по 2015 год.
+### Why This Role Matters
 
-### Результаты
-- Привёл в единый стиль отображение баз данных организации.
-- Разобрал / обработал накопленный пул заявок на доработки.
+This role shows Anton's ability to enter an incomplete organizational environment and quickly establish operational IT structure, governance, and support logic.
 
----
+## Synergy JSC
+**Moscow**  
+**Nov 2016 - Mar 2017**  
+**Role:** Lotus Developer
 
-## КБ «Банк Расчетов и Сбережений», ООО / Settlement and Savings Bank
-**Москва**  
-**Январь 2013 — Сентябрь 2015**  
-**Ведущий разработчик ПО / Lead Software Developer**
+Anton worked on an internal IBM Domino-based document workflow environment used at significant scale.
 
-### Основные обязанности
-- Разработка в Lotus Notes / Domino, CSS, HTML, XPages, JavaScript.
-- Автоматизация документооборота.
-- Аналитика процессов и движения документов.
-- Курирование работы второго программиста / команды разработки.
-- Обучение сотрудников.
-- Администрирование IBM Lotus Domino и Sametime.
+### Responsibilities
 
-### Подробные результаты
-- В рабочей группе с руководством банка составил перечень маршрутов движения документов.
-- Этот перечень лёг в основу ТЗ на автоматизацию.
-- Составил обзор существующих на тот момент СЭД.
-- Подготовил предложения и оценки обоснованности их внедрения.
-- Разработал с нуля и внедрил СЭД для внутреннего пользования на принципах ООП.
-- Реализовал XML-интеграцию: экспорт данных о сотрудниках из 1С и любые наборы данных по шаблонам.
-- Составил ТЗ для программиста 1С при интеграции документооборота с кадровой структурой 1С:Предприятия.
-- В англоязычной версии также отражено: implemented integration with 1C.
-- После разработки основы СЭД провёл тестирование и ввод в эксплуатацию.
+- full-stack development on IBM Domino / Lotus platforms
+- support and development of the internal document management system
+- third-line support
+- implementation of accumulated change requests and technical improvements
 
-### Что важно в этом опыте
-- Не просто разработка, а проектирование и внедрение внутренних банковских систем.
-- Работа на стыке бизнеса, документооборота, ИТ-архитектуры и интеграций.
-- Опыт общения с руководством и перевода процессов в формализованную логику автоматизации.
+### Achievements
 
----
+- brought databases into a unified visual style
+- processed and resolved a large backlog of requested improvements accumulated over several years
 
-## АйТи / JSC «Firma IT. Information Technology»
-**Москва**  
-**Январь 2011 — Апрель 2012**  
-**Специалист отдела Lotus Notes / Lotus Notes Department Specialist**
+## Settlement and Savings Bank
+**Moscow**  
+**Jan 2013 - Sep 2015**  
+**Role:** Lead Software Developer / Systems Architect
 
-### Основные обязанности
-- Разработка в Lotus Notes / Domino, CSS, HTML, XPages, JavaScript.
-- Поддержание работоспособности и исправление ошибок внутренней системы документооборота.
-- Проводил вводную лекцию / обучение новых сотрудников работе с системой внутреннего документооборота в Lotus Notes.
+This period is important because Anton was directly involved in building a document management system from scratch in a banking environment.
 
-### Подробные результаты
-- Впервые внедрил в компании технологию XPages.
-- Переписал для этого на JavaScript / SSJS корневую библиотеку Босс-Референта.
-- Перевёл две базы на XPages.
-- Модифицировал Босс-Референт для работы в Web.
-- Добавлял модули и новые базы.
+### Responsibilities
 
-### Освоенные продукты
-- Босс-Референт
+- Lotus Notes / Domino development
+- workflow automation
+- analysis of document flows and business processes
+- supervision of another programmer
+- user training
+- administration of IBM Lotus Domino and Sametime
+
+### Key Achievements
+
+Anton:
+- worked with bank leadership to map document-routing paths that became the basis for automation requirements
+- reviewed existing document management systems and prepared implementation assessments
+- designed and built an internal document management system from scratch using object-oriented principles
+- implemented XML integration, including export of employee data from 1C and template-based export of other datasets
+- prepared requirements for the 1C developer during integration with HR structures
+- performed testing and rollout after the system foundation was built
+
+### Why This Role Matters
+
+It demonstrates Anton's ability to:
+- work directly with leadership on process formalization
+- translate operational flows into system architecture
+- build enterprise internal systems end to end
+- combine development with analysis and rollout
+
+## IT Company / Lotus Notes Department
+**Moscow**  
+**Jan 2011 - Apr 2012**  
+**Role:** Lotus Notes Specialist
+
+Anton supported and developed an internal document management system on Lotus Notes / Domino in a systems-integration environment.
+
+### Responsibilities
+
+- Lotus Notes development
+- maintaining system operability
+- fixing issues in the internal document workflow system
+- introducing new employees to the system
+
+### Achievements
+
+- introduced XPages technology into the company for the first time
+- rewrote the core library of Boss-Referent in JavaScript / SSJS to support this
+- modified Boss-Referent for web use
+- added new modules and databases
+
+### Products and Technologies
+
+- Boss-Referent
 - LEI
-- Lotus SSJS (DOM Lotus в JavaScript)
+- Lotus SSJS
 - XPages
 
----
+## Freelance / Private Practice
+**Moscow**  
+**Jan 2009 - Jan 2011**
 
-## Индивидуальное предпринимательство / частная практика / фриланс
-**Москва**  
-**Январь 2009 — Январь 2011**  
-**Фрилансер**
+This period reflects early entrepreneurial and technical breadth.
 
-### Что делал
-- Разворачивал и поддерживал приватные серверы World of Warcraft и Lineage.
-- Разрабатывал и поддерживал сайты на различных CMS.
-- Автоматизировал обновление баз данных из репозиториев / SVN с заливкой в MySQL с помощью Bash-скриптов.
-- С помощью тех же скриптов делал бэкапы в облачное хранилище.
-- Собирал и обслуживал компьютеры: установка ОС и прикладного ПО, чистка системных блоков, борьба с вирусами.
+### Work Performed
 
-### Что это показывает
-- Очень ранняя практическая инженерная база.
-- Самостоятельная работа end-to-end: от серверов и скриптов до сайтов и железа.
-- Привычка собирать рабочие решения руками без излишней опоры на готовую среду.
+- deployed and supported private World of Warcraft and Lineage servers
+- developed and maintained websites on various CMS platforms
+- assembled and serviced personal computers
+- installed operating systems and software
+- performed cleaning, maintenance, and virus remediation
 
----
+### Technical Achievements
 
-## Московский аэропорт Домодедово / Domodedovo Airport
-**Москва**  
-**Сентябрь 2008 — Сентябрь 2009**  
-**Младший программист Lotus Notes / Lotus Notes Junior Developer**
+- automated database updates from SVN repositories into MySQL using Bash scripts
+- configured automatic backups to cloud storage
 
-### Основные обязанности
-- Настройка, модернизация и поддержка корпоративных систем электронного документооборота и делопроизводства на базе Lotus Notes / Domino.
-- Интеграция приложений Lotus Notes со сторонними продуктами через OLE.
-- Разработка служебных приложений и агентов.
-- Подготовка проектной документации.
-- Поддержка и консультирование пользователей.
-- Доработка приложений под пользовательские нужды.
-- Service Desk, консультация и взаимодействие с тестировщиками.
+### Why This Role Matters
 
-### Результаты
-- В англоязычной версии указано, что был отобран по конкурсу из учебной группы 12 человек; в итоге взяли 2 программистов и 2 тестировщиков.
+This period shows early comfort with:
+- infrastructure and systems administration
+- scripting and automation
+- independent technical problem-solving
+- full ownership of small systems from setup to maintenance
 
-### Значение этого этапа
-- Старт в корпоративной разработке с реальным документооборотом и внутренними системами.
-- Ранний опыт в enterprise-среде и формальной проектной дисциплине.
+## Domodedovo Airport
+**Moscow**  
+**Sep 2008 - Sep 2009**  
+**Role:** Junior Lotus Notes Developer
 
----
+This was an early corporate role focused on enterprise document and workflow systems.
 
-## Проектный и продуктовый опыт из showcase / презентаций NeedleBit
+### Responsibilities
 
-Ниже — не отдельные места работы, а проекты, напрямую описанные в материалах, и их стоит учитывать как часть подтверждённого практического опыта.
+- configuration, modernization, and support of corporate document systems on Lotus Notes / Domino
+- integration of Lotus applications with third-party products through OLE
+- development of service applications and agents
+- preparation of project documentation
+- user support and consulting
+- adapting applications for user needs
+- service desk participation and collaboration with testers
 
-### Educate Online
-**Тип проекта:** система массового корпоративного тестирования / mood & feedback platform
+### Additional Note
 
-#### Project goal
-- Решение задачи массового корпоративного тестирования.
-- Выявление настроения сотрудников внутри организации.
-- Выявление различий в мнениях внутри команды.
-- Проект выполнен за три недели.
+Anton entered this role through an internal training / selection process and was chosen from a larger candidate group, which indicates strong early learning ability and potential.
 
-#### Challenges
-- Необходимость мультиязычности с масштабированием на неограниченное количество языков.
-- Необходимость математической обработки большого числа ответов на один и тот же вопрос.
-- Bubble нативно не поддерживал нужную модель обработки.
-- Требовалась реализация UI-элементов для прохождения тестов и отображения результатов.
+## Additional Entrepreneurial and Organizational Experience
 
-#### Solution
-- Сделан визуально выразительный и стилизованный интерфейс в строгой монохромной теме с цветовыми акцентами для различения менеджеров и сотрудников.
-- Ввод и вывод ответов реализован через стилизованные слайдеры.
-- Для генерации множественных ответов использованы внешние инструменты.
-- Дополнительно реализована интеграция с Bing Translate API, автоматически обеспечивающая базовый перевод вопросов на новые языки.
-- Зафиксировано, что система масштабируема и не ограничена количеством сотрудников или пользователей.
+Beyond formal IT roles, Anton also accumulated meaningful experience in event organization, coordination, and promotion.
 
-#### Что это показывает
-- Способность быстро собирать нетривиальные low-code решения при platform constraints.
-- Умение обходить ограничения платформы через архитектурные и интеграционные решения.
+### Festival and Event Work
 
-### Dobri Visarun
-**Тип проекта:** автоматизация клиентского потока и заявок для малого бизнеса
+Examples include:
+- co-organizing the "Byt Dobru" music festival in 2014-2015
+- leading a fair and volunteer team
+- training in event management, promotion, and SMM with practitioners connected to major festival and media projects
+- organizing concerts for the band "Polynya" from 2017 to 2020
 
-#### Project goal
-- У клиента была ежедневная проблема привлечения новых клиентов.
-- Регистрация и коммуникация велись вручную через Facebook, почту, телефон и мессенджеры.
-- Доход был низким из-за неэффективного и трудоёмкого привлечения клиентов.
-- Отсутствовала организованная система управления бронированиями и выездами.
+### Why This Matters
 
-#### Solution
-- Разработано Progressive Web App на Glide.
-- Реализована удобная форма регистрации для клиентов.
-- Клиенты могли использовать приложение через браузер, смартфон или как закладку / иконку.
-- Telegram-бот обеспечивал real-time уведомления о новых пассажирах.
-- В одном из текстов зафиксировано: в течение трёх месяцев после использования приложения предприниматель существенно сократил затраты времени и получил десятикратный рост дохода.
-- В brief.txt есть ещё более сильная формулировка: рост выручки x13 и сокращение времени на клиента с 3–4 часов до ~5 минут.
+This adds evidence of:
+- people coordination outside pure IT contexts
+- live operational management
+- event logistics and promotion
+- practical experience organizing real-world processes, not only software
 
-#### Что это показывает
-- Сильный прикладной опыт автоматизации сервисного бизнеса.
-- Понимание CLTV, операционных узких мест и бизнес-эффекта от автоматизации.
+## Teaching, Mentoring, and Team Development
 
-### Dobri Tours
-**Тип проекта:** клиентское приложение для туров и программ лояльности
+Across roles, Anton repeatedly demonstrated:
+- employee training
+- onboarding and adaptation
+- mentoring of interns and team members
+- webinar-based knowledge transfer
+- coaching for managers
+- ability to explain technical and product concepts clearly
 
-#### Project goal
-- У основного туристического бизнеса клиента не хватало витрины, прайс-листа, галереи и инструмента организации туров.
-- У потенциальных клиентов не было централизованного источника информации.
-- Не было системы отправки заявок и присоединения к турам.
-- Клиенту нужна была программа лояльности для повторных клиентов и стимулирования организации туров другими людьми.
+This is visible in public-sector work, education work, and implementation-oriented roles.
 
-#### Solution
-- Разработано приложение на Glide.
-- В приложении представлены туры, детальные описания и цены.
-- Пользователи могут отправлять запросы и присоединяться к турам.
-- Реализована программа лояльности, отслеживающая организованные туры и дающая скидки.
-- Добавлены рейтинги и отзывы по турам.
-- Через Make.com организована связь с соцсетями и публикация анонсов открытых туров.
+## Technical and Product Context Across the Career
 
-### Cashdesk Accounting / Caskdesk Accounting
-**Тип проекта:** учетная / кассовая система
+### Systems and Architecture
 
-#### Project goal
-- Требовалось обновить учётную систему клиента.
-- Нужны были управление правами, кассовые операции, CSV-отчёты и транзакции.
-- Требования были определены не полностью.
-- Нужно было проанализировать старую систему и создать интуитивный интерфейс на Bubble, уложившись в бюджет.
+- information system design
+- modular architecture
+- workflow-heavy internal systems
+- document management
+- ERP / CRM implementation
+- reporting and analytics systems
+- operational platforms
+- role-based interfaces and administrative systems
 
-#### Challenges
-- Найти зоны улучшения без чётких технических требований.
-- Проанализировать старую систему и понять её сильные и слабые стороны.
-- Найти реализацию CSV-экспорта в рамках бюджета.
-- Обеспечить удобство новой системы с учётом предпочтений клиента.
+### Low-Code, Hybrid, and Product Delivery
 
-#### Solution / Result
-- Создана более надёжная и удобная система учета.
-- Улучшены финансовый контроль и управление.
-- Интуитивный интерфейс улучшил пользовательский опыт.
-- Automatic logout усилил безопасность.
-- Масштабируемая архитектура позволила расширять операции без ограничений.
+- WeWeb
+- Supabase
+- Xano
+- Bubble
+- Glide
+- Webflow
+- Progressive Web Apps
+- Make / automation platforms
+- API integrations
+- Telegram integrations and Mini Apps
 
----
+### Engineering and AI Workflow
 
-## Предпринимательский и организационный опыт вне основного ИТ-контура
+- AI-assisted delivery in VS Code
+- repository instructions and architectural guardrails
+- helper layers for Supabase Edge Functions
+- auditable SQL workflows
+- PostgreSQL function versioning and database-to-git synchronization
+- prompt-based generation systems
+- fal.ai-backed image workflows
 
-### Организация фестивалей и мероприятий
-- В 2014–2015 был соорганизатором музыкального фестиваля «Быть Добру».
-- Руководил ярмаркой и командой волонтёров.
-- В 2016 и 2017 проходил обучение по SMM и менеджменту мероприятий у руководителей продвижения фестиваля «Чартова Дюжина» и портала KudaGo.
-- С 2017 по 2020 организовывал концерты музыкальной группы «Полынья».
+### Enterprise and Legacy Stack
 
-### Что это добавляет к профессиональному опыту
-- Навык координации людей, подрядчиков и процессов вне чисто ИТ-среды.
-- Опыт продвижения, событийной логистики и управления живыми процессами.
-- Усиление профиля как человека, который умеет не только проектировать системы, но и организовывать реальные процессы и людей.
+- IBM Domino / Lotus Notes
+- XPages
+- JavaScript / SSJS
+- Java
+- CSS / HTML / XML
+- SQL
+- VBA / Bash / Batch
+- 1C integration
+- NoSQL-style data work in IBM Domino environments
 
----
+### Infrastructure and Administration
 
-## Сквозные компетенции, подтверждённые опытом
-
-### Техническое направление
-- IBM Domino / Lotus Notes / XPages / SSJS
-- JavaScript / Java / CSS / HTML / XML / SQL / VBA / Bash
-- NoSQL-подходы
-- Интеграции с 1С
-- API-интеграции
-- Yandex Maps API
-- PWA
-- Bubble / Glide / WeWeb / low-code stack
-
-### Инфраструктура и администрирование
 - Windows Server
-- Linux: Ubuntu, CentOS
+- Linux (Ubuntu, CentOS)
 - Active Directory
-- DNS / DHCP / LDAP / SSH / RDP
+- DNS / DHCP / LDAP
+- SSH / RDP
 - Hyper-V / ESXi / VMware
-- SoftEther
-- Zentyal
-- OCS Inventory
 - GLPI / Zabbix / Synology / Docker
+- VPN and remote-work enablement
+- server migration and maintenance
 
-### Управление и архитектура
-- ИТ-стратегия
-- Архитектура информационных систем
-- Проектный менеджмент
-- Внедрение ERP / CRM
-- Документация и регламенты
-- Информационная безопасность
-- Подготовка ТЗ
-- Аудит инфраструктуры и процессов
-- Управление подрядчиками
-- Найм, адаптация, обучение и развитие сотрудников
+## Management, Organizational, and Business Layer
 
-### Бизнес и организационный слой
-- Автоматизация бизнес-процессов
-- Связка бизнес ↔ техника ↔ процессы
-- Работа в государственном и корпоративном контуре
-- Работа в условиях политической и организационной сложности
-- Проведение исследований, тестирование гипотез, продуктовый подход
+Anton's experience also clearly includes:
+- IT strategy
+- project management
+- technical requirement preparation
+- security and compliance awareness
+- process audit and optimization
+- vendor and contractor management
+- hiring and adaptation of employees
+- cross-functional communication
+- direct work with top management and institutional stakeholders
+- balancing business needs, technical quality, and operational practicality
 
----
+## Education and Background
 
-## Краткий итог по опыту
+### Formal Education
 
-По совокупности материалов опыт Антона Назарова — это не только «разработчик» и не только «руководитель ИТ». Это профиль человека, который:
-- умеет входить в сложную систему и разбирать её до архитектурного уровня;
-- умеет строить и перестраивать процессы, инфраструктуру и цифровые контуры;
-- понимает, как перевести организационные проблемы в формализованные решения;
-- может сочетать hands-on разработку, архитектуру, внедрение, управление и организационную дипломатию;
-- имеет подтверждённый опыт как в enterprise/government-среде, так и в low-code / startup / SMB кейсах.
+- Bachelor in Management, specialization in small business management
+- professional retraining in IT for economics and government
+- background in accounting and finance
+
+### Additional Learning
+
+Anton also invested in:
+- zero-code / western-market product building
+- low-code and implementation training
+- Java fundamentals
+- ITIL / DevOps service thinking
+- IT management
+- negotiation and working under pressure
+- event management and promotion
+
+## Summary
+
+Taken together, Anton Nazarov's experience is not best described by a single narrow label such as "developer" or "IT manager".
+
+It is the profile of a person who:
+- can enter a complex environment and understand it at architectural level
+- can build or rebuild systems, infrastructure, processes, and governance
+- can translate organizational problems into formalized technical solutions
+- can combine hands-on implementation, architecture, delivery, training, and internal diplomacy
+- has proven experience in both enterprise / government environments and startup / low-code / SMB contexts
+- increasingly works through AI-assisted engineering workflows without losing technical discipline
+
+The most accurate high-level description is:
+
+**Technology leader and systems architect with strong hands-on delivery ability, operational depth, and cross-domain ownership.**
