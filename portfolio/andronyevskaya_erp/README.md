@@ -111,8 +111,24 @@ Upwork portfolio reference: https://www.upwork.com/freelancers/antiokh?p=1980802
 
 Internal codebase reference: `D:\Git\andronyevskaya`
 
+Local demo video: [demo.mp4](./media/demo.mp4)
+
 ---
 
 ## Screenshots
 
-_Add screenshots here_
+### Module Structure
+
+![Andronyevskaya ERP modules](./media/modules.png)
+
+---
+
+### Architecture
+
+![Andronyevskaya ERP architecture](./media/architecture.png)
+
+---
+
+### Demo
+
+Open the local demo file: [demo.mp4](./media/demo.mp4)
