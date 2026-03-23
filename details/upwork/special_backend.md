@@ -1,83 +1,62 @@
-I’m a backend-focused developer with 18+ years of experience helping founders and teams build production-grade backend systems that scale, survive change, and stay maintainable — not just “something that runs”.
+I help founders and teams build backend systems that make business operations clearer, safer, and easier to scale.
 
-Many of my clients are business owners or product teams who started with no-code tools or spreadsheets and then hit a wall. What usually turns out to be the real problem is not the UI or the tool itself, but backend architecture, data design, integrations, and unclear boundaries between systems.
+My work on the backend is not only about “making it run.” I focus on data structure, system boundaries, integrations, access rules, and backend logic that can survive real use, team changes, and product growth.
 
-💡 What I focus on
+Many clients come to me after hitting the limits of spreadsheets, fragile no-code setups, or rushed early builds. In most cases, the real problem is not the interface. It is weak backend structure: unclear data models, messy integrations, duplicated logic, and no reliable place for business rules.
 
-I build consistent, understandable backend systems and explain them in practical terms. I help clients see how data flows, where business logic should live, how integrations interact, and why certain backend decisions save (or waste) time and money later.
+What I usually help with
 
-My main strength is combining backend implementation with explanation. I make clear how databases, APIs, and automations work together, what decisions will scale, and where systems usually break under real usage.
+- backend architecture for SaaS products and internal systems
+- database design and process-oriented data modeling
+- Supabase-based systems with PostgreSQL, Auth, RLS, and Edge Functions
+- Xano-based API layers and backend workflows
+- integrations and automation between products, tools, and internal systems
+- cleanup and re-architecture of fragile backend setups
 
-🧭 Consulting & guidance
+What I focus on
 
-A big part of my work is consulting around backend architecture and integrations. I have a confirmed track record of 20+ paid consultations and follow-up projects, where clients came to:
+- turning spreadsheet-style operations into proper data systems
+- reducing key-person dependency by making logic and data flows explicit
+- improving visibility into operations through better structure and reporting
+- moving business rules into stable backend layers instead of scattered ad hoc logic
+- making systems easier to maintain and extend after launch
 
-• validate backend ideas and architectures before investing too much  
-• untangle existing systems that became fragile or hard to extend  
-• review integrations and data flows across tools and services  
-• understand why their current setup was unreliable or slow  
+Selected examples of backend impact
 
-I often work with clients coming from Excel or Google Sheets–based workflows and help them move to real backend systems by explaining things in plain language, including:
+- spreadsheet-based workflows -> structured databases and backend processes -> scaling from hundreds to thousands of records without chaos
+- embedded internal systems -> backend-driven task and workflow logic -> self-hosted and privacy-conscious operation
+- prototype recovery -> backend re-architecture -> stable foundation for product growth
+- service business automation -> backend plus integrations -> major reduction in manual processing time
 
-• relational databases and normalization  
-• practical SQL (without unnecessary theory)  
-• backend logic, data modeling, and access control  
-• Supabase Edge Functions and where they actually make sense  
+How I work
 
-🏗️ How I work with backends
+- I start from workflows, data flows, and business rules
+- I make system boundaries explicit: what belongs in the database, API, automation layer, or frontend
+- I explain decisions clearly so teams are not locked into guesswork later
 
-I work deeply with backend architecture — focusing on structure, clear boundaries, and long-term clarity rather than quick fixes. My goal is to build backend systems that teams can maintain, extend, and debug independently after launch.
+I also maintain a personal library of reusable backend building blocks:
 
-📊 Selected examples of backend impact
+- proven schemas and data patterns
+- reusable Edge Functions and integration helpers
+- common datasets and enums
+- repeatable automation patterns for internal systems
 
-• Spreadsheet-based operations → proper databases and backend workflows → scaling from hundreds to thousands of records without chaos  
-• Embedded internal systems (e.g. chat/messenger–driven) → backend-driven task management, fully self-hosted and privacy-compliant  
-• Prototype recovery → full backend re-architecture → stable foundation for a high-potential product  
-• Service business automation → backend + integrations → drastic reduction of manual operations and processing time  
+These building blocks help reduce setup time and make backend delivery more predictable.
 
-⚙️ What I usually do on the backend
+Core stack:
 
-• backend architecture for SaaS products and MVPs  
-• Supabase-based systems (PostgreSQL, auth, RLS, Edge Functions)  
-• Xano-based backends and API layers  
-• mid-layer automation and orchestration between systems  
-• fully autonomous, self-hosted backend solutions  
-• DevOps setups using Docker and container-based deployments  
+- Supabase (PostgreSQL, Auth, RLS, Edge Functions)
+- Xano
+- SQL
+- APIs and integrations
+- Docker and self-hosting
+- Git-based version control
 
-For faster and more reliable delivery, I maintain a personal library of reusable backend building blocks:
+I’m a good fit if you want to:
 
-• proven database schemas and patterns  
-• ready-to-use Edge Functions and API snippets  
-• common datasets (countries, codes, enums)  
-• reusable integration patterns for automations and workflows  
+- clean up or redesign an existing backend
+- move from fragile no-code logic to a more solid backend structure
+- build internal systems with clearer data and business rules
+- make backend decisions that will still make sense a year from now
 
-These “semi-finished” components help significantly reduce setup time and give new backend projects a strong jump-start.
-
-I use Git-based version control in all projects to ensure traceability, safer iterations, and reliable collaboration workflows, including CI-style practices where appropriate.
-
-📌 I’m a good fit if you want to:
-
-• understand how your backend really works  
-• clean up or redesign an existing backend architecture  
-• move from fragile no-code setups to solid backend systems  
-• make informed technical decisions instead of guessing  
-• maintain and evolve your backend independently after launch  
-
-I can also help you:
-
-• review and improve existing backend architecture  
-• define clear backend requirements and boundaries  
-• prepare technical documentation and guidelines  
-• design integrations and automation flows before implementation  
-
-If you want to quickly understand whether your backend idea or existing system is viable, scalable, and technically sound, feel free to reach out. We can review your setup, identify weak points, and outline the next concrete steps before you invest more time and money.
-
-If you’re still exploring tools and approaches, I’ve also put together a short practical guide comparing modern backend approaches in low-code and hybrid stacks, based on real production experience. You can message me with the word “guide”, and I’ll share it — no sales pitch attached.
-
-Technology stack & experience
-
-Core backend stack:  
-• Supabase (PostgreSQL, Auth, RLS, Edge Functions)  
-• Xano (API-first backends)  
-• Docker, self-hosting, container-based deployments  
-• Git-based version control and CI-style work
+If useful, we can start with a short architecture review and identify the main structural risks before you invest more time and money.

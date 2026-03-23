@@ -1,91 +1,73 @@
-👋 Hey there! I’m Anton, a full-stack developer with 18+ years of professional experience.
+Hi, I’m Anton. I help founders and teams turn messy workflows, spreadsheets, and fragile early setups into structured systems that actually work in production.
 
-I build web and mobile applications using modern AI (Lovable, CODEX, Cursor). no-code, low-code, and hybrid approaches, helping founders and teams turn ideas into reliable products that actually work in production. I have a strong enterprise background as a full-stack developer and team lead, and I’m a good fit if you want to move fast without sacrificing quality, scalability, or maintainability.
+I’m not just a developer who ships features. My main value is understanding how a business operates, finding the weak points in its processes and tooling, and building systems that reduce chaos, improve visibility, and scale more reliably over time.
 
-💡 What I do
+What clients usually come to me for:
 
-• Design and build web apps, internal tools, and MVPs that are easy to use and maintain.  
-• Help clients move from spreadsheets and ad-hoc setups to real, structured systems.  
-• Combine hands-on development with clear explanations, so you understand how your product works.
+- moving from spreadsheets and ad hoc tools to real internal systems
+- recovering projects built too quickly or without clear structure
+- turning an idea into a usable product with the right level of architecture
+- reducing manual work through automation and integrations
+- redesigning operations so the business is less dependent on specific employees
 
-My main strength is the ability to combine hands-on development with clear thinking. I don’t just “build features” — I help shape solutions that make sense, scale over time, and don’t fall apart after launch.
+I work especially well in situations where there is already a real business, real operational pressure, and real growth potential, but the internal processes and systems have not kept up.
 
-Many clients come to me after trying to build things themselves with no-code tools, spreadsheets, or AI “vibe-coding”.
-The problem is usually not the tool, but missing structure, unclear decisions, and hidden technical limitations. I help fix that by building systems that are consistent, understandable, and ready for real-world use.
+What I do
 
-🚀 How I work
+- design and build internal tools, SaaS products, portals, and MVPs
+- analyze workflows and propose practical technical solutions
+- improve management visibility through better data structures and process design
+- reduce human-factor risk and key-person dependency
+- combine hands-on implementation with clear communication, so clients understand what is being built and why
 
-• Start from your goals and workflows, not from a specific platform.  
-• Suggest a practical stack (no-code / low-code / custom code) based on budget, deadlines, and long-term plans.  
-• Communicate clearly, share progress, and explain trade-offs and risks in plain language.
+How I work
 
-I believe good results come from shared understanding, not just task execution. That’s why I take time to explain how things work, what decisions matter, and which shortcuts are safe — and which ones usually turn into problems later.
+- I start from goals, workflows, and business constraints, not from a favorite platform
+- I suggest a practical stack based on budget, deadlines, ownership, and long-term needs
+- I explain trade-offs clearly and help clients avoid expensive technical mistakes early
 
-🧭 Experience & results
+Many clients come to me after trying to build things themselves with no-code tools, spreadsheets, or AI-assisted “vibe coding.” Usually the problem is not the tool itself, but weak structure, unclear system boundaries, and decisions that do not hold up under real use.
 
-I’ve worked with founders, startups, and established businesses across different industries, including manufacturing, finance, government, education, culture, and tourism.
+I help fix that by building systems that are understandable, maintainable, and ready for real operational use.
+
+Experience and results
+
+I’ve worked across startups, established businesses, and public-sector environments in finance, government, education, culture, tourism, and services.
 
 I also have a proven track record of 20+ paid consultations and follow-up projects, helping clients:
-• validate ideas before investing too much  
-• untangle existing systems  
-• move from spreadsheets to real applications  
-• recover and stabilize projects built in a rush  
 
-⚙️ Tools & technologies
+- validate ideas before investing too much
+- untangle overcomplicated systems
+- move from fragile setups to real applications
+- recover and stabilize projects built in a rush
 
-My current preferred stack is WeWeb + Supabase + n8n for modern web apps, SaaS products, and automations.
+Selected examples of business impact
+
+- service business automation -> internal app and process redesign -> client handling reduced to about 5 minutes, with major revenue growth after restructuring
+- spreadsheet-based workflows -> proper databases and operational systems -> scaling from hundreds to thousands of records without chaos
+- embedded internal systems -> zero-onboarding-friction workflows -> self-hosted, privacy-conscious delivery
+- AI-built prototype recovery -> re-architecture and structured rebuild -> stable base for further product growth
+
+Tools and technologies
+
+My current preferred stack is WeWeb + Supabase + n8n for modern internal tools, SaaS products, and automation-heavy systems.
 
 Depending on the project, I also work with:
-• Bubble, AppMaster, Softr for early-stage MVPs and validation  
-• Xano, Directual, Airtable for backends and data  
-• n8n, Make, Zapier for automations and integrations  
-• Webflow, Webstudio, Figma for marketing sites and UI  
-• Docker, APIs, HTML, CSS, JavaScript when custom code or self-hosting is needed.
 
-💡 Why WeWeb instead of Bubble or Glide
+- Bubble, Glide, Softr for early-stage validation and operational tools
+- Xano, Airtable, Directual for backends and data
+- n8n, Make, Zapier, Pipedream for automations and integrations
+- Webflow, Figma, HTML, CSS, JavaScript for UI and delivery
+- Docker, APIs, self-hosting, and custom code when data control or flexibility matters
 
-Bubble and Glide work well for quick prototypes.
-Problems usually start when a product becomes a real business.
+Why clients like working with me
 
-Key differences in practice:
+I care about business usefulness, not just implementation. I’m comfortable saying “this approach will break later” if it helps avoid wasted time and money.
 
-• Ownership and lock-in  
-Bubble and Glide lock your product inside their platform.
-With WeWeb, your frontend is yours — exportable, movable, and self-hostable.
+Clients often value that I can both build and explain: I don’t hide behind jargon, and I don’t reduce complex work to vague promises.
 
-• Long-term cost  
-Bubble and Glide pricing almost always grows to $100/month or more as usage increases.
-WeWeb stays significantly cheaper over time.
+Let’s talk
 
-• Architecture and scaling  
-Bubble and Glide tightly couple UI, logic, and data.
-WeWeb separates frontend and backend, allowing:
-– adding a mobile app later without rebuilding everything  
-– changing or scaling the backend independently  
+If you need someone who can understand messy operations, design a better system, and help carry it through implementation, feel free to reach out.
 
-• Control and compliance  
-Bubble and Glide are cloud-only.
-WeWeb supports self-hosting, making data ownership, audits, and compliance possible.
-
-🔥 What I usually build
-
-• SaaS products and MVPs  
-• internal tools and business systems  
-• pixel-perfect user interfaces with attention to UX details  
-• custom solutions on top of WeWeb and Supabase  
-• integrations and automations using tools like n8n, Make, Zapier  
-• self-hosted setups using Docker when data control matters  
-
-I use Git and version control to keep projects reliable and maintainable.
-
-💬 Why clients like working with me
-
-I genuinely enjoy solving complex problems and understanding how businesses work.
-I care about the result, not just the task, and I’m comfortable saying “this is a bad idea” when it helps avoid expensive mistakes.
-
-Clients often say they appreciate that I can both build and explain — without unnecessary jargon.
-
-🤝 Let’s talk
-
-If you want to build something solid, understandable, and ready for real use, feel free to reach out.
-Even if your requirements aren’t fully clear yet, we can start with a short consultation, clarify your goals, and choose the right technical approach before development.
+Even if your requirements are not fully clear yet, we can start with a short consultation, map the problem properly, and choose the right approach before development.

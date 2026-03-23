@@ -1,20 +1,27 @@
-I’m an IT entrepreneur helping founders and teams build mobile and web applications that are fast to develop, secure by design, and independent from fragile platforms.
+I help businesses turn messy operations into structured systems.
 
-I work across MVPs, SaaS products, mobile apps, and web applications, focusing on architecture, performance, and long-term maintainability — not just shipping features.
+My work sits at the intersection of business processes, internal systems, and technical delivery. I step in when workflows are fragmented, reporting is weak, teams depend too much on manual routines, and technology no longer matches the scale or complexity of the business.
 
-A big part of my work is CTO as a Service: stepping in when a team needs architectural clarity, technical leadership, or late-stage support without hiring a full-time CTO. This often includes reviewing existing systems, reducing technical risk, and setting a clear direction for growth.
+What I usually do:
+- analyze how the business actually works, not how it is supposed to work on paper
+- identify operational bottlenecks, key-person risk, and gaps in visibility
+- redesign workflows and internal systems
+- introduce practical automation and integrations
+- help teams move from spreadsheets, ad hoc tools, and fragile setups to systems they can actually run
 
-What clients usually come to me for:
-– faster and more predictable development
-– improved system performance and stability
-– data security and privacy-first architecture
-– self-hosting options and reduced vendor lock-in
-– compliance-ready setups (GDPR, HIPAA-oriented architectures)
+I am strongest in environments where there is already real business activity, real money, and real operational pressure, but the internal tooling and processes have not caught up yet.
 
-I design systems with data protection, ownership, and independence in mind, so companies can scale without being trapped by tools or platforms.
+My background combines systems architecture, product delivery, internal tools, automation, and technical leadership across startups, enterprise, and government environments. That lets me work both with stakeholders and with the technical side of implementation, without losing sight of the business outcome.
 
-I have a proven track record across multiple successful projects, including SaaS and automation products, and a top-rated profile on Upwork with long-term client relationships.
+I do not focus on technology for its own sake. I focus on reducing dependency on individual employees, lowering human-factor risk, improving management visibility, and making operations easier to scale.
 
-Tech stack: WeWeb, Supabase (PostgreSQL), FlutterFlow, Xano, n8n, APIs, Bubble, Glide. Cursor/Lovable.
+Typical areas where I help:
+- internal systems and business process automation
+- operational redesign through technology
+- architecture for complex internal tools and SaaS products
+- technical due diligence and recovery of fragile projects
+- low-code / hybrid delivery with long-term maintainability in mind
+
+Core stack: WeWeb, Supabase, Xano, n8n, APIs, PostgreSQL, Bubble, Glide, custom integrations.
 
 Based in Belgrade. I work in English, Russian, and Serbian.
