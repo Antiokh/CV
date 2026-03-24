@@ -281,6 +281,7 @@
     },
     {
       "company": "ZIL Cultural Center",
+      "legal_name": null,
       "start_date": "2020-03",
       "end_date": "2022-06",
       "ongoing": false,
@@ -288,15 +289,33 @@
         "Head of IT"
       ],
       "focus": [
-        "full IT infrastructure",
-        "security and support model",
-        "vendor management",
-        "documentation and governance",
-        "remote work migration during COVID"
+        "IT strategy and technical development",
+        "back-office technical support",
+        "network infrastructure",
+        "information systems and technology park oversight",
+        "security and support processes",
+        "vendor and contractor management",
+        "documentation, regulations, and governance",
+        "remote work migration during COVID",
+        "HelpDesk and asset inventory implementation",
+        "website and PWA modernization",
+        "business-process planning for future automation"
+      ],
+      "responsibility_areas": [
+        "around 140 workstations, servers, CCTV, and access control systems",
+        "engineer management",
+        "project documentation and IT projects",
+        "procurement preparation and market research",
+        "communication with higher-level public authorities",
+        "training staff",
+        "information security and personal-data handling",
+        "Active Directory and policy rollout",
+        "inventory, storage cleanup, and equipment lifecycle control"
       ]
     },
     {
       "company": "Directorate of Cultural Centers of Moscow",
+      "legal_name": null,
       "start_date": "2017-01",
       "end_date": "2023-05",
       "ongoing": false,
@@ -308,15 +327,34 @@
         "Expert"
       ],
       "focus": [
-        "industry-level information system",
-        "architecture, implementation, documentation, training",
-        "interactive maps and reporting",
-        "government stakeholder coordination",
-        "legacy modernization"
+        "industry-level information system in the cultural sector",
+        "IBM Domino-based web portal evolution",
+        "architecture, implementation, documentation, training, and support",
+        "interactive maps, reporting, analytics, and exports",
+        "government and institutional stakeholder coordination",
+        "legacy modernization without operational breakage",
+        "technical requirements drafting",
+        "internal consulting across a network of subordinate institutions",
+        "hiring, onboarding, mentoring, and probation-process design",
+        "security, access control, and governance improvements"
+      ],
+      "responsibility_areas": [
+        "working with IT directors and heads of IT across 100+ subordinate institutions",
+        "interaction with executive authorities of the city of Moscow",
+        "implementation initiatives based on IBM Domino",
+        "server infrastructure including HP ProLiant, VMware, and CentOS 7",
+        "IBM Domino migration from Windows to CentOS with nginx",
+        "modular architecture and report-generator design",
+        "field, export, and filter generators",
+        "Yandex Maps integration with live data",
+        "webinar-based training and adoption support",
+        "portal recovery from search and security blocklists",
+        "support workflow shift from phone/email to instant messaging"
       ]
     },
     {
       "company": "Moscow Social Development Agency",
+      "legal_name": null,
       "start_date": "2019-09",
       "end_date": "2020-03",
       "ongoing": false,
