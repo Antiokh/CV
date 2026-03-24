@@ -174,7 +174,9 @@
     ],
     "career_stages": [
       {
-        "period": "2022-present",
+        "start_date": "2022-11",
+        "end_date": null,
+        "ongoing": true,
         "label": "NeedleBit / Independent practice",
         "focus": [
           "client and internal products",
@@ -184,7 +186,9 @@
         ]
       },
       {
-        "period": "2017-2023",
+        "start_date": "2017-01",
+        "end_date": "2023-05",
+        "ongoing": false,
         "label": "Government and institutional systems",
         "focus": [
           "industry-scale information systems",
@@ -194,7 +198,9 @@
         ]
       },
       {
-        "period": "2016",
+        "start_date": "2016-01",
+        "end_date": "2016-12",
+        "ongoing": false,
         "label": "Freelance transition into promotion and SMM",
         "focus": [
           "freelance experimentation",
@@ -204,7 +210,9 @@
         ]
       },
       {
-        "period": "2013-2015",
+        "start_date": "2013-01",
+        "end_date": "2015-09",
+        "ongoing": false,
         "label": "Banking systems",
         "focus": [
           "document management architecture",
@@ -214,7 +222,9 @@
         ]
       },
       {
-        "period": "2008-2013",
+        "start_date": "2008-09",
+        "end_date": "2013-01",
+        "ongoing": false,
         "label": "Early enterprise and systems work",
         "focus": [
           "Lotus Notes / Domino development",
@@ -228,7 +238,9 @@
     {
       "company": "NeedleBit",
       "location": "Serbia",
-      "period": "2022-11 to present",
+      "start_date": "2022-11",
+      "end_date": null,
+      "ongoing": true,
       "titles": [
         "Founder",
         "CTO",
@@ -253,7 +265,9 @@
     },
     {
       "company": "New Business Environment",
-      "period": "2022-08 to 2022-11",
+      "start_date": "2022-08",
+      "end_date": "2022-11",
+      "ongoing": false,
       "titles": [
         "Implementation Curator",
         "Product Manager"
@@ -267,7 +281,9 @@
     },
     {
       "company": "ZIL Cultural Center",
-      "period": "2020-03 to 2022-06",
+      "start_date": "2020-03",
+      "end_date": "2022-06",
+      "ongoing": false,
       "titles": [
         "Head of IT"
       ],
@@ -281,7 +297,9 @@
     },
     {
       "company": "Directorate of Cultural Centers of Moscow",
-      "period": "2017-01 to 2023-05",
+      "start_date": "2017-01",
+      "end_date": "2023-05",
+      "ongoing": false,
       "titles": [
         "Senior Manager",
         "IT Architect",
@@ -299,7 +317,9 @@
     },
     {
       "company": "Moscow Social Development Agency",
-      "period": "2019-09 to 2020-03",
+      "start_date": "2019-09",
+      "end_date": "2020-03",
+      "ongoing": false,
       "titles": [
         "Deputy Head of Digital Development and IT",
         "Acting Head of IT"
@@ -313,7 +333,9 @@
     },
     {
       "company": "Settlement and Savings Bank",
-      "period": "2013-01 to 2015-09",
+      "start_date": "2013-01",
+      "end_date": "2015-09",
+      "ongoing": false,
       "titles": [
         "Lead Software Developer",
         "Systems Architect"
@@ -328,7 +350,9 @@
     },
     {
       "company": "Freelance / SMM and Promotion Transition",
-      "period": "2016",
+      "start_date": "2016-01",
+      "end_date": "2016-12",
+      "ongoing": false,
       "titles": [
         "Freelance Specialist",
         "SMM Learner"
@@ -342,35 +366,45 @@
     },
     {
       "company": "Synergy JSC",
-      "period": "2016-11 to 2017-03",
+      "start_date": "2016-11",
+      "end_date": "2017-03",
+      "ongoing": false,
       "titles": [
         "Lotus Developer"
       ]
     },
     {
       "company": "IT Company / Lotus Notes Department",
-      "period": "2011-01 to 2012-04",
+      "start_date": "2011-01",
+      "end_date": "2012-04",
+      "ongoing": false,
       "titles": [
         "Lotus Notes Specialist"
       ]
     },
     {
       "company": "Freelance / Private Practice",
-      "period": "2009-01 to 2011-01",
+      "start_date": "2009-01",
+      "end_date": "2011-01",
+      "ongoing": false,
       "titles": [
         "Independent Technical Specialist"
       ]
     },
     {
       "company": "Domodedovo Airport",
-      "period": "2008-09 to 2009-09",
+      "start_date": "2008-09",
+      "end_date": "2009-09",
+      "ongoing": false,
       "titles": [
         "Junior Lotus Notes Developer"
       ]
     },
     {
       "company": "OTUS",
-      "period": "2023-09 to 2023-12",
+      "start_date": "2023-09",
+      "end_date": "2023-12",
+      "ongoing": false,
       "titles": [
         "Instructor"
       ],
@@ -874,7 +908,9 @@
       {
         "organization": "OTUS",
         "role": "Instructor",
-        "period": "2023-09 to 2023-12",
+        "start_date": "2023-09",
+        "end_date": "2023-12",
+        "ongoing": false,
         "topics": [
           "Bubble development",
           "interface and product design in Figma",
