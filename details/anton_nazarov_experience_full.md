@@ -1,5 +1,10 @@
 # Anton Nazarov - Full Professional Experience
 
+Location: Belgrade, Serbia  
+Phone: +381 62 979 5315  
+Telegram: @antiokh  
+LinkedIn: https://www.linkedin.com/in/nazarovanton/  
+
 This document is a consolidated English-language version of Anton Nazarov's full professional experience, based on the repository CV, portfolio case studies, long-form source materials, and expanded resume files.
 
 It is intentionally more detailed than a standard CV. The goal is to preserve breadth, context, responsibilities, representative achievements, and recurring patterns across roles.
