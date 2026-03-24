@@ -1,0 +1,708 @@
+{
+  "profile_version": "2026-03-24",
+  "purpose": "Canonical structured profile object for resumes, portfolio positioning, Upwork/LinkedIn rewriting, application generation, and agent-assisted profile maintenance.",
+  "identity": {
+    "full_name": "Anton Nazarov",
+    "location": {
+      "city": "Belgrade",
+      "country": "Serbia"
+    },
+    "contacts": {
+      "phone": "+381 62 979 5315",
+      "telegram": "@antiokh",
+      "linkedin": "https://www.linkedin.com/in/nazarovanton/"
+    },
+    "languages": [
+      {
+        "language": "Russian",
+        "level": "Native"
+      },
+      {
+        "language": "English",
+        "level": "Fluent"
+      },
+      {
+        "language": "Serbian",
+        "level": "Working proficiency"
+      }
+    ],
+    "work_authorization": "Serbian sole proprietor (preduzetnik)"
+  },
+  "professional_identity": {
+    "short_label": "Technology leader and systems architect with strong hands-on delivery ability",
+    "positioning": [
+      "CTO",
+      "Head of Engineering",
+      "Systems Architect",
+      "Tech Lead",
+      "Digital Transformation Lead",
+      "Implementation / Product Delivery Lead",
+      "Head of IT"
+    ],
+    "years_building_since": 2005,
+    "professional_experience_since": 2008,
+    "professional_experience_years": 18,
+    "core_pattern": "Turns fragmented workflows, weak tooling, and operational chaos into structured systems that organizations can run, maintain, and scale.",
+    "working_style": [
+      "playing coach",
+      "architect-level implementer",
+      "hands-on builder with leadership range",
+      "comfortable in messy, ambiguous, high-pressure environments"
+    ],
+    "preferred_problem_space": [
+      "internal systems",
+      "ERP and CRM implementation",
+      "business process automation",
+      "operational platforms",
+      "backend and automation architecture",
+      "AI-assisted product workflows",
+      "system rescue and restructuring",
+      "migration away from fragile or limiting platforms"
+    ]
+  },
+  "core_value_proposition": {
+    "summary": "Builds and restructures complex systems at the intersection of engineering, business, and operations.",
+    "business_outcomes": [
+      "reduces manual work and human-factor mistakes",
+      "lowers dependency on specific employees",
+      "improves management visibility and reporting clarity",
+      "reduces vendor lock-in",
+      "creates maintainable systems that support real operations",
+      "aligns product structure with technical and business constraints"
+    ],
+    "transformation_pattern": [
+      "enters messy environment",
+      "maps real workflows and stakeholders",
+      "identifies structural risks and bottlenecks",
+      "designs system boundaries and data structure",
+      "implements automation and delivery workflows",
+      "supports adoption through documentation, training, and clear explanation"
+    ]
+  },
+  "strengths": {
+    "source": "MetaFox Strengths Report",
+    "top_strengths": [
+      "Communicator",
+      "Examiner",
+      "Inventor",
+      "Learner",
+      "Decision Maker"
+    ],
+    "translated_capabilities": [
+      "structured communication in complex technical and business environments",
+      "system-level analysis with strong quality control",
+      "fast learning and adaptation in changing product contexts",
+      "practical invention balanced by decision-making",
+      "leadership through clarity, influence, and follow-through"
+    ]
+  },
+  "role_archetypes": [
+    {
+      "role": "CTO / Head of Engineering",
+      "fit": "high",
+      "why": "Owns architecture, delivery direction, systems thinking, and senior technical alignment."
+    },
+    {
+      "role": "Systems Architect / Solutions Architect",
+      "fit": "high",
+      "why": "Repeatedly rebuilds operations as maintainable systems with clear backend, workflow, and integration boundaries."
+    },
+    {
+      "role": "Digital Transformation Lead",
+      "fit": "high",
+      "why": "Maps real processes, lowers operational risk, and introduces practical automation tied to business use."
+    },
+    {
+      "role": "Head of IT / Infrastructure and Operations Lead",
+      "fit": "high",
+      "why": "Ran institutional IT, support, security, procurement, remote work migration, and internal governance."
+    },
+    {
+      "role": "Technical Product / Implementation Lead",
+      "fit": "high",
+      "why": "Combines stakeholder work, architecture, delivery, adoption, and business-system design."
+    }
+  ],
+  "experience_summary": {
+    "cross_cutting_themes": [
+      "information system design and rebuilding",
+      "digital transformation and process automation",
+      "architecture plus direct implementation",
+      "documentation and process formalization",
+      "infrastructure management and information security",
+      "ERP / CRM implementation",
+      "integration design and modular architecture",
+      "stakeholder coordination across technical and institutional layers",
+      "user training, mentoring, and webinars",
+      "AI-assisted engineering and repository-level delivery discipline"
+    ],
+    "career_stages": [
+      {
+        "period": "2022-present",
+        "label": "NeedleBit / Independent practice",
+        "focus": [
+          "client and internal products",
+          "low-code, hybrid, and automation-heavy systems",
+          "architecture and product restructuring",
+          "AI-native engineering workflows"
+        ]
+      },
+      {
+        "period": "2017-2023",
+        "label": "Government and institutional systems",
+        "focus": [
+          "industry-scale information systems",
+          "IT leadership",
+          "infrastructure and security",
+          "training, documentation, and institutional coordination"
+        ]
+      },
+      {
+        "period": "2013-2015",
+        "label": "Banking systems",
+        "focus": [
+          "document management architecture",
+          "workflow automation",
+          "process analysis",
+          "integration with 1C"
+        ]
+      },
+      {
+        "period": "2008-2013",
+        "label": "Early enterprise and systems work",
+        "focus": [
+          "Lotus Notes / Domino development",
+          "corporate automation",
+          "infrastructure and backend problem solving"
+        ]
+      }
+    ]
+  },
+  "employment_history": [
+    {
+      "company": "NeedleBit",
+      "location": "Serbia",
+      "period": "2022-11 to present",
+      "titles": [
+        "Founder",
+        "CTO",
+        "Systems Architect",
+        "Project Manager"
+      ],
+      "focus": [
+        "technical strategy and architecture for multiple client and internal products",
+        "low-code, no-code, and hybrid systems",
+        "MVP-to-production delivery",
+        "founder consulting",
+        "AI-assisted engineering workflows",
+        "Supabase Edge Function helper layers",
+        "database-to-git SQL discipline"
+      ],
+      "notable_outcomes": [
+        "reduced service time from hours to minutes through automation",
+        "increased client revenue up to x13 through redesign and process restructuring",
+        "built PWA products that removed dependency on App Stores",
+        "improved PostgreSQL function versioning and auditable SQL workflows"
+      ]
+    },
+    {
+      "company": "New Business Environment",
+      "period": "2022-08 to 2022-11",
+      "titles": [
+        "Implementation Curator",
+        "Product Manager"
+      ],
+      "focus": [
+        "ERP/CRM implementations in PlanFix",
+        "implementation methodology",
+        "manager coaching",
+        "delivery discipline"
+      ]
+    },
+    {
+      "company": "ZIL Cultural Center",
+      "period": "2020-03 to 2022-06",
+      "titles": [
+        "Head of IT"
+      ],
+      "focus": [
+        "full IT infrastructure",
+        "security and support model",
+        "vendor management",
+        "documentation and governance",
+        "remote work migration during COVID"
+      ]
+    },
+    {
+      "company": "Directorate of Cultural Centers of Moscow",
+      "period": "2017-01 to 2023-05",
+      "titles": [
+        "Senior Manager",
+        "IT Architect",
+        "Analyst",
+        "Developer + PM",
+        "Expert"
+      ],
+      "focus": [
+        "industry-level information system",
+        "architecture, implementation, documentation, training",
+        "interactive maps and reporting",
+        "government stakeholder coordination",
+        "legacy modernization"
+      ]
+    },
+    {
+      "company": "Moscow Social Development Agency",
+      "period": "2019-09 to 2020-03",
+      "titles": [
+        "Deputy Head of Digital Development and IT",
+        "Acting Head of IT"
+      ],
+      "focus": [
+        "building IT function from scratch",
+        "IT team leadership",
+        "support model and documentation",
+        "security and procurement"
+      ]
+    },
+    {
+      "company": "Settlement and Savings Bank",
+      "period": "2013-01 to 2015-09",
+      "titles": [
+        "Lead Software Developer",
+        "Systems Architect"
+      ],
+      "focus": [
+        "document management system from scratch",
+        "process analysis",
+        "workflow automation",
+        "1C integration",
+        "user training"
+      ]
+    },
+    {
+      "company": "Synergy JSC",
+      "period": "2016-11 to 2017-03",
+      "titles": [
+        "Lotus Developer"
+      ]
+    },
+    {
+      "company": "IT Company / Lotus Notes Department",
+      "period": "2011-01 to 2012-04",
+      "titles": [
+        "Lotus Notes Specialist"
+      ]
+    },
+    {
+      "company": "Freelance / Private Practice",
+      "period": "2009-01 to 2011-01",
+      "titles": [
+        "Independent Technical Specialist"
+      ]
+    },
+    {
+      "company": "Domodedovo Airport",
+      "period": "2008-09 to 2009-09",
+      "titles": [
+        "Junior Lotus Notes Developer"
+      ]
+    },
+    {
+      "company": "OTUS",
+      "period": "2023-09 to 2023-12",
+      "titles": [
+        "Instructor"
+      ],
+      "focus": [
+        "Bubble development",
+        "Figma",
+        "AI / neural network usage",
+        "international marketplace positioning"
+      ]
+    }
+  ],
+  "technologies": {
+    "architecture_and_delivery": [
+      "system architecture",
+      "solutions architecture",
+      "technical strategy",
+      "process design",
+      "product discovery and restructuring",
+      "stakeholder communication",
+      "implementation management"
+    ],
+    "frontend_and_app_builders": [
+      "WeWeb",
+      "Bubble.io",
+      "Glide",
+      "Webflow",
+      "FlutterFlow",
+      "Adalo"
+    ],
+    "backend_and_data": [
+      "Supabase",
+      "Supabase Edge Functions",
+      "Xano",
+      "PostgreSQL",
+      "SQL",
+      "REST APIs",
+      "RLS",
+      "Auth",
+      "SQLite",
+      "MySQL",
+      "MongoDB",
+      "MariaDB"
+    ],
+    "automation_and_integration": [
+      "n8n",
+      "Make.com",
+      "Zapier",
+      "API integration",
+      "CSV/XML ingestion",
+      "Telegram integrations",
+      "Telegram Mini Apps"
+    ],
+    "code_and_infra": [
+      "JavaScript",
+      "TypeScript",
+      "Python",
+      "Node.js",
+      "Docker",
+      "Linux",
+      "Git",
+      "GitHub",
+      "Cloudflare",
+      "NGINX",
+      "HTTP"
+    ],
+    "legacy_and_enterprise": [
+      "IBM Domino / Lotus Notes",
+      "XPages",
+      "Java",
+      "SSJS",
+      "1C integration",
+      "Active Directory",
+      "Windows Server",
+      "GLPI",
+      "Zabbix",
+      "Hyper-V",
+      "VMware",
+      "Synology",
+      "Odoo"
+    ]
+  },
+  "integrations_and_platforms": [
+    "OpenAI API",
+    "fal.ai",
+    "Google Translate API",
+    "Radar.io",
+    "Google Maps",
+    "OpenStreetMap",
+    "Stripe",
+    "Yandex Maps API",
+    "DocsAutomator",
+    "Tawk.to"
+  ],
+  "custom_weweb_components": [
+    "leaflet-map",
+    "leaflet-map-advanced",
+    "osm-map",
+    "telegram-handler",
+    "qr-code-generator",
+    "qr-code-scanner",
+    "barcode-generator",
+    "select-with-search",
+    "editable-list",
+    "dynamic-list",
+    "custom-switch",
+    "tags-input-with-search",
+    "rating-component",
+    "lottie-animation",
+    "image-cropper-pro",
+    "multilang-text-display"
+  ],
+  "backend_and_automation_vocabulary": [
+    "Database Architecture",
+    "Database Design",
+    "Software Architecture & Design",
+    "Business Logic Layer",
+    "Data Access Layer",
+    "RESTful API",
+    "RESTful Architecture",
+    "API Development",
+    "API Integration",
+    "Back-End Development",
+    "Web Service",
+    "PostgreSQL",
+    "Supabase",
+    "n8n",
+    "Make.com",
+    "OpenAI API",
+    "Docker",
+    "Cloudflare",
+    "Git-based version control"
+  ],
+  "selected_projects": [
+    {
+      "name": "PromptlessPress",
+      "type": "AI-assisted visual content platform",
+      "roles": [
+        "Builder",
+        "Architect",
+        "AI workflow designer"
+      ],
+      "signals": [
+        "fal.ai-powered generation flows",
+        "structured prompt composition",
+        "debug prompt interface",
+        "Supabase + Edge Functions + SQL discipline",
+        "repository-level AI instructions and guardrails"
+      ]
+    },
+    {
+      "name": "MetaFox Strengths Explorer",
+      "type": "Assessment and coaching platform",
+      "roles": [
+        "Developer",
+        "Project Manager"
+      ],
+      "signals": [
+        "assessment logic",
+        "reporting flows",
+        "conceptually complex product model"
+      ]
+    },
+    {
+      "name": "Exit Lead",
+      "type": "Inspection and reporting platform",
+      "roles": [
+        "Builder",
+        "Architect",
+        "Designer"
+      ],
+      "signals": [
+        "dual-interface system",
+        "Glide + WeWeb + Supabase",
+        "n8n and DocsAutomator",
+        "document migration",
+        "OpenAI-assisted data parsing"
+      ]
+    },
+    {
+      "name": "Andronyevskaya ERP",
+      "type": "Self-hosted ERP for property technical support",
+      "roles": [
+        "Developer",
+        "DevOps",
+        "Project Manager"
+      ],
+      "signals": [
+        "self-hosted architecture",
+        "Telegram Mini App login",
+        "QR-based equipment access",
+        "role-based field operations",
+        "real-time workflows"
+      ]
+    },
+    {
+      "name": "AIS MosRazvitie",
+      "type": "Government-scale information system",
+      "roles": [
+        "Architect",
+        "Analyst",
+        "Developer",
+        "Trainer",
+        "Operational owner"
+      ],
+      "signals": [
+        "legacy modernization",
+        "analytics and maps",
+        "documentation and training",
+        "government stakeholders"
+      ]
+    },
+    {
+      "name": "Vencer Autismo",
+      "type": "Assessment and recommendation platform",
+      "roles": [
+        "Full-stack builder"
+      ],
+      "signals": [
+        "weighted scoring",
+        "radar charts",
+        "repeat-session logic",
+        "content-based guidance"
+      ]
+    },
+    {
+      "name": "Educate Online",
+      "type": "Corporate assessment and mood analysis system",
+      "roles": [
+        "Designer",
+        "Developer"
+      ],
+      "signals": [
+        "multilingual scale",
+        "Bubble constraints workaround",
+        "translation integration",
+        "fast delivery under pressure"
+      ]
+    },
+    {
+      "name": "QR Cloud",
+      "type": "Digital business card and company profile platform",
+      "roles": [
+        "Product builder"
+      ],
+      "signals": [
+        "QR workflows",
+        "public profile pages",
+        "company layer",
+        "compact B2B product packaging"
+      ]
+    },
+    {
+      "name": "Cashdesk Accounting",
+      "type": "Internal financial operations system",
+      "roles": [
+        "Developer",
+        "Designer"
+      ],
+      "signals": [
+        "role management",
+        "currency accounting",
+        "security improvement",
+        "legacy process cleanup"
+      ]
+    },
+    {
+      "name": "Dobri Visarun",
+      "type": "Service-business automation PWA",
+      "roles": [
+        "Developer"
+      ],
+      "signals": [
+        "Telegram bot integration",
+        "internal alerts",
+        "client handling reduced to minutes",
+        "revenue growth up to x10-x13"
+      ]
+    },
+    {
+      "name": "Dobri Tours",
+      "type": "Tour management and loyalty platform",
+      "roles": [
+        "Developer",
+        "Database Architect"
+      ]
+    },
+    {
+      "name": "French Plumbers ERP",
+      "type": "ERP for a trade-services business",
+      "roles": [
+        "Full-stack developer"
+      ]
+    },
+    {
+      "name": "Sefcast",
+      "type": "AI-assisted SEO analytics platform",
+      "roles": [
+        "Frontend developer"
+      ]
+    },
+    {
+      "name": "Serbia Networking App",
+      "type": "Event networking product",
+      "roles": [
+        "Creator",
+        "Developer"
+      ]
+    },
+    {
+      "name": "RuskaJela",
+      "type": "Local food marketplace",
+      "roles": [
+        "Creator",
+        "Builder"
+      ]
+    }
+  ],
+  "problems_solved": [
+    "spreadsheet-based operations replaced with structured systems",
+    "manual lead handling turned into automated workflows",
+    "backend logic moved from scattered ad hoc rules into stable layers",
+    "legacy information systems modernized without breaking continuity",
+    "reporting and analytics made reusable and more trustworthy",
+    "frontends separated from backend/platform lock-in",
+    "internal role logic, permissions, and asset workflows made explicit",
+    "operational knowledge extracted from individuals into systems"
+  ],
+  "ai_and_agentic_workflows": {
+    "capabilities": [
+      "AI-native development in VS Code",
+      "repository-specific instructions and task contracts",
+      "architectural guardrails for agent-assisted delivery",
+      "prompt composition and reproducible generation workflows",
+      "debug interfaces for AI-assisted image generation",
+      "OpenAI and fal.ai integration",
+      "AI-assisted migration and data parsing workflows"
+    ],
+    "engineering_discipline": [
+      "shared helper layers for Supabase Edge Functions",
+      "auditable SQL workflows",
+      "PostgreSQL function versioning improvements",
+      "database-to-git synchronization",
+      "decision snapshots for reproducibility"
+    ]
+  },
+  "market_positioning": {
+    "linkedin": {
+      "primary_identity": "Systems Architect / Digital Transformation Lead",
+      "message": "Expert and leader who turns fragmented operations into structured systems with better visibility, lower risk, and practical automation."
+    },
+    "upwork": {
+      "primary_identity": "Fullstack Developer with strong backend, automation, and systems depth",
+      "headline_direction": "Fullstack Developer | Bubble, WeWeb, n8n, Supabase, Xano, AI Workflows",
+      "search_strategy": [
+        "broad discoverability through full-stack, no-code, SaaS, web and mobile terms",
+        "technical credibility through Supabase, n8n, API, backend, and database language",
+        "premium use cases through migration, automation, and maintainability"
+      ],
+      "platform_signals": {
+        "top_rated": true,
+        "job_success": "100%"
+      }
+    }
+  },
+  "education": [
+    {
+      "program": "Bachelor in Management",
+      "focus": "Small Business Management"
+    },
+    {
+      "program": "Professional retraining",
+      "focus": "IT in Economics and Government"
+    },
+    {
+      "program": "Background",
+      "focus": "Accounting and Finance"
+    }
+  ],
+  "additional_experience": [
+    "event organization up to 10,000+ participants",
+    "festival and concert organization",
+    "training and mentoring",
+    "webinars and onboarding",
+    "cross-domain thinking across IT, business, marketing, and operations"
+  ],
+  "source_documents": [
+    "README.md",
+    "details/anton_nazarov_experience_full.md",
+    "details/upwork/main_profile.md",
+    "details/upwork/special_backend.md",
+    "details/upwork/special_frontend.md",
+    "details/upwork/STRATEGY.md",
+    "portfolio/README.md"
+  ]
+}
