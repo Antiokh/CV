@@ -1,0 +1,144 @@
+{
+  "profile_version": "2026-03-24",
+  "document_type": "career_guidance_profile",
+  "source": {
+    "provider": "HeadHunter / Профориентация",
+    "source_pdf": "hh_career_guidance_report_ru_16670046.pdf",
+    "report_date": "2018-11-08",
+    "language": "ru"
+  },
+  "recommended_professions": [
+    "Руководитель аналитического отдела",
+    "Менеджер проекта",
+    "Руководитель группы разработчиков (IT)",
+    "Start-up менеджер / Руководитель новых проектов",
+    "Руководитель по маркетингу",
+    "Арт-директор",
+    "Руководитель отдела R&D",
+    "Креативный директор",
+    "Трейдер / дилер",
+    "Редактор периодических изданий",
+    "Медиа-аналитик",
+    "Редактор интернет-портала",
+    "Маркетолог",
+    "Руководитель отдела рекламы и PR",
+    "Специалист по исследованиям"
+  ],
+  "professional_domains": {
+    "strong_recommendation": [
+      {
+        "domain": "Управление",
+        "summary": "Управление людьми и рабочими процессами, принятие ключевых решений, стратегическое планирование.",
+        "fit": "high"
+      },
+      {
+        "domain": "Коммуникации",
+        "summary": "Переговоры, презентации, продвижение, внешние процессы организации.",
+        "fit": "high"
+      },
+      {
+        "domain": "Инновации",
+        "summary": "Разработка новых продуктов, услуг и технологий, творческая и креативная деятельность.",
+        "fit": "high"
+      },
+      {
+        "domain": "Аналитика",
+        "summary": "Анализ информации, прогнозирование, выявление механизмов и причин, проработка решений.",
+        "fit": "high"
+      }
+    ],
+    "partial_recommendation": [
+      {
+        "domain": "Проекты",
+        "summary": "Проектный менеджмент, новые направления бизнеса, предпринимательство.",
+        "fit": "medium"
+      },
+      {
+        "domain": "Технологии",
+        "summary": "Профессиональная компетентность, реализация технологий на практике, глубокая специализация.",
+        "fit": "medium"
+      },
+      {
+        "domain": "Контроль",
+        "summary": "Контроль и аудит работы других людей, обеспечение качественных и количественных показателей.",
+        "fit": "medium"
+      },
+      {
+        "domain": "Администрирование",
+        "summary": "Планирование и администрирование рабочих процессов, поддержание порядка и стабильности.",
+        "fit": "medium"
+      }
+    ],
+    "not_recommended_as_primary": [
+      {
+        "domain": "Сервис",
+        "summary": "Клиентские службы, поддержка, аккаунт-менеджмент, сервисная деятельность.",
+        "fit": "low"
+      },
+      {
+        "domain": "Функционал",
+        "summary": "Чисто исполнительская, регламентированная внутриорганизационная работа.",
+        "fit": "low"
+      }
+    ]
+  },
+  "professional_interests": {
+    "manager": "strong",
+    "entrepreneur": "neutral",
+    "communicator": "low_current_interest",
+    "administrator": "neutral"
+  },
+  "intelligence_structure": {
+    "calculations": "average",
+    "lexicon": "above_average",
+    "erudition": "above_average",
+    "visual_logic": "high",
+    "abstract_logic": "high",
+    "attention": "above_average"
+  },
+  "personality_dimensions": {
+    "introversion_extraversion": {
+      "result": "balanced",
+      "summary": "Сбалансированная ориентация и на внешний, и на внутренний мир; сочетание действия и размышления."
+    },
+    "feeling_thinking": {
+      "result": "thinking_dominant",
+      "summary": "Сильная аналитичность, объективность, ориентация на собственное мнение, последовательное мышление."
+    },
+    "sensing_intuition": {
+      "result": "balanced",
+      "summary": "Сочетание интуитивности и практичности, одновременное внимание к новым возможностям и текущей реализации."
+    },
+    "improvisation_planning": {
+      "result": "moderately_improvisational",
+      "summary": "Гибкость, адаптивность, открытость новому, ориентация на процесс и многовариантность."
+    },
+    "yielding_influence": {
+      "result": "dominant",
+      "summary": "Стремление влиять, отстаивать интересы и добиваться реализации решений; полезно для управления."
+    }
+  },
+  "development_recommendations": [
+    "стресс-менеджмент",
+    "самоорганизация",
+    "уверенность в общении",
+    "управление другими",
+    "креативность"
+  ],
+  "interpreted_takeaways": {
+    "core_pattern": [
+      "управление и аналитика — главный вектор",
+      "коммуникации и инновации — сильные дополнительные оси",
+      "технологическая и проектная деятельность лучше работают как часть более широких ролей, а не как единственная идентичность",
+      "чисто сервисные и чисто исполнительские роли подходят хуже"
+    ],
+    "repo_alignment": [
+      "совпадает с текущим позиционированием как systems architect / digital transformation lead / people-facing systems leader",
+      "поддерживает движение в сторону ролей с управлением, анализом, внедрением и работой со стейкхолдерами"
+    ]
+  },
+  "notes": [
+    "This JSON is a structured summary of the HeadHunter career guidance report rather than a full verbatim conversion.",
+    "The source report is in Russian and reflects the testing date of 2018-11-08."
+  ]
+}
