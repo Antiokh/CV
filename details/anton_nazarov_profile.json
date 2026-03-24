@@ -26,7 +26,30 @@
         "level": "Working proficiency"
       }
     ],
-    "work_authorization": "Serbian sole proprietor (preduzetnik)"
+    "work_authorization": "Serbian sole proprietor (preduzetnik)",
+    "business_entity": {
+      "country": "Serbia",
+      "legal_form": "Preduzetnik / sole proprietor",
+      "status": "active",
+      "registered_name": "Anton Nazarov PR Anton Nazarov PR Veb Portali Beograd - Stari Grad",
+      "registered_activity_code": "6312",
+      "registered_activity": "Web portals",
+      "registration_date": "2023-07-24",
+      "registered_city": "Belgrade",
+      "source_status": "confirmed in APR registration PDF"
+    },
+    "residence_and_work_permit": {
+      "country": "Serbia",
+      "status": "active",
+      "permit_type": "Unified temporary residence and work permit",
+      "basis": "Self-employment tied to registered sole proprietorship",
+      "issuing_authority": "PU for the City of Belgrade",
+      "issue_date": "2024-08-16",
+      "valid_until": "2027-08-02",
+      "city": "Belgrade",
+      "municipality": "Vozdovac",
+      "source_status": "confirmed in Serbian ID / permit PDF"
+    }
   },
   "professional_identity": {
     "short_label": "Technology leader and systems architect with strong hands-on delivery ability",
