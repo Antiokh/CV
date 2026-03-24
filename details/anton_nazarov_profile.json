@@ -264,6 +264,7 @@
   "employment_history": [
     {
       "company": "Domodedovo Airport",
+      "legal_name": "Airport Management Company Limited",
       "start_date": "2008-09",
       "end_date": "2009-09",
       "ongoing": false,
@@ -291,8 +292,7 @@
     },
     {
       "company": "IT Company / Lotus Notes Department",
-      "legal_name_candidate": "ООО \"Фирма АйТи. Информационные технологии\"",
-      "legal_name_confidence": "tentative",
+      "legal_name": "ООО \"Фирма АйТи. Информационные технологии\"",
       "start_date": "2011-01",
       "end_date": "2012-04",
       "ongoing": false,
@@ -328,8 +328,7 @@
     },
     {
       "company": "Settlement and Savings Bank",
-      "legal_name_candidate": "АО \"КБ «Банк расчётов и сбережений\"",
-      "legal_name_confidence": "tentative",
+      "legal_name": "ООО КБ \"Банк Расчетов и Сбережений\"",
       "start_date": "2013-01",
       "end_date": "2015-09",
       "ongoing": false,
@@ -377,8 +376,7 @@
     },
     {
       "company": "Synergy JSC",
-      "legal_name_candidate": "ООО \"Синергия Маркет\"",
-      "legal_name_confidence": "tentative",
+      "legal_name": "ООО \"Торговый дом Синергия Маркет\"",
       "start_date": "2016-11",
       "end_date": "2017-03",
       "ongoing": false,
