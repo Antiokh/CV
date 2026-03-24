@@ -291,6 +291,8 @@
     },
     {
       "company": "IT Company / Lotus Notes Department",
+      "legal_name_candidate": "ООО \"Фирма АйТи. Информационные технологии\"",
+      "legal_name_confidence": "tentative",
       "start_date": "2011-01",
       "end_date": "2012-04",
       "ongoing": false,
@@ -306,6 +308,8 @@
     },
     {
       "company": "IscTravel Law Agency",
+      "legal_form_candidate": "ООО",
+      "legal_name_confidence": "tentative",
       "start_date": "2012-11",
       "end_date": "2012-12",
       "ongoing": false,
@@ -324,6 +328,8 @@
     },
     {
       "company": "Settlement and Savings Bank",
+      "legal_name_candidate": "АО \"КБ «Банк расчётов и сбережений\"",
+      "legal_name_confidence": "tentative",
       "start_date": "2013-01",
       "end_date": "2015-09",
       "ongoing": false,
@@ -371,6 +377,8 @@
     },
     {
       "company": "Synergy JSC",
+      "legal_name_candidate": "ООО \"Синергия Маркет\"",
+      "legal_name_confidence": "tentative",
       "start_date": "2016-11",
       "end_date": "2017-03",
       "ongoing": false,
