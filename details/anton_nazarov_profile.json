@@ -79,6 +79,37 @@
       "supports adoption through documentation, training, and clear explanation"
     ]
   },
+  "leadership_and_communication": {
+    "leadership_capabilities": [
+      "team leadership and mentoring",
+      "hiring, onboarding, and staff adaptation",
+      "vendor and contractor coordination",
+      "implementation ownership",
+      "support model design",
+      "departmental process and governance design",
+      "manager coaching",
+      "cross-functional delivery coordination"
+    ],
+    "communication_capabilities": [
+      "stakeholder interviews and alignment",
+      "technical requirements drafting",
+      "translation of business processes into technical structures",
+      "webinars and user training",
+      "executive and institutional communication",
+      "documentation and knowledge transfer",
+      "clear explanation of technical trade-offs to non-technical audiences",
+      "creating shared understanding across business, operations, and technology"
+    ],
+    "change_management_capabilities": [
+      "system rollout and adoption support",
+      "organizational process formalization",
+      "remote-work transition enablement",
+      "legacy-to-modern transition without operational breakage",
+      "governance, access rules, and support process setup",
+      "implementation in politically and institutionally complex environments"
+    ],
+    "human_facing_preference": "Prefers roles that combine technology with people, stakeholder work, implementation leadership, and organizational change rather than purely isolated technical execution."
+  },
   "strengths": {
     "source": "MetaFox Strengths Report",
     "top_strengths": [
@@ -121,6 +152,11 @@
       "role": "Technical Product / Implementation Lead",
       "fit": "high",
       "why": "Combines stakeholder work, architecture, delivery, adoption, and business-system design."
+    },
+    {
+      "role": "People-facing systems leader",
+      "fit": "high",
+      "why": "Works best where communication, adoption, training, and stakeholder alignment are part of the actual job, not an afterthought."
     }
   ],
   "experience_summary": {
