@@ -464,6 +464,15 @@
     "DocsAutomator",
     "Tawk.to"
   ],
+  "payment_integrations": [
+    {
+      "provider": "Stripe",
+      "context": [
+        "payments in PromptlessPress",
+        "Supabase Edge Functions integration context"
+      ]
+    }
+  ],
   "custom_weweb_components": [
     "leaflet-map",
     "leaflet-map-advanced",
@@ -482,6 +491,23 @@
     "image-cropper-pro",
     "multilang-text-display"
   ],
+  "weweb_component_practice": {
+    "summary": "Builds custom WeWeb components, forks, and integration bridges to extend the platform beyond stock blocks.",
+    "capabilities": [
+      "map-driven UI",
+      "Telegram Mini App bridges",
+      "QR and barcode tooling",
+      "searchable selects and editable list flows",
+      "media and animation helpers",
+      "integration wrappers",
+      "reusable UI and data-entry components"
+    ],
+    "positioning_value": [
+      "proves work beyond no-code assembly",
+      "supports serious business apps on WeWeb",
+      "reduces platform limitations through reusable extensions"
+    ]
+  },
   "frontend_and_weweb_vocabulary": [
     "WeWeb",
     "frontend architecture",
@@ -765,20 +791,100 @@
       }
     }
   },
-  "education": [
-    {
-      "program": "Bachelor in Management",
-      "focus": "Small Business Management"
-    },
-    {
-      "program": "Professional retraining",
-      "focus": "IT in Economics and Government"
-    },
-    {
-      "program": "Background",
-      "focus": "Accounting and Finance"
-    }
-  ],
+  "education": {
+    "formal_education": [
+      {
+        "program": "Bachelor in Management",
+        "specialization": "Small Business Management",
+        "field": "Management",
+        "year_from": null,
+        "year_to": null,
+        "source_status": "confirmed in repository, years not specified"
+      },
+      {
+        "program": "Accounting and Finance background",
+        "specialization": "Accounting and Finance",
+        "field": "Finance",
+        "year_from": null,
+        "year_to": null,
+        "source_status": "confirmed in repository, formal institution and years not specified"
+      }
+    ],
+    "professional_retraining": [
+      {
+        "program": "Professional retraining in IT for Economics and Government",
+        "field": "IT / economics / public-sector systems",
+        "year_from": null,
+        "year_to": null,
+        "source_status": "confirmed in repository, years not specified"
+      }
+    ],
+    "continuing_education": [
+      {
+        "topic": "Zero-code / western-market product building",
+        "field": "product building",
+        "year_from": null,
+        "year_to": null
+      },
+      {
+        "topic": "Low-code and implementation training",
+        "field": "low-code delivery and implementation",
+        "year_from": null,
+        "year_to": null
+      },
+      {
+        "topic": "Java fundamentals",
+        "field": "software development",
+        "year_from": null,
+        "year_to": null
+      },
+      {
+        "topic": "ITIL / DevOps service thinking",
+        "field": "service management and operations",
+        "year_from": null,
+        "year_to": null
+      },
+      {
+        "topic": "IT management",
+        "field": "management and leadership",
+        "year_from": null,
+        "year_to": null
+      },
+      {
+        "topic": "Negotiation and working under pressure",
+        "field": "communication and management",
+        "year_from": null,
+        "year_to": null
+      },
+      {
+        "topic": "Event management and promotion",
+        "field": "promotion, coordination, and audience work",
+        "year_from": null,
+        "year_to": null
+      },
+      {
+        "topic": "Training in event management, promotion, and SMM with festival/media practitioners",
+        "field": "promotion and SMM",
+        "year_from": 2014,
+        "year_to": 2016,
+        "source_status": "timeframe inferred from adjacent event activity in repository"
+      }
+    ],
+    "teaching_and_knowledge_transfer": [
+      {
+        "organization": "OTUS",
+        "role": "Instructor",
+        "period": "2023-09 to 2023-12",
+        "topics": [
+          "Bubble development",
+          "interface and product design in Figma",
+          "practical AI / neural network usage",
+          "positioning for international marketplaces"
+        ]
+      }
+    ],
+    "summary": "Education combines management, accounting/finance, IT retraining, implementation-focused continuous learning, and later teaching."
+  },
   "additional_experience": [
     "event organization up to 10,000+ participants",
     "festival and concert organization",
