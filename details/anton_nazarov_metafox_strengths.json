@@ -5,13 +5,36 @@
     "provider": "MetaFox Strengths Explorer",
     "source_pdf": "anton_nazarov_metaFox_Strengths_Explorer_2026.pdf",
     "source_markdown": "details/Metafox_Strengths_Report.md",
+    "source_api_export": "User-provided MetaFox API payload",
     "report_subject": "Anton Nazarov",
     "report_date": "2026-02-25"
+  },
+  "session": {
+    "session_id": "89350c54-2a9f-47da-8cf3-478432e249a1",
+    "user_id": 22,
+    "created_at_unix_ms": 1772052244390,
+    "finished_at_unix_ms": 1772053032401,
+    "calculated_at_unix_ms": 1772053033952,
+    "is_finished": true,
+    "is_calculated": true,
+    "feedback_sessions_count": 0,
+    "review_goal": "Getting to know myself.",
+    "review_role": "I am exploring new career options",
+    "review_suggestions": "Nothing"
   },
   "top_strengths": [
     {
       "name": "Communicator",
+      "code": "role_communicator",
       "category": "realised",
+      "quadrant": 2,
+      "score": 8.39875,
+      "energy": 8.330000000000002,
+      "frequency": 8.467500000000001,
+      "normalized_score": 9,
+      "normalized_energy": 9,
+      "normalized_frequency": 9,
+      "ef_diff": 0,
       "traits": [
         "charismatic",
         "clarifying",
@@ -24,7 +47,16 @@
     },
     {
       "name": "Examiner",
+      "code": "role_examiner",
       "category": "realised",
+      "quadrant": 3,
+      "score": 7.755000000000001,
+      "energy": 7.1875,
+      "frequency": 8.3225,
+      "normalized_score": 7.852438722456055,
+      "normalized_energy": 7.158083296014328,
+      "normalized_frequency": 8.795213809336992,
+      "ef_diff": -1.64,
       "traits": [
         "analytical",
         "attentive",
@@ -37,7 +69,16 @@
     },
     {
       "name": "Inventor",
+      "code": "role_inventor",
       "category": "realised",
+      "quadrant": 1,
+      "score": 7.5200000000000005,
+      "energy": 8.23,
+      "frequency": 6.81,
+      "normalized_score": 7.43352314929438,
+      "normalized_energy": 8.838781907747423,
+      "normalized_frequency": 6.659081992938405,
+      "ef_diff": 2.18,
       "traits": [
         "courageous",
         "creative",
@@ -50,12 +91,42 @@
     },
     {
       "name": "Learner",
+      "code": "role_learner",
       "category": "top_five",
+      "quadrant": 3,
+      "score": 6.9262500000000005,
+      "energy": 6.505000000000001,
+      "frequency": 7.347499999999999,
+      "normalized_score": 6.3750928447635555,
+      "normalized_energy": 6.057769816390506,
+      "normalized_frequency": 7.41820321694782,
+      "unrealized_gap": -0.84,
+      "traits": [
+        "humble",
+        "curious",
+        "open-minded",
+        "versatile"
+      ],
       "meaningful_use": "Improves through feedback, reflection, and repeated practice."
     },
     {
       "name": "Decision Maker",
+      "code": "role_decisionmaker",
       "category": "top_five",
+      "quadrant": 1,
+      "score": 6.74125,
+      "energy": 6.485,
+      "frequency": 6.9975,
+      "normalized_score": 6.045308244615003,
+      "normalized_energy": 6.02552619793999,
+      "normalized_frequency": 6.923891722244015,
+      "unrealized_gap": -0.51,
+      "traits": [
+        "decisive",
+        "resolute",
+        "accountable",
+        "assertive"
+      ],
       "meaningful_use": "Mobilizes commitment by naming decisions, choosing direction, and clarifying ownership and next steps."
     }
   ],
@@ -86,6 +157,120 @@
     ],
     "weaknesses": [
       "Self-Regulator"
+    ]
+  },
+  "api_role_layers": {
+    "realized_strengths": [
+      {
+        "name": "Communicator",
+        "score": 8.39875,
+        "energy": 8.330000000000002,
+        "frequency": 8.467500000000001,
+        "quadrant": 2
+      },
+      {
+        "name": "Examiner",
+        "score": 7.755000000000001,
+        "energy": 7.1875,
+        "frequency": 8.3225,
+        "quadrant": 3
+      },
+      {
+        "name": "Inventor",
+        "score": 7.5200000000000005,
+        "energy": 8.23,
+        "frequency": 6.81,
+        "quadrant": 1
+      }
+    ],
+    "unrealized_strengths": [
+      {
+        "name": "Motivator",
+        "score": 4.61375,
+        "energy": 6.035,
+        "frequency": 3.1925,
+        "quadrant": 2
+      },
+      {
+        "name": "Networker",
+        "score": 6.33875,
+        "energy": 7.15,
+        "frequency": 5.5275,
+        "quadrant": 2
+      },
+      {
+        "name": "Facilitator",
+        "score": 4.8875,
+        "energy": 5.625,
+        "frequency": 4.15,
+        "quadrant": 2
+      }
+    ],
+    "learned_behaviors": [
+      {
+        "name": "Coach",
+        "score": 6.2124999999999995,
+        "energy": 6.3525,
+        "frequency": 6.0725,
+        "quadrant": 4
+      },
+      {
+        "name": "Pragmatist",
+        "score": 5.55,
+        "energy": 5.1,
+        "frequency": 6.0,
+        "quadrant": 1
+      },
+      {
+        "name": "Guardian",
+        "score": 4.86875,
+        "energy": 4.880000000000001,
+        "frequency": 4.8575,
+        "quadrant": 4
+      }
+    ],
+    "weaknesses": [
+      {
+        "name": "Self-Regulator",
+        "score": 4.901249999999999,
+        "energy": 5.6,
+        "frequency": 4.2025,
+        "quadrant": 4
+      }
+    ],
+    "extended_role_snapshot": [
+      {
+        "name": "Finisher",
+        "score": 4.6,
+        "energy": 2.7475,
+        "frequency": 6.4525,
+        "quadrant": 1,
+        "unrealized_gap": -3.71
+      },
+      {
+        "name": "Visionary",
+        "score": 4.178750000000001,
+        "energy": 6.262500000000001,
+        "frequency": 2.0949999999999998,
+        "quadrant": 3,
+        "unrealized_gap": 4.17
+      },
+      {
+        "name": "Organizer",
+        "score": 3.35,
+        "energy": 4.536666666666666,
+        "frequency": 2.1633333333333336,
+        "quadrant": 3,
+        "unrealized_gap": 2.37
+      },
+      {
+        "name": "Boundary-Keeper",
+        "score": 3.855,
+        "energy": 3.8025,
+        "frequency": 3.9074999999999998,
+        "quadrant": 4,
+        "unrealized_gap": -0.1
+      }
     ]
   },
   "working_interpretation": {
@@ -123,6 +308,7 @@
   },
   "notes": [
     "This JSON keeps only the parts of the MetaFox report that describe Anton Nazarov directly.",
-    "The full methodology, radar visualization, and role catalog remain in the source PDF."
+    "The full methodology, radar visualization, and role catalog remain in the source PDF.",
+    "The API export adds richer score, energy, frequency, quadrant, and role-layer data than the PDF summary alone."
   ]
 }
