@@ -120,7 +120,7 @@ Upwork portfolio reference: https://www.upwork.com/freelancers/antiokh?p=1980790
 
 Demo video: https://www.youtube.com/watch?v=Sz4BfwE8WTE
 
-Sample generated report: [Anton Nazarov MetaFox Strengths Explorer 2026 PDF](../../anton_nazarov_metaFox_Strengths_Explorer_2026.pdf)
+Sample generated report: [Anton Nazarov MetaFox Strengths Explorer 2026 PDF](../../sources/anton_nazarov_metafox_strengths_explorer_2026.pdf)
 
 ---
 

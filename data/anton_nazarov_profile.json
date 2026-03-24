@@ -1298,8 +1298,8 @@
   "source_documents": [
     "README.md",
     "details/anton_nazarov_experience_full.md",
-    "details/anton_nazarov_metafox_strengths.json",
-    "details/anton_nazarov_hh_career_guidance.json",
+    "data/anton_nazarov_metafox_strengths.json",
+    "data/anton_nazarov_hh_career_guidance.json",
     "details/upwork/main_profile.md",
     "details/upwork/special_backend.md",
     "details/upwork/special_frontend.md",

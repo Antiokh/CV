@@ -3,7 +3,7 @@
   "document_type": "strengths_profile",
   "source": {
     "provider": "MetaFox Strengths Explorer",
-    "source_pdf": "anton_nazarov_metaFox_Strengths_Explorer_2026.pdf",
+    "source_pdf": "sources/anton_nazarov_metafox_strengths_explorer_2026.pdf",
     "source_markdown": "details/Metafox_Strengths_Report.md",
     "source_api_export": "User-provided MetaFox API payload",
     "report_subject": "Anton Nazarov",

@@ -1,6 +1,6 @@
 # Metafox Strengths Report
 
-Source PDF: [anton_nazarov_metaFox_Strengths_Explorer_2026.pdf](../anton_nazarov_metaFox_Strengths_Explorer_2026.pdf)
+Source PDF: [anton_nazarov_metafox_strengths_explorer_2026.pdf](../sources/anton_nazarov_metafox_strengths_explorer_2026.pdf)
 
 Report for Anton Nazarov, February 25, 2026.
 

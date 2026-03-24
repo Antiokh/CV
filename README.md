@@ -9,8 +9,9 @@ Location: Belgrade, Serbia
 - [Multilingual Resume](./RESUME_RU_EN_SR.md)
 - [Portfolio Index](./portfolio/README.md)
 - [Detailed Experience](./details/anton_nazarov_experience_full.md)
-- [Profile Suggestions](./details/AI_PROFILE_SUGGESTIONS.md)
-- [Application Workflow](./details/APPLICATION_WORKFLOW.md)
+- [Profile Suggestions](./workflows/ai_profile_suggestions.md)
+- [Application Workflow](./workflows/application_workflow.md)
+- [Structured Profile Data](./data/anton_nazarov_profile.json)
 - [Personality / Strengths Reference](./details/Metafox_Strengths_Report.md)
 - [Career Profile Reference](./details/Comprehensive_Psychological_&_Career_Profile.md)
 

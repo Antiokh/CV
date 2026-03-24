@@ -14,9 +14,9 @@ Always start from these files:
 - [RESUME.md](../RESUME.md)
 - [RESUME_RU_EN_SR.md](../RESUME_RU_EN_SR.md)
 - [Portfolio Index](../portfolio/README.md)
-- [Full Professional Experience](./anton_nazarov_experience_full.md)
-- [AI Profile Suggestions](./AI_PROFILE_SUGGESTIONS.md)
-- [Application Workflow](./APPLICATION_WORKFLOW.md)
+- [Full Professional Experience](../details/anton_nazarov_experience_full.md)
+- [AI Profile Suggestions](./ai_profile_suggestions.md)
+- [Application Workflow](./application_workflow.md)
 
 ## Output Location
 

@@ -1,7 +1,7 @@
 # Comprehensive Psychological & Career Profile
 *(Based on career assessment report, 2018)*
 
-Source PDF: [hh_career_guidance_report_ru_16670046.pdf](../hh_career_guidance_report_ru_16670046.pdf)
+Source PDF: [hh_career_guidance_report_ru_16670046.pdf](../sources/hh_career_guidance_report_ru_16670046.pdf)
 
 This document is a condensed working summary. The original Russian-language assessment remains in the source PDF.
 

@@ -10,8 +10,8 @@ Use these files as primary sources:
 - [RESUME.md](../RESUME.md) for the short English version
 - [RESUME_RU_EN_SR.md](../RESUME_RU_EN_SR.md) for multilingual reference
 - [Portfolio Index](../portfolio/README.md) for project evidence
-- [Full Professional Experience](./anton_nazarov_experience_full.md) for long-form detail
-- [AI Profile Suggestions](./AI_PROFILE_SUGGESTIONS.md) for positioning logic
+- [Full Professional Experience](../details/anton_nazarov_experience_full.md) for long-form detail
+- [AI Profile Suggestions](./ai_profile_suggestions.md) for positioning logic
 
 ## Recommended Process
 

@@ -3,9 +3,9 @@
 This guide explains which roles to prioritize, which roles to treat cautiously, and how to decide what narrative to use for a specific vacancy.
 
 Use this together with:
-- [AI Profile Suggestions](./AI_PROFILE_SUGGESTIONS.md)
-- [Application Agent Guide](./APPLICATION_AGENT_GUIDE.md)
-- [Application Workflow](./APPLICATION_WORKFLOW.md)
+- [AI Profile Suggestions](./ai_profile_suggestions.md)
+- [Application Agent Guide](./application_agent_guide.md)
+- [Application Workflow](./application_workflow.md)
 
 ## Core Positioning
 
@@ -51,7 +51,7 @@ Strong evidence:
 - [AIS MosRazvitie](../portfolio/ais_mosrazvitie/README.md)
 - [Exit Lead](../portfolio/exit_lead/README.md)
 - [Andronyevskaya ERP](../portfolio/andronyevskaya_erp/README.md)
-- [anton_nazarov_experience_full.md](./anton_nazarov_experience_full.md)
+- [anton_nazarov_experience_full.md](../details/anton_nazarov_experience_full.md)
 
 ### Technical Product Lead
 
@@ -92,9 +92,9 @@ Use when the company needs:
 - pragmatic leadership without building a large internal org immediately
 
 Strong evidence:
-- [AI Profile Suggestions](./AI_PROFILE_SUGGESTIONS.md)
+- [AI Profile Suggestions](./ai_profile_suggestions.md)
 - [README.md](../README.md)
-- [anton_nazarov_experience_full.md](./anton_nazarov_experience_full.md)
+- [anton_nazarov_experience_full.md](../details/anton_nazarov_experience_full.md)
 
 ## Roles To Treat Cautiously
 
