@@ -1,0 +1,128 @@
+{
+  "profile_version": "2026-03-24",
+  "document_type": "strengths_profile",
+  "source": {
+    "provider": "MetaFox Strengths Explorer",
+    "source_pdf": "anton_nazarov_metaFox_Strengths_Explorer_2026.pdf",
+    "source_markdown": "details/Metafox_Strengths_Report.md",
+    "report_subject": "Anton Nazarov",
+    "report_date": "2026-02-25"
+  },
+  "top_strengths": [
+    {
+      "name": "Communicator",
+      "category": "realised",
+      "traits": [
+        "charismatic",
+        "clarifying",
+        "considerate",
+        "tactful"
+      ],
+      "meaningful_use": "Ensures shared understanding by summarizing clearly, choosing precise words, and aligning interpretations.",
+      "overuse_risk": "May over-explain and overwhelm others.",
+      "counterbalance": "Pause and ask what the other person actually needs to know."
+    },
+    {
+      "name": "Examiner",
+      "category": "realised",
+      "traits": [
+        "analytical",
+        "attentive",
+        "objective",
+        "prudent"
+      ],
+      "meaningful_use": "Safeguards quality by verifying information, catching inconsistencies, and spotting risks early.",
+      "overuse_risk": "May overcheck and drift into perfectionism.",
+      "counterbalance": "Define the required accuracy level in advance."
+    },
+    {
+      "name": "Inventor",
+      "category": "realised",
+      "traits": [
+        "courageous",
+        "creative",
+        "independent",
+        "proactive"
+      ],
+      "meaningful_use": "Creates novelty by generating original solutions, connecting ideas, and running experiments.",
+      "overuse_risk": "May open too many ideas at once and hurt delivery.",
+      "counterbalance": "Limit experiments and tie them to current priorities."
+    },
+    {
+      "name": "Learner",
+      "category": "top_five",
+      "meaningful_use": "Improves through feedback, reflection, and repeated practice."
+    },
+    {
+      "name": "Decision Maker",
+      "category": "top_five",
+      "meaningful_use": "Mobilizes commitment by naming decisions, choosing direction, and clarifying ownership and next steps."
+    }
+  ],
+  "strength_categories": {
+    "realised_strengths": [
+      "Communicator",
+      "Examiner",
+      "Inventor"
+    ],
+    "unrealised_strengths": [
+      {
+        "name": "Motivator",
+        "meaning": "Lifts energy, momentum, and morale when engagement drops."
+      },
+      {
+        "name": "Networker",
+        "meaning": "Builds connections by initiating contact, staying visible, and creating useful relationships."
+      },
+      {
+        "name": "Facilitator",
+        "meaning": "Enables participation and alignment by helping groups include voices, work through tension, and adapt together."
+      }
+    ],
+    "learned_behaviors": [
+      "Coach",
+      "Pragmatist",
+      "Guardian"
+    ],
+    "weaknesses": [
+      "Self-Regulator"
+    ]
+  },
+  "working_interpretation": {
+    "summary": "The profile points to a person who communicates clearly, thinks critically, generates new approaches, learns fast, and is comfortable closing decisions.",
+    "best_fit_capabilities": [
+      "system-level thinking",
+      "structured communication",
+      "quality control",
+      "technical leadership",
+      "organizational leadership"
+    ],
+    "practical_tradeoffs": [
+      "communication strength needs limits to avoid over-explaining",
+      "analysis strength needs limits to avoid perfectionism",
+      "invention strength needs focus to avoid too many parallel ideas"
+    ]
+  },
+  "repo_alignment": {
+    "mapped_to_profile_json": {
+      "top_strengths": [
+        "Communicator",
+        "Examiner",
+        "Inventor",
+        "Learner",
+        "Decision Maker"
+      ],
+      "translated_capabilities": [
+        "structured communication in complex technical and business environments",
+        "system-level analysis with strong quality control",
+        "fast learning and adaptation in changing product contexts",
+        "practical invention balanced by decision-making",
+        "leadership through clarity, influence, and follow-through"
+      ]
+    }
+  },
+  "notes": [
+    "This JSON keeps only the parts of the MetaFox report that describe Anton Nazarov directly.",
+    "The full methodology, radar visualization, and role catalog remain in the source PDF."
+  ]
+}
