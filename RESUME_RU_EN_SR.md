@@ -4,9 +4,6 @@
 
 **CTO / Head of Engineering / Systems Architect / Tech Lead**  
 **Location:** Belgrade, Serbia  
-**Phone:** +381 62 979 5315  
-**Telegram:** @antiokh  
-**LinkedIn:** https://www.linkedin.com/in/nazarovanton/  
 **Languages:** Russian (native), English (fluent), Serbian (working proficiency)  
 **Work authorization:** Serbian sole proprietor (preduzetnik)
 
@@ -69,9 +66,6 @@ I also use AI-native development workflows in VS Code, with repository-specific 
 
 **CTO / Head of Engineering / Systems Architect / Tech Lead**  
 **Локация:** Белград, Сербия  
-**Телефон:** +381 62 979 5315  
-**Telegram:** @antiokh  
-**LinkedIn:** https://www.linkedin.com/in/nazarovanton/  
 **Языки:** русский (родной), английский (свободно), сербский (рабочий)  
 **Право на работу:** ИП в Сербии (preduzetnik)
 
@@ -134,9 +128,6 @@ I also use AI-native development workflows in VS Code, with repository-specific 
 
 **CTO / Head of Engineering / Systems Architect / Tech Lead**  
 **Lokacija:** Beograd, Srbija  
-**Telefon:** +381 62 979 5315  
-**Telegram:** @antiokh  
-**LinkedIn:** https://www.linkedin.com/in/nazarovanton/  
 **Jezici:** ruski (maternji), engleski (fluent), srpski (radni nivo)  
 **Radni status:** preduzetnik registrovan u Srbiji
 

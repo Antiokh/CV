@@ -2,9 +2,6 @@
 **CTO / Head of Engineering / Systems Architect / Tech Lead**
 
 Belgrade, Serbia  
-Phone: +381 62 979 5315  
-Telegram: @antiokh  
-LinkedIn: https://www.linkedin.com/in/nazarovanton/  
 Portfolio: [Portfolio Index](./portfolio/README.md)
 
 ## Profile
