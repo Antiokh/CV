@@ -242,6 +242,10 @@
       "ongoing": false,
       "titles": [
         "Junior Lotus Notes Developer"
+      ],
+      "results": [
+        "entered enterprise systems work through a competitive internal training and selection process",
+        "built an early foundation in corporate document systems, support, and user-facing adaptation"
       ]
     },
     {
@@ -251,6 +255,10 @@
       "ongoing": false,
       "titles": [
         "Independent Technical Specialist"
+      ],
+      "results": [
+        "developed full ownership from setup to maintenance across small technical systems",
+        "automated database updates and backups in early freelance infrastructure work"
       ]
     },
     {
@@ -260,6 +268,11 @@
       "ongoing": false,
       "titles": [
         "Lotus Notes Specialist"
+      ],
+      "results": [
+        "introduced XPages technology into the company for the first time",
+        "rewrote the core Boss-Referent library in JavaScript / SSJS for web support",
+        "extended document workflow capabilities with new modules and databases"
       ]
     },
     {
@@ -277,6 +290,12 @@
         "workflow automation",
         "1C integration",
         "user training"
+      ],
+      "results": [
+        "mapped document-routing paths with bank leadership and turned them into automation requirements",
+        "designed and built an internal document management system from scratch",
+        "implemented XML-based integration with 1C and related internal data flows",
+        "combined development, testing, rollout, and user training in a banking environment"
       ]
     },
     {
@@ -293,6 +312,10 @@
         "event management and promotion learning",
         "market-facing communication and audience work",
         "expanding practical skills beyond pure technical delivery"
+      ],
+      "results": [
+        "broadened profile toward communication, promotion, and audience-facing work",
+        "built a bridge between technical delivery and people-oriented coordination"
       ]
     },
     {
@@ -302,6 +325,10 @@
       "ongoing": false,
       "titles": [
         "Lotus Developer"
+      ],
+      "results": [
+        "brought databases into a unified visual style",
+        "reduced a large backlog of accumulated change requests and technical improvements"
       ]
     },
     {
@@ -341,6 +368,12 @@
         "webinar-based training and adoption support",
         "portal recovery from search and security blocklists",
         "support workflow shift from phone/email to instant messaging"
+      ],
+      "results": [
+        "built and evolved a scalable industry-level information system for cultural institutions",
+        "improved security, authorization, and access control",
+        "enabled parallel report generation and stronger operational independence across departments",
+        "combined architecture, implementation, governance, support, and user adoption in one long-running institutional system"
       ]
     },
     {
@@ -358,6 +391,11 @@
         "IT team leadership",
         "support model and documentation",
         "security and procurement"
+      ],
+      "results": [
+        "launched full IT operations for a new organization including infrastructure, support, and documentation",
+        "implemented HelpDesk and internal service workflows",
+        "established a practical operating structure for support, licensing, hardware movement, and security"
       ]
     },
     {
@@ -392,6 +430,12 @@
         "information security and personal-data handling",
         "Active Directory and policy rollout",
         "inventory, storage cleanup, and equipment lifecycle control"
+      ],
+      "results": [
+        "migrated 100+ employees to remote work during COVID",
+        "launched HelpDesk plus seven support services based on GLPI with automated asset inventory",
+        "introduced Active Directory, security policies, and infrastructure modernization",
+        "reorganized documentation, procedures, and departmental governance for a large public institution"
       ]
     },
     {
@@ -408,6 +452,11 @@
         "implementation methodology",
         "manager coaching",
         "delivery discipline"
+      ],
+      "results": [
+        "eliminated responsibility gaps in company structure",
+        "improved the project delivery model",
+        "increased system adoption and manager engagement"
       ]
     },
     {
@@ -630,6 +679,10 @@
         "debug prompt interface",
         "Supabase + Edge Functions + SQL discipline",
         "repository-level AI instructions and guardrails"
+      ],
+      "results": [
+        "formalized a reproducible AI generation workflow instead of a simple prompt shell",
+        "created a clearer engineering operating model around prompts, debug flows, Edge Functions, and SQL discipline"
       ]
     },
     {
@@ -643,6 +696,9 @@
         "assessment logic",
         "reporting flows",
         "conceptually complex product model"
+      ],
+      "results": [
+        "turned an evolving assessment model into a usable product with scoring, reporting, and peer-feedback flows"
       ]
     },
     {
@@ -659,6 +715,10 @@
         "n8n and DocsAutomator",
         "document migration",
         "OpenAI-assisted data parsing"
+      ],
+      "results": [
+        "migrated approximately 70,000 historical documents from Google Drive into Supabase",
+        "connected field operations, client portal workflows, and automated report delivery in one system"
       ]
     },
     {
@@ -675,6 +735,10 @@
         "QR-based equipment access",
         "role-based field operations",
         "real-time workflows"
+      ],
+      "results": [
+        "reduced onboarding friction through Telegram Mini App login",
+        "combined field tasks, asset logic, and role-based administration in a self-hosted operational ERP"
       ]
     },
     {
@@ -692,6 +756,10 @@
         "analytics and maps",
         "documentation and training",
         "government stakeholders"
+      ],
+      "results": [
+        "improved institutional reporting, analytics, and role-based control",
+        "made system adoption practical through training, webinars, and support workflow changes"
       ]
     },
     {
@@ -705,6 +773,9 @@
         "radar charts",
         "repeat-session logic",
         "content-based guidance"
+      ],
+      "results": [
+        "translated a structured assessment methodology into a repeatable product with lifecycle and recommendation logic"
       ]
     },
     {
@@ -719,6 +790,10 @@
         "Bubble constraints workaround",
         "translation integration",
         "fast delivery under pressure"
+      ],
+      "results": [
+        "delivered the system in roughly three weeks under platform and computational constraints",
+        "enabled multilingual scaling through translation-assisted setup"
       ]
     },
     {
@@ -732,6 +807,9 @@
         "public profile pages",
         "company layer",
         "compact B2B product packaging"
+      ],
+      "results": [
+        "packaged a simple contact-sharing problem into a structured B2B product with room for service expansion"
       ]
     },
     {
@@ -746,6 +824,9 @@
         "currency accounting",
         "security improvement",
         "legacy process cleanup"
+      ],
+      "results": [
+        "replaced a weak legacy accounting workflow with a cleaner and more controlled internal financial tool"
       ]
     },
     {
@@ -759,6 +840,10 @@
         "internal alerts",
         "client handling reduced to minutes",
         "revenue growth up to x10-x13"
+      ],
+      "results": [
+        "drastically reduced client handling time",
+        "supported revenue growth up to x10-x13 through operational automation and restructuring"
       ]
     },
     {
@@ -767,6 +852,9 @@
       "roles": [
         "Developer",
         "Database Architect"
+      ],
+      "results": [
+        "turned a fragmented travel offering into a more structured product platform with loyalty and agent workflows"
       ]
     },
     {
@@ -774,6 +862,9 @@
       "type": "ERP for a trade-services business",
       "roles": [
         "Full-stack developer"
+      ],
+      "results": [
+        "structured internal trade-service operations into a practical ERP workflow"
       ]
     },
     {
@@ -781,6 +872,9 @@
       "type": "AI-assisted SEO analytics platform",
       "roles": [
         "Frontend developer"
+      ],
+      "results": [
+        "contributed a structured frontend and reusable UI layer within a broader product team setup"
       ]
     },
     {
@@ -789,6 +883,9 @@
       "roles": [
         "Creator",
         "Developer"
+      ],
+      "results": [
+        "turned a real networking friction point into a coherent event-oriented product concept"
       ]
     },
     {
@@ -797,6 +894,9 @@
       "roles": [
         "Creator",
         "Builder"
+      ],
+      "results": [
+        "validated hyperlocal marketplace thinking even without enough marketing budget for commercial scale"
       ]
     }
   ],
