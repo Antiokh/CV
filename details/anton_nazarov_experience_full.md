@@ -31,6 +31,29 @@ Across different stages of his career, he has operated in roles equivalent to:
 
 His strongest recurring pattern is turning fragmented workflows, weak tooling, and operational chaos into structured systems that organizations can actually run, maintain, and scale.
 
+## External Assessment Signals
+
+Two independent assessment sources in the repository broadly reinforce the same interpretation of Anton's profile.
+
+The MetaFox strengths report points most strongly to:
+- Communicator
+- Examiner
+- Inventor
+- Learner
+- Decision Maker
+
+Taken together, these strengths describe a person who creates shared understanding, checks assumptions, generates new options, learns quickly, and closes ambiguity through decisions.
+
+The HeadHunter career-guidance report points most strongly toward:
+- management
+- analytics
+- communication
+- innovation
+
+with projects, technology, control, and administration as secondary but still relevant directions.
+
+In practical terms, both assessments support the same conclusion already visible in Anton's work history: his best-fit roles are not purely isolated technical positions, but leadership and transformation roles that combine systems thinking, communication, analysis, invention, and implementation responsibility.
+
 ## Cross-Cutting Themes Throughout the Career
 
 The following themes consistently appear across Anton's work:

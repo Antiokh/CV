@@ -154,6 +154,43 @@
       "leadership through clarity, influence, and follow-through"
     ]
   },
+  "external_assessment_signals": {
+    "metafox": {
+      "summary": "MetaFox highlights communication, analysis, invention, learning, and decision-making as the strongest recurring pattern.",
+      "top_strengths": [
+        "Communicator",
+        "Examiner",
+        "Inventor",
+        "Learner",
+        "Decision Maker"
+      ],
+      "implication": "Supports roles that require structured communication, systems thinking, quality control, leadership through clarity, and original problem solving."
+    },
+    "hh_career_guidance": {
+      "summary": "HeadHunter career guidance points most strongly toward management, analytics, communication, and innovation, with projects/technology as secondary but relevant directions.",
+      "strong_domains": [
+        "management",
+        "communications",
+        "innovation",
+        "analytics"
+      ],
+      "secondary_domains": [
+        "projects",
+        "technology",
+        "control",
+        "administration"
+      ],
+      "personality_signals": [
+        "balanced introversion and extraversion",
+        "thinking-dominant decision style",
+        "balanced intuition and sensing",
+        "moderately improvisational work style",
+        "high influence / dominance"
+      ],
+      "implication": "Supports movement toward people-facing leadership, transformation, analysis, and implementation roles rather than purely isolated technical execution."
+    },
+    "combined_reading": "Both external assessments align with the repository-level pattern: Anton is strongest in roles that combine analysis, communication, decision-making, innovation, and leadership around systems and change."
+  },
   "role_archetypes": [
     {
       "role": "CTO / Head of Engineering",
@@ -1261,6 +1298,8 @@
   "source_documents": [
     "README.md",
     "details/anton_nazarov_experience_full.md",
+    "details/anton_nazarov_metafox_strengths.json",
+    "details/anton_nazarov_hh_career_guidance.json",
     "details/upwork/main_profile.md",
     "details/upwork/special_backend.md",
     "details/upwork/special_frontend.md",
