@@ -20,6 +20,73 @@ They answer questions like:
 - how to position the profile for different role types
 - how to generate application materials from the repository safely
 
+## Agent Modes
+
+Agents working in this repository should assume one of two main modes:
+
+### 1. Application Mode
+
+Use this mode when the task is about:
+
+- tailored resumes
+- cover letters
+- job targeting
+- profile positioning
+- vacancy-specific narrative selection
+
+Start here:
+
+1. [Application Agent Guide](./application_agent_guide.md)
+2. [Application Workflow](./application_workflow.md)
+3. [Job Targeting Guide](./job_targeting_guide.md)
+4. [AI Profile Suggestions](./ai_profile_suggestions.md)
+
+Expected output:
+
+- tailored materials in `applications/`
+- improved positioning logic when broadly useful
+
+Do not use this mode for:
+
+- rewriting portfolio case studies
+- adding screenshots or portfolio media
+- restructuring project folders
+
+### 2. Portfolio Mode
+
+Use this mode when the task is about:
+
+- adding a new project case
+- rewriting an existing project `README.md`
+- improving screenshots, covers, or media naming
+- strengthening portfolio evidence
+
+Start here:
+
+1. [Portfolio Agent Navigator](../portfolio/agent_portfolio_navigator.md)
+2. [Portfolio Index](../portfolio/README.md)
+3. [Agent Project Intake Guide](../portfolio/agent_project_intake_guide.md)
+4. [Agent Case Study Format](../portfolio/agent_case_study_format.md)
+
+Expected output:
+
+- stronger project case-study files in `portfolio/`
+- cleaner media references
+- updated portfolio index when needed
+
+Do not use this mode for:
+
+- vacancy-specific resumes
+- cover letters
+- role targeting logic
+
+## Switching Rule
+
+If a task starts with one mode but requires the other, split the work explicitly:
+
+- first update canonical portfolio evidence in `portfolio/`
+- then use `workflows/` to build application materials from that evidence
+
 ## When To Read This Folder
 
 Use `workflows/` when the task is about:

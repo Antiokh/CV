@@ -25,6 +25,20 @@ If you are an agent working inside this repository:
 - use `workflows/` for application, targeting, and positioning logic
 - use `portfolio/agent_portfolio_navigator.md` for portfolio-case work
 
+## AGENT MODES
+
+There are two main working modes in this repository:
+
+- `application mode`
+  Use for resumes, cover letters, job targeting, and positioning.
+  Start with [workflows/README.md](./workflows/README.md).
+
+- `portfolio mode`
+  Use for project case studies, media cleanup, and portfolio evidence.
+  Start with [portfolio/agent_portfolio_navigator.md](./portfolio/agent_portfolio_navigator.md).
+
+If a task needs both, update portfolio evidence first, then build application materials from it.
+
 ---
 
 ## PROFILE

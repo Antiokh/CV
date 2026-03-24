@@ -6,6 +6,26 @@ This file is the entry point for any agent working on portfolio case studies in 
 
 Help an agent add, rewrite, or expand project case studies without guessing local conventions.
 
+## Agent Mode
+
+This file defines `portfolio mode`.
+
+Use `portfolio mode` when the task is about:
+
+- project case studies
+- public project evidence
+- media cleanup
+- project naming and structure
+
+Do not use this mode when the task is about:
+
+- tailored resumes
+- cover letters
+- vacancy targeting
+- profile positioning for a specific role
+
+For those tasks, switch to `application mode` and start with [workflows/README.md](../workflows/README.md).
+
 ## Read Order
 
 1. [Portfolio Index](./README.md)
