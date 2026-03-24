@@ -446,6 +446,20 @@
     "image-cropper-pro",
     "multilang-text-display"
   ],
+  "frontend_and_weweb_vocabulary": [
+    "WeWeb",
+    "frontend architecture",
+    "page structure",
+    "state structure",
+    "components and reusable UI systems",
+    "data sources and user flows",
+    "frontend/backend boundary",
+    "UI consistency",
+    "cleanup of fragile frontend logic",
+    "recovery of rushed or AI-assisted builds",
+    "business apps built on WeWeb",
+    "serious business app, not just a quick prototype"
+  ],
   "backend_and_automation_vocabulary": [
     "Database Architecture",
     "Database Design",
@@ -693,6 +707,22 @@
         "technical credibility through Supabase, n8n, API, backend, and database language",
         "premium use cases through migration, automation, and maintainability"
       ],
+      "specialized_profile_angles": {
+        "frontend": [
+          "WeWeb expert positioning",
+          "SaaS and internal business apps",
+          "page/state/component structure",
+          "custom components and reusable UI systems",
+          "frontend cleanup and long-term maintainability"
+        ],
+        "backend": [
+          "Supabase, PostgreSQL, RLS, Edge Functions",
+          "Xano and API layers",
+          "business logic boundaries",
+          "database architecture and integrations",
+          "automation-heavy internal systems"
+        ]
+      },
       "platform_signals": {
         "top_rated": true,
         "job_success": "100%"
