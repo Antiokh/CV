@@ -174,39 +174,14 @@
     ],
     "career_stages": [
       {
-        "start_date": "2022-11",
-        "end_date": null,
-        "ongoing": true,
-        "label": "NeedleBit / Independent practice",
-        "focus": [
-          "client and internal products",
-          "low-code, hybrid, and automation-heavy systems",
-          "architecture and product restructuring",
-          "AI-native engineering workflows"
-        ]
-      },
-      {
-        "start_date": "2017-01",
-        "end_date": "2023-05",
+        "start_date": "2008-09",
+        "end_date": "2013-01",
         "ongoing": false,
-        "label": "Government and institutional systems",
+        "label": "Early enterprise and systems work",
         "focus": [
-          "industry-scale information systems",
-          "IT leadership",
-          "infrastructure and security",
-          "training, documentation, and institutional coordination"
-        ]
-      },
-      {
-        "start_date": "2016-01",
-        "end_date": "2016-12",
-        "ongoing": false,
-        "label": "Freelance transition into promotion and SMM",
-        "focus": [
-          "freelance experimentation",
-          "promotion and SMM learning",
-          "event-related coordination and audience work",
-          "expanding beyond pure technical execution into communication and market-facing work"
+          "Lotus Notes / Domino development",
+          "corporate automation",
+          "infrastructure and backend problem solving"
         ]
       },
       {
@@ -222,95 +197,111 @@
         ]
       },
       {
-        "start_date": "2008-09",
-        "end_date": "2013-01",
+        "start_date": "2016-01",
+        "end_date": "2016-12",
         "ongoing": false,
-        "label": "Early enterprise and systems work",
+        "label": "Freelance transition into promotion and SMM",
         "focus": [
-          "Lotus Notes / Domino development",
-          "corporate automation",
-          "infrastructure and backend problem solving"
+          "freelance experimentation",
+          "promotion and SMM learning",
+          "event-related coordination and audience work",
+          "expanding beyond pure technical execution into communication and market-facing work"
+        ]
+      },
+      {
+        "start_date": "2017-01",
+        "end_date": "2023-05",
+        "ongoing": false,
+        "label": "Government and institutional systems",
+        "focus": [
+          "industry-scale information systems",
+          "IT leadership",
+          "infrastructure and security",
+          "training, documentation, and institutional coordination"
+        ]
+      },
+      {
+        "start_date": "2022-11",
+        "end_date": null,
+        "ongoing": true,
+        "label": "NeedleBit / Independent practice",
+        "focus": [
+          "client and internal products",
+          "low-code, hybrid, and automation-heavy systems",
+          "architecture and product restructuring",
+          "AI-native engineering workflows"
         ]
       }
     ]
   },
   "employment_history": [
     {
-      "company": "NeedleBit",
-      "location": "Serbia",
-      "start_date": "2022-11",
-      "end_date": null,
-      "ongoing": true,
+      "company": "Domodedovo Airport",
+      "start_date": "2008-09",
+      "end_date": "2009-09",
+      "ongoing": false,
       "titles": [
-        "Founder",
-        "CTO",
-        "Systems Architect",
-        "Project Manager"
-      ],
-      "focus": [
-        "technical strategy and architecture for multiple client and internal products",
-        "low-code, no-code, and hybrid systems",
-        "MVP-to-production delivery",
-        "founder consulting",
-        "AI-assisted engineering workflows",
-        "Supabase Edge Function helper layers",
-        "database-to-git SQL discipline"
-      ],
-      "notable_outcomes": [
-        "reduced service time from hours to minutes through automation",
-        "increased client revenue up to x13 through redesign and process restructuring",
-        "built PWA products that removed dependency on App Stores",
-        "improved PostgreSQL function versioning and auditable SQL workflows"
+        "Junior Lotus Notes Developer"
       ]
     },
     {
-      "company": "New Business Environment",
-      "start_date": "2022-08",
-      "end_date": "2022-11",
+      "company": "Freelance / Private Practice",
+      "start_date": "2009-01",
+      "end_date": "2011-01",
       "ongoing": false,
       "titles": [
-        "Implementation Curator",
-        "Product Manager"
-      ],
-      "focus": [
-        "ERP/CRM implementations in PlanFix",
-        "implementation methodology",
-        "manager coaching",
-        "delivery discipline"
+        "Independent Technical Specialist"
       ]
     },
     {
-      "company": "ZIL Cultural Center",
-      "legal_name": null,
-      "start_date": "2020-03",
-      "end_date": "2022-06",
+      "company": "IT Company / Lotus Notes Department",
+      "start_date": "2011-01",
+      "end_date": "2012-04",
       "ongoing": false,
       "titles": [
-        "Head of IT"
+        "Lotus Notes Specialist"
+      ]
+    },
+    {
+      "company": "Settlement and Savings Bank",
+      "start_date": "2013-01",
+      "end_date": "2015-09",
+      "ongoing": false,
+      "titles": [
+        "Lead Software Developer",
+        "Systems Architect"
       ],
       "focus": [
-        "IT strategy and technical development",
-        "back-office technical support",
-        "network infrastructure",
-        "information systems and technology park oversight",
-        "security and support processes",
-        "vendor and contractor management",
-        "documentation, regulations, and governance",
-        "remote work migration during COVID",
-        "HelpDesk and asset inventory implementation",
-        "website and PWA modernization",
-        "business-process planning for future automation"
+        "document management system from scratch",
+        "process analysis",
+        "workflow automation",
+        "1C integration",
+        "user training"
+      ]
+    },
+    {
+      "company": "Freelance / SMM and Promotion Transition",
+      "start_date": "2016-01",
+      "end_date": "2016-12",
+      "ongoing": false,
+      "titles": [
+        "Freelance Specialist",
+        "SMM Learner"
       ],
-      "responsibility_areas": [
-        "around 140 workstations, servers, CCTV, and access control systems",
-        "engineer management",
-        "project documentation and IT projects",
-        "procurement preparation and market research",
-        "communication with higher-level public authorities",
-        "training staff",
-        "information security and personal-data handling",
-        "Active Directory and policy rollout",
-        "inventory, storage cleanup, and equipment lifecycle control"
+      "focus": [
+        "freelance work while retraining into SMM and promotion",
+        "event management and promotion learning",
+        "market-facing communication and audience work",
+        "expanding practical skills beyond pure technical delivery"
+      ]
+    },
+    {
+      "company": "Synergy JSC",
+      "start_date": "2016-11",
+      "end_date": "2017-03",
+      "ongoing": false,
+      "titles": [
+        "Lotus Developer"
       ]
     },
     {
@@ -370,72 +361,81 @@
       ]
     },
     {
-      "company": "Settlement and Savings Bank",
-      "start_date": "2013-01",
-      "end_date": "2015-09",
+      "company": "ZIL Cultural Center",
+      "legal_name": null,
+      "start_date": "2020-03",
+      "end_date": "2022-06",
       "ongoing": false,
       "titles": [
-        "Lead Software Developer",
-        "Systems Architect"
+        "Head of IT"
       ],
       "focus": [
-        "document management system from scratch",
-        "process analysis",
-        "workflow automation",
-        "1C integration",
-        "user training"
+        "IT strategy and technical development",
+        "back-office technical support",
+        "network infrastructure",
+        "information systems and technology park oversight",
+        "security and support processes",
+        "vendor and contractor management",
+        "documentation, regulations, and governance",
+        "remote work migration during COVID",
+        "HelpDesk and asset inventory implementation",
+        "website and PWA modernization",
+        "business-process planning for future automation"
+      ],
+      "responsibility_areas": [
+        "around 140 workstations, servers, CCTV, and access control systems",
+        "engineer management",
+        "project documentation and IT projects",
+        "procurement preparation and market research",
+        "communication with higher-level public authorities",
+        "training staff",
+        "information security and personal-data handling",
+        "Active Directory and policy rollout",
+        "inventory, storage cleanup, and equipment lifecycle control"
       ]
     },
     {
-      "company": "Freelance / SMM and Promotion Transition",
-      "start_date": "2016-01",
-      "end_date": "2016-12",
+      "company": "New Business Environment",
+      "start_date": "2022-08",
+      "end_date": "2022-11",
       "ongoing": false,
       "titles": [
-        "Freelance Specialist",
-        "SMM Learner"
+        "Implementation Curator",
+        "Product Manager"
       ],
       "focus": [
-        "freelance work while retraining into SMM and promotion",
-        "event management and promotion learning",
-        "market-facing communication and audience work",
-        "expanding practical skills beyond pure technical delivery"
+        "ERP/CRM implementations in PlanFix",
+        "implementation methodology",
+        "manager coaching",
+        "delivery discipline"
       ]
     },
     {
-      "company": "Synergy JSC",
-      "start_date": "2016-11",
-      "end_date": "2017-03",
-      "ongoing": false,
+      "company": "NeedleBit",
+      "location": "Serbia",
+      "start_date": "2022-11",
+      "end_date": null,
+      "ongoing": true,
       "titles": [
-        "Lotus Developer"
-      ]
-    },
-    {
-      "company": "IT Company / Lotus Notes Department",
-      "start_date": "2011-01",
-      "end_date": "2012-04",
-      "ongoing": false,
-      "titles": [
-        "Lotus Notes Specialist"
-      ]
-    },
-    {
-      "company": "Freelance / Private Practice",
-      "start_date": "2009-01",
-      "end_date": "2011-01",
-      "ongoing": false,
-      "titles": [
-        "Independent Technical Specialist"
-      ]
-    },
-    {
-      "company": "Domodedovo Airport",
-      "start_date": "2008-09",
-      "end_date": "2009-09",
-      "ongoing": false,
-      "titles": [
-        "Junior Lotus Notes Developer"
+        "Founder",
+        "CTO",
+        "Systems Architect",
+        "Project Manager"
+      ],
+      "focus": [
+        "technical strategy and architecture for multiple client and internal products",
+        "low-code, no-code, and hybrid systems",
+        "MVP-to-production delivery",
+        "founder consulting",
+        "AI-assisted engineering workflows",
+        "Supabase Edge Function helper layers",
+        "database-to-git SQL discipline"
+      ],
+      "notable_outcomes": [
+        "reduced service time from hours to minutes through automation",
+        "increased client revenue up to x13 through redesign and process restructuring",
+        "built PWA products that removed dependency on App Stores",
+        "improved PostgreSQL function versioning and auditable SQL workflows"
       ]
     },
     {
