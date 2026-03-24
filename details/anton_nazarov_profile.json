@@ -1079,6 +1079,15 @@
   "education": {
     "formal_education": [
       {
+        "program": "Accounting and Finance background",
+        "specialization": "Economics and Accounting by Industry",
+        "field": "Finance",
+        "institution": "Commercial Banking College No. 6",
+        "year_from": 2006,
+        "year_to": 2008,
+        "source_status": "confirmed in docx and PDF resume sources"
+      },
+      {
         "program": "Applied Informatics in Economics",
         "specialization": null,
         "field": "Applied Informatics / Economics",
@@ -1098,15 +1107,6 @@
         "year_to": 2019,
         "notes": "Chosen deliberately to strengthen management, QA, and analytics for leadership-oriented IT roles.",
         "source_status": "confirmed in docx and PDF resume sources"
-      },
-      {
-        "program": "Accounting and Finance background",
-        "specialization": "Economics and Accounting by Industry",
-        "field": "Finance",
-        "institution": "Commercial Banking College No. 6",
-        "year_from": 2006,
-        "year_to": 2008,
-        "source_status": "confirmed in docx and PDF resume sources"
       }
     ],
     "professional_retraining": [
@@ -1122,17 +1122,40 @@
     ],
     "continuing_education": [
       {
-        "topic": "Zero-code / western-market product building",
-        "field": "product building",
-        "institution": "Zerocoder University",
-        "year_from": 2022,
-        "year_to": 2022
+        "topic": "Lotus Notes programmer training",
+        "field": "enterprise software development",
+        "institution": "Airport Management Company (Domodedovo), internal company training",
+        "year_from": 2008,
+        "year_to": 2008
       },
       {
-        "topic": "Low-code and implementation training",
-        "field": "low-code delivery and implementation",
-        "year_from": null,
-        "year_to": null
+        "topic": "Event management and promotion",
+        "field": "promotion, coordination, and audience work",
+        "institution": "KudaGo Lectures / Ekaterina Pavlova Concert Agency / Andrey Zakharyan course",
+        "year_from": 2016,
+        "year_to": 2017
+      },
+      {
+        "topic": "Training in event management, promotion, and SMM with festival/media practitioners",
+        "field": "promotion and SMM",
+        "institution": "Ekaterina Pavlova Concert Agency and KudaGo-linked practitioners",
+        "year_from": 2016,
+        "year_to": 2017,
+        "source_status": "confirmed in docx resume source"
+      },
+      {
+        "topic": "How to become a rock star in your field",
+        "field": "personal branding and professional growth",
+        "institution": "Andrey Zakharyan author course",
+        "year_from": 2017,
+        "year_to": 2017
+      },
+      {
+        "topic": "Management in the music business",
+        "field": "event and music management",
+        "institution": "KudaGo Lectures",
+        "year_from": 2017,
+        "year_to": 2017
       },
       {
         "topic": "Java fundamentals",
@@ -1156,63 +1179,6 @@
         "year_to": 2018
       },
       {
-        "topic": "Negotiation and working under pressure",
-        "field": "communication and management",
-        "institution": "Igor Ryzov Academy",
-        "year_from": 2020,
-        "year_to": 2021
-      },
-      {
-        "topic": "Event management and promotion",
-        "field": "promotion, coordination, and audience work",
-        "institution": "KudaGo Lectures / Ekaterina Pavlova Concert Agency / Andrey Zakharyan course",
-        "year_from": 2016,
-        "year_to": 2017
-      },
-      {
-        "topic": "Training in event management, promotion, and SMM with festival/media practitioners",
-        "field": "promotion and SMM",
-        "institution": "Ekaterina Pavlova Concert Agency and KudaGo-linked practitioners",
-        "year_from": 2016,
-        "year_to": 2017,
-        "source_status": "confirmed in docx resume source"
-      },
-      {
-        "topic": "How to stay calm under pressure",
-        "field": "resilience and communication",
-        "institution": "Igor Ryzov Academy",
-        "year_from": 2021,
-        "year_to": 2021
-      },
-      {
-        "topic": "Tough negotiations",
-        "field": "negotiation",
-        "institution": "Igor Ryzov Academy",
-        "year_from": 2020,
-        "year_to": 2020
-      },
-      {
-        "topic": "How to become a rock star in your field",
-        "field": "personal branding and professional growth",
-        "institution": "Andrey Zakharyan author course",
-        "year_from": 2017,
-        "year_to": 2017
-      },
-      {
-        "topic": "Management in the music business",
-        "field": "event and music management",
-        "institution": "KudaGo Lectures",
-        "year_from": 2017,
-        "year_to": 2017
-      },
-      {
-        "topic": "Lotus Notes programmer training",
-        "field": "enterprise software development",
-        "institution": "Airport Management Company (Domodedovo), internal company training",
-        "year_from": 2008,
-        "year_to": 2008
-      },
-      {
         "topic": "SoloLearn Java Tutorial",
         "field": "software development",
         "institution": "SoloLearn",
@@ -1225,6 +1191,40 @@
         "institution": "SoloLearn",
         "year_from": 2018,
         "year_to": 2018
+      },
+      {
+        "topic": "Tough negotiations",
+        "field": "negotiation",
+        "institution": "Igor Ryzov Academy",
+        "year_from": 2020,
+        "year_to": 2020
+      },
+      {
+        "topic": "Negotiation and working under pressure",
+        "field": "communication and management",
+        "institution": "Igor Ryzov Academy",
+        "year_from": 2020,
+        "year_to": 2021
+      },
+      {
+        "topic": "How to stay calm under pressure",
+        "field": "resilience and communication",
+        "institution": "Igor Ryzov Academy",
+        "year_from": 2021,
+        "year_to": 2021
+      },
+      {
+        "topic": "Zero-code / western-market product building",
+        "field": "product building",
+        "institution": "Zerocoder University",
+        "year_from": 2022,
+        "year_to": 2022
+      },
+      {
+        "topic": "Low-code and implementation training",
+        "field": "low-code delivery and implementation",
+        "year_from": null,
+        "year_to": null
       }
     ],
     "teaching_and_knowledge_transfer": [
