@@ -333,7 +333,7 @@
     },
     {
       "company": "Directorate of Cultural Centers of Moscow",
-      "legal_name": null,
+      "legal_name": "ГКУК г. Москвы \"Дирекция культурных центров\"",
       "start_date": "2017-01",
       "end_date": "2023-05",
       "ongoing": false,
@@ -378,7 +378,7 @@
     },
     {
       "company": "Moscow Social Development Agency",
-      "legal_name": null,
+      "legal_name": "АНО «Московское агентство соцразвития»",
       "start_date": "2019-09",
       "end_date": "2020-03",
       "ongoing": false,
@@ -400,7 +400,7 @@
     },
     {
       "company": "ZIL Cultural Center",
-      "legal_name": null,
+      "legal_name": "ГАУК г. Москвы \"Культурный центр ЗИЛ\"",
       "start_date": "2020-03",
       "end_date": "2022-06",
       "ongoing": false,
@@ -969,34 +969,38 @@
         "program": "Bachelor in Management",
         "specialization": "Small Business Management",
         "field": "Management",
+        "institution": "National Institute of Business, Moscow",
         "year_from": null,
-        "year_to": null,
-        "source_status": "confirmed in repository, years not specified"
+        "year_to": 2019,
+        "source_status": "confirmed in docx resume source"
       },
       {
         "program": "Accounting and Finance background",
-        "specialization": "Accounting and Finance",
+        "specialization": "Economics and Accounting by Industry",
         "field": "Finance",
+        "institution": "Commercial Banking College No. 6",
         "year_from": null,
-        "year_to": null,
-        "source_status": "confirmed in repository, formal institution and years not specified"
+        "year_to": 2008,
+        "source_status": "confirmed in docx resume source"
       }
     ],
     "professional_retraining": [
       {
         "program": "Professional retraining in IT for Economics and Government",
         "field": "IT / economics / public-sector systems",
+        "institution": "Humanitarian Institute, Moscow, Center for Additional Education",
         "year_from": null,
-        "year_to": null,
-        "source_status": "confirmed in repository, years not specified"
+        "year_to": 2019,
+        "source_status": "confirmed in docx resume source"
       }
     ],
     "continuing_education": [
       {
         "topic": "Zero-code / western-market product building",
         "field": "product building",
-        "year_from": null,
-        "year_to": null
+        "institution": "Zerocoder University",
+        "year_from": 2022,
+        "year_to": 2022
       },
       {
         "topic": "Low-code and implementation training",
@@ -1007,39 +1011,94 @@
       {
         "topic": "Java fundamentals",
         "field": "software development",
-        "year_from": null,
-        "year_to": null
+        "institution": "Specialist Training Center",
+        "year_from": 2018,
+        "year_to": 2018
       },
       {
         "topic": "ITIL / DevOps service thinking",
         "field": "service management and operations",
-        "year_from": null,
-        "year_to": null
+        "institution": "Specialist Training Center",
+        "year_from": 2018,
+        "year_to": 2018
       },
       {
         "topic": "IT management",
         "field": "management and leadership",
-        "year_from": null,
-        "year_to": null
+        "institution": "Specialist Training Center",
+        "year_from": 2018,
+        "year_to": 2018
       },
       {
         "topic": "Negotiation and working under pressure",
         "field": "communication and management",
-        "year_from": null,
-        "year_to": null
+        "institution": "Igor Ryzov Academy",
+        "year_from": 2020,
+        "year_to": 2021
       },
       {
         "topic": "Event management and promotion",
         "field": "promotion, coordination, and audience work",
-        "year_from": null,
-        "year_to": null
+        "institution": "KudaGo Lectures / Ekaterina Pavlova Concert Agency / Andrey Zakharyan course",
+        "year_from": 2016,
+        "year_to": 2017
       },
       {
         "topic": "Training in event management, promotion, and SMM with festival/media practitioners",
         "field": "promotion and SMM",
-        "year_from": 2014,
-        "year_to": 2016,
-        "source_status": "timeframe inferred from adjacent event activity in repository"
+        "institution": "Ekaterina Pavlova Concert Agency and KudaGo-linked practitioners",
+        "year_from": 2016,
+        "year_to": 2017,
+        "source_status": "confirmed in docx resume source"
+      },
+      {
+        "topic": "How to stay calm under pressure",
+        "field": "resilience and communication",
+        "institution": "Igor Ryzov Academy",
+        "year_from": 2021,
+        "year_to": 2021
+      },
+      {
+        "topic": "Tough negotiations",
+        "field": "negotiation",
+        "institution": "Igor Ryzov Academy",
+        "year_from": 2020,
+        "year_to": 2020
+      },
+      {
+        "topic": "How to become a rock star in your field",
+        "field": "personal branding and professional growth",
+        "institution": "Andrey Zakharyan author course",
+        "year_from": 2017,
+        "year_to": 2017
+      },
+      {
+        "topic": "Management in the music business",
+        "field": "event and music management",
+        "institution": "KudaGo Lectures",
+        "year_from": 2017,
+        "year_to": 2017
+      },
+      {
+        "topic": "Lotus Notes programmer training",
+        "field": "enterprise software development",
+        "institution": "Airport Management Company (Domodedovo), internal company training",
+        "year_from": 2008,
+        "year_to": 2008
+      },
+      {
+        "topic": "SoloLearn Java Tutorial",
+        "field": "software development",
+        "institution": "SoloLearn",
+        "year_from": 2018,
+        "year_to": 2018
+      },
+      {
+        "topic": "SoloLearn JavaScript Tutorial",
+        "field": "software development",
+        "institution": "SoloLearn",
+        "year_from": 2018,
+        "year_to": 2018
       }
     ],
     "teaching_and_knowledge_transfer": [
