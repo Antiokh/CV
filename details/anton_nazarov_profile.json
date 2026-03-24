@@ -31,11 +31,15 @@
       "country": "Serbia",
       "legal_form": "Preduzetnik / sole proprietor",
       "status": "active",
+      "registry_authority": "APR (Serbian Business Registers Agency)",
+      "registration_number": "67121236",
+      "tax_id": "113837189",
       "registered_name": "Anton Nazarov PR Anton Nazarov PR Veb Portali Beograd - Stari Grad",
       "registered_activity_code": "6312",
       "registered_activity": "Web portals",
       "registration_date": "2023-07-24",
       "registered_city": "Belgrade",
+      "registered_municipality": "Stari Grad",
       "source_status": "confirmed in APR registration PDF"
     },
     "residence_and_work_permit": {
