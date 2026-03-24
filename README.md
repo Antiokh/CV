@@ -268,10 +268,26 @@ Highlighted case studies:
 - REST APIs
 - n8n
 - Make
+- Zapier
 - Telegram integrations
+- Telegram Bot API
+- Telegram Mini Apps
+- webhooks
+- Google Sheets
+- WooCommerce
 - fal.ai
 - OpenAI
 - Supabase Edge Functions
+
+**Integrations / APIs:**
+- Bing Translate API
+- Radar.io
+- Google Maps
+- OpenStreetMap
+- Yandex Maps API
+- Stripe
+- Google Analytics
+- OAuth
 
 **Code / scripting / infra:**
 - JavaScript

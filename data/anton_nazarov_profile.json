@@ -651,7 +651,14 @@
       "API integration",
       "CSV/XML ingestion",
       "Telegram integrations",
-      "Telegram Mini Apps"
+      "Telegram Mini Apps",
+      "Telegram Bot API",
+      "Business process automation",
+      "Workflow automation",
+      "Webhooks",
+      "Google Sheets",
+      "Queue-based messaging",
+      "Scheduled jobs / cron"
     ],
     "code_and_infra": [
       "JavaScript",
@@ -685,11 +692,17 @@
   "integrations_and_platforms": [
     "OpenAI API",
     "fal.ai",
-    "Google Translate API",
+    "Bing Translate API",
     "Radar.io",
     "Google Maps",
     "OpenStreetMap",
     "Stripe",
+    "Telegram Bot API",
+    "Google Sheets",
+    "WooCommerce",
+    "Google Analytics",
+    "OAuth",
+    "webhooks",
     "Yandex Maps API",
     "DocsAutomator",
     "Tawk.to"
@@ -702,6 +715,16 @@
         "Supabase Edge Functions integration context"
       ]
     }
+  ],
+  "integration_patterns": [
+    "API-first integrations",
+    "Telegram Mini Apps and bot workflows",
+    "webhooks and event-driven automation",
+    "scheduled jobs and cron-based processing",
+    "queue-based messaging with pgmq",
+    "translation API integration",
+    "geocoding and maps integration",
+    "e-commerce and payment integrations"
   ],
   "custom_weweb_components": [
     "leaflet-map",
