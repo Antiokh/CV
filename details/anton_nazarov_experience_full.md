@@ -857,7 +857,7 @@ Anton's experience also clearly includes:
 ### Formal Education
 
 - Commercial Banking College No. 6, Economics and Accounting by Industry (2006-2008)
-- Humanitarian Institute, Moscow, Applied Informatics in Economics (2011-2018, later transferred)
+- АНО ВО Гуманитарный институт (г. Москва), Applied Informatics in Economics (2011-2018, later transferred)
 - National Institute of Business, Bachelor's degree in Management, specialization in small business management (2018-2019)
 - professional retraining in IT for economics and government
 
