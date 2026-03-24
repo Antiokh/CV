@@ -8,8 +8,8 @@ Workflow and agent-oriented guidance lives in `../workflows/`.
 ## Included
 
 - [Full Professional Experience](./anton_nazarov_experience_full.md)
-- [Metafox Strengths Report](./Metafox_Strengths_Report.md)
-- [Comprehensive Psychological & Career Profile](./Comprehensive_Psychological_&_Career_Profile.md)
+- [Metafox Strengths Report](./metafox_strengths_report.md)
+- [Comprehensive Psychological & Career Profile](./comprehensive_psychological_career_profile.md)
 - [Structured Profile Data](../data/anton_nazarov_profile.json)
 - [Profile Suggestions](../workflows/ai_profile_suggestions.md)
 - [Application Workflow](../workflows/application_workflow.md)

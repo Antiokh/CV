@@ -12,8 +12,8 @@ Location: Belgrade, Serbia
 - [Profile Suggestions](./workflows/ai_profile_suggestions.md)
 - [Application Workflow](./workflows/application_workflow.md)
 - [Structured Profile Data](./data/anton_nazarov_profile.json)
-- [Personality / Strengths Reference](./details/Metafox_Strengths_Report.md)
-- [Career Profile Reference](./details/Comprehensive_Psychological_&_Career_Profile.md)
+- [Personality / Strengths Reference](./details/metafox_strengths_report.md)
+- [Career Profile Reference](./details/comprehensive_psychological_career_profile.md)
 
 ---
 
@@ -45,7 +45,7 @@ I also work comfortably in **AI-native and agentic development workflows**, usin
 
 Based on professional experience and strengths assessment:
 
-Detailed personality and strengths reference: [Metafox Strengths Report](./details/Metafox_Strengths_Report.md)
+Detailed personality and strengths reference: [Metafox Strengths Report](./details/metafox_strengths_report.md)
 
 - **Communicator** - creates shared understanding through clear summaries, precise wording, and aligned interpretation
 - **Examiner** - verifies assumptions, catches inconsistencies, and spots risks early

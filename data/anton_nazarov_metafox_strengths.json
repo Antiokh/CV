@@ -4,7 +4,7 @@
   "source": {
     "provider": "MetaFox Strengths Explorer",
     "source_pdf": "sources/anton_nazarov_metafox_strengths_explorer_2026.pdf",
-    "source_markdown": "details/Metafox_Strengths_Report.md",
+    "source_markdown": "details/metafox_strengths_report.md",
     "source_api_export": "User-provided MetaFox API payload",
     "report_subject": "Anton Nazarov",
     "report_date": "2026-02-25"
