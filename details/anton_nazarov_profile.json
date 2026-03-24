@@ -437,21 +437,26 @@
         "business-process planning for future automation"
       ],
       "responsibility_areas": [
-        "around 140 workstations, servers, CCTV, and access control systems",
-        "engineer management",
+        "around 200 PCs, 7 servers, about 20 virtual machines, CCTV, telephony, and access-related infrastructure",
+        "management of 5 IT staff and 2 installation engineers",
         "project documentation and IT projects",
         "procurement preparation and market research",
         "communication with higher-level public authorities",
         "training staff",
         "information security and personal-data handling",
         "Active Directory and policy rollout",
-        "inventory, storage cleanup, and equipment lifecycle control"
+        "inventory, storage cleanup, and equipment lifecycle control",
+        "department operating budget and infrastructure modernization budget responsibility",
+        "GLPI integration with Active Directory and automatic inventory",
+        "integrated phonebook with maps of buildings, PCs, and people",
+        "research and selection of business systems such as CRM, ticket sales, and ServiceDesk"
       ],
       "results": [
         "migrated 100+ employees to remote work during COVID",
         "launched HelpDesk plus seven support services based on GLPI with automated asset inventory",
         "introduced Active Directory, security policies, and infrastructure modernization",
-        "reorganized documentation, procedures, and departmental governance for a large public institution"
+        "reorganized documentation, procedures, and departmental governance for a large public institution",
+        "combined infrastructure modernization with business-process planning and operating-model improvements"
       ]
     },
     {
@@ -989,6 +994,7 @@
         "year_from": 2011,
         "year_to": 2018,
         "status": "transferred",
+        "notes": "Started as computer science in economics, later shifted academic emphasis toward management and analytics.",
         "source_status": "confirmed in PDF resume source"
       },
       {
@@ -998,6 +1004,7 @@
         "institution": "National Institute of Business, Moscow",
         "year_from": 2018,
         "year_to": 2019,
+        "notes": "Chosen deliberately to strengthen management, QA, and analytics for leadership-oriented IT roles.",
         "source_status": "confirmed in docx and PDF resume sources"
       },
       {
@@ -1015,9 +1022,10 @@
         "program": "Professional retraining in IT for Economics and Government",
         "field": "IT / economics / public-sector systems",
         "institution": "Humanitarian Institute, Moscow, Center for Additional Education",
-        "year_from": null,
+        "year_from": 2011,
         "year_to": 2019,
-        "source_status": "confirmed in docx resume source"
+        "notes": "IT coursework was consolidated into the retraining diploma after the degree-track move into management.",
+        "source_status": "confirmed in docx and PDF resume sources"
       }
     ],
     "continuing_education": [
