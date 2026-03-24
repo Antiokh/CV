@@ -2,82 +2,83 @@
   "profile_version": "2026-03-24",
   "document_type": "career_guidance_profile",
   "source": {
-    "provider": "HeadHunter / Профориентация",
+    "provider": "HeadHunter / Career Guidance",
     "source_pdf": "sources/hh_career_guidance_report_ru_16670046.pdf",
     "report_date": "2018-11-08",
-    "language": "ru"
+    "language": "ru",
+    "translation_status": "structured English summary based on the Russian original"
   },
   "recommended_professions": [
-    "Руководитель аналитического отдела",
-    "Менеджер проекта",
-    "Руководитель группы разработчиков (IT)",
-    "Start-up менеджер / Руководитель новых проектов",
-    "Руководитель по маркетингу",
-    "Арт-директор",
-    "Руководитель отдела R&D",
-    "Креативный директор",
-    "Трейдер / дилер",
-    "Редактор периодических изданий",
-    "Медиа-аналитик",
-    "Редактор интернет-портала",
-    "Маркетолог",
-    "Руководитель отдела рекламы и PR",
-    "Специалист по исследованиям"
+    "Head of Analytics",
+    "Project Manager",
+    "Head of Development Team (IT)",
+    "Startup Manager / Head of New Projects",
+    "Head of Marketing",
+    "Art Director",
+    "Head of R&D",
+    "Creative Director",
+    "Trader / Dealer",
+    "Periodicals Editor",
+    "Media Analyst",
+    "Internet Portal Editor",
+    "Marketing Specialist",
+    "Head of Advertising and PR",
+    "Research Specialist"
   ],
   "professional_domains": {
     "strong_recommendation": [
       {
-        "domain": "Управление",
-        "summary": "Управление людьми и рабочими процессами, принятие ключевых решений, стратегическое планирование.",
+        "domain": "Management",
+        "summary": "Managing people and work processes, making key decisions, and handling strategic planning.",
         "fit": "high"
       },
       {
-        "domain": "Коммуникации",
-        "summary": "Переговоры, презентации, продвижение, внешние процессы организации.",
+        "domain": "Communications",
+        "summary": "Negotiation, presentations, promotion, and external-facing organizational processes.",
         "fit": "high"
       },
       {
-        "domain": "Инновации",
-        "summary": "Разработка новых продуктов, услуг и технологий, творческая и креативная деятельность.",
+        "domain": "Innovation",
+        "summary": "Developing new products, services, and technologies; creative and inventive work.",
         "fit": "high"
       },
       {
-        "domain": "Аналитика",
-        "summary": "Анализ информации, прогнозирование, выявление механизмов и причин, проработка решений.",
+        "domain": "Analytics",
+        "summary": "Information analysis, forecasting, identifying mechanisms and root causes, and working through solutions.",
         "fit": "high"
       }
     ],
     "partial_recommendation": [
       {
-        "domain": "Проекты",
-        "summary": "Проектный менеджмент, новые направления бизнеса, предпринимательство.",
+        "domain": "Projects",
+        "summary": "Project management, new business directions, and entrepreneurship.",
         "fit": "medium"
       },
       {
-        "domain": "Технологии",
-        "summary": "Профессиональная компетентность, реализация технологий на практике, глубокая специализация.",
+        "domain": "Technology",
+        "summary": "Professional competence, practical implementation of technologies, and deep specialization.",
         "fit": "medium"
       },
       {
-        "domain": "Контроль",
-        "summary": "Контроль и аудит работы других людей, обеспечение качественных и количественных показателей.",
+        "domain": "Control",
+        "summary": "Control and audit of other people's work, ensuring qualitative and quantitative performance indicators.",
         "fit": "medium"
       },
       {
-        "domain": "Администрирование",
-        "summary": "Планирование и администрирование рабочих процессов, поддержание порядка и стабильности.",
+        "domain": "Administration",
+        "summary": "Planning and administering work processes, maintaining order and operational stability.",
         "fit": "medium"
       }
     ],
     "not_recommended_as_primary": [
       {
-        "domain": "Сервис",
-        "summary": "Клиентские службы, поддержка, аккаунт-менеджмент, сервисная деятельность.",
+        "domain": "Service",
+        "summary": "Client service, support, account management, and service-oriented roles.",
         "fit": "low"
       },
       {
-        "domain": "Функционал",
-        "summary": "Чисто исполнительская, регламентированная внутриорганизационная работа.",
+        "domain": "Routine Functional Work",
+        "summary": "Purely execution-oriented, regulated, internal organizational work.",
         "fit": "low"
       }
     ]
@@ -99,42 +100,42 @@
   "personality_dimensions": {
     "introversion_extraversion": {
       "result": "balanced",
-      "summary": "Сбалансированная ориентация и на внешний, и на внутренний мир; сочетание действия и размышления."
+      "summary": "Balanced orientation toward both the external and internal world; combines action with reflection."
     },
     "feeling_thinking": {
       "result": "thinking_dominant",
-      "summary": "Сильная аналитичность, объективность, ориентация на собственное мнение, последовательное мышление."
+      "summary": "Strong analytical orientation, objectivity, reliance on independent judgment, and consistent reasoning."
     },
     "sensing_intuition": {
       "result": "balanced",
-      "summary": "Сочетание интуитивности и практичности, одновременное внимание к новым возможностям и текущей реализации."
+      "summary": "Combines intuition with practicality, paying attention both to new possibilities and to current execution."
     },
     "improvisation_planning": {
       "result": "moderately_improvisational",
-      "summary": "Гибкость, адаптивность, открытость новому, ориентация на процесс и многовариантность."
+      "summary": "Flexible, adaptive, open to new options, and oriented toward process and optionality rather than rigid planning."
     },
     "yielding_influence": {
       "result": "dominant",
-      "summary": "Стремление влиять, отстаивать интересы и добиваться реализации решений; полезно для управления."
+      "summary": "Tends to influence, defend interests, and push decisions toward implementation; useful for leadership roles."
     }
   },
   "development_recommendations": [
-    "стресс-менеджмент",
-    "самоорганизация",
-    "уверенность в общении",
-    "управление другими",
-    "креативность"
+    "stress management",
+    "self-organization",
+    "confidence in communication",
+    "leadership and people management",
+    "creativity"
   ],
   "interpreted_takeaways": {
     "core_pattern": [
-      "управление и аналитика — главный вектор",
-      "коммуникации и инновации — сильные дополнительные оси",
-      "технологическая и проектная деятельность лучше работают как часть более широких ролей, а не как единственная идентичность",
-      "чисто сервисные и чисто исполнительские роли подходят хуже"
+      "management and analytics are the main vector",
+      "communications and innovation are strong supporting axes",
+      "technology and project work fit best as part of broader roles rather than as the sole identity",
+      "pure service and purely execution-oriented roles are a weaker fit"
     ],
     "repo_alignment": [
-      "совпадает с текущим позиционированием как systems architect / digital transformation lead / people-facing systems leader",
-      "поддерживает движение в сторону ролей с управлением, анализом, внедрением и работой со стейкхолдерами"
+      "aligns with the current positioning as systems architect / digital transformation lead / people-facing systems leader",
+      "supports movement toward roles with management, analysis, implementation, and stakeholder-facing responsibility"
     ]
   },
   "notes": [
