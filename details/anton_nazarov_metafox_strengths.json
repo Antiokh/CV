@@ -273,6 +273,120 @@
       }
     ]
   },
+  "chart_data": {
+    "role_radar": {
+      "labels": [
+        "Communicator",
+        "Examiner",
+        "Inventor",
+        "Learner",
+        "Decision Maker",
+        "Networker",
+        "Coach",
+        "Pragmatist",
+        "Self-Regulator",
+        "Facilitator",
+        "Guardian",
+        "Motivator",
+        "Finisher",
+        "Visionary",
+        "Boundary-Keeper",
+        "Organizer"
+      ],
+      "datasets": [
+        {
+          "label": "Score (Self-Assessment)",
+          "data": [9.0, 7.85, 7.43, 6.38, 6.05, 5.33, 5.1, 3.92, 2.77, 2.74, 2.71, 2.25, 2.23, 1.48, 0.9, 0.0]
+        },
+        {
+          "label": "Energy",
+          "data": [9.0, 7.16, 8.84, 6.06, 6.03, 7.1, 5.81, 3.79, 4.6, 4.64, 3.44, 5.3, 0.0, 5.67, 1.7, 2.88]
+        },
+        {
+          "label": "Use (How often?)",
+          "data": [9.0, 8.8, 6.66, 7.42, 6.92, 4.85, 5.62, 5.52, 2.98, 2.9, 3.9, 1.55, 6.15, 0.0, 2.56, 0.1]
+        },
+        {
+          "label": "Use (Feedback)",
+          "data": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+        },
+        {
+          "label": "Score (Feedback)",
+          "data": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+        }
+      ]
+    },
+    "answer_scatter": {
+      "labels": [
+        "Answers"
+      ],
+      "points": [
+        { "x": 2.34, "y": 5.42, "label": "19. Bringing different perspectives together to find common ground." },
+        { "x": 7.38, "y": 7.79, "label": "63. Adapting explanations to what the audience already knows." },
+        { "x": 7.17, "y": 8.2, "label": "53. Naming what another person is feeling." },
+        { "x": 8.63, "y": 8.88, "label": "9. Noticing inconsistencies and following up until they are resolved." },
+        { "x": 1.93, "y": 1.81, "label": "30. Addressing ethical concerns early." },
+        { "x": 1.62, "y": 8.3, "label": "78. Linking today’s work to a bigger purpose." },
+        { "x": 5.26, "y": 8.1, "label": "47. Naming what is and is not possible." },
+        { "x": 1.42, "y": 5.42, "label": "15. Holding a space for reflection instead of rushing to solutions." },
+        { "x": 3.82, "y": 1.71, "label": "37. Planning the week so important tasks get time." },
+        { "x": 3.33, "y": 8.96, "label": "60. Being visible and representing ideas confidently." },
+        { "x": 1.23, "y": 8.67, "label": "61. Clarifying roles and responsibilities before work starts." },
+        { "x": 6.23, "y": 8.3, "label": "17. Making practical trade-offs under real constraints." },
+        { "x": 8.05, "y": 8.34, "label": "82. Naming a concrete next step and who is responsible." },
+        { "x": 8.22, "y": 5.16, "label": "29. Treating people by the same rules, even when preferences differ." },
+        { "x": 7.38, "y": 3.04, "label": "8. Checking small details that could cause errors later." },
+        { "x": 2.26, "y": 2.49, "label": "46. Saying no without excessive justification." },
+        { "x": 8.12, "y": 7.29, "label": "52. Bringing humor into interactions." },
+        { "x": 6.29, "y": 2.05, "label": "62. Making timely decisions with imperfect information." },
+        { "x": 8.3, "y": 8.22, "label": "3. Connecting ideas from different areas to form a new approach." },
+        { "x": 5.14, "y": 6.9, "label": "41. Proposing a clear direction when a group is stuck." },
+        { "x": 7.36, "y": 0.99, "label": "4. Following through on commitments even when motivation drops." },
+        { "x": 6.04, "y": 2.63, "label": "54. Choosing a workable shortcut instead of the perfect process." },
+        { "x": 8.84, "y": 7.77, "label": "44. Structuring messages with a clear beginning, middle, and end." },
+        { "x": 8.51, "y": 8.65, "label": "40. Naming the key issue that needs a decision." },
+        { "x": 7.99, "y": 5.42, "label": "35. Making first contact when others hesitate." },
+        { "x": 2.61, "y": 4.73, "label": "21. Inviting quieter people in groups to contribute." },
+        { "x": 6.0, "y": 5.26, "label": "16. Choosing the simplest workable solution." },
+        { "x": 3.23, "y": 2.63, "label": "23. Pausing before responding when feeling reactive." },
+        { "x": 3.0, "y": 8.63, "label": "2. Proposing unconventional solutions when standard methods stall." },
+        { "x": 0.76, "y": 7.13, "label": "11. Re-connecting people to what matters when motivation drops." },
+        { "x": 0.66, "y": 6.74, "label": "12. Celebrating progress to keep momentum." },
+        { "x": 8.45, "y": 5.61, "label": "75. Choosing learning resources that support practice." },
+        { "x": 7.52, "y": 3.37, "label": "13. Listening until you can summarize the other person's view." },
+        { "x": 8.18, "y": 8.42, "label": "14. Asking questions that help the other person think more clearly about their situation." },
+        { "x": 8.71, "y": 8.24, "label": "7. Verifying important information before deciding." },
+        { "x": 1.68, "y": 8.73, "label": "28. Making choices that fit one's values." },
+        { "x": 5.73, "y": 4.21, "label": "18. Cutting complexity to the essential steps." },
+        { "x": 7.42, "y": 6.7, "label": "34. Initiating conversations with new people." },
+        { "x": 7.6, "y": 3.82, "label": "58. Keeping confidentiality when information is sensitive." },
+        { "x": 8.61, "y": 8.51, "label": "24. Noticing one's emotions early and naming them." },
+        { "x": 3.45, "y": 2.9, "label": "73. Deliberately practicing a new behavior until it becomes easier." },
+        { "x": 5.47, "y": 6.6, "label": "20. Clarifying disagreements so they can be discussed safely." },
+        { "x": 1.15, "y": 6.74, "label": "26. Regulating energy through intentional recovery." },
+        { "x": 8.82, "y": 8.88, "label": "74. Reflecting after important events on what to repeat and what to change." },
+        { "x": 7.52, "y": 4.48, "label": "50. Following through on important tasks." },
+        { "x": 7.93, "y": 8.18, "label": "49. Running small experiments to learn what works." },
+        { "x": 3.37, "y": 7.52, "label": "36. Appearing relaxed and confident in front of unknown people." },
+        { "x": 2.65, "y": 6.74, "label": "32. Naming a compelling “why” that aligns people." },
+        { "x": 8.9, "y": 8.88, "label": "45. Using examples or stories to make a point memorable." },
+        { "x": 8.01, "y": 7.89, "label": "1. Generating original options beyond obvious solutions." },
+        { "x": 3.74, "y": 2.79, "label": "5. Finishing what is started before opening a new major task." },
+        { "x": 2.65, "y": 4.09, "label": "33. Turning abstract possibilities into a shared direction." },
+        { "x": 3.82, "y": 4.52, "label": "25. Refocusing attention on what can be influenced." },
+        { "x": 8.75, "y": 8.88, "label": "43. Summarizing complex ideas in simple language." },
+        { "x": 8.57, "y": 8.59, "label": "51. Assessing risks early, even when time is short." },
+        { "x": 8.67, "y": 8.63, "label": "72. Actively seeking feedback that helps improvement." },
+        { "x": 3.23, "y": 2.98, "label": "10. Bringing energy to low‑energy settings." },
+        { "x": 1.44, "y": 3.23, "label": "38. Breaking goals into clear next steps before starting." },
+        { "x": 6.18, "y": 5.75, "label": "55. Connecting people across teams when they can help each other." },
+        { "x": 7.93, "y": 2.98, "label": "64. Maintaining one's boundaries even when others challenge them." },
+        { "x": 1.46, "y": 5.92, "label": "31. Painting a clear picture of a desired future." },
+        { "x": 0.18, "y": 1.64, "label": "48. Protecting one's time and attention with clear boundaries." },
+        { "x": 7.19, "y": 2.73, "label": "6. Keeping going when progress is slow and repetitive." }
+      ]
+    }
+  },
   "working_interpretation": {
     "summary": "The profile points to a person who communicates clearly, thinks critically, generates new approaches, learns fast, and is comfortable closing decisions.",
     "best_fit_capabilities": [
