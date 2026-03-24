@@ -496,10 +496,10 @@ Anton was responsible for:
 - security and support processes
 
 The operational scale included:
-- around 140 workstations
-- servers
-- CCTV
-- access control systems
+- around 200 PCs
+- 7 servers and about 20 virtual machines
+- CCTV, telephony, and related building infrastructure
+- access control and technical support systems
 
 ### Core Responsibilities
 
@@ -514,6 +514,10 @@ The operational scale included:
 - introducing IT products and improvements
 - training staff
 - ensuring information security
+- managing 5 IT staff and 2 installation engineers
+- controlling department operating budget and modernization budget
+- integrating GLPI with Active Directory and automatic inventory
+- rolling out an integrated phonebook with maps of buildings, PCs, and people
 
 ### Key Achievements
 
@@ -536,6 +540,7 @@ Anton:
 - prepared modernization initiatives for office equipment, software, and computer infrastructure
 - designed business-process algorithms for future automation in Bitrix24
 - assessed CRM and ticketing systems through market analysis and pilot use
+- combined infrastructure modernization with business-process planning and operating-model improvements
 
 ### Technology Context
 
@@ -679,6 +684,19 @@ Anton supported and developed an internal document management system on Lotus No
 - LEI
 - Lotus SSJS
 - XPages
+
+## IscTravel Law Agency
+**Moscow**  
+**2012**  
+**Role:** Project-based technical specialist
+
+This source-confirmed short engagement fills the transition period between enterprise document-flow work and the later banking automation role.
+
+### What It Adds
+
+- shows movement beyond pure enterprise IT into a service-business context
+- supports the broader pattern of web, tools, and database-oriented technical work
+- confirms that Anton's cross-industry trajectory was already visible before the banking and government stages
 
 ## Freelance / Private Practice
 **Moscow**  
@@ -838,9 +856,10 @@ Anton's experience also clearly includes:
 
 ### Formal Education
 
-- Bachelor in Management, specialization in small business management
+- Commercial Banking College No. 6, Economics and Accounting by Industry (2006-2008)
+- Humanitarian Institute, Moscow, Applied Informatics in Economics (2011-2018, later transferred)
+- National Institute of Business, Bachelor's degree in Management, specialization in small business management (2018-2019)
 - professional retraining in IT for economics and government
-- background in accounting and finance
 
 ### Additional Learning
 
@@ -852,6 +871,8 @@ Anton also invested in:
 - IT management
 - negotiation and working under pressure
 - event management and promotion
+
+An important pattern in the education trajectory is that Anton deliberately strengthened the management, analytics, and implementation side of his profile rather than remaining narrowly technical. The move from an applied informatics track into a management degree reflects the same people-facing and systems-facing preference that later appears throughout his work.
 
 ## Summary
 
