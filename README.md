@@ -15,6 +15,16 @@ Location: Belgrade, Serbia
 - [Personality / Strengths Reference](./details/metafox_strengths_report.md)
 - [Career Profile Reference](./details/comprehensive_psychological_career_profile.md)
 
+## AGENT NAVIGATION
+
+If you are an agent working inside this repository:
+
+- start with `README.md` for the public profile surface
+- use `details/` for long-form human-facing background
+- use `data/` for structured machine-readable profile data
+- use `workflows/` for application, targeting, and positioning logic
+- use `portfolio/agent_portfolio_navigator.md` for portfolio-case work
+
 ---
 
 ## PROFILE
