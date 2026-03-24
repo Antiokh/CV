@@ -9,8 +9,9 @@ Each project lives in its own folder and should contain:
 - `README.md` - short public-facing case study
 - optional supporting files such as detailed notes, screenshots, links, or internal drafts
 
-Formatting rules for project descriptions: [CASE_STUDY_FORMAT.md](./CASE_STUDY_FORMAT.md)
-Workflow for adding new cases: [NEW_PROJECT_WORKFLOW.md](./NEW_PROJECT_WORKFLOW.md)
+Agent entry point: [agent_portfolio_navigator.md](./agent_portfolio_navigator.md)
+Formatting rules for project descriptions: [agent_case_study_format.md](./agent_case_study_format.md)
+Workflow for adding new cases: [agent_project_intake_guide.md](./agent_project_intake_guide.md)
 
 ## Project Listing
 

@@ -3,7 +3,7 @@
 This guide explains how to add a new project case study to the portfolio in a way that stays consistent with the rest of the repository.
 
 Use this together with:
-- [CASE_STUDY_FORMAT.md](./CASE_STUDY_FORMAT.md)
+- [agent_case_study_format.md](./agent_case_study_format.md)
 
 ## Goal
 
