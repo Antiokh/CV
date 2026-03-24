@@ -245,7 +245,8 @@
       ],
       "results": [
         "entered enterprise systems work through a competitive internal training and selection process",
-        "built an early foundation in corporate document systems, support, and user-facing adaptation"
+        "built an early foundation in corporate document systems, support, and user-facing adaptation",
+        "worked on configuration, modernization, third-line support, project documentation, and tester consultation around the internal document system"
       ]
     },
     {
@@ -272,7 +273,8 @@
       "results": [
         "introduced XPages technology into the company for the first time",
         "rewrote the core Boss-Referent library in JavaScript / SSJS for web support",
-        "extended document workflow capabilities with new modules and databases"
+        "extended document workflow capabilities with new modules and databases",
+        "ran introductory lectures on the internal Lotus Notes workflow system for new employees, including top management"
       ]
     },
     {
@@ -293,6 +295,10 @@
       ],
       "results": [
         "mapped document-routing paths with bank leadership and turned them into automation requirements",
+        "held more than ten working sessions with executives and department heads to reconstruct real document flows and address models",
+        "helped define document nomenclature, registration-number methodology, and storage logic together with department leadership and the office administration function",
+        "reviewed existing EDMS products, prepared implementation assessments, and helped drive the decision to build the system in-house",
+        "coordinated 1C and Lotus developers around one delivery track",
         "designed and built an internal document management system from scratch",
         "implemented XML-based integration with 1C and related internal data flows",
         "combined development, testing, rollout, and user training in a banking environment"
@@ -359,6 +365,7 @@
       "responsibility_areas": [
         "working with IT directors and heads of IT across 100+ subordinate institutions",
         "interaction with executive authorities of the city of Moscow",
+        "interaction with the Moscow Department of Information Technologies on automation questions",
         "implementation initiatives based on IBM Domino",
         "server infrastructure including HP ProLiant, VMware, and CentOS 7",
         "IBM Domino migration from Windows to CentOS with nginx",
@@ -366,12 +373,21 @@
         "field, export, and filter generators",
         "Yandex Maps integration with live data",
         "webinar-based training and adoption support",
+        "IBM Notes training for internal staff and consulting support for subordinate institutions",
         "portal recovery from search and security blocklists",
-        "support workflow shift from phone/email to instant messaging"
+        "support workflow shift from phone/email to instant messaging",
+        "procurement of certificates and licenses",
+        "interviewing, onboarding, adaptation, and mentoring of employees and interns",
+        "drafting technical specifications for Directorate IT projects"
       ],
       "results": [
         "built and evolved a scalable industry-level information system for cultural institutions",
+        "automated structured data collection across about 100 library and cultural institutions",
+        "accelerated export operations by about 20x and added expected-time estimation for long-running operations",
         "improved security, authorization, and access control",
+        "implemented edit-locking, conditional visibility, live session-based settings, filtered exports, full-text search, and a feedback section in one institutional platform",
+        "introduced governance around VPN access and database-field changes",
+        "trained internal staff in IBM Notes and supported adoption across Directorate departments and subordinate institutions",
         "enabled parallel report generation and stronger operational independence across departments",
         "combined architecture, implementation, governance, support, and user adoption in one long-running institutional system"
       ]
@@ -966,22 +982,32 @@
   "education": {
     "formal_education": [
       {
+        "program": "Applied Informatics in Economics",
+        "specialization": null,
+        "field": "Applied Informatics / Economics",
+        "institution": "Humanitarian Institute, Moscow",
+        "year_from": 2011,
+        "year_to": 2018,
+        "status": "transferred",
+        "source_status": "confirmed in PDF resume source"
+      },
+      {
         "program": "Bachelor in Management",
         "specialization": "Small Business Management",
         "field": "Management",
         "institution": "National Institute of Business, Moscow",
-        "year_from": null,
+        "year_from": 2018,
         "year_to": 2019,
-        "source_status": "confirmed in docx resume source"
+        "source_status": "confirmed in docx and PDF resume sources"
       },
       {
         "program": "Accounting and Finance background",
         "specialization": "Economics and Accounting by Industry",
         "field": "Finance",
         "institution": "Commercial Banking College No. 6",
-        "year_from": null,
+        "year_from": 2006,
         "year_to": 2008,
-        "source_status": "confirmed in docx resume source"
+        "source_status": "confirmed in docx and PDF resume sources"
       }
     ],
     "professional_retraining": [
