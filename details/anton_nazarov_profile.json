@@ -305,6 +305,24 @@
       ]
     },
     {
+      "company": "IscTravel Law Agency",
+      "start_date": "2012-01",
+      "end_date": "2012-12",
+      "ongoing": false,
+      "titles": [
+        "Project-based technical specialist"
+      ],
+      "focus": [
+        "short-form work in a travel-law business context",
+        "web, tools, and database-oriented technical support"
+      ],
+      "results": [
+        "fills the transition period between enterprise document-flow work and banking automation",
+        "shows early cross-industry movement beyond pure enterprise IT into service-business contexts"
+      ],
+      "source_status": "confirmed in Anton_Nazarov_CV.pdf; exact title not specified"
+    },
+    {
       "company": "Settlement and Savings Bank",
       "start_date": "2013-01",
       "end_date": "2015-09",
@@ -712,6 +730,53 @@
     "Cloudflare",
     "Git-based version control"
   ],
+  "resume_tag_vocabulary": {
+    "headline_tags": [
+      "Mobile",
+      "Web",
+      "App",
+      "Tools",
+      "Database Development"
+    ],
+    "tools_and_platforms": [
+      "IBM Domino",
+      "Bubble.io",
+      "Make",
+      "Integromat",
+      "Tilda",
+      "WeWeb",
+      "Glide",
+      "Adalo",
+      "Figma"
+    ],
+    "technical_proficiency_tags": [
+      "CSS",
+      "HTML",
+      "LotusScript",
+      "Java",
+      "JavaScript",
+      "Virtualization",
+      "Linux",
+      "OSI",
+      "CCTV",
+      "XPages"
+    ],
+    "delivery_and_soft_skill_tags": [
+      "Technical Requirement",
+      "QA",
+      "Team Leadership",
+      "Communication",
+      "Collaboration",
+      "Analytical mind",
+      "Problem-solving",
+      "Motivation",
+      "Critical thinking",
+      "Stakeholder management",
+      "Empathy",
+      "Creativity"
+    ],
+    "source_status": "curated from Anton_Nazarov_CV.pdf"
+  },
   "selected_projects": [
     {
       "name": "PromptlessPress",
