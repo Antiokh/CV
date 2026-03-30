@@ -21,7 +21,7 @@ Strongest pattern: turning fragmented workflows and weak tooling into scalable s
 
 ## Selected Experience
 
-### NeedleBit, Founder / CTO / Systems Architect
+### NeedleBit, CTO / Systems Architect / Product Builder
 **Nov 2022 - Present**
 
 - Defined technical strategy and architecture for multiple client and internal products

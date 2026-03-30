@@ -20,6 +20,50 @@ Use these files as primary sources:
 3. Pull role language from the vacancy only when it fits actual experience.
 4. Rewrite the summary and selected experience around the target role.
 5. Keep the portfolio links aligned with the claims in the resume.
+6. Build the output with clear separation between:
+   - Summary
+   - Core skills
+   - Work experience
+   - Selected projects
+   - Education / languages / authorization
+
+## Output Structure Rules
+
+When generating a tailored resume, always keep **work experience** and **projects** in separate sections.
+
+Required structure:
+
+- Summary / headline
+- Core skills
+- Work experience
+- Selected projects
+- Additional experience or highlights
+- Education / languages / authorization
+
+Do not mix project case studies into the work experience section unless the vacancy specifically requires a combined narrative and the separation would reduce clarity.
+
+For AI-heavy roles, use a dedicated **AI Projects** subsection rather than blending those projects into employment history.
+
+## NeedleBit Positioning Rule
+
+By default, when generating application materials, present NeedleBit as:
+
+- `CTO / Systems Architect`
+- `Systems Architect`
+- `Technical Product Lead`
+- `Product Builder`
+
+Avoid using `Founder` in the headline or experience label unless the target vacancy clearly benefits from a founder narrative.
+
+Reason:
+- `Founder` can reduce fit for many mid-senior product, engineering, and architecture roles
+- the work evidence is stronger than the startup title itself
+- the role narrative should emphasize delivery, architecture, and ownership, not company formation
+
+Only keep `Founder` in generated output when:
+- the vacancy explicitly favors founding / startup / entrepreneurial ownership
+- the title helps clarify a real business context
+- omitting it would distort the actual work history
 
 ## Suggested Output Folder
 
