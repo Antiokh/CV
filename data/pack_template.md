@@ -35,6 +35,8 @@ Files:
 - `job_description_ru.md`
 - optional `README.md` for pack contents
 
+For Russian packs, use the official Russian legal-entity name when it is known and relevant.
+
 ## Mixed-language pack
 
 Use only when the role or company context clearly benefits from it.

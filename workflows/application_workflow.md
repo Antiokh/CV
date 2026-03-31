@@ -47,6 +47,8 @@ Use a Russian pack:
 - notes in Russian
 - PDF exports in Russian
 
+For Russian packs, prefer the **official Russian name of the legal entity / organization** when it is known and relevant.
+
 ### Mixed or uncertain vacancy
 If the company, form, or contact flow is mixed-language:
 - keep the main application language aligned with the role and contact surface

@@ -20,6 +20,7 @@ Always start from these files:
 - [Evidence Map Guide](./evidence_map_guide.md)
 - [Role Market Fit Matrix](../data/role_market_fit.md)
 - [Career Strategy](../data/career_strategy.md)
+- [Pack Template](../data/pack_template.md)
 
 ## Output Location
 
@@ -42,6 +43,8 @@ Match the package language to the vacancy language whenever possible.
 - English vacancy -> English pack
 - Russian vacancy -> Russian pack
 - mixed / uncertain -> use the language of the application surface and keep the core resume consistent
+
+For Russian packs, use the official Russian legal-entity name when it is known and relevant.
 
 Do not mix languages inside the main resume unless it is intentionally a bilingual pack.
 
