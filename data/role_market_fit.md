@@ -6,6 +6,7 @@ It is intended as:
 - a role-targeting reference for agents
 - a proof artifact for clients and hiring managers
 - a practical guide for deciding which roles to pursue first
+- a market-value reference for compensation and negotiation
 
 ## Reading Key
 
@@ -17,6 +18,12 @@ Strengths that generate energy and are worth using more often because they expan
 
 ### Weaknesses / draining zones
 Patterns that tend to consume energy and should be minimized in role selection.
+
+### Earning potential
+How well the role can pay relative to the local and company context if positioned correctly.
+
+### Client value
+How clearly a client or employer can understand why Anton is useful in the role.
 
 ---
 
@@ -51,6 +58,13 @@ Patterns that tend to consume energy and should be minimized in role selection.
 - very high
 - strong in companies with unclear ownership, post-merger chaos, or delivery issues
 
+**Earning potential**
+- high
+- often above Product Owner when the role has real people/delivery authority
+
+**Client value**
+- very easy to explain to clients: he can lead teams, stabilize delivery, and clean up chaos
+
 ---
 
 ### 2. Product Owner / Product Lead
@@ -82,6 +96,13 @@ Patterns that tend to consume energy and should be minimized in role selection.
 - very high
 - strong where product needs structure and ownership, not just backlog management
 
+**Earning potential**
+- medium-high
+- often slightly lower ceiling than EM, but can still be strong in global companies
+
+**Client value**
+- easy to explain: he can turn user/business needs into product structure and delivery
+
 ---
 
 ### 3. Systems Architect / Solutions Architect
@@ -110,6 +131,13 @@ Patterns that tend to consume energy and should be minimized in role selection.
 **Market usefulness**
 - very high
 - strong for companies with complex systems and weak structure
+
+**Earning potential**
+- high
+- can be very well paid in global or complex-system environments
+
+**Client value**
+- very strong: he can design the system that fixes the business problem
 
 ---
 
@@ -141,6 +169,13 @@ Patterns that tend to consume energy and should be minimized in role selection.
 - high
 - especially in enterprise, public-sector, and post-merger contexts
 
+**Earning potential**
+- medium-high
+- can pay well, but depends heavily on organization and scope
+
+**Client value**
+- very strong for organizations needing transformation, adoption, and operational change
+
 ---
 
 ### 5. Head of IT / Infrastructure & Operations Lead
@@ -169,6 +204,13 @@ Patterns that tend to consume energy and should be minimized in role selection.
 **Market usefulness**
 - high
 - good for organizations that need IT structure rather than just coding
+
+**Earning potential**
+- medium-high
+- can be strong where the company wants operational reliability and support governance
+
+**Client value**
+- easy to understand: he can run and improve the IT function, not just build features
 
 ---
 
@@ -201,6 +243,13 @@ Patterns that tend to consume energy and should be minimized in role selection.
 - very high
 - especially for founder-led or operationally messy companies
 
+**Earning potential**
+- very high
+- strong potential if positioned as a senior generalist who can stabilize and reshape a company
+
+**Client value**
+- extremely clear to clients: he can step in, diagnose, and build order fast
+
 ---
 
 ## Secondary / Adjacent Roles
@@ -209,26 +258,38 @@ Patterns that tend to consume energy and should be minimized in role selection.
 - combines product and engineering
 - strong fit when product logic and implementation are tightly linked
 - useful in companies that need ownership over workflows, admin logic, reporting, and delivery
+- earning potential: medium-high to high
+- client value: strong and easy to explain
 
 ### Platform Lead
 - good where internal systems, tooling, and operations matter
 - often a good label for complex internal products
+- earning potential: medium-high
+- client value: good if platform complexity is visible
 
 ### Delivery Lead / Implementation Lead
 - strong where the main challenge is moving from plan to reliable execution
 - useful in transformation or migration work
+- earning potential: medium-high
+- client value: very clear in chaotic environments
 
 ### Product Operations Lead
 - useful in companies that need workflow clarity, reporting logic, and feedback loops
 - less common title, but conceptually strong fit
+- earning potential: medium
+- client value: good in ops-heavy product organizations
 
 ### Solution Architect
 - strong for complex integration and modernization work
 - slightly narrower than Systems Architect, but still very relevant
+- earning potential: high
+- client value: strong if the client has integration pain
 
 ### Program / Project Lead
 - useful if the company is reorganizing delivery and needs cross-functional coordination
 - strongest when paired with technical ownership rather than pure PM administration
+- earning potential: medium-high
+- client value: moderate to strong depending on how technical the role is
 
 ---
 
@@ -258,7 +319,15 @@ This makes him especially valuable in:
 - banking / workflow systems
 - internal tools / operational platforms
 - AI-assisted delivery environments
-- founder-led companies with weak structure
+
+From a market / earnings perspective, the strongest long-term positions are usually:
+1. Fractional CTO / Interim CTO
+2. Engineering Manager
+3. Systems Architect / Solutions Architect
+4. Technical Product Lead
+5. Product Owner / Product Lead
+
+Those roles combine fit, visibility, and earning potential.
 
 ---
 

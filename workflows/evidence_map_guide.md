@@ -78,6 +78,17 @@ Use these bullets as the factual basis for:
 This is the fast role-fit hint.
 It tells the agent which roles should surface this entity first.
 
+### 5. Read the market / earnings fit layer
+
+The separate `data/role_market_fit.md` file adds the market-value layer:
+- realised strengths
+- unrealised strengths
+- roles where Anton is most useful to the market
+- roles with the best earning potential
+- proof points for clients
+
+When the task is about money, compensation, or career direction, consult the market-fit matrix together with the evidence map.
+
 ## Retrieval Logic
 
 When matching a vacancy:
@@ -88,6 +99,7 @@ When matching a vacancy:
 4. surface all entities whose `best_for_roles` match
 5. give priority to parent experiences when the vacancy is about leadership or ownership
 6. give priority to child projects when the vacancy is about product, AI, or implementation detail
+7. if the goal is higher earnings, prefer roles with both high fit and high earning potential in `data/role_market_fit.md`
 
 ## Role-Adjacent Thinking
 
@@ -105,6 +117,7 @@ For example:
 - Do not overuse weak but flashy signals if the map shows stronger fit elsewhere.
 - Prefer the combination of role + parent context + evidence over title alone.
 - When in doubt, privilege management/ownership evidence for EM-style vacancies and product/feedback evidence for PO-style vacancies.
+- When the objective is to earn more, give more weight to roles that combine strong fit with higher earning potential.
 
 ## Practical Example
 
