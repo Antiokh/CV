@@ -1,4 +1,4 @@
-# Anton Nazarov — Short Public Summary
+# Anton Nazarov — Public Summary
 
 Anton Nazarov is a technology leader and systems builder based in Belgrade, Serbia. He works at the intersection of engineering, product, and operations, turning fragmented workflows into structured systems teams can actually run.
 
@@ -18,4 +18,17 @@ Selected areas of experience:
 - AI-assisted product and automation projects
 - product delivery in low-code and hybrid environments
 
-This makes him a strong fit for roles such as Engineering Manager, Head of Engineering, Systems Architect, Technical Product Lead, Digital Transformation Lead, and Fractional CTO.
+Best-fit roles:
+- Engineering Manager
+- Head of Engineering
+- Systems Architect
+- Technical Product Lead
+- Digital Transformation Lead
+- Fractional CTO
+
+Why clients hire him:
+- he can build from scratch
+- he can lead teams
+- he can restructure broken systems
+- he can translate business chaos into technical execution
+- he can work in both product and engineering contexts

@@ -27,6 +27,25 @@ How clearly a client or employer can understand why Anton is useful in the role.
 
 ---
 
+## Highest-Earning Role Groups
+
+If the objective is to maximize earnings while staying realistic about fit, the strongest role groups are usually:
+
+1. Fractional CTO / Interim CTO
+2. Engineering Manager
+3. Systems Architect / Solutions Architect
+4. Technical Product Lead
+5. Digital Transformation Lead
+
+These roles combine:
+- seniority
+- ambiguity handling
+- ownership
+- cross-functional value
+- visible business impact
+
+---
+
 ## Primary Market Roles
 
 ### 1. Engineering Manager
@@ -65,8 +84,6 @@ How clearly a client or employer can understand why Anton is useful in the role.
 **Client value**
 - very easy to explain to clients: he can lead teams, stabilize delivery, and clean up chaos
 
----
-
 ### 2. Product Owner / Product Lead
 
 **Why it fits**
@@ -103,8 +120,6 @@ How clearly a client or employer can understand why Anton is useful in the role.
 **Client value**
 - easy to explain: he can turn user/business needs into product structure and delivery
 
----
-
 ### 3. Systems Architect / Solutions Architect
 
 **Why it fits**
@@ -138,8 +153,6 @@ How clearly a client or employer can understand why Anton is useful in the role.
 
 **Client value**
 - very strong: he can design the system that fixes the business problem
-
----
 
 ### 4. Digital Transformation Lead
 
@@ -176,8 +189,6 @@ How clearly a client or employer can understand why Anton is useful in the role.
 **Client value**
 - very strong for organizations needing transformation, adoption, and operational change
 
----
-
 ### 5. Head of IT / Infrastructure & Operations Lead
 
 **Why it fits**
@@ -211,8 +222,6 @@ How clearly a client or employer can understand why Anton is useful in the role.
 
 **Client value**
 - easy to understand: he can run and improve the IT function, not just build features
-
----
 
 ### 6. Fractional CTO / Interim CTO
 
@@ -343,7 +352,7 @@ From a market / earnings perspective, the strongest long-term positions are usua
 2. Engineering Manager
 3. Systems Architect / Solutions Architect
 4. Technical Product Lead
-5. Product Owner / Product Lead
+5. Digital Transformation Lead
 
 Those roles combine fit, visibility, and earning potential.
 
