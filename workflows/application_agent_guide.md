@@ -22,6 +22,17 @@ Always start from these files:
 - [Career Strategy](../data/career_strategy.md)
 - [Pack Template](../data/pack_template.md)
 
+## Authorship / Traceability
+
+When this agent makes edits in the repository, it may mark them as coming from `Clav` in commit metadata and/or notes.
+
+Use this to distinguish:
+- agent-made changes
+- manual human edits
+- generated application artifacts
+
+If the distinction matters for a file or a package, make it explicit in the file name, note, or commit message.
+
 ## Output Location
 
 All job-specific output belongs in the local `applications/` folder, which is ignored by git.

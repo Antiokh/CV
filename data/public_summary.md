@@ -32,3 +32,8 @@ Why clients hire him:
 - he can restructure broken systems
 - he can translate business chaos into technical execution
 - he can work in both product and engineering contexts
+
+Selected proof signals:
+- bank document workflow moved from paper to digital
+- IT operations at a large cultural center were stabilized after years of ad hoc work
+- institutional reporting and exports were rebuilt from slow, manual processes into fast, role-based systems

@@ -1,5 +1,5 @@
 {
-  "version": "1.1",
+  "version": "1.2",
   "purpose": "A tagged evidence map for fast retrieval of role-fit signals, ownership proof, and project-to-experience links when generating CVs, cover letters, and negotiation notes.",
   "tags": {
     "leadership": "people management, team coordination, governance, delivery ownership",
@@ -34,12 +34,13 @@
       "tags": ["banking", "ownership", "engineering_manager", "systems_architect", "product_owner", "product_delivery", "architecture", "delivery_lead"],
       "summary": "Built a document management system from scratch in a banking environment, owned the architecture, worked with leadership on workflow mapping, coordinated another programmer, and handled rollout/testing/training.",
       "evidence": [
-        "mapped document-routing paths with bank leadership",
-        "turned workflows into automation requirements",
+        "moved paper-based document flow into digital workflow",
+        "eliminated courier dependency between offices",
+        "enabled registry and legal teams to work digitally",
         "built system from scratch",
-        "implemented XML integration with 1C",
-        "coordinated another programmer",
-        "worked as PM on the project"
+        "owned architecture",
+        "worked as PM",
+        "coordinated another programmer"
       ],
       "best_for_roles": ["Engineering Manager", "Product Owner", "Systems Architect", "Technical Product Lead", "Delivery Lead"]
     },
@@ -47,7 +48,7 @@
       "id": "directorate_reform",
       "type": "experience",
       "label": "Directorate of Cultural Centers of Moscow",
-      "org": "Directorate of Cultural Centers of Moscow",
+      "org": "Дирекция культурных центров Москвы",
       "role": ["Senior Manager", "IT Architect", "Analyst", "Developer + PM", "Expert"],
       "tags": ["public_sector", "leadership", "ownership", "engineering_manager", "systems_architect", "product_delivery", "architecture", "platform_lead", "delivery_lead"],
       "summary": "Long-running institutional reform and delivery role across a large cultural network, combining architecture, implementation, training, governance, support, and stakeholder coordination.",
@@ -64,7 +65,7 @@
       "id": "ais_mosrazvitie",
       "type": "project",
       "label": "AIS MosRazvitie",
-      "org": "Directorate of Cultural Centers of Moscow",
+      "org": "Дирекция культурных центров Москвы",
       "parent_experience": "directorate_reform",
       "role": ["Architect", "Analyst", "Developer", "Trainer", "Operational Owner"],
       "tags": ["public_sector", "systems_architect", "ownership", "product_delivery", "leadership", "product_operations", "architecture"],
@@ -84,7 +85,7 @@
       "id": "zil_it_leadership",
       "type": "experience",
       "label": "ZIL Cultural Center",
-      "org": "ZIL Cultural Center",
+      "org": "ЗИЛ Культурный центр",
       "role": ["Head of IT"],
       "tags": ["leadership", "team_building", "engineering_manager", "public_sector", "automation", "ownership", "merger_chaos", "delivery_lead"],
       "summary": "Headed IT in a large cultural center, built and stabilized a team, and modernized infrastructure and automation.",
@@ -94,7 +95,9 @@
         "stable for 2 years without departures",
         "led remote-work transition for 100+ employees",
         "introduced HelpDesk, asset tracking, Active Directory, modernization",
-        "rebuild and automation of a large cultural center environment"
+        "rebuild and automation of a large cultural center environment",
+        "restored full IT operations after years without proper administrative work",
+        "replaced missing admin/password situation and rebuilt documentation"
       ],
       "best_for_roles": ["Engineering Manager", "Head of IT", "Digital Transformation Lead", "Delivery Lead"]
     },

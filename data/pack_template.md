@@ -48,7 +48,7 @@ Recommended rule:
 
 ## Standard content
 
-A full pack should usually include:
+A full pack should usually contain:
 - resume
 - cover / intro note
 - role fit memo

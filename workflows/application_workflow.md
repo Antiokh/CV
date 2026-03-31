@@ -27,6 +27,43 @@ Use these files as primary sources:
    - Selected projects
    - Education / languages / authorization
 
+## CV Writing Rule
+
+When generating CVs or LinkedIn content, prefer **selling outcomes and impact** while preserving the underlying scope of responsibility.
+
+Use this pattern:
+- responsibility
+- what changed because of the work
+- result / impact / measurable signal if available
+
+Do not flatten the user into a list of tasks.
+Do not lose scope, ownership, or leadership context.
+Do not force fake precision when metrics are not available.
+
+When a strong result exists, elevate it clearly.
+When a metric is missing, use a truthful proxy such as:
+- system complexity
+- user count
+- number of institutions
+- number of devices / servers / modules
+- reduction of manual work
+- reliability improvement
+- process formalization
+- time saved
+
+## Applications Workspace Layout
+
+Use `/applications/` as the private live workspace for application materials.
+
+Recommended structure:
+- `applications/_tracking/` — metadata only (tracker, status dump, notes about status)
+- `applications/to_apply/<company>/` — opportunity not yet submitted
+- `applications/applied/<company>/` — submitted applications
+- `applications/interview/<company>/` — active interview process
+- `applications/take_home/<company>/` — test tasks / take-homes
+- `applications/offer/<company>/` — offer stage
+- `applications/closed/<company>/` — rejected / closed / paused opportunities
+
 ## Language Rule
 
 The application language should match the vacancy language whenever possible.
@@ -139,12 +176,12 @@ Use the local `applications/` folder for non-committed working files such as:
 
 Inside `applications/`, use a structure like:
 
-- `applications/company_name/`
-- `applications/company_name/job_description.md`
-- `applications/company_name/resume_en.md` or `resume_ru.md`
-- `applications/company_name/cover_letter.md` or `cover_letter_ru.md`
-- `applications/company_name/notes.md` or `notes_ru.md`
-- `applications/company_name/negotiation_strategy.md` or `negotiation_ru.md`
+- `applications/to_apply/<company>/`
+- `applications/applied/<company>/`
+- `applications/interview/<company>/`
+- `applications/take_home/<company>/`
+- `applications/offer/<company>/`
+- `applications/closed/<company>/`
 
 ## Pack Standard
 
