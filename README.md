@@ -45,10 +45,12 @@ If you want the deeper positioning and market fit, see:
 - [Evidence Map Guide](./workflows/evidence_map_guide.md)
 - [Profile Suggestions](./workflows/ai_profile_suggestions.md)
 
-## Private application tracker
+## Private application workspace
 
-The live application tracker is kept outside the public data surface:
+Use the local `applications/` folder for live, private application work:
+- `applications/README.md`
 - `applications/_tracking/application_tracker.md`
+- `applications/_tracking/status_dump.md`
 
 ## For agents
 
@@ -59,7 +61,6 @@ If you are using this repository as an agent workspace, start here:
 - [Role Market Fit Matrix](./data/role_market_fit.md)
 - [Career Strategy](./data/career_strategy.md)
 - [Pack Template](./data/pack_template.md)
-- private tracker: `applications/_tracking/application_tracker.md`
 
 ## Additional references
 

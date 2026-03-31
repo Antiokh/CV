@@ -46,6 +46,7 @@ Start here:
 8. [Pack Template](../data/pack_template.md)
 9. [Public Summary](../data/public_summary.md)
 10. [Private Application Tracker](../applications/_tracking/application_tracker.md)
+11. [Application Workspace](../applications/README.md)
 
 Expected output:
 
@@ -122,6 +123,7 @@ Do not start here when the task is about:
 8. [Pack Template](../data/pack_template.md)
 9. [Public Summary](../data/public_summary.md)
 10. [Private Application Tracker](../applications/_tracking/application_tracker.md)
+11. [Application Workspace](../applications/README.md)
 
 ## Included
 
@@ -135,5 +137,6 @@ Do not start here when the task is about:
 - [Pack Template](../data/pack_template.md)
 - [Public Summary](../data/public_summary.md)
 - [Private Application Tracker](../applications/_tracking/application_tracker.md)
+- [Application Workspace](../applications/README.md)
 
 These files are internal working documents, not the main public profile surface.
