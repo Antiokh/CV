@@ -1,18 +1,20 @@
 # Anton Nazarov
-**CTO / Head of Engineering / Systems Architect / Tech Lead**
+**Engineering Manager / CTO / Systems Architect / Tech Lead**
 
 Belgrade, Serbia  
 Portfolio: [Portfolio Index](./portfolio/README.md)
 
 ## Profile
 
-Technology leader and systems architect with 18 years of professional experience across startups, enterprise, and government environments. I build and restructure products and internal systems at the intersection of engineering, business, and operations, with strong ownership of architecture, delivery, automation, and long-term technical direction.
+Technology leader and systems architect with 18 years of professional experience across startups, enterprise, and government environments. I build and restructure products and internal systems at the intersection of engineering, business, and operations, with strong ownership of architecture, delivery, automation, team leadership, and long-term technical direction.
 
 Strongest pattern: turning fragmented workflows and weak tooling into scalable systems teams can actually run.
 
+I also keep an active eye on product ideas through Serbian IT events and conferences, where I look for practical patterns, workflow improvements, and ways AI-driven dialogue or feedback loops could make services more useful.
+
 ## Core Strengths
 
-- System architecture and technical leadership
+- Engineering leadership and systems architecture
 - Product delivery from MVP to production
 - Business process automation and operational restructuring
 - AI-native development workflows in VS Code
@@ -25,6 +27,7 @@ Strongest pattern: turning fragmented workflows and weak tooling into scalable s
 **Nov 2022 - Present**
 
 - Defined technical strategy and architecture for multiple client and internal products
+- Worked with other developers and a designer on product delivery and implementation
 - Built systems using WeWeb, Supabase, Xano, Bubble, Glide, n8n, Make, and custom integrations
 - Delivered SaaS products, internal tools, portals, automation systems, and operational platforms
 - Built AI-assisted engineering workflows with repository instructions, helper layers, and architectural guardrails
@@ -38,16 +41,20 @@ Key outcomes:
 ### ZIL Cultural Center, Head of IT
 **Mar 2020 - Jun 2022**
 
-- Owned IT infrastructure, security, support model, and vendor coordination for a large public organization
-- Led remote-work transition during COVID for 100+ employees
+- Recruited and coordinated a core team of 3 people, with up to 6 people involved during installation and cable/physical work when needed
+- Kept the team operational and stable for 2 years without departures while modernizing the entire IT environment of a large cultural center
+- Ran IT operations, support coordination, vendor management, and infrastructure priorities
+- Led the remote-work transition during COVID for 100+ employees
 - Introduced HelpDesk, asset tracking, Active Directory, and infrastructure modernization
+- Rebuilt and coordinated the automation of a large cultural center environment
 
 ### Directorate of Cultural Centers of Moscow, Senior Manager / IT Architect / Analyst
 **Jan 2017 - May 2023**
 
-- Designed and rebuilt an industry-level information system for cultural institutions
+- Led the reform and rebuilding of an industry-level information system for cultural institutions
 - Combined stakeholder work, documentation, architecture, implementation, training, webinars, server setup, and backups
 - Improved security, access control, reporting, analytics, and operational independence across departments
+- Worked with the client organization and the delivery team to keep the system moving from concept to stable operation
 
 ## Highlighted Projects
 
