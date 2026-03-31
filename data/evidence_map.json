@@ -1,5 +1,5 @@
 {
-  "version": "1.0",
+  "version": "1.1",
   "purpose": "A tagged evidence map for fast retrieval of role-fit signals, ownership proof, and project-to-experience links when generating CVs, cover letters, and negotiation notes.",
   "tags": {
     "leadership": "people management, team coordination, governance, delivery ownership",
@@ -7,6 +7,12 @@
     "engineering_manager": "team leadership, process cleanup, delivery stabilization, technical direction",
     "product_owner": "product decisions, user flows, prioritization, stakeholder alignment",
     "systems_architect": "workflow modeling, integration structure, legacy modernization",
+    "solutions_architect": "cross-system design, interfaces, integration boundaries, modernization",
+    "technical_product_lead": "product and engineering overlap, admin logic, workflow thinking, delivery ownership",
+    "fractional_cto": "senior technical generalist, delivery stabilization, architecture cleanup, pragmatic leadership",
+    "delivery_lead": "shipping, implementation ownership, release coordination, operational delivery",
+    "platform_lead": "platform design, internal systems, workflow and operational tooling",
+    "product_operations": "process design, admin tooling, reporting logic, operational product behavior",
     "ai_workflow": "AI-assisted engineering, prompt systems, guardrails, generation pipelines",
     "banking": "bank systems, document management, process formalization",
     "public_sector": "government / institutional systems, reform, governance, complex stakeholders",
@@ -14,7 +20,9 @@
     "team_building": "hiring, onboarding, stable team operation, people coordination",
     "merger_chaos": "organizational ambiguity, restructuring, unclear ownership, delivery cleanup",
     "product_delivery": "MVP to production, implementation, shipping, rollout",
-    "feedback_loops": "client feedback, user feedback, iterative product refinement"
+    "feedback_loops": "client feedback, user feedback, iterative product refinement",
+    "architecture": "system design, boundaries, data model, technical coherence",
+    "product_engineering": "tight product + engineering loop, PM/engineering collaboration"
   },
   "entities": [
     {
@@ -23,7 +31,7 @@
       "label": "Settlement and Savings Bank document management system",
       "org": "Settlement and Savings Bank",
       "role": ["Lead Software Developer", "Systems Architect", "PM"],
-      "tags": ["banking", "ownership", "engineering_manager", "systems_architect", "product_owner", "product_delivery"],
+      "tags": ["banking", "ownership", "engineering_manager", "systems_architect", "product_owner", "product_delivery", "architecture", "delivery_lead"],
       "summary": "Built a document management system from scratch in a banking environment, owned the architecture, worked with leadership on workflow mapping, coordinated another programmer, and handled rollout/testing/training.",
       "evidence": [
         "mapped document-routing paths with bank leadership",
@@ -33,7 +41,7 @@
         "coordinated another programmer",
         "worked as PM on the project"
       ],
-      "best_for_roles": ["Engineering Manager", "Product Owner", "Systems Architect", "Technical Product Lead"]
+      "best_for_roles": ["Engineering Manager", "Product Owner", "Systems Architect", "Technical Product Lead", "Delivery Lead"]
     },
     {
       "id": "directorate_reform",
@@ -41,7 +49,7 @@
       "label": "Directorate of Cultural Centers of Moscow",
       "org": "Directorate of Cultural Centers of Moscow",
       "role": ["Senior Manager", "IT Architect", "Analyst", "Developer + PM", "Expert"],
-      "tags": ["public_sector", "leadership", "ownership", "engineering_manager", "systems_architect", "product_delivery"],
+      "tags": ["public_sector", "leadership", "ownership", "engineering_manager", "systems_architect", "product_delivery", "architecture", "platform_lead", "delivery_lead"],
       "summary": "Long-running institutional reform and delivery role across a large cultural network, combining architecture, implementation, training, governance, support, and stakeholder coordination.",
       "evidence": [
         "led reform and rebuilding of industry-level information system",
@@ -50,7 +58,7 @@
         "improved security, access control, reporting and analytics",
         "kept system moving from concept to stable operation"
       ],
-      "best_for_roles": ["Engineering Manager", "Head of Engineering", "Systems Architect", "Digital Transformation Lead"]
+      "best_for_roles": ["Engineering Manager", "Head of Engineering", "Systems Architect", "Digital Transformation Lead", "Platform Lead"]
     },
     {
       "id": "ais_mosrazvitie",
@@ -59,7 +67,7 @@
       "org": "Directorate of Cultural Centers of Moscow",
       "parent_experience": "directorate_reform",
       "role": ["Architect", "Analyst", "Developer", "Trainer", "Operational Owner"],
-      "tags": ["public_sector", "systems_architect", "ownership", "product_delivery", "leadership"],
+      "tags": ["public_sector", "systems_architect", "ownership", "product_delivery", "leadership", "product_operations", "architecture"],
       "summary": "Large government-scale information system inside the Directorate context.",
       "evidence": [
         "structured institutional data",
@@ -70,7 +78,7 @@
         "interactive maps",
         "stakeholder communication"
       ],
-      "best_for_roles": ["Systems Architect", "Engineering Manager", "Technical Product Lead"]
+      "best_for_roles": ["Systems Architect", "Engineering Manager", "Technical Product Lead", "Platform Lead"]
     },
     {
       "id": "zil_it_leadership",
@@ -78,7 +86,7 @@
       "label": "ZIL Cultural Center",
       "org": "ZIL Cultural Center",
       "role": ["Head of IT"],
-      "tags": ["leadership", "team_building", "engineering_manager", "public_sector", "automation", "ownership", "merger_chaos"],
+      "tags": ["leadership", "team_building", "engineering_manager", "public_sector", "automation", "ownership", "merger_chaos", "delivery_lead"],
       "summary": "Headed IT in a large cultural center, built and stabilized a team, and modernized infrastructure and automation.",
       "evidence": [
         "recruited and coordinated a core team of 3 people",
@@ -88,7 +96,7 @@
         "introduced HelpDesk, asset tracking, Active Directory, modernization",
         "rebuild and automation of a large cultural center environment"
       ],
-      "best_for_roles": ["Engineering Manager", "Head of IT", "Digital Transformation Lead"]
+      "best_for_roles": ["Engineering Manager", "Head of IT", "Digital Transformation Lead", "Delivery Lead"]
     },
     {
       "id": "needlebit",
@@ -96,7 +104,7 @@
       "label": "NeedleBit",
       "org": "NeedleBit",
       "role": ["CTO", "Systems Architect", "Product Builder"],
-      "tags": ["ownership", "product_delivery", "ai_workflow", "automation", "systems_architect", "product_owner", "engineering_manager"],
+      "tags": ["ownership", "product_delivery", "ai_workflow", "automation", "systems_architect", "product_owner", "engineering_manager", "architecture", "technical_product_lead", "fractional_cto"],
       "summary": "Independent practice with team collaboration across developers and designer, delivering product and automation systems end-to-end.",
       "evidence": [
         "worked with other developers and a designer",
@@ -105,7 +113,7 @@
         "built AI-assisted engineering workflows and guardrails",
         "improved PostgreSQL function versioning and database-to-git sync"
       ],
-      "best_for_roles": ["Systems Architect", "Technical Product Lead", "Engineering Manager"]
+      "best_for_roles": ["Systems Architect", "Technical Product Lead", "Engineering Manager", "Fractional CTO"]
     },
     {
       "id": "metafox",
@@ -114,7 +122,7 @@
       "org": "Independent / product project",
       "parent_experience": "needlebit",
       "role": ["Product Owner", "Architect", "Designer", "Tester", "Client Communication"],
-      "tags": ["ownership", "product_owner", "feedback_loops", "product_delivery", "leadership"],
+      "tags": ["ownership", "product_owner", "feedback_loops", "product_delivery", "leadership", "product_engineering", "product_operations"],
       "summary": "Full ownership from idea to release on an assessment product with scoring, reporting, and client feedback loops.",
       "evidence": [
         "concept to release",
@@ -124,7 +132,7 @@
         "customer communication and feedback handling",
         "PDF reporting and admin tooling"
       ],
-      "best_for_roles": ["Product Owner", "Technical Product Lead"]
+      "best_for_roles": ["Product Owner", "Technical Product Lead", "Product Operations"]
     },
     {
       "id": "dobri_visarun",
@@ -133,7 +141,7 @@
       "org": "Independent / service-business automation",
       "parent_experience": "needlebit",
       "role": ["Product Owner", "Automation Builder", "Implementation Owner"],
-      "tags": ["automation", "ownership", "feedback_loops", "product_delivery", "product_owner"],
+      "tags": ["automation", "ownership", "feedback_loops", "product_delivery", "product_owner", "delivery_lead", "product_operations"],
       "summary": "Full ownership from idea to release on a Make.com-driven visa-run workflow product with client feedback and Telegram notifications.",
       "evidence": [
         "concept to release",
@@ -143,7 +151,7 @@
         "Make.com workflow",
         "structured intake and trip coordination"
       ],
-      "best_for_roles": ["Product Owner", "Technical Product Lead", "Automation Lead"]
+      "best_for_roles": ["Product Owner", "Technical Product Lead", "Automation Lead", "Product Operations"]
     },
     {
       "id": "promptlesspress",
@@ -152,7 +160,7 @@
       "org": "Independent / AI product",
       "parent_experience": "needlebit",
       "role": ["Architect", "AI Workflow Builder", "Product Builder"],
-      "tags": ["ai_workflow", "product_delivery", "systems_architect", "ownership"],
+      "tags": ["ai_workflow", "product_delivery", "systems_architect", "ownership", "technical_product_lead", "fractional_cto"],
       "summary": "AI-assisted visual content platform with structured prompt generation and debug workflows.",
       "evidence": [
         "Supabase / Edge Functions / SQL architecture",
@@ -160,7 +168,7 @@
         "prompt composition and reproducible generation pipelines",
         "frontend / backend boundary formalization"
       ],
-      "best_for_roles": ["Systems Architect", "Engineering Manager", "Senior AI Workflow Engineer"]
+      "best_for_roles": ["Systems Architect", "Engineering Manager", "Senior AI Workflow Engineer", "Fractional CTO"]
     },
     {
       "id": "sefcast",
