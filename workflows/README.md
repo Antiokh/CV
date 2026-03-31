@@ -45,7 +45,7 @@ Start here:
 7. [Career Strategy](../data/career_strategy.md)
 8. [Pack Template](../data/pack_template.md)
 9. [Public Summary](../data/public_summary.md)
-10. [Application Tracker](../data/application_tracker.md)
+10. [Private Application Tracker](../applications/_tracking/application_tracker.md)
 
 Expected output:
 
@@ -121,7 +121,7 @@ Do not start here when the task is about:
 7. [Career Strategy](../data/career_strategy.md)
 8. [Pack Template](../data/pack_template.md)
 9. [Public Summary](../data/public_summary.md)
-10. [Application Tracker](../data/application_tracker.md)
+10. [Private Application Tracker](../applications/_tracking/application_tracker.md)
 
 ## Included
 
@@ -134,6 +134,6 @@ Do not start here when the task is about:
 - [Career Strategy](../data/career_strategy.md)
 - [Pack Template](../data/pack_template.md)
 - [Public Summary](../data/public_summary.md)
-- [Application Tracker](../data/application_tracker.md)
+- [Private Application Tracker](../applications/_tracking/application_tracker.md)
 
 These files are internal working documents, not the main public profile surface.
