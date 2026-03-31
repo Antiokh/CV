@@ -29,13 +29,19 @@ I also work comfortably in **AI-native and agentic development workflows**, usin
 - **Learner** - improves quickly through feedback, reflection, and repeated practice
 - **Decision Maker** - brings clarity by choosing direction, naming tradeoffs, and closing open loops
 
-## Where to start
+## Quick entry points
 
+If you want the short version, start with:
 - [Short Resume](./RESUME.md)
+- [Public Summary](./data/public_summary.md)
 - [Portfolio Index](./portfolio/README.md)
 - [Detailed Experience](./details/anton_nazarov_experience_full.md)
+
+If you want the deeper positioning and market fit, see:
 - [Role Market Fit Matrix](./data/role_market_fit.md)
 - [Application Workflow](./workflows/application_workflow.md)
+- [Evidence Map Guide](./workflows/evidence_map_guide.md)
+- [Profile Suggestions](./workflows/ai_profile_suggestions.md)
 
 ## For agents
 
@@ -47,7 +53,6 @@ If you are using this repository as an agent workspace, start here:
 
 ## Additional references
 
-- [Profile Suggestions](./workflows/ai_profile_suggestions.md)
 - [Structured Profile Data](./data/anton_nazarov_profile.json)
 - [Personality / Strengths Reference](./details/metafox_strengths_report.md)
 - [Career Profile Reference](./details/comprehensive_psychological_career_profile.md)

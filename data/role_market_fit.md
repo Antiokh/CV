@@ -291,6 +291,24 @@ How clearly a client or employer can understand why Anton is useful in the role.
 - earning potential: medium-high
 - client value: moderate to strong depending on how technical the role is
 
+### Implementation / Onboarding Lead
+- useful when the business needs to turn sales into adoption and working delivery
+- especially relevant for SaaS, internal tooling, and service platforms
+- earning potential: medium-high
+- client value: strong when implementation is a product differentiator
+
+### Client Delivery Owner
+- useful when the role is about owning the client outcome end-to-end
+- good fit for service/product hybrid organizations
+- earning potential: medium-high
+- client value: very strong for clients because ownership is easy to understand
+
+### Business Systems Lead
+- useful when the company needs business process modeling tied to technical execution
+- strong for ERP-like and workflow-heavy environments
+- earning potential: medium-high
+- client value: strong in companies with operational complexity
+
 ---
 
 ## Roles That Should Be Treated Carefully

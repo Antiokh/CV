@@ -42,6 +42,7 @@ Start here:
 4. [AI Profile Suggestions](./ai_profile_suggestions.md)
 5. [Evidence Map Guide](./evidence_map_guide.md)
 6. [Role Market Fit Matrix](../data/role_market_fit.md)
+7. [Public Summary](../data/public_summary.md)
 
 Expected output:
 
@@ -114,6 +115,7 @@ Do not start here when the task is about:
 4. [AI Profile Suggestions](./ai_profile_suggestions.md)
 5. [Evidence Map Guide](./evidence_map_guide.md)
 6. [Role Market Fit Matrix](../data/role_market_fit.md)
+7. [Public Summary](../data/public_summary.md)
 
 ## Included
 
@@ -123,5 +125,6 @@ Do not start here when the task is about:
 - [Job Targeting Guide](./job_targeting_guide.md)
 - [Evidence Map Guide](./evidence_map_guide.md)
 - [Role Market Fit Matrix](../data/role_market_fit.md)
+- [Public Summary](../data/public_summary.md)
 
 These files are internal working documents, not the main public profile surface.
