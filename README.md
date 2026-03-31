@@ -12,6 +12,7 @@ Location: Belgrade, Serbia
 - [Profile Suggestions](./workflows/ai_profile_suggestions.md)
 - [Application Workflow](./workflows/application_workflow.md)
 - [Evidence Map Guide](./workflows/evidence_map_guide.md)
+- [Role Market Fit Matrix](./data/role_market_fit.md)
 - [Structured Profile Data](./data/anton_nazarov_profile.json)
 - [Personality / Strengths Reference](./details/metafox_strengths_report.md)
 - [Career Profile Reference](./details/comprehensive_psychological_career_profile.md)
