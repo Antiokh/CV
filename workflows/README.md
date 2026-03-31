@@ -43,7 +43,8 @@ Start here:
 5. [Evidence Map Guide](./evidence_map_guide.md)
 6. [Role Market Fit Matrix](../data/role_market_fit.md)
 7. [Career Strategy](../data/career_strategy.md)
-8. [Public Summary](../data/public_summary.md)
+8. [Pack Template](../data/pack_template.md)
+9. [Public Summary](../data/public_summary.md)
 
 Expected output:
 
@@ -117,7 +118,8 @@ Do not start here when the task is about:
 5. [Evidence Map Guide](./evidence_map_guide.md)
 6. [Role Market Fit Matrix](../data/role_market_fit.md)
 7. [Career Strategy](../data/career_strategy.md)
-8. [Public Summary](../data/public_summary.md)
+8. [Pack Template](../data/pack_template.md)
+9. [Public Summary](../data/public_summary.md)
 
 ## Included
 
@@ -128,6 +130,7 @@ Do not start here when the task is about:
 - [Evidence Map Guide](./evidence_map_guide.md)
 - [Role Market Fit Matrix](../data/role_market_fit.md)
 - [Career Strategy](../data/career_strategy.md)
+- [Pack Template](../data/pack_template.md)
 - [Public Summary](../data/public_summary.md)
 
 These files are internal working documents, not the main public profile surface.

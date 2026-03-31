@@ -27,6 +27,32 @@ Use these files as primary sources:
    - Selected projects
    - Education / languages / authorization
 
+## Language Rule
+
+The application language should match the vacancy language whenever possible.
+
+### English vacancy
+Use an English pack:
+- resume in English
+- cover letter / intro in English
+- negotiation strategy in English
+- notes in English
+- PDF exports in English
+
+### Russian vacancy
+Use a Russian pack:
+- resume in Russian
+- cover letter / intro in Russian
+- negotiation strategy in Russian
+- notes in Russian
+- PDF exports in Russian
+
+### Mixed or uncertain vacancy
+If the company, form, or contact flow is mixed-language:
+- keep the main application language aligned with the role and contact surface
+- provide a short alternate-language intro only if it helps
+- do not mix languages inside the core resume unless there is a reason
+
 ## Output Structure Rules
 
 When generating a tailored resume, always keep **work experience** and **projects** in separate sections.
@@ -85,7 +111,7 @@ The goal is to build a **weighted, defensible range** that balances:
 
 ## Negotiation Strategy Rule
 
-Every archive generated for an application should include a negotiation strategy file in English.
+Every archive generated for an application should include a negotiation strategy file in the same language as the application.
 
 Minimum contents:
 - role positioning
@@ -113,10 +139,22 @@ Inside `applications/`, use a structure like:
 
 - `applications/company_name/`
 - `applications/company_name/job_description.md`
-- `applications/company_name/resume_en.md`
-- `applications/company_name/cover_letter.md`
-- `applications/company_name/notes.md`
-- `applications/company_name/negotiation_strategy.md`
+- `applications/company_name/resume_en.md` or `resume_ru.md`
+- `applications/company_name/cover_letter.md` or `cover_letter_ru.md`
+- `applications/company_name/notes.md` or `notes_ru.md`
+- `applications/company_name/negotiation_strategy.md` or `negotiation_ru.md`
+
+## Pack Standard
+
+A full pack should usually contain:
+- resume in the vacancy language
+- cover / intro note in the vacancy language
+- fit / why me memo
+- questions for the interview
+- negotiation strategy
+- notes / reminders
+- job description or role context
+- optional PDF exports of the main documents
 
 ## Delivery Rule
 

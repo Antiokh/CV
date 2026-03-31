@@ -17,6 +17,9 @@ Always start from these files:
 - [Full Professional Experience](../details/anton_nazarov_experience_full.md)
 - [AI Profile Suggestions](./ai_profile_suggestions.md)
 - [Application Workflow](./application_workflow.md)
+- [Evidence Map Guide](./evidence_map_guide.md)
+- [Role Market Fit Matrix](../data/role_market_fit.md)
+- [Career Strategy](../data/career_strategy.md)
 
 ## Output Location
 
@@ -26,9 +29,21 @@ Recommended structure:
 
 - `applications/company_name/`
 - `applications/company_name/job_description.md`
-- `applications/company_name/resume_en.md`
-- `applications/company_name/cover_letter.md`
-- `applications/company_name/notes.md`
+- `applications/company_name/resume_en.md` or `resume_ru.md`
+- `applications/company_name/cover_letter.md` or `cover_letter_ru.md`
+- `applications/company_name/notes.md` or `notes_ru.md`
+- `applications/company_name/negotiation_strategy.md` or `negotiation_ru.md`
+- optional PDF exports of the main docs
+
+## Language Handling
+
+Match the package language to the vacancy language whenever possible.
+
+- English vacancy -> English pack
+- Russian vacancy -> Russian pack
+- mixed / uncertain -> use the language of the application surface and keep the core resume consistent
+
+Do not mix languages inside the main resume unless it is intentionally a bilingual pack.
 
 ## Workflow
 

@@ -40,6 +40,7 @@ If you want the short version, start with:
 If you want the deeper positioning and market fit, see:
 - [Role Market Fit Matrix](./data/role_market_fit.md)
 - [Career Strategy](./data/career_strategy.md)
+- [Pack Template](./data/pack_template.md)
 - [Application Workflow](./workflows/application_workflow.md)
 - [Evidence Map Guide](./workflows/evidence_map_guide.md)
 - [Profile Suggestions](./workflows/ai_profile_suggestions.md)
@@ -52,6 +53,7 @@ If you are using this repository as an agent workspace, start here:
 - [Evidence Map Guide](./workflows/evidence_map_guide.md)
 - [Role Market Fit Matrix](./data/role_market_fit.md)
 - [Career Strategy](./data/career_strategy.md)
+- [Pack Template](./data/pack_template.md)
 
 ## Additional references
 
