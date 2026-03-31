@@ -40,6 +40,7 @@ Start here:
 2. [Application Workflow](./application_workflow.md)
 3. [Job Targeting Guide](./job_targeting_guide.md)
 4. [AI Profile Suggestions](./ai_profile_suggestions.md)
+5. [Evidence Map Guide](./evidence_map_guide.md)
 
 Expected output:
 
@@ -110,6 +111,7 @@ Do not start here when the task is about:
 2. [Application Workflow](./application_workflow.md)
 3. [Job Targeting Guide](./job_targeting_guide.md)
 4. [AI Profile Suggestions](./ai_profile_suggestions.md)
+5. [Evidence Map Guide](./evidence_map_guide.md)
 
 ## Included
 
@@ -117,5 +119,6 @@ Do not start here when the task is about:
 - [Application Workflow](./application_workflow.md)
 - [Application Agent Guide](./application_agent_guide.md)
 - [Job Targeting Guide](./job_targeting_guide.md)
+- [Evidence Map Guide](./evidence_map_guide.md)
 
 These files are internal working documents, not the main public profile surface.
