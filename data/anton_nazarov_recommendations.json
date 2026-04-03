@@ -1,33 +1,43 @@
 {
   "dataset_version": "2026-04-03",
-  "purpose": "Structured recommendations and testimonials with reusable proof references for portfolio, resume, website, and outreach work.",
+  "purpose": "Structured recommendations and testimonials with full original texts, translations, and proof references for portfolio, resume, website, and outreach work.",
   "primary_profiles": {
     "linkedin": "https://www.linkedin.com/in/nazarovanton/",
+    "linkedin_recommendations": "https://www.linkedin.com/in/nazarovanton/details/recommendations/",
     "upwork": "https://www.upwork.com/freelancers/~01ef57d388c776f72a"
   },
   "entries": [
     {
       "id": "anton_bukin_ais_mosrazvitie",
-      "author_name": "Anton Bukin",
+      "author": {
+        "display_name": "Anton Bukin",
+        "aliases": [
+          "Anton Bukin"
+        ]
+      },
       "relationship": "client",
-      "source_languages": [
-        "ru",
-        "en",
-        "sr"
-      ],
       "related_cases": [
         {
           "name": "AIS MosRazvitie",
           "repo_path": "portfolio/ais_mosrazvitie"
         }
       ],
-      "quote_en": "Worked with Anton on the project of the state information system in the field of culture. I liked the approach to project management, proactive participation in the formation of technical specifications, attention to visual design. Due to the implementation of the developed product, it was possible to significantly increase the efficiency of working with information in the organization, reduce the burden on employees of technical departments, and eliminate the need to conduct training in the system due to the intuitiveness of its interface. I recommend cooperation.",
-      "quote_ru": "Работали с Антоном над проектом государственной информационной системы в сфере культуры. Понравился подход к ведению проекта, проактивное участие в формировании технического задания, внимательность к визуальному оформлению. За счёт реализации разработанного продукта удалось намного повысить эффективность работы с информацией в организации, уменьшить нагрузку на сотрудников технических отделов и отказаться от необходимости проводить обучение в системе благодаря интуитивности её интерфейса. Рекомендую к сотрудничеству!",
-      "proofs": [
+      "canonical_texts": {
+        "ru": "Работали с Антоном над проектом государственной информационной системы в сфере культуры. Понравился подход к ведению проекта, проактивное участие в формировании технического задания, внимательность к визуальному оформлению. За счёт реализации и внедрения разработанного продукта удалось намного повысить эффективность работы с информацией в организации, уменьшить нагрузку на сотрудников технических отделов и отказаться от необходимости проводить обучение в системе благодаря интуитивности её интерфейса. Рекомендую к сотрудничеству!",
+        "en": "Worked with Anton on the project of the state information system in the field of culture. I liked the approach to project management, proactive participation in the formation of technical specifications, attention to visual design. Due to the implementation and implementation of the developed product, it was possible to significantly increase the efficiency of working with information in the organization, reduce the burden on employees of technical departments and eliminate the need to conduct training in the system due to the intuitiveness of its interface. I recommend cooperation!",
+        "sr": "Радио са Антоном на пројекту државног информационог система у области културе. Свидео ми се приступ управљању пројектима, проактивно учешће у формирању техничких спецификација, пажња на визуелни дизајн. Захваљујући имплементацији и имплементацији развијеног производа, било је могуће значајно повећати ефикасност рада са информацијама у организацији, смањити оптерећење запослених у техничким одељењима и елиминисати потребу за спровођењем обуке у систему због интуитивности система. његов интерфејс. Препоручујем сарадњу!"
+      },
+      "sources": [
         {
           "platform": "legacy_csv",
           "proof_type": "imported_testimonial_record",
-          "proof_path": "C:/Users/antio/Downloads/Testimonials.csv",
+          "source_path": "C:\\Users\\antio\\Downloads\\Testimonials.csv",
+          "original_language": "ru",
+          "original_text": "Работали с Антоном над проектом государственной информационной системы в сфере культуры. Понравился подход к ведению проекта, проактивное участие в формировании технического задания, внимательность к визуальному оформлению. За счёт реализации и внедрения разработанного продукта удалось намного повысить эффективность работы с информацией в организации, уменьшить нагрузку на сотрудников технических отделов и отказаться от необходимости проводить обучение в системе благодаря интуитивности её интерфейса. Рекомендую к сотрудничеству!",
+          "translations": {
+            "en": "Worked with Anton on the project of the state information system in the field of culture. I liked the approach to project management, proactive participation in the formation of technical specifications, attention to visual design. Due to the implementation and implementation of the developed product, it was possible to significantly increase the efficiency of working with information in the organization, reduce the burden on employees of technical departments and eliminate the need to conduct training in the system due to the intuitiveness of its interface. I recommend cooperation!",
+            "sr": "Радио са Антоном на пројекту државног информационог система у области културе. Свидео ми се приступ управљању пројектима, проактивно учешће у формирању техничких спецификација, пажња на визуелни дизајн. Захваљујући имплементацији и имплементацији развијеног производа, било је могуће значајно повећати ефикасност рада са информацијама у организацији, смањити оптерећење запослених у техничким одељењима и елиминисати потребу за спровођењем обуке у систему због интуитивности система. његов интерфејс. Препоручујем сарадњу!"
+          },
           "confidence": "high"
         }
       ],
@@ -40,21 +50,31 @@
     },
     {
       "id": "andrej_rizevic_general",
-      "author_name": "Andrej Rizevic",
-      "author_profile_url": "https://www.linkedin.com/in/%D0%B0%D0%BD%D0%B4%D1%80%D0%B5%D0%B9-%D1%80%D1%8B%D0%B6%D0%B5%D0%B2%D0%B8%D1%87-48bb8356/",
+      "author": {
+        "display_name": "Andrej Rizevic",
+        "aliases": [
+          "Andrej Ri?evi?",
+          "?????? ???????"
+        ],
+        "linkedin_profile": "https://www.linkedin.com/in/%D0%B0%D0%BD%D0%B4%D1%80%D0%B5%D0%B9-%D1%80%D1%8B%D0%B6%D0%B5%D0%B2%D0%B8%D1%87-48bb8356/"
+      },
       "relationship": "teacher / senior colleague",
-      "source_languages": [
-        "ru",
-        "en",
-        "sr"
-      ],
-      "quote_en": "I had the pleasure of working with Anton on projects related to the aviation industry. I would like to note his high level of professionalism, responsibility, and flexibility of thinking. Anton quickly adapted to the tasks set, offered his ideas, and always sought to find the best solutions. The visual component was immediately visible during development, and I was satisfied with the appearance of the resulting product. The projects were not too complicated, but they were executed in accordance with the requirements and within the specified time. I chose from a large list of applicants for test tasks and was not disappointed. I recommend cooperation.",
-      "quote_ru": "Я имел удовольствие работать с Антоном в проектах, связанных с авиационной отраслью. Хочу отметить его высокий уровень профессионализма, ответственности и гибкости мышления. Антон быстро адаптировался к поставленным задачам, предлагал свои идеи и всегда стремился найти наилучшие решения. При разработке сразу видно визуальную составляющую, и я удовлетворён внешним видом полученного продукта. Проекты были не слишком сложные, но исполнены в соответствии с требованиями и в указанные сроки. Выбирал из большого списка претендентов по тестовым заданиям, не разочарован. Рекомендую к сотрудничеству.",
-      "proofs": [
+      "canonical_texts": {
+        "ru": "Я имел удовольствие работать с Антоном в проектах, связанных с авиационной отраслью. Хочу отметить его высокий уровень профессионализма, ответственности и гибкости мышления. Антон быстро адаптировался к поставленным задачам, предлагал свои идеи и всегда стремился найти наилучшие решения. При разработке сразу видно визуальную составляющую, и я удовлетворён внешним видом полученного продукта. Проекты были не слишком сложные, но исполнены в соответствии с требованиями и в указанные сроки. Выбирал из большого списка претендентов по тестовым заданиям, не разочарован. Рекомендую к сотрудничеству.",
+        "en": "I had the pleasure of working with Anton on projects related to the aviation industry. I would like to note his high level of professionalism, responsibility and flexibility of thinking. Anton quickly adapted to the tasks set, offered his ideas and always sought to find the best solutions. During development, the visual component is immediately visible, and I am satisfied with the appearance of the resulting product. The projects were not too complicated, but they were executed in accordance with the requirements and within the specified time. I chose from a large list of applicants for test tasks, I was not disappointed. I recommend cooperation.",
+        "sr": "Имао сам задовољство да радим са Антоном на пројектима везаним за ваздухопловну индустрију. Желео бих да истакнем његов висок ниво професионализма, одговорности и флексибилности размишљања. Антон се брзо прилагођавао постављеним задацима, нудио своје идеје и увек тражио најбоља решења. Током развоја, визуелна компонента је одмах видљива, а ја сам задовољан изгледом добијеног производа. Пројекти нису били превише компликовани, али су изведени у складу са захтевима иу предвиђеном року. Одабрао сам са велике листе кандидата за тестне задатке, нисам био разочаран. Препоручујем сарадњу."
+      },
+      "sources": [
         {
           "platform": "legacy_csv",
           "proof_type": "imported_testimonial_record",
-          "proof_path": "C:/Users/antio/Downloads/Testimonials.csv",
+          "source_path": "C:\\Users\\antio\\Downloads\\Testimonials.csv",
+          "original_language": "ru",
+          "original_text": "Я имел удовольствие работать с Антоном в проектах, связанных с авиационной отраслью. Хочу отметить его высокий уровень профессионализма, ответственности и гибкости мышления. Антон быстро адаптировался к поставленным задачам, предлагал свои идеи и всегда стремился найти наилучшие решения. При разработке сразу видно визуальную составляющую, и я удовлетворён внешним видом полученного продукта. Проекты были не слишком сложные, но исполнены в соответствии с требованиями и в указанные сроки. Выбирал из большого списка претендентов по тестовым заданиям, не разочарован. Рекомендую к сотрудничеству.",
+          "translations": {
+            "en": "I had the pleasure of working with Anton on projects related to the aviation industry. I would like to note his high level of professionalism, responsibility and flexibility of thinking. Anton quickly adapted to the tasks set, offered his ideas and always sought to find the best solutions. During development, the visual component is immediately visible, and I am satisfied with the appearance of the resulting product. The projects were not too complicated, but they were executed in accordance with the requirements and within the specified time. I chose from a large list of applicants for test tasks, I was not disappointed. I recommend cooperation.",
+            "sr": "Имао сам задовољство да радим са Антоном на пројектима везаним за ваздухопловну индустрију. Желео бих да истакнем његов висок ниво професионализма, одговорности и флексибилности размишљања. Антон се брзо прилагођавао постављеним задацима, нудио своје идеје и увек тражио најбоља решења. Током развоја, визуелна компонента је одмах видљива, а ја сам задовољан изгледом добијеног производа. Пројекти нису били превише компликовани, али су изведени у складу са захтевима иу предвиђеном року. Одабрао сам са велике листе кандидата за тестне задатке, нисам био разочаран. Препоручујем сарадњу."
+          },
           "confidence": "high"
         },
         {
@@ -63,15 +83,26 @@
           "profile_url": "https://www.linkedin.com/in/%D0%B0%D0%BD%D0%B4%D1%80%D0%B5%D0%B9-%D1%80%D1%8B%D0%B6%D0%B5%D0%B2%D0%B8%D1%87-48bb8356/",
           "recommendation_urn": "urn:li:fsd_recommendation:762157534",
           "captured_on": "2026-04-03",
-          "confidence": "high",
-          "note": "Captured from LinkedIn recommendation HTML provided during website proof collection."
+          "role_line": "?????????? Lotus Notes/Domino (lotusdom.com)",
+          "date_line": "January 31, 2024, ?????? was Anton?s teacher",
+          "visibility": "All LinkedIn members",
+          "original_language": "ru",
+          "original_text": "???? ??????????????? ?????? ??? ?????????? ????????????-?????????, ???????? ???????? ????????????? ??????? ? ????????? ???????????? ??????? ????? ??????.\n\n???? ????????, ??? ??? ?????? ?????? ????????????, ??????? ?????????? ? ? ????????? ??????, ? ? ???????? ????, ? ? ???????? ????????????? ????????.\n\n? ??? ??? ??????????? ?? ?????? ???????, ?????? ???????????? ?????????????? ?? ???? ????????.\n\n???? ???????? ??? ??????? ??????? ????????????????, ??????????????? ? ???????? ????????. ????? ?????? ???????????? ? ???????????? ???????, ????????? ???? ???? ? ?????? ????????? ????? ????????? ???????. ??????? ???? ????????? ? ???????????? ? ???????????? ? ? ????????? ?????.\n\n?????????? ? ??????????????.",
+          "translations": {
+            "en": "I had the pleasure of working with Anton on projects related to the aviation industry. I would like to note his high level of professionalism, responsibility and flexibility of thinking. Anton quickly adapted to the tasks set, offered his ideas and always sought to find the best solutions. During development, the visual component is immediately visible, and I am satisfied with the appearance of the resulting product. The projects were not too complicated, but they were executed in accordance with the requirements and within the specified time. I chose from a large list of applicants for test tasks, I was not disappointed. I recommend cooperation."
+          },
+          "confidence": "high"
         },
         {
           "platform": "upwork",
           "proof_type": "public_profile_review_reference",
           "profile_url": "https://www.upwork.com/freelancers/~01ef57d388c776f72a",
+          "source_status": "reference_only",
+          "original_language": null,
+          "original_text": null,
+          "translations": {},
           "confidence": "medium",
-          "note": "Related praise signals were also surfaced on the public Upwork freelancer profile, but no direct per-review permalink was captured here."
+          "note": "Upwork public profile surfaced related praise signals during review, but the exact review text and stable direct review URL were not captured in the repository."
         }
       ],
       "tags": [
@@ -83,20 +114,29 @@
     },
     {
       "id": "alina_malishenkova_general",
-      "author_name": "Alina Malishenkova",
+      "author": {
+        "display_name": "Alina Malishenkova",
+        "aliases": [
+          "Alina Mali?enkova"
+        ]
+      },
       "relationship": "colleague / collaborator",
-      "source_languages": [
-        "ru",
-        "en",
-        "sr"
-      ],
-      "quote_en": "I have collaborated with Anton on several projects, and I can say that he is an excellent performer and project manager. He generates a multitude of interesting ideas and quickly finds solutions to implement them. Anton pays great attention to detail, finds the most optimal solutions, and delivers high-quality work. Thanks to his professionalism and responsibility, I can confidently recommend him as a reliable and responsible partner who is capable of achieving excellent results in his work.",
-      "quote_ru": "Я сотрудничала с Антоном на нескольких проектах и могу сказать, что он отличный исполнитель и менеджер проектов. Он генерирует множество интересных идей и быстро находит решения для их реализации. Антон очень внимательно относится к деталям, находит наиболее оптимальные решения и выполняет работу качественно. Благодаря его профессионализму и ответственности, я могу смело порекомендовать его как надёжного и ответственного партнёра, который способен достигать отличных результатов в своей работе.",
-      "proofs": [
+      "canonical_texts": {
+        "ru": "Я сотрудничала с Антоном на нескольких проектах и могу сказать, что он отличный исполнитель и менеджер проектов. Он генерирует множество интересных идей и быстро находит решения для их реализации. Антон очень внимательно относится к деталям, находит наиболее оптимальные решения и выполняет работу качественно. Благодаря его профессионализму и ответственности, я могу смело порекомендовать его как надёжного и ответственного партнёра, который способен достигать отличных результатов в своей работе.",
+        "en": "I have collaborated with Anton on several projects, and I can say that he is an excellent performer and project manager. He generates a multitude of interesting ideas and quickly finds solutions to implement them. Anton pays great attention to detail, finds the most optimal solutions, and delivers high-quality work. Thanks to his professionalism and responsibility, I can confidently recommend him as a reliable and responsible partner who is capable of achieving excellent results in his work.",
+        "sr": "Сарађивала сам с Антоном на неколико пројеката и могу рећи да је он изузетан извршилац и менаџер пројеката. Он генерише множество интересантних идеја и брзо налази решења за њихову реализацију. Антон врло пажљиво приступа детаљима, налази најоптималнија решења и извршава посао квалитетно. Захваљујући његовој професионалности и одговорности, са увереношћу га препоручујем као поузданог и одговорног партнера који је способан да постиже изванредне резултате у свом раду."
+      },
+      "sources": [
         {
           "platform": "legacy_csv",
           "proof_type": "imported_testimonial_record",
-          "proof_path": "C:/Users/antio/Downloads/Testimonials.csv",
+          "source_path": "C:\\Users\\antio\\Downloads\\Testimonials.csv",
+          "original_language": "ru",
+          "original_text": "Я сотрудничала с Антоном на нескольких проектах и могу сказать, что он отличный исполнитель и менеджер проектов. Он генерирует множество интересных идей и быстро находит решения для их реализации. Антон очень внимательно относится к деталям, находит наиболее оптимальные решения и выполняет работу качественно. Благодаря его профессионализму и ответственности, я могу смело порекомендовать его как надёжного и ответственного партнёра, который способен достигать отличных результатов в своей работе.",
+          "translations": {
+            "en": "I have collaborated with Anton on several projects, and I can say that he is an excellent performer and project manager. He generates a multitude of interesting ideas and quickly finds solutions to implement them. Anton pays great attention to detail, finds the most optimal solutions, and delivers high-quality work. Thanks to his professionalism and responsibility, I can confidently recommend him as a reliable and responsible partner who is capable of achieving excellent results in his work.",
+            "sr": "Сарађивала сам с Антоном на неколико пројеката и могу рећи да је он изузетан извршилац и менаџер пројеката. Он генерише множество интересантних идеја и брзо налази решења за њихову реализацију. Антон врло пажљиво приступа детаљима, налази најоптималнија решења и извршава посао квалитетно. Захваљујући његовој професионалности и одговорности, са увереношћу га препоручујем као поузданог и одговорног партнера који је способан да постиже изванредне резултате у свом раду."
+          },
           "confidence": "high"
         }
       ],
@@ -109,13 +149,13 @@
     },
     {
       "id": "dobri_jankovic_dobri_products",
-      "author_name": "Dobri Jankovic",
+      "author": {
+        "display_name": "Dobri Jankovic",
+        "aliases": [
+          "Dobri Jankovi?"
+        ]
+      },
       "relationship": "client",
-      "source_languages": [
-        "ru",
-        "en",
-        "sr"
-      ],
       "related_cases": [
         {
           "name": "Dobri Visarun",
@@ -126,13 +166,22 @@
           "repo_path": "portfolio/dobri_tours"
         }
       ],
-      "quote_en": "We worked with Anton on projects for a travel planning application and an excursion tour organization application. I was pleasantly surprised by the impact I experienced from using these applications. My time spent on client interactions was minimized, and my business grew significantly. If any issues or glitches arose, we resolved them quickly. I regularly receive positive feedback from clients about the convenience of booking through the application. Previously, I never even considered using an application, but now I can definitely recommend it.",
-      "quote_ru": "Мы работали с Антоном над проектами приложения для визарана и приложения для организации экскурсионных туров. Я был очень удивлён тому эффекту, который получил от использования приложений, мои затраты времени на клиента сократились до минимума, а бизнес кратно вырос. Если возникали какие-то вопросы или неполадки, мы решали это быстро. Регулярно получаю положительные отзывы об удобстве записи через приложение от клиентов. Раньше я даже не задумывался о приложении, но теперь однозначно могу рекомендовать.",
-      "proofs": [
+      "canonical_texts": {
+        "ru": "Мы работали с Антоном над проектами приложения для визарана и приложения для организации экскурсионных туров. Я был очень удивлён тому эффекту, который получил от использования приложений, мои затраты времени на клиента сократились до минимума, а бизнес кратно вырос. Если возникали какие-то вопросы или неполадки, мы решали это быстро. Регулярно получаю положительные отзывы об удобстве записи через приложение от клиентов. Раньше я даже не задумывался о приложении, но теперь однозначно могу рекомендовать.",
+        "en": "We worked with Anton on projects for a travel planning application and an excursion tour organization application. I was pleasantly surprised by the impact I experienced from using these applications. My time spent on client interactions was minimized, and my business grew significantly. If any issues or glitches arose, we resolved them quickly. I regularly receive positive feedback from clients about the convenience of booking through the application. Previously, I never even considered using an application, but now I can definitely recommend it.",
+        "sr": "Са Антоном сам смо радили на пројектима апликације за визирање и апликације за организацију туристичких обилазака. Морам рећи да сам био веома изненађен ефектом који сам постигао коришћењем ових апликација. Моје време утрошено на комуникацију са клијентима се значајно смањило, а посао је процветао. Уколико су постојали неки проблеми или неприлике, решавали смо их брзо. Редовно примам позитивне повратне информације од клијената о удобности записивања преко апликације. Пре нисам ни размишљао о апликацијама, али сада са сигурношћу могу препоручити."
+      },
+      "sources": [
         {
           "platform": "legacy_csv",
           "proof_type": "imported_testimonial_record",
-          "proof_path": "C:/Users/antio/Downloads/Testimonials.csv",
+          "source_path": "C:\\Users\\antio\\Downloads\\Testimonials.csv",
+          "original_language": "ru",
+          "original_text": "Мы работали с Антоном над проектами приложения для визарана и приложения для организации экскурсионных туров. Я был очень удивлён тому эффекту, который получил от использования приложений, мои затраты времени на клиента сократились до минимума, а бизнес кратно вырос. Если возникали какие-то вопросы или неполадки, мы решали это быстро. Регулярно получаю положительные отзывы об удобстве записи через приложение от клиентов. Раньше я даже не задумывался о приложении, но теперь однозначно могу рекомендовать.",
+          "translations": {
+            "en": "We worked with Anton on projects for a travel planning application and an excursion tour organization application. I was pleasantly surprised by the impact I experienced from using these applications. My time spent on client interactions was minimized, and my business grew significantly. If any issues or glitches arose, we resolved them quickly. I regularly receive positive feedback from clients about the convenience of booking through the application. Previously, I never even considered using an application, but now I can definitely recommend it.",
+            "sr": "Са Антоном сам смо радили на пројектима апликације за визирање и апликације за организацију туристичких обилазака. Морам рећи да сам био веома изненађен ефектом који сам постигао коришћењем ових апликација. Моје време утрошено на комуникацију са клијентима се значајно смањило, а посао је процветао. Уколико су постојали неки проблеми или неприлике, решавали смо их брзо. Редовно примам позитивне повратне информације од клијената о удобности записивања преко апликације. Пре нисам ни размишљао о апликацијама, али сада са сигурношћу могу препоручити."
+          },
           "confidence": "high"
         }
       ],
@@ -145,21 +194,30 @@
     },
     {
       "id": "ekaterina_beschastnova_general",
-      "author_name": "Ekaterina Beschastnova",
-      "author_profile_url": "https://www.linkedin.com/in/ekaterina-beschastnova-839265234/",
+      "author": {
+        "display_name": "Ekaterina Beschastnova",
+        "aliases": [
+          "Ekaterina Bes?astnova"
+        ],
+        "linkedin_profile": "https://www.linkedin.com/in/ekaterina-beschastnova-839265234/"
+      },
       "relationship": "client",
-      "source_languages": [
-        "ru",
-        "en",
-        "sr"
-      ],
-      "quote_en": "Anton is just an incredible specialist. It is extremely rare to find such people who do their job so clearly. He immediately struck me with his clarity and vision of the project. It was also amazing how Anton patiently answered all questions and expected feedback. This is one of the best professionals I have ever met. The desire to do the work at the highest level was especially noticeable. I definitely recommend him to colleagues. We will definitely come back again and again.",
-      "quote_ru": "Антон - просто потрясающий специалист. Очень редко встречаются такие люди, которые так четко выполняют свою работу. Он сразу поразил меня своей ясностью и видением проекта. Поразило и то, как Антон терпеливо отвечал на все вопросы и ожидал обратной связи. Это один из лучших профессионалов, которых я когда-либо встречал. Особенно почувствовалось желание выполнить работу на 5+. Обязательно порекомендую коллегам. Обязательно вернемся еще не раз.",
-      "proofs": [
+      "canonical_texts": {
+        "ru": "Антон - просто потрясающий специалист. Очень редко встречаются такие люди, которые так четко выполняют свою работу. Он сразу поразил меня своей ясностью и видением проекта. Поразило и то, как Антон терпеливо отвечал на все вопросы и ожидал обратной связи. Это один из лучших профессионалов, которых я когда-либо встречал. Особенно почувствовал желание выполнить работу на 5+. Обязательно порекомендую коллегам. Обязательно вернемся еще не раз.",
+        "en": "Anton is just an incredible specialist. It is extremely rare to find such people who do their job so clearly. He immediately struck me with his clarity and vision of the project. It was also amazing how Anton patiently answered all questions and expected feedback. This is one of the best professionals I have ever met. Especially felt the desire to do the work on 5+. Mandatory recommendation to colleagues. We will definitely come back again and again.",
+        "sr": "Антон је само невероватан специјалиста. Изузетно је ретко наћи такве људе који тако јасно раде свој посао. Одмах ме је погодио својом јасноћом и визијом пројекта. Такође је било невероватно како је Антон стрпљиво одговарао на сва питања и очекивао повратне информације. Ово је један од најбољих професионалаца које сам икада срео. Посебно се осећала жеља да се ради на 5+. Обавезна препорука колегама. Дефинитивно ћемо се враћати изнова и изнова."
+      },
+      "sources": [
         {
           "platform": "legacy_csv",
           "proof_type": "imported_testimonial_record",
-          "proof_path": "C:/Users/antio/Downloads/Testimonials.csv",
+          "source_path": "C:\\Users\\antio\\Downloads\\Testimonials.csv",
+          "original_language": "ru",
+          "original_text": "Антон - просто потрясающий специалист. Очень редко встречаются такие люди, которые так четко выполняют свою работу. Он сразу поразил меня своей ясностью и видением проекта. Поразило и то, как Антон терпеливо отвечал на все вопросы и ожидал обратной связи. Это один из лучших профессионалов, которых я когда-либо встречал. Особенно почувствовал желание выполнить работу на 5+. Обязательно порекомендую коллегам. Обязательно вернемся еще не раз.",
+          "translations": {
+            "en": "Anton is just an incredible specialist. It is extremely rare to find such people who do their job so clearly. He immediately struck me with his clarity and vision of the project. It was also amazing how Anton patiently answered all questions and expected feedback. This is one of the best professionals I have ever met. Especially felt the desire to do the work on 5+. Mandatory recommendation to colleagues. We will definitely come back again and again.",
+            "sr": "Антон је само невероватан специјалиста. Изузетно је ретко наћи такве људе који тако јасно раде свој посао. Одмах ме је погодио својом јасноћом и визијом пројекта. Такође је било невероватно како је Антон стрпљиво одговарао на сва питања и очекивао повратне информације. Ово је један од најбољих професионалаца које сам икада срео. Посебно се осећала жеља да се ради на 5+. Обавезна препорука колегама. Дефинитивно ћемо се враћати изнова и изнова."
+          },
           "confidence": "high"
         },
         {
@@ -168,15 +226,27 @@
           "profile_url": "https://www.linkedin.com/in/ekaterina-beschastnova-839265234/",
           "recommendation_urn": "urn:li:fsd_recommendation:718120503",
           "captured_on": "2026-04-03",
-          "confidence": "high",
-          "note": "Captured from LinkedIn recommendation HTML provided during website proof collection."
+          "role_line": "--",
+          "date_line": "January 31, 2024, Ekaterina was Anton?s client",
+          "visibility": "All LinkedIn members",
+          "original_language": "en",
+          "original_text": "Anton is just an incredible specialist. It is extremely rare to find such people who do their job so clearly. He immediately struck me with his clarity and vision of the project. It was also amazing how Anton patiently answered all questions and expected feedback. This is one of the best professionals I have ever met. Especially felt the desire to do the work on 5+. Mandatory recommendation to colleagues. We will definitely come back again and again.",
+          "translations": {
+            "ru": "Антон - просто потрясающий специалист. Очень редко встречаются такие люди, которые так четко выполняют свою работу. Он сразу поразил меня своей ясностью и видением проекта. Поразило и то, как Антон терпеливо отвечал на все вопросы и ожидал обратной связи. Это один из лучших профессионалов, которых я когда-либо встречал. Особенно почувствовал желание выполнить работу на 5+. Обязательно порекомендую коллегам. Обязательно вернемся еще не раз.",
+            "sr": "Антон је само невероватан специјалиста. Изузетно је ретко наћи такве људе који тако јасно раде свој посао. Одмах ме је погодио својом јасноћом и визијом пројекта. Такође је било невероватно како је Антон стрпљиво одговарао на сва питања и очекивао повратне информације. Ово је један од најбољих професионалаца које сам икада срео. Посебно се осећала жеља да се ради на 5+. Обавезна препорука колегама. Дефинитивно ћемо се враћати изнова и изнова."
+          },
+          "confidence": "high"
         },
         {
           "platform": "upwork",
           "proof_type": "public_profile_review_reference",
           "profile_url": "https://www.upwork.com/freelancers/~01ef57d388c776f72a",
+          "source_status": "reference_only",
+          "original_language": null,
+          "original_text": null,
+          "translations": {},
           "confidence": "medium",
-          "note": "Recommendation also existed on Upwork according to manual review, but a stable direct review URL was not captured in this repository."
+          "note": "Ekaterina also left a review on Upwork according to manual review, but the exact wording and a stable direct review URL were not captured."
         }
       ],
       "tags": [
@@ -188,8 +258,13 @@
     },
     {
       "id": "alexander_cherkasov_vencer_autismo",
-      "author_name": "Alexander Cherkasov",
-      "author_profile_url": "https://www.linkedin.com/in/alexandercherkasov/",
+      "author": {
+        "display_name": "Alexander Cherkasov",
+        "aliases": [
+          "Alexander Cherkasov"
+        ],
+        "linkedin_profile": "https://www.linkedin.com/in/alexandercherkasov/"
+      },
       "relationship": "client",
       "related_cases": [
         {
@@ -197,16 +272,23 @@
           "repo_path": "portfolio/vencer_autismo"
         }
       ],
-      "quote_en": "I recommend Anton as a responsible contractor and thoughtful NoCode/Low Code developer. Anton helped me choose the right technological stack for my project and developed a high-quality solution. I am confident that his approach and attention to detail improved my service. I would also like to highlight that communication was excellent.",
-      "proofs": [
+      "canonical_texts": {
+        "en": "I recommend Anton as a responsible contractor and thoughtful NoCode/Low Code developer. Anton helped me to choose the right technological stack for my project and developed a high-quality solution. I?m confident that his approach and attention to detail have improved my service. Also I?d like to highlight that communication was excellent."
+      },
+      "sources": [
         {
           "platform": "linkedin",
           "proof_type": "recommendation_captured_from_profile_html",
           "profile_url": "https://www.linkedin.com/in/alexandercherkasov/",
           "recommendation_urn": "urn:li:fsd_recommendation:7175886170927624192",
           "captured_on": "2026-04-03",
-          "confidence": "high",
-          "note": "Captured from LinkedIn recommendation HTML provided during website proof collection."
+          "role_line": "Founder @ Autismify",
+          "date_line": "March 19, 2024, Alexander was Anton?s client",
+          "visibility": "All LinkedIn members",
+          "original_language": "en",
+          "original_text": "I recommend Anton as a responsible contractor and thoughtful NoCode/Low Code developer. Anton helped me to choose the right technological stack for my project and developed a high-quality solution.  I?m confident that his approach and attention to detail have improved my service. Also I?d like to highlight that communication was excellent.",
+          "translations": {},
+          "confidence": "high"
         }
       ],
       "tags": [
@@ -218,8 +300,13 @@
     },
     {
       "id": "tobias_weghorn_metafox_strengths",
-      "author_name": "Tobias Weghorn",
-      "author_profile_url": "https://www.linkedin.com/in/tobiasweghorn/",
+      "author": {
+        "display_name": "Tobias Weghorn",
+        "aliases": [
+          "Tobias Weghorn"
+        ],
+        "linkedin_profile": "https://www.linkedin.com/in/tobiasweghorn/"
+      },
       "relationship": "client",
       "related_cases": [
         {
@@ -227,16 +314,23 @@
           "repo_path": "portfolio/metafox_strengths_explorer"
         }
       ],
-      "quote_en": "Anton co-created our Strengths Discovery App (strengths-discovery.com), an assessment and feedback survey for coaching. He owned our full tech stack from WeWeb frontend to structuring the backend on Xano and building APIs for score calculation. Next to the tech, he contributed to shaping the product vision. I can genuinely recommend him for your next project.",
-      "proofs": [
+      "canonical_texts": {
+        "en": "Anton co-created our Strengths Discovery App (strengths-discovery.com), an assessment and feedback survey for coaching. He owned our full tech stack from WeWeb frontend to structuring the backend on Xano and building APIs for score calculation. Next to the tech he contributed to shaping the product vision. I can genuinely recommend him for your next project!"
+      },
+      "sources": [
         {
           "platform": "linkedin",
           "proof_type": "recommendation_captured_from_profile_html",
           "profile_url": "https://www.linkedin.com/in/tobiasweghorn/",
           "recommendation_urn": "urn:li:fsd_recommendation:7387842035812102145",
           "captured_on": "2026-04-03",
-          "confidence": "high",
-          "note": "Captured from LinkedIn recommendation HTML provided during website proof collection."
+          "role_line": "Turning emotional education into tools that coaches use to change lives",
+          "date_line": "October 25, 2025, Tobias was Anton?s client",
+          "visibility": "All LinkedIn members",
+          "original_language": "en",
+          "original_text": "Anton co-created our Strengths Discovery App (strengths-discovery.com), an assessment and feedback survey for coaching. He owned our full tech stack from WeWeb frontend to structuring the backend on Xano and building APIs for score calculation. Next to the tech he contributed to shaping the product vision. I can genuinely recommend him for your next project!",
+          "translations": {},
+          "confidence": "high"
         }
       ],
       "tags": [
