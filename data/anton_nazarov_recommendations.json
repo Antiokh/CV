@@ -290,6 +290,12 @@
         "project vision",
         "communication",
         "high standards"
+      ],
+      "related_cases": [
+        {
+          "name": "Educate Online",
+          "repo_path": "portfolio/educate_online"
+        }
       ]
     },
     {
