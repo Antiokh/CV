@@ -65,5 +65,6 @@ If you are using this repository as an agent workspace, start here:
 ## Additional references
 
 - [Structured Profile Data](./data/anton_nazarov_profile.json)
+- [Recommendations Dataset](./data/anton_nazarov_recommendations.json)
 - [Personality / Strengths Reference](./details/metafox_strengths_report.md)
 - [Career Profile Reference](./details/comprehensive_psychological_career_profile.md)

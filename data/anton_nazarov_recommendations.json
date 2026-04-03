@@ -1,0 +1,251 @@
+{
+  "dataset_version": "2026-04-03",
+  "purpose": "Structured recommendations and testimonials with reusable proof references for portfolio, resume, website, and outreach work.",
+  "primary_profiles": {
+    "linkedin": "https://www.linkedin.com/in/nazarovanton/",
+    "upwork": "https://www.upwork.com/freelancers/~01ef57d388c776f72a"
+  },
+  "entries": [
+    {
+      "id": "anton_bukin_ais_mosrazvitie",
+      "author_name": "Anton Bukin",
+      "relationship": "client",
+      "source_languages": [
+        "ru",
+        "en",
+        "sr"
+      ],
+      "related_cases": [
+        {
+          "name": "AIS MosRazvitie",
+          "repo_path": "portfolio/ais_mosrazvitie"
+        }
+      ],
+      "quote_en": "Worked with Anton on the project of the state information system in the field of culture. I liked the approach to project management, proactive participation in the formation of technical specifications, attention to visual design. Due to the implementation of the developed product, it was possible to significantly increase the efficiency of working with information in the organization, reduce the burden on employees of technical departments, and eliminate the need to conduct training in the system due to the intuitiveness of its interface. I recommend cooperation.",
+      "quote_ru": "Работали с Антоном над проектом государственной информационной системы в сфере культуры. Понравился подход к ведению проекта, проактивное участие в формировании технического задания, внимательность к визуальному оформлению. За счёт реализации разработанного продукта удалось намного повысить эффективность работы с информацией в организации, уменьшить нагрузку на сотрудников технических отделов и отказаться от необходимости проводить обучение в системе благодаря интуитивности её интерфейса. Рекомендую к сотрудничеству!",
+      "proofs": [
+        {
+          "platform": "legacy_csv",
+          "proof_type": "imported_testimonial_record",
+          "proof_path": "C:/Users/antio/Downloads/Testimonials.csv",
+          "confidence": "high"
+        }
+      ],
+      "tags": [
+        "government system",
+        "information architecture",
+        "project leadership",
+        "usability"
+      ]
+    },
+    {
+      "id": "andrej_rizevic_general",
+      "author_name": "Andrej Rizevic",
+      "author_profile_url": "https://www.linkedin.com/in/%D0%B0%D0%BD%D0%B4%D1%80%D0%B5%D0%B9-%D1%80%D1%8B%D0%B6%D0%B5%D0%B2%D0%B8%D1%87-48bb8356/",
+      "relationship": "teacher / senior colleague",
+      "source_languages": [
+        "ru",
+        "en",
+        "sr"
+      ],
+      "quote_en": "I had the pleasure of working with Anton on projects related to the aviation industry. I would like to note his high level of professionalism, responsibility, and flexibility of thinking. Anton quickly adapted to the tasks set, offered his ideas, and always sought to find the best solutions. The visual component was immediately visible during development, and I was satisfied with the appearance of the resulting product. The projects were not too complicated, but they were executed in accordance with the requirements and within the specified time. I chose from a large list of applicants for test tasks and was not disappointed. I recommend cooperation.",
+      "quote_ru": "Я имел удовольствие работать с Антоном в проектах, связанных с авиационной отраслью. Хочу отметить его высокий уровень профессионализма, ответственности и гибкости мышления. Антон быстро адаптировался к поставленным задачам, предлагал свои идеи и всегда стремился найти наилучшие решения. При разработке сразу видно визуальную составляющую, и я удовлетворён внешним видом полученного продукта. Проекты были не слишком сложные, но исполнены в соответствии с требованиями и в указанные сроки. Выбирал из большого списка претендентов по тестовым заданиям, не разочарован. Рекомендую к сотрудничеству.",
+      "proofs": [
+        {
+          "platform": "legacy_csv",
+          "proof_type": "imported_testimonial_record",
+          "proof_path": "C:/Users/antio/Downloads/Testimonials.csv",
+          "confidence": "high"
+        },
+        {
+          "platform": "linkedin",
+          "proof_type": "recommendation_captured_from_profile_html",
+          "profile_url": "https://www.linkedin.com/in/%D0%B0%D0%BD%D0%B4%D1%80%D0%B5%D0%B9-%D1%80%D1%8B%D0%B6%D0%B5%D0%B2%D0%B8%D1%87-48bb8356/",
+          "recommendation_urn": "urn:li:fsd_recommendation:762157534",
+          "captured_on": "2026-04-03",
+          "confidence": "high",
+          "note": "Captured from LinkedIn recommendation HTML provided during website proof collection."
+        },
+        {
+          "platform": "upwork",
+          "proof_type": "public_profile_review_reference",
+          "profile_url": "https://www.upwork.com/freelancers/~01ef57d388c776f72a",
+          "confidence": "medium",
+          "note": "Related praise signals were also surfaced on the public Upwork freelancer profile, but no direct per-review permalink was captured here."
+        }
+      ],
+      "tags": [
+        "professionalism",
+        "responsibility",
+        "visual quality",
+        "adaptability"
+      ]
+    },
+    {
+      "id": "alina_malishenkova_general",
+      "author_name": "Alina Malishenkova",
+      "relationship": "colleague / collaborator",
+      "source_languages": [
+        "ru",
+        "en",
+        "sr"
+      ],
+      "quote_en": "I have collaborated with Anton on several projects, and I can say that he is an excellent performer and project manager. He generates a multitude of interesting ideas and quickly finds solutions to implement them. Anton pays great attention to detail, finds the most optimal solutions, and delivers high-quality work. Thanks to his professionalism and responsibility, I can confidently recommend him as a reliable and responsible partner who is capable of achieving excellent results in his work.",
+      "quote_ru": "Я сотрудничала с Антоном на нескольких проектах и могу сказать, что он отличный исполнитель и менеджер проектов. Он генерирует множество интересных идей и быстро находит решения для их реализации. Антон очень внимательно относится к деталям, находит наиболее оптимальные решения и выполняет работу качественно. Благодаря его профессионализму и ответственности, я могу смело порекомендовать его как надёжного и ответственного партнёра, который способен достигать отличных результатов в своей работе.",
+      "proofs": [
+        {
+          "platform": "legacy_csv",
+          "proof_type": "imported_testimonial_record",
+          "proof_path": "C:/Users/antio/Downloads/Testimonials.csv",
+          "confidence": "high"
+        }
+      ],
+      "tags": [
+        "project management",
+        "idea generation",
+        "detail orientation",
+        "reliability"
+      ]
+    },
+    {
+      "id": "dobri_jankovic_dobri_products",
+      "author_name": "Dobri Jankovic",
+      "relationship": "client",
+      "source_languages": [
+        "ru",
+        "en",
+        "sr"
+      ],
+      "related_cases": [
+        {
+          "name": "Dobri Visarun",
+          "repo_path": "portfolio/dobri_visarun"
+        },
+        {
+          "name": "Dobri Tours",
+          "repo_path": "portfolio/dobri_tours"
+        }
+      ],
+      "quote_en": "We worked with Anton on projects for a travel planning application and an excursion tour organization application. I was pleasantly surprised by the impact I experienced from using these applications. My time spent on client interactions was minimized, and my business grew significantly. If any issues or glitches arose, we resolved them quickly. I regularly receive positive feedback from clients about the convenience of booking through the application. Previously, I never even considered using an application, but now I can definitely recommend it.",
+      "quote_ru": "Мы работали с Антоном над проектами приложения для визарана и приложения для организации экскурсионных туров. Я был очень удивлён тому эффекту, который получил от использования приложений, мои затраты времени на клиента сократились до минимума, а бизнес кратно вырос. Если возникали какие-то вопросы или неполадки, мы решали это быстро. Регулярно получаю положительные отзывы об удобстве записи через приложение от клиентов. Раньше я даже не задумывался о приложении, но теперь однозначно могу рекомендовать.",
+      "proofs": [
+        {
+          "platform": "legacy_csv",
+          "proof_type": "imported_testimonial_record",
+          "proof_path": "C:/Users/antio/Downloads/Testimonials.csv",
+          "confidence": "high"
+        }
+      ],
+      "tags": [
+        "revenue growth",
+        "service automation",
+        "client convenience",
+        "small business impact"
+      ]
+    },
+    {
+      "id": "ekaterina_beschastnova_general",
+      "author_name": "Ekaterina Beschastnova",
+      "author_profile_url": "https://www.linkedin.com/in/ekaterina-beschastnova-839265234/",
+      "relationship": "client",
+      "source_languages": [
+        "ru",
+        "en",
+        "sr"
+      ],
+      "quote_en": "Anton is just an incredible specialist. It is extremely rare to find such people who do their job so clearly. He immediately struck me with his clarity and vision of the project. It was also amazing how Anton patiently answered all questions and expected feedback. This is one of the best professionals I have ever met. The desire to do the work at the highest level was especially noticeable. I definitely recommend him to colleagues. We will definitely come back again and again.",
+      "quote_ru": "Антон - просто потрясающий специалист. Очень редко встречаются такие люди, которые так четко выполняют свою работу. Он сразу поразил меня своей ясностью и видением проекта. Поразило и то, как Антон терпеливо отвечал на все вопросы и ожидал обратной связи. Это один из лучших профессионалов, которых я когда-либо встречал. Особенно почувствовалось желание выполнить работу на 5+. Обязательно порекомендую коллегам. Обязательно вернемся еще не раз.",
+      "proofs": [
+        {
+          "platform": "legacy_csv",
+          "proof_type": "imported_testimonial_record",
+          "proof_path": "C:/Users/antio/Downloads/Testimonials.csv",
+          "confidence": "high"
+        },
+        {
+          "platform": "linkedin",
+          "proof_type": "recommendation_captured_from_profile_html",
+          "profile_url": "https://www.linkedin.com/in/ekaterina-beschastnova-839265234/",
+          "recommendation_urn": "urn:li:fsd_recommendation:718120503",
+          "captured_on": "2026-04-03",
+          "confidence": "high",
+          "note": "Captured from LinkedIn recommendation HTML provided during website proof collection."
+        },
+        {
+          "platform": "upwork",
+          "proof_type": "public_profile_review_reference",
+          "profile_url": "https://www.upwork.com/freelancers/~01ef57d388c776f72a",
+          "confidence": "medium",
+          "note": "Recommendation also existed on Upwork according to manual review, but a stable direct review URL was not captured in this repository."
+        }
+      ],
+      "tags": [
+        "clarity",
+        "project vision",
+        "communication",
+        "high standards"
+      ]
+    },
+    {
+      "id": "alexander_cherkasov_vencer_autismo",
+      "author_name": "Alexander Cherkasov",
+      "author_profile_url": "https://www.linkedin.com/in/alexandercherkasov/",
+      "relationship": "client",
+      "related_cases": [
+        {
+          "name": "Vencer Autismo",
+          "repo_path": "portfolio/vencer_autismo"
+        }
+      ],
+      "quote_en": "I recommend Anton as a responsible contractor and thoughtful NoCode/Low Code developer. Anton helped me choose the right technological stack for my project and developed a high-quality solution. I am confident that his approach and attention to detail improved my service. I would also like to highlight that communication was excellent.",
+      "proofs": [
+        {
+          "platform": "linkedin",
+          "proof_type": "recommendation_captured_from_profile_html",
+          "profile_url": "https://www.linkedin.com/in/alexandercherkasov/",
+          "recommendation_urn": "urn:li:fsd_recommendation:7175886170927624192",
+          "captured_on": "2026-04-03",
+          "confidence": "high",
+          "note": "Captured from LinkedIn recommendation HTML provided during website proof collection."
+        }
+      ],
+      "tags": [
+        "stack choice",
+        "solution quality",
+        "communication",
+        "service improvement"
+      ]
+    },
+    {
+      "id": "tobias_weghorn_metafox_strengths",
+      "author_name": "Tobias Weghorn",
+      "author_profile_url": "https://www.linkedin.com/in/tobiasweghorn/",
+      "relationship": "client",
+      "related_cases": [
+        {
+          "name": "MetaFox Strengths Explorer",
+          "repo_path": "portfolio/metafox_strengths_explorer"
+        }
+      ],
+      "quote_en": "Anton co-created our Strengths Discovery App (strengths-discovery.com), an assessment and feedback survey for coaching. He owned our full tech stack from WeWeb frontend to structuring the backend on Xano and building APIs for score calculation. Next to the tech, he contributed to shaping the product vision. I can genuinely recommend him for your next project.",
+      "proofs": [
+        {
+          "platform": "linkedin",
+          "proof_type": "recommendation_captured_from_profile_html",
+          "profile_url": "https://www.linkedin.com/in/tobiasweghorn/",
+          "recommendation_urn": "urn:li:fsd_recommendation:7387842035812102145",
+          "captured_on": "2026-04-03",
+          "confidence": "high",
+          "note": "Captured from LinkedIn recommendation HTML provided during website proof collection."
+        }
+      ],
+      "tags": [
+        "full-stack ownership",
+        "assessment product",
+        "product vision",
+        "WeWeb",
+        "Xano"
+      ]
+    }
+  ]
+}
