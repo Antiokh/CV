@@ -9,7 +9,7 @@ from typing import Any
 
 try:
     from PySide6.QtCore import QDate, Qt
-    from PySide6.QtGui import QAction, QCursor, QFont, QGuiApplication
+    from PySide6.QtGui import QAction, QBrush, QColor, QCursor, QFont, QGuiApplication
     from PySide6.QtWidgets import (
         QApplication,
         QCheckBox,
@@ -892,14 +892,29 @@ class ExperienceEditor(QWidget):
         layout = QVBoxLayout(self)
         button_bar = QHBoxLayout()
         self.reload_button = QPushButton("Reload")
+        self.sort_combo = QComboBox()
+        self.sort_combo.addItems(
+            [
+                "Sort: Manual",
+                "Sort: Start newest",
+                "Sort: Start oldest",
+                "Sort: End newest",
+                "Sort: End oldest",
+                "Sort: Company A-Z",
+                "Sort: Company Z-A",
+            ]
+        )
+        self.use_legal_name_check = QCheckBox("Show legal name")
         self.new_button = QPushButton("New role")
         self.duplicate_button = QPushButton("Duplicate")
         self.move_up_button = QPushButton("Move up")
         self.move_down_button = QPushButton("Move down")
         self.delete_button = QPushButton("Delete")
         self.save_button = QPushButton("Save experience")
+        button_bar.addWidget(self.reload_button)
+        button_bar.addWidget(self.sort_combo)
+        button_bar.addWidget(self.use_legal_name_check)
         for button in (
-            self.reload_button,
             self.new_button,
             self.duplicate_button,
             self.move_up_button,
@@ -917,8 +932,16 @@ class ExperienceEditor(QWidget):
         splitter.setStretchFactor(0, 1)
         splitter.setStretchFactor(1, 1)
 
-        self.list_widget = QListWidget()
-        splitter.addWidget(self.list_widget)
+        self.table = QTableWidget(0, 3)
+        self.table.setHorizontalHeaderLabels(["Start", "End", "Company"])
+        self.table.verticalHeader().setVisible(False)
+        self.table.setSelectionBehavior(self.table.SelectionBehavior.SelectRows)
+        self.table.setSelectionMode(self.table.SelectionMode.SingleSelection)
+        self.table.setEditTriggers(self.table.EditTrigger.NoEditTriggers)
+        self.table.horizontalHeader().setStretchLastSection(True)
+        self.table.setColumnWidth(0, 90)
+        self.table.setColumnWidth(1, 90)
+        splitter.addWidget(self.table)
 
         right = QWidget()
         right_layout = QVBoxLayout(right)
@@ -953,8 +976,10 @@ class ExperienceEditor(QWidget):
         form_layout.addRow("Responsibility areas", self.responsibility_edit)
         right_layout.addWidget(form_group, 1)
 
-        self.list_widget.itemSelectionChanged.connect(self.load_selected)
+        self.table.itemSelectionChanged.connect(self.load_selected)
         self.reload_button.clicked.connect(self.refresh)
+        self.sort_combo.currentIndexChanged.connect(self.refresh)
+        self.use_legal_name_check.toggled.connect(self.refresh)
         self.new_button.clicked.connect(self.create_entry)
         self.duplicate_button.clicked.connect(self.duplicate_entry)
         self.move_up_button.clicked.connect(lambda: self.move_entry(-1))
@@ -966,22 +991,78 @@ class ExperienceEditor(QWidget):
     def _entries(self) -> list[dict]:
         return self.get_profile_data().setdefault("employment_history", [])
 
+    def _sorted_entries(self) -> list[tuple[int, dict]]:
+        indexed = list(enumerate(self._entries()))
+        mode = self.sort_combo.currentText()
+
+        def month_key(value):
+            return value or ""
+
+        def company_label(item: dict) -> str:
+            if self.use_legal_name_check.isChecked():
+                return item.get("legal_name") or item.get("company") or ""
+            return item.get("company") or item.get("legal_name") or ""
+
+        if mode == "Sort: Manual":
+            return indexed
+        if mode == "Sort: Start newest":
+            return sorted(indexed, key=lambda pair: (month_key(pair[1].get("start_date")), company_label(pair[1]).lower()), reverse=True)
+        if mode == "Sort: Start oldest":
+            return sorted(indexed, key=lambda pair: (month_key(pair[1].get("start_date")), company_label(pair[1]).lower()))
+        if mode == "Sort: End newest":
+            return sorted(indexed, key=lambda pair: (month_key(pair[1].get("end_date") or "9999-99" if pair[1].get("ongoing") else pair[1].get("end_date")), company_label(pair[1]).lower()), reverse=True)
+        if mode == "Sort: End oldest":
+            return sorted(indexed, key=lambda pair: (month_key(pair[1].get("end_date")), company_label(pair[1]).lower()))
+        if mode == "Sort: Company A-Z":
+            return sorted(indexed, key=lambda pair: (company_label(pair[1]).lower(), pair[0]))
+        return sorted(indexed, key=lambda pair: (company_label(pair[1]).lower(), pair[0]), reverse=True)
+
     def refresh(self):
-        self.list_widget.clear()
-        for index, item in enumerate(self._entries()):
+        current_index = self.current_index
+        self.table.setRowCount(0)
+        sorted_entries = self._sorted_entries()
+        self.table.setRowCount(len(sorted_entries))
+        for row, (index, item) in enumerate(sorted_entries):
             start = item.get("start_date") or "?"
             end = "now" if item.get("ongoing") else (item.get("end_date") or "?")
-            label = f"{item.get('company', 'Untitled')} | {start} -> {end}"
-            self.list_widget.addItem(label)
-        if self._entries():
-            self.list_widget.setCurrentRow(0)
+            company = item.get("legal_name") if self.use_legal_name_check.isChecked() else item.get("company")
+            if not company:
+                company = item.get("company") or item.get("legal_name") or "Untitled"
+            start_item = QTableWidgetItem(start)
+            end_item = QTableWidgetItem(end)
+            company_item = QTableWidgetItem(company)
+            start_item.setData(Qt.UserRole, index)
+            end_item.setData(Qt.UserRole, index)
+            company_item.setData(Qt.UserRole, index)
+            if item.get("ongoing"):
+                ongoing_bg = QBrush(QColor("#153a2a"))
+                ongoing_fg = QBrush(QColor("#b7f7cf"))
+                for table_item in (start_item, end_item, company_item):
+                    table_item.setBackground(ongoing_bg)
+                    table_item.setForeground(ongoing_fg)
+            self.table.setItem(row, 0, start_item)
+            self.table.setItem(row, 1, end_item)
+            self.table.setItem(row, 2, company_item)
+        if sorted_entries:
+            target_row = 0
+            if current_index is not None:
+                for row in range(self.table.rowCount()):
+                    item = self.table.item(row, 0)
+                    if item and item.data(Qt.UserRole) == current_index:
+                        target_row = row
+                        break
+            self.table.selectRow(target_row)
 
     def load_selected(self):
-        row = self.list_widget.currentRow()
+        row = self.table.currentRow()
         if row < 0:
             return
-        item = self._entries()[row]
-        self.current_index = row
+        row_item = self.table.item(row, 0)
+        if row_item is None:
+            return
+        source_index = row_item.data(Qt.UserRole)
+        item = self._entries()[source_index]
+        self.current_index = source_index
         self.company_edit.setText(item.get("company", ""))
         self.legal_name_edit.setText(item.get("legal_name", ""))
         self.location_edit.setText(item.get("location", ""))
@@ -1007,11 +1088,12 @@ class ExperienceEditor(QWidget):
         }
         self._entries().append(template)
         self.refresh()
-        self.list_widget.setCurrentRow(len(self._entries()) - 1)
+        self.current_index = len(self._entries()) - 1
+        self.refresh()
 
     def duplicate_entry(self):
-        row = self.list_widget.currentRow()
-        if row < 0:
+        row = self.current_index
+        if row is None or row < 0:
             return
         source = deepcopy(self._entries()[row])
         source["company"] = f"{source.get('company', 'New Company')} Copy"
@@ -1019,32 +1101,33 @@ class ExperienceEditor(QWidget):
         if not source.get("ongoing"):
             source["end_date"] = date.today().strftime("%Y-%m")
         self._entries().insert(row + 1, source)
+        self.current_index = row + 1
         self.refresh()
-        self.list_widget.setCurrentRow(row + 1)
 
     def delete_entry(self):
-        row = self.list_widget.currentRow()
-        if row < 0:
+        row = self.current_index
+        if row is None or row < 0:
             return
         del self._entries()[row]
+        self.current_index = min(row, len(self._entries()) - 1) if self._entries() else None
         self.refresh()
 
     def move_entry(self, delta: int):
-        row = self.list_widget.currentRow()
-        if row < 0:
+        row = self.current_index
+        if row is None or row < 0:
             return
         target = row + delta
         entries = self._entries()
         if target < 0 or target >= len(entries):
             return
         entries[row], entries[target] = entries[target], entries[row]
+        self.current_index = target
         self.save_profile_callback(self.get_profile_data())
         self.refresh()
-        self.list_widget.setCurrentRow(target)
 
     def save_entry(self):
-        row = self.list_widget.currentRow()
-        if row < 0:
+        row = self.current_index
+        if row is None or row < 0:
             return
         item = self._entries()[row]
         item["company"] = self.company_edit.text().strip()
@@ -1074,8 +1157,8 @@ class ExperienceEditor(QWidget):
         else:
             item.pop("responsibility_areas", None)
         self.save_profile_callback(self.get_profile_data())
+        self.current_index = row
         self.refresh()
-        self.list_widget.setCurrentRow(row)
 
 
 class PortfolioSyncEditor(QWidget):
