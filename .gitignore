@@ -1,2 +1,3 @@
 applications/*
 !applications/.gitignore
+/editor/__pycache__
