@@ -3,11 +3,11 @@
 
 Belgrade, Serbia  
 
-Technology leader and systems architect with 18 years of experience across startups, enterprise, and government environments.
+Technology leader and systems architect with 18 years of experience across startups, enterprise, banking, and government environments.
 
-I build and restructure complex systems at the intersection of **engineering, business, and operations**, taking ownership of architecture, delivery, automation, scalability, and long-term technical direction.
+I build and restructure complex systems at the intersection of **engineering, business, and operations**, taking ownership of architecture, delivery, stakeholder alignment, adoption, automation, and long-term technical direction.
 
-My strongest pattern is turning fragmented workflows, weak tooling, and operational chaos into structured systems that teams can actually run.
+My strongest pattern is turning fragmented workflows, weak tooling, and operational chaos into structured systems that teams can actually run, govern, and maintain.
 
 I work best as a **playing coach**: hands-on enough to ship, senior enough to align product, architecture, and business goals.
 
@@ -17,6 +17,7 @@ I also work comfortably in **AI-native and agentic development workflows**, usin
 
 - Bridging **business <-> technology <-> operations**
 - Designing **scalable architectures and internal systems**
+- Formalizing messy processes into **visible, governed workflows**
 - Driving **automation, cost optimization, and process clarity**
 - Leading teams in **uncertain and high-pressure environments**
 - Turning chaos into **structured, working systems**

@@ -27,6 +27,7 @@ The strongest path is to be paid for:
 - ownership
 - leadership
 - system design
+- implementation and adoption
 - turning chaos into execution
 
 ---
@@ -56,7 +57,7 @@ Best when:
 
 Why it pays:
 - leadership + delivery + execution
-- strong fit with ZIL / Directorate / bank evidence
+- strong fit with ZIL / Directorate / bank / New Business Environment evidence
 
 ### 3. Systems Architect / Solutions Architect
 
@@ -146,7 +147,7 @@ Avoid roles that constantly drag you into draining modes:
 Use selective applications and high-signal positioning:
 - EM / Product Leader / Fractional CTO / Architect
 - ask for strong money
-- use bank / ZIL / Directorate evidence
+- use bank / ZIL / Directorate / New Business Environment evidence
 - do not underprice
 
 ### Medium term
@@ -188,7 +189,7 @@ This order balances:
 
 Use a market-facing line like:
 
-> I help companies turn messy technical and operational situations into structured systems, with a mix of engineering leadership, architecture, product ownership, and AI-assisted delivery.
+> I help companies turn messy technical and operational situations into structured systems, with a mix of engineering leadership, architecture, implementation ownership, adoption support, and AI-assisted delivery.
 
 This supports:
 - employment

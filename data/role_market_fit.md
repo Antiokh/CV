@@ -69,9 +69,9 @@ These roles combine:
 - Networker
 
 **Evidence**
-- ZIL: built and stabilized a team, modernized the environment, led remote-work transition
-- Directorate: led reform and rebuilding, coordinated stakeholders and delivery
-- Bank: worked as PM, coordinated another programmer, owned architecture
+- ZIL: built and stabilized a team, modernized the environment, and led remote-work transition under difficult conditions
+- Directorate: aligned stakeholders across institutions, improved adoption, and used system design to reduce reporting friction
+- Bank: formalized document routes with leadership, coordinated implementation, and turned an invisible process problem into a measurable workflow
 
 **Market usefulness**
 - very high
@@ -177,6 +177,7 @@ These roles combine:
 - Directorate: reform and rebuilding
 - ZIL: modernization, support model, infrastructure transformation
 - Agency for Social Development: IT function built from scratch
+- New Business Environment: implementation and adoption diagnosis in a commercial automation business
 
 **Market usefulness**
 - high
@@ -208,9 +209,9 @@ These roles combine:
 - Motivator
 
 **Evidence**
-- ZIL: Head of IT, team of 3, no departures, remote-work transition
+- ZIL: Head of IT, service-governance setup, security cleanup, team leadership, and remote-work transition
 - Agency for Social Development: built IT function from scratch
-- Directorate: security, access, support, governance
+- Directorate: security, access, support, and governance
 
 **Market usefulness**
 - high
@@ -245,7 +246,7 @@ These roles combine:
 
 **Evidence**
 - NeedleBit: product and systems work with multiple developers and a designer
-- Bank: architecture + PM + delivery ownership
+- Bank: architecture + PM + delivery ownership with cross-department formalization
 - Directorate / ZIL: institutional leadership and reform
 
 **Market usefulness**
