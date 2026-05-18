@@ -40,6 +40,13 @@ Anton should be positioned here as an architecture-led builder and implementatio
 - backend / data / workflow logic
 - maintainability choices
 
+## Stack visibility rule
+
+For technical and Upwork tasks, do not hide WeWeb, Supabase, Xano, Bubble, n8n, APIs, or AI tools when they match the client request.
+
+In this mode, stack specificity increases trust.
+If the request is stack-sensitive, make the stack visible early and tie it to delivered outcomes.
+
 ## Avoid
 
 - executive language that hides hands-on ability

@@ -31,6 +31,19 @@ Use [GPT_PROJECT_ROUTER.md](./GPT_PROJECT_ROUTER.md) as the primary project inst
 - `NEEDLEBIT_OLD_ARCHIVE_NOT_PRIMARY.md`
 - `comprehensive_psychological_career_profile.md` - secondary support only
 
+## File role map
+
+- `GPT_PROJECT_ROUTER.md` - router and behavior rules
+- `EXECUTIVE_POSITIONING.md` - executive narrative
+- `MANAGEMENT_EXPERIENCE_CASES.md` - concise managerial proof
+- `anton_nazarov_management_cases_full.md` - deep managerial source
+- `MANAGEMENT_TRANSLATION_LAYER.md` - ATS / HR translation layer
+- `anton_nazarov_career_path_story.md` - curated career-story layer
+- `anton_nazarov_career_path_story_full_raw.md` - maximum-detail raw story
+- `ANTI_PATTERNS.md` - narrative guardrail
+- `TECHNICAL_DELIVERY_POSITIONING.md` - technical positioning logic
+- `UPWORK_PROJECT_CASES.md` - reusable Upwork proof blocks
+
 ## Important note about canonical sources
 
 These are project copies for portability.

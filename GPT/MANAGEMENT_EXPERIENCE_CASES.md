@@ -22,6 +22,7 @@ He managed 5 IT staff and 2 installation engineers, controlled operating and mod
 - reorganized the department and its documentation
 - launched a HelpDesk for IT and seven additional support services
 - rebuilt service discipline and request transparency through structured HelpDesk governance
+- operated in a politically sensitive anti-crisis environment with internal resistance and legacy power structures
 - moved 100+ employees to remote work during the pandemic
 - introduced Active Directory and security policies
 - audited information security and personal-data handling
@@ -30,6 +31,8 @@ He managed 5 IT staff and 2 installation engineers, controlled operating and mod
 - developed departmental regulations, role descriptions, and internal procedures
 - supervised third-party development of a new website
 - designed business-process algorithms for future automation
+- used HelpDesk transparency not only for support, but also to protect the IT team and make workload visible to management
+- built an operating model that remained stable after his departure
 
 ### What this proves
 
@@ -69,6 +72,9 @@ Anton worked in a city-scale institutional environment connected to more than 10
 - migrated the system and trained users through webinars
 - moved support from phone and email to structured instant messaging
 - helped turn a disliked legacy portal into a more practical source-of-truth system
+- collected feedback from institutions and departments and translated it into system improvements
+- supported adoption through large webinar-based training for hundreds of users
+- reduced management-accounting friction by aligning system language with institutional reality
 
 ### What this proves
 
@@ -134,11 +140,14 @@ Anton helped build an internal document management system from scratch in a bank
 - performed testing and rollout after the system foundation was built
 - combined architecture, analysis, implementation, and user training
 - turned an opaque document-flow problem into a measurable workflow that exposed bottlenecks to leadership
+- made it possible to compare real processing speed with expected regulatory discipline
+- turned a recurring process problem into a governance and transparency instrument for management
 
 ### What this proves
 
 - process formalization with leadership stakeholders
 - resistance handling around newly visible bottlenecks
+- regulatory-risk-aware workflow formalization
 - architecture ownership tied to business logic
 - delivery coordination
 - rollout responsibility
