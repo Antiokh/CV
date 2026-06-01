@@ -1,0 +1,8 @@
+{
+  "deno.enable": false,
+  "python.analysis.diagnosticMode": "openFilesOnly",
+  "python.analysis.autoSearchPaths": false,
+  "python.analysis.indexing": false,
+  "typescript.disableAutomaticTypeAcquisition": true,
+  "git.autofetch": false
+}

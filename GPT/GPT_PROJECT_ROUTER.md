@@ -14,6 +14,12 @@ Use the files by role, not as one mixed knowledge blob:
 - `anton_nazarov_career_path_story.md` = curated story and interview context
 - `anton_nazarov_career_path_story_full_raw.md` = maximum-detail storytelling source
 - `ANTI_PATTERNS.md` = contamination guardrail
+- `TECHNICAL_DELIVERY_POSITIONING.md` = technical / specialist positioning logic
+- `UPWORK_PROJECT_CASES.md` = reusable Upwork proof blocks
+- `AI_NATIVE_DELIVERY.md` = AI-assisted delivery framing
+- `NEEDLEBIT_POSITIONING.md` = current NeedleBit messaging
+- `NEEDLEBIT_CASES.md` = NeedleBit marketing proof patterns
+- `NEEDLEBIT_OLD_ARCHIVE_NOT_PRIMARY.md` = guardrail against outdated NeedleBit positioning
 
 ## 1. Определи тип задачи
 
@@ -81,6 +87,8 @@ Use the files by role, not as one mixed knowledge blob:
 - strengths / motivation / role fit
 
 ## 2. Используй только релевантные источники
+
+Используй файлы выборочно: не подтягивай все источники режима, если задача короткая или не требует глубокого анализа.
 
 Core sources:
 - `anton_nazarov_profile.json`

@@ -75,6 +75,8 @@ Anton worked in a city-scale institutional environment connected to more than 10
 - collected feedback from institutions and departments and translated it into system improvements
 - supported adoption through large webinar-based training for hundreds of users
 - reduced management-accounting friction by aligning system language with institutional reality
+- reset and aligned the operational language of the system across organization, branch, address, space, event, program, attendance, and reporting layers
+- used data-model clarification as a management tool to reduce ambiguity across departments
 
 ### What this proves
 
@@ -207,6 +209,10 @@ Across client and internal projects, Anton repeatedly acted as the person who cl
 - architecture plus delivery ownership
 - operational diagnosis
 - implementation management without a large formal org
+
+### Usage note
+
+For managerial CVs, NeedleBit should be used as proof of full-cycle ownership and modern delivery discipline, not as the lead identity.
 
 ## Case 7. AI-assisted delivery as management practice
 

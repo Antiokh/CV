@@ -146,6 +146,34 @@ Proof points:
 Reusable proposal sentence:
 - I am strongest when a service business needs an internal operational tool that cleans up workflow, roles, and data handling instead of adding another fragile layer on top.
 
+## Dobri Visarun
+
+Best when the client needs:
+- service-business automation
+- lead handling
+- booking workflow
+- Telegram or notification integration
+- lightweight PWA
+
+Stack:
+- PWA
+- Telegram bot and internal alerts
+- no-code or hybrid implementation
+
+What Anton owned:
+- operational workflow structure
+- customer registration and booking logic
+- internal alert and communication flow
+- simplification of repetitive service-business handling
+
+Proof points:
+- reduced client handling from hours to minutes
+- supported revenue and client growth up to x10-x13
+- centralized registration, trip selection, customer data, and internal alerts
+
+Reusable proposal sentence:
+- I have built service-business automation where the main value was reducing manual communication, centralizing bookings, and turning fragmented lead handling into a repeatable operational flow.
+
 ## Reusable Upwork message angle
 
 The consistent story is:

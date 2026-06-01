@@ -26,6 +26,14 @@ This shows:
 - better control over generated code
 - stronger long-term maintainability than ad hoc vibe coding
 
+## Management connection
+
+This is also a management capability.
+
+Anton applies task decomposition, acceptance criteria, checkpoints, and quality gates to AI agents in much the same way a strong manager structures work for human executors.
+
+That is why his AI-assisted delivery is usually more controlled, reviewable, and production-oriented than ad hoc AI-first implementation.
+
 ## Positioning rule
 
 Do not sell this as "AI wizardry".
