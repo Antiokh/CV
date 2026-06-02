@@ -1,0 +1,44 @@
+[
+  {
+    "block": "Summary",
+    "chars": 1256,
+    "words": 187,
+    "status": "error",
+    "error": "<HTTPError 429: 'Too Many Requests'>"
+  },
+  {
+    "block": "Core Skills",
+    "chars": 937,
+    "words": 128,
+    "status": "error",
+    "error": "<HTTPError 429: 'Too Many Requests'>"
+  },
+  {
+    "block": "Technical Stack",
+    "chars": 2475,
+    "words": 330,
+    "status": "error",
+    "error": "<HTTPError 429: 'Too Many Requests'>"
+  },
+  {
+    "block": "Professional Experience",
+    "chars": 12807,
+    "words": 1777,
+    "status": "error",
+    "error": "<HTTPError 429: 'Too Many Requests'>"
+  },
+  {
+    "block": "Education",
+    "chars": 476,
+    "words": 56,
+    "status": "error",
+    "error": "<HTTPError 429: 'Too Many Requests'>"
+  },
+  {
+    "block": "Languages",
+    "chars": 65,
+    "words": 8,
+    "status": "error",
+    "error": "<HTTPError 429: 'Too Many Requests'>"
+  }
+]
