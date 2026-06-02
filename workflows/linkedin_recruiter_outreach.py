@@ -14,11 +14,13 @@ import argparse
 import csv
 import datetime as dt
 import os
+import random
 import re
 import sqlite3
 import subprocess
 import sys
 import textwrap
+import time
 import webbrowser
 from pathlib import Path
 
@@ -394,6 +396,91 @@ def open_next(conn: sqlite3.Connection, contact_id: int | None, copy: bool) -> N
         print("No profile URL for this contact.")
 
 
+def queued_contacts(conn: sqlite3.Connection, limit: int) -> list[sqlite3.Row]:
+    init_db(conn)
+    return conn.execute(
+        """
+        SELECT c.*, o.status, o.message
+          FROM contacts c
+          JOIN outreach o ON o.contact_id = c.id
+         WHERE o.status IN ('queued', 'opened')
+         ORDER BY
+              CASE WHEN c.connected_on IS NULL OR c.connected_on = '' THEN 1 ELSE 0 END,
+              c.connected_on DESC,
+              o.updated_at ASC
+         LIMIT ?
+        """,
+        (limit,),
+    ).fetchall()
+
+
+def manual_campaign(
+    conn: sqlite3.Connection,
+    limit: int,
+    copy: bool,
+    min_delay: int,
+    max_delay: int,
+) -> None:
+    if min_delay < 0 or max_delay < 0 or max_delay < min_delay:
+        raise ValueError("Delay must be non-negative and max-delay must be >= min-delay")
+
+    rows = queued_contacts(conn, limit)
+    if not rows:
+        print("No queued contacts found.")
+        return
+
+    print(
+        "Manual campaign mode. The script will not send LinkedIn messages.\n"
+        "It opens each profile, optionally copies the draft, waits for your manual action,\n"
+        "then records the status and waits before the next profile.\n"
+    )
+
+    for idx, row in enumerate(rows, start=1):
+        now = utc_now()
+        conn.execute(
+            "UPDATE outreach SET status = 'opened', opened_at = COALESCE(opened_at, ?), updated_at = ? WHERE contact_id = ?",
+            (now, now, row["id"]),
+        )
+        conn.commit()
+
+        print("=" * 72)
+        print(f"{idx}/{len(rows)} | [{row['id']}] {row['full_name']}")
+        print(f"{row['position']} | {row['company']}")
+        if row["profile_url"]:
+            print(row["profile_url"])
+        print("")
+        print(row["message"])
+        print("")
+
+        if copy:
+            ok = copy_to_clipboard(row["message"])
+            print("Message copied to clipboard." if ok else "Could not copy to clipboard.")
+
+        if row["profile_url"]:
+            webbrowser.open(row["profile_url"])
+            print("Profile opened. If LinkedIn asks for login, log in manually in the browser.")
+
+        choice = input(
+            "After manual action: [Enter]=mark sent, s=skip/opened, n=not relevant, q=quit: "
+        ).strip().lower()
+
+        if choice == "q":
+            print("Stopped by user.")
+            break
+        if choice == "n":
+            mark(conn, row["id"], "not_relevant", "Marked not relevant during manual campaign")
+        elif choice == "s":
+            print(f"Contact {row['id']} left as opened.")
+        else:
+            mark(conn, row["id"], "sent", "Sent manually in LinkedIn during manual campaign")
+
+        if idx < len(rows):
+            delay = random.randint(min_delay, max_delay)
+            if delay:
+                print(f"Waiting {delay} seconds before next profile...")
+                time.sleep(delay)
+
+
 def mark(conn: sqlite3.Connection, contact_id: int, status: str, notes: str | None) -> None:
     init_db(conn)
     now = utc_now()
@@ -457,6 +544,15 @@ def main() -> None:
     p_open.add_argument("--id", type=int, help="Specific contact id instead of next queued contact.")
     p_open.add_argument("--copy", action="store_true", help="Copy message to clipboard.")
 
+    p_campaign = sub.add_parser(
+        "manual-campaign",
+        help="Open queued profiles one by one for manual sending with an optional random delay.",
+    )
+    p_campaign.add_argument("--limit", type=int, default=10)
+    p_campaign.add_argument("--copy", action="store_true", help="Copy each draft to clipboard.")
+    p_campaign.add_argument("--min-delay", type=int, default=60, help="Minimum delay between contacts, seconds.")
+    p_campaign.add_argument("--max-delay", type=int, default=300, help="Maximum delay between contacts, seconds.")
+
     p_mark = sub.add_parser("mark", help="Mark contact outreach status.")
     p_mark.add_argument("id", type=int)
     p_mark.add_argument("status", choices=["queued", "opened", "sent", "replied", "not_relevant", "snoozed"])
@@ -478,6 +574,8 @@ def main() -> None:
         list_contacts(conn, args.status, args.limit)
     elif args.cmd == "open-next":
         open_next(conn, args.id, args.copy)
+    elif args.cmd == "manual-campaign":
+        manual_campaign(conn, args.limit, args.copy, args.min_delay, args.max_delay)
     elif args.cmd == "mark":
         mark(conn, args.id, args.status, args.notes)
     elif args.cmd == "export":

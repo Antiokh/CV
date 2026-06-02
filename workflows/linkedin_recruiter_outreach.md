@@ -44,6 +44,14 @@ Open next profile and copy draft message:
 python workflows\linkedin_recruiter_outreach.py open-next --copy
 ```
 
+Run a manual campaign with random 1-5 minute pauses:
+
+```powershell
+python workflows\linkedin_recruiter_outreach.py manual-campaign --copy --min-delay 60 --max-delay 300 --limit 20
+```
+
+This mode does not send messages automatically. It opens each profile, copies the draft, waits for manual sending, records the status after confirmation, and only then waits before the next profile.
+
 After sending manually in LinkedIn:
 
 ```powershell
