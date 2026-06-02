@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         LinkedIn People Search Page Export
 // @namespace    https://needlebit.dev/
-// @version      0.1.0
+// @version      0.2.0
 // @description  Exports currently visible LinkedIn people-search result cards to CSV. Does not auto-paginate or send messages.
 // @match        https://www.linkedin.com/search/results/people/*
 // @match        https://*.linkedin.com/search/results/people/*
@@ -79,67 +79,154 @@
     node.style.display = text ? "block" : "none";
   }
 
-  function profileUrlFromCard(card) {
-    const link = [...card.querySelectorAll('a[href*="/in/"]')]
-      .map((a) => a.href)
-      .find((href) => href && !href.includes("/search/results/"));
-    if (!link) return "";
+  function cleanProfileUrl(linkOrHref) {
+    const link = typeof linkOrHref === "string" ? linkOrHref : linkOrHref?.href;
     try {
       const url = new URL(link);
+      if (!url.pathname.startsWith("/in/")) return "";
       url.search = "";
       url.hash = "";
       return url.toString();
     } catch {
-      return link.split("?")[0];
+      return (link || "").split("?")[0];
     }
   }
 
-  function nameFromCard(card) {
-    const candidates = [
-      card.querySelector('span[aria-hidden="true"]'),
-      card.querySelector(".entity-result__title-text a span[aria-hidden='true']"),
-      card.querySelector(".entity-result__title-text a"),
-    ];
-    for (const node of candidates) {
-      const text = normalizeText(node?.textContent || "");
-      if (text && !/view profile/i.test(text)) return text;
+  function isProfileHref(href) {
+    try {
+      return new URL(href, location.href).pathname.startsWith("/in/");
+    } catch {
+      return false;
     }
+  }
+
+  function profileUrlFromCard(card) {
+    const link = [...card.querySelectorAll('a[href*="/in/"]')]
+      .find((a) => isProfileHref(a.href));
+    return cleanProfileUrl(link);
+  }
+
+  function candidateCards() {
+    const root = document.querySelector("main") || document.querySelector('section[aria-label="Primary content"]') || document.body;
+    const cards = [
+      ...root.querySelectorAll('[role="listitem"], .reusable-search__result-container, .entity-result'),
+    ].filter((card) => card.querySelector('a[href*="/in/"]'));
+
+    if (cards.length) return cards;
+
+    const byAncestor = new Map();
+    for (const link of root.querySelectorAll('a[href*="/in/"]')) {
+      if (!isProfileHref(link.href)) continue;
+      let node = link;
+      for (let i = 0; i < 8 && node?.parentElement; i += 1) {
+        node = node.parentElement;
+        if (normalizeText(node.textContent || "").length > 120) break;
+      }
+      if (node) byAncestor.set(node, node);
+    }
+    return [...byAncestor.values()];
+  }
+
+  function cleanNameText(text) {
+    return normalizeText(text)
+      .replace(/\s*•\s*1st\b/i, "")
+      .replace(/\bVerified\b/gi, "")
+      .replace(/\bMessage\b/gi, "")
+      .trim();
+  }
+
+  function nameFromCard(card, profileUrl) {
+    const sameProfileLinks = [...card.querySelectorAll('a[href*="/in/"]')]
+      .filter((a) => cleanProfileUrl(a) === profileUrl);
+
+    const linkTexts = sameProfileLinks
+      .map((a) => cleanNameText(a.textContent || ""))
+      .filter((text) => text && text.length <= 90 && !/followers|connections|search results/i.test(text));
+
+    if (linkTexts.length) {
+      return linkTexts.sort((a, b) => a.length - b.length)[0];
+    }
+
+    const imageAlt = cleanNameText(card.querySelector("img[alt]")?.getAttribute("alt") || "");
+    if (imageAlt) return imageAlt;
+
+    const labelledName = cleanNameText(card.querySelector("[aria-labelledby]")?.textContent || "");
+    if (labelledName && labelledName.length <= 90) return labelledName;
+
     return "";
   }
 
-  function headlineFromCard(card) {
+  function textLinesFromCard(card) {
+    const ignored = /^(message|follow|connect|previous|next|are these results helpful|\d+|page \d+)$/i;
+    const lines = normalizeText(card.textContent || "")
+      .split(/(?=Product |Senior |Software |Head |HR |Recruiter |Talent |Belgrade|Serbia|Novi Sad|Remote)|\n/)
+      .map((line) => normalizeText(line))
+      .filter(Boolean)
+      .filter((line) => !ignored.test(line))
+      .filter((line) => !/mutual connections|followers|send a message|shared connections/i.test(line));
+
+    return [...new Set(lines)];
+  }
+
+  function profileTextFacts(card, fullName) {
+    const facts = [];
+    const textNodes = [
+      ...card.querySelectorAll("p, span, div"),
+    ];
+
+    for (const node of textNodes) {
+      const text = normalizeText(node.textContent || "");
+      if (!text || text.length > 180) continue;
+      if (text === fullName || text.includes("• 1st")) continue;
+      if (/^(Message|Verified|Follow|Connect)$/i.test(text)) continue;
+      if (/mutual connections|followers|send a message|are these results helpful/i.test(text)) continue;
+      if (!facts.includes(text)) facts.push(text);
+    }
+
+    if (facts.length) return facts;
+    return textLinesFromCard(card).filter((line) => line !== fullName);
+  }
+
+  function headlineFromCard(card, fullName) {
     const selectors = [
       ".entity-result__primary-subtitle",
       ".entity-result__summary",
       ".reusable-search-simple-insight",
     ];
-    const parts = [];
     for (const selector of selectors) {
       const text = normalizeText(card.querySelector(selector)?.textContent || "");
-      if (text && !parts.includes(text)) parts.push(text);
+      if (text) return text;
     }
-    return parts.join(" | ");
+
+    const facts = profileTextFacts(card, fullName);
+    return facts.find((line) => !looksLikeLocation(line)) || "";
   }
 
-  function locationFromCard(card) {
-    return normalizeText(card.querySelector(".entity-result__secondary-subtitle")?.textContent || "");
+  function looksLikeLocation(text) {
+    return /\b(serbia|belgrade|beograd|novi sad|vojvodina|remote|hybrid|russia|moscow|saint petersburg|european union|united states|united kingdom)\b/i.test(text);
+  }
+
+  function locationFromCard(card, fullName) {
+    const oldLinkedInLocation = normalizeText(card.querySelector(".entity-result__secondary-subtitle")?.textContent || "");
+    if (oldLinkedInLocation) return oldLinkedInLocation;
+
+    const facts = profileTextFacts(card, fullName);
+    return facts.find(looksLikeLocation) || "";
   }
 
   function currentPageNumber() {
-    const active = document.querySelector('[aria-current="page"]');
+    const active = document.querySelector('[aria-current="page"], [aria-current="true"]');
     return normalizeText(active?.textContent || "");
   }
 
   function extractCards() {
-    const cards = [
-      ...document.querySelectorAll(".reusable-search__result-container, .entity-result"),
-    ];
+    const cards = candidateCards();
     const seen = new Set();
     const rows = [];
 
     for (const card of cards) {
       const profile_url = profileUrlFromCard(card);
-      const full_name = nameFromCard(card);
+      const full_name = nameFromCard(card, profile_url);
       if (!profile_url && !full_name) continue;
       const key = profile_url || full_name;
       if (seen.has(key)) continue;
@@ -149,8 +236,8 @@
         search_page: currentPageNumber(),
         full_name,
         profile_url,
-        headline: headlineFromCard(card),
-        location: locationFromCard(card),
+        headline: headlineFromCard(card, full_name),
+        location: locationFromCard(card, full_name),
         raw_text: normalizeText(card.textContent || ""),
       });
     }
@@ -200,7 +287,8 @@
   async function exportCurrentPage() {
     const rows = extractCards();
     if (!rows.length) {
-      setStatus("No visible people-search result cards found. Scroll a bit or wait for LinkedIn to finish loading.");
+      const profileLinks = document.querySelectorAll('main a[href*="/in/"], section[aria-label="Primary content"] a[href*="/in/"]').length;
+      setStatus(`No visible people-search result cards found.\nProfile links seen in page body: ${profileLinks}.\nScroll a bit, wait for LinkedIn to finish loading, or send me a fresh HTML anchor sample.`);
       return;
     }
     const csv = toCsv(rows);
