@@ -83,7 +83,7 @@ Key outcomes:
 
 - Russian: Native
 - English: Fluent
-- Serbian: Working proficiency
+- Serbian: Fluent
 
 ## Additional
 

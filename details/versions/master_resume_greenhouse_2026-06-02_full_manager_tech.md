@@ -238,7 +238,7 @@ Accounting and Finance background, College of Commerce and Banking No. 6, Moscow
 
 Russian: native  
 English: fluent  
-Serbian: working proficiency
+Serbian: fluent
 
 ## Additional Experience
 
