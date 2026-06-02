@@ -1446,6 +1446,1530 @@
     "details/upwork/special_backend.md",
     "details/upwork/special_frontend.md",
     "details/upwork/STRATEGY.md",
-    "portfolio/README.md"
-  ]
+    "portfolio/README.md",
+    "details/anton_nazarov_tech_path_raw.md",
+    "details/anton_nazarov_enterprise_it_path_raw.md",
+    "details/master_resume_technology_checklist.md"
+  ],
+  "greenhouse_master_resume_enrichment": {
+    "source": "D:/obsidian/antiokh/CV Sources, reviewed 2026-06-02",
+    "purpose": "Concrete source facts for Greenhouse/ATS-oriented master resume generation. These facts should be used as evidence, not as canned resume phrasing.",
+    "ai_detector_style_guidance": [
+      "Prefer concrete systems, dates, technologies, numbers, and operational context over generic leadership adjectives.",
+      "Avoid inflated verbs and template phrases such as spearheaded, orchestrated, passionate, results-driven, proven track record.",
+      "Keep claims tied to source facts or marked as questions when metrics are approximate."
+    ],
+    "facts_by_role": [
+      {
+        "company": "NeedleBit",
+        "facts": [
+          "client handling reduced from hours to minutes in automation projects",
+          "client revenue growth reported up to x10-x13 after process restructuring and system rollout",
+          "approximately 70,000 historical documents migrated from Google Drive into Supabase in Exit Lead",
+          "delivered operational systems using WeWeb, Supabase, Xano, Bubble, Glide, n8n, Make, PostgreSQL, Telegram integrations, and AI APIs",
+          "built PWA products independent of App Store / Google Play approval cycles"
+        ],
+        "needs_confirmation": [
+          "exact client/project for x10-x13 growth",
+          "before/after time for hours-to-minutes workflow",
+          "number of paid client projects delivered or rescued",
+          "largest active-user or record counts"
+        ]
+      },
+      {
+        "company": "Directorate of Cultural Centers of Moscow",
+        "facts": [
+          "worked with IT directors and heads of IT across 100+ subordinate institutions",
+          "rebuilt IBM Domino data-collection system into a web-based information system with modular architecture",
+          "accelerated export operations by about 20x",
+          "built report generators, field generators, export constructors, filters, and interactive Yandex Maps object map",
+          "migrated IBM Domino infrastructure from Windows to CentOS with nginx reverse proxy",
+          "implemented web-auth/security improvements and achieved A+ SSL rating in the nginx reverse-proxy setup",
+          "removed portal from Google, Bitdefender, Quttera, and Sangfor blocklists after false-positive phishing/malware flags",
+          "trained users through consultations and webinars"
+        ],
+        "needs_confirmation": [
+          "before/after export times behind 20x claim",
+          "number of webinar/training users",
+          "number of institutions, records, modules, report templates, or active users",
+          "scanner/source for A+ SSL rating"
+        ]
+      },
+      {
+        "company": "ZIL Cultural Center",
+        "facts": [
+          "managed about 200 PCs, 7 servers, and about 20 virtual machines according to PDF source; other sources mention 140 workstations",
+          "managed 5 IT staff and 2 installation engineers",
+          "moved 100+ employees to remote work during COVID using SoftEther VPN and Yandex Disk",
+          "launched GLPI HelpDesk with automated inventory for IT and seven additional technical support services",
+          "older source reports about 120 monthly HelpDesk requests",
+          "conducted physical inventory across 24,000 square meters",
+          "introduced Active Directory, GPOs, centralized access management, and security policies",
+          "integrated GLPI with Active Directory and automatic inventory",
+          "adapted website for mobile use and introduced PWA approach"
+        ],
+        "needs_confirmation": [
+          "whether to use 140 workstations or about 200 PCs",
+          "actual monthly ticket volume after GLPI rollout",
+          "number of inventoried/labeled assets",
+          "whether all seven technical services actively used GLPI",
+          "measured support, downtime, response-time, or asset-accounting improvements"
+        ]
+      },
+      {
+        "company": "Moscow Social Development Agency",
+        "facts": [
+          "helped build IT function in a newly created organization",
+          "selected workstations, MFPs, servers, networking equipment, and software for procurement",
+          "implemented GLPI HelpDesk with automatic inventory",
+          "implemented phone directory with employee map display and Active Directory synchronization",
+          "participated in acceptance commissions for Healthy Moscow and My Social Center projects"
+        ],
+        "needs_confirmation": [
+          "employee/workstation count",
+          "number of IT staff supervised",
+          "procurement or asset scale",
+          "specific systems or scale for Healthy Moscow / My Social Center acceptance work"
+        ]
+      },
+      {
+        "company": "Beluga Group / Synergy",
+        "facts": [
+          "supported internal IBM Domino document-management/workflow system used by more than 3,000 users according to old Head of Product CV",
+          "worked as third-line support",
+          "processed enhancement backlog from earlier periods",
+          "unified visual style of internal Domino databases"
+        ],
+        "needs_confirmation": [
+          "whether 3,000+ users is safe to state",
+          "number of backlog requests closed or exact backlog period"
+        ]
+      },
+      {
+        "company": "Settlement and Savings Bank",
+        "facts": [
+          "mapped document types, document routes, registration rules, ownership logic, statuses, and approval paths with bank leadership",
+          "reviewed existing Russian DMS/EDMS products and prepared implementation assessments",
+          "designed and built internal DMS from scratch on IBM Lotus Domino using object-oriented principles",
+          "implemented XML integration with 1C, including employee data export and template-based data exchange",
+          "supervised another developer, trained users, tested and rolled out the system"
+        ],
+        "needs_confirmation": [
+          "number of departments/executives involved",
+          "number of document types/routes mapped",
+          "user count after rollout",
+          "number of XML/1C templates or integrations",
+          "correct end date: Jan 2015 vs Sep 2015"
+        ]
+      },
+      {
+        "company": "I.T. Information Technology",
+        "facts": [
+          "introduced XPages technology into the company for the first time",
+          "moved two databases/applications to XPages according to Russian source",
+          "rewrote the Boss-Referent root library in JavaScript / SSJS for web support",
+          "modified Boss-Referent for web use and added new modules and databases",
+          "trained new employees on the internal Lotus Notes workflow system"
+        ],
+        "needs_confirmation": [
+          "number of users/departments using Boss-Referent system",
+          "whether training included top management or only new employees"
+        ]
+      },
+      {
+        "company": "Domodedovo Airport",
+        "facts": [
+          "selected through internal Lotus Notes developer training and hiring process from 12 candidates; final hiring reportedly 2 programmers and 2 testers",
+          "developed, configured, modernized, tested, and supported Lotus Notes / Domino workflow applications",
+          "integrated Lotus applications with Microsoft Office and other software through OLE",
+          "worked with Service Desk and testers"
+        ],
+        "needs_confirmation": [
+          "correct employment dates: Sep 2008-Sep 2009 vs Jan 2008-Jan 2009",
+          "specific modules, integrations, or departments supported"
+        ]
+      }
+    ]
+  },
+  "technology_exposure_review": {
+    "source": "details/anton_nazarov_tech_path_raw.md plus prior CV/Upwork/LinkedIn sources",
+    "reviewed_at": "2026-06-02",
+    "purpose": "Technology exposure inventory for Master Resume and ATS tailoring. Use confirmed/current items broadly; use mentioned_or_needs_confirmation items only after Anton confirms real depth.",
+    "current_core_stack": [
+      "WeWeb",
+      "Supabase",
+      "PostgreSQL",
+      "Supabase Auth",
+      "Supabase RLS",
+      "Supabase Edge Functions",
+      "Supabase Realtime",
+      "Xano",
+      "n8n",
+      "Make",
+      "REST APIs",
+      "API integrations",
+      "Docker",
+      "OpenAI API",
+      "fal.ai",
+      "Telegram integrations",
+      "PWA architecture",
+      "Python automation",
+      "Node.js tooling",
+      "TypeScript practical",
+      "Vue.js component adaptation",
+      "Airtable migration/integration"
+    ],
+    "enterprise_legacy_stack": [
+      "IBM/HCL Domino",
+      "Lotus Notes",
+      "XPages",
+      "LotusScript",
+      "Lotus SSJS",
+      "Lotus @Formula",
+      "Java",
+      "JavaScript",
+      "VBA",
+      "XML",
+      "Apache POI",
+      "Boss-Referent",
+      "Lotus Enterprise Integrator",
+      "IBM Lotus Sametime",
+      "1C/XML integration",
+      "Microsoft Office OLE integration"
+    ],
+    "infrastructure_and_it_operations": [
+      "Windows Server",
+      "Linux",
+      "Ubuntu",
+      "CentOS",
+      "nginx",
+      "nginx reverse proxy",
+      "Docker",
+      "Hyper-V",
+      "VMware ESXi",
+      "Active Directory",
+      "GPO",
+      "LDAP",
+      "DNS",
+      "DHCP",
+      "GLPI",
+      "Zabbix",
+      "SoftEther VPN",
+      "Synology NAS",
+      "NethServer",
+      "Zentyal",
+      "SSH",
+      "RDP",
+      "IP PBX/SIP",
+      "Wi-Fi infrastructure",
+      "CCTV",
+      "Hikvision",
+      "AxxonNext",
+      "Octagram",
+      "Kaspersky / endpoint security",
+      "Department-level Active Directory synchronization",
+      "Access control lifecycle",
+      "CCTV RAID/mirroring",
+      "Information security training"
+    ],
+    "low_code_and_product_builders_mentioned": [
+      "Bubble",
+      "Glide",
+      "Airtable",
+      "FlutterFlow",
+      "Adalo",
+      "AppMaster",
+      "Softr",
+      "Webflow",
+      "Webstudio",
+      "Directual",
+      "Zapier",
+      "Tilda"
+    ],
+    "integrations_and_services": [
+      "Telegram bots",
+      "Telegram Mini Apps",
+      "Telegram channel integration",
+      "QR code workflows",
+      "barcode workflows",
+      "Yandex Maps API",
+      "Bing Translate integration",
+      "Google Drive migration",
+      "Google Sheets workflows",
+      "DocsAutomator",
+      "Make.com social distribution"
+    ],
+    "programming_and_markup": [
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "Java",
+      "SQL",
+      "XML",
+      "JSON",
+      "VBA",
+      "Visual Basic/VBS",
+      "Bash/SH",
+      "Batch/Cmd",
+      "PHP basics",
+      "LotusScript",
+      "Lotus SSJS",
+      "Lotus @Formula"
+    ],
+    "needs_confirmation_before_broad_resume_use": [
+      "Koha details",
+      "exact MongoDB use cases if any beyond touched/evaluated",
+      "exact Firebase use cases if any beyond touched/evaluated",
+      "whether office-suite breadth should appear in general resumes or only support/training roles"
+    ],
+    "checklist_file": "details/master_resume_technology_checklist.md"
+  },
+  "technology_path_raw_review": {
+    "raw_source_file": "details/anton_nazarov_tech_path_raw.md",
+    "checklist_file": "details/master_resume_technology_checklist.md",
+    "reviewed_at": "2026-06-02",
+    "purpose": "Voice-dictated technical path source parsed into resume-safe technology statuses.",
+    "status_meaning": {
+      "yes": "safe to use when relevant, with concrete project context",
+      "targeted": "safe for targeted vacancies/proposals; not a broad headline unless relevant",
+      "light": "touched/evaluated/limited; avoid presenting as strong hands-on skill",
+      "historical": "real past exposure, mainly useful for legacy/context",
+      "needs confirmation": "mentioned in older sources but not sufficiently confirmed in tech_path_raw"
+    },
+    "technologies": [
+      {
+        "technology": "Supabase",
+        "source_signal": "Upwork, project cases, profile JSON",
+        "status": "yes",
+        "details": "Advanced/senior hands-on. Backend core for modern projects: managed/self-hosted Docker, WeWeb/Glide/Bubble/custom frontends, Auth, RLS, Edge Functions, Realtime, cron, triggers, API, GitHub sync, AI/MCP workflows."
+      },
+      {
+        "technology": "PostgreSQL",
+        "source_signal": "Upwork, profile JSON",
+        "status": "yes",
+        "details": "Strong/core. Relational modeling, functions, triggers, indexes, views, EXPLAIN, optimization, JSONB, enums, test-data generation, load-testing-like datasets."
+      },
+      {
+        "technology": "Supabase Auth",
+        "source_signal": "Upwork backend profile",
+        "status": "yes",
+        "details": "Strong. Email/password, programmatic user creation, metadata, role-based patterns, Telegram/external auth context, SendPulse email integration, fake/test users."
+      },
+      {
+        "technology": "Supabase RLS",
+        "source_signal": "Upwork backend profile",
+        "status": "yes",
+        "details": "Advanced. Role/owner/object/parent-entity policies, nested access checks, file/comment/task access, multi-role apps and client/admin portals."
+      },
+      {
+        "technology": "Supabase Edge Functions",
+        "source_signal": "Upwork/backend/AI files",
+        "status": "yes",
+        "details": "Advanced/production. Trigger/cron/SQL-called functions, API gateways, OpenAI JSON calls, AI image flows, Telegram validation/bot routing, WordPress/WooCommerce integrations, secret-safe backend logic."
+      },
+      {
+        "technology": "SQL",
+        "source_signal": "old CVs, profile JSON, PromptlessPress",
+        "status": "yes",
+        "details": "Advanced practical. Complex joins, nested queries, functions, triggers, views, indexes, EXPLAIN, optimization, migrations, imports/exports, test datasets."
+      },
+      {
+        "technology": "Xano",
+        "source_signal": "Upwork, profile JSON",
+        "status": "yes",
+        "details": "Solid targeted backend skill. API endpoints, admin endpoints, backend logic, dataset/chart generation, assessment/scoring logic, Bubble-connected projects."
+      },
+      {
+        "technology": "REST APIs",
+        "source_signal": "Upwork, profile JSON",
+        "status": "yes",
+        "details": "Strong/core. Supabase REST over tables/views/functions, external APIs, internal wrappers, permission checks, Postman testing, hosted/self-hosted API debugging."
+      },
+      {
+        "technology": "API integrations",
+        "source_signal": "ChatGPT shared dictation / existing sources",
+        "status": "yes",
+        "details": "Very strong/core. Email, accounting, legal entity/INN lookup, cadastral/object APIs, GeoJSON, geocoding/reverse geocoding, weather/forecast, road/geodata services, spelling APIs, DataMos.ru, Google services, DocsAutomator, WordPress/WooCommerce, Stripe, OpenAI/fal.ai, Telegram, Slack, GitHub, social APIs, 1C/XML."
+      },
+      {
+        "technology": "n8n",
+        "source_signal": "ChatGPT shared dictation / existing sources",
+        "status": "yes",
+        "details": "Strong/core. Multi-step workflows, JS transforms, Google Docs/Sheets/Drive to Supabase migration, OpenAI validation, geocoding/reverse-geocoding flows, DocsAutomator, sub-workflows, webhooks, cron, error/retry/debug loops, self-hosting, JSON export/import and workflow versioning."
+      },
+      {
+        "technology": "Make / Make.com",
+        "source_signal": "ChatGPT shared dictation / existing sources",
+        "status": "yes",
+        "details": "Strong/core. Glide webhooks, Google services, social distribution, Slack/GitHub/email, API integrations, image generation flows, scheduled jobs, routers, error handling, JSON processing, billing/operation optimization through scripts and handlers."
+      },
+      {
+        "technology": "Zapier",
+        "source_signal": "old Upwork profile",
+        "status": "light",
+        "details": "Mentioned in older Upwork stack; no strong recent raw detail. Use only if a vacancy asks for Zapier-compatible automation experience."
+      },
+      {
+        "technology": "DocsAutomator",
+        "source_signal": "Exit Lead case",
+        "status": "targeted",
+        "details": "Used for report/document generation workflows with n8n/Supabase/Glide in inspection/reporting systems."
+      },
+      {
+        "technology": "OpenAI API",
+        "source_signal": "ChatGPT shared dictation / existing sources",
+        "status": "yes",
+        "details": "Strong. JSON extraction/validation, document summaries/metadata, image description, rewriting, AI parsing, workflow checks, hallucination detection loops, product workflows, backend calls, resume/cover-letter agent workflows."
+      },
+      {
+        "technology": "fal.ai",
+        "source_signal": "ChatGPT shared dictation / existing sources",
+        "status": "targeted",
+        "details": "Targeted/strong for AI image-generation workflows, mockups, image variation/description, prompt testing, and cost optimization in PromptlessPress-style visual generation pipelines."
+      },
+      {
+        "technology": "AI image-generation APIs",
+        "source_signal": "PromptlessPress",
+        "status": "yes",
+        "details": "PromptlessPress/generative workflows, image-generation services through API/automation pipelines."
+      },
+      {
+        "technology": "AI-assisted data parsing",
+        "source_signal": "Exit Lead migration",
+        "status": "yes",
+        "details": "Exit Lead/contact data and document metadata workflows; OpenAI-assisted parsing with validation/manual-review routing."
+      },
+      {
+        "technology": "Repository-level AI instructions",
+        "source_signal": "AI_NATIVE_DELIVERY",
+        "status": "yes",
+        "details": "Repository-specific guardrails, task contracts, AI-readable backend documentation, agent-assisted delivery discipline."
+      },
+      {
+        "technology": "Agentic workflows / AI guardrails",
+        "source_signal": "AI_NATIVE_DELIVERY, raw story",
+        "status": "yes",
+        "details": "Structured agentic delivery: task decomposition, checkpoints, acceptance criteria, quality gates, context/architecture control."
+      },
+      {
+        "technology": "Database-to-git synchronization",
+        "source_signal": "ChatGPT shared dictation / existing sources",
+        "status": "yes",
+        "details": "Database-to-GitHub synchronization for Supabase/PostgreSQL: table/function/schema snapshots, update triggers/cron, scoped change descriptions, AI-readable backend documentation."
+      },
+      {
+        "technology": "WeWeb",
+        "source_signal": "Upwork, LinkedIn, project cases",
+        "status": "yes",
+        "details": "Strong/core. Full app architecture, UI, backend connections, custom components, self-hosting, realtime/multi-user workflows, consulting/mentoring, pattern library."
+      },
+      {
+        "technology": "Bubble",
+        "source_signal": "Upwork, project cases, OTUS",
+        "status": "yes",
+        "details": "Solid-to-strong practical + teaching. Zerocoder/OTUS, projects, CSS/JS workarounds, plugins/payments, rescue/migration-aware; not preferred as strategic architecture."
+      },
+      {
+        "technology": "Glide",
+        "source_signal": "Upwork, Exit Lead, portfolio",
+        "status": "yes",
+        "details": "Strong practical/production. First modern low-code platform used; Exit Lead internal app, localization, custom dashboards, Make/n8n integrations, troubleshooting/mentoring."
+      },
+      {
+        "technology": "FlutterFlow",
+        "source_signal": "old Upwork profile",
+        "status": "light",
+        "details": "Evaluated/interested. Not headline unless mobile-first role specifically asks for it."
+      },
+      {
+        "technology": "Adalo",
+        "source_signal": "old Upwork profile",
+        "status": "light",
+        "details": "Evaluated only; not suitable for serious production positioning."
+      },
+      {
+        "technology": "AppMaster",
+        "source_signal": "old Upwork profile",
+        "status": "light",
+        "details": "Evaluated/test app. All-in-one/non-standard logic, not preferred."
+      },
+      {
+        "technology": "Softr",
+        "source_signal": "old Upwork profile",
+        "status": "light",
+        "details": "Evaluated only; no serious projects."
+      },
+      {
+        "technology": "Webflow",
+        "source_signal": "ChatGPT shared dictation / existing sources",
+        "status": "targeted",
+        "details": "Advanced targeted. Built horizontal-scroll/custom JS/CSS/animation project that others refused; strong custom-interaction skill, but WeWeb is preferred for production apps."
+      },
+      {
+        "technology": "Webstudio",
+        "source_signal": "old Upwork profile",
+        "status": "light",
+        "details": "Early user/evaluated. Had website, Vercel/custom-domain publishing, self-hosting issues; not production-preferred."
+      },
+      {
+        "technology": "Directual",
+        "source_signal": "old Upwork profile",
+        "status": "light",
+        "details": "Evaluated/test app. Non-standard platform logic, low confidence."
+      },
+      {
+        "technology": "Airtable",
+        "source_signal": "Upwork, raw story, user confirmation 2026-06-02",
+        "status": "yes",
+        "details": "Actively used. MetaFox migration source; connected Airtable to Supabase through a wrapper/integration layer. Not preferred as long-term relational backend, but real hands-on migration/integration experience."
+      },
+      {
+        "technology": "Tilda",
+        "source_signal": "profile JSON tag vocabulary",
+        "status": "targeted",
+        "details": "Solid targeted website skill: websites, integrations, design, custom blocks, Zero Block, marketing/site work."
+      },
+      {
+        "technology": "PWA / Progressive Web Apps",
+        "source_signal": "CV sources, NeedleBit, ZIL",
+        "status": "yes",
+        "details": "Used in NeedleBit and ZIL; browser-installable products independent of app stores."
+      },
+      {
+        "technology": "Custom WeWeb components",
+        "source_signal": "profile JSON, special frontend",
+        "status": "yes",
+        "details": "Strong. Adapted/repackaged Vue components, wrappers, config/data binding, reusable components, Telegram/QR/barcode-related components."
+      },
+      {
+        "technology": "Reusable UI systems",
+        "source_signal": "special frontend",
+        "status": "yes",
+        "details": "WeWeb/Supabase building blocks, UI elements, layout patterns, frontend logic patterns, component libraries."
+      },
+      {
+        "technology": "Figma",
+        "source_signal": "ChatGPT shared dictation / existing sources",
+        "status": "yes",
+        "details": "Strong practical/design/prototyping/teaching. Multiple trainings, clickable prototypes, animations, UI reconstruction, design variations, UI kits, AI-in-Figma teaching."
+      },
+      {
+        "technology": "JavaScript",
+        "source_signal": "ChatGPT shared dictation / existing sources",
+        "status": "yes",
+        "details": "Strong/main language. XPages/Dojo/jQuery, browser logic, WeWeb/Vue components, n8n scripts, APIs, DOM/CSS workarounds, Node ecosystem, UserScript-style UI modifications."
+      },
+      {
+        "technology": "HTML",
+        "source_signal": "old CVs, Upwork",
+        "status": "yes",
+        "details": "Strong. Early websites, IBM Domino/XPages, Bubble/WeWeb/Webflow/Tilda, templates and frontend implementation."
+      },
+      {
+        "technology": "CSS",
+        "source_signal": "old CVs, Upwork",
+        "status": "yes",
+        "details": "Expert-level practical. Pixel-perfect UI, complex/non-standard layouts, overlays, shadows, responsive fixes, animations, Bubble hacks, Webflow interactions, WeWeb design."
+      },
+      {
+        "technology": "Java",
+        "source_signal": "old CVs, Directorate",
+        "status": "yes",
+        "details": "Strong in IBM Domino context. Java agents and Apache POI report generation; not positioned as general Java backend engineer."
+      },
+      {
+        "technology": "Python",
+        "source_signal": "current repo resume / project work, needs confirmation",
+        "status": "yes",
+        "details": "Strong practical automation/tool-building. n8n-adjacent processing, Telegram CLI/user API utility, Serbian paušal accounting automation, CV/profile GUI app, licensing system, bots/scripts."
+      },
+      {
+        "technology": "Node.js",
+        "source_signal": "ChatGPT shared dictation / existing sources",
+        "status": "yes",
+        "details": "Solid and increasingly frequent practical use. Astro builds, npm/npx ecosystem, automation, JS/TS tooling, custom scripts, package-based workflows; often preferred over Python when Node libraries fit better."
+      },
+      {
+        "technology": "PHP",
+        "source_signal": "old Senior Lotus Notes CV, basic knowledge",
+        "status": "yes",
+        "details": "Long-term practical, not main identity. Websites/utilities, DokuWiki plugins, Composer/debugging, AI-assisted plugin work, WordPress/DokuWiki contexts."
+      },
+      {
+        "technology": "VBA",
+        "source_signal": "old CVs",
+        "status": "yes",
+        "details": "Historical/practical. Office automation and legacy enterprise integrations."
+      },
+      {
+        "technology": "Visual Basic / VBS",
+        "source_signal": "old PDF / Head of Product CV",
+        "status": "yes",
+        "details": "Historical/practical. Domino/OLE/Visual Basic style integrations and old enterprise scripting context."
+      },
+      {
+        "technology": "Bash / SH scripting",
+        "source_signal": "old CVs, raw story",
+        "status": "yes",
+        "details": "Solid historical/practical. MySQL imports, backups, Dropbox/cloud backup, server maintenance, exports/imports, calling Python scripts."
+      },
+      {
+        "technology": "Batch / Cmd",
+        "source_signal": "old CVs",
+        "status": "historical",
+        "details": "Old CV hard skill; keep as historical Windows scripting only."
+      },
+      {
+        "technology": "XML",
+        "source_signal": "old CVs, 1C integration",
+        "status": "yes",
+        "details": "Strong historical/practical. 1C integration, Domino systems, data exchange, templates."
+      },
+      {
+        "technology": "JSON",
+        "source_signal": "old PDF / profile context",
+        "status": "yes",
+        "details": "Strong practical. API payloads, GeoJSON-like map data, Supabase/API/n8n/OpenAI workflows, structured outputs."
+      },
+      {
+        "technology": "LotusScript",
+        "source_signal": "old CVs",
+        "status": "yes",
+        "details": "Expert legacy enterprise. Domino/Lotus workflow systems, libraries, integrations."
+      },
+      {
+        "technology": "Lotus SSJS",
+        "source_signal": "old CVs",
+        "status": "yes",
+        "details": "Expert legacy enterprise. XPages/server-side JavaScript, Boss-Referent migration, web support."
+      },
+      {
+        "technology": "Lotus @Formula",
+        "source_signal": "old CVs",
+        "status": "yes",
+        "details": "Historical/expert Lotus Notes development skill."
+      },
+      {
+        "technology": "XPages",
+        "source_signal": "old CVs",
+        "status": "yes",
+        "details": "Expert legacy enterprise. Web apps, Domino modernization, report systems, Java/JS integration."
+      },
+      {
+        "technology": "OOP",
+        "source_signal": "Russian CV skill lists",
+        "status": "yes",
+        "details": "Used in bank DMS architecture and enterprise system design."
+      },
+      {
+        "technology": "IBM/HCL Domino",
+        "source_signal": "all old CVs, master profile",
+        "status": "yes",
+        "details": "Expert legacy enterprise/full-stack foundation: backend, frontend, reports, integrations, admin, migration, performance, training, stakeholders."
+      },
+      {
+        "technology": "Lotus Notes",
+        "source_signal": "all old CVs",
+        "status": "yes",
+        "details": "Expert legacy enterprise. Document/workflow systems from Domodedovo, Firm IT, Bank, Synergy/Beluga, Directorate."
+      },
+      {
+        "technology": "IBM Lotus Sametime",
+        "source_signal": "Bank CV source",
+        "status": "yes",
+        "details": "Historical/practical administration in bank/enterprise context."
+      },
+      {
+        "technology": "Lotus Enterprise Integrator / LEI",
+        "source_signal": "old CVs",
+        "status": "yes",
+        "details": "Historical/practical. Studied/used in Lotus environment; later often bypassed with direct XPages/custom integrations."
+      },
+      {
+        "technology": "Boss-Referent",
+        "source_signal": "old CVs",
+        "status": "yes",
+        "details": "Strong historical. Modified Boss-Referent, translated libraries to JS/SSJS, web adaptation, modules/databases."
+      },
+      {
+        "technology": "1C / 1C:Enterprise",
+        "source_signal": "old CVs, Bank integration",
+        "status": "yes",
+        "details": "Practical integration/user setup. 1C XML exchange, HR structure integration requirements, employee data export."
+      },
+      {
+        "technology": "MySQL",
+        "source_signal": "old CVs, freelance",
+        "status": "yes",
+        "details": "Solid historical/practical. Private servers, CMS/web contexts, imports, backups, PHP utilities."
+      },
+      {
+        "technology": "MS SQL / MSSQL",
+        "source_signal": "ChatGPT shared dictation / existing sources",
+        "status": "yes",
+        "details": "Practical integration/infrastructure experience. Firm IT integration contour through Lotus Enterprise Integrator/AccessApp; ZIL/Octagram ran on MS SQL, and internal protected databases/library-fund data were moved into that MS SQL contour."
+      },
+      {
+        "technology": "MongoDB",
+        "source_signal": "old management CV skill list",
+        "status": "light",
+        "details": "Touched/evaluated. NoSQL/document-oriented logic is familiar through deep IBM Domino background, but MongoDB itself should not be a headline skill."
+      },
+      {
+        "technology": "Firebase",
+        "source_signal": "enterprise_it_path_raw",
+        "status": "light",
+        "details": "Touched/evaluated; not a core skill. Use only as broad NoSQL/backend exposure if relevant."
+      },
+      {
+        "technology": "MS Access",
+        "source_signal": "old Lotus Notes CV",
+        "status": "light",
+        "details": "Old CV user/database skill; not current/core."
+      },
+      {
+        "technology": "NoSQL databases",
+        "source_signal": "old PDF / Domino context",
+        "status": "yes",
+        "details": "Strong conceptual/practical document-oriented background through IBM Domino; MongoDB/Firebase touched but not headline."
+      },
+      {
+        "technology": "Apache POI",
+        "source_signal": "ChatGPT shared dictation / existing sources",
+        "status": "yes",
+        "details": "Strong in Directorate. Java/Apache POI Excel/report generation: exports reduced from about 5 hours to 1.5 seconds-1.5 minutes; up to about 40k styled rows, streaming mode beyond that."
+      },
+      {
+        "technology": "FTSearch",
+        "source_signal": "old CV hard skills",
+        "status": "historical",
+        "details": "Old Lotus Notes hard skill; keep in legacy Domino/Lotus context only."
+      },
+      {
+        "technology": "CSV exports",
+        "source_signal": "Cashdesk raw story",
+        "status": "yes",
+        "details": "Cashdesk/accounting and data export workflows; also general migration/import/export experience."
+      },
+      {
+        "technology": "Windows Server 2000-2016 / 2012 R2",
+        "source_signal": "old CVs, ZIL",
+        "status": "yes",
+        "details": "Historical/practical infrastructure administration, ZIL/old CVs."
+      },
+      {
+        "technology": "Windows 95-10",
+        "source_signal": "old CVs",
+        "status": "historical",
+        "details": "Broad historical Windows support/admin experience; not a current headline."
+      },
+      {
+        "technology": "Windows 7-10 migration",
+        "source_signal": "ZIL raw sources",
+        "status": "yes",
+        "details": "ZIL modernization work."
+      },
+      {
+        "technology": "Linux",
+        "source_signal": "old CVs, Upwork",
+        "status": "yes",
+        "details": "Strong practical/historical. Private servers, Domino migration, self-hosting, n8n/Supabase/Docker contexts."
+      },
+      {
+        "technology": "Ubuntu",
+        "source_signal": "old CVs, ZIL",
+        "status": "yes",
+        "details": "Historical/practical server/desktop support and ZIL infrastructure."
+      },
+      {
+        "technology": "CentOS",
+        "source_signal": "old CVs, Directorate/ZIL",
+        "status": "yes",
+        "details": "Strong in Directorate/ZIL; Domino migration from Windows to CentOS/Linux."
+      },
+      {
+        "technology": "Linux Mint / Lubuntu",
+        "source_signal": "old CVs",
+        "status": "historical",
+        "details": "Old CV Linux distro exposure; not headline."
+      },
+      {
+        "technology": "nginx",
+        "source_signal": "Directorate/PDF",
+        "status": "yes",
+        "details": "Directorate reverse proxy/caching/security; Domino behind nginx."
+      },
+      {
+        "technology": "nginx reverse proxy",
+        "source_signal": "Directorate/PDF",
+        "status": "yes",
+        "details": "Directorate production setup, caching, SSL/security improvement."
+      },
+      {
+        "technology": "A+ SSL hardening",
+        "source_signal": "Directorate/PDF",
+        "status": "yes",
+        "details": "Directorate nginx reverse-proxy/security setup; exact scanner can be confirmed if needed."
+      },
+      {
+        "technology": "Docker",
+        "source_signal": "old CVs, Upwork",
+        "status": "yes",
+        "details": "Self-hosted Supabase/n8n and modern infrastructure contexts."
+      },
+      {
+        "technology": "Hyper-V",
+        "source_signal": "old CVs, ZIL",
+        "status": "yes",
+        "details": "ZIL infrastructure: HP ProLiant/Hyper-V servers and virtual machines."
+      },
+      {
+        "technology": "VMware ESXi",
+        "source_signal": "old CVs / experience full",
+        "status": "yes",
+        "details": "Directorate development/replica VMware VM and old infra context."
+      },
+      {
+        "technology": "DNS",
+        "source_signal": "old CV hard skills",
+        "status": "yes",
+        "details": "Old infra hard skill; likely practical in server/network administration."
+      },
+      {
+        "technology": "DHCP",
+        "source_signal": "old CV hard skills",
+        "status": "yes",
+        "details": "Old infra hard skill; likely practical in server/network administration."
+      },
+      {
+        "technology": "Active Directory",
+        "source_signal": "Agency/ZIL sources",
+        "status": "yes",
+        "details": "Strong IT operations. Full AD rollout as central infrastructure layer: accounts, groups, access lifecycle, Synology/resources, GLPI, Octagram/access control, departmental directory synchronization."
+      },
+      {
+        "technology": "GPO",
+        "source_signal": "Agency/ZIL sources",
+        "status": "yes",
+        "details": "Strong. Automatic browser/software/basic workstation settings, restrictions, and security policies through Group Policy."
+      },
+      {
+        "technology": "LDAP",
+        "source_signal": "old CV hard skills",
+        "status": "historical",
+        "details": "Old infrastructure hard skill; keep as supporting infra exposure."
+      },
+      {
+        "technology": "OCS Inventory",
+        "source_signal": "old CV hard skills",
+        "status": "historical",
+        "details": "Old infra hard skill; GLPI automatic inventory is stronger/current evidence."
+      },
+      {
+        "technology": "GLPI",
+        "source_signal": "Agency/ZIL sources",
+        "status": "yes",
+        "details": "Strong ITSM/asset lifecycle. HelpDesk + automatic inventory + AD/domain integration + inventory numbers + equipment lifecycle + licensing/support processes."
+      },
+      {
+        "technology": "Zabbix",
+        "source_signal": "ZIL sources",
+        "status": "yes",
+        "details": "ZIL monitoring: switches, cameras, Octagram, Synology and other critical infrastructure components."
+      },
+      {
+        "technology": "SoftEther VPN",
+        "source_signal": "ZIL sources",
+        "status": "yes",
+        "details": "Remote access/VPN for users outside office during COVID remote-work transition."
+      },
+      {
+        "technology": "Zentyal",
+        "source_signal": "old CV hard skills",
+        "status": "historical",
+        "details": "Old infra hard skill; not current/headline."
+      },
+      {
+        "technology": "NethServer",
+        "source_signal": "ZIL sources",
+        "status": "yes",
+        "details": "ZIL infrastructure stack."
+      },
+      {
+        "technology": "SSH",
+        "source_signal": "old CV hard skills",
+        "status": "yes",
+        "details": "Practical Linux/server administration."
+      },
+      {
+        "technology": "RDP",
+        "source_signal": "old CV hard skills",
+        "status": "yes",
+        "details": "Practical Windows/server administration."
+      },
+      {
+        "technology": "Synology NAS",
+        "source_signal": "ZIL sources",
+        "status": "yes",
+        "details": "Strong ZIL infrastructure. Domain-integrated file storage with AD accounts/groups, file/folder permissions, site/services modules, centralized access model."
+      },
+      {
+        "technology": "IP PBX / SIP telephony",
+        "source_signal": "Agency/ZIL sources",
+        "status": "yes",
+        "details": "Agency/ZIL architecture and telephony/account control."
+      },
+      {
+        "technology": "Ethernet / optical network",
+        "source_signal": "old Senior Lotus Developer CV",
+        "status": "yes",
+        "details": "ZIL/old Senior Lotus Developer infrastructure scope."
+      },
+      {
+        "technology": "Wi-Fi infrastructure",
+        "source_signal": "Agency source",
+        "status": "yes",
+        "details": "Agency new organization architecture."
+      },
+      {
+        "technology": "CCTV",
+        "source_signal": "ZIL sources",
+        "status": "yes",
+        "details": "Strong ZIL infrastructure. Full CCTV restart/stabilization, Hikvision rebuild, disk replacement, RAID/mirroring, recovery behavior after link loss."
+      },
+      {
+        "technology": "Hikvision",
+        "source_signal": "ZIL sources",
+        "status": "yes",
+        "details": "Strong ZIL CCTV stack: rebuilt Hikvision-based system, storage/RAID/recovery stabilization."
+      },
+      {
+        "technology": "AxxonNext",
+        "source_signal": "ZIL sources",
+        "status": "yes",
+        "details": "ZIL CCTV stack."
+      },
+      {
+        "technology": "Kaspersky / endpoint security",
+        "source_signal": "enterprise_it_path_raw",
+        "status": "yes",
+        "details": "ZIL infrastructure: licensing checks, endpoint/security context, domain-linked control environment."
+      },
+      {
+        "technology": "PACS / access control",
+        "source_signal": "ZIL sources",
+        "status": "yes",
+        "details": "ZIL access-control infrastructure tied to Active Directory, Octagram, employee accounts, passes, domain groups and centralized access lifecycle."
+      },
+      {
+        "technology": "Octagram",
+        "source_signal": "ZIL sources",
+        "status": "yes",
+        "details": "Strong ZIL access-control experience: access points, passes, synchronization, employee/account alignment with staffing structure, XML/integration/support, tied into AD/domain infrastructure."
+      },
+      {
+        "technology": "Koha",
+        "source_signal": "old Senior Lotus Developer CV",
+        "status": "needs confirmation",
+        "details": "Listed in old Senior Lotus Developer CV; no detail in new tech-path log."
+      },
+      {
+        "technology": "Telegram bots",
+        "source_signal": "project cases/raw story",
+        "status": "yes",
+        "details": "Strong. Supabase Edge Functions bot/router logic, Telegram APIs, Python utilities, internal alerts."
+      },
+      {
+        "technology": "Telegram Mini Apps",
+        "source_signal": "Andronyevskaya ERP",
+        "status": "yes",
+        "details": "Andronyevskaya ERP and WeWeb/Supabase Telegram validation/login workflows."
+      },
+      {
+        "technology": "Telegram channel integration",
+        "source_signal": "Serbia Networking App",
+        "status": "yes",
+        "details": "Serbia Networking App and automation workflows."
+      },
+      {
+        "technology": "QR code workflows",
+        "source_signal": "Andronyevskaya ERP / QR Cloud",
+        "status": "yes",
+        "details": "Andronyevskaya ERP equipment access and QR Cloud digital business card/product workflows."
+      },
+      {
+        "technology": "Barcode workflows",
+        "source_signal": "profile JSON custom components",
+        "status": "yes",
+        "details": "Profile/custom component practice; likely in WeWeb/custom component context."
+      },
+      {
+        "technology": "Yandex Maps API",
+        "source_signal": "ChatGPT shared dictation / existing sources",
+        "status": "yes",
+        "details": "Directorate public object map; JSON/GeoJSON-like map data from IBM Domino/XPages with organization/director/public-data display."
+      },
+      {
+        "technology": "Bing Translate integration",
+        "source_signal": "Educate Online raw story",
+        "status": "yes",
+        "details": "Educate Online multilingual scaling/base translation."
+      },
+      {
+        "technology": "Google Drive migration",
+        "source_signal": "Exit Lead",
+        "status": "yes",
+        "details": "Exit Lead: approx. 70,000 historical documents to Supabase."
+      },
+      {
+        "technology": "Google Sheets migration/workflows",
+        "source_signal": "raw story / Exit Lead",
+        "status": "yes",
+        "details": "n8n/Make/Exit Lead workflows and migration patterns."
+      },
+      {
+        "technology": "Microsoft Office OLE integration",
+        "source_signal": "Domodedovo / old CVs",
+        "status": "yes",
+        "details": "Domodedovo/Lotus enterprise integrations."
+      },
+      {
+        "technology": "1C XML exchange",
+        "source_signal": "Bank sources",
+        "status": "yes",
+        "details": "Bank DMS integration with 1C employee/HR data and XML exchange."
+      },
+      {
+        "technology": "Social/messenger links",
+        "source_signal": "QR Cloud",
+        "status": "yes",
+        "details": "QR Cloud public profiles and contact/social links."
+      },
+      {
+        "technology": "Make.com social distribution",
+        "source_signal": "Dobri Tours",
+        "status": "yes",
+        "details": "Dobri Tours/social distribution and Make workflows."
+      },
+      {
+        "technology": "WordPress",
+        "source_signal": "old Upwork profile / freelance raw story",
+        "status": "yes",
+        "details": "Practical. WordPress/WooCommerce integrations, PHP/web context."
+      },
+      {
+        "technology": "Other CMS platforms",
+        "source_signal": "old CVs",
+        "status": "yes",
+        "details": "Historical freelance website work across CMS platforms."
+      },
+      {
+        "technology": "Web servers",
+        "source_signal": "old Lotus Notes CV / freelance",
+        "status": "yes",
+        "details": "Historical/practical web server support and self-hosting context."
+      },
+      {
+        "technology": "Bootstrap",
+        "source_signal": "Directorate old CV",
+        "status": "yes",
+        "details": "Directorate old CV/web UI context."
+      },
+      {
+        "technology": "jQuery",
+        "source_signal": "raw/PDF Directorate",
+        "status": "yes",
+        "details": "Directorate/XPages era and JavaScript history."
+      },
+      {
+        "technology": "Dojo",
+        "source_signal": "raw/PDF Directorate",
+        "status": "yes",
+        "details": "XPages/IBM Domino JavaScript history."
+      },
+      {
+        "technology": "Photoshop",
+        "source_signal": "old CV hard skills",
+        "status": "yes",
+        "details": "Significant design background."
+      },
+      {
+        "technology": "Paint.NET",
+        "source_signal": "old CV hard skills",
+        "status": "light",
+        "details": "Old design tool exposure."
+      },
+      {
+        "technology": "GIMP",
+        "source_signal": "old CV hard skills",
+        "status": "light",
+        "details": "Old design tool exposure."
+      },
+      {
+        "technology": "Inkscape",
+        "source_signal": "old CV hard skills",
+        "status": "light",
+        "details": "Old design/vector tool exposure."
+      },
+      {
+        "technology": "CorelDRAW",
+        "source_signal": "old CV hard skills",
+        "status": "light",
+        "details": "Old design/vector tool exposure."
+      },
+      {
+        "technology": "Microsoft Office",
+        "source_signal": "old CV hard skills",
+        "status": "yes",
+        "details": "Very advanced. User training across companies, documents, spreadsheets, templates, reporting, standard operations, plus VBA/OLE/document workflows."
+      },
+      {
+        "technology": "LibreOffice",
+        "source_signal": "old CV hard skills",
+        "status": "yes",
+        "details": "Very advanced office-suite/user-training context; include only when office-suite breadth matters."
+      },
+      {
+        "technology": "OpenOffice",
+        "source_signal": "old CV hard skills",
+        "status": "yes",
+        "details": "Very advanced office-suite/user-training context; include only when office-suite breadth matters."
+      },
+      {
+        "technology": "KOffice",
+        "source_signal": "old CV hard skills",
+        "status": "yes",
+        "details": "Very advanced office-suite/user-training context historically; rarely resume-relevant."
+      },
+      {
+        "technology": "Information security training",
+        "source_signal": "enterprise_it_path_raw",
+        "status": "yes",
+        "details": "Trained employees on access discipline, account safety, remote work, internal systems, and basic security behavior."
+      },
+      {
+        "technology": "OnlyOffice",
+        "source_signal": "old CV hard skills",
+        "status": "yes",
+        "details": "Very advanced office-suite/user-training context; include only when office-suite breadth matters."
+      },
+      {
+        "technology": "ITIL",
+        "source_signal": "old CVs, ZIL/Agency",
+        "status": "yes",
+        "details": "IT support/service-management training and ZIL/Agency support operations."
+      },
+      {
+        "technology": "ITSM",
+        "source_signal": "old CV skill lists",
+        "status": "yes",
+        "details": "GLPI/HelpDesk/service discipline, ITSM skill-list context."
+      },
+      {
+        "technology": "DevOps service thinking",
+        "source_signal": "education sources",
+        "status": "yes",
+        "details": "Education/training and service-management perspective."
+      },
+      {
+        "technology": "Kanban",
+        "source_signal": "old Senior Lotus Developer CV",
+        "status": "yes",
+        "details": "Project management method used/claimed in ZIL/old CV context."
+      },
+      {
+        "technology": "Agile",
+        "source_signal": "old Senior Lotus Developer CV",
+        "status": "yes",
+        "details": "Bank weekly agile-like schedule and project-management context."
+      },
+      {
+        "technology": "Waterfall",
+        "source_signal": "old Senior Lotus Developer CV",
+        "status": "yes",
+        "details": "Project management method used/claimed in old CV context."
+      },
+      {
+        "technology": "SMART tasking",
+        "source_signal": "raw AI-management notes",
+        "status": "yes",
+        "details": "Raw AI-management notes: tasking, decomposition, control."
+      },
+      {
+        "technology": "FAST tasking",
+        "source_signal": "raw AI-management notes",
+        "status": "yes",
+        "details": "Raw AI-management notes."
+      },
+      {
+        "technology": "Acceptance criteria",
+        "source_signal": "AI_NATIVE_DELIVERY",
+        "status": "yes",
+        "details": "AI-assisted delivery and implementation quality control."
+      },
+      {
+        "technology": "Quality gates",
+        "source_signal": "AI_NATIVE_DELIVERY",
+        "status": "yes",
+        "details": "AI-assisted delivery and managed execution."
+      },
+      {
+        "technology": "Repository guardrails",
+        "source_signal": "AI_NATIVE_DELIVERY",
+        "status": "yes",
+        "details": "AI_NATIVE_DELIVERY and repo-level agent workflows."
+      },
+      {
+        "technology": "DISC / DISK",
+        "source_signal": "old CV / management sources",
+        "status": "light",
+        "details": "Old management/soft-skill source; not a technical stack item."
+      },
+      {
+        "technology": "ActivePieces",
+        "status": "light",
+        "source_signal": "ChatGPT shared dictation",
+        "details": "Evaluated/self-hosting alternative to n8n. Less plugin coverage, potentially fewer n8n-specific failure modes; not a production headline yet."
+      },
+      {
+        "technology": "SendPulse",
+        "status": "targeted",
+        "source_signal": "ChatGPT shared dictation",
+        "details": "Used inside Supabase auth/email flows for better-looking transactional/user messages."
+      },
+      {
+        "technology": "DataMos.ru",
+        "status": "targeted",
+        "source_signal": "ChatGPT shared dictation",
+        "details": "Moscow open-data/institutional data integration context in Directorate-era systems."
+      },
+      {
+        "technology": "Geocoding / reverse geocoding",
+        "status": "yes",
+        "source_signal": "ChatGPT shared dictation",
+        "details": "Used in API/n8n workflows for geodata validation, object lookup, address checks and hallucination detection loops."
+      },
+      {
+        "technology": "Weather / forecast APIs",
+        "status": "targeted",
+        "source_signal": "ChatGPT shared dictation",
+        "details": "Used in API integrations and Glide-style applications requiring live weather/geolocation data."
+      },
+      {
+        "technology": "Legal entity / INN lookup APIs",
+        "status": "targeted",
+        "source_signal": "ChatGPT shared dictation",
+        "details": "Used for legal entity and taxpayer/INN information lookups in integration workflows."
+      },
+      {
+        "technology": "Spelling / text-check APIs",
+        "status": "targeted",
+        "source_signal": "ChatGPT shared dictation",
+        "details": "Integrated spelling/text-check services in broader API workflows."
+      },
+      {
+        "technology": "Adobe XD",
+        "status": "light",
+        "source_signal": "ChatGPT shared dictation",
+        "details": "Currently learning/using as an alternative design editor; not yet a headline production skill."
+      },
+      {
+        "technology": "After Effects",
+        "status": "light",
+        "source_signal": "ChatGPT shared dictation",
+        "details": "Light design/motion exposure; supporting creative tooling only."
+      },
+      {
+        "technology": "Illustrator",
+        "status": "light",
+        "source_signal": "ChatGPT shared dictation",
+        "details": "Supporting design-tool exposure alongside Photoshop/Adobe XD; not a resume headline unless design tooling is relevant."
+      },
+      {
+        "technology": "Astro",
+        "status": "targeted",
+        "source_signal": "ChatGPT shared dictation",
+        "details": "Used with Supabase/Node.js build context and custom sites; useful as modern frontend/build evidence, not the main frontend identity."
+      },
+      {
+        "technology": "TypeScript",
+        "status": "yes",
+        "source_signal": "ChatGPT shared dictation",
+        "details": "Practical/current. Used regularly with AI-assisted generation and manual review/control; position as practical TS in JS/Node/frontend workflows, not as a separate senior TS-only identity."
+      },
+      {
+        "technology": "Vue.js",
+        "status": "yes",
+        "source_signal": "ChatGPT shared dictation",
+        "details": "Solid practical. Main modern frontend framework exposure through WeWeb/custom components and Vue-oriented component adaptation."
+      },
+      {
+        "technology": "React",
+        "status": "light",
+        "source_signal": "ChatGPT shared dictation",
+        "details": "Touched, but Vue is the stronger modern frontend framework. Use only when matching React-adjacent vacancies carefully."
+      }
+    ],
+    "technologies_by_status": {
+      "yes": [
+        "Supabase",
+        "PostgreSQL",
+        "Supabase Auth",
+        "Supabase RLS",
+        "Supabase Edge Functions",
+        "SQL",
+        "Xano",
+        "REST APIs",
+        "API integrations",
+        "n8n",
+        "Make / Make.com",
+        "OpenAI API",
+        "AI image-generation APIs",
+        "AI-assisted data parsing",
+        "Repository-level AI instructions",
+        "Agentic workflows / AI guardrails",
+        "Database-to-git synchronization",
+        "WeWeb",
+        "Bubble",
+        "Glide",
+        "Airtable",
+        "PWA / Progressive Web Apps",
+        "Custom WeWeb components",
+        "Reusable UI systems",
+        "Figma",
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "Java",
+        "Python",
+        "Node.js",
+        "PHP",
+        "VBA",
+        "Visual Basic / VBS",
+        "Bash / SH scripting",
+        "XML",
+        "JSON",
+        "LotusScript",
+        "Lotus SSJS",
+        "Lotus @Formula",
+        "XPages",
+        "OOP",
+        "IBM/HCL Domino",
+        "Lotus Notes",
+        "IBM Lotus Sametime",
+        "Lotus Enterprise Integrator / LEI",
+        "Boss-Referent",
+        "1C / 1C:Enterprise",
+        "MySQL",
+        "MS SQL / MSSQL",
+        "NoSQL databases",
+        "Apache POI",
+        "CSV exports",
+        "Windows Server 2000-2016 / 2012 R2",
+        "Windows 7-10 migration",
+        "Linux",
+        "Ubuntu",
+        "CentOS",
+        "nginx",
+        "nginx reverse proxy",
+        "A+ SSL hardening",
+        "Docker",
+        "Hyper-V",
+        "VMware ESXi",
+        "DNS",
+        "DHCP",
+        "Active Directory",
+        "GPO",
+        "GLPI",
+        "Zabbix",
+        "SoftEther VPN",
+        "NethServer",
+        "SSH",
+        "RDP",
+        "Synology NAS",
+        "IP PBX / SIP telephony",
+        "Ethernet / optical network",
+        "Wi-Fi infrastructure",
+        "CCTV",
+        "Hikvision",
+        "AxxonNext",
+        "Kaspersky / endpoint security",
+        "PACS / access control",
+        "Octagram",
+        "Telegram bots",
+        "Telegram Mini Apps",
+        "Telegram channel integration",
+        "QR code workflows",
+        "Barcode workflows",
+        "Yandex Maps API",
+        "Bing Translate integration",
+        "Google Drive migration",
+        "Google Sheets migration/workflows",
+        "Microsoft Office OLE integration",
+        "1C XML exchange",
+        "Social/messenger links",
+        "Make.com social distribution",
+        "WordPress",
+        "Other CMS platforms",
+        "Web servers",
+        "Bootstrap",
+        "jQuery",
+        "Dojo",
+        "Photoshop",
+        "Microsoft Office",
+        "LibreOffice",
+        "OpenOffice",
+        "KOffice",
+        "Information security training",
+        "OnlyOffice",
+        "ITIL",
+        "ITSM",
+        "DevOps service thinking",
+        "Kanban",
+        "Agile",
+        "Waterfall",
+        "SMART tasking",
+        "FAST tasking",
+        "Acceptance criteria",
+        "Quality gates",
+        "Repository guardrails",
+        "Geocoding / reverse geocoding",
+        "TypeScript",
+        "Vue.js"
+      ],
+      "light": [
+        "Zapier",
+        "FlutterFlow",
+        "Adalo",
+        "AppMaster",
+        "Softr",
+        "Webstudio",
+        "Directual",
+        "MongoDB",
+        "Firebase",
+        "MS Access",
+        "Paint.NET",
+        "GIMP",
+        "Inkscape",
+        "CorelDRAW",
+        "DISC / DISK",
+        "ActivePieces",
+        "Adobe XD",
+        "After Effects",
+        "Illustrator",
+        "React"
+      ],
+      "targeted": [
+        "DocsAutomator",
+        "fal.ai",
+        "Webflow",
+        "Tilda",
+        "SendPulse",
+        "DataMos.ru",
+        "Weather / forecast APIs",
+        "Legal entity / INN lookup APIs",
+        "Spelling / text-check APIs",
+        "Astro"
+      ],
+      "historical": [
+        "Batch / Cmd",
+        "FTSearch",
+        "Windows 95-10",
+        "Linux Mint / Lubuntu",
+        "LDAP",
+        "OCS Inventory",
+        "Zentyal"
+      ],
+      "needs confirmation": [
+        "Koha"
+      ]
+    },
+    "unanswered_or_still_needing_confirmation": [
+      "Koha details",
+      "exact MongoDB use cases if any beyond touched/evaluated",
+      "exact Firebase use cases if any beyond touched/evaluated",
+      "whether office-suite breadth should appear in general resumes or only support/training roles"
+    ],
+    "resume_ready_core_summary": "Architecture-led full-stack and automation specialist with strong hands-on experience across Supabase/PostgreSQL, WeWeb, Xano, Bubble, Glide, n8n, Make.com, OpenAI API, Python/Node.js automation, REST APIs, custom components, AI-assisted workflows and legacy IBM Domino enterprise systems.",
+    "strong_current_core": [
+      "Supabase",
+      "PostgreSQL",
+      "SQL",
+      "Supabase Auth",
+      "Supabase RLS",
+      "Supabase Edge Functions",
+      "Supabase Realtime",
+      "REST APIs",
+      "API integrations",
+      "Xano",
+      "n8n",
+      "Make.com",
+      "OpenAI API",
+      "AI-assisted parsing",
+      "agentic workflows",
+      "database-to-GitHub synchronization",
+      "JavaScript",
+      "TypeScript practical",
+      "HTML",
+      "advanced CSS",
+      "Vue.js component adaptation",
+      "WeWeb",
+      "custom WeWeb components",
+      "Bubble",
+      "Glide",
+      "Python automation",
+      "Node.js tooling/automation",
+      "Bash/Linux scripting",
+      "IBM Domino / Lotus Notes",
+      "XPages",
+      "LotusScript",
+      "SSJS",
+      "Java in Domino",
+      "Apache POI",
+      "PHP practical",
+      "Figma",
+      "Webflow targeted",
+      "Tilda targeted"
+    ],
+    "enterprise_it_addendum": {
+      "raw_source_file": "details/anton_nazarov_enterprise_it_path_raw.md",
+      "reviewed_at": "2026-06-02",
+      "summary": "Enterprise IT addendum covering databases, infrastructure, access control, office suites, GLPI, Active Directory, CCTV, monitoring, endpoint security, and department-level directory integration.",
+      "confirmed_updates": {
+        "MS SQL / MSSQL": "Confirmed at ZIL through Octagram-backed MS SQL and additional protected/internal databases, plus Firm IT LEI/AccessApp integration context.",
+        "Octagram": "Confirmed full reconfiguration of access points/passes/synchronization and staff-directory alignment; tied to AD/access-control lifecycle.",
+        "Access control": "Tied to Active Directory, Octagram, employee accounts, passes, domain groups and centralized offboarding/access lifecycle.",
+        "GLPI": "Confirmed HelpDesk + full workplace inventory + domain integration + licensing/support processes.",
+        "Active Directory / GPO": "Central infrastructure layer for accounts, groups, software/browser deployment, workstation settings, restrictions and security policies.",
+        "Synology": "Domain-integrated storage with AD accounts/groups and resource permissions.",
+        "CCTV / Hikvision": "Full CCTV restart/stabilization, disk replacement, RAID/mirroring and recovery behavior.",
+        "Zabbix": "Monitoring of switches, cameras, Octagram, Synology and other critical infrastructure.",
+        "Kaspersky": "Endpoint/security and licensing context within domain-controlled environment.",
+        "Office suites": "Very advanced user-training and office-workflow experience across Microsoft Office and alternative office suites.",
+        "Information security training": "Employee training on access discipline, account safety, remote work, internal systems and basic security behavior."
+      },
+      "still_careful": [
+        "Koha details",
+        "exact MongoDB use cases if any beyond touched/evaluated",
+        "exact Firebase use cases if any beyond touched/evaluated",
+        "whether office-suite breadth should appear in general resumes or only support/training roles"
+      ]
+    },
+    "user_confirmed_updates": {
+      "Airtable": "Actively used; MetaFox migration source; connected to Supabase through wrapper/integration layer.",
+      "MS SQL / MSSQL": "Confirmed ZIL Octagram/MS SQL and internal protected database contour; remove earlier \"likely\" wording.",
+      "API integrations": "Confirmed broad API integration set: geocoding/reverse geocoding, weather/forecast, roads/geodata, spelling, INN/legal entities, DataMos.ru, Stripe, WordPress/WooCommerce, SendPulse and Postman debugging.",
+      "ActivePieces": "Evaluated/self-hosted alternative to n8n only.",
+      "Adobe XD / After Effects / Illustrator": "Design-tool exposure; keep light unless design-heavy role asks for it.",
+      "TypeScript": "Practical/current, regularly used with AI-assisted generation and manual technical control.",
+      "Vue.js": "Stronger modern frontend framework exposure than React, mostly through WeWeb/custom components.",
+      "React": "Touched/light only.",
+      "Astro": "Used in Node.js/Supabase/custom site build context."
+    },
+    "chatgpt_shared_cv_tech_survey_source": {
+      "source_file": "details/chatgpt_shared_cv_tech_survey_source.md",
+      "reviewed_at": "2026-06-02",
+      "note": "User pasted original dictated messages from the ChatGPT shared CV technology survey. These first-person dictations override softer GPT interpretations where they conflict."
+    }
+  }
 }
