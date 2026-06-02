@@ -207,7 +207,7 @@
   async function refreshStats() {
     const data = await api("/stats");
     const stats = data.stats || {};
-    setStatus(`queued=${stats.queued || 0}, opened=${stats.opened || 0}, sent=${stats.sent || 0}, replied=${stats.replied || 0}`);
+    setStatus(`total=${stats.recruiting_contacts || 0}, queued=${stats.queued || 0}, opened=${stats.opened || 0}, sent=${stats.sent || 0}, replied=${stats.replied || 0}`);
   }
 
   function buildPanel() {
@@ -247,8 +247,15 @@
         if (action === "skip") await mark("opened");
         if (action === "stats") await refreshStats();
       } catch (error) {
-        setStatus(`Error: ${error.message}. Is local server running?`);
+        if (error.message === "no_queued_contacts") {
+          setStatus("No queued contacts. Import LinkedIn Connections CSV first, or check that recruiter contacts were matched.");
+        } else {
+          setStatus(`Error: ${error.message}. Is local server running?`);
+        }
       }
+    });
+    refreshStats().catch((error) => {
+      setStatus(`Server not ready: ${error.message}`);
     });
   }
 
