@@ -67,6 +67,32 @@ Usage inside LinkedIn:
 
 The userscript does not click LinkedIn's Send button and does not send messages automatically.
 
+## If LinkedIn Export Has No Positions
+
+LinkedIn's official archive may omit current positions from the Connections CSV. In that case, use this people-search page helper:
+
+```text
+workflows/sctipts/linkedin_people_search_export.user.js
+```
+
+Open your first-degree people search:
+
+```text
+https://www.linkedin.com/search/results/people/?origin=MEMBER_PROFILE_CANNED_SEARCH&network=%5B%22F%22%5D
+```
+
+The userscript adds `Export visible people`.
+
+Use it like this:
+
+1. Wait until the current results page is loaded.
+2. Click `Export visible people`.
+3. It copies CSV to clipboard and downloads a CSV for the visible page.
+4. Manually click LinkedIn's `Next`.
+5. Repeat.
+
+This helper intentionally does not auto-click `Next` and does not scrape through pages automatically.
+
 Run a terminal-only manual campaign:
 
 ```powershell
