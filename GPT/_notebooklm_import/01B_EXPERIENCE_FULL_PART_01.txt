@@ -1,0 +1,153 @@
+﻿# 01B_EXPERIENCE_FULL_PART_01
+
+NotebookLM source title: 01B_EXPERIENCE_FULL_PART_01
+Original file included: anton_nazarov_experience_full.md
+
+---
+SOURCE_FILE: anton_nazarov_experience_full.md
+SOURCE_PART: 01B_EXPERIENCE_FULL_PART_01
+---
+
+# Anton Nazarov - Full Professional Experience
+
+Location: Belgrade, Serbia  
+Phone: +381 62 979 5315  
+Telegram: @antiokh  
+LinkedIn: https://www.linkedin.com/in/nazarovanton/  
+
+This document is a consolidated English-language version of Anton Nazarov's full professional experience, based on the repository CV, portfolio case studies, long-form source materials, and expanded resume files.
+
+It is intentionally more detailed than a standard CV. The goal is to preserve breadth, context, responsibilities, representative achievements, and recurring patterns across roles.
+
+It is designed to work as a source document for:
+- long-form executive profiles
+- tailored resumes
+- recruiter and hiring-manager conversations
+- cover letters and application answers
+- profile rewriting for public platforms
+
+## Professional Profile
+
+Anton Nazarov is a technology leader, systems architect, project manager, and hands-on builder with experience across startups, internal product teams, enterprise environments, banking, and public-sector institutions. His work repeatedly sits at the intersection of architecture, product delivery, infrastructure, automation, implementation, documentation, adoption, and organizational change.
+
+Across different stages of his career, he has operated in roles equivalent to:
+- CTO / Head of Engineering
+- Systems Architect / Solutions Architect
+- CIO / Head of IT
+- Technical Product Lead
+- Project / Implementation Manager
+- Senior Developer / Full-Stack Builder
+- Internal consultant and expert for cross-functional and government-level initiatives
+
+His strongest recurring pattern is turning fragmented workflows, weak tooling, and operational chaos into structured systems that organizations can actually run, maintain, and scale.
+
+## External Assessment Signals
+
+Two independent assessment sources in the repository broadly reinforce the same interpretation of Anton's profile.
+
+The MetaFox strengths report points most strongly to:
+- Communicator
+- Examiner
+- Inventor
+- Learner
+- Decision Maker
+
+Taken together, these strengths describe a person who creates shared understanding, checks assumptions, generates new options, learns quickly, and closes ambiguity through decisions.
+
+The HeadHunter career-guidance report points most strongly toward:
+- management
+- analytics
+- communication
+- innovation
+
+with projects, technology, control, and administration as secondary but still relevant directions.
+
+In practical terms, both assessments support the same conclusion already visible in Anton's work history: his best-fit roles are not purely isolated technical positions, but leadership and transformation roles that combine systems thinking, communication, analysis, invention, and implementation responsibility.
+
+## Cross-Cutting Themes Throughout the Career
+
+The following themes consistently appear across Anton's work:
+
+- designing and rebuilding information systems
+- digital transformation and process automation
+- technical strategy in operationally messy environments
+- process discovery and formalization of informal workflows
+- combining architecture with direct implementation
+- documentation, regulations, and process formalization
+- infrastructure management and information security
+- ERP / CRM and internal platform implementation
+- modular architecture and integration design
+- stakeholder coordination across business, technical, and institutional layers
+- rollout, training, and adoption support
+- hiring, onboarding, mentoring, and team development
+- user training, webinars, and knowledge transfer
+- AI-assisted engineering and repository-level delivery discipline
+- turning AI-assisted delivery into a managed execution environment with guardrails, checkpoints, and quality control
+
+## NeedleBit / Independent Product, Automation, and Application Development
+**Serbia**  
+**Nov 2022 - Present**  
+**Typical roles across materials:** Founder / CTO / Systems Architect / Project Manager
+
+### Scope of Work
+
+Anton founded and ran a practice focused on operational systems, PWA products, automation-heavy business tools, and modern low-code / hybrid product delivery. The work covered both client projects and internal product development and functioned as a commercial validation phase for applying enterprise transformation experience in a more market-driven environment.
+
+The core focus included:
+- rapid delivery of modern mobile and web products through Progressive Web Apps
+- building solutions independent from App Store / Google Play approval cycles
+- automation of business processes on low-code and hybrid stacks
+- integrating communication channels, customer touchpoints, and data flows into a single system
+- working directly with founders and business owners
+- defining technical strategy, system architecture, and scaling logic
+- making platform trade-offs around maintainability, ownership, cost, and adoption
+- restructuring products during growth, instability, or crisis
+
+### Delivery Pattern
+
+Within NeedleBit, Anton repeatedly operated as a full-system owner:
+- clarifying business goals and weak points in operations
+- designing product structure and information architecture
+- selecting and combining platforms such as WeWeb, Supabase, Xano, Bubble, Glide, n8n, Make, and APIs
+- building user-facing products, admin interfaces, data models, automations, and integrations
+- improving architecture and delivery discipline
+- establishing documentation, rules, and reusable engineering patterns
+- turning client and founder requirements into maintainable operational systems rather than one-off demos
+
+### Representative Outcomes
+
+Across projects documented in this repository, the work led to:
+- significant reduction of service time and manual operations
+- measurable revenue growth, including cases up to x13 after system redesign and automation
+- replacement of fragmented communication across social media, email, chat, and calls with centralized systems
+- delivery of PWA products that reduced dependency on app marketplaces
+- creation of operationally useful products for SMBs, internal teams, and niche service businesses
+
+### Engineering and AI Workflow Layer
+
+More recently, Anton extended this work into AI-native delivery practices:
+- repository-specific AI instructions and task contracts
+- architectural guardrails for AI-assisted development in VS Code
+- reusable helper layers for Supabase Edge Functions
+- auditable SQL workflows and database-to-git synchronization for PostgreSQL functions
+- prompt systems, generation pipelines, and debug interfaces in AI-assisted products
+- structured checkpoints, acceptance criteria, and quality control for agent-assisted execution
+
+### Representative Projects Under This Umbrella
+
+Examples documented in the portfolio include:
+- PromptlessPress
+- MetaFox Strengths Explorer
+- Exit Lead
+- Andronyevskaya ERP
+- French Plumbers ERP
+- Vencer Autismo
+- QR Cloud
+- Dobri Visarun
+- Dobri Tours
+- Educate Online
+- Cashdesk Accounting
+- Serbia Networking App
+- RuskaJela
+
+

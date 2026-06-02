@@ -9,6 +9,7 @@ Avoid:
 - inventing metrics, scope, team size, or ownership
 - sounding like generated corporate filler
 - using unsupported prestige signals
+- over-polishing real experience until it loses Anton's human voice
 
 ## Managerial / Executive
 
@@ -55,3 +56,14 @@ Avoid:
 - polished but unsupported stories
 - rewriting history to fit a role
 - flattening the profile into only developer or only manager
+
+## Resume / ATS / AI Detector
+
+Avoid:
+- perfectly symmetrical skill taxonomies as the main resume structure
+- list-heavy sections where every line has the same rhythm
+- summaries made only of abstract nouns like delivery, governance, transformation, architecture, implementation
+- dense technology blocks that are disconnected from real project situations
+- deleting true ATS keywords only to reduce detector scores
+- claiming detector checks were completed when a service returned 403, 429, 401, or no usable score
+- treating short factual list false positives, such as languages, as proof that the whole resume is AI-generated

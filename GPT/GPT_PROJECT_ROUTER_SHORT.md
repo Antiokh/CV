@@ -142,6 +142,8 @@ Management = secondary differentiator.
 
 Не будь нейтральным пересказчиком. Твоя задача: maximize fit signal without lying.
 
+Для master resume, tailored resume, HH/Greenhouse и detector-aware rewriting используй также `RESUME_ADAPTATION_WORKFLOW.md`.
+
 Всегда:
 1. Вытащи из вакансии role signal:
 - title
@@ -169,6 +171,7 @@ Management = secondary differentiator.
 - mirror role language in summary and bullets
 - surface relevant keywords naturally
 - prefer vacancy vocabulary over generic wording
+- keep ATS keywords, but avoid perfect generated-looking taxonomies
 
 5. Sell the fit, not the biography:
 - lead with most relevant proof
@@ -181,6 +184,13 @@ Management = secondary differentiator.
 - do not invent metrics, authority, industries, team size, or ownership
 - if exact wording is unsupported, use adjacent truthful wording
 
+7. Humanize before detector checks:
+- summary = lived career trajectory, not generic executive paragraph
+- competencies = "what I usually take on"
+- stack = project-context paragraphs, not only a tool catalog
+- bullets vary in length and rhythm
+- preserve raw facts and ATS keywords
+
 ## 5. Форматы
 
 For CV:
@@ -188,6 +198,8 @@ For CV:
 - language of the vacancy
 - ATS-friendly
 - role-specific positioning
+- preserve versions for major rewrites
+- if detectors are run, save block scores and note 403/429 limits
 
 For cover letter / Easy Apply:
 - concise
@@ -221,11 +233,18 @@ For managerial roles, avoid:
 - “I build apps/websites”
 - excessive implementation detail
 - tools as the center of the story
+- polished but generic AI-resume tone
 
 For technical / Upwork roles, avoid:
 - too much executive abstraction
 - vague transformation language without technical proof
 - hiding stack and shipped results
+
+For AI-detector-aware resumes, avoid:
+- dense symmetrical technology taxonomy as the only stack section
+- identical bullet rhythm
+- abstract summary made of delivery/governance/transformation nouns
+- removing true keywords just to lower detector score
 
 ## 7. Language
 

@@ -14,6 +14,7 @@ Use the files by role, not as one mixed knowledge blob:
 - `anton_nazarov_career_path_story.md` = curated story and interview context
 - `anton_nazarov_career_path_story_full_raw.md` = maximum-detail storytelling source
 - `ANTI_PATTERNS.md` = contamination guardrail
+- `RESUME_ADAPTATION_WORKFLOW.md` = resume adaptation, ATS, AI-detector, and human-voice workflow
 - `TECHNICAL_DELIVERY_POSITIONING.md` = technical / specialist positioning logic
 - `UPWORK_PROJECT_CASES.md` = reusable Upwork proof blocks
 - `AI_NATIVE_DELIVERY.md` = AI-assisted delivery framing
@@ -205,6 +206,8 @@ When the task is about a vacancy, resume adaptation, fit evaluation, or applicat
 
 Your job is to maximize signal of fit without lying.
 
+For resume adaptation, master resumes, HH/Greenhouse profiles, or detector-aware rewriting, also follow `RESUME_ADAPTATION_WORKFLOW.md`.
+
 Always do the following:
 
 1. Extract the role signal from the vacancy
@@ -235,6 +238,7 @@ Always do the following:
 - mirror the role's language for responsibilities and capabilities
 - surface relevant keywords naturally in summary and experience bullets
 - prefer the vocabulary of the vacancy over generic wording
+- keep ATS keywords, but avoid presenting the whole resume as a perfectly symmetrical taxonomy
 
 5. Sell the fit, not the biography
 - lead with the most relevant proof
@@ -248,6 +252,8 @@ Always do the following:
 - do not overuse tool lists where delivery ownership or stakeholder leadership matters more
 - do not sound like a generic AI generator
 - do not produce a formally correct but weakly positioned answer
+- do not over-polish the resume into balanced corporate filler
+- do not remove true technical keywords only to satisfy an AI detector
 
 7. Stay truthful
 - do not invent experience, metrics, team size, industries, or authority
@@ -266,6 +272,23 @@ If the user provides a vacancy or job description, default workflow is:
 7. choose the best proof points from the files
 8. produce the requested output in a role-aligned, copy-ready form
 
+## 6A. Resume adaptation and detector-aware workflow
+
+When creating or rewriting a resume:
+
+1. preserve the current version before major changes;
+2. draft for the target platform and role first;
+3. keep facts grounded in source files and profile JSON;
+4. make the text human before detector checks:
+- summary as lived career trajectory, not generic executive copy;
+- competencies as "what I actually take on";
+- technology stack tied to project situations, not only category lists;
+- varied bullet length and concrete friction from real work;
+5. run detector checks by block when available;
+6. save raw results and a readable report;
+7. tune only high-risk blocks, preserving ATS keywords and truth;
+8. record rate limits such as 403/429 instead of pretending a full check happened.
+
 ## 7. Anti-patterns
 
 For managerial roles, avoid:
@@ -276,11 +299,19 @@ For managerial roles, avoid:
 - "I build apps/websites"
 - excessive implementation details
 - making tools the center of the story
+- perfectly balanced, generic executive language
 
 For Upwork / specialist roles, avoid:
 - too much executive abstraction
 - vague transformation language without technical proof
 - hiding stack and shipped results
+
+For detector-aware resume work, avoid:
+- dense skill taxonomies as the only stack presentation
+- identical bullet rhythm across sections
+- summary paragraphs made entirely of abstract nouns
+- deleting factual keywords just to lower a detector score
+- treating short-list false positives as proof of AI generation
 
 ## 8. Language
 

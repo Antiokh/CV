@@ -1,0 +1,333 @@
+﻿# 01B_EXPERIENCE_FULL_PART_03
+
+NotebookLM source title: 01B_EXPERIENCE_FULL_PART_03
+Original file included: anton_nazarov_experience_full.md
+
+---
+SOURCE_FILE: anton_nazarov_experience_full.md
+SOURCE_PART: 01B_EXPERIENCE_FULL_PART_03
+---
+
+## New Business Environment
+**Moscow**  
+**Aug 2022 - Nov 2022**  
+**Role:** Implementation Curator / Product Manager
+
+Anton joined a commercial automation company to understand why clients were not adopting delivered ERP / CRM solutions strongly enough after implementation.
+
+### Core Responsibilities
+
+- diagnosing weak points in implementation and adoption
+- analyzing how clients and managers used delivered PlanFix-based systems
+- improving implementation methodology and delivery discipline
+- working on manager involvement and support logic
+- giving structured feedback to the founder on operating-model weaknesses
+
+### Key Achievements
+
+Anton:
+- analyzed where client adoption stalled after delivery
+- worked on improving implementation methodology, client communication, and post-delivery support logic
+- identified responsibility and ownership gaps inside the company's flat operating model
+- helped clarify how stronger responsibility domains could improve decision-making and delivery control
+- contributed to a clearer understanding of why adoption, retention, and follow-on support were weaker than expected
+
+### Why This Role Matters
+
+This role demonstrates Anton's ability to:
+- analyze implementation failure beyond coding quality alone
+- connect client adoption with delivery model design
+- advise founders on responsibility boundaries and operating structure
+- work as an implementation-focused operator in a commercial, non-institutional environment
+
+## Synergy JSC
+**Moscow**  
+**Nov 2016 - Mar 2017**  
+**Role:** Lotus Developer
+
+Anton worked on an internal IBM Domino-based document workflow environment used at significant scale.
+
+### Responsibilities
+
+- full-stack development on IBM Domino / Lotus platforms
+- support and development of the internal document management system
+- third-line support
+- implementation of accumulated change requests and technical improvements
+
+### Achievements
+
+- brought databases into a unified visual style
+- processed and resolved a large backlog of requested improvements accumulated over several years
+
+## Settlement and Savings Bank
+**Moscow**  
+**Jan 2013 - Sep 2015**  
+**Role:** Lead Software Developer / Systems Architect
+
+This period is important because Anton was directly involved in building a document management system from scratch in a banking environment.
+
+### Responsibilities
+
+- Lotus Notes / Domino development
+- workflow automation
+- analysis of document flows and business processes
+- supervision of another programmer
+- user training
+- administration of IBM Lotus Domino and Sametime
+
+### Key Achievements
+
+Anton:
+- worked with bank leadership to map document-routing paths that became the basis for automation requirements
+- helped reconstruct real document flows, statuses, ownership logic, and registration rules across departments
+- reviewed existing document management systems and prepared implementation assessments
+- designed and built an internal document management system from scratch using object-oriented principles
+- implemented XML integration, including export of employee data from 1C and template-based export of other datasets
+- prepared requirements for the 1C developer during integration with HR structures
+- performed testing and rollout after the system foundation was built
+- turned an opaque document-flow problem into a measurable workflow that made bottlenecks visible to leadership
+
+### Why This Role Matters
+
+It demonstrates Anton's ability to:
+- work directly with leadership on process formalization
+- handle resistance and ambiguity when informal processes must become measurable
+- translate operational flows into system architecture
+- build enterprise internal systems end to end
+- combine development with analysis, rollout, and implementation logic
+
+## IT Company / Lotus Notes Department
+**Moscow**  
+**Jan 2011 - Apr 2012**  
+**Role:** Lotus Notes Specialist
+
+Anton supported and developed an internal document management system on Lotus Notes / Domino in a systems-integration environment.
+
+### Responsibilities
+
+- Lotus Notes development
+- maintaining system operability
+- fixing issues in the internal document workflow system
+- introducing new employees to the system
+
+### Achievements
+
+- introduced XPages technology into the company for the first time
+- rewrote the core library of Boss-Referent in JavaScript / SSJS to support this
+- modified Boss-Referent for web use
+- added new modules and databases
+
+### Products and Technologies
+
+- Boss-Referent
+- LEI
+- Lotus SSJS
+- XPages
+
+## IscTravel Law Agency
+**Moscow**  
+**2012**  
+**Role:** Project-based technical specialist
+
+This source-confirmed short engagement fills the transition period between enterprise document-flow work and the later banking automation role.
+
+### What It Adds
+
+- shows movement beyond pure enterprise IT into a service-business context
+- supports the broader pattern of web, tools, and database-oriented technical work
+- confirms that Anton's cross-industry trajectory was already visible before the banking and government stages
+
+## Freelance / Private Practice
+**Moscow**  
+**Jan 2009 - Jan 2011**
+
+This period reflects early entrepreneurial and technical breadth.
+
+### Work Performed
+
+- deployed and supported private World of Warcraft and Lineage servers
+- developed and maintained websites on various CMS platforms
+- assembled and serviced personal computers
+- installed operating systems and software
+- performed cleaning, maintenance, and virus remediation
+
+### Technical Achievements
+
+- automated database updates from SVN repositories into MySQL using Bash scripts
+- configured automatic backups to cloud storage
+
+### Why This Role Matters
+
+This period shows early comfort with:
+- infrastructure and systems administration
+- scripting and automation
+- independent technical problem-solving
+- full ownership of small systems from setup to maintenance
+
+## Domodedovo Airport
+**Moscow**  
+**Sep 2008 - Sep 2009**  
+**Role:** Junior Lotus Notes Developer
+
+This was an early corporate role focused on enterprise document and workflow systems.
+
+### Responsibilities
+
+- configuration, modernization, and support of corporate document systems on Lotus Notes / Domino
+- integration of Lotus applications with third-party products through OLE
+- development of service applications and agents
+- preparation of project documentation
+- user support and consulting
+- adapting applications for user needs
+- service desk participation and collaboration with testers
+
+### Additional Note
+
+Anton entered this role through an internal training / selection process and was chosen from a larger candidate group, which indicates strong early learning ability and potential.
+
+## Additional Entrepreneurial and Organizational Experience
+
+Beyond formal IT roles, Anton also accumulated meaningful experience in event organization, coordination, and promotion.
+
+### Festival and Event Work
+
+Examples include:
+- co-organizing the "Byt Dobru" music festival in 2014-2015
+- leading a fair and volunteer team
+- training in event management, promotion, and SMM with practitioners connected to major festival and media projects
+- organizing concerts for the band "Polynya" from 2017 to 2020
+
+### Why This Matters
+
+This adds evidence of:
+- people coordination outside pure IT contexts
+- live operational management
+- event logistics and promotion
+- practical experience organizing real-world processes, not only software
+
+## Teaching, Mentoring, and Team Development
+
+Across roles, Anton repeatedly demonstrated:
+- employee training
+- onboarding and adaptation
+- mentoring of interns and team members
+- webinar-based knowledge transfer
+- coaching for managers
+- ability to explain technical and product concepts clearly
+
+This is visible in public-sector work, education work, and implementation-oriented roles.
+
+## Technical and Product Context Across the Career
+
+### Systems and Architecture
+
+- information system design
+- modular architecture
+- workflow-heavy internal systems
+- document management
+- ERP / CRM implementation
+- reporting and analytics systems
+- operational platforms
+- role-based interfaces and administrative systems
+
+### Low-Code, Hybrid, and Product Delivery
+
+- WeWeb
+- Supabase
+- Xano
+- Bubble
+- Glide
+- Webflow
+- Progressive Web Apps
+- Make / automation platforms
+- API integrations
+- Telegram integrations and Mini Apps
+
+### Engineering and AI Workflow
+
+- AI-assisted delivery in VS Code
+- repository instructions and architectural guardrails
+- helper layers for Supabase Edge Functions
+- auditable SQL workflows
+- PostgreSQL function versioning and database-to-git synchronization
+- prompt-based generation systems
+- fal.ai-backed image workflows
+- staged tasking, checkpoints, and acceptance criteria for agent-assisted delivery
+
+### Enterprise and Legacy Stack
+
+- IBM Domino / Lotus Notes
+- XPages
+- JavaScript / SSJS
+- Java
+- CSS / HTML / XML
+- SQL
+- VBA / Bash / Batch
+- 1C integration
+- NoSQL-style data work in IBM Domino environments
+
+### Infrastructure and Administration
+
+- Windows Server
+- Linux (Ubuntu, CentOS)
+- Active Directory
+- DNS / DHCP / LDAP
+- SSH / RDP
+- Hyper-V / ESXi / VMware
+- GLPI / Zabbix / Synology / Docker
+- VPN and remote-work enablement
+- server migration and maintenance
+
+## Management, Organizational, and Business Layer
+
+Anton's experience also clearly includes:
+- IT strategy
+- project management
+- technical requirement preparation
+- security and compliance awareness
+- process audit and optimization
+- implementation and adoption analysis
+- vendor and contractor management
+- hiring and adaptation of employees
+- cross-functional communication
+- direct work with top management and institutional stakeholders
+- balancing business needs, technical quality, and operational practicality
+
+## Education and Background
+
+### Formal Education
+
+- Commercial Banking College No. 6, Economics and Accounting by Industry (2006-2008)
+- АНО ВО Гуманитарный институт (г. Москва), Applied Informatics in Economics / Applied Economics in Informatics coursework (started in 2011, resumed in 2017, transferred in 2019 before graduation)
+- National Institute of Business, Bachelor's degree in Management, specialization in small business management (graduated in 2019)
+- АНО ВО Гуманитарный институт (г. Москва), professional retraining as Manager in Information Technologies, with professional activity in information technologies for economics and public administration (2019)
+
+### Additional Learning
+
+Anton also invested in:
+- zero-code / western-market product building
+- low-code and implementation training
+- Java fundamentals
+- ITIL / DevOps service thinking
+- IT management
+- negotiation and working under pressure
+- event management and promotion
+
+An important pattern in the education trajectory is that Anton deliberately strengthened the management, analytics, and implementation side of his profile rather than remaining narrowly technical. The move from an applied informatics track into a management degree reflects the same people-facing and systems-facing preference that later appears throughout his work.
+
+## Summary
+
+Taken together, Anton Nazarov's experience is not best described by a single narrow label such as "developer" or "IT manager".
+
+It is the profile of a person who:
+- can enter a complex environment and understand it at architectural level
+- can build or rebuild systems, infrastructure, processes, and governance
+- can translate organizational problems into formalized technical solutions
+- can combine hands-on implementation, architecture, delivery, adoption, training, and internal diplomacy
+- has proven experience in both enterprise / government environments and startup / low-code / SMB contexts
+- increasingly works through AI-assisted engineering workflows without losing technical discipline
+
+The most accurate high-level description is:
+
+**Technology leader and systems architect with strong hands-on delivery ability, operational depth, and cross-domain ownership.**
+

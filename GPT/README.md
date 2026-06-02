@@ -18,6 +18,7 @@ Core active:
 - `anton_nazarov_experience_full.md`
 - `Positioning-archetypes-routing.txt`
 - `ANTI_PATTERNS.md`
+- `RESUME_ADAPTATION_WORKFLOW.md`
 
 Track-specific:
 - `EXECUTIVE_POSITIONING.md`
@@ -48,6 +49,7 @@ Secondary:
 - `anton_nazarov_career_path_story.md` - curated career-story layer
 - `anton_nazarov_career_path_story_full_raw.md` - maximum-detail raw story
 - `ANTI_PATTERNS.md` - narrative guardrail
+- `RESUME_ADAPTATION_WORKFLOW.md` - ATS, detector-aware resume adaptation, versioning, and human-voice workflow
 - `TECHNICAL_DELIVERY_POSITIONING.md` - technical positioning logic
 - `UPWORK_PROJECT_CASES.md` - reusable Upwork proof blocks
 - `AI_NATIVE_DELIVERY.md` - AI-assisted delivery framing
