@@ -74,8 +74,9 @@ Key outcomes:
 
 ## Education
 
-- Bachelor in Management
-- Professional retraining in IT for Economics and Government
+- Bachelor in Management, Small Business Management specialization, National Institute of Business, Moscow, 2019
+- Professional retraining: Manager in Information Technologies, Humanities Institute, Moscow, 2019
+- Applied Informatics in Economics / Applied Economics in Informatics coursework, Humanities Institute, Moscow, 2011-2019; later transferred before graduation
 - Background in Accounting and Finance
 
 ## Languages

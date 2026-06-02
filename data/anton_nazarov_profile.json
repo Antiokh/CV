@@ -1270,36 +1270,51 @@
         "source_status": "confirmed in docx and PDF resume sources"
       },
       {
-        "program": "Applied Informatics in Economics",
+        "program": "Applied Informatics in Economics / Applied Economics in Informatics coursework",
+        "program_original_ru_user_stated": "Прикладная экономика в информатике",
         "specialization": null,
-        "field": "Applied Informatics / Economics",
+        "field": "Applied Informatics / Economics / IT management track",
         "institution": "АНО ВО Гуманитарный институт (г. Москва)",
         "year_from": 2011,
-        "year_to": 2018,
-        "status": "transferred",
-        "notes": "Started as computer science in economics, later shifted academic emphasis toward management and analytics.",
-        "source_status": "confirmed in PDF resume source"
+        "year_to": 2019,
+        "status": "transferred before graduation",
+        "timeline_notes": "Started in 2011, had an academic pause, reinstated in 2017, closed academic backlog, and transferred in 2019 before graduation due to the institute's accreditation issue.",
+        "resume_safe_notes": "Use as coursework/background rather than as a completed degree.",
+        "source_status": "confirmed by user clarification; exact program wording preserved from user statement"
       },
       {
         "program": "Bachelor in Management",
         "specialization": "Small Business Management",
-        "field": "Management",
+        "field": "38.03.02 Management",
         "institution": "National Institute of Business, Moscow",
-        "year_from": 2018,
+        "year_from": 2019,
         "year_to": 2019,
-        "notes": "Chosen deliberately to strengthen management, QA, and analytics for leadership-oriented IT roles.",
-        "source_status": "confirmed in docx and PDF resume sources"
+        "degree": "Bachelor",
+        "qualification_ru": "бакалавр",
+        "state_final_attestation_date": "2019-05-17",
+        "diploma_issue_date": "2019-05-28",
+        "diploma_registration_number": "28786",
+        "notes": "Transferred in 2019 from Humanities Institute and completed the bachelor degree at National Institute of Business.",
+        "source_file": "sources/education/national_institute_of_business_bachelor_management_2019.jpg",
+        "source_status": "confirmed by diploma image and user clarification"
       }
     ],
     "professional_retraining": [
       {
-        "program": "Professional retraining in IT for Economics and Government",
-        "field": "IT / economics / public-sector systems",
-        "institution": "АНО ВО Гуманитарный институт (г. Москва), Center for Additional Education",
-        "year_from": 2011,
+        "program": "Professional retraining: Manager in Information Technologies",
+        "program_ru": "Профессиональная переподготовка: менеджер по информационным технологиям",
+        "qualification_ru": "менеджера по информационным технологиям",
+        "field": "Information technologies in economics and public administration",
+        "field_ru": "Информационные технологии в экономике и государственном управлении",
+        "institution": "АНО ВО Гуманитарный институт (г. Москва)",
+        "year_from": 2019,
         "year_to": 2019,
-        "notes": "IT coursework was consolidated into the retraining diploma after the degree-track move into management.",
-        "source_status": "confirmed in docx and PDF resume sources"
+        "decision_date": "2019-07-05",
+        "diploma_issue_date": "2019-07-05",
+        "diploma_registration_number": "06-41/036",
+        "notes": "User described this as retraining in IT management; diploma wording confirms qualification as manager in information technologies.",
+        "source_file": "sources/education/humanities_institute_it_management_retraining_diploma_2019.jpg",
+        "source_status": "confirmed by diploma image and user clarification"
       }
     ],
     "continuing_education": [
@@ -1424,7 +1439,13 @@
         ]
       }
     ],
-    "summary": "Education combines management, accounting/finance, IT retraining, implementation-focused continuous learning, and later teaching."
+    "summary": "Education combines accounting/finance, applied informatics/economics coursework, a completed Bachelor in Management, professional retraining as Manager in Information Technologies, implementation-focused continuous learning, and later teaching.",
+    "education_timeline_note": "Started at Humanities Institute in 2011, paused, reinstated in 2017, transferred in 2019 because of the institute accreditation issue, and graduated from National Institute of Business in 2019.",
+    "source_files": [
+      "details/anton_nazarov_education_path_raw.md",
+      "sources/education/humanities_institute_it_management_retraining_diploma_2019.jpg",
+      "sources/education/national_institute_of_business_bachelor_management_2019.jpg"
+    ]
   },
   "additional_experience": [
     "event organization up to 10,000+ participants",
