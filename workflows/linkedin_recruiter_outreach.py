@@ -13,6 +13,7 @@ from __future__ import annotations
 import argparse
 import csv
 import datetime as dt
+import json
 import os
 import random
 import re
@@ -22,10 +23,14 @@ import sys
 import textwrap
 import time
 import webbrowser
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
+from urllib.parse import parse_qs, urlparse
 
 
 DEFAULT_DB = Path("data/linkedin_recruiter_outreach.sqlite")
+DEFAULT_HOST = "127.0.0.1"
+DEFAULT_PORT = 8765
 
 RECRUITER_PATTERNS = [
     r"\brecruit(er|ing|ment)?\b",
@@ -148,6 +153,22 @@ def render_message(template: str, contact: sqlite3.Row | dict[str, str]) -> str:
         "position": contact["position"] or "",
     }
     return template.format(**values)
+
+
+def contact_payload(row: sqlite3.Row) -> dict[str, object]:
+    return {
+        "id": row["id"],
+        "first_name": row["first_name"],
+        "last_name": row["last_name"],
+        "full_name": row["full_name"],
+        "profile_url": row["profile_url"],
+        "email": row["email"],
+        "company": row["company"],
+        "position": row["position"],
+        "connected_on": row["connected_on"],
+        "status": row["status"],
+        "message": row["message"],
+    }
 
 
 def load_template(path: Path | None) -> str:
@@ -501,6 +522,136 @@ def mark(conn: sqlite3.Connection, contact_id: int, status: str, notes: str | No
     print(f"Contact {contact_id} marked as {status}.")
 
 
+def next_for_api(conn: sqlite3.Connection, include_opened: bool = False) -> sqlite3.Row | None:
+    init_db(conn)
+    statuses = ("queued", "opened") if include_opened else ("queued",)
+    placeholders = ",".join("?" for _ in statuses)
+    row = conn.execute(
+        f"""
+        SELECT c.*, o.status, o.message
+          FROM contacts c
+          JOIN outreach o ON o.contact_id = c.id
+         WHERE o.status IN ({placeholders})
+         ORDER BY
+              CASE WHEN c.connected_on IS NULL OR c.connected_on = '' THEN 1 ELSE 0 END,
+              c.connected_on DESC,
+              o.updated_at ASC
+         LIMIT 1
+        """,
+        statuses,
+    ).fetchone()
+    if not row:
+        return None
+
+    now = utc_now()
+    conn.execute(
+        "UPDATE outreach SET status = 'opened', opened_at = COALESCE(opened_at, ?), updated_at = ? WHERE contact_id = ?",
+        (now, now, row["id"]),
+    )
+    conn.commit()
+    return conn.execute(
+        """
+        SELECT c.*, o.status, o.message
+          FROM contacts c
+          JOIN outreach o ON o.contact_id = c.id
+         WHERE c.id = ?
+        """,
+        (row["id"],),
+    ).fetchone()
+
+
+def outreach_stats(conn: sqlite3.Connection) -> dict[str, int]:
+    init_db(conn)
+    rows = conn.execute(
+        "SELECT status, COUNT(*) AS count FROM outreach GROUP BY status ORDER BY status"
+    ).fetchall()
+    stats = {row["status"]: row["count"] for row in rows}
+    stats["recruiting_contacts"] = conn.execute(
+        "SELECT COUNT(*) FROM contacts WHERE is_recruiting_contact = 1"
+    ).fetchone()[0]
+    return stats
+
+
+def serve_api(db_path: Path, host: str, port: int) -> None:
+    class Handler(BaseHTTPRequestHandler):
+        server_version = "LinkedInRecruiterOutreach/0.1"
+
+        def _send_json(self, status: int, payload: dict[str, object]) -> None:
+            body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
+            self.send_response(status)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Content-Length", str(len(body)))
+            self.send_header("Access-Control-Allow-Origin", "https://www.linkedin.com")
+            self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+            self.send_header("Access-Control-Allow-Headers", "Content-Type")
+            self.end_headers()
+            self.wfile.write(body)
+
+        def do_OPTIONS(self) -> None:  # noqa: N802
+            self._send_json(200, {"ok": True})
+
+        def do_GET(self) -> None:  # noqa: N802
+            parsed = urlparse(self.path)
+            conn = connect(db_path)
+            try:
+                if parsed.path == "/health":
+                    self._send_json(200, {"ok": True})
+                    return
+                if parsed.path == "/stats":
+                    self._send_json(200, {"ok": True, "stats": outreach_stats(conn)})
+                    return
+                if parsed.path == "/next":
+                    params = parse_qs(parsed.query)
+                    include_opened = params.get("include_opened", ["0"])[0] in ("1", "true", "yes")
+                    row = next_for_api(conn, include_opened=include_opened)
+                    if not row:
+                        self._send_json(404, {"ok": False, "error": "no_queued_contacts"})
+                        return
+                    self._send_json(200, {"ok": True, "contact": contact_payload(row)})
+                    return
+                self._send_json(404, {"ok": False, "error": "not_found"})
+            finally:
+                conn.close()
+
+        def do_POST(self) -> None:  # noqa: N802
+            parsed = urlparse(self.path)
+            length = int(self.headers.get("Content-Length", "0") or "0")
+            raw = self.rfile.read(length).decode("utf-8") if length else "{}"
+            try:
+                data = json.loads(raw)
+            except json.JSONDecodeError:
+                self._send_json(400, {"ok": False, "error": "invalid_json"})
+                return
+
+            conn = connect(db_path)
+            try:
+                if parsed.path == "/mark":
+                    contact_id = int(data.get("id") or 0)
+                    status = str(data.get("status") or "")
+                    notes = data.get("notes")
+                    if status not in {"queued", "opened", "sent", "replied", "not_relevant", "snoozed"}:
+                        self._send_json(400, {"ok": False, "error": "invalid_status"})
+                        return
+                    if contact_id <= 0:
+                        self._send_json(400, {"ok": False, "error": "invalid_id"})
+                        return
+                    mark(conn, contact_id, status, str(notes) if notes is not None else None)
+                    self._send_json(200, {"ok": True})
+                    return
+                self._send_json(404, {"ok": False, "error": "not_found"})
+            finally:
+                conn.close()
+
+        def log_message(self, fmt: str, *args: object) -> None:
+            print(f"[server] {self.address_string()} {fmt % args}")
+
+    init_db(connect(db_path))
+    server = ThreadingHTTPServer((host, port), Handler)
+    print(f"LinkedIn outreach helper API running at http://{host}:{port}")
+    print("Use the userscript buttons inside LinkedIn. Press Ctrl+C here to stop.")
+    server.serve_forever()
+
+
 def export_queue(conn: sqlite3.Connection, output: Path) -> None:
     init_db(conn)
     rows = conn.execute(
@@ -561,6 +712,10 @@ def main() -> None:
     p_export = sub.add_parser("export", help="Export recruiting queue to CSV.")
     p_export.add_argument("output", type=Path)
 
+    p_serve = sub.add_parser("serve", help="Run local API for the LinkedIn userscript.")
+    p_serve.add_argument("--host", default=DEFAULT_HOST)
+    p_serve.add_argument("--port", type=int, default=DEFAULT_PORT)
+
     args = parser.parse_args()
     conn = connect(args.db)
 
@@ -580,6 +735,9 @@ def main() -> None:
         mark(conn, args.id, args.status, args.notes)
     elif args.cmd == "export":
         export_queue(conn, args.output)
+    elif args.cmd == "serve":
+        conn.close()
+        serve_api(args.db, args.host, args.port)
 
 
 if __name__ == "__main__":

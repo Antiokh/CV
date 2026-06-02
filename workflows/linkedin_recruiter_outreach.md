@@ -44,10 +44,33 @@ Open next profile and copy draft message:
 python workflows\linkedin_recruiter_outreach.py open-next --copy
 ```
 
-Run a manual campaign with random 1-5 minute pauses:
+Run a local helper server for the LinkedIn userscript:
 
 ```powershell
-python workflows\linkedin_recruiter_outreach.py manual-campaign --copy --min-delay 60 --max-delay 300 --limit 20
+python workflows\linkedin_recruiter_outreach.py serve
+```
+
+Install the userscript:
+
+```text
+workflows/sctipts/linkedin_recruiter_next.user.js
+```
+
+Usage inside LinkedIn:
+
+1. Start the local server with `serve`.
+2. Open LinkedIn.
+3. Click `Next` in the bottom-right panel.
+4. The script opens the next queued profile and copies the message draft.
+5. Open the LinkedIn message box manually, paste, review, and send manually.
+6. Click `Mark sent` or `Sent + Next`.
+
+The userscript does not click LinkedIn's Send button and does not send messages automatically.
+
+Run a terminal-only manual campaign:
+
+```powershell
+python workflows\linkedin_recruiter_outreach.py manual-campaign --copy --min-delay 0 --max-delay 0 --limit 20
 ```
 
 This mode does not send messages automatically. It opens each profile, copies the draft, waits for manual sending, records the status after confirmation, and only then waits before the next profile.
