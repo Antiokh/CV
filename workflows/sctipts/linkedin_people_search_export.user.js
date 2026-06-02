@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         LinkedIn People Search Page Export
 // @namespace    https://needlebit.dev/
-// @version      0.2.0
-// @description  Exports currently visible LinkedIn people-search result cards to CSV. Does not auto-paginate or send messages.
+// @version      0.3.0
+// @description  Exports currently visible LinkedIn people-search result cards to CSV, then advances one page after the user clicks export. Does not send messages.
 // @match        https://www.linkedin.com/search/results/people/*
 // @match        https://*.linkedin.com/search/results/people/*
 // @run-at       document-idle
@@ -219,6 +219,20 @@
     return normalizeText(active?.textContent || "");
   }
 
+  function findNextButton() {
+    const selectors = [
+      '[data-testid="pagination-controls-next-button-visible"]',
+      'button[aria-label="Next"]',
+      'button[aria-label*="Next"]',
+    ];
+    for (const selector of selectors) {
+      const button = document.querySelector(selector);
+      if (button && !button.disabled && button.getAttribute("aria-disabled") !== "true") return button;
+    }
+    return [...document.querySelectorAll("button")]
+      .find((button) => normalizeText(button.textContent || "") === "Next" && !button.disabled);
+  }
+
   function extractCards() {
     const cards = candidateCards();
     const seen = new Set();
@@ -294,7 +308,13 @@
     const csv = toCsv(rows);
     await copyText(csv);
     const filename = downloadCsv(csv, rows);
-    setStatus(`Exported ${rows.length} visible rows.\nCopied CSV to clipboard.\nDownloaded: ${filename}\nManually click LinkedIn Next, then export again.`);
+    const nextButton = findNextButton();
+    if (nextButton) {
+      setStatus(`Exported ${rows.length} visible rows.\nCopied CSV to clipboard.\nDownloaded: ${filename}\nClicking LinkedIn Next...`);
+      setTimeout(() => nextButton.click(), 350);
+    } else {
+      setStatus(`Exported ${rows.length} visible rows.\nCopied CSV to clipboard.\nDownloaded: ${filename}\nLinkedIn Next button was not found.`);
+    }
   }
 
   function buildButton() {
