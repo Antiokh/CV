@@ -1,0 +1,89 @@
+[
+  {
+    "block": "Header",
+    "chars": 228,
+    "words": 25,
+    "status": "ok",
+    "score": 10,
+    "label": "Human Written",
+    "confidence": "High",
+    "source": "previous successful rerun; block unchanged after Core Skills rewrite"
+  },
+  {
+    "block": "Summary",
+    "chars": 1256,
+    "words": 187,
+    "status": "ok",
+    "score": 25,
+    "label": "Human Written",
+    "confidence": "High",
+    "source": "targeted rerun after Core Skills rewrite"
+  },
+  {
+    "block": "Core Skills",
+    "chars": 803,
+    "words": 118,
+    "status": "ok",
+    "score": 35,
+    "label": "Human Written",
+    "confidence": "High",
+    "source": "targeted rerun after Core Skills rewrite"
+  },
+  {
+    "block": "Technical Stack",
+    "chars": 2475,
+    "words": 330,
+    "status": "ok",
+    "score": 25,
+    "label": "Human Written",
+    "confidence": "High",
+    "source": "targeted rerun after Core Skills rewrite"
+  },
+  {
+    "block": "Professional Experience",
+    "chars": 12807,
+    "words": 1777,
+    "status": "ok",
+    "score": 25,
+    "label": "Human Written",
+    "confidence": "High",
+    "source": "targeted rerun after Core Skills rewrite"
+  },
+  {
+    "block": "Education",
+    "chars": 476,
+    "words": 56,
+    "status": "ok",
+    "score": 25,
+    "label": "Human Written",
+    "confidence": "High",
+    "source": "previous successful rerun; block unchanged after Core Skills rewrite"
+  },
+  {
+    "block": "Professional Development",
+    "chars": 417,
+    "words": 52,
+    "status": "ok",
+    "score": 25,
+    "label": "Human Written",
+    "confidence": "High",
+    "source": "previous successful rerun; block unchanged after Core Skills rewrite"
+  },
+  {
+    "block": "Languages",
+    "chars": 65,
+    "words": 8,
+    "status": "ok",
+    "score": 10,
+    "label": "Human Written",
+    "confidence": "High",
+    "source": "previous successful rerun; block unchanged after Core Skills rewrite"
+  },
+  {
+    "block": "Additional Experience",
+    "chars": 309,
+    "words": 43,
+    "status": "not_rerun",
+    "source": "not rerun to avoid triggering 429; previous check was blocked or unavailable"
+  }
+]

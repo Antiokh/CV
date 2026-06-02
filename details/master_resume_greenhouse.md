@@ -18,15 +18,9 @@ Recent work is closer to CTO / solution architect delivery: Supabase/PostgreSQL 
 
 ## Core Skills
 
-What I usually take ownership of:
+Most of my work starts before there is a clean specification. Someone has a process that half-lives in Excel, email, old databases, access rules, and local habits. I pull that apart with stakeholders, then turn it into something a team can build and users can actually operate: data model, roles, statuses, integrations, reports, permissions, documentation, and support routines.
 
-- turning a messy process into a working system model: roles, statuses, routes, data, access rules, and support boundaries;
-- designing backend structure, database tables, integrations, and permission logic so the product can keep growing after launch;
-- carrying implementation through the uncomfortable first weeks: documentation, training, user questions, fixes, and adoption gaps;
-- leading small technical teams or vendors through priorities, task structure, review, onboarding, and probation-period expectations;
-- modernizing legacy systems without suddenly breaking the tools people still depend on every day;
-- keeping development, IT operations, HelpDesk, infrastructure, Active Directory, and basic security in one practical picture;
-- using AI tools as part of an engineering workflow: prompts, guardrails, validation checks, schema synchronization, and documentation loops.
+I can stay hands-on enough to understand backend, database, and API decisions, but I also take responsibility for rollout, training, task structure, small-team leadership, vendor coordination, and the parts of implementation where users find edge cases. The same pattern now applies to AI-assisted delivery: prompts, guardrails, validation checks, schema sync, and review loops instead of casual prompting.
 
 ## Technical Stack
 
