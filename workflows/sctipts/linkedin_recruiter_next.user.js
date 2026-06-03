@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         LinkedIn Recruiter Outreach Next
 // @namespace    https://needlebit.dev/
-// @version      0.4.0
+// @version      0.5.0
 // @description  Manual LinkedIn outreach panel: get next queued recruiter, copy draft, mark sent. Does not send messages automatically.
 // @match        https://www.linkedin.com/*
 // @match        https://*.linkedin.com/*
@@ -11,7 +11,9 @@
 // @grant        GM_xmlhttpRequest
 // @grant        GM.xmlHttpRequest
 // @connect      127.0.0.1
+// @connect      127.0.0.1:8765
 // @connect      localhost
+// @connect      localhost:8765
 // ==/UserScript==
 
 (function () {
@@ -20,6 +22,7 @@
   const API = "http://127.0.0.1:8765";
   const STYLE_ID = "li-recruiter-next-style";
   const PANEL_ID = "li-recruiter-next-panel";
+  const CONTACT_STORAGE_KEY = "li-recruiter-next-current-contact";
 
   let currentContact = null;
 
@@ -132,6 +135,26 @@
   function setStatus(text) {
     const node = document.querySelector(`#${PANEL_ID} .liro-status`);
     if (node) node.textContent = text || "";
+  }
+
+  function saveCurrentContact(contact) {
+    if (!contact?.id) return;
+    sessionStorage.setItem(CONTACT_STORAGE_KEY, JSON.stringify(contact));
+  }
+
+  function loadSavedContact() {
+    const raw = sessionStorage.getItem(CONTACT_STORAGE_KEY);
+    if (!raw) return null;
+    try {
+      return JSON.parse(raw);
+    } catch {
+      sessionStorage.removeItem(CONTACT_STORAGE_KEY);
+      return null;
+    }
+  }
+
+  function clearSavedContact() {
+    sessionStorage.removeItem(CONTACT_STORAGE_KEY);
   }
 
   function withTimeout(promiseFactory, label) {
@@ -257,6 +280,7 @@
 
   function renderContact(contact) {
     currentContact = contact;
+    saveCurrentContact(contact);
     const info = [
       `[${contact.id}] ${contact.full_name || ""}`,
       contact.position || "",
@@ -298,6 +322,12 @@
       }),
     });
     setStatus(`Marked ${currentContact.full_name} as ${status}.`);
+    if (status === "sent") {
+      clearSavedContact();
+      currentContact = null;
+      document.querySelector(`#${PANEL_ID} .liro-contact`).textContent = "No contact loaded";
+      document.querySelector(`#${PANEL_ID} textarea`).value = "";
+    }
     await refreshStats();
   }
 
@@ -347,6 +377,11 @@
     `;
     document.body.appendChild(panel);
     setApiStatus("Checking API...", null);
+    const savedContact = loadSavedContact();
+    if (savedContact) {
+      renderContact(savedContact);
+      setStatus("Restored loaded contact after LinkedIn navigation. Send manually, then press Mark sent.");
+    }
     panel.addEventListener("click", async (event) => {
       const button = event.target.closest("button[data-action]");
       if (!button) return;
