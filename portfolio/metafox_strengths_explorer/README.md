@@ -12,7 +12,7 @@ The core challenge of the project was translating an evolving psychometric metho
 
 ## My Role
 
-Developer, Project Manager
+Full product owner and builder from idea to release: concept, product management, architecture, design, implementation, testing, customer communication, feedback handling, and release.
 
 ---
 

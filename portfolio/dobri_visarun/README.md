@@ -12,7 +12,7 @@ The project demonstrates how a simple but well-structured automation system can 
 
 ## My Role
 
-Developer
+Full product owner and builder from idea to release: concept, workflow design, implementation, testing, client feedback, and release.
 
 ---
 
