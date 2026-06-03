@@ -177,7 +177,12 @@ def load_template(path: Path | None) -> str:
     return path.read_text(encoding="utf-8")
 
 
-def upsert_contact(conn: sqlite3.Connection, contact: dict[str, str], template: str) -> int:
+def upsert_contact(
+    conn: sqlite3.Connection,
+    contact: dict[str, str],
+    template: str,
+    include_all: bool = False,
+) -> int:
     now = utc_now()
     is_recruiter, reason = detect_recruiter(contact["position"], contact["company"])
     contact["is_recruiting_contact"] = 1 if is_recruiter else 0
@@ -253,17 +258,31 @@ def upsert_contact(conn: sqlite3.Connection, contact: dict[str, str], template: 
             INSERT INTO outreach (contact_id, status, message, updated_at)
             VALUES (?, 'queued', ?, ?)
             ON CONFLICT(contact_id) DO UPDATE SET
+                status = 'queued',
                 message = excluded.message,
                 updated_at = excluded.updated_at
-            WHERE outreach.status IN ('queued', 'opened')
+            WHERE outreach.status IN ('queued', 'opened', 'skipped_non_recruiting')
             """,
             (contact_id, message, now),
+        )
+    elif include_all:
+        conn.execute(
+            """
+            INSERT INTO outreach (contact_id, status, message, notes, updated_at)
+            VALUES (?, 'skipped_non_recruiting', '', 'Imported for history; not matched as HR/recruiter/talent', ?)
+            ON CONFLICT(contact_id) DO UPDATE SET
+                status = excluded.status,
+                notes = COALESCE(outreach.notes, excluded.notes),
+                updated_at = excluded.updated_at
+            WHERE outreach.status IN ('queued', 'opened', 'skipped_non_recruiting')
+            """,
+            (contact_id, now),
         )
 
     return contact_id
 
 
-def import_csv(conn: sqlite3.Connection, csv_path: Path, template: str) -> None:
+def import_csv(conn: sqlite3.Connection, csv_path: Path, template: str, include_all: bool = False) -> None:
     init_db(conn)
     with csv_path.open("r", encoding="utf-8-sig", newline="") as f:
         reader = csv.DictReader(f)
@@ -294,7 +313,7 @@ def import_csv(conn: sqlite3.Connection, csv_path: Path, template: str) -> None:
             "position": get_value(row, "Position", "Title", "Job Title"),
             "connected_on": get_value(row, "Connected On", "Connected"),
         }
-        upsert_contact(conn, contact, template)
+        upsert_contact(conn, contact, template, include_all=include_all)
         imported += 1
         if detect_recruiter(contact["position"], contact["company"])[0]:
             matched += 1
@@ -302,6 +321,9 @@ def import_csv(conn: sqlite3.Connection, csv_path: Path, template: str) -> None:
     conn.commit()
     print(f"Imported/updated contacts: {imported}")
     print(f"Likely HR/recruiter/talent contacts queued: {matched}")
+    if include_all:
+        skipped = imported - matched
+        print(f"Non-recruiting contacts marked skipped_non_recruiting: {skipped}")
 
 
 def list_contacts(conn: sqlite3.Connection, status: str | None, limit: int) -> None:
@@ -686,9 +708,17 @@ def main() -> None:
     p_import = sub.add_parser("import-csv", help="Import official LinkedIn Connections CSV export.")
     p_import.add_argument("csv_path", type=Path)
     p_import.add_argument("--template", type=Path, help="Optional UTF-8 text message template.")
+    p_import.add_argument(
+        "--include-all",
+        action="store_true",
+        help="Import every connection. Non-recruiting contacts get outreach status skipped_non_recruiting.",
+    )
 
     p_list = sub.add_parser("list", help="List likely recruiting contacts.")
-    p_list.add_argument("--status", choices=["queued", "opened", "sent", "replied", "not_relevant", "snoozed"])
+    p_list.add_argument(
+        "--status",
+        choices=["queued", "opened", "sent", "replied", "not_relevant", "snoozed", "skipped_non_recruiting"],
+    )
     p_list.add_argument("--limit", type=int, default=50)
 
     p_open = sub.add_parser("open-next", help="Print/copy next message and open profile for manual sending.")
@@ -706,7 +736,10 @@ def main() -> None:
 
     p_mark = sub.add_parser("mark", help="Mark contact outreach status.")
     p_mark.add_argument("id", type=int)
-    p_mark.add_argument("status", choices=["queued", "opened", "sent", "replied", "not_relevant", "snoozed"])
+    p_mark.add_argument(
+        "status",
+        choices=["queued", "opened", "sent", "replied", "not_relevant", "snoozed", "skipped_non_recruiting"],
+    )
     p_mark.add_argument("--notes")
 
     p_export = sub.add_parser("export", help="Export recruiting queue to CSV.")
@@ -724,7 +757,7 @@ def main() -> None:
         print(f"Initialized {args.db}")
     elif args.cmd == "import-csv":
         template = load_template(args.template)
-        import_csv(conn, args.csv_path, template)
+        import_csv(conn, args.csv_path, template, include_all=args.include_all)
     elif args.cmd == "list":
         list_contacts(conn, args.status, args.limit)
     elif args.cmd == "open-next":
