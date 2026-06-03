@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         LinkedIn People Search Page Export
 // @namespace    https://needlebit.dev/
-// @version      0.3.0
-// @description  Exports currently visible LinkedIn people-search result cards to CSV, then advances one page after the user clicks export. Does not send messages.
+// @version      0.4.0
+// @description  Exports currently visible LinkedIn people-search result cards to CSV, then advances one page in an automated loop with random delay (10-15s).
 // @match        https://www.linkedin.com/search/results/people/*
 // @match        https://*.linkedin.com/search/results/people/*
 // @run-at       document-idle
@@ -13,8 +13,12 @@
   "use strict";
 
   const BUTTON_ID = "li-people-export-button";
+  const STOP_BUTTON_ID = "li-people-export-stop-button";
   const STATUS_ID = "li-people-export-status";
   const STYLE_ID = "li-people-export-style";
+
+  let isAutoRunning = false;
+  let autoTimer = null;
 
   const css = `
     #${BUTTON_ID} {
@@ -32,6 +36,24 @@
       box-shadow: 0 10px 30px rgba(0,0,0,.25);
     }
     #${BUTTON_ID}:hover { background: #004182; }
+
+    #${STOP_BUTTON_ID} {
+      position: fixed;
+      left: 190px;
+      bottom: 16px;
+      z-index: 2147483647;
+      border: 1px solid #cc0000;
+      background: #d93838;
+      color: #fff;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font: 700 14px/1 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      display: none;
+    }
+    #${STOP_BUTTON_ID}:hover { background: #b30000; }
+
     #${STATUS_ID} {
       position: fixed;
       left: 16px;
@@ -298,39 +320,103 @@
     return navigator.clipboard.writeText(text);
   }
 
+  function stopAutoLoop() {
+    isAutoRunning = false;
+    if (autoTimer) {
+      clearTimeout(autoTimer);
+      autoTimer = null;
+    }
+    const stopBtn = document.getElementById(STOP_BUTTON_ID);
+    if (stopBtn) stopBtn.style.display = "none";
+    const startBtn = document.getElementById(BUTTON_ID);
+    if (startBtn) startBtn.textContent = "Export visible people";
+    setStatus("Automation stopped.");
+  }
+
   async function exportCurrentPage() {
     const rows = extractCards();
     if (!rows.length) {
       const profileLinks = document.querySelectorAll('main a[href*="/in/"], section[aria-label="Primary content"] a[href*="/in/"]').length;
-      setStatus(`No visible people-search result cards found.\nProfile links seen in page body: ${profileLinks}.\nScroll a bit, wait for LinkedIn to finish loading, or send me a fresh HTML anchor sample.`);
+      setStatus(`No visible people-search result cards found.\nProfile links seen in page body: ${profileLinks}.\nScroll a bit, wait for LinkedIn to finish loading.`);
+      if (isAutoRunning) stopAutoLoop();
       return;
     }
     const csv = toCsv(rows);
     await copyText(csv);
     const filename = downloadCsv(csv, rows);
     const nextButton = findNextButton();
+
     if (nextButton) {
-      setStatus(`Exported ${rows.length} visible rows.\nCopied CSV to clipboard.\nDownloaded: ${filename}\nClicking LinkedIn Next...`);
-      setTimeout(() => nextButton.click(), 350);
+      if (isAutoRunning) {
+        // Вычисляем случайную задержку от 10 до 15 секунд
+        const delay = Math.floor(Math.random() * (15000 - 10000 + 1)) + 10000;
+        setStatus(`Exported ${rows.length} rows.\nCopied CSV to clipboard.\nDownloaded: ${filename}\nWaiting ${delay / 1000}s before clicking Next...`);
+
+        autoTimer = setTimeout(() => {
+          if (!isAutoRunning) return;
+          nextButton.click();
+
+          // Ждем 4 секунды после клика на Next, чтобы страница успела подгрузиться, и запускаем экспорт снова
+          autoTimer = setTimeout(() => {
+            if (!isAutoRunning) return;
+            exportCurrentPage().catch((error) => {
+              setStatus(`Export failed: ${error.message}`);
+              stopAutoLoop();
+            });
+          }, 4000);
+
+        }, delay);
+      } else {
+        setStatus(`Exported ${rows.length} visible rows.\nCopied CSV to clipboard.\nDownloaded: ${filename}\nClicking LinkedIn Next...`);
+        setTimeout(() => nextButton.click(), 350);
+      }
     } else {
-      setStatus(`Exported ${rows.length} visible rows.\nCopied CSV to clipboard.\nDownloaded: ${filename}\nLinkedIn Next button was not found.`);
+      setStatus(`Exported ${rows.length} visible rows.\nCopied CSV to clipboard.\nDownloaded: ${filename}\nLinkedIn Next button was not found. Loop finished.`);
+      if (isAutoRunning) stopAutoLoop();
     }
   }
 
   function buildButton() {
     if (document.getElementById(BUTTON_ID)) return;
+
     const status = document.createElement("div");
     status.id = STATUS_ID;
+
     const button = document.createElement("button");
     button.id = BUTTON_ID;
     button.type = "button";
     button.textContent = "Export visible people";
+
+    const stopButton = document.createElement("button");
+    stopButton.id = STOP_BUTTON_ID;
+    stopButton.type = "button";
+    stopButton.textContent = "Stop Auto";
+
     button.addEventListener("click", () => {
-      exportCurrentPage().catch((error) => setStatus(`Export failed: ${error.message}`));
+      if (isAutoRunning) return;
+      isAutoRunning = true;
+      button.textContent = "Auto Running...";
+      stopButton.style.display = "block";
+      exportCurrentPage().catch((error) => {
+        setStatus(`Export failed: ${error.message}`);
+        stopAutoLoop();
+      });
     });
+
+    stopButton.addEventListener("click", stopAutoLoop);
+
     document.body.appendChild(status);
     document.body.appendChild(button);
+    document.body.appendChild(stopButton);
   }
+
+  // Перезапуск интерфейса при AJAX-переходах (когда меняется URL страницы внутри LinkedIn)
+  const observer = new MutationObserver(() => {
+    if (window.location.href.includes("/search/results/people/")) {
+      buildButton();
+    }
+  });
+  observer.observe(document.body, { childList: true, subtree: true });
 
   injectStyle();
   buildButton();
