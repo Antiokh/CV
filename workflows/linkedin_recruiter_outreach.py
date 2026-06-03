@@ -13,6 +13,7 @@ from __future__ import annotations
 import argparse
 import csv
 import datetime as dt
+import html
 import json
 import os
 import random
@@ -60,6 +61,17 @@ Short version: I’m a technology leader / systems architect with 18 years acros
 If you have CTO / Head of Engineering / Head of IT / Solution Architect / Implementation Lead / Technical Product roles where this profile could fit, I’d be glad to send a focused CV.
 
 Best,
+Anton"""
+
+DEFAULT_RU_MESSAGE_TEMPLATE = """Здравствуйте, {first_name}.
+
+Пишу, чтобы уточнить, могут ли у вас быть роли, где мой опыт будет релевантен.
+
+Коротко: я technology leader / systems architect с 18 годами опыта в внутренних системах, ERP/CRM, автоматизации, инфраструктуре, Supabase/PostgreSQL, low-code/hybrid delivery и IT leadership. Сильнее всего я полезен в сложных внедрениях: старые системы, неясные процессы, права доступа, модели данных, rollout и принятие пользователями.
+
+Если у вас есть роли уровня CTO / Head of Engineering / Head of IT / Solution Architect / Implementation Lead / Technical Product, где такой профиль может подойти, буду рад отправить сфокусированное CV.
+
+С уважением,
 Anton"""
 
 
@@ -146,13 +158,31 @@ def render_message(template: str, contact: sqlite3.Row | dict[str, str]) -> str:
     first = (contact["first_name"] or "").strip()
     if not first:
         first = (contact["full_name"] or "there").split()[0]
+    selected_template = template
+    if template == DEFAULT_MESSAGE_TEMPLATE:
+        selected_template = default_template_for_contact(contact)
     values = {
         "first_name": first,
         "full_name": contact["full_name"] or "",
         "company": contact["company"] or "",
         "position": contact["position"] or "",
     }
-    return template.format(**values)
+    return selected_template.format(**values)
+
+
+def default_template_for_contact(contact: sqlite3.Row | dict[str, str]) -> str:
+    full_name = f"{contact['first_name'] or ''} {contact['last_name'] or ''} {contact['full_name'] or ''}"
+    if has_cyrillic(full_name) and not has_serbian_soft_c(full_name):
+        return DEFAULT_RU_MESSAGE_TEMPLATE
+    return DEFAULT_MESSAGE_TEMPLATE
+
+
+def has_cyrillic(text: str) -> bool:
+    return bool(re.search(r"[\u0400-\u04ff]", text or ""))
+
+
+def has_serbian_soft_c(text: str) -> bool:
+    return "ћ" in (text or "").lower()
 
 
 def contact_payload(row: sqlite3.Row) -> dict[str, object]:
@@ -169,6 +199,10 @@ def contact_payload(row: sqlite3.Row) -> dict[str, object]:
         "status": row["status"],
         "message": row["message"],
     }
+
+
+def linkedin_profile_with_helper_payload(row: sqlite3.Row) -> str:
+    return row["profile_url"] or "https://www.linkedin.com/"
 
 
 def load_template(path: Path | None) -> str:
@@ -326,6 +360,35 @@ def import_csv(conn: sqlite3.Connection, csv_path: Path, template: str, include_
         print(f"Non-recruiting contacts marked skipped_non_recruiting: {skipped}")
 
 
+def refresh_drafts(conn: sqlite3.Connection, template: str, statuses: list[str]) -> None:
+    init_db(conn)
+    allowed = {"queued", "opened", "snoozed"}
+    selected_statuses = [status for status in statuses if status in allowed]
+    if not selected_statuses:
+        raise ValueError(f"Statuses must be from: {', '.join(sorted(allowed))}")
+
+    placeholders = ",".join("?" for _ in selected_statuses)
+    rows = conn.execute(
+        f"""
+        SELECT c.*, o.status, o.message
+          FROM contacts c
+          JOIN outreach o ON o.contact_id = c.id
+         WHERE c.is_recruiting_contact = 1
+           AND o.status IN ({placeholders})
+        """,
+        selected_statuses,
+    ).fetchall()
+
+    now = utc_now()
+    for row in rows:
+        conn.execute(
+            "UPDATE outreach SET message = ?, updated_at = ? WHERE contact_id = ?",
+            (render_message(template, row), now, row["id"]),
+        )
+    conn.commit()
+    print(f"Refreshed drafts: {len(rows)}")
+
+
 def list_contacts(conn: sqlite3.Connection, status: str | None, limit: int) -> None:
     init_db(conn)
     if status:
@@ -454,6 +517,27 @@ def queued_contacts(conn: sqlite3.Connection, limit: int) -> list[sqlite3.Row]:
          LIMIT ?
         """,
         (limit,),
+    ).fetchall()
+
+
+def list_page_contacts(conn: sqlite3.Connection, status: str, limit: int) -> list[sqlite3.Row]:
+    init_db(conn)
+    statuses = ("queued", "opened") if status == "active" else (status,)
+    placeholders = ",".join("?" for _ in statuses)
+    return conn.execute(
+        f"""
+        SELECT c.*, o.status, o.message, o.updated_at AS outreach_updated_at
+          FROM contacts c
+          JOIN outreach o ON o.contact_id = c.id
+         WHERE c.is_recruiting_contact = 1
+           AND o.status IN ({placeholders})
+         ORDER BY
+              CASE WHEN c.connected_on IS NULL OR c.connected_on = '' THEN 1 ELSE 0 END,
+              c.connected_on DESC,
+              o.updated_at ASC
+         LIMIT ?
+        """,
+        (*statuses, limit),
     ).fetchall()
 
 
@@ -594,6 +678,234 @@ def outreach_stats(conn: sqlite3.Connection) -> dict[str, int]:
     return stats
 
 
+def mark_opened_for_page(conn: sqlite3.Connection, contact_id: int) -> sqlite3.Row | None:
+    init_db(conn)
+    now = utc_now()
+    conn.execute(
+        """
+        UPDATE outreach
+           SET status = CASE WHEN status = 'queued' THEN 'opened' ELSE status END,
+               opened_at = COALESCE(opened_at, ?),
+               updated_at = ?
+         WHERE contact_id = ?
+        """,
+        (now, now, contact_id),
+    )
+    conn.commit()
+    return get_next(conn, contact_id)
+
+
+def parse_positive_int(value: str, default: int = 0) -> int:
+    try:
+        parsed = int(value)
+    except (TypeError, ValueError):
+        return default
+    return parsed if parsed > 0 else default
+
+
+def render_outreach_list_html(conn: sqlite3.Connection, status: str, limit: int) -> bytes:
+    rows = list_page_contacts(conn, status, limit)
+    stats = outreach_stats(conn)
+    status_options = ["active", "queued", "opened", "sent", "replied", "not_relevant", "snoozed"]
+
+    cards = []
+    for row in rows:
+        contact_id = int(row["id"])
+        name = html.escape(row["full_name"] or "")
+        position = html.escape(row["position"] or "")
+        company = html.escape(row["company"] or "")
+        current_status = html.escape(row["status"] or "")
+        connected_on = html.escape(row["connected_on"] or "")
+        message = html.escape(row["message"] or "")
+        cards.append(
+            f"""
+            <article class="contact">
+              <div class="main">
+                <div class="name">[{contact_id}] {name}</div>
+                <div class="meta">{position}</div>
+                <div class="meta">{company}</div>
+                <div class="sub">status={current_status}{' | connected=' + connected_on if connected_on else ''}</div>
+              </div>
+              <details>
+                <summary>Draft</summary>
+                <pre>{message}</pre>
+              </details>
+              <div class="actions">
+                <a class="primary" href="/open?id={contact_id}" data-copy-open="true">Copy draft + open LinkedIn</a>
+                <form method="post" action="/mark-sent">
+                  <input type="hidden" name="id" value="{contact_id}">
+                  <button type="submit">Mark sent</button>
+                </form>
+                <form method="post" action="/mark-opened">
+                  <input type="hidden" name="id" value="{contact_id}">
+                  <button type="submit">Mark opened</button>
+                </form>
+              </div>
+              <textarea class="draft-copy-source" readonly>{message}</textarea>
+              <div class="copy-status" aria-live="polite"></div>
+            </article>
+            """
+        )
+
+    options = "\n".join(
+        f'<option value="{html.escape(option)}"{" selected" if option == status else ""}>{html.escape(option)}</option>'
+        for option in status_options
+    )
+    stat_line = ", ".join(f"{html.escape(str(k))}={html.escape(str(v))}" for k, v in stats.items())
+    body = f"""<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LinkedIn recruiter outreach</title>
+  <style>
+    body {{ margin: 0; background: #f5f7fa; color: #17202a; font: 14px/1.45 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }}
+    header {{ position: sticky; top: 0; z-index: 2; background: #ffffff; border-bottom: 1px solid #d7dee8; padding: 14px 18px; }}
+    h1 {{ margin: 0 0 8px; font-size: 20px; }}
+    .stats {{ color: #526477; font-size: 13px; }}
+    .filters {{ display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }}
+    input, select, button {{ border: 1px solid #b9c4d0; border-radius: 6px; background: #fff; padding: 7px 9px; font: inherit; }}
+    button, a.primary {{ cursor: pointer; font-weight: 650; }}
+    main {{ max-width: 1120px; margin: 0 auto; padding: 18px; }}
+    .contact {{ background: #fff; border: 1px solid #d7dee8; border-radius: 8px; padding: 14px; margin-bottom: 12px; }}
+    .name {{ font-weight: 750; font-size: 16px; }}
+    .meta {{ color: #263747; margin-top: 2px; }}
+    .sub {{ color: #687789; font-size: 12px; margin-top: 6px; }}
+    details {{ margin-top: 10px; }}
+    summary {{ cursor: pointer; color: #0a66c2; font-weight: 650; }}
+    pre {{ white-space: pre-wrap; background: #f0f3f7; border: 1px solid #d7dee8; border-radius: 6px; padding: 10px; }}
+    .actions {{ display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }}
+    a.primary {{ display: inline-block; color: #fff; background: #0a66c2; border: 1px solid #0a66c2; border-radius: 6px; padding: 8px 10px; text-decoration: none; }}
+    .draft-copy-source {{ position: fixed; left: -9999px; top: -9999px; width: 1px; height: 1px; opacity: 0; }}
+    .copy-status {{ min-height: 18px; margin-top: 8px; color: #526477; font-size: 12px; }}
+    .empty {{ color: #526477; background: #fff; border: 1px solid #d7dee8; border-radius: 8px; padding: 16px; }}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>LinkedIn recruiter outreach</h1>
+    <div class="stats">{stat_line}</div>
+    <form class="filters" method="get" action="/">
+      <label>Status <select name="status">{options}</select></label>
+      <label>Limit <input name="limit" type="number" min="1" max="500" value="{limit}"></label>
+      <button type="submit">Refresh</button>
+    </form>
+  </header>
+  <main>
+    {''.join(cards) if cards else '<div class="empty">No contacts for this filter.</div>'}
+  </main>
+  <script>
+    function copyText(text, source) {{
+      source.focus();
+      source.select();
+      const copied = document.execCommand("copy");
+      source.blur();
+      if (copied) {{
+        return Promise.resolve();
+      }}
+      if (navigator.clipboard && window.isSecureContext) {{
+        return navigator.clipboard.writeText(text);
+      }}
+      return Promise.reject(new Error("clipboard copy failed"));
+    }}
+
+    document.addEventListener("click", async (event) => {{
+      const link = event.target.closest('a[data-copy-open="true"]');
+      if (!link) return;
+      event.preventDefault();
+
+      const card = link.closest(".contact");
+      const source = card.querySelector(".draft-copy-source");
+      const status = card.querySelector(".copy-status");
+      const href = link.href;
+
+      try {{
+        await copyText(source.value, source);
+        status.textContent = "Draft copied. Opening LinkedIn...";
+      }} catch (error) {{
+        status.textContent = `Copy failed: ${{error.message}}. Opening LinkedIn anyway.`;
+      }}
+
+      window.open(href, "_blank", "noopener");
+    }});
+  </script>
+</body>
+</html>"""
+    return body.encode("utf-8")
+
+
+def serve_list_page(db_path: Path, host: str, port: int) -> None:
+    class Handler(BaseHTTPRequestHandler):
+        server_version = "LinkedInRecruiterOutreachList/0.1"
+
+        def _redirect(self, location: str) -> None:
+            self.send_response(303)
+            self.send_header("Location", location)
+            self.end_headers()
+
+        def _send_html(self, body: bytes) -> None:
+            self.send_response(200)
+            self.send_header("Content-Type", "text/html; charset=utf-8")
+            self.send_header("Content-Length", str(len(body)))
+            self.end_headers()
+            self.wfile.write(body)
+
+        def do_GET(self) -> None:  # noqa: N802
+            parsed = urlparse(self.path)
+            params = parse_qs(parsed.query)
+            conn = connect(db_path)
+            try:
+                if parsed.path == "/":
+                    status = params.get("status", ["active"])[0]
+                    if status not in {"active", "queued", "opened", "sent", "replied", "not_relevant", "snoozed"}:
+                        status = "active"
+                    try:
+                        limit = max(1, min(500, int(params.get("limit", ["100"])[0])))
+                    except ValueError:
+                        limit = 100
+                    self._send_html(render_outreach_list_html(conn, status, limit))
+                    return
+                if parsed.path == "/open":
+                    contact_id = parse_positive_int(params.get("id", ["0"])[0])
+                    row = mark_opened_for_page(conn, contact_id)
+                    if not row or not row["profile_url"]:
+                        self._redirect("/")
+                        return
+                    self._redirect(linkedin_profile_with_helper_payload(row))
+                    return
+                self.send_error(404)
+            finally:
+                conn.close()
+
+        def do_POST(self) -> None:  # noqa: N802
+            parsed = urlparse(self.path)
+            length = int(self.headers.get("Content-Length", "0") or "0")
+            data = parse_qs(self.rfile.read(length).decode("utf-8") if length else "")
+            contact_id = parse_positive_int(data.get("id", ["0"])[0])
+            conn = connect(db_path)
+            try:
+                if parsed.path == "/mark-sent" and contact_id > 0:
+                    mark(conn, contact_id, "sent", "Marked sent from local outreach list page")
+                elif parsed.path == "/mark-opened" and contact_id > 0:
+                    mark_opened_for_page(conn, contact_id)
+                self._redirect("/")
+            finally:
+                conn.close()
+
+        def log_message(self, fmt: str, *args: object) -> None:
+            print(f"[list] {self.address_string()} {fmt % args}")
+
+    conn = connect(db_path)
+    try:
+        init_db(conn)
+    finally:
+        conn.close()
+    server = ThreadingHTTPServer((host, port), Handler)
+    print(f"LinkedIn outreach list page running at http://{host}:{port}")
+    print("Open the page, click a recruiter link, then send manually in LinkedIn.")
+    server.serve_forever()
+
+
 def serve_api(db_path: Path, host: str, port: int) -> None:
     class Handler(BaseHTTPRequestHandler):
         server_version = "LinkedInRecruiterOutreach/0.1"
@@ -724,6 +1036,16 @@ def main() -> None:
     )
     p_list.add_argument("--limit", type=int, default=50)
 
+    p_refresh = sub.add_parser("refresh-drafts", help="Regenerate draft messages for unsent recruiting contacts.")
+    p_refresh.add_argument("--template", type=Path, help="Optional UTF-8 text message template.")
+    p_refresh.add_argument(
+        "--status",
+        action="append",
+        choices=["queued", "opened", "snoozed"],
+        default=["queued", "opened"],
+        help="Outreach status to refresh. Can be passed more than once. Default: queued and opened.",
+    )
+
     p_open = sub.add_parser("open-next", help="Print/copy next message and open profile for manual sending.")
     p_open.add_argument("--id", type=int, help="Specific contact id instead of next queued contact.")
     p_open.add_argument("--copy", action="store_true", help="Copy message to clipboard.")
@@ -752,6 +1074,10 @@ def main() -> None:
     p_serve.add_argument("--host", default=DEFAULT_HOST)
     p_serve.add_argument("--port", type=int, default=DEFAULT_PORT)
 
+    p_serve_list = sub.add_parser("serve-list", help="Run local HTML list page for manual LinkedIn outreach.")
+    p_serve_list.add_argument("--host", default=DEFAULT_HOST)
+    p_serve_list.add_argument("--port", type=int, default=8766)
+
     args = parser.parse_args()
     conn = connect(args.db)
 
@@ -763,6 +1089,9 @@ def main() -> None:
         import_csv(conn, args.csv_path, template, include_all=args.include_all)
     elif args.cmd == "list":
         list_contacts(conn, args.status, args.limit)
+    elif args.cmd == "refresh-drafts":
+        template = load_template(args.template)
+        refresh_drafts(conn, template, args.status)
     elif args.cmd == "open-next":
         open_next(conn, args.id, args.copy)
     elif args.cmd == "manual-campaign":
@@ -774,6 +1103,9 @@ def main() -> None:
     elif args.cmd == "serve":
         conn.close()
         serve_api(args.db, args.host, args.port)
+    elif args.cmd == "serve-list":
+        conn.close()
+        serve_list_page(args.db, args.host, args.port)
 
 
 if __name__ == "__main__":

@@ -38,6 +38,12 @@ List queued contacts:
 python workflows\linkedin_recruiter_outreach.py list --status queued --limit 25
 ```
 
+Regenerate unsent drafts after changing the default message rules:
+
+```powershell
+python workflows\linkedin_recruiter_outreach.py refresh-drafts
+```
+
 Open next profile and copy draft message:
 
 ```powershell
@@ -66,6 +72,39 @@ Usage inside LinkedIn:
 6. Click `Mark sent` or `Sent + Next`.
 
 The userscript does not click LinkedIn's Send button and does not send messages automatically.
+
+## Alternative: Local List Page Without LinkedIn API Calls
+
+If the `Next` userscript cannot reach the local API from LinkedIn, use the list-page workflow.
+
+Start the local page:
+
+```powershell
+python workflows\linkedin_recruiter_outreach.py serve-list
+```
+
+Open:
+
+```text
+http://127.0.0.1:8766
+```
+
+Install this separate userscript:
+
+```text
+workflows/sctipts/linkedin_recruiter_opened_draft.user.js
+```
+
+Usage:
+
+1. Open the local list page.
+2. Click `Copy draft + open LinkedIn`.
+3. The local page copies the draft from the contact card, marks that contact as `opened` in SQLite, and opens the LinkedIn profile.
+4. The separate userscript runs on LinkedIn profile pages and opens the `Message` dialog when it sees LinkedIn's send-privately icon.
+5. Click LinkedIn `Message` manually, paste, review, and send.
+6. Return to the local list page and click `Mark sent`.
+
+This mode does not make any HTTP requests from LinkedIn back to the local server. The draft is copied on the local list page before LinkedIn opens.
 
 ## If LinkedIn Export Has No Positions
 
@@ -129,6 +168,12 @@ Tables:
 ## Custom Message Template
 
 Create a UTF-8 text file and pass it with `--template`.
+
+Without a custom template, the helper chooses the default message language by name:
+
+- Cyrillic name without Serbian `ћ` / `Ћ`: Russian draft.
+- Name with Serbian `ћ` / `Ћ`: English draft.
+- All other names: English draft.
 
 Available placeholders:
 
