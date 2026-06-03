@@ -1,13 +1,15 @@
 // ==UserScript==
 // @name         LinkedIn Recruiter Outreach Next
 // @namespace    https://needlebit.dev/
-// @version      0.3.0
+// @version      0.4.0
 // @description  Manual LinkedIn outreach panel: get next queued recruiter, copy draft, mark sent. Does not send messages automatically.
 // @match        https://www.linkedin.com/*
 // @match        https://*.linkedin.com/*
 // @run-at       document-idle
 // @grant        GM_setClipboard
+// @grant        GM.setClipboard
 // @grant        GM_xmlhttpRequest
+// @grant        GM.xmlHttpRequest
 // @connect      127.0.0.1
 // @connect      localhost
 // ==/UserScript==
@@ -44,6 +46,13 @@
       display: flex;
       justify-content: space-between;
       gap: 8px;
+    }
+    #${PANEL_ID} .liro-label {
+      color: #9fb4c8;
+      font-size: 11px;
+      font-weight: 700;
+      margin: 8px 0 3px;
+      text-transform: uppercase;
     }
     #${PANEL_ID} .liro-contact {
       color: #d9e7f5;
@@ -125,14 +134,64 @@
     if (node) node.textContent = text || "";
   }
 
-  function api(path, options = {}) {
+  function withTimeout(promiseFactory, label) {
+    return new Promise((resolve, reject) => {
+      const timer = setTimeout(() => reject(new Error(`${label} timed out`)), 7000);
+      promiseFactory().then(
+        (value) => {
+          clearTimeout(timer);
+          resolve(value);
+        },
+        (error) => {
+          clearTimeout(timer);
+          reject(error);
+        },
+      );
+    });
+  }
+
+  async function api(path, options = {}) {
     const url = `${API}${path}`;
     const method = options.method || "GET";
     const body = options.body || undefined;
 
+    function parseData(responseText, status) {
+      let data = {};
+      try {
+        data = JSON.parse(responseText || "{}");
+      } catch (error) {
+        throw new Error(`Invalid JSON from local server: ${error.message}`);
+      }
+      if (status < 200 || status >= 300 || !data.ok) {
+        throw new Error(data.error || `HTTP ${status}`);
+      }
+      return data;
+    }
+
+    function gmApi(requestFn) {
+      return withTimeout(() => new Promise((resolve, reject) => {
+        requestFn({
+          method,
+          url,
+          headers: { "Content-Type": "application/json" },
+          data: body,
+          timeout: 6000,
+          onload: (response) => {
+            try {
+              resolve(parseData(response.responseText, response.status));
+            } catch (error) {
+              reject(error);
+            }
+          },
+          onerror: () => reject(new Error("Local server request failed")),
+          ontimeout: () => reject(new Error("Local server request timed out")),
+        });
+      }), "GM request");
+    }
+
     async function fetchApi() {
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 7000);
+      const timeoutId = setTimeout(() => controller.abort(), 6000);
       try {
         const response = await fetch(url, {
           method,
@@ -140,52 +199,39 @@
           body,
           signal: controller.signal,
         });
-        const data = await response.json();
-        if (!response.ok || !data.ok) {
-          throw new Error(data.error || `HTTP ${response.status}`);
-        }
-        return data;
+        return parseData(await response.text(), response.status);
       } finally {
         clearTimeout(timeoutId);
       }
     }
 
-    return new Promise((resolve, reject) => {
-      if (typeof GM_xmlhttpRequest !== "function") {
-        fetchApi().then(resolve, reject);
-        return;
+    const requestFns = [
+      typeof GM !== "undefined" && typeof GM.xmlHttpRequest === "function" ? GM.xmlHttpRequest : null,
+      typeof GM_xmlhttpRequest === "function" ? GM_xmlhttpRequest : null,
+    ].filter(Boolean);
+
+    const errors = [];
+    for (const requestFn of requestFns) {
+      try {
+        return await gmApi(requestFn);
+      } catch (error) {
+        errors.push(error.message);
       }
-      GM_xmlhttpRequest({
-        method,
-        url,
-        headers: { "Content-Type": "application/json" },
-        data: body,
-        timeout: 7000,
-        onload: (response) => {
-          let data = {};
-          try {
-            data = JSON.parse(response.responseText || "{}");
-          } catch (error) {
-            reject(new Error(`Invalid JSON from local server: ${error.message}`));
-            return;
-          }
-          if (response.status < 200 || response.status >= 300 || !data.ok) {
-            reject(new Error(data.error || `HTTP ${response.status}`));
-            return;
-          }
-          resolve(data);
-        },
-        onerror: () => {
-          fetchApi().then(resolve, () => reject(new Error("Local server request failed")));
-        },
-        ontimeout: () => {
-          fetchApi().then(resolve, () => reject(new Error("Local server request timed out")));
-        },
-      });
-    });
+    }
+
+    try {
+      return await fetchApi();
+    } catch (error) {
+      errors.push(error.message);
+      throw new Error(errors.join(" | "));
+    }
   }
 
   function copyText(text) {
+    if (typeof GM !== "undefined" && typeof GM.setClipboard === "function") {
+      GM.setClipboard(text, "text");
+      return Promise.resolve();
+    }
     if (typeof GM_setClipboard === "function") {
       GM_setClipboard(text, "text");
       return Promise.resolve();
@@ -266,8 +312,9 @@
     const stats = data.stats || {};
     const queued = stats.queued || 0;
     const opened = stats.opened || 0;
+    const remain = queued + opened;
     const total = stats.recruiting_contacts || 0;
-    setApiStatus(`API available. Contacts to outreach: ${queued} remain / ${total} all.`, true);
+    setApiStatus(`API available. Contacts to outreach: ${remain} remain / ${total} all.`, true);
     setStatus(`queued=${queued}, opened=${opened}, sent=${stats.sent || 0}, replied=${stats.replied || 0}, skipped=${stats.skipped_non_recruiting || 0}`);
   }
 
@@ -281,9 +328,12 @@
         <button type="button" data-action="toggle">_</button>
       </div>
       <div class="liro-body">
+        <div class="liro-label">API</div>
         <div class="liro-api-status">Checking API...</div>
+        <div class="liro-label">Current contact</div>
         <div class="liro-contact">No contact loaded</div>
         <textarea spellcheck="false" placeholder="Message draft will appear here"></textarea>
+        <div class="liro-label">Actions</div>
         <div class="liro-row">
           <button type="button" data-action="next" data-main="true">Next</button>
           <button type="button" data-action="copy">Copy</button>
