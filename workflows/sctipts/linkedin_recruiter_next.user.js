@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         LinkedIn Recruiter Outreach Next
 // @namespace    https://needlebit.dev/
-// @version      0.1.0
+// @version      0.2.0
 // @description  Manual LinkedIn outreach panel: get next queued recruiter, copy draft, mark sent. Does not send messages automatically.
 // @match        https://www.linkedin.com/*
 // @match        https://*.linkedin.com/*
@@ -53,6 +53,15 @@
       border-top: 1px solid #26394c;
       border-bottom: 1px solid #26394c;
       padding: 8px 0;
+    }
+    #${PANEL_ID} .liro-api-status {
+      border: 1px solid #26394c;
+      background: #0b1118;
+      color: #d9e7f5;
+      border-radius: 6px;
+      padding: 7px 8px;
+      margin-bottom: 8px;
+      font-weight: 650;
     }
     #${PANEL_ID} textarea {
       width: 100%;
@@ -126,6 +135,7 @@
         url: `${API}${path}`,
         headers: { "Content-Type": "application/json" },
         data: options.body || undefined,
+        timeout: 7000,
         onload: (response) => {
           let data = {};
           try {
@@ -152,6 +162,22 @@
       return Promise.resolve();
     }
     return navigator.clipboard.writeText(text);
+  }
+
+  function setApiStatus(text, available = null) {
+    const node = document.querySelector(`#${PANEL_ID} .liro-api-status`);
+    if (!node) return;
+    node.textContent = text;
+    if (available === true) {
+      node.style.borderColor = "#266b45";
+      node.style.color = "#c7f2d4";
+    } else if (available === false) {
+      node.style.borderColor = "#8a3b48";
+      node.style.color = "#ffd0d6";
+    } else {
+      node.style.borderColor = "#425b73";
+      node.style.color = "#d9e7f5";
+    }
   }
 
   function renderContact(contact) {
@@ -197,6 +223,7 @@
       }),
     });
     setStatus(`Marked ${currentContact.full_name} as ${status}.`);
+    await refreshStats();
   }
 
   async function markSentAndNext() {
@@ -205,9 +232,14 @@
   }
 
   async function refreshStats() {
+    setApiStatus("Checking API...", null);
     const data = await api("/stats");
     const stats = data.stats || {};
-    setStatus(`total=${stats.recruiting_contacts || 0}, queued=${stats.queued || 0}, opened=${stats.opened || 0}, sent=${stats.sent || 0}, replied=${stats.replied || 0}`);
+    const queued = stats.queued || 0;
+    const opened = stats.opened || 0;
+    const total = stats.recruiting_contacts || 0;
+    setApiStatus(`API available. Contacts to outreach: ${queued} remain / ${total} all.`, true);
+    setStatus(`queued=${queued}, opened=${opened}, sent=${stats.sent || 0}, replied=${stats.replied || 0}, skipped=${stats.skipped_non_recruiting || 0}`);
   }
 
   function buildPanel() {
@@ -220,6 +252,7 @@
         <button type="button" data-action="toggle">_</button>
       </div>
       <div class="liro-body">
+        <div class="liro-api-status">Checking API...</div>
         <div class="liro-contact">No contact loaded</div>
         <textarea spellcheck="false" placeholder="Message draft will appear here"></textarea>
         <div class="liro-row">
@@ -234,6 +267,7 @@
       </div>
     `;
     document.body.appendChild(panel);
+    setApiStatus("Checking API...", null);
     panel.addEventListener("click", async (event) => {
       const button = event.target.closest("button[data-action]");
       if (!button) return;
@@ -255,6 +289,7 @@
       }
     });
     refreshStats().catch((error) => {
+      setApiStatus("API unavailable. Start local server on 127.0.0.1:8765.", false);
       setStatus(`Server not ready: ${error.message}`);
     });
   }
