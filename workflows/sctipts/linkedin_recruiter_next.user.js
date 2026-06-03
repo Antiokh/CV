@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         LinkedIn Recruiter Outreach Next
 // @namespace    https://needlebit.dev/
-// @version      0.2.0
+// @version      0.3.0
 // @description  Manual LinkedIn outreach panel: get next queued recruiter, copy draft, mark sent. Does not send messages automatically.
 // @match        https://www.linkedin.com/*
 // @match        https://*.linkedin.com/*
@@ -9,6 +9,7 @@
 // @grant        GM_setClipboard
 // @grant        GM_xmlhttpRequest
 // @connect      127.0.0.1
+// @connect      localhost
 // ==/UserScript==
 
 (function () {
@@ -125,16 +126,40 @@
   }
 
   function api(path, options = {}) {
+    const url = `${API}${path}`;
+    const method = options.method || "GET";
+    const body = options.body || undefined;
+
+    async function fetchApi() {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 7000);
+      try {
+        const response = await fetch(url, {
+          method,
+          headers: { "Content-Type": "application/json" },
+          body,
+          signal: controller.signal,
+        });
+        const data = await response.json();
+        if (!response.ok || !data.ok) {
+          throw new Error(data.error || `HTTP ${response.status}`);
+        }
+        return data;
+      } finally {
+        clearTimeout(timeoutId);
+      }
+    }
+
     return new Promise((resolve, reject) => {
       if (typeof GM_xmlhttpRequest !== "function") {
-        reject(new Error("GM_xmlhttpRequest is unavailable. Use Tampermonkey/Violentmonkey."));
+        fetchApi().then(resolve, reject);
         return;
       }
       GM_xmlhttpRequest({
-        method: options.method || "GET",
-        url: `${API}${path}`,
+        method,
+        url,
         headers: { "Content-Type": "application/json" },
-        data: options.body || undefined,
+        data: body,
         timeout: 7000,
         onload: (response) => {
           let data = {};
@@ -150,8 +175,12 @@
           }
           resolve(data);
         },
-        onerror: () => reject(new Error("Local server request failed")),
-        ontimeout: () => reject(new Error("Local server request timed out")),
+        onerror: () => {
+          fetchApi().then(resolve, () => reject(new Error("Local server request failed")));
+        },
+        ontimeout: () => {
+          fetchApi().then(resolve, () => reject(new Error("Local server request timed out")));
+        },
       });
     });
   }
@@ -292,6 +321,13 @@
       setApiStatus("API unavailable. Start local server on 127.0.0.1:8765.", false);
       setStatus(`Server not ready: ${error.message}`);
     });
+
+    setTimeout(() => {
+      const node = document.querySelector(`#${PANEL_ID} .liro-api-status`);
+      if (node?.textContent === "Checking API...") {
+        setApiStatus("API check is still pending. Click Stats or reload this LinkedIn tab.", false);
+      }
+    }, 9000);
   }
 
   injectStyle();
