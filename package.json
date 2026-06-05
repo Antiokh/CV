@@ -1,0 +1,15 @@
+{
+  "name": "anton-cv-workflows",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "hh:dry": "node workflows/hh_apply_worker.js --mode dry-run --max 20",
+    "hh:live:prepare": "node workflows/hh_apply_worker.js --mode live --generate openai --max 5",
+    "hh:live:submit": "node workflows/hh_apply_worker.js --mode live --generate openai --submit --max 5",
+    "hh:live:submit:all": "node workflows/hh_apply_worker.js --mode live --generate openai --submit --apply-all --max 5",
+    "hh:stats": "python workflows/hh_application_tracker.py stats"
+  },
+  "devDependencies": {
+    "ws": "^8.21.0"
+  }
+}

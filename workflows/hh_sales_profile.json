@@ -1,0 +1,93 @@
+{
+  "version": "2026-06-03",
+  "candidate": "Anton Nazarov",
+  "global_rules": {
+    "tone": "professional, concrete, human, not over-enthusiastic",
+    "do_not_invent": [
+      "domain experience",
+      "metrics",
+      "technologies",
+      "team size",
+      "certifications",
+      "employment facts"
+    ],
+    "default_strengths": [
+      "18 years in IT across development, architecture, IT operations, and technical leadership",
+      "connects business goals, architecture, delivery process, operations, and stakeholder communication",
+      "builds ERP/CRM, portals, integrations, reporting, automation, and data-heavy internal systems",
+      "comfortable with legacy modernization, process cleanup, documentation, access models, and support/adoption loops"
+    ],
+    "current_core_stack": [
+      "Supabase",
+      "PostgreSQL",
+      "Xano",
+      "WeWeb",
+      "Bubble",
+      "n8n",
+      "Make",
+      "REST APIs",
+      "Telegram integrations",
+      "OpenAI API",
+      "Docker",
+      "Python automation",
+      "JavaScript/TypeScript"
+    ]
+  },
+  "angles": {
+    "cto": {
+      "label": "CTO / technical leadership",
+      "resume_ru": "Fractional CTO / Interim CTO / Технический руководитель",
+      "resume_en": "Fractional CTO / Interim CTO",
+      "evidence": [
+        "led IT function and technical operations at KC ZIL",
+        "owned architecture and delivery for internal business systems, ERP/CRM, portals, integrations, and automation",
+        "worked across roadmap, architecture, reliability, support, documentation, and stakeholder alignment",
+        "current stack includes Supabase, PostgreSQL, Xano, WeWeb, Bubble, n8n, Make, REST APIs, Telegram, OpenAI API, Docker"
+      ]
+    },
+    "engineering": {
+      "label": "Head of Engineering / Engineering Manager",
+      "resume_ru": "Руководитель разработки / Engineering Manager",
+      "resume_en": "Head of Engineering / Engineering Manager",
+      "evidence": [
+        "managed technical work across development, infrastructure, support, and change implementation",
+        "mentored employees and interns, prepared onboarding/probation plans, and structured tasks",
+        "strong in delivery predictability, requirements, acceptance criteria, technical documentation, and engineering discipline",
+        "built repository-level instructions, SQL workflows, helper layers, and database-to-git documentation around AI-assisted delivery"
+      ]
+    },
+    "product_delivery": {
+      "label": "Technical Product Lead / Product Owner",
+      "resume_ru": "Технический Product Lead / Product Owner",
+      "resume_en": "Technical Product Lead / Product Owner",
+      "evidence": [
+        "worked at the intersection of customer needs, product scope, technical architecture, backlog, documentation, and delivery",
+        "worked with IT leaders across 100+ Moscow cultural institutions on an industry information system",
+        "delivered CRM/ERP, portals, reporting, marketplace, assessment, and field-operations systems",
+        "strong in turning fragmented chat/spreadsheet workflows into structured products and operational systems"
+      ]
+    },
+    "transformation": {
+      "label": "Digital Transformation / IT Transformation",
+      "resume_ru": "Руководитель цифровой трансформации / IT Transformation Lead",
+      "resume_en": "Digital Transformation Lead / IT Transformation Manager",
+      "evidence": [
+        "rebuilt legacy data collection/reporting workflows into web-based information systems with roles, access rules, and support process",
+        "improved support, infrastructure, access control, documentation, and internal stakeholder workflows at KC ZIL",
+        "built automation-heavy systems replacing manual chats, email, spreadsheets, and repeated operational work",
+        "strong in change implementation, adoption, documentation, and stakeholder communication"
+      ]
+    },
+    "architecture": {
+      "label": "Systems Architect / Solutions Architect",
+      "resume_ru": "Системный архитектор / Solution Architect",
+      "resume_en": "Systems Architect / Solutions Architect",
+      "evidence": [
+        "designed modular reporting, field generation, export constructors, filters, access rules, and reusable generation tools",
+        "migrated and modernized IBM Domino infrastructure with CentOS, nginx reverse proxy, web authentication, and SSL hardening",
+        "built systems across Supabase, PostgreSQL, Xano, WeWeb, Bubble, APIs, Telegram integrations, and AI APIs",
+        "legacy enterprise depth: IBM/HCL Domino, Lotus Notes, XPages, JavaScript, Java, XML, Apache POI, Boss-Referent, LEI"
+      ]
+    }
+  }
+}

@@ -27,16 +27,16 @@ if hasattr(sys.stderr, "reconfigure"):
 
 
 RESUME_EXPECTATIONS = {
-    "Fractional CTO / Interim CTO": (7000, "EUR"),
-    "Fractional CTO / Interim CTO / Технический руководитель": (7000, "EUR"),
-    "Digital Transformation Lead / IT Transformation Manager": (5500, "EUR"),
-    "Руководитель цифровой трансформации / IT Transformation Lead": (5500, "EUR"),
-    "Technical Product Lead / Product Owner": (5000, "EUR"),
-    "Технический Product Lead / Product Owner": (5000, "EUR"),
-    "Systems Architect / Solutions Architect": (6000, "EUR"),
-    "Системный архитектор / Solution Architect": (6000, "EUR"),
-    "Head of Engineering / Engineering Manager": (5500, "EUR"),
-    "Руководитель разработки / Engineering Manager": (5500, "EUR"),
+    "Fractional CTO / Interim CTO": (5000, "EUR"),
+    "Fractional CTO / Interim CTO / Технический руководитель": (5000, "EUR"),
+    "Digital Transformation Lead / IT Transformation Manager": (4000, "EUR"),
+    "Руководитель цифровой трансформации / IT Transformation Lead": (4000, "EUR"),
+    "Technical Product Lead / Product Owner": (4000, "EUR"),
+    "Технический Product Lead / Product Owner": (4000, "EUR"),
+    "Systems Architect / Solutions Architect": (4000, "EUR"),
+    "Системный архитектор / Solution Architect": (4000, "EUR"),
+    "Head of Engineering / Engineering Manager": (4500, "EUR"),
+    "Руководитель разработки / Engineering Manager": (4500, "EUR"),
 }
 
 
@@ -116,7 +116,9 @@ def init_db(conn: sqlite3.Connection) -> None:
 
 
 def normalize_text(value: Any) -> str:
-    return re.sub(r"\s+", " ", str(value or "").replace("\u00a0", " ")).strip()
+    text = str(value or "").replace("\u00a0", " ")
+    text = "".join(char for char in text if not 0xD800 <= ord(char) <= 0xDFFF)
+    return re.sub(r"\s+", " ", text).strip()
 
 
 def extract_hh_id(url: str) -> str:
@@ -284,7 +286,9 @@ def upsert_log(conn: sqlite3.Connection, payload: dict[str, Any]) -> int:
 def read_payload(path: str | None) -> dict[str, Any]:
     if path and path != "-":
         return json.loads(Path(path).read_text(encoding="utf-8"))
-    return json.load(sys.stdin)
+    if hasattr(sys.stdin, "buffer"):
+        return json.loads(sys.stdin.buffer.read().decode("utf-8"))
+    return json.loads(sys.stdin.read())
 
 
 def print_stats(conn: sqlite3.Connection) -> None:

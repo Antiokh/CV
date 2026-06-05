@@ -4,7 +4,45 @@ This workflow is for agents that apply to vacancies on hh.ru for Anton Nazarov.
 
 The goal is not bulk applications. The goal is careful matching: choose suitable vacancies, select the right HH resume, write a truthful cover letter, apply, and verify the result.
 
-## Start Prompt
+## Worker-First Start Prompt
+
+Use this prompt for low-token Codex / mini-model HH application sessions:
+
+```text
+You are an HH application worker controller for Anton Nazarov.
+
+Do not manually browse hh.ru unless the worker fails. Do not reread the full repository.
+
+Start in c:\git\CV and run:
+
+node workflows\hh_apply_worker.js --mode dry-run --max 20
+
+If the user explicitly approves live applications, run:
+
+node workflows\hh_apply_worker.js --mode live --generate openai --submit --max 5
+
+Your job:
+- run the worker;
+- report worker stats;
+- if the worker returns an employer question or technical blocker, show the blocker to the user;
+- do not stop just because a vacancy is already applied or fit is uncertain;
+- do not write cover letters manually unless the worker asks for a cover-letter-only fallback.
+
+The worker owns:
+- HH browser/CDP interaction;
+- vacancy extraction;
+- apply/skip/defer classification;
+- resume selection;
+- cover-letter generation input;
+- SQLite logging.
+
+AI is used only for cover-letter generation. Cover-letter output must be JSON only:
+{"cover_letter":"..."}
+
+Stop only for hard blockers: unknown employer questions, browser/session block after retry, impossible resume selection, or explicit user review request.
+```
+
+## Legacy Manual Start Prompt
 
 Use this prompt when starting a fresh HH application session:
 
@@ -69,7 +107,7 @@ When starting a new HH session, prefer this route:
 2. Review the list of resumes and the number of suitable vacancies shown under each resume.
 3. Use that count as a prioritization signal, not as the only decision rule.
 4. Open a resume with a meaningful count and inspect the matching vacancies it surfaces.
-5. For each candidate vacancy, extract the canonical vacancy fields and evaluate `apply / skip / uncertain`.
+5. For each candidate vacancy, extract the canonical vacancy fields and evaluate `apply / skip / defer`.
 6. Apply only to vacancies that are a real fit for Anton's current target strategy.
 
 Decision rules for the count:
@@ -132,11 +170,11 @@ The default HH workflow is:
 6. For each vacancy:
    - extract vacancy fields;
    - check whether it is already applied;
-   - classify as `apply`, `skip`, or `uncertain`;
+   - classify as `apply`, `skip`, or `defer`;
    - if `apply`, open the response form, select the correct resume, write cover letter, submit, verify status;
    - log the result to SQLite with `workflows/hh_application_tracker.py`;
    - if already applied or `skip`, continue to the next vacancy;
-   - if `uncertain`, log it, then stop and ask the user.
+   - if `defer`, log it, then continue to the next vacancy.
 7. When the list has no more apply-worthy vacancies, return to the resume list.
 8. Continue with the next resume that has a non-zero suitable-vacancy count.
 9. Stop only when all such resume queues are exhausted or a stop condition occurs.
@@ -148,7 +186,7 @@ When applying, keep a short log entry in `applications/_tracking/` or a company-
 - company
 - vacancy URL
 - selected resume
-- decision (`apply`, `skip`, `uncertain`)
+- decision (`apply`, `skip`, `defer`)
 - cover letter text
 - status after submit
 - notes about fit or risk
@@ -192,9 +230,11 @@ For each candidate vacancy, classify it as one of:
 
 - `apply` - strong or strategically useful match
 - `skip` - poor match, too narrow, too junior, too low, or misleading
-- `uncertain` - could work, but requires user review
+- `defer` - could work, but evidence/domain fit is not clear enough for automatic application
 
-Apply only to `apply` vacancies. For `uncertain`, prepare a short note and wait for the user.
+Apply only to `apply` vacancies.
+
+For `defer`, write a short reason to the SQLite tracker and continue the loop. Do not stop just because the agent is unsure whether Anton has a specific niche-domain experience. First check the source files named in Required Context; if the evidence is still unclear, choose `defer` or `skip` and move on.
 
 Good `apply` examples:
 
@@ -551,7 +591,7 @@ const vacancy = await extractVacancy(page);
 const existingStatus = await getApplicationStatus(page);
 if (existingStatus) return { status: existingStatus, vacancy };
 
-// Decide apply / skip / uncertain before continuing.
+// Decide apply / skip / defer before continuing.
 
 const responseHref = await getVisibleResponseHref(page);
 await page.goto(responseHref);
@@ -608,13 +648,22 @@ Verification strings:
 
 ## Stop Conditions
 
-Stop and ask the user when:
+Stop and ask the user only for hard blockers:
+
+- HH asks a question requiring information not present in the repo
+- the form selects a resume that cannot be changed and is clearly wrong
+- the browser/session is technically blocked after retrying
+- sending would require answering a legal/personal/salary question not present in the repo
+- the user explicitly asked to review before submitting
+
+Do not stop the loop just because:
 
 - the vacancy is strategically interesting but domain fit is unclear
-- HH asks a question requiring information not present in the repo
-- salary or seniority is ambiguous and could hurt strategy
-- the form selects a resume that cannot be changed and is clearly wrong
-- the cover letter would require inventing facts to sound convincing
+- salary or seniority is ambiguous
+- the vacancy is only a partial fit
+- the agent is unsure whether Anton has a specific niche experience
+
+In those cases, classify as `skip` or `defer`, log the reason, and continue to the next vacancy.
 
 ## Logging
 
@@ -667,7 +716,7 @@ Use these `decision` values:
 - `applied` - application sent and verified;
 - `already_applied` - vacancy was already applied before this pass;
 - `skip` - reviewed and intentionally skipped;
-- `uncertain` - stopped for user review;
+- `defer` - reviewed, potentially interesting, left for optional later review while the loop continues;
 - `failed` - attempted but blocked by technical issue.
 
 Stats:

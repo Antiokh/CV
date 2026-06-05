@@ -5,3 +5,6 @@ workflows/__pycache__/
 data/linkedin_recruiter_outreach.sqlite
 data/linkedin_recruiter_outreach.sqlite-*
 data/linkedin_recruiter_queue*.csv
+node_modules/
+.browser-profiles/
+tmp_simplify_profile_chunk.js
