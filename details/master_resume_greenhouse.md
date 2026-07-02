@@ -45,7 +45,7 @@ I run an independent technology practice where projects are rarely just "build a
 
 - Delivered CRM, ERP, internal portal, reporting, marketplace, assessment, and field-operations systems for small businesses and startup teams.
 - Built across WeWeb, Supabase, Xano, Bubble, Glide, n8n, Make, PostgreSQL, APIs, Telegram integrations, and AI APIs, often combining several of them in one production workflow.
-- Reduced client service handling from hours to minutes by replacing manual chat, email, and spreadsheet workflows with structured automation.
+- Reduced client service handling from hours to minutes by replacing manual chat, email, and spreadsheet workflows with structured automation, improving operational turnaround in client-facing processes.
 - Supported client revenue growth up to x10-x13 in service-business cases after process restructuring and system rollout.
 - Migrated approximately 70,000 historical documents from Google Drive into Supabase in a field-inspection/reporting platform.
 - Built dual-interface systems where an internal operations app and a client-facing portal shared the same backend model, instead of drifting into two separate products.
@@ -108,7 +108,7 @@ Mar 2020 - Jun 2022
 
 Led IT in a large cultural center where the work mixed normal infrastructure, old inherited decisions, urgent support, security, vendors, users, and physical systems such as CCTV and access control. A lot of the job was bringing service discipline and documentation back into an environment that still had to run every day.
 
-- Managed an environment of about 200 PCs, 7 servers, roughly 20 virtual machines, CCTV, telephony, file services, and access-related infrastructure.
+- Managed an environment of about 200 PCs, 7 servers, roughly 20 virtual machines, CCTV, telephony, file services, and access-related infrastructure across IT operations and support.
 - Managed 5 IT staff and 2 installation engineers.
 - Moved 100+ employees to remote work during COVID using SoftEther VPN and Yandex Disk without stopping core operations.
 - Launched GLPI HelpDesk with automated inventory for IT and seven additional technical support services.
@@ -216,8 +216,8 @@ Sep 2008 - Sep 2009
 
 ## Education
 
-Bachelor in Management, Small Business Management specialization, National Institute of Business, Moscow, 2019  
-Professional retraining: Manager in Information Technologies, Humanities Institute, Moscow, 2019  
+Bachelor's degree in Management, Small Business Management specialization, National Institute of Business, Moscow, Jan 2011 - Jan 2019  
+Professional retraining: Manager in Information Technologies, Humanities Institute, Moscow, Jan 2018 - Jan 2019  
 Applied Informatics in Economics / Applied Economics in Informatics coursework, Humanities Institute, Moscow, 2011-2019; later transferred before graduation  
 Accounting and Finance background, College of Commerce and Banking No. 6, Moscow, 2006-2008
 

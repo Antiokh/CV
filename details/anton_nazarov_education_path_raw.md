@@ -28,7 +28,7 @@ Visible details from diploma:
 
 Resume-safe wording:
 
-- Professional retraining: Manager in Information Technologies, Humanities Institute, Moscow, 2019.
+- Professional retraining: Manager in Information Technologies, Humanities Institute, Moscow, Jan 2018 - Jan 2019.
 - Longer version: Professional retraining as Manager in Information Technologies, with professional activity in information technologies for economics and public administration.
 
 ## Diploma Source: Bachelor Degree
@@ -46,10 +46,11 @@ Visible details from diploma:
 
 Resume-safe wording:
 
-- Bachelor in Management, Small Business Management specialization, National Institute of Business, Moscow, 2019.
+- Bachelor's degree in Management, Small Business Management specialization, National Institute of Business, Moscow, Jan 2011 - Jan 2019.
 
 ## Public Resume Guidance
 
 - Do not over-explain the accreditation issue in the public resume unless the platform explicitly asks for education-transfer history.
-- Keep the factual line: started at Humanities Institute in 2011, resumed in 2017, transferred in 2019, graduated from National Institute of Business in 2019.
+- For job boards, keep the public education line simple: Bachelor's degree in Management, National Institute of Business, Jan 2011 - Jan 2019. The earlier Humanities Institute coursework and later transfer can be explained in real conversation if needed, but should not be a separate public resume entry unless explicitly requested.
 - Keep professional retraining separate from the bachelor degree.
+- For job-board parsers, avoid bare one-year education dates such as `2019` for credentials. Prefer ranges that look like normal study periods: bachelor `Jan 2011 - Jan 2019`, professional retraining `Jan 2018 - Jan 2019`, college `Jan 2006 - Jan 2008`.
