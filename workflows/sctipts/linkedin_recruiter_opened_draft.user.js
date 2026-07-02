@@ -31,8 +31,13 @@
     return /\bMessage\b|Сообщение|Написать/i.test(text);
   }
 
+  function findProfileCardRoot() {
+    return document.querySelector('[componentkey*="profile.card"]') || document;
+  }
+
   function findMessageButton() {
-    const svgButtons = [...document.querySelectorAll("button svg#send-privately-medium")]
+    const root = findProfileCardRoot();
+    const svgButtons = [...root.querySelectorAll("button svg#send-privately-medium")]
       .map((svg) => svg.closest("button"))
       .filter(Boolean);
 

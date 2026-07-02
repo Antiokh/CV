@@ -5,3 +5,5 @@ workflows/__pycache__/
 data/linkedin_recruiter_outreach.sqlite
 data/linkedin_recruiter_outreach.sqlite-*
 data/linkedin_recruiter_queue*.csv
+.external/
+*.log
