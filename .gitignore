@@ -9,3 +9,9 @@ node_modules/
 .browser-profiles/
 tmp_simplify_profile_chunk.js
 *.log
+modal_edit_project.js
+pandoc-demo.md
+pandoc-demo.pdf
+tmp_superjob_backups/
+tmp_upwork_covers/
+upwork_*.png
