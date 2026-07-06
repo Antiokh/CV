@@ -200,6 +200,8 @@ Accounting and Finance background, College of Commerce and Banking No. 6, Moscow
 - Zero-code / western-market product building, Zerocoder University, 2022
 - PlanFix implementation courses, 2022
 - Negotiation and pressure-management training, Igor Ryzov Academy, 2020-2021
+- Certification: Airtable Builder, Airtable Academy, completed July 6, 2026, expires August 6, 2028
+- n8n Quickstart, n8n Academy / n8n GmbH, issued June 26, 2026
 
 ## Languages
 
