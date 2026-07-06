@@ -1,6 +1,6 @@
 # Anton Nazarov
 
-Technology Leader / Systems Architect / Head of Engineering
+CTO / Head of Information Systems / Systems Architect
 
 Belgrade, Serbia  
 Phone: +381 62 979 5315  
@@ -10,29 +10,16 @@ Portfolio: portfolio/README.md
 
 ## Summary
 
-I am a technology leader and systems architect with 18 years of experience across internal systems, software delivery, infrastructure, automation, and IT leadership. I started in Lotus/Domino development and user support, later built a banking document-management system, rebuilt a sector-level cultural information system, ran IT for a large cultural center, and now build ERP/CRM, portals, automation, and backend-heavy low-code/hybrid systems for clients.
+Technology leader and systems architect with 18 years of experience across internal systems, infrastructure, automation, and software delivery. Most recent work is CTO-style delivery for ERP/CRM, portals, and operational platforms: mapping messy real-world processes, designing architecture and permissions, leading implementation and rollout, and turning fragmented workflows into maintainable systems teams can run.
 
-I am usually most useful when the system already exists, but the work around it is messy: part of the process lives in Excel, part in email and chat, access rules have drifted, old backend decisions are undocumented, and users no longer know who owns which step. In those situations I start by mapping what people actually do, where data gets lost, which roles are real, and what can be automated without breaking daily operations.
+## Skills
 
-Recent work is closer to CTO / solution architect delivery: Supabase/PostgreSQL backends, WeWeb/Bubble/Glide, n8n and Make, API integrations, PWAs, Telegram workflows, and AI-assisted delivery. I can speak with business stakeholders in process terms and with developers in terms of schema, API behavior, permissions, platform limits, and rollout risk.
-
-## Core Skills
-
-Most of my work starts before there is a clean specification. Someone has a process that half-lives in Excel, email, old databases, access rules, and local habits. I pull that apart with stakeholders, then turn it into something a team can build and users can actually operate: data model, roles, statuses, integrations, reports, permissions, documentation, and support routines.
-
-I can stay hands-on enough to understand backend, database, and API decisions, but I also take responsibility for rollout, training, task structure, small-team leadership, vendor coordination, and the parts of implementation where users find edge cases. The same pattern now applies to AI-assisted delivery: prompts, guardrails, validation checks, schema sync, and review loops instead of casual prompting.
-
-## Technical Stack
-
-I am not tied to one single stack. Most recent projects combine several pieces that already exist: a database, a low-code interface, webhooks, spreadsheets, permissions, external APIs, and some manual workaround that has to be removed carefully. The current stack I use most often includes Supabase, PostgreSQL, SQL, RLS, Auth, Edge Functions, Realtime, WeWeb, Xano, n8n, Make, REST APIs, Postman, JavaScript, Python, Node.js, JSON, and Telegram bots.
-
-The low-code/product side includes WeWeb, Glide, Bubble, Airtable, Figma, Webflow, Astro, PWA architecture, and custom WeWeb/Vue components. I used Airtable actively, including migration into MetaFox and a wrapper-style connection into Supabase. In Glide I built booking, networking, multilingual apps, and integrations with Google Sheets, Supabase, Make, and external APIs. In WeWeb I usually work on more serious client portals and internal interfaces sitting on one backend data model.
-
-For automation, n8n and Make are the tools I reach for most. In n8n I built complex workflows, error/debug loops, workflow-as-function patterns, Google Drive/Sheets to Supabase migration, AI parsing, OpenAI API calls, and hallucination checks through external geocoding/reverse-geocoding requests. In Make I worked with webhooks, routers, social distribution, email, document generation, DocsAutomator, JSON processing, and scenario-cost optimization.
-
-The older enterprise layer is still relevant: IBM/HCL Domino, Lotus Notes, XPages, LotusScript, Lotus SSJS, Lotus @Formula, Java, VBA, XML, Apache POI, Boss-Referent, Lotus Enterprise Integrator, 1C/XML integrations, MySQL, MS SQL, and Microsoft Office OLE. That is not a theoretical list; it came from years of document workflow, reporting, integrations, and internal systems work.
-
-Infrastructure and ITSM experience includes Windows Server, Linux, Ubuntu, CentOS, nginx, Docker, Hyper-V, VMware ESXi, Active Directory, GPO, LDAP, DNS, DHCP, GLPI, Zabbix, SoftEther VPN, Synology NAS, IP PBX/SIP, CCTV, Hikvision, AxxonNext, Octagram, Kaspersky, PlanFix, Odoo, ServiceDesk/HelpDesk, asset inventory, Tawk.to, Yandex Disk, Microsoft Office, LibreOffice, OpenOffice, OnlyOffice, and knowledge-base documentation. External services I have integrated include Telegram Mini Apps, QR code workflows, Yandex Maps API, DataMos.ru, legal entity/INN lookup, weather APIs, Stripe, WordPress/WooCommerce, SendPulse, Bing Translate, fal.ai, and AI image-generation APIs.
+- **Leadership / Delivery:** CTO-style delivery, systems architecture, platform ownership, stakeholder alignment, rollout, training, vendor coordination, governance, support-model design.
+- **Platforms / Backend:** Supabase, PostgreSQL, SQL, RLS, Auth, Edge Functions, Realtime, Xano, REST APIs, Postman, Node.js, Python, JavaScript.
+- **Product / Low-code / Frontend:** WeWeb, Bubble, Glide, Airtable, Figma, Webflow, Astro, PWA architecture, custom components.
+- **Automation / AI:** n8n, Make, Telegram workflows, OpenAI API, fal.ai, AI-assisted delivery, prompt/debug workflows, schema sync, validation loops.
+- **Enterprise / Infrastructure:** IBM/HCL Domino, Lotus Notes, XPages, XML, Apache POI, Windows Server, Linux, nginx, Docker, Hyper-V, VMware ESXi, Active Directory, GPO, GLPI, Zabbix, SoftEther VPN, Synology, CCTV, Octagram.
+- **Integrations / Operations:** ERP/CRM implementation, 1C/XML, WordPress/WooCommerce, Stripe, Yandex Maps API, Google Drive/Sheets, DocsAutomator, reporting, permissions, asset inventory, HelpDesk/ServiceDesk.
 
 ## Professional Experience
 
@@ -41,7 +28,7 @@ Founder / CTO / Systems Architect
 Belgrade, Serbia  
 Nov 2022 - Present
 
-I run an independent technology practice where projects are rarely just "build an app". Usually there is an operational problem behind the request: a service team losing time in chats and spreadsheets, a founder trying to see what is happening in the business, or an old tool that has to be replaced without stopping work. I cover architecture, implementation, cleanup, automation, and the first support/adoption loop after launch.
+I run an independent technology practice focused on operational systems, internal platforms, and automation-heavy delivery. The work typically combines architecture, implementation, process cleanup, and the first support/adoption loop after launch.
 
 - Delivered CRM, ERP, internal portal, reporting, marketplace, assessment, and field-operations systems for small businesses and startup teams.
 - Built across WeWeb, Supabase, Xano, Bubble, Glide, n8n, Make, PostgreSQL, APIs, Telegram integrations, and AI APIs, often combining several of them in one production workflow.
@@ -68,8 +55,6 @@ Implementation Curator / Product Manager
 Moscow, Russia  
 Aug 2022 - Nov 2022
 
-Worked in a commercial automation company building and implementing ERP/CRM systems on PlanFix.
-
 - Audited weak points in the implementation process and post-delivery adoption.
 - Improved ERP/CRM implementation methodology and project control practices.
 - Analyzed client business processes, usage scenarios, training needs, and delivery handoff issues.
@@ -82,9 +67,8 @@ Senior Manager / IT Architect / Analyst / Developer
 Moscow, Russia  
 Jan 2017 - May 2023
 
-This was a hybrid role: part architect, part developer, part analyst, part internal product owner. The system served Moscow's cultural sector, so technical changes also meant institutional communication, training, access rules, reporting obligations, and support for people in subordinate organizations who had to use the system in real work.
+Hybrid architect / developer / analyst role for a sector-level cultural information system serving subordinate institutions across Moscow.
 
-- Worked with IT directors and heads of IT across 100+ subordinate cultural institutions.
 - Rebuilt a legacy IBM Domino data-collection system into a web-based information system with modular architecture while keeping reporting work alive.
 - Designed report generators, field generators, export constructors, filters, access rules, role-based controls, and reusable field/snippet generation tools for faster change delivery.
 - Replaced a 5-hour, single-user export workflow with web-based report generation that usually completed in 1.5 seconds to 1.5 minutes and became available to authorized users across institutions.
@@ -106,7 +90,7 @@ Head of IT / CIO
 Moscow, Russia  
 Mar 2020 - Jun 2022
 
-Led IT in a large cultural center where the work mixed normal infrastructure, old inherited decisions, urgent support, security, vendors, users, and physical systems such as CCTV and access control. A lot of the job was bringing service discipline and documentation back into an environment that still had to run every day.
+Led IT for a large cultural center across infrastructure, support, security, vendors, and physical systems, while restoring service discipline and documentation.
 
 - Managed an environment of about 200 PCs, 7 servers, roughly 20 virtual machines, CCTV, telephony, file services, and access-related infrastructure across IT operations and support.
 - Managed 5 IT staff and 2 installation engineers.
@@ -137,8 +121,6 @@ Deputy Head of Digital Development and IT / Acting Head of IT
 Moscow, Russia  
 Sep 2019 - Mar 2020
 
-Joined a newly created organization and helped build its IT function from the ground up.
-
 - Designed the initial IT architecture for workstations, servers, Ethernet, Wi-Fi, SIP telephony, and business systems.
 - Selected hardware and software for procurement, including PCs, MFPs, servers, and networking equipment.
 - Led HelpDesk implementation based on GLPI with automated inventory.
@@ -154,16 +136,12 @@ Moscow, Russia
 Nov 2016 - Mar 2017
 
 - Supported and developed an internal IBM Domino document-management system used by more than 3,000 users.
-- Worked as third-line support for workflow and Domino application issues.
-- Processed a backlog of enhancement requests accumulated from earlier periods.
-- Unified the visual style of internal Domino databases.
+- Processed backlog enhancement requests and standardized the visual style of internal Domino databases.
 
 ### Settlement and Savings Bank
 Lead Software Developer / Systems Architect  
 Moscow, Russia  
 Jan 2013 - Sep 2015
-
-Built an internal electronic document management system in a banking environment.
 
 - Worked with bank leadership and department heads to map document types, routes, registration rules, ownership, statuses, and approval paths.
 - Converted informal document movement into technical requirements for automation.
@@ -183,9 +161,7 @@ Jan 2011 - Apr 2012
 
 - Developed and maintained IBM Domino / Lotus Notes document-management systems in a systems-integration environment.
 - Introduced XPages technology into the company for the first time.
-- Rewrote the core Boss-Referent library in JavaScript / SSJS to support web interfaces.
-- Modified Boss-Referent for web use and added new modules and databases.
-- Fixed system and UI issues in Domino applications.
+- Rewrote the core Boss-Referent library in JavaScript / SSJS to support web interfaces and extended workflow modules.
 - Trained new employees on the internal Lotus Notes workflow system.
 
 Technologies: IBM Domino, Lotus Notes, Boss-Referent, LEI, XPages, Lotus SSJS, JavaScript, CSS, HTML.
@@ -197,9 +173,7 @@ Jan 2009 - Jan 2011
 
 - Built and maintained websites on CMS platforms.
 - Deployed and supported private World of Warcraft and Lineage servers.
-- Installed and supported Ubuntu desktop/server environments and web-server software.
-- Automated database updates from SVN repositories into MySQL using Bash scripts.
-- Configured automatic backups to cloud storage.
+- Installed and supported Ubuntu desktop/server environments, automated MySQL updates from SVN, and configured cloud backups.
 - Built and repaired PCs, installed operating systems and applications, and handled user support.
 
 ### Domodedovo Airport
@@ -209,10 +183,7 @@ Sep 2008 - Sep 2009
 
 - Selected through an internal training and hiring process from a group of 12 candidates.
 - Developed, configured, modernized, tested, and supported Lotus Notes / Domino document workflow applications.
-- Built service applications and agents.
-- Integrated Lotus applications with Microsoft Office and other software through OLE.
-- Prepared project documentation and supported users.
-- Worked with Service Desk and testers on enterprise workflow issues.
+- Built service applications and agents, integrated Lotus applications with Microsoft Office through OLE, and supported users with Service Desk and testers.
 
 ## Education
 
