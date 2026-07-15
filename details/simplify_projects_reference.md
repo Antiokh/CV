@@ -8,6 +8,46 @@ Use this file as the project-date reference for job boards that require project 
 
 ## Projects
 
+### Domodedovo Lotus Workflow Applications
+
+Role: Junior Lotus Notes Developer  
+Dates: Sep 2008 - Sep 2009  
+Location: Moscow, Russia
+
+Developed, configured, modernized, tested, and supported Lotus Notes / Domino document-workflow applications in an enterprise airport environment. Built service applications and agents, integrated Lotus applications with Microsoft Office through OLE, prepared project documentation, and worked with Service Desk and testers.
+
+### Banking Document Management System
+
+Role: Lead Software Developer / Systems Architect  
+Dates: Jan 2013 - Sep 2015  
+Location: Moscow, Russia
+
+Designed and built an internal electronic document-management system for a banking environment. Mapped document types, approval routes, ownership, statuses, and registration rules with bank leadership and department heads. Implemented the system on IBM Lotus Domino, added XML integration with 1C, supervised another developer, trained users, and rolled the system out to production.
+
+### Cultural Sector Information System
+
+Role: Senior Manager / IT Architect / Analyst / Developer  
+Dates: Jan 2017 - May 2023  
+Location: Moscow, Russia
+
+Rebuilt a legacy IBM Domino data-collection system into a modular web-based information system for Moscow cultural institutions. Designed access rules, reporting, export constructors, filters, field generators, and a Yandex Maps object map. The system supported reporting and operational workflows across 100+ subordinate institutions.
+
+### ZIL IT Transformation
+
+Role: Head of IT / CIO  
+Dates: Mar 2020 - Jun 2022  
+Location: Moscow, Russia
+
+Led IT modernization for a large cultural center: Active Directory and GPO rollout, GLPI HelpDesk with inventory, remote-work setup for 100+ employees, infrastructure documentation, security remediation, CCTV/server modernization, Zabbix monitoring, and centralized access/service discipline.
+
+### Cashdesk Accounting
+
+Role: Developer / UX Designer  
+Dates: Sep 2022 - Sep 2022  
+Location: Remote
+
+Rebuilt a weak legacy accounting and cash-desk workflow into a cleaner internal financial operations tool, including role management for cashier, auditor, and administrator, income/cost tracking, currency conversion, CSV exports, automatic logout, and improved UX structure.
+
 ### QR Cloud
 
 Role: Product Builder / Designer  
@@ -94,11 +134,3 @@ Location: Remote
 URL: https://exitmoldny.com/wp-content/uploads/2025/01/Exit-Mold-Revise-V2-1.mp4
 
 Built a multi-surface inspection and reporting platform with Glide internal interfaces for inspectors, dispatchers, and admins, a WeWeb client portal, Supabase backend, n8n automations, and DocsAutomator report generation. Migrated approximately 70,000 historical documents from Google Drive into Supabase and used OpenAI-assisted parsing for legacy contact data.
-
-### Cashdesk Accounting
-
-Role: Developer / UX Designer  
-Dates: Sep 2022 - Sep 2022  
-Location: Remote
-
-Rebuilt a weak legacy accounting and cash-desk workflow into a cleaner internal financial operations tool, including role management for cashier, auditor, and administrator, income/cost tracking, currency conversion, CSV exports, automatic logout, and improved UX structure.

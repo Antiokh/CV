@@ -140,6 +140,15 @@ Before making applications, read or keep available:
 - [Evidence Map Guide](./evidence_map_guide.md)
 - [HH dark copy userscript](./sctipts/hh_dark_copy.user.js)
 
+When the task involves direct hh.ru data access or modification rather than
+manual browser clicks, also read the local interface map:
+
+- `C:\git\hh.ru-clicker\HH_API_MAP.md`
+
+It records the discovered HH read/write interfaces for resumes, vacancy
+responses, questionnaire forms, negotiations, Chatik, SSR state extraction,
+OAuth-vs-cookie behavior, success signals, and failure modes.
+
 Use the userscript extractor fields as the canonical vacancy input:
 
 - `title`

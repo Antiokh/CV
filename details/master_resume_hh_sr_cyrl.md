@@ -220,8 +220,8 @@ Junior Lotus Notes Developer
 
 ## Образовање
 
-Bachelor in Management, специјализација Small Business Management, National Institute of Business, Москва, 2019  
-Професионална преквалификација: менаџер за информационе технологије, Гуманитарни институт, Москва, 2019  
+Bachelor's degree in Management, специјализација Small Business Management, National Institute of Business, Москва, јануар 2011 - јануар 2019  
+Професионална преквалификација: менаџер за информационе технологије, Гуманитарни институт, Москва, јануар 2018 - јануар 2019  
 Курс Applied Informatics in Economics / Applied Economics in Informatics, Гуманитарни институт, Москва, 2011-2019; касније прелазак у National Institute of Business  
 Економија и рачуноводство по гранама, College of Commerce and Banking No. 6, Москва, 2006-2008
 

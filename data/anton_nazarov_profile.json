@@ -1418,6 +1418,28 @@
         "year_to": 2022
       },
       {
+        "topic": "Certification: Airtable Builder",
+        "field": "Airtable platform and builder-level implementation",
+        "institution": "Airtable Academy",
+        "year_from": 2026,
+        "year_to": 2026,
+        "completion_date": "2026-07-06",
+        "expires_on": "2028-08-06",
+        "verification_url": "https://verify.skilljar.com/c/huzp8pq2h9cg",
+        "source_status": "verified on certificate page"
+      },
+      {
+        "topic": "n8n Quickstart",
+        "field": "workflow automation and introductory AI-agent tooling in n8n",
+        "institution": "n8n GmbH / n8n Academy",
+        "year_from": 2026,
+        "year_to": 2026,
+        "completion_date": "2026-06-26",
+        "expires_on": null,
+        "verification_url": "https://badges.n8n.io/bc8053b4-127d-49a5-90c2-045e6f06b068",
+        "source_status": "verified on badge page"
+      },
+      {
         "topic": "Low-code and implementation training",
         "field": "low-code delivery and implementation",
         "year_from": null,
@@ -1444,7 +1466,8 @@
     "source_files": [
       "details/anton_nazarov_education_path_raw.md",
       "sources/education/humanities_institute_it_management_retraining_diploma_2019.jpg",
-      "sources/education/national_institute_of_business_bachelor_management_2019.jpg"
+      "sources/education/national_institute_of_business_bachelor_management_2019.jpg",
+      "sources/certifications_2026-07.md"
     ]
   },
   "additional_experience": [
