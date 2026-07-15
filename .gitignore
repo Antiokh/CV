@@ -9,3 +9,4 @@ node_modules/
 .browser-profiles/
 tmp_simplify_profile_chunk.js
 *.log
+.external/hh-ru-apply
