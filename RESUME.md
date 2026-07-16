@@ -41,7 +41,7 @@ Key outcomes:
 ### ZIL Cultural Center, Head of IT
 **Mar 2020 - Jun 2022**
 
-- Recruited and coordinated a core team of 3 people, with up to 6 people involved during installation and cable/physical work when needed
+- Started by stabilizing the environment with a core team of 3 people, then grew the in-house IT team to 5 as operations became more structured
 - Kept the team operational and stable for 2 years without departures while modernizing the entire IT environment of a large cultural center
 - Ran IT operations, support coordination, vendor management, and infrastructure priorities
 - Led the remote-work transition during COVID for 100+ employees
@@ -52,6 +52,7 @@ Key outcomes:
 **Jan 2017 - May 2023**
 
 - Led the reform and rebuilding of an industry-level information system for cultural institutions
+- Owned the product and technical logic of AIS MosRazvitie, including data model, reporting workflows, governance rules, and system behavior
 - Combined stakeholder work, documentation, architecture, implementation, training, webinars, server setup, and backups
 - Improved security, access control, reporting, analytics, and operational independence across departments
 - Worked with the client organization and the delivery team to keep the system moving from concept to stable operation

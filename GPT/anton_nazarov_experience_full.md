@@ -260,6 +260,16 @@ Anton's role was unusually broad and included:
 - webinars with feedback
 - server setup and backups
 
+This was not a support role inside someone else's product. Anton owned the product and technical logic of the system end to end: he defined how institutions, branches, locations, rooms, events, reports, questionnaires, exports, and service processes should work inside a single operational model.
+
+He also made key decisions around:
+- domain and data-model structure
+- reporting templates and report-generation logic
+- event lifecycle rules and reporting periods
+- edit restrictions and data-consistency controls
+- data exchange and service actions
+- translation of institutional pain points into system changes
+
 Technically, the project combined:
 - IBM Domino and web access
 - modular design
@@ -548,6 +558,7 @@ The operational scale included:
 - introducing IT products and improvements
 - training staff
 - ensuring information security
+- stabilizing the environment with a 3-person core team and later expanding the in-house IT team to 5
 - managing 5 IT staff and 2 installation engineers
 - controlling department operating budget and modernization budget
 - integrating GLPI with Active Directory and automatic inventory

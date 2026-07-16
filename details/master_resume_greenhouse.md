@@ -67,11 +67,13 @@ Senior Manager / IT Architect / Analyst / Developer
 Moscow, Russia  
 Jan 2017 - May 2023
 
-Hybrid architect / developer / analyst role for a sector-level cultural information system serving subordinate institutions across Moscow.
+Hybrid product owner / architect / developer / analyst role for a sector-level cultural information system serving subordinate institutions across Moscow.
 
 - Rebuilt a legacy IBM Domino data-collection system into a web-based information system with modular architecture while keeping reporting work alive.
+- Owned the product logic of AIS MosRazvitie end to end, including domain model, reporting workflows, questionnaires, exports, service actions, and governance rules.
 - Designed report generators, field generators, export constructors, filters, access rules, role-based controls, and reusable field/snippet generation tools for faster change delivery.
 - Replaced a 5-hour, single-user export workflow with web-based report generation that usually completed in 1.5 seconds to 1.5 minutes and became available to authorized users across institutions.
+- Defined lifecycle rules for events, reporting periods, edit restrictions, and data-consistency controls across institutions, branches, locations, and spaces.
 - Built an interactive object map using Yandex Maps API, JSON/GeoJSON-style data, and public institutional data from the information system.
 - Migrated IBM Domino infrastructure from Windows to CentOS with nginx reverse proxy.
 - Improved security through web authentication changes and achieved an A+ SSL rating in the nginx reverse-proxy setup.
@@ -93,6 +95,7 @@ Mar 2020 - Jun 2022
 Led IT for a large cultural center across infrastructure, support, security, vendors, and physical systems, while restoring service discipline and documentation.
 
 - Managed an environment of about 200 PCs, 7 servers, roughly 20 virtual machines, CCTV, telephony, file services, and access-related infrastructure across IT operations and support.
+- Stabilized the environment with a 3-person core team, then grew the in-house IT team to 5 as service operations became more structured.
 - Managed 5 IT staff and 2 installation engineers.
 - Moved 100+ employees to remote work during COVID using SoftEther VPN and Yandex Disk without stopping core operations.
 - Launched GLPI HelpDesk with automated inventory for IT and seven additional technical support services.

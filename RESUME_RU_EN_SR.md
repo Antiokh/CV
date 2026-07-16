@@ -38,6 +38,7 @@ I also use AI-native development workflows in VS Code, with repository-specific 
 *Mar 2020 - Jun 2022*
 
 - Owned the IT function of a large public organization
+- Started with a 3-person in-house team and grew it to 5 while stabilizing operations
 - Managed engineers, contractors, infrastructure, and security
 - Worked in a politically and organizationally complex public-sector environment
 
@@ -45,6 +46,7 @@ I also use AI-native development workflows in VS Code, with repository-specific 
 *Jan 2017 - May 2023*
 
 - Designed and rebuilt an industry-level information system
+- Owned the product and technical logic of AIS MosRazvitie, including the domain model, reporting workflows, and governance rules
 - Combined architecture, documentation, implementation, training, and support
 - Worked with reporting, analytics, security, and cross-institution workflows
 
@@ -100,6 +102,7 @@ I also use AI-native development workflows in VS Code, with repository-specific 
 *Март 2020 - Июнь 2022*
 
 - Полная ответственность за IT-функцию крупной публичной организации
+- Начинал с очной команды из 3 человек и довел ее до 5 по мере стабилизации работы
 - Управление инженерами, подрядчиками, инфраструктурой и безопасностью
 - Работа в политически и организационно сложной среде государственного сектора
 
@@ -107,6 +110,7 @@ I also use AI-native development workflows in VS Code, with repository-specific 
 *Январь 2017 - Май 2023*
 
 - Проектирование и перестройка отраслевой информационной системы
+- Владение продуктовой и технической логикой АИС МосРазвитие, включая доменную модель, отчетные процессы и governance rules
 - Совмещение архитектуры, документации, реализации, обучения и сопровождения
 - Работа с отчетностью, аналитикой, безопасностью и межведомственными процессами
 
