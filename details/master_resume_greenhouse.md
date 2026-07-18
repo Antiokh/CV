@@ -55,6 +55,8 @@ Implementation Curator / Product Manager
 Moscow, Russia  
 Aug 2022 - Nov 2022
 
+Startup-level implementation company delivering ERP/CRM projects for commercial clients.
+
 - Audited weak points in the implementation process and post-delivery adoption.
 - Improved ERP/CRM implementation methodology and project control practices.
 - Analyzed client business processes, usage scenarios, training needs, and delivery handoff issues.
@@ -66,6 +68,8 @@ Aug 2022 - Nov 2022
 Senior Manager / IT Architect / Analyst / Developer  
 Moscow, Russia  
 Jan 2017 - May 2023
+
+City-level public-sector organization coordinating 100+ cultural institutions across Moscow, including libraries and local cultural centers.
 
 Hybrid product owner / architect / developer / analyst role for a sector-level cultural information system serving subordinate institutions across Moscow.
 
@@ -91,6 +95,8 @@ Technologies: IBM/HCL Domino, Lotus Notes, XPages, JavaScript, Java, CSS, HTML, 
 Head of IT / CIO  
 Moscow, Russia  
 Mar 2020 - Jun 2022
+
+ZIL here refers to the cultural center, not the industrial plant: a major public cultural venue in Moscow and one of the city's landmark houses of culture, reasonably positionable as one of the larger public cultural centers in Russia by scale. The IT function supported 145 employees, 156 workstations, and 581 technology assets; official 2021 reporting shows at least 684 events and about 100,000 attendances across major public formats.
 
 Led IT for a large cultural center across infrastructure, support, security, vendors, and physical systems, while restoring service discipline and documentation.
 
@@ -124,6 +130,8 @@ Deputy Head of Digital Development and IT / Acting Head of IT
 Moscow, Russia  
 Sep 2019 - Mar 2020
 
+Newly created public-sector organization launched to support Moscow social-development programs and related operations.
+
 - Designed the initial IT architecture for workstations, servers, Ethernet, Wi-Fi, SIP telephony, and business systems.
 - Selected hardware and software for procurement, including PCs, MFPs, servers, and networking equipment.
 - Led HelpDesk implementation based on GLPI with automated inventory.
@@ -138,6 +146,8 @@ Lotus / IBM Domino Developer
 Moscow, Russia  
 Nov 2016 - Mar 2017
 
+Major alcohol producer and distributor; Anton supported an internal IBM Domino environment used by 3,000+ users.
+
 - Supported and developed an internal IBM Domino document-management system used by more than 3,000 users.
 - Processed backlog enhancement requests and standardized the visual style of internal Domino databases.
 
@@ -145,6 +155,8 @@ Nov 2016 - Mar 2017
 Lead Software Developer / Systems Architect  
 Moscow, Russia  
 Jan 2013 - Sep 2015
+
+Russian commercial bank where document workflows, approvals, registration rules, and 1C-linked internal processes had to be formalized.
 
 - Worked with bank leadership and department heads to map document types, routes, registration rules, ownership, statuses, and approval paths.
 - Converted informal document movement into technical requirements for automation.
@@ -183,6 +195,8 @@ Jan 2009 - Jan 2011
 Junior Lotus Notes Developer  
 Moscow, Russia  
 Sep 2008 - Sep 2009
+
+One of the largest airports serving Moscow and a large enterprise environment for internal document and workflow systems.
 
 - Selected through an internal training and hiring process from a group of 12 candidates.
 - Developed, configured, modernized, tested, and supported Lotus Notes / Domino document workflow applications.
