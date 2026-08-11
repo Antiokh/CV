@@ -41,7 +41,7 @@ When the CV exists and the cover letter is missing:
 4. load and apply the current matching cached humanizer from `WorkApplications/_skills/` exactly as required by `SKILL.md` and live `Agent Instructions`;
 5. save only final letter text as `Anton_Nazarov<PositionTitle>.txt`;
 6. verify the TXT through Drive readback;
-7. write its verified Drive URL to `Cover Letter`.
+7. write its verified Drive URL to `Cover`.
 
 This rule completes an already-existing CV/application pack. It must **not** trigger creation of a new CV for a vacancy that never had one.
 
@@ -51,7 +51,7 @@ If the user explicitly declines cover-letter creation for a vacancy, respect tha
 
 Before saying the old chat is safe to delete, verify the affected Sheet rows and Drive artifacts.
 
-If a tailored CV exists for a migrated vacancy, migration is not complete until the canonical cover-letter TXT also exists and its verified URL is stored in `Cover Letter`, unless the user explicitly declined it.
+If a tailored CV exists for a migrated vacancy, migration is not complete until the canonical cover-letter TXT also exists and its verified URL is stored in `Cover`, unless the user explicitly declined it.
 
 End with exactly one of:
 

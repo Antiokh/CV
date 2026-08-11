@@ -81,9 +81,9 @@ For every vacancy, CV, cover letter, or hiring-stage task, use Google Sheet `Wor
 
 - Before the first tracker or Drive write, read the hidden tab `Agent Instructions`; when a newer explicit user instruction changes the workflow, update that tab as well.
 - Upsert one row per vacancy by `Vacancy URL` and normalized `Company + Position`; never create a new row for a later stage of the same vacancy.
-- Use the live A:S schema: `Company`, `Referral`, `Position`, `Archetype`, `Location`, `Vacancy URL`, `Apply URL`, `Posted date`, `Date found`, `Date applied`, `Fit %`, `Stage`, `Last contact`, `Next action`, `CV`, `Cover Letter`, `Vacancy snapshot`, `Notes`, `Vacancy file`.
+- Use the live A:S schema: `Company`, `Position`, `Fit %`, `Stage`, `Referral`, `Apply URL`, `CV`, `Cover`, `Vacancy file`, `Archetype`, `Location`, `Vacancy URL`, `Posted date`, `Date found`, `Date applied`, `Last contact`, `Next action`, `Vacancy snapshot`, `Notes`.
 - On initial analysis, extract every known application metadata value before discarding job-board UI. Keep Vacancy URL as the source page and Apply URL as the actual submission destination.
-- Decode the `url` parameter of LinkedIn `safety/go` links and store the validated direct HTTP(S) destination with its own query parameters. Do not store the wrapper, infer an ATS, invent a careers URL, or fill Apply URL for Easy Apply without a distinct destination.
+- Decode the `url` parameter of LinkedIn `safety/go` links and store the validated direct HTTP(S) destination with its own query parameters. Do not store the wrapper, infer an ATS, or invent a careers URL. For LinkedIn Easy Apply / auto-apply without a distinct destination, set `Apply URL = Vacancy URL`.
 - Keep Posted date and Date found independent. Convert precise relative publication labels only with a known reference date; leave coarse values blank and preserve useful original wording in Notes.
 - For old-chat migration, prefer original pasted evidence and the historical chat date. Do not browse the current vacancy to reconstruct historical Apply URL or Posted date unless explicitly requested.
 - If no CV exists yet, use `Stage = Reviewed`.
@@ -93,7 +93,7 @@ For every vacancy, CV, cover letter, or hiring-stage task, use Google Sheet `Wor
 - Use `YYYY-MM-DD` in `Europe/Belgrade`. Preserve populated cells and leave unknown values blank.
 - A reviewed vacancy may have only `Position.md`. When the automatic-CV gate applies, complete the same folder with `Anton_Nazarov<PositionTitle>.md` for the CV source, `Anton_Nazarov_<PositionTitle>.docx` for the final Word CV, and `Anton_Nazarov<PositionTitle>.txt` for the plain-text cover letter.
 - Before saving TXT, apply `WorkApplications/_skills/humanizer-ru/SKILL.md` for Russian or `WorkApplications/_skills/humanizer-en/SKILL.md` for English in embedded/file mode; store only final humanized text.
-- Prefer updating existing artifacts for revisions, verify claimed artifacts by Drive readback, write the DOCX URL to `CV`, write the TXT URL to `Cover Letter`, set `Stage = CV ready` if not submitted, and set the concrete `Next action`.
+- Prefer updating existing artifacts for revisions, verify claimed artifacts by Drive readback, write the DOCX URL to `CV`, write the TXT URL to `Cover`, set `Stage = CV ready` if not submitted, and set the concrete `Next action`.
 - Creating or uploading a CV does not mean the application was submitted.
 - Set `Stage = Applied` only from the user's report or an explicit company/ATS receipt confirming this application was submitted. Fill `Date applied` only when the actual submission date is directly evidenced.
 - Continue updating the same row through recruiter screen, interview, technical interview, final, offer, rejection, withdrawal, ghosting, or closure.

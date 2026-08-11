@@ -56,7 +56,7 @@ Keep the CV Markdown and DOCX synchronized. Prefer updating existing files over 
 
 Use the live `Jobs` headers A:S in this order:
 
-`Company`, `Referral`, `Position`, `Archetype`, `Location`, `Vacancy URL`, `Apply URL`, `Posted date`, `Date found`, `Date applied`, `Fit %`, `Stage`, `Last contact`, `Next action`, `CV`, `Cover Letter`, `Vacancy snapshot`, `Notes`, `Vacancy file`.
+`Company`, `Position`, `Fit %`, `Stage`, `Referral`, `Apply URL`, `CV`, `Cover`, `Vacancy file`, `Archetype`, `Location`, `Vacancy URL`, `Posted date`, `Date found`, `Date applied`, `Last contact`, `Next action`, `Vacancy snapshot`, `Notes`.
 
 Storage rules:
 
@@ -75,7 +75,7 @@ Treat `Vacancy URL` as the page where the vacancy was found and `Apply URL` as t
 - Save the substantive vacancy text to `Position.md` before reducing it to the tracker snapshot/notes.
 - For a LinkedIn `https://www.linkedin.com/safety/go/?url=...` link, parse the `url` query parameter, URL-decode it, validate that it is an absolute HTTP(S) URL, and store the direct external ATS/company URL. Never store the LinkedIn wrapper as canonical Apply URL.
 - Preserve the external destination's query parameters. Do not infer an ATS or construct a careers URL from the company name.
-- For LinkedIn Easy Apply without a distinct useful destination, keep Vacancy URL and leave Apply URL blank.
+- For LinkedIn Easy Apply / auto-apply without a distinct useful destination, set `Apply URL = Vacancy URL`.
 - Store Posted date only from explicit evidence. Convert precise relative labels such as `3 days ago` only when the reference date is known; use `YYYY-MM-DD`.
 - Do not create false precision for `30+ days ago`, `several weeks ago`, `1 year ago`, or similar coarse labels. Leave Posted date blank and preserve useful original wording in Notes.
 - Date found is when Anton/ChatGPT first encountered or added the vacancy. Never substitute Posted date for Date found.
@@ -121,7 +121,7 @@ Fix defects, rerender, and inspect again. Never claim visual QA passed when rend
 ## Tracker lifecycle
 
 - Before CV creation: `Stage = Reviewed`.
-- After all required application-pack files are uploaded and verified: write the DOCX URL to `CV`, the TXT URL to `Cover Letter`, and set `Stage = CV ready` if no submission was reported.
+- After all required application-pack files are uploaded and verified: write the DOCX URL to `CV`, the TXT URL to `Cover`, and set `Stage = CV ready` if no submission was reported.
 - CV creation or upload is not proof of application.
 - Set `Stage = Applied` only from the user's report or an explicit company/ATS receipt confirming that this application was submitted. Fill `Date applied` only when the actual submission date is directly evidenced.
 - Continue updating the same row through recruiter screen, interview, technical interview, final, offer, rejection, withdrawal, ghosting, or closure.
