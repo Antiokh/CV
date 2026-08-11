@@ -384,6 +384,15 @@ The Google Sheet is the source of truth for job-search history. Project chats mu
 - Never synthesize an email, guess a LinkedIn profile, or create a chip for an ambiguous identity. Multiple verified contacts may share the cell as separate entries.
 - Use recruiter name plus company/domain for authorized Gmail searches and the verified profile URL for LinkedIn lookup. Read back metadata after writing: people chips require `chipRuns[].chip.personProperties.email`; linked names require the exact text and URL.
 
+### LinkedIn referral suggestions
+
+- The hidden Sheet tab `LinkedIn Connections` is the authorized private snapshot of Anton's LinkedIn export. Its A:J schema is `First Name`, `Last Name`, `LinkedIn URL`, `Email Address`, `Company`, `Position`, `Connected On`, `Company Key`, `Contact Type`, `Exported On`.
+- For every newly ingested vacancy and before recommending an application action, search bounded column `H` by the conservatively normalized company key, then read `A:J` only for returned rows. Test only evidence-backed parent, subsidiary, former-name, or common-brand aliases; reject loose substring false positives.
+- Proactively suggest at most three contacts: current-company Recruiting/HR first, then a likely functional hiring manager/leader, then a relevant employee who could make a credible warm introduction. A strongly relevant functional contact may outrank generic HR; use connection recency only as a tie-breaker.
+- For each suggestion provide exact export-listed name, company, position, LinkedIn URL, Connected On date, and a short ranking reason. State the snapshot date from `Exported On` and do not claim the person still works there without current evidence.
+- A connection is only a referral candidate. Do not populate `Referral`, change `Stage`, or claim outreach/referral until Anton confirms a planned or completed contact/introduction. Do not expose its email in Jobs, Notes, or chat unless Anton specifically needs it for outreach.
+- When a newer full `Connections.csv` is supplied, replace the hidden snapshot as one dataset, preserve the schema and hidden state, clear stale surplus rows, update `Exported On`, and verify row count, edge rows, key coverage, and representative matches.
+
 ### Salary expectations and market estimate
 
 - Populate `Salary expectation` only from Anton's explicit, current, confirmed expectation or a reliable previously confirmed record. Never infer it from the vacancy or market data.

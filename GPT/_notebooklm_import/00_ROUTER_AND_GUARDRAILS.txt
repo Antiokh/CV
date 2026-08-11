@@ -1,4 +1,4 @@
-﻿# 00_ROUTER_AND_GUARDRAILS
+# 00_ROUTER_AND_GUARDRAILS
 
 NotebookLM source title: 00_ROUTER_AND_GUARDRAILS
 Original files included:
@@ -402,6 +402,15 @@ The Google Sheet is the source of truth for job-search history. Project chats mu
 - Never synthesize an email, guess a LinkedIn profile, or create a chip for an ambiguous identity. Multiple verified contacts may share the cell as separate entries.
 - Use recruiter name plus company/domain for authorized Gmail searches and the verified profile URL for LinkedIn lookup. Read back metadata after writing: people chips require `chipRuns[].chip.personProperties.email`; linked names require the exact text and URL.
 
+### LinkedIn referral suggestions
+
+- The hidden Sheet tab `LinkedIn Connections` is the authorized private snapshot of Anton's LinkedIn export. Its A:J schema is `First Name`, `Last Name`, `LinkedIn URL`, `Email Address`, `Company`, `Position`, `Connected On`, `Company Key`, `Contact Type`, `Exported On`.
+- For every newly ingested vacancy and before recommending an application action, search bounded column `H` by the conservatively normalized company key, then read `A:J` only for returned rows. Test only evidence-backed parent, subsidiary, former-name, or common-brand aliases; reject loose substring false positives.
+- Proactively suggest at most three contacts: current-company Recruiting/HR first, then a likely functional hiring manager/leader, then a relevant employee who could make a credible warm introduction. A strongly relevant functional contact may outrank generic HR; use connection recency only as a tie-breaker.
+- For each suggestion provide exact export-listed name, company, position, LinkedIn URL, Connected On date, and a short ranking reason. State the snapshot date from `Exported On` and do not claim the person still works there without current evidence.
+- A connection is only a referral candidate. Do not populate `Referral`, change `Stage`, or claim outreach/referral until Anton confirms a planned or completed contact/introduction. Do not expose its email in Jobs, Notes, or chat unless Anton specifically needs it for outreach.
+- When a newer full `Connections.csv` is supplied, replace the hidden snapshot as one dataset, preserve the schema and hidden state, clear stale surplus rows, update `Exported On`, and verify row count, edge rows, key coverage, and representative matches.
+
 ### Salary expectations and market estimate
 
 - Populate `Salary expectation` only from Anton's explicit, current, confirmed expectation or a reliable previously confirmed record. Never infer it from the vacancy or market data.
@@ -721,6 +730,7 @@ For every generated or materially revised `.docx` CV:
 - Keep Posted date separate from Date found. Resolve precise relative dates only against a known reference date; leave coarse values blank and preserve useful wording in Notes. For old chats, prefer historical pasted evidence and do not browse current pages to reconstruct historical values unless asked.
 - Write all known vacancy fields, including `Recruiter`, keep concise identifying content in `Vacancy snapshot` and fit/process context in `Notes`, and preserve the full source in a verified Drive `Position.md` linked from `Vacancy file`; if no CV exists, set `Stage = Reviewed`.
 - In `Recruiter`, use a native people chip only for a uniquely verified email. Otherwise store a verified LinkedIn profile as the person's clickable linked name, or plain text when only the name is known. Keep `Referral` separate; never guess contact data. Use recruiter name plus company/domain for authorized Gmail lookup.
+- For every new vacancy and before recommending an application action, search the hidden `LinkedIn Connections` snapshot by exact normalized `Company Key` in bounded column H, then read A:J only for candidate rows. Test only evidenced company aliases and reject substring false positives. Suggest at most three contacts—Recruiting/HR, a relevant function leader/hiring manager, then a relevant employee—with exact export-listed identity, URL, connection date, snapshot date, and a short reason. A connection is only a candidate: never write `Referral`, change stage, claim outreach, or expose its email unless Anton confirms or explicitly needs it.
 - Store `Fit %` only as one native numeric whole percentage from `0%` through `100%`; API writes use fractions (`0.68` displays as `68%`). Never store a range, approximation, percent text, label, or prose. Normalize a historical numeric range to its rounded midpoint and keep the original wording in `Notes`; leave word-only assessments blank unless numeric evidence exists. The automatic-CV gate is `>60%` / `>0.60`.
 - Populate `Salary expectation` only from Anton's explicit confirmed expectation. For every new vacancy and material re-analysis, always research `Estimated salary range`: Infostud first for Serbia; Glassdoor first for all other locations; then current job disclosures and reputable internet sources. Match geography, seniority, work model, and contract type; include currency, gross/net, and period. Record source URL(s), research date, caveats, and—when no defensible range is found—the sources checked and insufficiency reason in `Notes`.
 - After DOCX visual QA passes, use `WorkApplications` (folder ID `1wQMbnH4CODaARJSY221H06oCFJV2ukAK`) and find or create `WorkApplications/<Company>/<PositionTitle>/`.
@@ -1139,6 +1149,7 @@ For every vacancy, CV, cover letter, or hiring-stage task, use Google Sheet `Wor
 - Store `Fit %` as one native numeric whole percentage from `0%` through `100%`; API writes use a fraction such as `0.68` for displayed `68%`. Never store a range, approximation, percent text, label, or prose. Normalize historical numeric ranges to the rounded midpoint while retaining the original wording in `Notes`; keep word-only assessments out of `Fit %` unless numeric evidence exists. Evaluate the automatic-CV gate as displayed `>60%` / numeric `>0.60`.
 - Populate `Salary expectation` only from Anton's explicit confirmed expectation. For every new vacancy and material re-analysis, always research `Estimated salary range`: Infostud first for Serbia and Glassdoor first for all other locations, then current job disclosures and reputable internet sources. Match geography, seniority, work model, and contract type; include currency, gross/net, and period. Put source URL(s), research date, and material caveats concisely in `Notes`. If evidence remains insufficient, leave the range blank but record the sources checked and insufficiency reason.
 - Populate `Recruiter` with verified hiring contacts. Use a people chip only for a uniquely verified email; otherwise use the exact name linked to a verified LinkedIn profile, or plain text when no verified contact destination exists. Preserve `Referral` separately and never invent contact data.
+- For every new vacancy and before recommending application, search the hidden `LinkedIn Connections` snapshot by exact normalized `Company Key` in bounded column H and read A:J only for matched rows. Test only evidence-backed aliases and reject loose substring matches. Proactively return at most three candidates: Recruiting/HR, a relevant hiring manager/function leader, and a relevant employee. Include exact export-listed name/company/title/URL, Connected On, snapshot date, and a short reason. Treat each as a possibly stale candidate, not a confirmed current employee or referral; do not write `Referral`, alter stage, claim outreach, or expose email without Anton's confirmation or explicit need.
 - Preserve `CLIP` wrapping for `Vacancy snapshot`, `Notes`, and `Vacancy file`; keep data rows compact and do not let these fields determine row height.
 - Use `YYYY-MM-DD` in `Europe/Belgrade`. Preserve populated cells and leave unknown values blank.
 - A reviewed vacancy may have only `Position.md`. When the automatic-CV gate applies, complete the same folder with `Anton_Nazarov<PositionTitle>.md` for the CV source, `Anton_Nazarov_<PositionTitle>.docx` for the final Word CV, and `Anton_Nazarov<PositionTitle>.txt` for the plain-text cover letter.
@@ -1329,6 +1340,15 @@ Multiple chats may write concurrently. Protect every write:
 - When a verified LinkedIn profile exists without a verified email, store the person's exact name as clickable text linked to that URL. LinkedIn URLs are not accepted by the Sheets API as rich-link chips.
 - When only the name is known, store plain text. Never synthesize an email, guess a profile, or represent an ambiguous identity as a chip.
 - Use recruiter name plus company/domain for authorized Gmail searches and the verified URL for direct LinkedIn lookup.
+
+## LinkedIn referral suggestions
+
+- Treat the hidden `LinkedIn Connections` tab as an authorized private export snapshot with A:J fields: First Name, Last Name, LinkedIn URL, Email Address, Company, Position, Connected On, Company Key, Contact Type, Exported On.
+- For every new vacancy and before recommending an application action, normalize the employer conservatively, search bounded Company Key column H, and read A:J only for returned rows. Check only evidence-backed parent/subsidiary/former-name/common-brand aliases and reject loose substring false positives.
+- Suggest no more than three useful contacts, prioritizing current-company Recruiting/HR, a likely functional hiring manager or leader, then a role-relevant employee. A relevant function contact may outrank generic HR; connection recency is only a tie-breaker.
+- Include exact export-listed name, company, position, LinkedIn URL, Connected On, snapshot date from Exported On, and one short ranking reason. Explicitly label results as snapshot-based candidates and never claim current employment without fresh evidence.
+- Never populate `Referral`, change `Stage`, or claim contact/referral based only on the export. Write Referral only after Anton confirms planned/completed outreach or an introduction. Do not copy connection emails into Jobs, Notes, or chat unless Anton explicitly needs an address for outreach.
+- On a newer full Connections.csv, replace the snapshot atomically as one dataset, retain A:J and hidden state, clear stale surplus rows, update Exported On, and verify source count, first/last rows, key coverage, and representative matches.
 
 ## Salary fields
 
