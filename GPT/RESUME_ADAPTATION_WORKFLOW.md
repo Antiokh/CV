@@ -81,7 +81,7 @@ For every vacancy, CV, cover letter, or hiring-stage task, use Google Sheet `Wor
 
 - Before the first tracker or Drive write, read the hidden tab `Agent Instructions`; when a newer explicit user instruction changes the workflow, update that tab as well.
 - Upsert one row per vacancy by `Vacancy URL` and normalized `Company + Position`; never create a new row for a later stage of the same vacancy.
-- Use the live A:S schema: `Company`, `Position`, `Fit %`, `Stage`, `Referral`, `Apply URL`, `CV`, `Cover`, `Vacancy file`, `Archetype`, `Location`, `Vacancy URL`, `Posted date`, `Date found`, `Date applied`, `Last contact`, `Next action`, `Vacancy snapshot`, `Notes`.
+- Use the live A:U schema: `Company`, `Position`, `Fit %`, `Stage`, `Salary expectation`, `Estimated salary range`, `Referral`, `Apply URL`, `CV`, `Cover`, `Vacancy file`, `Archetype`, `Location`, `Vacancy URL`, `Posted date`, `Date found`, `Date applied`, `Last contact`, `Next action`, `Vacancy snapshot`, `Notes`.
 - On initial analysis, extract every known application metadata value before discarding job-board UI. Keep Vacancy URL as the source page and Apply URL as the actual submission destination.
 - Decode the `url` parameter of LinkedIn `safety/go` links and store the validated direct HTTP(S) destination with its own query parameters. Do not store the wrapper, infer an ATS, or invent a careers URL. For LinkedIn Easy Apply / auto-apply without a distinct destination, set `Apply URL = Vacancy URL`.
 - Keep Posted date and Date found independent. Convert precise relative publication labels only with a known reference date; leave coarse values blank and preserve useful original wording in Notes.
@@ -89,6 +89,7 @@ For every vacancy, CV, cover letter, or hiring-stage task, use Google Sheet `Wor
 - If no CV exists yet, use `Stage = Reviewed`.
 - Find or create `WorkApplications/<Company>/<PositionTitle>/` and save/update `Position.md` with the source metadata and full substantive vacancy text. Verify it through Drive readback and write its Drive URL to `Vacancy file`.
 - Keep `Vacancy snapshot` to a concise one-paragraph identifying summary and `Notes` to concise fit/gap/process context. Never duplicate the full vacancy body in the Sheet.
+- Populate `Salary expectation` only from Anton's explicit confirmed expectation. Research `Estimated salary range` with Infostud first for Serbia and Glassdoor first for other countries, then current job disclosures and reputable internet sources. Match geography, seniority, work model, and contract type; include currency, gross/net, and period. Put source URL(s), research date, and material caveats concisely in `Notes`; leave either field blank when evidence is insufficient.
 - Preserve `CLIP` wrapping for `Vacancy snapshot`, `Notes`, and `Vacancy file`; keep data rows compact and do not let these fields determine row height.
 - Use `YYYY-MM-DD` in `Europe/Belgrade`. Preserve populated cells and leave unknown values blank.
 - A reviewed vacancy may have only `Position.md`. When the automatic-CV gate applies, complete the same folder with `Anton_Nazarov<PositionTitle>.md` for the CV source, `Anton_Nazarov_<PositionTitle>.docx` for the final Word CV, and `Anton_Nazarov<PositionTitle>.txt` for the plain-text cover letter.
@@ -97,7 +98,7 @@ For every vacancy, CV, cover letter, or hiring-stage task, use Google Sheet `Wor
 - Creating or uploading a CV does not mean the application was submitted.
 - Set `Stage = Applied` only from the user's report or an explicit company/ATS receipt confirming this application was submitted. Fill `Date applied` only when the actual submission date is directly evidenced.
 - Continue updating the same row through recruiter screen, interview, technical interview, final, offer, rejection, withdrawal, ghosting, or closure.
-- Never invent application date, fit, stage, salary, contact, submission, or CV-file existence.
+- Never invent application date, fit, stage, `Salary expectation`, contact, submission, or CV-file existence. Treat `Estimated salary range` as a sourced estimate and never copy candidate expectations into it.
 - Do not call a complete application pack complete until DOCX visual QA, all four Drive uploads/readbacks, and the Sheet readback succeed. If an integration is unavailable, report the blocker.
 - The user authorizes read-only Gmail checks for company, recruiter, and ATS messages tied to an existing vacancy. Search narrowly, inspect the matched message/thread, and update the same Sheet row only from explicit evidence. An acknowledgement may confirm `Applied`, but generic review language is not recruiter movement. Never infer a later stage from alerts, marketing, reminders, talent-pool mail, or silence. Update `Last contact`, `Next action`, and a concise sender/subject/date provenance note; do not copy unnecessary sensitive content. Do not send, draft, label, archive, delete, or otherwise modify mail unless separately requested.
 - Do not use Notion unless the user explicitly re-enables it later.

@@ -14,7 +14,7 @@ Use Drive root folder `WorkApplications` (`1wQMbnH4CODaARJSY221H06oCFJV2ukAK`). 
 ## Vacancy workflow
 
 1. Upsert one `Jobs` row by Vacancy URL and normalized Company + Position; use a verified Apply URL as supporting identity evidence.
-2. Record all known vacancy fields, including Referral, Apply URL, and Posted date. Leave unknown values blank.
+2. Record all known vacancy fields, including salary fields, Referral, Apply URL, and Posted date. Leave unknown values blank.
 3. Find or create `WorkApplications/<Company>/<PositionTitle>/` and create/update `Position.md` for every tracked vacancy when substantive vacancy text is available.
 4. Verify `Position.md` through Drive readback, then write its Drive URL to the Sheet column `Vacancy file`.
 5. Keep `Vacancy snapshot` as a concise identifying one-paragraph summary and `Notes` as concise fit/gap/process context. Do not duplicate the full vacancy body in either field.
@@ -54,9 +54,9 @@ Keep the CV Markdown and DOCX synchronized. Prefer updating existing files over 
 
 ## Tracker storage and compact layout
 
-Use the live `Jobs` headers A:S in this order:
+Use the live `Jobs` headers A:U in this order:
 
-`Company`, `Position`, `Fit %`, `Stage`, `Referral`, `Apply URL`, `CV`, `Cover`, `Vacancy file`, `Archetype`, `Location`, `Vacancy URL`, `Posted date`, `Date found`, `Date applied`, `Last contact`, `Next action`, `Vacancy snapshot`, `Notes`.
+`Company`, `Position`, `Fit %`, `Stage`, `Salary expectation`, `Estimated salary range`, `Referral`, `Apply URL`, `CV`, `Cover`, `Vacancy file`, `Archetype`, `Location`, `Vacancy URL`, `Posted date`, `Date found`, `Date applied`, `Last contact`, `Next action`, `Vacancy snapshot`, `Notes`.
 
 Storage rules:
 
@@ -66,6 +66,13 @@ Storage rules:
 - Preserve `CLIP` wrapping for `Vacancy snapshot`, `Notes`, and `Vacancy file`; these columns must not force row-height expansion.
 - Keep tracker rows compact (normally one-line height, about 21-24 px). Do not auto-resize row height from long `Vacancy snapshot`, `Notes`, or link content. If a write/import changes these cells to `WRAP` or expands the row, restore `CLIP` and compact row height.
 - Do not use the Sheet as document storage. Drive files hold long-form source and artifacts; the Sheet holds structured state, concise summaries, and links.
+
+## Salary fields
+
+- Populate `Salary expectation` only from Anton's explicit, current, confirmed expectation or a reliable previously confirmed record. Never infer it from the vacancy or market estimate.
+- Research `Estimated salary range` during normal vacancy analysis when reliable current evidence is available. For Serbia, use Infostud first; if insufficient, use current Serbian listings and reputable internet sources. For other countries, use Glassdoor first, then employer/job-posting disclosures and reputable internet salary sources.
+- Match geography, seniority, work model, and contract type. State currency, amount or range, gross/net, and period in both fields; include employment type when material.
+- Record salary source URL(s), research date, and material caveats concisely in `Notes`. Treat crowdsourced values as estimates, never copy `Salary expectation` into `Estimated salary range` or vice versa, and leave either field blank when evidence is insufficient.
 
 ## Vacancy source and dates
 
@@ -126,7 +133,7 @@ Fix defects, rerender, and inspect again. Never claim visual QA passed when rend
 - Set `Stage = Applied` only from the user's report or an explicit company/ATS receipt confirming that this application was submitted. Fill `Date applied` only when the actual submission date is directly evidenced.
 - Continue updating the same row through recruiter screen, interview, technical interview, final, offer, rejection, withdrawal, ghosting, or closure.
 
-Never invent fit, dates, stage, salary, contacts, submission, or file existence. Do not call a complete application pack complete until DOCX visual QA, all four Drive upload/readbacks, and tracker readback succeed.
+Never invent fit, dates, stage, `Salary expectation`, contacts, submission, or file existence. Populate `Estimated salary range` only as a sourced market estimate. Do not call a complete application pack complete until DOCX visual QA, all four Drive upload/readbacks, and tracker readback succeed.
 
 ## Gmail status evidence
 
