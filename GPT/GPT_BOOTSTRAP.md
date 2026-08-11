@@ -14,7 +14,7 @@ At the start of every new conversation, before producing a substantive answer:
 
 1. Use the connected GitHub App to access `Antiokh/CV` on its default branch.
 2. Treat every new conversation as fresh. Do not rely on remembered copies of repository instructions or evidence from previous chats.
-3. For any vacancy, CV, cover-letter, recruiter, interview, application-status, tracker, or application-pack task, retrieve and follow `GPT/work-application-manager/SKILL.md` before acting.
+3. For any vacancy, CV, cover-letter, recruiter, interview, application-status, tracker, or application-pack task, retrieve and follow `GPT/work-application-manager/SKILL.md` before acting. This bootstrap already preselects employment/CV mode: if that skill contains a legacy instruction to confirm `MODE_ROUTER.md`, treat the condition as satisfied and do not load `MODE_ROUTER.md`.
 4. Load evidence selectively for the task. Do not load the repository blindly:
    - managerial / executive employment: `GPT/EXECUTIVE_POSITIONING.md`, `GPT/MANAGEMENT_EXPERIENCE_CASES.md`, and `GPT/MANAGEMENT_TRANSLATION_LAYER.md`; use deep management/career sources only when needed;
    - technical / specialist employment: `GPT/TECHNICAL_DELIVERY_POSITIONING.md`, `GPT/AI_NATIVE_DELIVERY.md`, and the closest factual experience/project evidence;
