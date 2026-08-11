@@ -62,6 +62,9 @@ Hidden column W is `Row ID`: an immutable UUID v4 assigned exactly once. Never c
 
 Storage rules:
 
+- Inspect every visible `A:V` column during ingestion and analysis, and populate every evidence-backed applicable field. Before completion, audit `A:V` again. Leave a value blank only when genuinely unknown or inapplicable; record material research blockers and sources checked in `Notes`.
+- Store `Fit %` as one native numeric percentage from 0% through 100%, displayed as a whole percent. Through the Sheets API write a fractional number (`0.68` displays as `68%`). Never store a range, approximation mark, percent sign as text, label, or prose. Evaluate the automatic-CV gate against displayed `>60%`, equivalent to numeric `>0.60`.
+- For a historical numeric fit range, write its rounded whole-percent arithmetic midpoint and preserve the original wording in `Notes` (`65-70` becomes numeric `68%` / API value `0.68`). Preserve word-only assessments in `Notes` and leave `Fit %` blank unless numeric evidence exists.
 - `Vacancy file` contains the verified Drive URL of that vacancy's `Position.md`. Never store the full vacancy body in the Sheet.
 - `Vacancy snapshot` is for quick identification only: one compact paragraph, no copied job description, no multiline lists.
 - `Notes` is for concise fit/gap/process/provenance context only: one compact paragraph where practical; do not paste correspondence or vacancy text.
@@ -90,9 +93,9 @@ Multiple chats may write concurrently. Protect every write:
 ## Salary fields
 
 - Populate `Salary expectation` only from Anton's explicit, current, confirmed expectation or a reliable previously confirmed record. Never infer it from the vacancy or market estimate.
-- Research `Estimated salary range` during normal vacancy analysis when reliable current evidence is available. For Serbia, use Infostud first; if insufficient, use current Serbian listings and reputable internet sources. For other countries, use Glassdoor first, then employer/job-posting disclosures and reputable internet salary sources.
+- For every new vacancy and every material re-analysis, always research `Estimated salary range`. For Serbia, check Infostud first; if insufficient, continue with current Serbian listings and reputable internet sources. For all other locations, check Glassdoor first, then employer/job-posting disclosures and reputable internet salary sources.
 - Match geography, seniority, work model, and contract type. State currency, amount or range, gross/net, and period in both fields; include employment type when material.
-- Record salary source URL(s), research date, and material caveats concisely in `Notes`. Treat crowdsourced values as estimates, never copy `Salary expectation` into `Estimated salary range` or vice versa, and leave either field blank when evidence is insufficient.
+- Record salary source URL(s), research date, and material caveats concisely in `Notes`. If no defensible estimate is found, leave `Estimated salary range` blank but record the sources checked and why evidence was insufficient. Treat crowdsourced values as estimates and never copy `Salary expectation` into `Estimated salary range` or vice versa.
 
 ## Vacancy source and dates
 
