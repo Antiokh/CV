@@ -16,9 +16,12 @@ $groups = @(
         Files = @(
             "GPT_PROJECT_ROUTER.md",
             "GPT_PROJECT_ROUTER_SHORT.md",
+            "MODE_ROUTER.md",
             "Positioning-archetypes-routing.txt",
             "ANTI_PATTERNS.md",
             "RESUME_ADAPTATION_WORKFLOW.md",
+            "work-application-manager/SKILL.md",
+            "freelance-agency-manager/SKILL.md",
             "README.md"
         )
     },
@@ -231,6 +234,19 @@ foreach ($group in $groups) {
     }
 
     Set-Content -LiteralPath $targetPath -Value $sb.ToString() -Encoding UTF8
+
+    if ($group.Name -eq "00_ROUTER_AND_GUARDRAILS") {
+        $runtime = New-Object System.Text.StringBuilder
+        [void]$runtime.AppendLine("# Anton CV GPT Runtime")
+        [void]$runtime.AppendLine("")
+        [void]$runtime.AppendLine("RUNTIME_MARKER: ANTON_CV_GPT_RUNTIME_V1")
+        [void]$runtime.AppendLine("RUNTIME_BEGIN")
+        [void]$runtime.AppendLine("")
+        [void]$runtime.AppendLine($sb.ToString())
+        [void]$runtime.AppendLine("")
+        [void]$runtime.AppendLine("RUNTIME_END")
+        Set-Content -LiteralPath (Join-Path $root "GPT_RUNTIME.md") -Value $runtime.ToString() -Encoding UTF8
+    }
 
     [void]$index.AppendLine("- $targetName")
     [void]$all.AppendLine("")

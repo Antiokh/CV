@@ -1,4 +1,9 @@
-﻿# 00_ROUTER_AND_GUARDRAILS
+# Anton CV GPT Runtime
+
+RUNTIME_MARKER: ANTON_CV_GPT_RUNTIME_V1
+RUNTIME_BEGIN
+
+# 00_ROUTER_AND_GUARDRAILS
 
 NotebookLM source title: 00_ROUTER_AND_GUARDRAILS
 Original files included:
@@ -1475,3 +1480,5 @@ Canonical originals still live in:
 If the canonical files change, refresh these copies.
 
 
+
+RUNTIME_END

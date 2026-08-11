@@ -1,0 +1,4 @@
+interface:
+  display_name: "Work Application Manager"
+  short_description: "Track vacancies and produce humanized application files"
+  default_prompt: "Use $work-application-manager to analyze this vacancy, create the required files, and update the tracker."
