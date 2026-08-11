@@ -335,7 +335,7 @@ Use the Google Sheet `WorkInterviews`, spreadsheet ID `1k-Zbz7LMZJJcWfMp41yC-7mU
 
 Before the first tracker or Drive write in a task, read the hidden tab `Agent Instructions` and follow its current operational rules. If it conflicts with an explicit newer user instruction, the user's instruction wins and the hidden tab must be updated to match.
 
-Tracker columns `A:U` are fixed:
+Visible tracker columns `A:U` are fixed:
 - `Company`
 - `Position`
 - `Fit %`
@@ -357,6 +357,8 @@ Tracker columns `A:U` are fixed:
 - `Next action`
 - `Vacancy snapshot`
 - `Notes`
+
+Hidden column `V` is `Row ID`: an immutable UUID v4 assigned exactly once. Never use a row number, cached index, timestamp, Company, or Position as the durable record identifier.
 
 Workflow:
 
@@ -380,6 +382,15 @@ Workflow:
 18. update the same row throughout recruiter screen, interview, technical interview, final, offer, rejection, withdrawal, ghosting, or closure;
 19. never invent `Date applied`, fit, stage, `Salary expectation`, contact, application submission, or the existence/location of application files; populate `Estimated salary range` only as a sourced market estimate;
 20. consider the application pack complete only after Word visual QA, all four Drive artifact uploads/readbacks, and the tracker readback succeed. If an integration is unavailable, report the blocker explicitly and do not claim completion.
+
+Concurrency-safe Sheet writes:
+
+1. immediately before every write, repeat the lookup by `Vacancy URL` and normalized `Company + Position`, then read the current target row `A:V`, including `Row ID`;
+2. never rely on a row number or Sheet snapshot captured earlier in the task;
+3. for a new vacancy, after the final duplicate check, generate a UUID v4 and use one `spreadsheets.batchUpdate` call that inserts one row at the freshly determined boundary, copies safe format/validation from an exemplar, and writes the complete new record including `Row ID`; never write into a merely blank assumed row or separate insertion from initial values;
+4. for an existing vacancy, re-resolve the current row by UUID and update only intended cells, not the complete row; preserve fields populated by another chat;
+5. immediately read back `A:V`, confirm the same UUID and every written value, then search again for the vacancy keys and UUID;
+6. if the UUID moved, re-resolve its row; if values conflict, another row appeared, or duplicates exist, do not overwrite, delete, or merge automatically—preserve data and report the conflict.
 
 The Google Sheet is the source of truth for job-search history. Project chats must not be the only place where vacancy and application status is stored.
 
@@ -687,8 +698,9 @@ For every generated or materially revised `.docx` CV:
 
 - Use Google Sheet `WorkInterviews` (`1k-Zbz7LMZJJcWfMp41yC-7mUaL_UI9__Bwy1SpPLbao`), tab `Jobs`, for every vacancy and application.
 - Before the first tracker or Drive write, read the hidden tab `Agent Instructions`; if the user gives newer conflicting instructions, update the hidden tab to match.
-- Upsert by `Vacancy URL`; if no URL exists, match normalized `Company + Position`. Update one lifecycle row instead of creating duplicates.
-- Keep the fixed A:U columns `Company`, `Position`, `Fit %`, `Stage`, `Salary expectation`, `Estimated salary range`, `Referral`, `Apply URL`, `CV`, `Cover`, `Vacancy file`, `Archetype`, `Location`, `Vacancy URL`, `Posted date`, `Date found`, `Date applied`, `Last contact`, `Next action`, `Vacancy snapshot`, and `Notes`. `Vacancy file` is the verified Drive URL for `Position.md`.
+- Upsert by `Vacancy URL`; if no URL exists, match normalized `Company + Position`. After creation, identify the record by immutable UUID v4 in hidden `V: Row ID`, never by row number, cached index, timestamp, or mutable business fields.
+- Keep the fixed visible A:U columns `Company`, `Position`, `Fit %`, `Stage`, `Salary expectation`, `Estimated salary range`, `Referral`, `Apply URL`, `CV`, `Cover`, `Vacancy file`, `Archetype`, `Location`, `Vacancy URL`, `Posted date`, `Date found`, `Date applied`, `Last contact`, `Next action`, `Vacancy snapshot`, and `Notes`. `Vacancy file` is the verified Drive URL for `Position.md`.
+- Immediately before every write, repeat the vacancy lookup and read current `A:V`. For a new record, generate its UUID and perform row insertion, safe structure copy, and complete initial write in one batch; never target a merely blank assumed row. For an existing record, re-resolve it by UUID and update only intended cells. Read back `A:V` and search again after writing; preserve and report conflicts or duplicates instead of overwriting, deleting, or auto-merging them.
 - Use `YYYY-MM-DD` in `Europe/Belgrade`, fill all known values, preserve populated cells, and leave unknown values blank instead of guessing.
 - Use only valid stages: `To review`, `Reviewed`, `CV ready`, `Applied`, `Recruiter screen`, `Interview`, `Technical interview`, `Final`, `Offer`, `Rejected`, `Withdrawn`, `Ghosted`, `Closed`.
 - On first analysis, extract all available source/application metadata before discarding UI text. Keep Vacancy URL as the source page and Apply URL as the direct submission destination. Decode LinkedIn `safety/go` `url` parameters, preserve the external query string, and never store the wrapper or invent a link. For LinkedIn Easy Apply / auto-apply without a distinct destination, set `Apply URL = Vacancy URL`.
@@ -1098,8 +1110,9 @@ Every adapted resume must keep three things in balance:
 For every vacancy, CV, cover letter, or hiring-stage task, use Google Sheet `WorkInterviews` (`1k-Zbz7LMZJJcWfMp41yC-7mUaL_UI9__Bwy1SpPLbao`), tab `Jobs`, as the lifecycle/index source of truth. The full vacancy body is canonical in Drive `Position.md`, not in the Sheet.
 
 - Before the first tracker or Drive write, read the hidden tab `Agent Instructions`; when a newer explicit user instruction changes the workflow, update that tab as well.
-- Upsert one row per vacancy by `Vacancy URL` and normalized `Company + Position`; never create a new row for a later stage of the same vacancy.
-- Use the live A:U schema: `Company`, `Position`, `Fit %`, `Stage`, `Salary expectation`, `Estimated salary range`, `Referral`, `Apply URL`, `CV`, `Cover`, `Vacancy file`, `Archetype`, `Location`, `Vacancy URL`, `Posted date`, `Date found`, `Date applied`, `Last contact`, `Next action`, `Vacancy snapshot`, `Notes`.
+- Upsert one row per vacancy by `Vacancy URL` and normalized `Company + Position`; after creation use immutable UUID v4 in hidden `V: Row ID` as the durable identity, never the row number.
+- Use the live visible A:U schema: `Company`, `Position`, `Fit %`, `Stage`, `Salary expectation`, `Estimated salary range`, `Referral`, `Apply URL`, `CV`, `Cover`, `Vacancy file`, `Archetype`, `Location`, `Vacancy URL`, `Posted date`, `Date found`, `Date applied`, `Last contact`, `Next action`, `Vacancy snapshot`, `Notes`; hidden V is `Row ID`.
+- Immediately before every write, repeat the lookup and read current `A:V`. Create a new row only through one batch that inserts the row, copies safe structure, and writes all initial values plus UUID. Update existing rows only after re-resolving the UUID and only in intended cells. Read back and search again after writing; never overwrite or auto-merge a detected conflict.
 - On initial analysis, extract every known application metadata value before discarding job-board UI. Keep Vacancy URL as the source page and Apply URL as the actual submission destination.
 - Decode the `url` parameter of LinkedIn `safety/go` links and store the validated direct HTTP(S) destination with its own query parameters. Do not store the wrapper, infer an ATS, or invent a careers URL. For LinkedIn Easy Apply / auto-apply without a distinct destination, set `Apply URL = Vacancy URL`.
 - Keep Posted date and Date found independent. Convert precise relative publication labels only with a known reference date; leave coarse values blank and preserve useful original wording in Notes.
@@ -1222,7 +1235,7 @@ Use Drive root folder `WorkApplications` (`1wQMbnH4CODaARJSY221H06oCFJV2ukAK`). 
 
 ## Vacancy workflow
 
-1. Upsert one `Jobs` row by Vacancy URL and normalized Company + Position; use a verified Apply URL as supporting identity evidence.
+1. Upsert one `Jobs` row by Vacancy URL and normalized Company + Position; use a verified Apply URL as supporting identity evidence. After creation, use the immutable `Row ID` UUID as its durable identity.
 2. Record all known vacancy fields, including salary fields, Referral, Apply URL, and Posted date. Leave unknown values blank.
 3. Find or create `WorkApplications/<Company>/<PositionTitle>/` and create/update `Position.md` for every tracked vacancy when substantive vacancy text is available.
 4. Verify `Position.md` through Drive readback, then write its Drive URL to the Sheet column `Vacancy file`.
@@ -1263,9 +1276,11 @@ Keep the CV Markdown and DOCX synchronized. Prefer updating existing files over 
 
 ## Tracker storage and compact layout
 
-Use the live `Jobs` headers A:U in this order:
+Use the live visible `Jobs` headers A:U in this order:
 
 `Company`, `Position`, `Fit %`, `Stage`, `Salary expectation`, `Estimated salary range`, `Referral`, `Apply URL`, `CV`, `Cover`, `Vacancy file`, `Archetype`, `Location`, `Vacancy URL`, `Posted date`, `Date found`, `Date applied`, `Last contact`, `Next action`, `Vacancy snapshot`, `Notes`.
+
+Hidden column V is `Row ID`: an immutable UUID v4 assigned exactly once. Never change or reuse it. Never treat a row number, cached index, timestamp, Company, or Position as durable identity.
 
 Storage rules:
 
@@ -1275,6 +1290,16 @@ Storage rules:
 - Preserve `CLIP` wrapping for `Vacancy snapshot`, `Notes`, and `Vacancy file`; these columns must not force row-height expansion.
 - Keep tracker rows compact (normally one-line height, about 21-24 px). Do not auto-resize row height from long `Vacancy snapshot`, `Notes`, or link content. If a write/import changes these cells to `WRAP` or expands the row, restore `CLIP` and compact row height.
 - Do not use the Sheet as document storage. Drive files hold long-form source and artifacts; the Sheet holds structured state, concise summaries, and links.
+
+## Concurrency-safe tracker writes
+
+Multiple chats may write concurrently. Protect every write:
+
+1. Immediately before writing, repeat the vacancy lookup by Vacancy URL and normalized Company + Position, then read the current target row A:V including Row ID. Discard cached row numbers.
+2. For a new vacancy, run the final duplicate check, generate a UUID v4, and use one `spreadsheets.batchUpdate` call that inserts one row at the freshly determined boundary, copies safe format/validation from an exemplar, and writes the complete new record including Row ID. Never write into a merely blank assumed row and never separate insertion from initial values.
+3. For an existing vacancy, search/re-resolve the UUID's current row and update only intended cells. Never rewrite the complete row; preserve values another chat added.
+4. Immediately read back A:V, verify the same UUID and every written value, and search once more by vacancy keys and UUID.
+5. If the UUID moved, re-resolve it. If a value conflicts, another row appeared, or duplicates exist, do not overwrite, delete, or merge automatically. Preserve all data, stop, and report the conflict for reconciliation.
 
 ## Salary fields
 
