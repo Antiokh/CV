@@ -81,12 +81,16 @@ For every vacancy, CV, cover letter, or hiring-stage task, use Google Sheet `Wor
 
 - Before the first tracker or Drive write, read the hidden tab `Agent Instructions`; when a newer explicit user instruction changes the workflow, update that tab as well.
 - Upsert one row per vacancy by `Vacancy URL` and normalized `Company + Position`; never create a new row for a later stage of the same vacancy.
-- On initial analysis, write every known value among `Company`, `Position`, `Archetype`, `Location`, `Vacancy URL`, `Date found`, `Fit %`, `Stage`, and `Next action`.
+- Use the live A:S schema: `Company`, `Referral`, `Position`, `Archetype`, `Location`, `Vacancy URL`, `Apply URL`, `Posted date`, `Date found`, `Date applied`, `Fit %`, `Stage`, `Last contact`, `Next action`, `CV`, `Cover Letter`, `Vacancy snapshot`, `Notes`, `Vacancy text`.
+- On initial analysis, extract and write every known application metadata value before discarding job-board UI. Keep Vacancy URL as the source page and Apply URL as the actual submission destination.
+- Decode the `url` parameter of LinkedIn `safety/go` links and store the validated direct HTTP(S) destination with its own query parameters. Do not store the wrapper, infer an ATS, invent a careers URL, or fill Apply URL for Easy Apply without a distinct destination.
+- Keep Posted date and Date found independent. Convert precise relative publication labels only with a known reference date; leave coarse values blank and preserve useful original wording in Notes.
+- For old-chat migration, prefer original pasted evidence and the historical chat date. Do not browse the current vacancy to reconstruct historical Apply URL or Posted date unless explicitly requested.
 - If no CV exists yet, use `Stage = Reviewed`.
 - Save enough information to survive deletion of the source page: identifying summary in `Vacancy snapshot`, fit/gap context in `Notes`, and full text in `Vacancy text` when available.
 - Use `YYYY-MM-DD` in `Europe/Belgrade`. Preserve populated cells and leave unknown values blank.
 - After the `.docx` passes visual QA, use the My Drive root folder `WorkApplications` (folder ID `1wQMbnH4CODaARJSY221H06oCFJV2ukAK`) and find or create `WorkApplications/<Company>/<PositionTitle>/`.
-- Store exactly four artifacts in the position folder: `Position.md` for vacancy metadata/full text, `Anton_Nazarov<PositionTitle>.md` for the CV source, `Anton_Nazarov_<PositionTitle>.docx` for the final Word CV, and `Anton_Nazarov<PositionTitle>.txt` for the plain-text cover letter.
+- Store exactly four artifacts in the position folder: `Position.md` for company, position, Vacancy URL, Apply URL when known, Posted date when known, Date found, application process/contact context, and full text; `Anton_Nazarov<PositionTitle>.md` for the CV source; `Anton_Nazarov_<PositionTitle>.docx` for the final Word CV; and `Anton_Nazarov<PositionTitle>.txt` for the plain-text cover letter.
 - Before saving TXT, apply `WorkApplications/_skills/humanizer-ru/SKILL.md` for Russian or `WorkApplications/_skills/humanizer-en/SKILL.md` for English in embedded/file mode; store only final humanized text.
 - Prefer updating existing artifacts for revisions, verify all four by Drive readback, write the DOCX URL to `CV`, write the TXT URL to `Cover Letter`, set `Stage = CV ready` if not submitted, and set the concrete `Next action`.
 - Creating or uploading a CV does not mean the application was submitted.

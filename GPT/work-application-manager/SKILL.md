@@ -13,8 +13,8 @@ Use Drive root folder `WorkApplications` (`1wQMbnH4CODaARJSY221H06oCFJV2ukAK`).
 
 ## Vacancy workflow
 
-1. Upsert one `Jobs` row by Vacancy URL and normalized Company + Position.
-2. Record all known vacancy fields. Leave unknown values blank.
+1. Upsert one `Jobs` row by Vacancy URL and normalized Company + Position; use a verified Apply URL as supporting identity evidence.
+2. Record all known vacancy fields, including Referral, Apply URL, and Posted date. Leave unknown values blank.
 3. Preserve the source in `Vacancy snapshot`, `Notes`, and `Vacancy text` so the role remains identifiable if the page disappears.
 4. Assign an evidence-based fit score from 0% to 100%.
 5. If fit is strictly above 60%, immediately create the complete application pack unless the user explicitly declines.
@@ -41,12 +41,26 @@ Replace `<Company>` and `<PositionTitle>` with recognizable sanitized names. In 
 
 Artifact roles:
 
-- `Position.md`: vacancy title, company, location, URL, retrieval date, and full vacancy text.
+- `Position.md`: company, position, location, Vacancy URL, Apply URL when available, Posted date when available, Date found, application process/contact context, and full vacancy text.
 - `Anton_Nazarov<PositionTitle>.md`: tailored CV source in Markdown.
 - `Anton_Nazarov_<PositionTitle>.docx`: final tailored Word CV generated from the Markdown source.
 - `Anton_Nazarov<PositionTitle>.txt`: humanized cover letter as UTF-8 plain text only.
 
 Keep the CV Markdown and DOCX synchronized. Prefer updating existing files over creating duplicates. Verify the folder and all four files through Drive readback.
+
+## Vacancy source and dates
+
+Treat `Vacancy URL` as the page where the vacancy was found and `Apply URL` as the actual submission destination. Preserve both.
+
+- During ingestion, extract company, position, location/work model, Vacancy URL, Apply URL, Posted date, Date found, full substantive text, application/selection process, and recruiter/contact/referral details before discarding job-board UI.
+- For a LinkedIn `https://www.linkedin.com/safety/go/?url=...` link, parse the `url` query parameter, URL-decode it, validate that it is an absolute HTTP(S) URL, and store the direct external ATS/company URL. Never store the LinkedIn wrapper as canonical Apply URL.
+- Preserve the external destination's query parameters. Do not infer an ATS or construct a careers URL from the company name.
+- For LinkedIn Easy Apply without a distinct useful destination, keep Vacancy URL and leave Apply URL blank.
+- Store Posted date only from explicit evidence. Convert precise relative labels such as `3 days ago` only when the reference date is known; use `YYYY-MM-DD`.
+- Do not create false precision for `30+ days ago`, `several weeks ago`, `1 year ago`, or similar coarse labels. Leave Posted date blank and preserve useful original wording in Notes.
+- Date found is when Anton/ChatGPT first encountered or added the vacancy. Never substitute Posted date for Date found.
+
+When migrating an old chat, prefer its historical pasted evidence. Use the historical chat date as the reference for precise relative dates. Do not browse the current vacancy to reconstruct historical Apply URL or Posted date unless the user explicitly requests it.
 
 ## Humanized cover letter
 
@@ -85,6 +99,8 @@ Render the DOCX to page images and inspect every page at 100% zoom. Check:
 Fix defects, rerender, and inspect again. Never claim visual QA passed when rendering was unavailable.
 
 ## Tracker lifecycle
+
+Use the live `Jobs` headers A:S in this order: `Company`, `Referral`, `Position`, `Archetype`, `Location`, `Vacancy URL`, `Apply URL`, `Posted date`, `Date found`, `Date applied`, `Fit %`, `Stage`, `Last contact`, `Next action`, `CV`, `Cover Letter`, `Vacancy snapshot`, `Notes`, `Vacancy text`.
 
 - Before CV creation: `Stage = Reviewed`.
 - After all four files are uploaded and verified: write the DOCX URL to `CV`, the TXT URL to `Cover Letter`, and set `Stage = CV ready` if no submission was reported.
