@@ -391,7 +391,7 @@ The Google Sheet is the source of truth for job-search history. Project chats mu
 - Proactively suggest at most three contacts: current-company Recruiting/HR first, then a likely functional hiring manager/leader, then a relevant employee who could make a credible warm introduction. A strongly relevant functional contact may outrank generic HR; use connection recency only as a tie-breaker.
 - For each suggestion provide exact export-listed name, company, position, LinkedIn URL, Connected On date, and a short ranking reason. State the snapshot date from `Exported On` and do not claim the person still works there without current evidence.
 - A connection is only a referral candidate. Do not populate `Referral`, change `Stage`, or claim outreach/referral until Anton confirms a planned or completed contact/introduction. Do not expose its email in Jobs, Notes, or chat unless Anton specifically needs it for outreach.
-- When a newer full `Connections.csv` is supplied, replace the hidden snapshot as one dataset, preserve the schema and hidden state, clear stale surplus rows, update `Exported On`, and verify row count, edge rows, key coverage, and representative matches.
+- When a newer full `Connections.csv` is supplied, do not parse or normalize it in model context. From the repository root run `GPT/work-application-manager/scripts/import-linkedin-connections.ps1`, read only its small manifest, and follow `GPT/work-application-manager/references/linkedin-connections-import.md`. Replace the hidden snapshot as one dataset, preserve the schema and hidden state, clear stale surplus rows, update `Exported On`, and verify row count, edge rows, key coverage, and representative matches.
 
 ### Salary expectations and market estimate
 

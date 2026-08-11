@@ -1,4 +1,4 @@
-﻿# Anton CV GPT Runtime
+# Anton CV GPT Runtime
 
 RUNTIME_MARKER: ANTON_CV_GPT_RUNTIME_V1
 RUNTIME_BEGIN
@@ -414,7 +414,7 @@ The Google Sheet is the source of truth for job-search history. Project chats mu
 - Proactively suggest at most three contacts: current-company Recruiting/HR first, then a likely functional hiring manager/leader, then a relevant employee who could make a credible warm introduction. A strongly relevant functional contact may outrank generic HR; use connection recency only as a tie-breaker.
 - For each suggestion provide exact export-listed name, company, position, LinkedIn URL, Connected On date, and a short ranking reason. State the snapshot date from `Exported On` and do not claim the person still works there without current evidence.
 - A connection is only a referral candidate. Do not populate `Referral`, change `Stage`, or claim outreach/referral until Anton confirms a planned or completed contact/introduction. Do not expose its email in Jobs, Notes, or chat unless Anton specifically needs it for outreach.
-- When a newer full `Connections.csv` is supplied, replace the hidden snapshot as one dataset, preserve the schema and hidden state, clear stale surplus rows, update `Exported On`, and verify row count, edge rows, key coverage, and representative matches.
+- When a newer full `Connections.csv` is supplied, do not parse or normalize it in model context. From the repository root run `GPT/work-application-manager/scripts/import-linkedin-connections.ps1`, read only its small manifest, and follow `GPT/work-application-manager/references/linkedin-connections-import.md`. Replace the hidden snapshot as one dataset, preserve the schema and hidden state, clear stale surplus rows, update `Exported On`, and verify row count, edge rows, key coverage, and representative matches.
 
 ### Salary expectations and market estimate
 
@@ -1256,7 +1256,7 @@ SOURCE_FILE: work-application-manager/SKILL.md
 
 ---
 name: work-application-manager
-description: Manage Anton Nazarov's employment vacancy analysis, automatic tailored CV creation, humanized cover letters, Google Drive application folders, and WorkInterviews tracker updates. Use for candidate-side jobs, resumes, applications, recruiters, interviews, rejections, offers, and other hiring-stage tasks. Do not use for freelance projects, client proposals, RFPs, Upwork delivery leads, or agency partnerships.
+description: Manage Anton Nazarov's employment vacancy analysis, automatic tailored CV creation, humanized cover letters, Google Drive application folders, WorkInterviews tracker updates, LinkedIn connection imports, and referral suggestions. Use for candidate-side jobs, resumes, applications, recruiters, LinkedIn Connections.csv refreshes, interviews, rejections, offers, and other hiring-stage tasks. Do not use for freelance projects, client proposals, RFPs, Upwork delivery leads, or agency partnerships.
 ---
 
 # Work Application Manager
@@ -1353,7 +1353,7 @@ Multiple chats may write concurrently. Protect every write:
 - Suggest no more than three useful contacts, prioritizing current-company Recruiting/HR, a likely functional hiring manager or leader, then a role-relevant employee. A relevant function contact may outrank generic HR; connection recency is only a tie-breaker.
 - Include exact export-listed name, company, position, LinkedIn URL, Connected On, snapshot date from Exported On, and one short ranking reason. Explicitly label results as snapshot-based candidates and never claim current employment without fresh evidence.
 - Never populate `Referral`, change `Stage`, or claim contact/referral based only on the export. Write Referral only after Anton confirms planned/completed outreach or an introduction. Do not copy connection emails into Jobs, Notes, or chat unless Anton explicitly needs an address for outreach.
-- On a newer full Connections.csv, replace the snapshot atomically as one dataset, retain A:J and hidden state, clear stale surplus rows, update Exported On, and verify source count, first/last rows, key coverage, and representative matches.
+- On a newer full Connections.csv, do not parse or normalize it in model context. From the repository root, run `GPT/work-application-manager/scripts/import-linkedin-connections.ps1`, read only its small manifest for validation, and follow `GPT/work-application-manager/references/linkedin-connections-import.md`. Replace the snapshot as one dataset, retain A:J and hidden state, clear stale surplus rows, update Exported On, and verify source count, first/last rows, key coverage, and representative matches.
 
 ## Salary fields
 
