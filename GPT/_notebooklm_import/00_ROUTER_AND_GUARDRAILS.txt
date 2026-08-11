@@ -1,4 +1,4 @@
-﻿# 00_ROUTER_AND_GUARDRAILS
+# 00_ROUTER_AND_GUARDRAILS
 
 NotebookLM source title: 00_ROUTER_AND_GUARDRAILS
 Original files included:
@@ -337,24 +337,24 @@ Before the first tracker or Drive write in a task, read the hidden tab `Agent In
 
 Tracker columns `A:S` are fixed:
 - `Company`
-- `Referral`
 - `Position`
+- `Fit %`
+- `Stage`
+- `Referral`
+- `Apply URL`
+- `CV`
+- `Cover`
+- `Vacancy file`
 - `Archetype`
 - `Location`
 - `Vacancy URL`
-- `Apply URL`
 - `Posted date`
 - `Date found`
 - `Date applied`
-- `Fit %`
-- `Stage`
 - `Last contact`
 - `Next action`
-- `CV`
-- `Cover Letter`
 - `Vacancy snapshot`
 - `Notes`
-- `Vacancy text`
 
 Workflow:
 
@@ -363,8 +363,8 @@ Workflow:
 3. use `YYYY-MM-DD` dates in the spreadsheet timezone `Europe/Belgrade`;
 4. fill all known fields, preserve existing non-empty values, and leave an unknown value blank instead of guessing it;
 5. use only the allowed `Stage` values: `To review`, `Reviewed`, `CV ready`, `Applied`, `Recruiter screen`, `Interview`, `Technical interview`, `Final`, `Offer`, `Rejected`, `Withdrawn`, `Ghosted`, or `Closed`;
-6. when first analyzing a vacancy, populate every known value among `Company`, `Referral`, `Position`, `Archetype`, `Location`, `Vacancy URL`, `Apply URL`, `Posted date`, `Date found`, `Fit %`, `Stage`, and `Next action`; if no CV exists yet, set `Stage = Reviewed`;
-7. preserve enough content to identify and evaluate a vacancy after the source page disappears: save a concise identifying summary in `Vacancy snapshot`, material fit/gap context in `Notes`, and the full source text in `Vacancy text` when available;
+6. when first analyzing a vacancy, populate every known value among `Company`, `Position`, `Fit %`, `Stage`, `Referral`, `Apply URL`, `Archetype`, `Location`, `Vacancy URL`, `Posted date`, `Date found`, and `Next action`; if no CV exists yet, set `Stage = Reviewed`;
+7. preserve enough content to identify and evaluate a vacancy after the source page disappears: save a concise identifying summary in `Vacancy snapshot`, material fit/gap context in `Notes`, and the full source text in a verified Drive `Position.md`; write its URL to `Vacancy file`;
 8. after a tailored CV passes Word layout QA, use the verified My Drive root folder `WorkApplications` (folder ID `1wQMbnH4CODaARJSY221H06oCFJV2ukAK`);
 9. find or create the exact folder structure `WorkApplications/<Company>/<PositionTitle>/`, preserving recognizable names and sanitizing only unsafe path characters;
 10. store exactly four artifacts in the position folder: `Position.md` with company, position, Vacancy URL, Apply URL when available, Posted date when available, Date found, application process/contact context, and full text; `Anton_Nazarov<PositionTitle>.md` as the tailored CV Markdown source; `Anton_Nazarov_<PositionTitle>.docx` as the final Word CV; and `Anton_Nazarov<PositionTitle>.txt` as the plain-text cover letter;
@@ -372,7 +372,7 @@ Workflow:
 12. keep the CV Markdown and DOCX synchronized and prefer updating all existing artifacts for revisions rather than creating ambiguous duplicates;
 13. before saving the cover letter, apply the cached language-specific Drive humanizer in embedded/file mode: `WorkApplications/_skills/humanizer-ru/SKILL.md` for Russian or `WorkApplications/_skills/humanizer-en/SKILL.md` for English; save only the final humanized letter text in the `.txt` file;
 14. verify the position folder and all four uploaded files through Drive readback;
-15. write the verified DOCX URL into `CV`, the verified TXT URL into `Cover Letter`, set `Stage = CV ready` only if the user has not reported submitting the application, and set a concrete `Next action` such as `Apply`;
+15. write the verified DOCX URL into `CV`, the verified TXT URL into `Cover`, set `Stage = CV ready` only if the user has not reported submitting the application, and set a concrete `Next action` such as `Apply`;
 16. never treat a request to create a CV, generated files, or a Drive upload as proof that an application was submitted;
 17. set `Stage = Applied` only from the user's report or an explicit company/ATS receipt confirming this application was submitted; fill `Date applied` only when the actual submission date is directly evidenced;
 18. update the same row throughout recruiter screen, interview, technical interview, final, offer, rejection, withdrawal, ghosting, or closure;
@@ -386,7 +386,7 @@ The Google Sheet is the source of truth for job-search history. Project chats mu
 - Keep `Vacancy URL` as the source/presentation page and `Apply URL` as the actual submission destination. Never replace one with the other.
 - Before discarding job-board UI, extract the useful application metadata: company, position, location/work model, both URLs, Posted date, Date found, substantive vacancy text, selection process, and recruiter/contact/referral information.
 - When LinkedIn supplies `https://www.linkedin.com/safety/go/?url=<encoded external URL>&...`, parse and URL-decode the `url` parameter, validate an absolute HTTP(S) destination, and save that direct URL. Do not store the wrapper. Preserve the external URL's own query parameters.
-- For LinkedIn Easy Apply without a separate useful destination, leave Apply URL blank. Never infer an ATS or invent a company careers URL.
+- For LinkedIn Easy Apply / auto-apply without a separate useful destination, set `Apply URL = Vacancy URL`. Never infer an ATS or invent a company careers URL.
 - `Posted date` is employer/platform publication evidence; `Date found` is when Anton/ChatGPT first encountered the vacancy. Keep them independent.
 - Convert exact or safely resolvable relative dates only with a confident reference date. Do not manufacture an exact day from coarse wording such as `30+ days ago`, `several weeks ago`, or `1 year ago`; leave Posted date blank and retain useful wording in Notes.
 - During old-chat migration, use the historical chat date for resolvable relative labels and prefer the original pasted evidence. Do not browse a current/reposted vacancy merely to reconstruct historical Apply URL or Posted date unless explicitly requested.
@@ -679,16 +679,16 @@ For every generated or materially revised `.docx` CV:
 - Use Google Sheet `WorkInterviews` (`1k-Zbz7LMZJJcWfMp41yC-7mUaL_UI9__Bwy1SpPLbao`), tab `Jobs`, for every vacancy and application.
 - Before the first tracker or Drive write, read the hidden tab `Agent Instructions`; if the user gives newer conflicting instructions, update the hidden tab to match.
 - Upsert by `Vacancy URL`; if no URL exists, match normalized `Company + Position`. Update one lifecycle row instead of creating duplicates.
-- Keep the fixed A:S columns `Company`, `Referral`, `Position`, `Archetype`, `Location`, `Vacancy URL`, `Apply URL`, `Posted date`, `Date found`, `Date applied`, `Fit %`, `Stage`, `Last contact`, `Next action`, `CV`, `Cover Letter`, `Vacancy snapshot`, `Notes`, and `Vacancy text`.
+- Keep the fixed A:S columns `Company`, `Position`, `Fit %`, `Stage`, `Referral`, `Apply URL`, `CV`, `Cover`, `Vacancy file`, `Archetype`, `Location`, `Vacancy URL`, `Posted date`, `Date found`, `Date applied`, `Last contact`, `Next action`, `Vacancy snapshot`, and `Notes`. `Vacancy file` is the verified Drive URL for `Position.md`.
 - Use `YYYY-MM-DD` in `Europe/Belgrade`, fill all known values, preserve populated cells, and leave unknown values blank instead of guessing.
 - Use only valid stages: `To review`, `Reviewed`, `CV ready`, `Applied`, `Recruiter screen`, `Interview`, `Technical interview`, `Final`, `Offer`, `Rejected`, `Withdrawn`, `Ghosted`, `Closed`.
-- On first analysis, extract all available source/application metadata before discarding UI text. Keep Vacancy URL as the source page and Apply URL as the direct submission destination. Decode LinkedIn `safety/go` `url` parameters, preserve the external query string, and never store the wrapper or invent a link. For Easy Apply without a distinct destination, leave Apply URL blank.
+- On first analysis, extract all available source/application metadata before discarding UI text. Keep Vacancy URL as the source page and Apply URL as the direct submission destination. Decode LinkedIn `safety/go` `url` parameters, preserve the external query string, and never store the wrapper or invent a link. For LinkedIn Easy Apply / auto-apply without a distinct destination, set `Apply URL = Vacancy URL`.
 - Keep Posted date separate from Date found. Resolve precise relative dates only against a known reference date; leave coarse values blank and preserve useful wording in Notes. For old chats, prefer historical pasted evidence and do not browse current pages to reconstruct historical values unless asked.
-- Write all known vacancy fields and enough `Vacancy snapshot` / `Notes` / `Vacancy text` content to identify the role if its source page disappears; if no CV exists, set `Stage = Reviewed`.
+- Write all known vacancy fields, keep concise identifying content in `Vacancy snapshot` and fit/process context in `Notes`, and preserve the full source in a verified Drive `Position.md` linked from `Vacancy file`; if no CV exists, set `Stage = Reviewed`.
 - After DOCX visual QA passes, use `WorkApplications` (folder ID `1wQMbnH4CODaARJSY221H06oCFJV2ukAK`) and find or create `WorkApplications/<Company>/<PositionTitle>/`.
 - Store exactly four files in that position folder: `Position.md`, `Anton_Nazarov<PositionTitle>.md`, `Anton_Nazarov_<PositionTitle>.docx`, and `Anton_Nazarov<PositionTitle>.txt`. Position.md includes both URLs plus Posted date and Date found when known; the other files are CV Markdown, final Word CV, and plain-text cover letter.
 - Humanize the cover letter with the cached Drive skill for its language: `_skills/humanizer-ru/SKILL.md` or `_skills/humanizer-en/SKILL.md`. Save only final text in TXT.
-- Keep the CV `.md` and `.docx` synchronized, prefer updating existing files over duplicates, verify all four by readback, put the DOCX URL in `CV`, and put the TXT URL in `Cover Letter`.
+- Keep the CV `.md` and `.docx` synchronized, prefer updating existing files over duplicates, verify all four by readback, put the DOCX URL in `CV`, and put the TXT URL in `Cover`.
 - A CV request, generated file, or upload is not proof of application. Set `Stage = CV ready` before submission. Set `Stage = Applied` only from the user's report or an explicit company/ATS receipt confirming this application was submitted; fill `Date applied` only when directly evidenced.
 - Never invent submission date, fit, stage, salary, contact, submission, or CV-file existence. The Sheet is the source of truth; chat history alone is insufficient.
 - Do not call the workflow complete until DOCX visual QA, all four Drive uploads/readbacks, and tracker readback succeed; report integration blockers explicitly.
@@ -1025,9 +1025,9 @@ Every adapted resume must keep three things in balance:
 ## Standard Workflow
 
 1. Identify the target
-- platform: HH, Greenhouse, LinkedIn, Upwork, direct recruiter, email, PDF;
+- platform: HH, Greenhouse, LinkedIn, direct recruiter, email, PDF;
 - language: Russian, English, or Serbian;
-- role mode: managerial/executive, technical delivery, hybrid, freelance/client;
+- role mode: managerial/executive, technical delivery, or hybrid employment;
 - hard constraints: length, one-profile limitation, required sections, keyword needs.
 
 2. Extract role and ATS signal
@@ -1085,27 +1085,28 @@ Every adapted resume must keep three things in balance:
 
 ## Job Application Tracking
 
-For every vacancy, CV, cover letter, or hiring-stage task, use Google Sheet `WorkInterviews` (`1k-Zbz7LMZJJcWfMp41yC-7mUaL_UI9__Bwy1SpPLbao`), tab `Jobs`, as the source of truth.
+For every vacancy, CV, cover letter, or hiring-stage task, use Google Sheet `WorkInterviews` (`1k-Zbz7LMZJJcWfMp41yC-7mUaL_UI9__Bwy1SpPLbao`), tab `Jobs`, as the lifecycle/index source of truth. The full vacancy body is canonical in Drive `Position.md`, not in the Sheet.
 
 - Before the first tracker or Drive write, read the hidden tab `Agent Instructions`; when a newer explicit user instruction changes the workflow, update that tab as well.
 - Upsert one row per vacancy by `Vacancy URL` and normalized `Company + Position`; never create a new row for a later stage of the same vacancy.
-- Use the live A:S schema: `Company`, `Referral`, `Position`, `Archetype`, `Location`, `Vacancy URL`, `Apply URL`, `Posted date`, `Date found`, `Date applied`, `Fit %`, `Stage`, `Last contact`, `Next action`, `CV`, `Cover Letter`, `Vacancy snapshot`, `Notes`, `Vacancy text`.
-- On initial analysis, extract and write every known application metadata value before discarding job-board UI. Keep Vacancy URL as the source page and Apply URL as the actual submission destination.
-- Decode the `url` parameter of LinkedIn `safety/go` links and store the validated direct HTTP(S) destination with its own query parameters. Do not store the wrapper, infer an ATS, invent a careers URL, or fill Apply URL for Easy Apply without a distinct destination.
+- Use the live A:S schema: `Company`, `Position`, `Fit %`, `Stage`, `Referral`, `Apply URL`, `CV`, `Cover`, `Vacancy file`, `Archetype`, `Location`, `Vacancy URL`, `Posted date`, `Date found`, `Date applied`, `Last contact`, `Next action`, `Vacancy snapshot`, `Notes`.
+- On initial analysis, extract every known application metadata value before discarding job-board UI. Keep Vacancy URL as the source page and Apply URL as the actual submission destination.
+- Decode the `url` parameter of LinkedIn `safety/go` links and store the validated direct HTTP(S) destination with its own query parameters. Do not store the wrapper, infer an ATS, or invent a careers URL. For LinkedIn Easy Apply / auto-apply without a distinct destination, set `Apply URL = Vacancy URL`.
 - Keep Posted date and Date found independent. Convert precise relative publication labels only with a known reference date; leave coarse values blank and preserve useful original wording in Notes.
 - For old-chat migration, prefer original pasted evidence and the historical chat date. Do not browse the current vacancy to reconstruct historical Apply URL or Posted date unless explicitly requested.
 - If no CV exists yet, use `Stage = Reviewed`.
-- Save enough information to survive deletion of the source page: identifying summary in `Vacancy snapshot`, fit/gap context in `Notes`, and full text in `Vacancy text` when available.
+- Find or create `WorkApplications/<Company>/<PositionTitle>/` and save/update `Position.md` with the source metadata and full substantive vacancy text. Verify it through Drive readback and write its Drive URL to `Vacancy file`.
+- Keep `Vacancy snapshot` to a concise one-paragraph identifying summary and `Notes` to concise fit/gap/process context. Never duplicate the full vacancy body in the Sheet.
+- Preserve `CLIP` wrapping for `Vacancy snapshot`, `Notes`, and `Vacancy file`; keep data rows compact and do not let these fields determine row height.
 - Use `YYYY-MM-DD` in `Europe/Belgrade`. Preserve populated cells and leave unknown values blank.
-- After the `.docx` passes visual QA, use the My Drive root folder `WorkApplications` (folder ID `1wQMbnH4CODaARJSY221H06oCFJV2ukAK`) and find or create `WorkApplications/<Company>/<PositionTitle>/`.
-- Store exactly four artifacts in the position folder: `Position.md` for company, position, Vacancy URL, Apply URL when known, Posted date when known, Date found, application process/contact context, and full text; `Anton_Nazarov<PositionTitle>.md` for the CV source; `Anton_Nazarov_<PositionTitle>.docx` for the final Word CV; and `Anton_Nazarov<PositionTitle>.txt` for the plain-text cover letter.
+- A reviewed vacancy may have only `Position.md`. When the automatic-CV gate applies, complete the same folder with `Anton_Nazarov<PositionTitle>.md` for the CV source, `Anton_Nazarov_<PositionTitle>.docx` for the final Word CV, and `Anton_Nazarov<PositionTitle>.txt` for the plain-text cover letter.
 - Before saving TXT, apply `WorkApplications/_skills/humanizer-ru/SKILL.md` for Russian or `WorkApplications/_skills/humanizer-en/SKILL.md` for English in embedded/file mode; store only final humanized text.
-- Prefer updating existing artifacts for revisions, verify all four by Drive readback, write the DOCX URL to `CV`, write the TXT URL to `Cover Letter`, set `Stage = CV ready` if not submitted, and set the concrete `Next action`.
+- Prefer updating existing artifacts for revisions, verify claimed artifacts by Drive readback, write the DOCX URL to `CV`, write the TXT URL to `Cover`, set `Stage = CV ready` if not submitted, and set the concrete `Next action`.
 - Creating or uploading a CV does not mean the application was submitted.
 - Set `Stage = Applied` only from the user's report or an explicit company/ATS receipt confirming this application was submitted. Fill `Date applied` only when the actual submission date is directly evidenced.
 - Continue updating the same row through recruiter screen, interview, technical interview, final, offer, rejection, withdrawal, ghosting, or closure.
 - Never invent application date, fit, stage, salary, contact, submission, or CV-file existence.
-- Do not call the application pack complete until DOCX visual QA, all four Drive uploads/readbacks, and the Sheet readback succeed. If an integration is unavailable, report the blocker.
+- Do not call a complete application pack complete until DOCX visual QA, all four Drive uploads/readbacks, and the Sheet readback succeed. If an integration is unavailable, report the blocker.
 - The user authorizes read-only Gmail checks for company, recruiter, and ATS messages tied to an existing vacancy. Search narrowly, inspect the matched message/thread, and update the same Sheet row only from explicit evidence. An acknowledgement may confirm `Applied`, but generic review language is not recruiter movement. Never infer a later stage from alerts, marketing, reminders, talent-pool mail, or silence. Update `Last contact`, `Next action`, and a concise sender/subject/date provenance note; do not copy unnecessary sensitive content. Do not send, draft, label, archive, delete, or otherwise modify mail unless separately requested.
 - Do not use Notion unless the user explicitly re-enables it later.
 
@@ -1204,28 +1205,30 @@ description: Manage Anton Nazarov's employment vacancy analysis, automatic tailo
 
 Confirm that `MODE_ROUTER.md` selects CV mode. If the buyer is procuring a project, consulting engagement, or agency delivery rather than hiring Anton as a candidate, stop this workflow and use `freelance-agency-manager`.
 
-Use Google Sheet `WorkInterviews` (`1k-Zbz7LMZJJcWfMp41yC-7mUaL_UI9__Bwy1SpPLbao`), tab `Jobs`, as the job-search source of truth. Before writes, read its hidden tab `Agent Instructions`.
+Use Google Sheet `WorkInterviews` (`1k-Zbz7LMZJJcWfMp41yC-7mUaL_UI9__Bwy1SpPLbao`), tab `Jobs`, as the job-search lifecycle/index source of truth. Before writes, read its hidden tab `Agent Instructions`.
 
-Use Drive root folder `WorkApplications` (`1wQMbnH4CODaARJSY221H06oCFJV2ukAK`).
+Use Drive root folder `WorkApplications` (`1wQMbnH4CODaARJSY221H06oCFJV2ukAK`). The canonical full vacancy body lives in Drive `Position.md`, not in the Sheet.
 
 ## Vacancy workflow
 
 1. Upsert one `Jobs` row by Vacancy URL and normalized Company + Position; use a verified Apply URL as supporting identity evidence.
 2. Record all known vacancy fields, including Referral, Apply URL, and Posted date. Leave unknown values blank.
-3. Preserve the source in `Vacancy snapshot`, `Notes`, and `Vacancy text` so the role remains identifiable if the page disappears.
-4. Assign an evidence-based fit score from 0% to 100%.
-5. If fit is strictly above 60%, immediately create the complete application pack unless the user explicitly declines.
-6. If the vacancy does not explicitly request project work or clearly describe project-delivery responsibilities, omit a dedicated project section and lead with employment experience, responsibilities, and outcomes.
+3. Find or create `WorkApplications/<Company>/<PositionTitle>/` and create/update `Position.md` for every tracked vacancy when substantive vacancy text is available.
+4. Verify `Position.md` through Drive readback, then write its Drive URL to the Sheet column `Vacancy file`.
+5. Keep `Vacancy snapshot` as a concise identifying one-paragraph summary and `Notes` as concise fit/gap/process context. Do not duplicate the full vacancy body in either field.
+6. Assign an evidence-based fit score from 0% to 100%.
+7. If fit is strictly above 60%, immediately create the remaining application-pack artifacts unless the user explicitly declines.
+8. If the vacancy does not explicitly request project work or clearly describe project-delivery responsibilities, omit a dedicated project section and lead with employment experience, responsibilities, and outcomes.
 
 ## Required Drive structure
 
-For every generated application pack, find or create:
+Every tracked vacancy with recoverable substantive source text should have:
 
 ```text
-WorkApplications/<Company>/<PositionTitle>/
+WorkApplications/<Company>/<PositionTitle>/Position.md
 ```
 
-Store exactly these four artifacts in that folder:
+A complete generated application pack contains exactly these four artifacts in the same folder:
 
 ```text
 Position.md
@@ -1234,30 +1237,48 @@ Anton_Nazarov_<PositionTitle>.docx
 Anton_Nazarov<PositionTitle>.txt
 ```
 
+A vacancy that has been reviewed but does not yet require a CV may legitimately have only `Position.md`; do not fabricate the other three artifacts merely to fill the folder.
+
 Replace `<Company>` and `<PositionTitle>` with recognizable sanitized names. In filenames, normalize spaces and unsafe punctuation inside `PositionTitle` to underscores while preserving the exact underscore pattern shown above.
 
 Artifact roles:
 
-- `Position.md`: company, position, location, Vacancy URL, Apply URL when available, Posted date when available, Date found, application process/contact context, and full vacancy text.
+- `Position.md`: canonical vacancy source: company, position, location, Vacancy URL, Apply URL when available, Posted date when available, Date found, application process/contact context, and full substantive vacancy text.
 - `Anton_Nazarov<PositionTitle>.md`: tailored CV source in Markdown.
 - `Anton_Nazarov_<PositionTitle>.docx`: final tailored Word CV generated from the Markdown source.
 - `Anton_Nazarov<PositionTitle>.txt`: humanized cover letter as UTF-8 plain text only.
 
-Keep the CV Markdown and DOCX synchronized. Prefer updating existing files over creating duplicates. Verify the folder and all four files through Drive readback.
+Keep the CV Markdown and DOCX synchronized. Prefer updating existing files over creating duplicates. Verify every file that is claimed to exist through Drive readback.
+
+## Tracker storage and compact layout
+
+Use the live `Jobs` headers A:S in this order:
+
+`Company`, `Position`, `Fit %`, `Stage`, `Referral`, `Apply URL`, `CV`, `Cover`, `Vacancy file`, `Archetype`, `Location`, `Vacancy URL`, `Posted date`, `Date found`, `Date applied`, `Last contact`, `Next action`, `Vacancy snapshot`, `Notes`.
+
+Storage rules:
+
+- `Vacancy file` contains the verified Drive URL of that vacancy's `Position.md`. Never store the full vacancy body in the Sheet.
+- `Vacancy snapshot` is for quick identification only: one compact paragraph, no copied job description, no multiline lists.
+- `Notes` is for concise fit/gap/process/provenance context only: one compact paragraph where practical; do not paste correspondence or vacancy text.
+- Preserve `CLIP` wrapping for `Vacancy snapshot`, `Notes`, and `Vacancy file`; these columns must not force row-height expansion.
+- Keep tracker rows compact (normally one-line height, about 21-24 px). Do not auto-resize row height from long `Vacancy snapshot`, `Notes`, or link content. If a write/import changes these cells to `WRAP` or expands the row, restore `CLIP` and compact row height.
+- Do not use the Sheet as document storage. Drive files hold long-form source and artifacts; the Sheet holds structured state, concise summaries, and links.
 
 ## Vacancy source and dates
 
 Treat `Vacancy URL` as the page where the vacancy was found and `Apply URL` as the actual submission destination. Preserve both.
 
 - During ingestion, extract company, position, location/work model, Vacancy URL, Apply URL, Posted date, Date found, full substantive text, application/selection process, and recruiter/contact/referral details before discarding job-board UI.
+- Save the substantive vacancy text to `Position.md` before reducing it to the tracker snapshot/notes.
 - For a LinkedIn `https://www.linkedin.com/safety/go/?url=...` link, parse the `url` query parameter, URL-decode it, validate that it is an absolute HTTP(S) URL, and store the direct external ATS/company URL. Never store the LinkedIn wrapper as canonical Apply URL.
 - Preserve the external destination's query parameters. Do not infer an ATS or construct a careers URL from the company name.
-- For LinkedIn Easy Apply without a distinct useful destination, keep Vacancy URL and leave Apply URL blank.
+- For LinkedIn Easy Apply / auto-apply without a distinct useful destination, set `Apply URL = Vacancy URL`.
 - Store Posted date only from explicit evidence. Convert precise relative labels such as `3 days ago` only when the reference date is known; use `YYYY-MM-DD`.
 - Do not create false precision for `30+ days ago`, `several weeks ago`, `1 year ago`, or similar coarse labels. Leave Posted date blank and preserve useful original wording in Notes.
 - Date found is when Anton/ChatGPT first encountered or added the vacancy. Never substitute Posted date for Date found.
 
-When migrating an old chat, prefer its historical pasted evidence. Use the historical chat date as the reference for precise relative dates. Do not browse the current vacancy to reconstruct historical Apply URL or Posted date unless the user explicitly requests it.
+When migrating an old chat, prefer its historical pasted evidence. Use the historical chat date as the reference for precise relative dates. Do not browse the current vacancy to reconstruct historical Apply URL or Posted date unless the user explicitly requests it. If the old Sheet row contains a full vacancy body, move/preserve that body in `Position.md`, verify the file, replace the Sheet body with the verified `Position.md` URL in `Vacancy file`, and keep only concise snapshot/notes in the Sheet.
 
 ## Humanized cover letter
 
@@ -1297,15 +1318,13 @@ Fix defects, rerender, and inspect again. Never claim visual QA passed when rend
 
 ## Tracker lifecycle
 
-Use the live `Jobs` headers A:S in this order: `Company`, `Referral`, `Position`, `Archetype`, `Location`, `Vacancy URL`, `Apply URL`, `Posted date`, `Date found`, `Date applied`, `Fit %`, `Stage`, `Last contact`, `Next action`, `CV`, `Cover Letter`, `Vacancy snapshot`, `Notes`, `Vacancy text`.
-
 - Before CV creation: `Stage = Reviewed`.
-- After all four files are uploaded and verified: write the DOCX URL to `CV`, the TXT URL to `Cover Letter`, and set `Stage = CV ready` if no submission was reported.
+- After all required application-pack files are uploaded and verified: write the DOCX URL to `CV`, the TXT URL to `Cover`, and set `Stage = CV ready` if no submission was reported.
 - CV creation or upload is not proof of application.
 - Set `Stage = Applied` only from the user's report or an explicit company/ATS receipt confirming that this application was submitted. Fill `Date applied` only when the actual submission date is directly evidenced.
 - Continue updating the same row through recruiter screen, interview, technical interview, final, offer, rejection, withdrawal, ghosting, or closure.
 
-Never invent fit, dates, stage, salary, contacts, submission, or file existence. Do not call the pack complete until DOCX visual QA, all four Drive upload/readbacks, and tracker readback succeed.
+Never invent fit, dates, stage, salary, contacts, submission, or file existence. Do not call a complete application pack complete until DOCX visual QA, all four Drive upload/readbacks, and tracker readback succeed.
 
 ## Gmail status evidence
 
@@ -1390,88 +1409,71 @@ SOURCE_FILE: README.md
 
 # GPT Workspace
 
-This folder is the flat project bundle for ChatGPT Project usage.
+This folder contains career evidence, employment workflow files, and legacy/shared GPT packaging utilities.
 
-Project chats work best with files in one root, so the active package is intentionally flattened.
+## ChatGPT Project deployment: employment
 
-This bundle separates employment/CV work from NeedleBit freelance and agency work. It supports vacancy fit, tailored resumes, and hiring workflows without mixing them with client qualification, proposals, commercial offers, or partner pitches.
+For Anton's employment / job-search ChatGPT Project, copy only [GPT_BOOTSTRAP.md](./GPT_BOOTSTRAP.md) into the Project Instructions.
 
-## Main entry point
+The employment bootstrap intentionally does **not** load the combined `GPT_RUNTIME.md` or `MODE_ROUTER.md`. It preselects candidate-side employment work and loads only the employment workflow plus task-relevant evidence from `Antiokh/CV`.
 
-Use [GPT_PROJECT_ROUTER.md](./GPT_PROJECT_ROUTER.md) as the primary project instruction.
+The ChatGPT Project may keep two local files with narrow roles:
 
-## Bootstrap-only GPT deployment
+- `anton_nazarov_profile.json` — stable factual cache only. Canonical GitHub evidence wins on conflict; its Upwork/NeedleBit positioning is not an instruction source for the employment project.
+- `Anton_Nazarov_CTO_CV.docx` — visual/layout reference only. Its wording and omissions are not canonical career evidence.
 
-For a GPT configured to read connected GitHub repositories at runtime, keep only [GPT_BOOTSTRAP.md](./GPT_BOOTSTRAP.md) in the GPT's Instructions/knowledge bootstrap surface. The bootstrap loads [GPT_RUNTIME.md](./GPT_RUNTIME.md) from `Antiokh/CV`, applies [MODE_ROUTER.md](./MODE_ROUTER.md), and then routes evidence to either `Antiokh/CV` or `Antiokh/needlebit-marketing`.
+For vacancy, CV, cover-letter, recruiter, interview, tracker, or application-pack work, the operational entry point is:
 
-Run `build_notebooklm_sources.ps1` after changing router, workflow, or operational skill files so `GPT_RUNTIME.md` stays synchronized. Commit and push the regenerated runtime before removing previously uploaded GPT knowledge files. Validate the bootstrap in GPT Preview first.
-
-## Active root files
-
-Core active:
-- `GPT_PROJECT_ROUTER.md`
-- `MODE_ROUTER.md`
 - `work-application-manager/SKILL.md`
-- `freelance-agency-manager/SKILL.md`
-- `anton_nazarov_profile.json`
-- `anton_nazarov_experience_full.md`
-- `Positioning-archetypes-routing.txt`
-- `ANTI_PATTERNS.md`
-- `RESUME_ADAPTATION_WORKFLOW.md`
 
-Track-specific:
+Load positioning/evidence selectively:
+
+- executive/managerial: `EXECUTIVE_POSITIONING.md`, `MANAGEMENT_EXPERIENCE_CASES.md`, `MANAGEMENT_TRANSLATION_LAYER.md`
+- technical/specialist employment: `TECHNICAL_DELIVERY_POSITIONING.md`, `AI_NATIVE_DELIVERY.md`, relevant factual project/experience evidence
+- interview/career story: `anton_nazarov_career_path_story.md` and deeper sources only when needed
+- canonical facts: `../data/`, `../details/`, and `../portfolio/`
+
+Do not load Upwork, NeedleBit marketing, freelance/agency skills, or `Antiokh/needlebit-marketing` during ordinary employment work.
+
+## Commercial / Freelance materials
+
+This repository still contains shared and legacy files used by the previous combined CV + Agency packaging, including:
+
+- `MODE_ROUTER.md`
+- `freelance-agency-manager/SKILL.md`
+- `UPWORK_PROJECT_CASES.md`
+- `NEEDLEBIT_POSITIONING.md`
+- `NEEDLEBIT_CASES.md`
+- `NEEDLEBIT_OLD_ARCHIVE_NOT_PRIMARY.md`
+- `GPT_RUNTIME.md`
+
+They are **not part of the employment ChatGPT Project bootstrap**. Commercial NeedleBit/Upwork work should live in the separate Freelance/Agency project and use `Antiokh/needlebit-marketing` as its canonical positioning source.
+
+`GPT_RUNTIME.md` remains a generated compatibility artifact for the older combined bootstrap/runtime design. If that combined design is maintained, regenerate it with `build_notebooklm_sources.ps1` after changing its source files. Do not copy it into the employment Project Instructions.
+
+## Evidence files
+
+Employment-relevant files include:
+
 - `EXECUTIVE_POSITIONING.md`
 - `MANAGEMENT_EXPERIENCE_CASES.md`
 - `MANAGEMENT_TRANSLATION_LAYER.md`
 - `TECHNICAL_DELIVERY_POSITIONING.md`
-- `UPWORK_PROJECT_CASES.md`
 - `AI_NATIVE_DELIVERY.md`
-- `NEEDLEBIT_POSITIONING.md`
-- `NEEDLEBIT_CASES.md`
-- `NEEDLEBIT_OLD_ARCHIVE_NOT_PRIMARY.md`
 - `anton_nazarov_career_path_story.md`
-
-Deep / raw:
 - `anton_nazarov_management_cases_full.md`
 - `anton_nazarov_career_path_story_full_raw.md`
-
-Secondary:
+- `anton_nazarov_experience_full.md`
 - `comprehensive_psychological_career_profile.md`
 
-## File role map
+Use them selectively. Do not load all evidence for every task.
 
-- `GPT_PROJECT_ROUTER.md` - router and behavior rules
-- `EXECUTIVE_POSITIONING.md` - executive narrative
-- `MANAGEMENT_EXPERIENCE_CASES.md` - concise managerial proof
-- `anton_nazarov_management_cases_full.md` - deep managerial source
-- `MANAGEMENT_TRANSLATION_LAYER.md` - ATS / HR translation layer
-- `anton_nazarov_career_path_story.md` - curated career-story layer
-- `anton_nazarov_career_path_story_full_raw.md` - maximum-detail raw story
-- `ANTI_PATTERNS.md` - narrative guardrail
-- `RESUME_ADAPTATION_WORKFLOW.md` - ATS, detector-aware resume adaptation, versioning, and human-voice workflow
-- `TECHNICAL_DELIVERY_POSITIONING.md` - technical positioning logic
-- `UPWORK_PROJECT_CASES.md` - reusable Upwork proof blocks
-- `AI_NATIVE_DELIVERY.md` - AI-assisted delivery framing
-- `NEEDLEBIT_POSITIONING.md` - current NeedleBit messaging
-- `NEEDLEBIT_CASES.md` - NeedleBit marketing proof patterns
-- `NEEDLEBIT_OLD_ARCHIVE_NOT_PRIMARY.md` - guardrail against outdated NeedleBit positioning
+## Canonical-source rule
 
-## Usage rule
-
-Use files selectively.
-Do not assume every task requires every file in its mode.
-Short tasks should use the minimum context needed.
-
-## Important note about canonical sources
-
-These are project copies for portability.
-
-Canonical originals still live in:
+Files in `GPT/` may be packaging copies. Canonical originals still live elsewhere in the repository, including:
 
 - [data/anton_nazarov_profile.json](../data/anton_nazarov_profile.json)
 - [details/anton_nazarov_experience_full.md](../details/anton_nazarov_experience_full.md)
 - [details/comprehensive_psychological_career_profile.md](../details/comprehensive_psychological_career_profile.md)
 
-If the canonical files change, refresh these copies.
-
-
+When precision, freshness, or a conflict matters, prefer the canonical source.

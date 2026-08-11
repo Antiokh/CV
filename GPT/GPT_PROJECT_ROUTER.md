@@ -319,24 +319,24 @@ Before the first tracker or Drive write in a task, read the hidden tab `Agent In
 
 Tracker columns `A:S` are fixed:
 - `Company`
-- `Referral`
 - `Position`
+- `Fit %`
+- `Stage`
+- `Referral`
+- `Apply URL`
+- `CV`
+- `Cover`
+- `Vacancy file`
 - `Archetype`
 - `Location`
 - `Vacancy URL`
-- `Apply URL`
 - `Posted date`
 - `Date found`
 - `Date applied`
-- `Fit %`
-- `Stage`
 - `Last contact`
 - `Next action`
-- `CV`
-- `Cover Letter`
 - `Vacancy snapshot`
 - `Notes`
-- `Vacancy text`
 
 Workflow:
 
@@ -345,8 +345,8 @@ Workflow:
 3. use `YYYY-MM-DD` dates in the spreadsheet timezone `Europe/Belgrade`;
 4. fill all known fields, preserve existing non-empty values, and leave an unknown value blank instead of guessing it;
 5. use only the allowed `Stage` values: `To review`, `Reviewed`, `CV ready`, `Applied`, `Recruiter screen`, `Interview`, `Technical interview`, `Final`, `Offer`, `Rejected`, `Withdrawn`, `Ghosted`, or `Closed`;
-6. when first analyzing a vacancy, populate every known value among `Company`, `Referral`, `Position`, `Archetype`, `Location`, `Vacancy URL`, `Apply URL`, `Posted date`, `Date found`, `Fit %`, `Stage`, and `Next action`; if no CV exists yet, set `Stage = Reviewed`;
-7. preserve enough content to identify and evaluate a vacancy after the source page disappears: save a concise identifying summary in `Vacancy snapshot`, material fit/gap context in `Notes`, and the full source text in `Vacancy text` when available;
+6. when first analyzing a vacancy, populate every known value among `Company`, `Position`, `Fit %`, `Stage`, `Referral`, `Apply URL`, `Archetype`, `Location`, `Vacancy URL`, `Posted date`, `Date found`, and `Next action`; if no CV exists yet, set `Stage = Reviewed`;
+7. preserve enough content to identify and evaluate a vacancy after the source page disappears: save a concise identifying summary in `Vacancy snapshot`, material fit/gap context in `Notes`, and the full source text in a verified Drive `Position.md`; write its URL to `Vacancy file`;
 8. after a tailored CV passes Word layout QA, use the verified My Drive root folder `WorkApplications` (folder ID `1wQMbnH4CODaARJSY221H06oCFJV2ukAK`);
 9. find or create the exact folder structure `WorkApplications/<Company>/<PositionTitle>/`, preserving recognizable names and sanitizing only unsafe path characters;
 10. store exactly four artifacts in the position folder: `Position.md` with company, position, Vacancy URL, Apply URL when available, Posted date when available, Date found, application process/contact context, and full text; `Anton_Nazarov<PositionTitle>.md` as the tailored CV Markdown source; `Anton_Nazarov_<PositionTitle>.docx` as the final Word CV; and `Anton_Nazarov<PositionTitle>.txt` as the plain-text cover letter;
@@ -354,7 +354,7 @@ Workflow:
 12. keep the CV Markdown and DOCX synchronized and prefer updating all existing artifacts for revisions rather than creating ambiguous duplicates;
 13. before saving the cover letter, apply the cached language-specific Drive humanizer in embedded/file mode: `WorkApplications/_skills/humanizer-ru/SKILL.md` for Russian or `WorkApplications/_skills/humanizer-en/SKILL.md` for English; save only the final humanized letter text in the `.txt` file;
 14. verify the position folder and all four uploaded files through Drive readback;
-15. write the verified DOCX URL into `CV`, the verified TXT URL into `Cover Letter`, set `Stage = CV ready` only if the user has not reported submitting the application, and set a concrete `Next action` such as `Apply`;
+15. write the verified DOCX URL into `CV`, the verified TXT URL into `Cover`, set `Stage = CV ready` only if the user has not reported submitting the application, and set a concrete `Next action` such as `Apply`;
 16. never treat a request to create a CV, generated files, or a Drive upload as proof that an application was submitted;
 17. set `Stage = Applied` only from the user's report or an explicit company/ATS receipt confirming this application was submitted; fill `Date applied` only when the actual submission date is directly evidenced;
 18. update the same row throughout recruiter screen, interview, technical interview, final, offer, rejection, withdrawal, ghosting, or closure;
@@ -368,7 +368,7 @@ The Google Sheet is the source of truth for job-search history. Project chats mu
 - Keep `Vacancy URL` as the source/presentation page and `Apply URL` as the actual submission destination. Never replace one with the other.
 - Before discarding job-board UI, extract the useful application metadata: company, position, location/work model, both URLs, Posted date, Date found, substantive vacancy text, selection process, and recruiter/contact/referral information.
 - When LinkedIn supplies `https://www.linkedin.com/safety/go/?url=<encoded external URL>&...`, parse and URL-decode the `url` parameter, validate an absolute HTTP(S) destination, and save that direct URL. Do not store the wrapper. Preserve the external URL's own query parameters.
-- For LinkedIn Easy Apply without a separate useful destination, leave Apply URL blank. Never infer an ATS or invent a company careers URL.
+- For LinkedIn Easy Apply / auto-apply without a separate useful destination, set `Apply URL = Vacancy URL`. Never infer an ATS or invent a company careers URL.
 - `Posted date` is employer/platform publication evidence; `Date found` is when Anton/ChatGPT first encountered the vacancy. Keep them independent.
 - Convert exact or safely resolvable relative dates only with a confident reference date. Do not manufacture an exact day from coarse wording such as `30+ days ago`, `several weeks ago`, or `1 year ago`; leave Posted date blank and retain useful wording in Notes.
 - During old-chat migration, use the historical chat date for resolvable relative labels and prefer the original pasted evidence. Do not browse a current/reposted vacancy merely to reconstruct historical Apply URL or Posted date unless explicitly requested.
