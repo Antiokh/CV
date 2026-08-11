@@ -16,3 +16,9 @@ tmp_superjob_backups/
 tmp_upwork_covers/
 upwork_*.png
 .external/hh-ru-apply
+
+# Private generated LinkedIn connection import artifacts
+**/LinkedInConnections.prepared.csv
+**/LinkedInConnections.manifest.json
+**/linkedin-connections-prepared/
+**/batches/batch-*.json
