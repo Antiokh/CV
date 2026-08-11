@@ -4,16 +4,25 @@ This folder is the flat project bundle for ChatGPT Project usage.
 
 Project chats work best with files in one root, so the active package is intentionally flattened.
 
-This bundle is meant not only to classify tasks, but also to help a GPT evaluate vacancy fit, adapt resumes, and strengthen ATS/recruiter relevance without inventing facts.
+This bundle separates employment/CV work from NeedleBit freelance and agency work. It supports vacancy fit, tailored resumes, and hiring workflows without mixing them with client qualification, proposals, commercial offers, or partner pitches.
 
 ## Main entry point
 
 Use [GPT_PROJECT_ROUTER.md](./GPT_PROJECT_ROUTER.md) as the primary project instruction.
 
+## Bootstrap-only GPT deployment
+
+For a GPT configured to read connected GitHub repositories at runtime, keep only [GPT_BOOTSTRAP.md](./GPT_BOOTSTRAP.md) in the GPT's Instructions/knowledge bootstrap surface. The bootstrap loads [GPT_RUNTIME.md](./GPT_RUNTIME.md) from `Antiokh/CV`, applies [MODE_ROUTER.md](./MODE_ROUTER.md), and then routes evidence to either `Antiokh/CV` or `Antiokh/needlebit-marketing`.
+
+Run `build_notebooklm_sources.ps1` after changing router, workflow, or operational skill files so `GPT_RUNTIME.md` stays synchronized. Commit and push the regenerated runtime before removing previously uploaded GPT knowledge files. Validate the bootstrap in GPT Preview first.
+
 ## Active root files
 
 Core active:
 - `GPT_PROJECT_ROUTER.md`
+- `MODE_ROUTER.md`
+- `work-application-manager/SKILL.md`
+- `freelance-agency-manager/SKILL.md`
 - `anton_nazarov_profile.json`
 - `anton_nazarov_experience_full.md`
 - `Positioning-archetypes-routing.txt`

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Freelance & Agency Manager"
+  short_description: "Qualify leads and write evidence-backed proposals"
+  default_prompt: "Use $freelance-agency-manager to qualify this lead and draft the right NeedleBit response."

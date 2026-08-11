@@ -66,6 +66,8 @@ Anton worked on an internal IBM Domino-based document workflow environment used 
 
 This period is important because Anton was directly involved in building a document management system from scratch in a banking environment.
 
+The employer was a Russian commercial bank, which meant the work sat inside a regulated environment with formal approvals, registration rules, internal controls, and 1C-linked operational processes.
+
 ### Responsibilities
 
 - Lotus Notes / Domino development
@@ -170,6 +172,8 @@ This period shows early comfort with:
 **Role:** Junior Lotus Notes Developer
 
 This was an early corporate role focused on enterprise document and workflow systems.
+
+Domodedovo is one of the largest airports serving Moscow, so even this early role took place inside a large enterprise environment rather than a small local IT team.
 
 ### Responsibilities
 
