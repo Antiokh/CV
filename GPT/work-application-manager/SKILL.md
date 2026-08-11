@@ -14,7 +14,7 @@ Use Drive root folder `WorkApplications` (`1wQMbnH4CODaARJSY221H06oCFJV2ukAK`). 
 ## Vacancy workflow
 
 1. Upsert one `Jobs` row by Vacancy URL and normalized Company + Position; use a verified Apply URL as supporting identity evidence. After creation, use the immutable `Row ID` UUID as its durable identity.
-2. Record all known vacancy fields, including salary fields, Referral, Apply URL, and Posted date. Leave unknown values blank.
+2. Record all known vacancy fields, including salary fields, Referral, Recruiter, Apply URL, and Posted date. Leave unknown values blank.
 3. Find or create `WorkApplications/<Company>/<PositionTitle>/` and create/update `Position.md` for every tracked vacancy when substantive vacancy text is available.
 4. Verify `Position.md` through Drive readback, then write its Drive URL to the Sheet column `Vacancy file`.
 5. Keep `Vacancy snapshot` as a concise identifying one-paragraph summary and `Notes` as concise fit/gap/process context. Do not duplicate the full vacancy body in either field.
@@ -54,11 +54,11 @@ Keep the CV Markdown and DOCX synchronized. Prefer updating existing files over 
 
 ## Tracker storage and compact layout
 
-Use the live visible `Jobs` headers A:U in this order:
+Use the live visible `Jobs` headers A:V in this order:
 
-`Company`, `Position`, `Fit %`, `Stage`, `Salary expectation`, `Estimated salary range`, `Referral`, `Apply URL`, `CV`, `Cover`, `Vacancy file`, `Archetype`, `Location`, `Vacancy URL`, `Posted date`, `Date found`, `Date applied`, `Last contact`, `Next action`, `Vacancy snapshot`, `Notes`.
+`Company`, `Position`, `Fit %`, `Stage`, `Salary expectation`, `Estimated salary range`, `Referral`, `Recruiter`, `Apply URL`, `CV`, `Cover`, `Vacancy file`, `Archetype`, `Location`, `Vacancy URL`, `Posted date`, `Date found`, `Date applied`, `Last contact`, `Next action`, `Vacancy snapshot`, `Notes`.
 
-Hidden column V is `Row ID`: an immutable UUID v4 assigned exactly once. Never change or reuse it. Never treat a row number, cached index, timestamp, Company, or Position as durable identity.
+Hidden column W is `Row ID`: an immutable UUID v4 assigned exactly once. Never change or reuse it. Never treat a row number, cached index, timestamp, Company, or Position as durable identity.
 
 Storage rules:
 
@@ -73,11 +73,19 @@ Storage rules:
 
 Multiple chats may write concurrently. Protect every write:
 
-1. Immediately before writing, repeat the vacancy lookup by Vacancy URL and normalized Company + Position, then read the current target row A:V including Row ID. Discard cached row numbers.
+1. Immediately before writing, repeat the vacancy lookup by Vacancy URL and normalized Company + Position, then read the current target row A:W including Row ID. Discard cached row numbers.
 2. For a new vacancy, run the final duplicate check, generate a UUID v4, and use one `spreadsheets.batchUpdate` call that inserts one row at the freshly determined boundary, copies safe format/validation from an exemplar, and writes the complete new record including Row ID. Never write into a merely blank assumed row and never separate insertion from initial values.
 3. For an existing vacancy, search/re-resolve the UUID's current row and update only intended cells. Never rewrite the complete row; preserve values another chat added.
-4. Immediately read back A:V, verify the same UUID and every written value, and search once more by vacancy keys and UUID.
+4. Immediately read back A:W, verify the same UUID and every written value, and search once more by vacancy keys and UUID.
 5. If the UUID moved, re-resolve it. If a value conflicts, another row appeared, or duplicates exist, do not overwrite, delete, or merge automatically. Preserve all data, stop, and report the conflict for reconciliation.
+
+## Recruiter contacts
+
+- Store known recruiter, sourcer, hiring-manager, and referral-contact names in `Recruiter`. Keep `Referral` as separate source/introduction context even when it names the same person.
+- Use a native people chip only when a verified email uniquely identifies the person. Read it back and verify `chipRuns[].chip.personProperties.email`.
+- When a verified LinkedIn profile exists without a verified email, store the person's exact name as clickable text linked to that URL. LinkedIn URLs are not accepted by the Sheets API as rich-link chips.
+- When only the name is known, store plain text. Never synthesize an email, guess a profile, or represent an ambiguous identity as a chip.
+- Use recruiter name plus company/domain for authorized Gmail searches and the verified URL for direct LinkedIn lookup.
 
 ## Salary fields
 

@@ -317,7 +317,7 @@ Use the Google Sheet `WorkInterviews`, spreadsheet ID `1k-Zbz7LMZJJcWfMp41yC-7mU
 
 Before the first tracker or Drive write in a task, read the hidden tab `Agent Instructions` and follow its current operational rules. If it conflicts with an explicit newer user instruction, the user's instruction wins and the hidden tab must be updated to match.
 
-Visible tracker columns `A:U` are fixed:
+Visible tracker columns `A:V` are fixed:
 - `Company`
 - `Position`
 - `Fit %`
@@ -325,6 +325,7 @@ Visible tracker columns `A:U` are fixed:
 - `Salary expectation`
 - `Estimated salary range`
 - `Referral`
+- `Recruiter`
 - `Apply URL`
 - `CV`
 - `Cover`
@@ -340,7 +341,7 @@ Visible tracker columns `A:U` are fixed:
 - `Vacancy snapshot`
 - `Notes`
 
-Hidden column `V` is `Row ID`: an immutable UUID v4 assigned exactly once. Never use a row number, cached index, timestamp, Company, or Position as the durable record identifier.
+Hidden column `W` is `Row ID`: an immutable UUID v4 assigned exactly once. Never use a row number, cached index, timestamp, Company, or Position as the durable record identifier.
 
 Workflow:
 
@@ -349,7 +350,7 @@ Workflow:
 3. use `YYYY-MM-DD` dates in the spreadsheet timezone `Europe/Belgrade`;
 4. fill all known fields, preserve existing non-empty values, and leave an unknown value blank instead of guessing it;
 5. use only the allowed `Stage` values: `To review`, `Reviewed`, `CV ready`, `Applied`, `Recruiter screen`, `Interview`, `Technical interview`, `Final`, `Offer`, `Rejected`, `Withdrawn`, `Ghosted`, or `Closed`;
-6. when first analyzing a vacancy, populate every known value among `Company`, `Position`, `Fit %`, `Stage`, `Salary expectation`, `Estimated salary range`, `Referral`, `Apply URL`, `Archetype`, `Location`, `Vacancy URL`, `Posted date`, `Date found`, and `Next action`; if no CV exists yet, set `Stage = Reviewed`;
+6. when first analyzing a vacancy, populate every known value among `Company`, `Position`, `Fit %`, `Stage`, `Salary expectation`, `Estimated salary range`, `Referral`, `Recruiter`, `Apply URL`, `Archetype`, `Location`, `Vacancy URL`, `Posted date`, `Date found`, and `Next action`; if no CV exists yet, set `Stage = Reviewed`;
 7. preserve enough content to identify and evaluate a vacancy after the source page disappears: save a concise identifying summary in `Vacancy snapshot`, material fit/gap context in `Notes`, and the full source text in a verified Drive `Position.md`; write its URL to `Vacancy file`;
 8. after a tailored CV passes Word layout QA, use the verified My Drive root folder `WorkApplications` (folder ID `1wQMbnH4CODaARJSY221H06oCFJV2ukAK`);
 9. find or create the exact folder structure `WorkApplications/<Company>/<PositionTitle>/`, preserving recognizable names and sanitizing only unsafe path characters;
@@ -367,14 +368,21 @@ Workflow:
 
 Concurrency-safe Sheet writes:
 
-1. immediately before every write, repeat the lookup by `Vacancy URL` and normalized `Company + Position`, then read the current target row `A:V`, including `Row ID`;
+1. immediately before every write, repeat the lookup by `Vacancy URL` and normalized `Company + Position`, then read the current target row `A:W`, including `Row ID`;
 2. never rely on a row number or Sheet snapshot captured earlier in the task;
 3. for a new vacancy, after the final duplicate check, generate a UUID v4 and use one `spreadsheets.batchUpdate` call that inserts one row at the freshly determined boundary, copies safe format/validation from an exemplar, and writes the complete new record including `Row ID`; never write into a merely blank assumed row or separate insertion from initial values;
 4. for an existing vacancy, re-resolve the current row by UUID and update only intended cells, not the complete row; preserve fields populated by another chat;
-5. immediately read back `A:V`, confirm the same UUID and every written value, then search again for the vacancy keys and UUID;
+5. immediately read back `A:W`, confirm the same UUID and every written value, then search again for the vacancy keys and UUID;
 6. if the UUID moved, re-resolve its row; if values conflict, another row appeared, or duplicates exist, do not overwrite, delete, or merge automatically—preserve data and report the conflict.
 
 The Google Sheet is the source of truth for job-search history. Project chats must not be the only place where vacancy and application status is stored.
+
+### Recruiter contacts
+
+- Store known recruiters, sourcers, hiring managers, and referral contacts in `Recruiter`; preserve `Referral` separately as the source/introduction context.
+- If a verified email uniquely identifies the person, use a native people chip. If a verified LinkedIn profile URL exists without a verified email, store the person's exact name as clickable text linked to that URL; the Sheets API does not accept LinkedIn URLs as rich-link chips. If only the name is known, store plain text.
+- Never synthesize an email, guess a LinkedIn profile, or create a chip for an ambiguous identity. Multiple verified contacts may share the cell as separate entries.
+- Use recruiter name plus company/domain for authorized Gmail searches and the verified profile URL for LinkedIn lookup. Read back metadata after writing: people chips require `chipRuns[].chip.personProperties.email`; linked names require the exact text and URL.
 
 ### Salary expectations and market estimate
 
