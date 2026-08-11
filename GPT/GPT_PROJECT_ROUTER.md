@@ -317,7 +317,7 @@ Use the Google Sheet `WorkInterviews`, spreadsheet ID `1k-Zbz7LMZJJcWfMp41yC-7mU
 
 Before the first tracker or Drive write in a task, read the hidden tab `Agent Instructions` and follow its current operational rules. If it conflicts with an explicit newer user instruction, the user's instruction wins and the hidden tab must be updated to match.
 
-Tracker columns `A:U` are fixed:
+Visible tracker columns `A:U` are fixed:
 - `Company`
 - `Position`
 - `Fit %`
@@ -339,6 +339,8 @@ Tracker columns `A:U` are fixed:
 - `Next action`
 - `Vacancy snapshot`
 - `Notes`
+
+Hidden column `V` is `Row ID`: an immutable UUID v4 assigned exactly once. Never use a row number, cached index, timestamp, Company, or Position as the durable record identifier.
 
 Workflow:
 
@@ -362,6 +364,15 @@ Workflow:
 18. update the same row throughout recruiter screen, interview, technical interview, final, offer, rejection, withdrawal, ghosting, or closure;
 19. never invent `Date applied`, fit, stage, `Salary expectation`, contact, application submission, or the existence/location of application files; populate `Estimated salary range` only as a sourced market estimate;
 20. consider the application pack complete only after Word visual QA, all four Drive artifact uploads/readbacks, and the tracker readback succeed. If an integration is unavailable, report the blocker explicitly and do not claim completion.
+
+Concurrency-safe Sheet writes:
+
+1. immediately before every write, repeat the lookup by `Vacancy URL` and normalized `Company + Position`, then read the current target row `A:V`, including `Row ID`;
+2. never rely on a row number or Sheet snapshot captured earlier in the task;
+3. for a new vacancy, after the final duplicate check, generate a UUID v4 and use one `spreadsheets.batchUpdate` call that inserts one row at the freshly determined boundary, copies safe format/validation from an exemplar, and writes the complete new record including `Row ID`; never write into a merely blank assumed row or separate insertion from initial values;
+4. for an existing vacancy, re-resolve the current row by UUID and update only intended cells, not the complete row; preserve fields populated by another chat;
+5. immediately read back `A:V`, confirm the same UUID and every written value, then search again for the vacancy keys and UUID;
+6. if the UUID moved, re-resolve its row; if values conflict, another row appeared, or duplicates exist, do not overwrite, delete, or merge automatically—preserve data and report the conflict.
 
 The Google Sheet is the source of truth for job-search history. Project chats must not be the only place where vacancy and application status is stored.
 
