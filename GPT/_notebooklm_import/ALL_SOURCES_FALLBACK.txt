@@ -343,7 +343,7 @@ Use the Google Sheet `WorkInterviews`, spreadsheet ID `1k-Zbz7LMZJJcWfMp41yC-7mU
 
 Before the first tracker or Drive write in a task, read the hidden tab `Agent Instructions` and follow its current operational rules. If it conflicts with an explicit newer user instruction, the user's instruction wins and the hidden tab must be updated to match.
 
-Visible tracker columns `A:U` are fixed:
+Visible tracker columns `A:V` are fixed:
 - `Company`
 - `Position`
 - `Fit %`
@@ -351,6 +351,7 @@ Visible tracker columns `A:U` are fixed:
 - `Salary expectation`
 - `Estimated salary range`
 - `Referral`
+- `Recruiter`
 - `Apply URL`
 - `CV`
 - `Cover`
@@ -366,7 +367,7 @@ Visible tracker columns `A:U` are fixed:
 - `Vacancy snapshot`
 - `Notes`
 
-Hidden column `V` is `Row ID`: an immutable UUID v4 assigned exactly once. Never use a row number, cached index, timestamp, Company, or Position as the durable record identifier.
+Hidden column `W` is `Row ID`: an immutable UUID v4 assigned exactly once. Never use a row number, cached index, timestamp, Company, or Position as the durable record identifier.
 
 Workflow:
 
@@ -375,7 +376,7 @@ Workflow:
 3. use `YYYY-MM-DD` dates in the spreadsheet timezone `Europe/Belgrade`;
 4. fill all known fields, preserve existing non-empty values, and leave an unknown value blank instead of guessing it;
 5. use only the allowed `Stage` values: `To review`, `Reviewed`, `CV ready`, `Applied`, `Recruiter screen`, `Interview`, `Technical interview`, `Final`, `Offer`, `Rejected`, `Withdrawn`, `Ghosted`, or `Closed`;
-6. when first analyzing a vacancy, populate every known value among `Company`, `Position`, `Fit %`, `Stage`, `Salary expectation`, `Estimated salary range`, `Referral`, `Apply URL`, `Archetype`, `Location`, `Vacancy URL`, `Posted date`, `Date found`, and `Next action`; if no CV exists yet, set `Stage = Reviewed`;
+6. when first analyzing a vacancy, populate every known value among `Company`, `Position`, `Fit %`, `Stage`, `Salary expectation`, `Estimated salary range`, `Referral`, `Recruiter`, `Apply URL`, `Archetype`, `Location`, `Vacancy URL`, `Posted date`, `Date found`, and `Next action`; if no CV exists yet, set `Stage = Reviewed`;
 7. preserve enough content to identify and evaluate a vacancy after the source page disappears: save a concise identifying summary in `Vacancy snapshot`, material fit/gap context in `Notes`, and the full source text in a verified Drive `Position.md`; write its URL to `Vacancy file`;
 8. after a tailored CV passes Word layout QA, use the verified My Drive root folder `WorkApplications` (folder ID `1wQMbnH4CODaARJSY221H06oCFJV2ukAK`);
 9. find or create the exact folder structure `WorkApplications/<Company>/<PositionTitle>/`, preserving recognizable names and sanitizing only unsafe path characters;
@@ -393,14 +394,21 @@ Workflow:
 
 Concurrency-safe Sheet writes:
 
-1. immediately before every write, repeat the lookup by `Vacancy URL` and normalized `Company + Position`, then read the current target row `A:V`, including `Row ID`;
+1. immediately before every write, repeat the lookup by `Vacancy URL` and normalized `Company + Position`, then read the current target row `A:W`, including `Row ID`;
 2. never rely on a row number or Sheet snapshot captured earlier in the task;
 3. for a new vacancy, after the final duplicate check, generate a UUID v4 and use one `spreadsheets.batchUpdate` call that inserts one row at the freshly determined boundary, copies safe format/validation from an exemplar, and writes the complete new record including `Row ID`; never write into a merely blank assumed row or separate insertion from initial values;
 4. for an existing vacancy, re-resolve the current row by UUID and update only intended cells, not the complete row; preserve fields populated by another chat;
-5. immediately read back `A:V`, confirm the same UUID and every written value, then search again for the vacancy keys and UUID;
+5. immediately read back `A:W`, confirm the same UUID and every written value, then search again for the vacancy keys and UUID;
 6. if the UUID moved, re-resolve its row; if values conflict, another row appeared, or duplicates exist, do not overwrite, delete, or merge automatically—preserve data and report the conflict.
 
 The Google Sheet is the source of truth for job-search history. Project chats must not be the only place where vacancy and application status is stored.
+
+### Recruiter contacts
+
+- Store known recruiters, sourcers, hiring managers, and referral contacts in `Recruiter`; preserve `Referral` separately as the source/introduction context.
+- If a verified email uniquely identifies the person, use a native people chip. If a verified LinkedIn profile URL exists without a verified email, store the person's exact name as clickable text linked to that URL; the Sheets API does not accept LinkedIn URLs as rich-link chips. If only the name is known, store plain text.
+- Never synthesize an email, guess a LinkedIn profile, or create a chip for an ambiguous identity. Multiple verified contacts may share the cell as separate entries.
+- Use recruiter name plus company/domain for authorized Gmail searches and the verified profile URL for LinkedIn lookup. Read back metadata after writing: people chips require `chipRuns[].chip.personProperties.email`; linked names require the exact text and URL.
 
 ### Salary expectations and market estimate
 
@@ -706,14 +714,15 @@ For every generated or materially revised `.docx` CV:
 
 - Use Google Sheet `WorkInterviews` (`1k-Zbz7LMZJJcWfMp41yC-7mUaL_UI9__Bwy1SpPLbao`), tab `Jobs`, for every vacancy and application.
 - Before the first tracker or Drive write, read the hidden tab `Agent Instructions`; if the user gives newer conflicting instructions, update the hidden tab to match.
-- Upsert by `Vacancy URL`; if no URL exists, match normalized `Company + Position`. After creation, identify the record by immutable UUID v4 in hidden `V: Row ID`, never by row number, cached index, timestamp, or mutable business fields.
-- Keep the fixed visible A:U columns `Company`, `Position`, `Fit %`, `Stage`, `Salary expectation`, `Estimated salary range`, `Referral`, `Apply URL`, `CV`, `Cover`, `Vacancy file`, `Archetype`, `Location`, `Vacancy URL`, `Posted date`, `Date found`, `Date applied`, `Last contact`, `Next action`, `Vacancy snapshot`, and `Notes`. `Vacancy file` is the verified Drive URL for `Position.md`.
-- Immediately before every write, repeat the vacancy lookup and read current `A:V`. For a new record, generate its UUID and perform row insertion, safe structure copy, and complete initial write in one batch; never target a merely blank assumed row. For an existing record, re-resolve it by UUID and update only intended cells. Read back `A:V` and search again after writing; preserve and report conflicts or duplicates instead of overwriting, deleting, or auto-merging them.
+- Upsert by `Vacancy URL`; if no URL exists, match normalized `Company + Position`. After creation, identify the record by immutable UUID v4 in hidden `W: Row ID`, never by row number, cached index, timestamp, or mutable business fields.
+- Keep the fixed visible A:V columns `Company`, `Position`, `Fit %`, `Stage`, `Salary expectation`, `Estimated salary range`, `Referral`, `Recruiter`, `Apply URL`, `CV`, `Cover`, `Vacancy file`, `Archetype`, `Location`, `Vacancy URL`, `Posted date`, `Date found`, `Date applied`, `Last contact`, `Next action`, `Vacancy snapshot`, and `Notes`. `Vacancy file` is the verified Drive URL for `Position.md`.
+- Immediately before every write, repeat the vacancy lookup and read current `A:W`. For a new record, generate its UUID and perform row insertion, safe structure copy, and complete initial write in one batch; never target a merely blank assumed row. For an existing record, re-resolve it by UUID and update only intended cells. Read back `A:W` and search again after writing; preserve and report conflicts or duplicates instead of overwriting, deleting, or auto-merging them.
 - Use `YYYY-MM-DD` in `Europe/Belgrade`, fill all known values, preserve populated cells, and leave unknown values blank instead of guessing.
 - Use only valid stages: `To review`, `Reviewed`, `CV ready`, `Applied`, `Recruiter screen`, `Interview`, `Technical interview`, `Final`, `Offer`, `Rejected`, `Withdrawn`, `Ghosted`, `Closed`.
 - On first analysis, extract all available source/application metadata before discarding UI text. Keep Vacancy URL as the source page and Apply URL as the direct submission destination. Decode LinkedIn `safety/go` `url` parameters, preserve the external query string, and never store the wrapper or invent a link. For LinkedIn Easy Apply / auto-apply without a distinct destination, set `Apply URL = Vacancy URL`.
 - Keep Posted date separate from Date found. Resolve precise relative dates only against a known reference date; leave coarse values blank and preserve useful wording in Notes. For old chats, prefer historical pasted evidence and do not browse current pages to reconstruct historical values unless asked.
-- Write all known vacancy fields, keep concise identifying content in `Vacancy snapshot` and fit/process context in `Notes`, and preserve the full source in a verified Drive `Position.md` linked from `Vacancy file`; if no CV exists, set `Stage = Reviewed`.
+- Write all known vacancy fields, including `Recruiter`, keep concise identifying content in `Vacancy snapshot` and fit/process context in `Notes`, and preserve the full source in a verified Drive `Position.md` linked from `Vacancy file`; if no CV exists, set `Stage = Reviewed`.
+- In `Recruiter`, use a native people chip only for a uniquely verified email. Otherwise store a verified LinkedIn profile as the person's clickable linked name, or plain text when only the name is known. Keep `Referral` separate; never guess contact data. Use recruiter name plus company/domain for authorized Gmail lookup.
 - Populate `Salary expectation` only from Anton's explicit confirmed expectation. Populate `Estimated salary range` only from current research: Infostud first for Serbia; Glassdoor first for other countries; then current job disclosures and reputable internet sources. Match geography, seniority, work model, and contract type; include currency, gross/net, and period, and record source URL(s), research date, and caveats concisely in `Notes`.
 - After DOCX visual QA passes, use `WorkApplications` (folder ID `1wQMbnH4CODaARJSY221H06oCFJV2ukAK`) and find or create `WorkApplications/<Company>/<PositionTitle>/`.
 - Store exactly four files in that position folder: `Position.md`, `Anton_Nazarov<PositionTitle>.md`, `Anton_Nazarov_<PositionTitle>.docx`, and `Anton_Nazarov<PositionTitle>.txt`. Position.md includes both URLs plus Posted date and Date found when known; the other files are CV Markdown, final Word CV, and plain-text cover letter.
@@ -1118,9 +1127,9 @@ Every adapted resume must keep three things in balance:
 For every vacancy, CV, cover letter, or hiring-stage task, use Google Sheet `WorkInterviews` (`1k-Zbz7LMZJJcWfMp41yC-7mUaL_UI9__Bwy1SpPLbao`), tab `Jobs`, as the lifecycle/index source of truth. The full vacancy body is canonical in Drive `Position.md`, not in the Sheet.
 
 - Before the first tracker or Drive write, read the hidden tab `Agent Instructions`; when a newer explicit user instruction changes the workflow, update that tab as well.
-- Upsert one row per vacancy by `Vacancy URL` and normalized `Company + Position`; after creation use immutable UUID v4 in hidden `V: Row ID` as the durable identity, never the row number.
-- Use the live visible A:U schema: `Company`, `Position`, `Fit %`, `Stage`, `Salary expectation`, `Estimated salary range`, `Referral`, `Apply URL`, `CV`, `Cover`, `Vacancy file`, `Archetype`, `Location`, `Vacancy URL`, `Posted date`, `Date found`, `Date applied`, `Last contact`, `Next action`, `Vacancy snapshot`, `Notes`; hidden V is `Row ID`.
-- Immediately before every write, repeat the lookup and read current `A:V`. Create a new row only through one batch that inserts the row, copies safe structure, and writes all initial values plus UUID. Update existing rows only after re-resolving the UUID and only in intended cells. Read back and search again after writing; never overwrite or auto-merge a detected conflict.
+- Upsert one row per vacancy by `Vacancy URL` and normalized `Company + Position`; after creation use immutable UUID v4 in hidden `W: Row ID` as the durable identity, never the row number.
+- Use the live visible A:V schema: `Company`, `Position`, `Fit %`, `Stage`, `Salary expectation`, `Estimated salary range`, `Referral`, `Recruiter`, `Apply URL`, `CV`, `Cover`, `Vacancy file`, `Archetype`, `Location`, `Vacancy URL`, `Posted date`, `Date found`, `Date applied`, `Last contact`, `Next action`, `Vacancy snapshot`, `Notes`; hidden W is `Row ID`.
+- Immediately before every write, repeat the lookup and read current `A:W`. Create a new row only through one batch that inserts the row, copies safe structure, and writes all initial values plus UUID. Update existing rows only after re-resolving the UUID and only in intended cells. Read back and search again after writing; never overwrite or auto-merge a detected conflict.
 - On initial analysis, extract every known application metadata value before discarding job-board UI. Keep Vacancy URL as the source page and Apply URL as the actual submission destination.
 - Decode the `url` parameter of LinkedIn `safety/go` links and store the validated direct HTTP(S) destination with its own query parameters. Do not store the wrapper, infer an ATS, or invent a careers URL. For LinkedIn Easy Apply / auto-apply without a distinct destination, set `Apply URL = Vacancy URL`.
 - Keep Posted date and Date found independent. Convert precise relative publication labels only with a known reference date; leave coarse values blank and preserve useful original wording in Notes.
@@ -1129,6 +1138,7 @@ For every vacancy, CV, cover letter, or hiring-stage task, use Google Sheet `Wor
 - Find or create `WorkApplications/<Company>/<PositionTitle>/` and save/update `Position.md` with the source metadata and full substantive vacancy text. Verify it through Drive readback and write its Drive URL to `Vacancy file`.
 - Keep `Vacancy snapshot` to a concise one-paragraph identifying summary and `Notes` to concise fit/gap/process context. Never duplicate the full vacancy body in the Sheet.
 - Populate `Salary expectation` only from Anton's explicit confirmed expectation. Research `Estimated salary range` with Infostud first for Serbia and Glassdoor first for other countries, then current job disclosures and reputable internet sources. Match geography, seniority, work model, and contract type; include currency, gross/net, and period. Put source URL(s), research date, and material caveats concisely in `Notes`; leave either field blank when evidence is insufficient.
+- Populate `Recruiter` with verified hiring contacts. Use a people chip only for a uniquely verified email; otherwise use the exact name linked to a verified LinkedIn profile, or plain text when no verified contact destination exists. Preserve `Referral` separately and never invent contact data.
 - Preserve `CLIP` wrapping for `Vacancy snapshot`, `Notes`, and `Vacancy file`; keep data rows compact and do not let these fields determine row height.
 - Use `YYYY-MM-DD` in `Europe/Belgrade`. Preserve populated cells and leave unknown values blank.
 - A reviewed vacancy may have only `Position.md`. When the automatic-CV gate applies, complete the same folder with `Anton_Nazarov<PositionTitle>.md` for the CV source, `Anton_Nazarov_<PositionTitle>.docx` for the final Word CV, and `Anton_Nazarov<PositionTitle>.txt` for the plain-text cover letter.
@@ -1244,7 +1254,7 @@ Use Drive root folder `WorkApplications` (`1wQMbnH4CODaARJSY221H06oCFJV2ukAK`). 
 ## Vacancy workflow
 
 1. Upsert one `Jobs` row by Vacancy URL and normalized Company + Position; use a verified Apply URL as supporting identity evidence. After creation, use the immutable `Row ID` UUID as its durable identity.
-2. Record all known vacancy fields, including salary fields, Referral, Apply URL, and Posted date. Leave unknown values blank.
+2. Record all known vacancy fields, including salary fields, Referral, Recruiter, Apply URL, and Posted date. Leave unknown values blank.
 3. Find or create `WorkApplications/<Company>/<PositionTitle>/` and create/update `Position.md` for every tracked vacancy when substantive vacancy text is available.
 4. Verify `Position.md` through Drive readback, then write its Drive URL to the Sheet column `Vacancy file`.
 5. Keep `Vacancy snapshot` as a concise identifying one-paragraph summary and `Notes` as concise fit/gap/process context. Do not duplicate the full vacancy body in either field.
@@ -1284,11 +1294,11 @@ Keep the CV Markdown and DOCX synchronized. Prefer updating existing files over 
 
 ## Tracker storage and compact layout
 
-Use the live visible `Jobs` headers A:U in this order:
+Use the live visible `Jobs` headers A:V in this order:
 
-`Company`, `Position`, `Fit %`, `Stage`, `Salary expectation`, `Estimated salary range`, `Referral`, `Apply URL`, `CV`, `Cover`, `Vacancy file`, `Archetype`, `Location`, `Vacancy URL`, `Posted date`, `Date found`, `Date applied`, `Last contact`, `Next action`, `Vacancy snapshot`, `Notes`.
+`Company`, `Position`, `Fit %`, `Stage`, `Salary expectation`, `Estimated salary range`, `Referral`, `Recruiter`, `Apply URL`, `CV`, `Cover`, `Vacancy file`, `Archetype`, `Location`, `Vacancy URL`, `Posted date`, `Date found`, `Date applied`, `Last contact`, `Next action`, `Vacancy snapshot`, `Notes`.
 
-Hidden column V is `Row ID`: an immutable UUID v4 assigned exactly once. Never change or reuse it. Never treat a row number, cached index, timestamp, Company, or Position as durable identity.
+Hidden column W is `Row ID`: an immutable UUID v4 assigned exactly once. Never change or reuse it. Never treat a row number, cached index, timestamp, Company, or Position as durable identity.
 
 Storage rules:
 
@@ -1303,11 +1313,19 @@ Storage rules:
 
 Multiple chats may write concurrently. Protect every write:
 
-1. Immediately before writing, repeat the vacancy lookup by Vacancy URL and normalized Company + Position, then read the current target row A:V including Row ID. Discard cached row numbers.
+1. Immediately before writing, repeat the vacancy lookup by Vacancy URL and normalized Company + Position, then read the current target row A:W including Row ID. Discard cached row numbers.
 2. For a new vacancy, run the final duplicate check, generate a UUID v4, and use one `spreadsheets.batchUpdate` call that inserts one row at the freshly determined boundary, copies safe format/validation from an exemplar, and writes the complete new record including Row ID. Never write into a merely blank assumed row and never separate insertion from initial values.
 3. For an existing vacancy, search/re-resolve the UUID's current row and update only intended cells. Never rewrite the complete row; preserve values another chat added.
-4. Immediately read back A:V, verify the same UUID and every written value, and search once more by vacancy keys and UUID.
+4. Immediately read back A:W, verify the same UUID and every written value, and search once more by vacancy keys and UUID.
 5. If the UUID moved, re-resolve it. If a value conflicts, another row appeared, or duplicates exist, do not overwrite, delete, or merge automatically. Preserve all data, stop, and report the conflict for reconciliation.
+
+## Recruiter contacts
+
+- Store known recruiter, sourcer, hiring-manager, and referral-contact names in `Recruiter`. Keep `Referral` as separate source/introduction context even when it names the same person.
+- Use a native people chip only when a verified email uniquely identifies the person. Read it back and verify `chipRuns[].chip.personProperties.email`.
+- When a verified LinkedIn profile exists without a verified email, store the person's exact name as clickable text linked to that URL. LinkedIn URLs are not accepted by the Sheets API as rich-link chips.
+- When only the name is known, store plain text. Never synthesize an email, guess a profile, or represent an ambiguous identity as a chip.
+- Use recruiter name plus company/domain for authorized Gmail searches and the verified URL for direct LinkedIn lookup.
 
 ## Salary fields
 

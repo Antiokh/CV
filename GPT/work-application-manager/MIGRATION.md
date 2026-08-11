@@ -18,8 +18,8 @@ Inspect the entire current chat and recover all unique employment/application in
 
 For each distinct vacancy:
 
-- upsert the existing `Jobs` row by Vacancy URL, then normalized Company + Position and other strong identifiers; immediately before writing, re-read A:V and use the immutable `Row ID` UUID rather than a cached row number;
-- preserve historical Vacancy URL, decoded Apply URL, dates, fit, stage, explicitly confirmed Salary expectation, sourced historical Estimated salary range, contacts, recruiter/interview history, feedback, application identifiers, and useful process facts when actually evidenced;
+- upsert the existing `Jobs` row by Vacancy URL, then normalized Company + Position and other strong identifiers; immediately before writing, re-read A:W and use the immutable `Row ID` UUID rather than a cached row number;
+- preserve historical Vacancy URL, decoded Apply URL, dates, fit, stage, explicitly confirmed Salary expectation, sourced historical Estimated salary range, Referral, Recruiter contacts, recruiter/interview history, feedback, application identifiers, and useful process facts when actually evidenced;
 - preserve the historical substantive vacancy body in `WorkApplications/<Company>/<PositionTitle>/Position.md`;
 - verify `Position.md` through Drive readback and write only its verified URL to `Vacancy file`;
 - keep `Vacancy snapshot` and `Notes` concise and preserve `CLIP`/compact row height;
@@ -27,7 +27,7 @@ For each distinct vacancy:
 
 Do not rerun fit analysis, salary research, automatic-CV generation, current-vacancy web research, or modern/reposted-vacancy reconstruction merely because migration was requested. Do not invent application events, dates, stages, salary values, contacts, or files.
 
-Apply the concurrency-safe write protocol from `SKILL.md`: new rows require a UUID and one atomic insert/copy/write batch; existing rows require fresh UUID resolution, field-level updates, and A:V readback. Preserve and report conflicts or duplicates instead of overwriting or auto-merging them.
+Apply the concurrency-safe write protocol from `SKILL.md`: new rows require a UUID and one atomic insert/copy/write batch; existing rows require fresh UUID resolution, field-level updates, and A:W readback. Preserve and report conflicts or duplicates instead of overwriting or auto-merging them.
 
 ## Missing cover letter repair
 
