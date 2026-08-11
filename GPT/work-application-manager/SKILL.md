@@ -90,6 +90,15 @@ Multiple chats may write concurrently. Protect every write:
 - When only the name is known, store plain text. Never synthesize an email, guess a profile, or represent an ambiguous identity as a chip.
 - Use recruiter name plus company/domain for authorized Gmail searches and the verified URL for direct LinkedIn lookup.
 
+## LinkedIn referral suggestions
+
+- Treat the hidden `LinkedIn Connections` tab as an authorized private export snapshot with A:J fields: First Name, Last Name, LinkedIn URL, Email Address, Company, Position, Connected On, Company Key, Contact Type, Exported On.
+- For every new vacancy and before recommending an application action, normalize the employer conservatively, search bounded Company Key column H, and read A:J only for returned rows. Check only evidence-backed parent/subsidiary/former-name/common-brand aliases and reject loose substring false positives.
+- Suggest no more than three useful contacts, prioritizing current-company Recruiting/HR, a likely functional hiring manager or leader, then a role-relevant employee. A relevant function contact may outrank generic HR; connection recency is only a tie-breaker.
+- Include exact export-listed name, company, position, LinkedIn URL, Connected On, snapshot date from Exported On, and one short ranking reason. Explicitly label results as snapshot-based candidates and never claim current employment without fresh evidence.
+- Never populate `Referral`, change `Stage`, or claim contact/referral based only on the export. Write Referral only after Anton confirms planned/completed outreach or an introduction. Do not copy connection emails into Jobs, Notes, or chat unless Anton explicitly needs an address for outreach.
+- On a newer full Connections.csv, replace the snapshot atomically as one dataset, retain A:J and hidden state, clear stale surplus rows, update Exported On, and verify source count, first/last rows, key coverage, and representative matches.
+
 ## Salary fields
 
 - Populate `Salary expectation` only from Anton's explicit, current, confirmed expectation or a reliable previously confirmed record. Never infer it from the vacancy or market estimate.
