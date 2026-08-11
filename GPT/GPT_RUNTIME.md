@@ -340,11 +340,13 @@ Use the Google Sheet `WorkInterviews`, spreadsheet ID `1k-Zbz7LMZJJcWfMp41yC-7mU
 
 Before the first tracker or Drive write in a task, read the hidden tab `Agent Instructions` and follow its current operational rules. If it conflicts with an explicit newer user instruction, the user's instruction wins and the hidden tab must be updated to match.
 
-Tracker columns `A:S` are fixed:
+Tracker columns `A:U` are fixed:
 - `Company`
 - `Position`
 - `Fit %`
 - `Stage`
+- `Salary expectation`
+- `Estimated salary range`
 - `Referral`
 - `Apply URL`
 - `CV`
@@ -368,7 +370,7 @@ Workflow:
 3. use `YYYY-MM-DD` dates in the spreadsheet timezone `Europe/Belgrade`;
 4. fill all known fields, preserve existing non-empty values, and leave an unknown value blank instead of guessing it;
 5. use only the allowed `Stage` values: `To review`, `Reviewed`, `CV ready`, `Applied`, `Recruiter screen`, `Interview`, `Technical interview`, `Final`, `Offer`, `Rejected`, `Withdrawn`, `Ghosted`, or `Closed`;
-6. when first analyzing a vacancy, populate every known value among `Company`, `Position`, `Fit %`, `Stage`, `Referral`, `Apply URL`, `Archetype`, `Location`, `Vacancy URL`, `Posted date`, `Date found`, and `Next action`; if no CV exists yet, set `Stage = Reviewed`;
+6. when first analyzing a vacancy, populate every known value among `Company`, `Position`, `Fit %`, `Stage`, `Salary expectation`, `Estimated salary range`, `Referral`, `Apply URL`, `Archetype`, `Location`, `Vacancy URL`, `Posted date`, `Date found`, and `Next action`; if no CV exists yet, set `Stage = Reviewed`;
 7. preserve enough content to identify and evaluate a vacancy after the source page disappears: save a concise identifying summary in `Vacancy snapshot`, material fit/gap context in `Notes`, and the full source text in a verified Drive `Position.md`; write its URL to `Vacancy file`;
 8. after a tailored CV passes Word layout QA, use the verified My Drive root folder `WorkApplications` (folder ID `1wQMbnH4CODaARJSY221H06oCFJV2ukAK`);
 9. find or create the exact folder structure `WorkApplications/<Company>/<PositionTitle>/`, preserving recognizable names and sanitizing only unsafe path characters;
@@ -381,10 +383,17 @@ Workflow:
 16. never treat a request to create a CV, generated files, or a Drive upload as proof that an application was submitted;
 17. set `Stage = Applied` only from the user's report or an explicit company/ATS receipt confirming this application was submitted; fill `Date applied` only when the actual submission date is directly evidenced;
 18. update the same row throughout recruiter screen, interview, technical interview, final, offer, rejection, withdrawal, ghosting, or closure;
-19. never invent `Date applied`, fit, stage, salary, contact, application submission, or the existence/location of application files;
+19. never invent `Date applied`, fit, stage, `Salary expectation`, contact, application submission, or the existence/location of application files; populate `Estimated salary range` only as a sourced market estimate;
 20. consider the application pack complete only after Word visual QA, all four Drive artifact uploads/readbacks, and the tracker readback succeed. If an integration is unavailable, report the blocker explicitly and do not claim completion.
 
 The Google Sheet is the source of truth for job-search history. Project chats must not be the only place where vacancy and application status is stored.
+
+### Salary expectations and market estimate
+
+- Populate `Salary expectation` only from Anton's explicit, current, confirmed expectation or a reliable previously confirmed record. Never infer it from the vacancy or market data.
+- Research `Estimated salary range` during normal vacancy analysis when reliable current evidence is available. For Serbia, use Infostud first; if it is insufficient, use current Serbian listings and reputable internet sources. For other countries, use Glassdoor first, then employer/job-posting disclosures and reputable internet salary sources.
+- Match geography, seniority, work model, and contract type. In both salary fields, state currency, amount or range, gross/net, and period; add employment type when material.
+- Record salary source URL(s), research date, and material caveats concisely in `Notes`. Treat crowdsourced figures as estimates. Never copy one salary field into the other, and leave either field blank when its evidence is insufficient.
 
 ### Vacancy source, Apply URL, and Posted date
 
@@ -684,18 +693,19 @@ For every generated or materially revised `.docx` CV:
 - Use Google Sheet `WorkInterviews` (`1k-Zbz7LMZJJcWfMp41yC-7mUaL_UI9__Bwy1SpPLbao`), tab `Jobs`, for every vacancy and application.
 - Before the first tracker or Drive write, read the hidden tab `Agent Instructions`; if the user gives newer conflicting instructions, update the hidden tab to match.
 - Upsert by `Vacancy URL`; if no URL exists, match normalized `Company + Position`. Update one lifecycle row instead of creating duplicates.
-- Keep the fixed A:S columns `Company`, `Position`, `Fit %`, `Stage`, `Referral`, `Apply URL`, `CV`, `Cover`, `Vacancy file`, `Archetype`, `Location`, `Vacancy URL`, `Posted date`, `Date found`, `Date applied`, `Last contact`, `Next action`, `Vacancy snapshot`, and `Notes`. `Vacancy file` is the verified Drive URL for `Position.md`.
+- Keep the fixed A:U columns `Company`, `Position`, `Fit %`, `Stage`, `Salary expectation`, `Estimated salary range`, `Referral`, `Apply URL`, `CV`, `Cover`, `Vacancy file`, `Archetype`, `Location`, `Vacancy URL`, `Posted date`, `Date found`, `Date applied`, `Last contact`, `Next action`, `Vacancy snapshot`, and `Notes`. `Vacancy file` is the verified Drive URL for `Position.md`.
 - Use `YYYY-MM-DD` in `Europe/Belgrade`, fill all known values, preserve populated cells, and leave unknown values blank instead of guessing.
 - Use only valid stages: `To review`, `Reviewed`, `CV ready`, `Applied`, `Recruiter screen`, `Interview`, `Technical interview`, `Final`, `Offer`, `Rejected`, `Withdrawn`, `Ghosted`, `Closed`.
 - On first analysis, extract all available source/application metadata before discarding UI text. Keep Vacancy URL as the source page and Apply URL as the direct submission destination. Decode LinkedIn `safety/go` `url` parameters, preserve the external query string, and never store the wrapper or invent a link. For LinkedIn Easy Apply / auto-apply without a distinct destination, set `Apply URL = Vacancy URL`.
 - Keep Posted date separate from Date found. Resolve precise relative dates only against a known reference date; leave coarse values blank and preserve useful wording in Notes. For old chats, prefer historical pasted evidence and do not browse current pages to reconstruct historical values unless asked.
 - Write all known vacancy fields, keep concise identifying content in `Vacancy snapshot` and fit/process context in `Notes`, and preserve the full source in a verified Drive `Position.md` linked from `Vacancy file`; if no CV exists, set `Stage = Reviewed`.
+- Populate `Salary expectation` only from Anton's explicit confirmed expectation. Populate `Estimated salary range` only from current research: Infostud first for Serbia; Glassdoor first for other countries; then current job disclosures and reputable internet sources. Match geography, seniority, work model, and contract type; include currency, gross/net, and period, and record source URL(s), research date, and caveats concisely in `Notes`.
 - After DOCX visual QA passes, use `WorkApplications` (folder ID `1wQMbnH4CODaARJSY221H06oCFJV2ukAK`) and find or create `WorkApplications/<Company>/<PositionTitle>/`.
 - Store exactly four files in that position folder: `Position.md`, `Anton_Nazarov<PositionTitle>.md`, `Anton_Nazarov_<PositionTitle>.docx`, and `Anton_Nazarov<PositionTitle>.txt`. Position.md includes both URLs plus Posted date and Date found when known; the other files are CV Markdown, final Word CV, and plain-text cover letter.
 - Humanize the cover letter with the cached Drive skill for its language: `_skills/humanizer-ru/SKILL.md` or `_skills/humanizer-en/SKILL.md`. Save only final text in TXT.
 - Keep the CV `.md` and `.docx` synchronized, prefer updating existing files over duplicates, verify all four by readback, put the DOCX URL in `CV`, and put the TXT URL in `Cover`.
 - A CV request, generated file, or upload is not proof of application. Set `Stage = CV ready` before submission. Set `Stage = Applied` only from the user's report or an explicit company/ATS receipt confirming this application was submitted; fill `Date applied` only when directly evidenced.
-- Never invent submission date, fit, stage, salary, contact, submission, or CV-file existence. The Sheet is the source of truth; chat history alone is insufficient.
+- Never invent submission date, fit, stage, `Salary expectation`, contact, submission, or CV-file existence. Never copy candidate expectations into the market estimate; leave either salary field blank when evidence is insufficient. The Sheet is the source of truth; chat history alone is insufficient.
 - Do not call the workflow complete until DOCX visual QA, all four Drive uploads/readbacks, and tracker readback succeed; report integration blockers explicitly.
 - Gmail may be checked read-only for company, recruiter, or ATS messages tied to an existing vacancy. Search narrowly and update the same row only from explicit evidence. An acknowledgement can confirm `Applied` but is not recruiter movement; generic review language, alerts, marketing, reminders, talent-pool mail, and silence do not change stage. Update `Last contact`, `Next action`, and concise sender/subject/date provenance without copying unnecessary sensitive content. Never modify mail unless separately requested.
 - Do not use Notion unless the user explicitly re-enables it later.
@@ -1094,7 +1104,7 @@ For every vacancy, CV, cover letter, or hiring-stage task, use Google Sheet `Wor
 
 - Before the first tracker or Drive write, read the hidden tab `Agent Instructions`; when a newer explicit user instruction changes the workflow, update that tab as well.
 - Upsert one row per vacancy by `Vacancy URL` and normalized `Company + Position`; never create a new row for a later stage of the same vacancy.
-- Use the live A:S schema: `Company`, `Position`, `Fit %`, `Stage`, `Referral`, `Apply URL`, `CV`, `Cover`, `Vacancy file`, `Archetype`, `Location`, `Vacancy URL`, `Posted date`, `Date found`, `Date applied`, `Last contact`, `Next action`, `Vacancy snapshot`, `Notes`.
+- Use the live A:U schema: `Company`, `Position`, `Fit %`, `Stage`, `Salary expectation`, `Estimated salary range`, `Referral`, `Apply URL`, `CV`, `Cover`, `Vacancy file`, `Archetype`, `Location`, `Vacancy URL`, `Posted date`, `Date found`, `Date applied`, `Last contact`, `Next action`, `Vacancy snapshot`, `Notes`.
 - On initial analysis, extract every known application metadata value before discarding job-board UI. Keep Vacancy URL as the source page and Apply URL as the actual submission destination.
 - Decode the `url` parameter of LinkedIn `safety/go` links and store the validated direct HTTP(S) destination with its own query parameters. Do not store the wrapper, infer an ATS, or invent a careers URL. For LinkedIn Easy Apply / auto-apply without a distinct destination, set `Apply URL = Vacancy URL`.
 - Keep Posted date and Date found independent. Convert precise relative publication labels only with a known reference date; leave coarse values blank and preserve useful original wording in Notes.
@@ -1102,6 +1112,7 @@ For every vacancy, CV, cover letter, or hiring-stage task, use Google Sheet `Wor
 - If no CV exists yet, use `Stage = Reviewed`.
 - Find or create `WorkApplications/<Company>/<PositionTitle>/` and save/update `Position.md` with the source metadata and full substantive vacancy text. Verify it through Drive readback and write its Drive URL to `Vacancy file`.
 - Keep `Vacancy snapshot` to a concise one-paragraph identifying summary and `Notes` to concise fit/gap/process context. Never duplicate the full vacancy body in the Sheet.
+- Populate `Salary expectation` only from Anton's explicit confirmed expectation. Research `Estimated salary range` with Infostud first for Serbia and Glassdoor first for other countries, then current job disclosures and reputable internet sources. Match geography, seniority, work model, and contract type; include currency, gross/net, and period. Put source URL(s), research date, and material caveats concisely in `Notes`; leave either field blank when evidence is insufficient.
 - Preserve `CLIP` wrapping for `Vacancy snapshot`, `Notes`, and `Vacancy file`; keep data rows compact and do not let these fields determine row height.
 - Use `YYYY-MM-DD` in `Europe/Belgrade`. Preserve populated cells and leave unknown values blank.
 - A reviewed vacancy may have only `Position.md`. When the automatic-CV gate applies, complete the same folder with `Anton_Nazarov<PositionTitle>.md` for the CV source, `Anton_Nazarov_<PositionTitle>.docx` for the final Word CV, and `Anton_Nazarov<PositionTitle>.txt` for the plain-text cover letter.
@@ -1110,7 +1121,7 @@ For every vacancy, CV, cover letter, or hiring-stage task, use Google Sheet `Wor
 - Creating or uploading a CV does not mean the application was submitted.
 - Set `Stage = Applied` only from the user's report or an explicit company/ATS receipt confirming this application was submitted. Fill `Date applied` only when the actual submission date is directly evidenced.
 - Continue updating the same row through recruiter screen, interview, technical interview, final, offer, rejection, withdrawal, ghosting, or closure.
-- Never invent application date, fit, stage, salary, contact, submission, or CV-file existence.
+- Never invent application date, fit, stage, `Salary expectation`, contact, submission, or CV-file existence. Treat `Estimated salary range` as a sourced estimate and never copy candidate expectations into it.
 - Do not call a complete application pack complete until DOCX visual QA, all four Drive uploads/readbacks, and the Sheet readback succeed. If an integration is unavailable, report the blocker.
 - The user authorizes read-only Gmail checks for company, recruiter, and ATS messages tied to an existing vacancy. Search narrowly, inspect the matched message/thread, and update the same Sheet row only from explicit evidence. An acknowledgement may confirm `Applied`, but generic review language is not recruiter movement. Never infer a later stage from alerts, marketing, reminders, talent-pool mail, or silence. Update `Last contact`, `Next action`, and a concise sender/subject/date provenance note; do not copy unnecessary sensitive content. Do not send, draft, label, archive, delete, or otherwise modify mail unless separately requested.
 - Do not use Notion unless the user explicitly re-enables it later.
@@ -1217,7 +1228,7 @@ Use Drive root folder `WorkApplications` (`1wQMbnH4CODaARJSY221H06oCFJV2ukAK`). 
 ## Vacancy workflow
 
 1. Upsert one `Jobs` row by Vacancy URL and normalized Company + Position; use a verified Apply URL as supporting identity evidence.
-2. Record all known vacancy fields, including Referral, Apply URL, and Posted date. Leave unknown values blank.
+2. Record all known vacancy fields, including salary fields, Referral, Apply URL, and Posted date. Leave unknown values blank.
 3. Find or create `WorkApplications/<Company>/<PositionTitle>/` and create/update `Position.md` for every tracked vacancy when substantive vacancy text is available.
 4. Verify `Position.md` through Drive readback, then write its Drive URL to the Sheet column `Vacancy file`.
 5. Keep `Vacancy snapshot` as a concise identifying one-paragraph summary and `Notes` as concise fit/gap/process context. Do not duplicate the full vacancy body in either field.
@@ -1257,9 +1268,9 @@ Keep the CV Markdown and DOCX synchronized. Prefer updating existing files over 
 
 ## Tracker storage and compact layout
 
-Use the live `Jobs` headers A:S in this order:
+Use the live `Jobs` headers A:U in this order:
 
-`Company`, `Position`, `Fit %`, `Stage`, `Referral`, `Apply URL`, `CV`, `Cover`, `Vacancy file`, `Archetype`, `Location`, `Vacancy URL`, `Posted date`, `Date found`, `Date applied`, `Last contact`, `Next action`, `Vacancy snapshot`, `Notes`.
+`Company`, `Position`, `Fit %`, `Stage`, `Salary expectation`, `Estimated salary range`, `Referral`, `Apply URL`, `CV`, `Cover`, `Vacancy file`, `Archetype`, `Location`, `Vacancy URL`, `Posted date`, `Date found`, `Date applied`, `Last contact`, `Next action`, `Vacancy snapshot`, `Notes`.
 
 Storage rules:
 
@@ -1269,6 +1280,13 @@ Storage rules:
 - Preserve `CLIP` wrapping for `Vacancy snapshot`, `Notes`, and `Vacancy file`; these columns must not force row-height expansion.
 - Keep tracker rows compact (normally one-line height, about 21-24 px). Do not auto-resize row height from long `Vacancy snapshot`, `Notes`, or link content. If a write/import changes these cells to `WRAP` or expands the row, restore `CLIP` and compact row height.
 - Do not use the Sheet as document storage. Drive files hold long-form source and artifacts; the Sheet holds structured state, concise summaries, and links.
+
+## Salary fields
+
+- Populate `Salary expectation` only from Anton's explicit, current, confirmed expectation or a reliable previously confirmed record. Never infer it from the vacancy or market estimate.
+- Research `Estimated salary range` during normal vacancy analysis when reliable current evidence is available. For Serbia, use Infostud first; if insufficient, use current Serbian listings and reputable internet sources. For other countries, use Glassdoor first, then employer/job-posting disclosures and reputable internet salary sources.
+- Match geography, seniority, work model, and contract type. State currency, amount or range, gross/net, and period in both fields; include employment type when material.
+- Record salary source URL(s), research date, and material caveats concisely in `Notes`. Treat crowdsourced values as estimates, never copy `Salary expectation` into `Estimated salary range` or vice versa, and leave either field blank when evidence is insufficient.
 
 ## Vacancy source and dates
 
@@ -1329,7 +1347,7 @@ Fix defects, rerender, and inspect again. Never claim visual QA passed when rend
 - Set `Stage = Applied` only from the user's report or an explicit company/ATS receipt confirming that this application was submitted. Fill `Date applied` only when the actual submission date is directly evidenced.
 - Continue updating the same row through recruiter screen, interview, technical interview, final, offer, rejection, withdrawal, ghosting, or closure.
 
-Never invent fit, dates, stage, salary, contacts, submission, or file existence. Do not call a complete application pack complete until DOCX visual QA, all four Drive upload/readbacks, and tracker readback succeed.
+Never invent fit, dates, stage, `Salary expectation`, contacts, submission, or file existence. Populate `Estimated salary range` only as a sourced market estimate. Do not call a complete application pack complete until DOCX visual QA, all four Drive upload/readbacks, and tracker readback succeed.
 
 ## Gmail status evidence
 
@@ -1482,5 +1500,7 @@ Files in `GPT/` may be packaging copies. Canonical originals still live elsewher
 - [details/comprehensive_psychological_career_profile.md](../details/comprehensive_psychological_career_profile.md)
 
 When precision, freshness, or a conflict matters, prefer the canonical source.
+
+
 
 RUNTIME_END

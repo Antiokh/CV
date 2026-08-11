@@ -317,11 +317,13 @@ Use the Google Sheet `WorkInterviews`, spreadsheet ID `1k-Zbz7LMZJJcWfMp41yC-7mU
 
 Before the first tracker or Drive write in a task, read the hidden tab `Agent Instructions` and follow its current operational rules. If it conflicts with an explicit newer user instruction, the user's instruction wins and the hidden tab must be updated to match.
 
-Tracker columns `A:S` are fixed:
+Tracker columns `A:U` are fixed:
 - `Company`
 - `Position`
 - `Fit %`
 - `Stage`
+- `Salary expectation`
+- `Estimated salary range`
 - `Referral`
 - `Apply URL`
 - `CV`
@@ -345,7 +347,7 @@ Workflow:
 3. use `YYYY-MM-DD` dates in the spreadsheet timezone `Europe/Belgrade`;
 4. fill all known fields, preserve existing non-empty values, and leave an unknown value blank instead of guessing it;
 5. use only the allowed `Stage` values: `To review`, `Reviewed`, `CV ready`, `Applied`, `Recruiter screen`, `Interview`, `Technical interview`, `Final`, `Offer`, `Rejected`, `Withdrawn`, `Ghosted`, or `Closed`;
-6. when first analyzing a vacancy, populate every known value among `Company`, `Position`, `Fit %`, `Stage`, `Referral`, `Apply URL`, `Archetype`, `Location`, `Vacancy URL`, `Posted date`, `Date found`, and `Next action`; if no CV exists yet, set `Stage = Reviewed`;
+6. when first analyzing a vacancy, populate every known value among `Company`, `Position`, `Fit %`, `Stage`, `Salary expectation`, `Estimated salary range`, `Referral`, `Apply URL`, `Archetype`, `Location`, `Vacancy URL`, `Posted date`, `Date found`, and `Next action`; if no CV exists yet, set `Stage = Reviewed`;
 7. preserve enough content to identify and evaluate a vacancy after the source page disappears: save a concise identifying summary in `Vacancy snapshot`, material fit/gap context in `Notes`, and the full source text in a verified Drive `Position.md`; write its URL to `Vacancy file`;
 8. after a tailored CV passes Word layout QA, use the verified My Drive root folder `WorkApplications` (folder ID `1wQMbnH4CODaARJSY221H06oCFJV2ukAK`);
 9. find or create the exact folder structure `WorkApplications/<Company>/<PositionTitle>/`, preserving recognizable names and sanitizing only unsafe path characters;
@@ -358,10 +360,17 @@ Workflow:
 16. never treat a request to create a CV, generated files, or a Drive upload as proof that an application was submitted;
 17. set `Stage = Applied` only from the user's report or an explicit company/ATS receipt confirming this application was submitted; fill `Date applied` only when the actual submission date is directly evidenced;
 18. update the same row throughout recruiter screen, interview, technical interview, final, offer, rejection, withdrawal, ghosting, or closure;
-19. never invent `Date applied`, fit, stage, salary, contact, application submission, or the existence/location of application files;
+19. never invent `Date applied`, fit, stage, `Salary expectation`, contact, application submission, or the existence/location of application files; populate `Estimated salary range` only as a sourced market estimate;
 20. consider the application pack complete only after Word visual QA, all four Drive artifact uploads/readbacks, and the tracker readback succeed. If an integration is unavailable, report the blocker explicitly and do not claim completion.
 
 The Google Sheet is the source of truth for job-search history. Project chats must not be the only place where vacancy and application status is stored.
+
+### Salary expectations and market estimate
+
+- Populate `Salary expectation` only from Anton's explicit, current, confirmed expectation or a reliable previously confirmed record. Never infer it from the vacancy or market data.
+- Research `Estimated salary range` during normal vacancy analysis when reliable current evidence is available. For Serbia, use Infostud first; if it is insufficient, use current Serbian listings and reputable internet sources. For other countries, use Glassdoor first, then employer/job-posting disclosures and reputable internet salary sources.
+- Match geography, seniority, work model, and contract type. In both salary fields, state currency, amount or range, gross/net, and period; add employment type when material.
+- Record salary source URL(s), research date, and material caveats concisely in `Notes`. Treat crowdsourced figures as estimates. Never copy one salary field into the other, and leave either field blank when its evidence is insufficient.
 
 ### Vacancy source, Apply URL, and Posted date
 

@@ -19,13 +19,13 @@ Inspect the entire current chat and recover all unique employment/application in
 For each distinct vacancy:
 
 - upsert the existing `Jobs` row by Vacancy URL, then normalized Company + Position and other strong identifiers;
-- preserve historical Vacancy URL, decoded Apply URL, dates, fit, stage, contacts, recruiter/interview history, feedback, application identifiers, and useful process facts when actually evidenced;
+- preserve historical Vacancy URL, decoded Apply URL, dates, fit, stage, explicitly confirmed Salary expectation, sourced historical Estimated salary range, contacts, recruiter/interview history, feedback, application identifiers, and useful process facts when actually evidenced;
 - preserve the historical substantive vacancy body in `WorkApplications/<Company>/<PositionTitle>/Position.md`;
 - verify `Position.md` through Drive readback and write only its verified URL to `Vacancy file`;
 - keep `Vacancy snapshot` and `Notes` concise and preserve `CLIP`/compact row height;
 - recover existing CV and cover-letter artifacts when they genuinely existed and remain available.
 
-Do not rerun fit analysis, automatic-CV generation, current-vacancy web research, or modern/reposted-vacancy reconstruction merely because migration was requested. Do not invent application events, dates, stages, contacts, or files.
+Do not rerun fit analysis, salary research, automatic-CV generation, current-vacancy web research, or modern/reposted-vacancy reconstruction merely because migration was requested. Do not invent application events, dates, stages, salary values, contacts, or files.
 
 ## Missing cover letter repair
 
