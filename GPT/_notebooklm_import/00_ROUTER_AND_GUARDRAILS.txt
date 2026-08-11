@@ -1,4 +1,4 @@
-# 00_ROUTER_AND_GUARDRAILS
+﻿# 00_ROUTER_AND_GUARDRAILS
 
 NotebookLM source title: 00_ROUTER_AND_GUARDRAILS
 Original files included:
@@ -366,9 +366,9 @@ Workflow:
 1. when a vacancy is received or analyzed, upsert one row in `Jobs`; match by `Vacancy URL` and normalized `Company + Position`, using the available identifiers and never duplicating the same vacancy;
 2. do not create duplicate rows for later CV generation, application, recruiter contact, interview, rejection, or offer events; update the existing row;
 3. use `YYYY-MM-DD` dates in the spreadsheet timezone `Europe/Belgrade`;
-4. fill all known fields, preserve existing non-empty values, and leave an unknown value blank instead of guessing it;
+4. inspect every visible `A:V` column and fill every evidence-backed applicable field, preserve existing non-empty values, and leave a value blank only when it is genuinely unknown or inapplicable; audit `A:V` again before completion and record material research blockers in `Notes`;
 5. use only the allowed `Stage` values: `To review`, `Reviewed`, `CV ready`, `Applied`, `Recruiter screen`, `Interview`, `Technical interview`, `Final`, `Offer`, `Rejected`, `Withdrawn`, `Ghosted`, or `Closed`;
-6. when first analyzing a vacancy, populate every known value among `Company`, `Position`, `Fit %`, `Stage`, `Salary expectation`, `Estimated salary range`, `Referral`, `Recruiter`, `Apply URL`, `Archetype`, `Location`, `Vacancy URL`, `Posted date`, `Date found`, and `Next action`; if no CV exists yet, set `Stage = Reviewed`;
+6. when first analyzing a vacancy, consider and populate every evidence-backed applicable visible field in `A:V`, including artifact links and concise provenance when they exist; if no CV exists yet, set `Stage = Reviewed`;
 7. preserve enough content to identify and evaluate a vacancy after the source page disappears: save a concise identifying summary in `Vacancy snapshot`, material fit/gap context in `Notes`, and the full source text in a verified Drive `Position.md`; write its URL to `Vacancy file`;
 8. after a tailored CV passes Word layout QA, use the verified My Drive root folder `WorkApplications` (folder ID `1wQMbnH4CODaARJSY221H06oCFJV2ukAK`);
 9. find or create the exact folder structure `WorkApplications/<Company>/<PositionTitle>/`, preserving recognizable names and sanitizing only unsafe path characters;
@@ -405,9 +405,15 @@ The Google Sheet is the source of truth for job-search history. Project chats mu
 ### Salary expectations and market estimate
 
 - Populate `Salary expectation` only from Anton's explicit, current, confirmed expectation or a reliable previously confirmed record. Never infer it from the vacancy or market data.
-- Research `Estimated salary range` during normal vacancy analysis when reliable current evidence is available. For Serbia, use Infostud first; if it is insufficient, use current Serbian listings and reputable internet sources. For other countries, use Glassdoor first, then employer/job-posting disclosures and reputable internet salary sources.
+- For every new vacancy and every material re-analysis, always research `Estimated salary range`. For Serbia, check Infostud first; if it is insufficient, continue with current Serbian listings and reputable internet sources. For all other locations, check Glassdoor first, then employer/job-posting disclosures and reputable internet salary sources.
 - Match geography, seniority, work model, and contract type. In both salary fields, state currency, amount or range, gross/net, and period; add employment type when material.
-- Record salary source URL(s), research date, and material caveats concisely in `Notes`. Treat crowdsourced figures as estimates. Never copy one salary field into the other, and leave either field blank when its evidence is insufficient.
+- Record salary source URL(s), research date, and material caveats concisely in `Notes`. If no defensible market range is found, leave `Estimated salary range` blank but still record the sources checked and why the evidence was insufficient. Treat crowdsourced figures as estimates and never copy one salary field into the other.
+
+### Fit percentage integrity
+
+- Store `Fit %` as one native numeric percentage from `0%` through `100%`, displayed as a whole percent. Never store ranges, approximation marks, percent signs as text, labels such as `High`, or prose in this column.
+- Through the Sheets API write the fractional numeric value (`0.68` displays as `68%`). The automatic-CV gate is displayed fit strictly above `60%`, equivalent to a numeric value above `0.60`.
+- Normalize a historical numeric range to its rounded whole-percent arithmetic midpoint and preserve the original range in `Notes`: `65-70` becomes numeric `68%` (`0.68`). Preserve word-only historical assessments in `Notes` and leave `Fit %` blank unless numeric evidence exists.
 
 ### Vacancy source, Apply URL, and Posted date
 
@@ -709,13 +715,14 @@ For every generated or materially revised `.docx` CV:
 - Upsert by `Vacancy URL`; if no URL exists, match normalized `Company + Position`. After creation, identify the record by immutable UUID v4 in hidden `W: Row ID`, never by row number, cached index, timestamp, or mutable business fields.
 - Keep the fixed visible A:V columns `Company`, `Position`, `Fit %`, `Stage`, `Salary expectation`, `Estimated salary range`, `Referral`, `Recruiter`, `Apply URL`, `CV`, `Cover`, `Vacancy file`, `Archetype`, `Location`, `Vacancy URL`, `Posted date`, `Date found`, `Date applied`, `Last contact`, `Next action`, `Vacancy snapshot`, and `Notes`. `Vacancy file` is the verified Drive URL for `Position.md`.
 - Immediately before every write, repeat the vacancy lookup and read current `A:W`. For a new record, generate its UUID and perform row insertion, safe structure copy, and complete initial write in one batch; never target a merely blank assumed row. For an existing record, re-resolve it by UUID and update only intended cells. Read back `A:W` and search again after writing; preserve and report conflicts or duplicates instead of overwriting, deleting, or auto-merging them.
-- Use `YYYY-MM-DD` in `Europe/Belgrade`, fill all known values, preserve populated cells, and leave unknown values blank instead of guessing.
+- Use `YYYY-MM-DD` in `Europe/Belgrade`. Inspect every visible `A:V` field, populate every evidence-backed applicable value, preserve populated cells, and leave a value blank only when genuinely unknown or inapplicable. Audit `A:V` before completion and record material research blockers in `Notes`.
 - Use only valid stages: `To review`, `Reviewed`, `CV ready`, `Applied`, `Recruiter screen`, `Interview`, `Technical interview`, `Final`, `Offer`, `Rejected`, `Withdrawn`, `Ghosted`, `Closed`.
 - On first analysis, extract all available source/application metadata before discarding UI text. Keep Vacancy URL as the source page and Apply URL as the direct submission destination. Decode LinkedIn `safety/go` `url` parameters, preserve the external query string, and never store the wrapper or invent a link. For LinkedIn Easy Apply / auto-apply without a distinct destination, set `Apply URL = Vacancy URL`.
 - Keep Posted date separate from Date found. Resolve precise relative dates only against a known reference date; leave coarse values blank and preserve useful wording in Notes. For old chats, prefer historical pasted evidence and do not browse current pages to reconstruct historical values unless asked.
 - Write all known vacancy fields, including `Recruiter`, keep concise identifying content in `Vacancy snapshot` and fit/process context in `Notes`, and preserve the full source in a verified Drive `Position.md` linked from `Vacancy file`; if no CV exists, set `Stage = Reviewed`.
 - In `Recruiter`, use a native people chip only for a uniquely verified email. Otherwise store a verified LinkedIn profile as the person's clickable linked name, or plain text when only the name is known. Keep `Referral` separate; never guess contact data. Use recruiter name plus company/domain for authorized Gmail lookup.
-- Populate `Salary expectation` only from Anton's explicit confirmed expectation. Populate `Estimated salary range` only from current research: Infostud first for Serbia; Glassdoor first for other countries; then current job disclosures and reputable internet sources. Match geography, seniority, work model, and contract type; include currency, gross/net, and period, and record source URL(s), research date, and caveats concisely in `Notes`.
+- Store `Fit %` only as one native numeric whole percentage from `0%` through `100%`; API writes use fractions (`0.68` displays as `68%`). Never store a range, approximation, percent text, label, or prose. Normalize a historical numeric range to its rounded midpoint and keep the original wording in `Notes`; leave word-only assessments blank unless numeric evidence exists. The automatic-CV gate is `>60%` / `>0.60`.
+- Populate `Salary expectation` only from Anton's explicit confirmed expectation. For every new vacancy and material re-analysis, always research `Estimated salary range`: Infostud first for Serbia; Glassdoor first for all other locations; then current job disclosures and reputable internet sources. Match geography, seniority, work model, and contract type; include currency, gross/net, and period. Record source URL(s), research date, caveats, and—when no defensible range is found—the sources checked and insufficiency reason in `Notes`.
 - After DOCX visual QA passes, use `WorkApplications` (folder ID `1wQMbnH4CODaARJSY221H06oCFJV2ukAK`) and find or create `WorkApplications/<Company>/<PositionTitle>/`.
 - Store exactly four files in that position folder: `Position.md`, `Anton_Nazarov<PositionTitle>.md`, `Anton_Nazarov_<PositionTitle>.docx`, and `Anton_Nazarov<PositionTitle>.txt`. Position.md includes both URLs plus Posted date and Date found when known; the other files are CV Markdown, final Word CV, and plain-text cover letter.
 - Humanize the cover letter with the cached Drive skill for its language: `_skills/humanizer-ru/SKILL.md` or `_skills/humanizer-en/SKILL.md`. Save only final text in TXT.
@@ -1122,14 +1129,15 @@ For every vacancy, CV, cover letter, or hiring-stage task, use Google Sheet `Wor
 - Upsert one row per vacancy by `Vacancy URL` and normalized `Company + Position`; after creation use immutable UUID v4 in hidden `W: Row ID` as the durable identity, never the row number.
 - Use the live visible A:V schema: `Company`, `Position`, `Fit %`, `Stage`, `Salary expectation`, `Estimated salary range`, `Referral`, `Recruiter`, `Apply URL`, `CV`, `Cover`, `Vacancy file`, `Archetype`, `Location`, `Vacancy URL`, `Posted date`, `Date found`, `Date applied`, `Last contact`, `Next action`, `Vacancy snapshot`, `Notes`; hidden W is `Row ID`.
 - Immediately before every write, repeat the lookup and read current `A:W`. Create a new row only through one batch that inserts the row, copies safe structure, and writes all initial values plus UUID. Update existing rows only after re-resolving the UUID and only in intended cells. Read back and search again after writing; never overwrite or auto-merge a detected conflict.
-- On initial analysis, extract every known application metadata value before discarding job-board UI. Keep Vacancy URL as the source page and Apply URL as the actual submission destination.
+- On initial analysis, inspect every visible `A:V` field and extract every evidence-backed applicable value before discarding job-board UI. Before completion, audit `A:V` again; leave a value blank only when genuinely unknown or inapplicable and record material research blockers in `Notes`. Keep Vacancy URL as the source page and Apply URL as the actual submission destination.
 - Decode the `url` parameter of LinkedIn `safety/go` links and store the validated direct HTTP(S) destination with its own query parameters. Do not store the wrapper, infer an ATS, or invent a careers URL. For LinkedIn Easy Apply / auto-apply without a distinct destination, set `Apply URL = Vacancy URL`.
 - Keep Posted date and Date found independent. Convert precise relative publication labels only with a known reference date; leave coarse values blank and preserve useful original wording in Notes.
 - For old-chat migration, prefer original pasted evidence and the historical chat date. Do not browse the current vacancy to reconstruct historical Apply URL or Posted date unless explicitly requested.
 - If no CV exists yet, use `Stage = Reviewed`.
 - Find or create `WorkApplications/<Company>/<PositionTitle>/` and save/update `Position.md` with the source metadata and full substantive vacancy text. Verify it through Drive readback and write its Drive URL to `Vacancy file`.
 - Keep `Vacancy snapshot` to a concise one-paragraph identifying summary and `Notes` to concise fit/gap/process context. Never duplicate the full vacancy body in the Sheet.
-- Populate `Salary expectation` only from Anton's explicit confirmed expectation. Research `Estimated salary range` with Infostud first for Serbia and Glassdoor first for other countries, then current job disclosures and reputable internet sources. Match geography, seniority, work model, and contract type; include currency, gross/net, and period. Put source URL(s), research date, and material caveats concisely in `Notes`; leave either field blank when evidence is insufficient.
+- Store `Fit %` as one native numeric whole percentage from `0%` through `100%`; API writes use a fraction such as `0.68` for displayed `68%`. Never store a range, approximation, percent text, label, or prose. Normalize historical numeric ranges to the rounded midpoint while retaining the original wording in `Notes`; keep word-only assessments out of `Fit %` unless numeric evidence exists. Evaluate the automatic-CV gate as displayed `>60%` / numeric `>0.60`.
+- Populate `Salary expectation` only from Anton's explicit confirmed expectation. For every new vacancy and material re-analysis, always research `Estimated salary range`: Infostud first for Serbia and Glassdoor first for all other locations, then current job disclosures and reputable internet sources. Match geography, seniority, work model, and contract type; include currency, gross/net, and period. Put source URL(s), research date, and material caveats concisely in `Notes`. If evidence remains insufficient, leave the range blank but record the sources checked and insufficiency reason.
 - Populate `Recruiter` with verified hiring contacts. Use a people chip only for a uniquely verified email; otherwise use the exact name linked to a verified LinkedIn profile, or plain text when no verified contact destination exists. Preserve `Referral` separately and never invent contact data.
 - Preserve `CLIP` wrapping for `Vacancy snapshot`, `Notes`, and `Vacancy file`; keep data rows compact and do not let these fields determine row height.
 - Use `YYYY-MM-DD` in `Europe/Belgrade`. Preserve populated cells and leave unknown values blank.
@@ -1294,6 +1302,9 @@ Hidden column W is `Row ID`: an immutable UUID v4 assigned exactly once. Never c
 
 Storage rules:
 
+- Inspect every visible `A:V` column during ingestion and analysis, and populate every evidence-backed applicable field. Before completion, audit `A:V` again. Leave a value blank only when genuinely unknown or inapplicable; record material research blockers and sources checked in `Notes`.
+- Store `Fit %` as one native numeric percentage from 0% through 100%, displayed as a whole percent. Through the Sheets API write a fractional number (`0.68` displays as `68%`). Never store a range, approximation mark, percent sign as text, label, or prose. Evaluate the automatic-CV gate against displayed `>60%`, equivalent to numeric `>0.60`.
+- For a historical numeric fit range, write its rounded whole-percent arithmetic midpoint and preserve the original wording in `Notes` (`65-70` becomes numeric `68%` / API value `0.68`). Preserve word-only assessments in `Notes` and leave `Fit %` blank unless numeric evidence exists.
 - `Vacancy file` contains the verified Drive URL of that vacancy's `Position.md`. Never store the full vacancy body in the Sheet.
 - `Vacancy snapshot` is for quick identification only: one compact paragraph, no copied job description, no multiline lists.
 - `Notes` is for concise fit/gap/process/provenance context only: one compact paragraph where practical; do not paste correspondence or vacancy text.
@@ -1322,9 +1333,9 @@ Multiple chats may write concurrently. Protect every write:
 ## Salary fields
 
 - Populate `Salary expectation` only from Anton's explicit, current, confirmed expectation or a reliable previously confirmed record. Never infer it from the vacancy or market estimate.
-- Research `Estimated salary range` during normal vacancy analysis when reliable current evidence is available. For Serbia, use Infostud first; if insufficient, use current Serbian listings and reputable internet sources. For other countries, use Glassdoor first, then employer/job-posting disclosures and reputable internet salary sources.
+- For every new vacancy and every material re-analysis, always research `Estimated salary range`. For Serbia, check Infostud first; if insufficient, continue with current Serbian listings and reputable internet sources. For all other locations, check Glassdoor first, then employer/job-posting disclosures and reputable internet salary sources.
 - Match geography, seniority, work model, and contract type. State currency, amount or range, gross/net, and period in both fields; include employment type when material.
-- Record salary source URL(s), research date, and material caveats concisely in `Notes`. Treat crowdsourced values as estimates, never copy `Salary expectation` into `Estimated salary range` or vice versa, and leave either field blank when evidence is insufficient.
+- Record salary source URL(s), research date, and material caveats concisely in `Notes`. If no defensible estimate is found, leave `Estimated salary range` blank but record the sources checked and why evidence was insufficient. Treat crowdsourced values as estimates and never copy `Salary expectation` into `Estimated salary range` or vice versa.
 
 ## Vacancy source and dates
 

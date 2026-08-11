@@ -20,6 +20,7 @@ For each distinct vacancy:
 
 - upsert the existing `Jobs` row by Vacancy URL, then normalized Company + Position and other strong identifiers; immediately before writing, re-read A:W and use the immutable `Row ID` UUID rather than a cached row number;
 - preserve historical Vacancy URL, decoded Apply URL, dates, fit, stage, explicitly confirmed Salary expectation, sourced historical Estimated salary range, Referral, Recruiter contacts, recruiter/interview history, feedback, application identifiers, and useful process facts when actually evidenced;
+- normalize only the storage type of historical fit without re-analyzing it: convert a numeric range to its rounded whole-percent midpoint in native numeric `Fit %` form (`65-70` becomes `68%` / API value `0.68`) and preserve the original wording in `Notes`; keep word-only assessments in `Notes` and leave `Fit %` blank unless numeric evidence exists;
 - preserve the historical substantive vacancy body in `WorkApplications/<Company>/<PositionTitle>/Position.md`;
 - verify `Position.md` through Drive readback and write only its verified URL to `Vacancy file`;
 - keep `Vacancy snapshot` and `Notes` concise and preserve `CLIP`/compact row height;

@@ -348,9 +348,9 @@ Workflow:
 1. when a vacancy is received or analyzed, upsert one row in `Jobs`; match by `Vacancy URL` and normalized `Company + Position`, using the available identifiers and never duplicating the same vacancy;
 2. do not create duplicate rows for later CV generation, application, recruiter contact, interview, rejection, or offer events; update the existing row;
 3. use `YYYY-MM-DD` dates in the spreadsheet timezone `Europe/Belgrade`;
-4. fill all known fields, preserve existing non-empty values, and leave an unknown value blank instead of guessing it;
+4. inspect every visible `A:V` column and fill every evidence-backed applicable field, preserve existing non-empty values, and leave a value blank only when it is genuinely unknown or inapplicable; audit `A:V` again before completion and record material research blockers in `Notes`;
 5. use only the allowed `Stage` values: `To review`, `Reviewed`, `CV ready`, `Applied`, `Recruiter screen`, `Interview`, `Technical interview`, `Final`, `Offer`, `Rejected`, `Withdrawn`, `Ghosted`, or `Closed`;
-6. when first analyzing a vacancy, populate every known value among `Company`, `Position`, `Fit %`, `Stage`, `Salary expectation`, `Estimated salary range`, `Referral`, `Recruiter`, `Apply URL`, `Archetype`, `Location`, `Vacancy URL`, `Posted date`, `Date found`, and `Next action`; if no CV exists yet, set `Stage = Reviewed`;
+6. when first analyzing a vacancy, consider and populate every evidence-backed applicable visible field in `A:V`, including artifact links and concise provenance when they exist; if no CV exists yet, set `Stage = Reviewed`;
 7. preserve enough content to identify and evaluate a vacancy after the source page disappears: save a concise identifying summary in `Vacancy snapshot`, material fit/gap context in `Notes`, and the full source text in a verified Drive `Position.md`; write its URL to `Vacancy file`;
 8. after a tailored CV passes Word layout QA, use the verified My Drive root folder `WorkApplications` (folder ID `1wQMbnH4CODaARJSY221H06oCFJV2ukAK`);
 9. find or create the exact folder structure `WorkApplications/<Company>/<PositionTitle>/`, preserving recognizable names and sanitizing only unsafe path characters;
@@ -387,9 +387,15 @@ The Google Sheet is the source of truth for job-search history. Project chats mu
 ### Salary expectations and market estimate
 
 - Populate `Salary expectation` only from Anton's explicit, current, confirmed expectation or a reliable previously confirmed record. Never infer it from the vacancy or market data.
-- Research `Estimated salary range` during normal vacancy analysis when reliable current evidence is available. For Serbia, use Infostud first; if it is insufficient, use current Serbian listings and reputable internet sources. For other countries, use Glassdoor first, then employer/job-posting disclosures and reputable internet salary sources.
+- For every new vacancy and every material re-analysis, always research `Estimated salary range`. For Serbia, check Infostud first; if it is insufficient, continue with current Serbian listings and reputable internet sources. For all other locations, check Glassdoor first, then employer/job-posting disclosures and reputable internet salary sources.
 - Match geography, seniority, work model, and contract type. In both salary fields, state currency, amount or range, gross/net, and period; add employment type when material.
-- Record salary source URL(s), research date, and material caveats concisely in `Notes`. Treat crowdsourced figures as estimates. Never copy one salary field into the other, and leave either field blank when its evidence is insufficient.
+- Record salary source URL(s), research date, and material caveats concisely in `Notes`. If no defensible market range is found, leave `Estimated salary range` blank but still record the sources checked and why the evidence was insufficient. Treat crowdsourced figures as estimates and never copy one salary field into the other.
+
+### Fit percentage integrity
+
+- Store `Fit %` as one native numeric percentage from `0%` through `100%`, displayed as a whole percent. Never store ranges, approximation marks, percent signs as text, labels such as `High`, or prose in this column.
+- Through the Sheets API write the fractional numeric value (`0.68` displays as `68%`). The automatic-CV gate is displayed fit strictly above `60%`, equivalent to a numeric value above `0.60`.
+- Normalize a historical numeric range to its rounded whole-percent arithmetic midpoint and preserve the original range in `Notes`: `65-70` becomes numeric `68%` (`0.68`). Preserve word-only historical assessments in `Notes` and leave `Fit %` blank unless numeric evidence exists.
 
 ### Vacancy source, Apply URL, and Posted date
 
