@@ -11,6 +11,30 @@ Do not hardcode the job-board or employer lists in this repository. The canonica
 
 Because these inventories are maintained live in the Sheet, newly added rows become part of the next search automatically without a repository change.
 
+## Search-source priority
+
+Discovery is not an equal-depth sweep. Spend search effort in this order unless an explicit user request names a narrower source:
+
+1. **Y Combinator / Work at a Startup / YC Jobs** — highest-priority general source. Check it early in every broad discovery run, especially for product, engineering, solutions, forward-deployed, technical leadership, founding-team, and unusual cross-functional roles. Prefer roles that explicitly do not require a US visa or that clearly allow remote work from Serbia/Europe.
+2. **`RU-root Companies` with blank `Blocker`** — highest-priority employer inventory alongside YC. Scan these official careers pages early, not only after exhausting generic boards. Russian-speaking / ex-USSR roots are a search-priority signal because cultural/language fit and warm-network probability may improve access, but they do not override role fit or geographic eligibility.
+3. **High-priority rows in `Job Sources`** — then cover the strongest Serbia, Europe, remote, startup, ATS-meta-search, and direct-hiring sources according to their current Notes/relevance.
+4. **Secondary/low-relevance sources** — use after the priority tiers or when they cover a gap not represented above.
+
+A source priority affects search order and time allocation, not `Fit %`. Do not inflate fit because a company is YC-backed, Russian-rooted, familiar, prestigious, or network-accessible.
+
+## Network-first opportunity ranking
+
+Warm access is a first-class search signal. For every genuinely new vacancy that passes basic role-fit and geographic-eligibility screening, perform the `LinkedIn Connections` lookup immediately after deduplication and before spending substantial time on salary research or application-pack generation.
+
+- Search the hidden `LinkedIn Connections` snapshot by exact normalized `Company Key`, then evidence-backed parent/subsidiary/former-name/common-brand aliases as defined in `work-application-manager/SKILL.md` and `Agent Instructions`.
+- Rank useful first-degree contacts in this order: relevant recruiter/TA; likely hiring manager or function leader; then a role-relevant employee who could credibly introduce Anton. A highly relevant functional leader may outrank generic HR.
+- A strong warm path does **not** change `Fit %`. It changes practical priority among otherwise comparable vacancies.
+- When two vacancies have similar fit and geography, prefer the one with a credible warm path. A direct first-degree recruiter/hiring-manager connection is a stronger ranking signal than a generic employee connection; no exact useful connection is neutral, not disqualifying.
+- Do not populate `Referral` or change `Stage` merely because a connection exists. The snapshot yields referral candidates, not evidence of outreach.
+- In shortlist output, surface the best referral candidates prominently instead of burying them after the vacancy analysis.
+
+The purpose is to maximize interview probability, not just vacancy count. A slightly less attractive but still high-fit role with a credible warm introduction may deserve action before an equally high-fit cold application.
+
 ## Pre-existing Stage immutability during discovery
 
 A vacancy-discovery run may add new positions, but it must never change `Stage` for a `Jobs` row that existed before the run started.
@@ -31,12 +55,14 @@ If a pre-existing row appears stale, incomplete, or inconsistent, report it sepa
 1. Read hidden `Agent Instructions` when the run will write to the tracker.
 2. Snapshot pre-existing `Jobs` Row IDs and Stages as required by the immutability rule above.
 3. Read `Job Sources` and `RU-root Companies` fresh from `WorkInterviews` before searching.
-4. Search the relevant `Job Sources` URLs for Anton's target roles and allowed geography/work model. Treat the Sheet as the coverage checklist; do not rely only on LinkedIn, search-engine results, or recommendation feeds.
-5. For every `RU-root Companies` row with a blank `Blocker`, inspect the listed `Careers URL` for relevant open roles. Prefer the official/current careers page over a generic company homepage or LinkedIn fallback when both are known.
-6. Before recommending, ingesting, or preparing an application, deduplicate against canonical `Jobs` by Vacancy URL and normalized Company + Position and apply the normal vacancy workflow subject to the pre-existing Stage immutability rule.
-7. Process every genuinely new high-fit vacancy transactionally before moving to the next new high-fit vacancy. Do not batch-ingest a set of `Reviewed` rows first and defer CV generation until the end.
-8. Record material broken/stale source URLs when encountered so the inventories can be repaired rather than repeatedly retried.
-9. Run the mandatory completion reconciliation below before reporting the discovery run as complete.
+4. Check Y Combinator / Work at a Startup / YC Jobs first for relevant Serbia/Europe/worldwide-eligible roles.
+5. Scan `RU-root Companies` rows with blank `Blocker` early, using their listed `Careers URL`; prefer the official/current careers page over a generic homepage or LinkedIn fallback.
+6. Search the remaining relevant `Job Sources` URLs for Anton's target roles and allowed geography/work model. Treat the Sheet as the coverage checklist; do not rely only on LinkedIn, search-engine results, or recommendation feeds.
+7. For each candidate vacancy that passes basic fit/geography screening, deduplicate against canonical `Jobs` by Vacancy URL and normalized Company + Position. If genuinely new, immediately run the mandatory `LinkedIn Connections` referral-candidate lookup before substantial downstream processing.
+8. Rank comparable opportunities using both fit and practical access: preserve `Fit %` as the role-fit score, while using credible first-degree network paths as a tie-breaker / action-priority boost.
+9. Apply the normal vacancy workflow subject to the pre-existing Stage immutability rule. Process every genuinely new high-fit vacancy transactionally before moving to the next new high-fit vacancy; do not batch-ingest a set of `Reviewed` rows first and defer CV generation until the end.
+10. Record material broken/stale source URLs when encountered so the inventories can be repaired rather than repeatedly retried.
+11. Run the mandatory completion reconciliation below before reporting the discovery run as complete.
 
 ## High-fit transactional CV invariant
 
