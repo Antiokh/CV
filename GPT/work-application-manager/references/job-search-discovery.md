@@ -11,22 +11,40 @@ Do not hardcode the job-board or employer lists in this repository. The canonica
 
 Because these inventories are maintained live in the Sheet, newly added rows become part of the next search automatically without a repository change.
 
+## Pre-existing Stage immutability during discovery
+
+A vacancy-discovery run may add new positions, but it must never change `Stage` for a `Jobs` row that existed before the run started.
+
+At the start of every discovery run that may write to `Jobs`:
+
+1. read the current populated `Jobs` rows and snapshot each existing immutable `Row ID` together with its current `Stage`;
+2. treat every snapshotted Row ID as pre-existing for the entire run, even if the row later moves because of concurrent inserts;
+3. if a discovered vacancy deduplicates to a pre-existing Row ID, preserve that row's `Stage` exactly and do not write `Date applied` or any other discovery-side field whose event automation could change `Stage`;
+4. only rows inserted during the current discovery run may receive an initial `Stage` or discovery-driven transition to `CV ready`;
+5. automatic CV generation, orphan-pack repair, completion reconciliation, enrichment, or material re-analysis during discovery must not override this rule for a pre-existing row;
+6. a pre-existing row may change `Stage` only in a separate status-changing workflow backed by explicit user instruction or direct hiring-process evidence, such as an ATS receipt, recruiter/interview message, rejection, offer, withdrawal, or other lifecycle event.
+
+If a pre-existing row appears stale, incomplete, or inconsistent, report it separately without changing its `Stage` during the discovery/addition task.
+
 ## Discovery sequence
 
 1. Read hidden `Agent Instructions` when the run will write to the tracker.
-2. Read `Job Sources` and `RU-root Companies` fresh from `WorkInterviews` before searching.
-3. Search the relevant `Job Sources` URLs for Anton's target roles and allowed geography/work model. Treat the Sheet as the coverage checklist; do not rely only on LinkedIn, search-engine results, or recommendation feeds.
-4. For every `RU-root Companies` row with a blank `Blocker`, inspect the listed `Careers URL` for relevant open roles. Prefer the official/current careers page over a generic company homepage or LinkedIn fallback when both are known.
-5. Before recommending, ingesting, or preparing an application, deduplicate against canonical `Jobs` by Vacancy URL and normalized Company + Position and apply the normal vacancy workflow.
-6. Process every genuinely new high-fit vacancy transactionally before moving to the next new high-fit vacancy. Do not batch-ingest a set of `Reviewed` rows first and defer CV generation until the end.
-7. Record material broken/stale source URLs when encountered so the inventories can be repaired rather than repeatedly retried.
-8. Run the mandatory completion reconciliation below before reporting the discovery run as complete.
+2. Snapshot pre-existing `Jobs` Row IDs and Stages as required by the immutability rule above.
+3. Read `Job Sources` and `RU-root Companies` fresh from `WorkInterviews` before searching.
+4. Search the relevant `Job Sources` URLs for Anton's target roles and allowed geography/work model. Treat the Sheet as the coverage checklist; do not rely only on LinkedIn, search-engine results, or recommendation feeds.
+5. For every `RU-root Companies` row with a blank `Blocker`, inspect the listed `Careers URL` for relevant open roles. Prefer the official/current careers page over a generic company homepage or LinkedIn fallback when both are known.
+6. Before recommending, ingesting, or preparing an application, deduplicate against canonical `Jobs` by Vacancy URL and normalized Company + Position and apply the normal vacancy workflow subject to the pre-existing Stage immutability rule.
+7. Process every genuinely new high-fit vacancy transactionally before moving to the next new high-fit vacancy. Do not batch-ingest a set of `Reviewed` rows first and defer CV generation until the end.
+8. Record material broken/stale source URLs when encountered so the inventories can be repaired rather than repeatedly retried.
+9. Run the mandatory completion reconciliation below before reporting the discovery run as complete.
 
 ## High-fit transactional CV invariant
 
-For a new or materially re-analyzed employment vacancy with displayed `Fit % > 60%`, geographic eligibility not disproved, and no explicit user instruction declining a CV, the automatic-CV gate is a hard workflow invariant, not an optional follow-up.
+For a new employment vacancy inserted during the current discovery run with displayed `Fit % > 60%`, geographic eligibility not disproved, and no explicit user instruction declining a CV, the automatic-CV gate is a hard workflow invariant, not an optional follow-up.
 
-After the fit score crosses the gate, do not proceed to the next new high-fit vacancy until one of these states is reached:
+For a pre-existing row, do not use discovery to change its `Stage`, even when it is materially re-analyzed or its application pack is incomplete. Handle any desired repair in a separate explicit workflow.
+
+After a newly inserted vacancy crosses the gate, do not proceed to the next new high-fit vacancy until one of these states is reached:
 
 ### Successful pack state
 
@@ -40,7 +58,7 @@ After the fit score crosses the gate, do not proceed to the next new high-fit va
 - `Vacancy file` contains the verified `Position.md` URL;
 - `Stage = CV ready`, unless direct evidence already supports a later stage such as `Applied` or interview stages.
 
-A plain `Reviewed` row with `Fit % > 60%` and an empty `CV` is not a successful completion state.
+A newly inserted plain `Reviewed` row with `Fit % > 60%` and an empty `CV` is not a successful completion state.
 
 ### Explicit blocked state
 
@@ -59,24 +77,27 @@ Generic phrases such as `could not finish`, `tool issue`, `later`, or silent omi
 
 High-fit pack completion takes precedence over finding more high-fit rows.
 
-- Finish or explicitly block one `Fit % > 60%` vacancy before ingesting the next new high-fit vacancy.
+- Finish or explicitly block one newly inserted `Fit % > 60%` vacancy before ingesting the next new high-fit vacancy.
 - Do not trade application-pack completeness for larger discovery volume.
 - If the environment starts failing on DOCX generation, rendering, Drive writes, or other mandatory pack steps, stop adding further high-fit vacancies after recording the current explicit blocker. Continue searching only when doing so cannot create additional incomplete high-fit tracker rows.
 - Low-fit vacancies that do not cross the CV gate may legitimately remain reviewed without a CV, subject to the normal tracker rules.
+- Existing rows are deduplication/history records during discovery: their `Stage` remains exactly as snapshotted at run start.
 
 ## Mandatory completion reconciliation
 
-Before returning the final discovery result, re-read every `Jobs` row created or materially re-analyzed during this run by immutable Row ID and verify its final state.
+Before returning the final discovery result, re-read every `Jobs` row created during this run by immutable Row ID and verify its final state. Also verify that every pre-existing row touched or re-read during the run still has the same `Stage` captured in the run-start snapshot.
 
-For each row with displayed `Fit % > 60%`, confirm exactly one of the following:
+For each newly inserted row with displayed `Fit % > 60%`, confirm exactly one of the following:
 
 1. application pack complete: verified `Vacancy file`, `CV`, and `Cover` links are present and Stage is `CV ready` or a later evidenced stage; or
 2. explicit blocked state: `Notes` contains `CV BLOCKED:` with a specific cause and `Next action` contains the concrete recovery action; or
 3. explicit user decline: the user's decision not to generate a CV is recorded concisely in `Notes`.
 
-If any high-fit row from the run has an empty `CV` without an explicit blocker or user decline, the discovery workflow is incomplete. Do not describe the run as successfully completed. Repair that row before finishing, or record a real blocker if repair is impossible in the current run.
+If any new high-fit row from the run has an empty `CV` without an explicit blocker or user decline, the discovery workflow is incomplete. Do not describe the run as successfully completed. Repair that new row before finishing, or record a real blocker if repair is impossible in the current run.
 
-When the same run encounters an existing backlog row with `Fit % > 60%`, `Stage = Reviewed`, empty `CV`, and no explicit blocker, treat it as an orphaned application-pack state. Do not silently normalize it as valid. If the vacancy is still open and eligible and the run has the required evidence, finish the pack; otherwise record the concrete reason it cannot be repaired now.
+If a pre-existing row's `Stage` differs from the run-start snapshot and the current task contained no explicit status-changing instruction or direct lifecycle evidence, treat that as a discovery workflow violation: stop further writes, restore only if the agent itself can prove it caused the change without overwriting concurrent/user edits, otherwise report the conflict for reconciliation.
+
+When the same run encounters an existing backlog row with `Fit % > 60%`, `Stage = Reviewed`, empty `CV`, and no explicit blocker, report it as an orphaned application-pack state if useful, but do not repair it or change its `Stage` as part of discovery. Repair requires a separate explicit workflow.
 
 ## Company blocker / rejection cooldown
 
