@@ -10,6 +10,7 @@ Use for employment vacancies, permanent or contract roles where Anton is the can
 - Use `Antiokh/CV` as the primary evidence repository.
 - Apply fit scoring, automatic CV generation above 60%, `WorkApplications`, the `Jobs` Sheet, DOCX QA, and read-only Gmail status checks.
 - For vacancy discovery, scheduled job scans, and requests to find new roles, also load `work-application-manager/references/job-search-discovery.md`. It requires a fresh read of the live `Job Sources` and `RU-root Companies` tabs in `WorkInterviews`, including company-level `Blocker` cooldowns, before searching.
+- Vacancy discovery must follow the high-fit transactional gate and final completion reconciliation defined in `work-application-manager/references/job-search-discovery.md`.
 - Present Anton as an individual candidate. Do not replace the career narrative with NeedleBit service positioning.
 
 ## Freelance/Agency mode
