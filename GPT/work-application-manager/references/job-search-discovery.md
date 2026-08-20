@@ -18,7 +18,65 @@ Because these inventories are maintained live in the Sheet, newly added rows bec
 3. Search the relevant `Job Sources` URLs for Anton's target roles and allowed geography/work model. Treat the Sheet as the coverage checklist; do not rely only on LinkedIn, search-engine results, or recommendation feeds.
 4. For every `RU-root Companies` row with a blank `Blocker`, inspect the listed `Careers URL` for relevant open roles. Prefer the official/current careers page over a generic company homepage or LinkedIn fallback when both are known.
 5. Before recommending, ingesting, or preparing an application, deduplicate against canonical `Jobs` by Vacancy URL and normalized Company + Position and apply the normal vacancy workflow.
-6. Record material broken/stale source URLs when encountered so the inventories can be repaired rather than repeatedly retried.
+6. Process every genuinely new high-fit vacancy transactionally before moving to the next new high-fit vacancy. Do not batch-ingest a set of `Reviewed` rows first and defer CV generation until the end.
+7. Record material broken/stale source URLs when encountered so the inventories can be repaired rather than repeatedly retried.
+8. Run the mandatory completion reconciliation below before reporting the discovery run as complete.
+
+## High-fit transactional CV invariant
+
+For a new or materially re-analyzed employment vacancy with displayed `Fit % > 60%`, geographic eligibility not disproved, and no explicit user instruction declining a CV, the automatic-CV gate is a hard workflow invariant, not an optional follow-up.
+
+After the fit score crosses the gate, do not proceed to the next new high-fit vacancy until one of these states is reached:
+
+### Successful pack state
+
+- `Position.md` exists and has passed Drive readback;
+- the tailored CV Markdown exists;
+- the final DOCX exists and has passed mandatory render/visual QA;
+- the humanized cover-letter TXT exists;
+- all four canonical Drive artifacts have passed readback;
+- the verified DOCX URL is stored in `CV`;
+- the verified TXT URL is stored in `Cover`;
+- `Vacancy file` contains the verified `Position.md` URL;
+- `Stage = CV ready`, unless direct evidence already supports a later stage such as `Applied` or interview stages.
+
+A plain `Reviewed` row with `Fit % > 60%` and an empty `CV` is not a successful completion state.
+
+### Explicit blocked state
+
+If a required application-pack step cannot be completed because of an actual tool, integration, source, rendering, or data blocker:
+
+- keep `Stage = Reviewed` unless a later stage is already evidenced;
+- preserve every artifact that was successfully created and verified;
+- write a concise `CV BLOCKED: <specific cause>` marker in `Notes`;
+- set `Next action` to the exact recovery action, for example `Retry DOCX generation/render and finish application pack`;
+- never claim the pack is complete and never synthesize missing file URLs;
+- if the failure is plausibly transient and another supported generation/render path is available in the current run, try that supported path before accepting the blocked state.
+
+Generic phrases such as `could not finish`, `tool issue`, `later`, or silent omission are not valid blocker records. The blocker must identify the failed step and evidence enough context for a later retry.
+
+## Backpressure and batch behavior
+
+High-fit pack completion takes precedence over finding more high-fit rows.
+
+- Finish or explicitly block one `Fit % > 60%` vacancy before ingesting the next new high-fit vacancy.
+- Do not trade application-pack completeness for larger discovery volume.
+- If the environment starts failing on DOCX generation, rendering, Drive writes, or other mandatory pack steps, stop adding further high-fit vacancies after recording the current explicit blocker. Continue searching only when doing so cannot create additional incomplete high-fit tracker rows.
+- Low-fit vacancies that do not cross the CV gate may legitimately remain reviewed without a CV, subject to the normal tracker rules.
+
+## Mandatory completion reconciliation
+
+Before returning the final discovery result, re-read every `Jobs` row created or materially re-analyzed during this run by immutable Row ID and verify its final state.
+
+For each row with displayed `Fit % > 60%`, confirm exactly one of the following:
+
+1. application pack complete: verified `Vacancy file`, `CV`, and `Cover` links are present and Stage is `CV ready` or a later evidenced stage; or
+2. explicit blocked state: `Notes` contains `CV BLOCKED:` with a specific cause and `Next action` contains the concrete recovery action; or
+3. explicit user decline: the user's decision not to generate a CV is recorded concisely in `Notes`.
+
+If any high-fit row from the run has an empty `CV` without an explicit blocker or user decline, the discovery workflow is incomplete. Do not describe the run as successfully completed. Repair that row before finishing, or record a real blocker if repair is impossible in the current run.
+
+When the same run encounters an existing backlog row with `Fit % > 60%`, `Stage = Reviewed`, empty `CV`, and no explicit blocker, treat it as an orphaned application-pack state. Do not silently normalize it as valid. If the vacancy is still open and eligible and the run has the required evidence, finish the pack; otherwise record the concrete reason it cannot be repaired now.
 
 ## Company blocker / rejection cooldown
 
