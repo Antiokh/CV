@@ -104,11 +104,108 @@ For highly relevant roles, preserve substantive detail. A senior architect, CTO,
 
 Compress irrelevant experience first. Do not compress the strongest evidence merely to satisfy an arbitrary page target.
 
-## Length
+## Length and readable Word layout
 
-Two pages are preferred only when the evidence still reads as complete. Three pages are acceptable for senior, executive, architecture and broad transformation profiles when the third page carries relevant proof. Page count is subordinate to evidence density and readability.
+Readability outranks an arbitrary page target. For Anton's senior / lead / architect / product CVs, two pages are preferred when the evidence remains complete and readable; three pages are acceptable when material evidence genuinely does not fit. Never force two pages by making the body text small or visually dense.
+
+Use Anton's edited Word CVs from 2026-08-21 as the current layout benchmark:
+
+- body text: approximately **10 pt**;
+- employer / role / dates line: approximately **11 pt**;
+- section headings: approximately **12 pt**;
+- name: approximately **17–18 pt**;
+- page: Letter, 8.5 × 11 in;
+- margins: approximately **0.42 in top/bottom** and **0.54 in left/right**;
+- compact paragraph spacing, but not reduced font size to make content fit.
+
+Do not infer effective size from the `Normal` style alone. Inspect actual run-level font sizes because the current benchmark files use run-level overrides: their `Normal` style may report 8.5 pt while the visible body text is 10 pt.
+
+### Two-page density benchmark
+
+Three user-edited CVs that Microsoft Word records as exactly two pages provide a practical density reference:
+
+- Senior Product: about **7,984 characters with spaces** total, about **3,992 per page**;
+- IT Support Team Lead: about **8,469 characters with spaces** total, about **4,235 per page**;
+- Senior Solutions Engineer: about **7,992 characters with spaces** total, about **3,996 per page**.
+
+Working target for this layout: roughly **4,000–4,200 characters with spaces per Word page**, or roughly **8,000–8,400 characters with spaces for a two-page CV**. This is a planning heuristic, not a hard truncation limit: headings, word length, bullet wrapping and role-title length affect pagination.
+
+When a draft materially exceeds that density, remove low-value duplication and implementation detail first. Do not reduce body text below the readable benchmark merely to preserve two pages.
+
+### Word pagination versus QA renderer
+
+Microsoft Word and LibreOffice do not paginate these compact CVs identically. The 2026-08-21 benchmark files are stored by Word with `docProps/app.xml` page count `Pages = 2`, while the container's LibreOffice render may place the same files on three pages.
+
+Therefore:
+
+- when a Word-authored or Word-saved reference file contains a current cached Word page count in `docProps/app.xml`, use it as the stronger page-count signal;
+- use LibreOffice render primarily for visual defects such as clipping, broken wrapping, missing glyphs, bad spacing and page-break problems, not as the sole authority for Microsoft Word page count;
+- for newly generated DOCX files that have not been repaginated by Microsoft Word, do not treat a stale/default `docProps/app.xml` page value as authoritative;
+- for generated CVs, combine character-density budgeting, actual font/margin measurements and LibreOffice visual QA rather than shrinking text to satisfy LibreOffice's pagination.
+
+The practical readability test is: **can the CV be read comfortably in Microsoft Word on a normal laptop at 100% zoom?** A layout that technically fits but requires zooming in is not acceptable.
 
 Do not create padding. Do not remove meaningful evidence just to force two pages.
+
+## Information architecture and scanability
+
+### Header
+
+Put the essential candidate information at the top so a recruiter does not need to search for it:
+
+1. name;
+2. target positioning / role headline;
+3. location, phone, email and LinkedIn;
+4. languages on the next compact line.
+
+Telegram is secondary. Keep it only when it does not overload the contact line; remove it before removing phone, email or LinkedIn.
+
+Do not repeat Languages again in a separate bottom section when they are already visible in the header.
+
+### Headline
+
+Prefer the literal target role plus two or three clear competence areas. Avoid fashionable shorthand that does not add information. Terms such as `zero-to-one`, `AI-native`, or `transformation leader` should appear in the headline only when they are important vacancy language or convey a specific hiring signal.
+
+### Role Fit
+
+Role Fit is a fast recruiter scan layer, not a second CV. Normally keep about five or six distinct points. Each point should answer one major vacancy requirement with concrete evidence, preferably including scale or outcomes where useful. Detailed proof belongs in Professional Experience.
+
+### Professional Experience
+
+Do not make employment blocks artificially symmetrical. A highly relevant role may carry seven or eight substantive bullets; a secondary role may carry two or three or, when needed only for timeline continuity, a compact one-line entry.
+
+Every bullet must justify its space. When reducing content, use this priority order:
+
+1. direct requirement evidence;
+2. measurable result;
+3. scale / scope;
+4. transferable evidence;
+5. interesting implementation detail.
+
+Drop low-priority technical detail before dropping evidence of responsibility, scale, outcome, leadership, rollout or adoption.
+
+### Technology placement
+
+Do not turn the CV into repeated technology catalogs. A separate `Technologies / tools` line after a role is useful only when it adds ATS-critical technologies that are not already clear from the bullets.
+
+When possible, tie technology to the result or implementation evidence inside the bullet itself. The final `Technical Scope` section can provide the consolidated ATS / skills map, so the same tool list should not be repeated after every employer.
+
+### Functional titles versus founder label
+
+For corporate IT, support, operations and internal-management vacancies, prefer the functional NeedleBit title (`CTO`, `Systems Architect`, etc.) when `Founder` adds distraction rather than evidence. Keep `Founder` when entrepreneurial ownership, startup product leadership, commercial ownership or zero-to-one business creation is materially relevant to the vacancy.
+
+Never invent a functional title that is not supported by the canonical profile.
+
+### Avoid cross-section repetition
+
+Profile, Role Fit, Professional Experience and Technical Scope have different jobs:
+
+- Profile sets the career frame;
+- Role Fit answers the vacancy quickly;
+- Professional Experience proves the claims;
+- Technical Scope consolidates technical / ATS coverage.
+
+If the same claim is repeated almost verbatim in three sections, compress it. Evidence may recur in shortened form when necessary for scanning, but not as filler.
 
 ## Writing quality
 
@@ -146,7 +243,11 @@ Before producing DOCX:
 3. verify every number against a source;
 4. verify that relevant experience was not lost during shortening;
 5. verify the hard chronology rule and the vacancy-focus mandatory roles;
-6. run the applicable humanizer checks;
-7. generate DOCX and perform mandatory render-to-image visual QA on every page.
+6. verify header information architecture, cross-section duplication and technology-list repetition;
+7. inspect actual run-level font sizes and compare the draft with the readable layout benchmark;
+8. calculate approximate characters with spaces and compare with the two-page density benchmark when targeting two pages;
+9. run the applicable humanizer checks;
+10. generate DOCX and perform mandatory render-to-image visual QA on every rendered page;
+11. treat LibreOffice pagination as advisory when it conflicts with a current Word page count; use the render to identify visual defects rather than shrinking the CV merely to satisfy LibreOffice page count.
 
-The final question is not `Can this fit on two pages?` It is `Can a recruiter see, in concrete evidence and a credible career timeline, why Anton has already done enough of this job to be credible?`
+The final question is not `Can this fit on two pages?` It is `Can a recruiter read it comfortably at 100% zoom and see, in concrete evidence and a credible career timeline, why Anton has already done enough of this job to be credible?`
