@@ -12,6 +12,50 @@ A tailored CV must do three things in this order:
 
 The CV is not a short biography and not a keyword summary. It is an evidence document for a hiring decision.
 
+## Hard chronology rule
+
+Work experience is always presented as a career timeline, not as a relevance ranking.
+
+- Never move employers or roles out of chronological career order merely because an older role is more relevant to the vacancy.
+- Relevance may change how much detail a role receives, which bullets are selected, and which facts are emphasized. It must not change the temporal order of employers.
+- The only allowed order exception is **ZIL Cultural Center** and the **Directorate of Cultural Centers of Moscow**. Those roles overlapped and may switch places depending on the vacancy focus.
+- Do not move the Bank, Social Development Agency, New Business Environment, or any other role ahead of later employment to make the CV look more relevant.
+- If shortening an unrelated intermediate role would create an apparent multi-year employment gap, keep at least a compact one-line entry with employer, title and dates. Do not create a misleading gap by silently removing intervening work.
+- Before finalizing, read the experience section top to bottom and verify that a recruiter can reconstruct the career timeline without dates appearing to jump backward and then forward.
+
+Canonical sequence for the major roles, with only the ZIL/Directorate swap permitted:
+
+1. NeedleBit;
+2. OTUS when materially relevant or needed for timeline continuity;
+3. New Business Environment;
+4. ZIL Cultural Center and Directorate of Cultural Centers of Moscow, in either order only;
+5. Moscow Social Development Agency;
+6. Beluga Group;
+7. Settlement and Savings Bank;
+8. I.T. Information Technology;
+9. Freelance / Private Practice;
+10. Domodedovo Airport.
+
+When a role is omitted for space, the remaining roles must still preserve this relative order.
+
+### Required roles by vacancy focus
+
+For **management / IT leadership / operations / transformation** CVs:
+
+- ZIL Cultural Center is mandatory and should carry substantial management evidence;
+- Directorate of Cultural Centers of Moscow is mandatory;
+- Moscow Social Development Agency is mandatory;
+- when management is the dominant hiring logic, ZIL may be shown before Directorate within the allowed overlap exception.
+
+For **product / product leadership / product-owner** CVs:
+
+- Directorate of Cultural Centers of Moscow is mandatory and should appear before ZIL within the allowed overlap exception;
+- ZIL Cultural Center is mandatory;
+- Settlement and Savings Bank is mandatory;
+- product evidence from NeedleBit may be emphasized heavily, but it does not authorize moving older employment above newer roles.
+
+For technical / solution / architecture CVs, select depth according to the vacancy while keeping the same chronology rule. A highly relevant older role can receive more bullets, but it stays in its chronological position.
+
 ## Evidence hierarchy
 
 For every material vacancy requirement, search the canonical profile, full experience source, managerial/technical evidence files, and relevant project evidence before drafting.
@@ -101,7 +145,8 @@ Before producing DOCX:
 2. verify that the strongest requirements are backed by visible experience, not only the summary or skills section;
 3. verify every number against a source;
 4. verify that relevant experience was not lost during shortening;
-5. run the applicable humanizer checks;
-6. generate DOCX and perform mandatory render-to-image visual QA on every page.
+5. verify the hard chronology rule and the vacancy-focus mandatory roles;
+6. run the applicable humanizer checks;
+7. generate DOCX and perform mandatory render-to-image visual QA on every page.
 
-The final question is not `Can this fit on two pages?` It is `Can a recruiter see, in concrete evidence, why Anton has already done enough of this job to be credible?`
+The final question is not `Can this fit on two pages?` It is `Can a recruiter see, in concrete evidence and a credible career timeline, why Anton has already done enough of this job to be credible?`
