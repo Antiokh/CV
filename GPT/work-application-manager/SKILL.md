@@ -52,6 +52,16 @@ Artifact roles:
 
 Keep the CV Markdown and DOCX synchronized. Prefer updating existing files over creating duplicates. Verify every file that is claimed to exist through Drive readback.
 
+### Drive sharing rule
+
+Every file created or materially updated under `WorkApplications` and intended to be referenced from the tracker or shared externally must be readable by anyone who has its link, without sign-in or an explicit per-user grant.
+
+- After every upload or material update, set the file permission to `reader` for `anyone with the link`.
+- This applies to `Position.md`, CV Markdown, DOCX, cover-letter TXT, and any other externally referenced application artifact. It does not require making folders searchable or discoverable.
+- Verify the resulting permission through Drive metadata/readback before storing or presenting the URL as a shareable link.
+- A Drive URL is not considered externally shareable merely because the authenticated account can open it.
+- If the available Drive integration cannot create or verify `anyone with the link` read access, record this as a workflow blocker and do not claim that the link is publicly readable. Do not silently substitute company-domain sharing or a user-specific permission.
+
 ## Tracker storage and compact layout
 
 Use the live visible `Jobs` headers A:V in this order:
@@ -160,12 +170,12 @@ Fix defects, rerender, and inspect again. Never claim visual QA passed when rend
 ## Tracker lifecycle
 
 - Before CV creation: `Stage = Reviewed`.
-- After all required application-pack files are uploaded and verified: write the DOCX URL to `CV`, the TXT URL to `Cover`, and set `Stage = CV ready` if no submission was reported.
+- After all required application-pack files are uploaded, publicly shareable by link, and verified: write the DOCX URL to `CV`, the TXT URL to `Cover`, and set `Stage = CV ready` if no submission was reported.
 - CV creation or upload is not proof of application.
 - Set `Stage = Applied` only from the user's report or an explicit company/ATS receipt confirming that this application was submitted. Fill `Date applied` only when the actual submission date is directly evidenced.
 - Continue updating the same row through recruiter screen, interview, technical interview, final, offer, rejection, withdrawal, ghosting, or closure.
 
-Never invent fit, dates, stage, `Salary expectation`, contacts, submission, or file existence. Populate `Estimated salary range` only as a sourced market estimate. Do not call a complete application pack complete until DOCX visual QA, all four Drive upload/readbacks, and tracker readback succeed.
+Never invent fit, dates, stage, `Salary expectation`, contacts, submission, or file existence. Populate `Estimated salary range` only as a sourced market estimate. Do not call a complete application pack complete until DOCX visual QA, all required Drive upload/readbacks, public-link permission verification, and tracker readback succeed.
 
 ## Gmail status evidence
 
