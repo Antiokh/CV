@@ -20,6 +20,12 @@ Workflow for adding new cases: [agent_project_intake_guide.md](./agent_project_i
 - [RSLive - Serbia Relocation Encyclopedia](./rslive/README.md) - evidence-oriented knowledge system with separated content/runtime architecture, editorial governance, semantic indexing, and automated publishing.
 - [humanizer_russian - Russian Editorial Engine](./humanizer_russian/README.md) - source-aware editorial system with deterministic linting, normalized knowledge libraries, provenance, conflict handling, CI integration, and explicit validation boundaries.
 
+### Public Engineering Projects
+
+- [Supabase Project Starter](./supabase_project_starter/README.md) - agent-ready Supabase engineering baseline with deployment-aware operating rules, source-of-truth boundaries, shared Edge Function helpers, SQL patterns, and reusable project infrastructure.
+- [WeWeb Component Starter](./ww_component_starter/README.md) - Vue/WeWeb custom-component engineering kit with platform API guidance, editor/runtime contracts, advanced component patterns, and agent-oriented development documentation.
+- [tgs.py](./tgs.py/README.md) - Telegram operations toolkit that grew from a CLI utility into a modular product with exports, automation scaffolding, licensing, packaging, and an early desktop GUI.
+
 ### Ready
 
 - [Andronyevskaya ERP](./andronyevskaya_erp/README.md)
@@ -40,7 +46,6 @@ Workflow for adding new cases: [agent_project_intake_guide.md](./agent_project_i
 - [RuskaJela](./ruskajela/README.md)
 - [Sefcast](./sefcast/README.md)
 - [Serbia Networking App](./serbia_networking_app/README.md)
-- [tgs.py](./tgs.py/README.md)
 - [Vencer Autismo](./vencer_autismo/README.md)
 - [Space AI Demo](./space_ai_demo/README.md)
 
