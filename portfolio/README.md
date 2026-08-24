@@ -15,6 +15,11 @@ Workflow for adding new cases: [agent_project_intake_guide.md](./agent_project_i
 
 ## Project Listing
 
+### Focus Pet Projects
+
+- [RSLive - Serbia Relocation Encyclopedia](./rslive/README.md) - evidence-oriented knowledge system with separated content/runtime architecture, editorial governance, semantic indexing, and automated publishing.
+- [humanizer_russian - Russian Editorial Engine](./humanizer_russian/README.md) - source-aware editorial system with deterministic linting, normalized knowledge libraries, provenance, conflict handling, CI integration, and explicit validation boundaries.
+
 ### Ready
 
 - [Andronyevskaya ERP](./andronyevskaya_erp/README.md)
