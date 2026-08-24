@@ -38,6 +38,11 @@ If you want the short version, start with:
 - [Portfolio Index](./portfolio/README.md)
 - [Detailed Experience](./details/anton_nazarov_experience_full.md)
 
+## Focus Pet Projects
+
+- **[RSLive - Serbia Relocation Encyclopedia](./portfolio/rslive/README.md)** - a public evidence-oriented knowledge system with a separate content source of truth, Astro/Starlight runtime, semantic indexing, editorial governance, and automated publishing. [Live](https://rslive.ru/) · [Source](https://github.com/Antiokh/rslive_content)
+- **[humanizer_russian - Russian Editorial Engine](./portfolio/humanizer_russian/README.md)** - a source-aware editorial system that separates linguistic norm from editorial preference and combines deterministic linting, provenance, conflict handling, CI integration, and controlled model-evaluation infrastructure. [Source](https://github.com/Antiokh/humanizer_russian)
+
 If you want the deeper positioning and market fit, see:
 - [Role Market Fit Matrix](./data/role_market_fit.md)
 - [Career Strategy](./data/career_strategy.md)
