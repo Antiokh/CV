@@ -11,6 +11,18 @@ Do not hardcode the job-board or employer lists in this repository. The canonica
 
 Because these inventories are maintained live in the Sheet, newly added rows become part of the next search automatically without a repository change.
 
+## Tracker partition architecture
+
+The live tracker uses partitioned canonical storage.
+
+- `Jobs` is a **read-only aggregate view** that VSTACKs canonical vacancy rows from `Queue`, `Active`, `Low fit`, and `Closed`. It is useful for unified reads and deduplication, but it must never receive direct vacancy-cell writes; a write inside its array spill range can break the aggregate with `#REF!`.
+- Canonical rows live in the partition tabs and remain identified by immutable `Row ID`.
+- New discovery vacancies start in `Queue` with `To review`, `Reviewed`, or `CV ready` as appropriate.
+- Lifecycle routing: `Queue` = `To review`, `Reviewed`, `CV ready`; `Active` = `Referral`, `Applied`, `Recruiter screen`, `Interview`, `Technical interview`, `Final`, `Offer`; `Low fit` = `Not a fit`; `Closed` = `Rejected`, `Withdrawn`, `Ghosted`, `Closed`.
+- Reads/deduplication may use `Jobs`, but every mutation must re-resolve the Row ID in the owning partition and write there.
+- A status-changing workflow that crosses a partition boundary must move the complete canonical row safely/atomically rather than editing the `Jobs` aggregate.
+- This partition rule supersedes older tracker instructions that described `Jobs` as the writable canonical table or `Queue` / `Active` / `Low fit` as read-only formula views.
+
 ## Search-source priority
 
 Discovery is not an equal-depth sweep. Spend search effort in this order unless an explicit user request names a narrower source:
@@ -47,12 +59,12 @@ When a source page presents contradictory hiring-state signals, treat the explic
 
 ## Pre-existing Stage immutability during discovery
 
-A vacancy-discovery run may add new positions, but it must never change `Stage` for a `Jobs` row that existed before the run started.
+A vacancy-discovery run may add new positions, but it must never change `Stage` for a row that existed before the run started.
 
-At the start of every discovery run that may write to `Jobs`:
+At the start of every discovery run that may write to the tracker:
 
-1. read the current populated `Jobs` rows and snapshot each existing immutable `Row ID` together with its current `Stage`;
-2. treat every snapshotted Row ID as pre-existing for the entire run, even if the row later moves because of concurrent inserts;
+1. read the current populated rows through the aggregate `Jobs` view and snapshot each existing immutable `Row ID` together with its current `Stage`;
+2. treat every snapshotted Row ID as pre-existing for the entire run, even if the row later moves between canonical partitions;
 3. if a discovered vacancy deduplicates to a pre-existing Row ID, preserve that row's `Stage` exactly and do not write `Date applied` or any other discovery-side field whose event automation could change `Stage`;
 4. only rows inserted during the current discovery run may receive an initial `Stage` or discovery-driven transition to `CV ready`;
 5. automatic CV generation, orphan-pack repair, completion reconciliation, enrichment, or material re-analysis during discovery must not override this rule for a pre-existing row;
@@ -63,15 +75,15 @@ If a pre-existing row appears stale, incomplete, or inconsistent, report it sepa
 ## Discovery sequence
 
 1. Read hidden `Agent Instructions` when the run will write to the tracker.
-2. Snapshot pre-existing `Jobs` Row IDs and Stages as required by the immutability rule above.
+2. Snapshot pre-existing Row IDs and Stages through the aggregate `Jobs` view as required by the immutability rule above.
 3. Read `Job Sources` and `RU-root Companies` fresh from `WorkInterviews` before searching.
 4. Check Y Combinator / Work at a Startup / YC Jobs first for relevant Serbia/Europe/worldwide-eligible roles.
 5. Scan `RU-root Companies` rows with blank `Blocker` early, using their listed `Careers URL`; prefer the official/current careers page over a generic homepage or LinkedIn fallback.
 6. Search the remaining relevant `Job Sources` URLs for Anton's target roles and allowed geography/work model. Treat the Sheet as the coverage checklist; do not rely only on LinkedIn, search-engine results, or recommendation feeds.
 7. For each candidate vacancy, verify current application availability before treating it as active. Apply the vacancy availability evidence precedence rule above; terminal `closed` / `no longer accepting` evidence disqualifies the vacancy even when promotional activity badges suggest otherwise.
-8. For each candidate vacancy that passes basic fit/geography/availability screening, deduplicate against canonical `Jobs` by Vacancy URL and normalized Company + Position. If genuinely new, immediately run the mandatory `LinkedIn Connections` referral-candidate lookup before substantial downstream processing.
+8. For each candidate vacancy that passes basic fit/geography/availability screening, deduplicate against aggregate `Jobs` by Vacancy URL and normalized Company + Position. If genuinely new, immediately run the mandatory `LinkedIn Connections` referral-candidate lookup before substantial downstream processing.
 9. Rank comparable opportunities using both fit and practical access: preserve `Fit %` as the role-fit score, while using credible first-degree network paths as a tie-breaker / action-priority boost.
-10. Apply the normal vacancy workflow subject to the pre-existing Stage immutability rule. Process every genuinely new high-fit vacancy transactionally before moving to the next new high-fit vacancy; do not batch-ingest a set of `Reviewed` rows first and defer CV generation until the end.
+10. Apply the normal vacancy workflow subject to pre-existing Stage immutability and partitioned storage. Insert genuinely new discovery rows into `Queue`; process every new high-fit vacancy transactionally before moving to the next new high-fit vacancy.
 11. Record material broken/stale source URLs when encountered so the inventories can be repaired rather than repeatedly retried.
 12. Run the mandatory completion reconciliation below before reporting the discovery run as complete.
 
@@ -93,7 +105,7 @@ After a newly inserted vacancy crosses the gate, do not proceed to the next new 
 - the verified DOCX URL is stored in `CV`;
 - the verified TXT URL is stored in `Cover`;
 - `Vacancy file` contains the verified `Position.md` URL;
-- `Stage = CV ready`, unless direct evidence already supports a later stage such as `Applied` or interview stages.
+- canonical row remains in `Queue` with `Stage = CV ready`, unless direct evidence already supports a later stage and a separate lifecycle workflow moves it to the appropriate partition.
 
 A newly inserted plain `Reviewed` row with `Fit % > 60%` and an empty `CV` is not a successful completion state.
 
@@ -101,7 +113,7 @@ A newly inserted plain `Reviewed` row with `Fit % > 60%` and an empty `CV` is no
 
 If a required application-pack step cannot be completed because of an actual tool, integration, source, rendering, or data blocker:
 
-- keep `Stage = Reviewed` unless a later stage is already evidenced;
+- keep the new canonical row in `Queue` with `Stage = Reviewed` unless a later stage is directly evidenced;
 - preserve every artifact that was successfully created and verified;
 - write a concise `CV BLOCKED: <specific cause>` marker in `Notes`;
 - set `Next action` to the exact recovery action, for example `Retry DOCX generation/render and finish application pack`;
@@ -122,11 +134,11 @@ High-fit pack completion takes precedence over finding more high-fit rows.
 
 ## Mandatory completion reconciliation
 
-Before returning the final discovery result, re-read every `Jobs` row created during this run by immutable Row ID and verify its final state. Also verify that every pre-existing row touched or re-read during the run still has the same `Stage` captured in the run-start snapshot.
+Before returning the final discovery result, re-read every row created during this run by immutable Row ID from its owning canonical partition and verify its final state. Also verify through aggregate `Jobs` that every pre-existing row touched or re-read during the run still has the same `Stage` captured in the run-start snapshot.
 
 For each newly inserted row with displayed `Fit % > 60%`, confirm exactly one of the following:
 
-1. application pack complete: verified `Vacancy file`, `CV`, and `Cover` links are present and Stage is `CV ready` or a later evidenced stage; or
+1. application pack complete: verified `Vacancy file`, `CV`, and `Cover` links are present and Stage is `CV ready` in `Queue`, or a later evidenced lifecycle state in the correct canonical partition; or
 2. explicit blocked state: `Notes` contains `CV BLOCKED:` with a specific cause and `Next action` contains the concrete recovery action; or
 3. explicit user decline: the user's decision not to generate a CV is recorded concisely in `Notes`.
 
@@ -141,11 +153,11 @@ When the same run encounters an existing backlog row with `Fit % > 60%`, `Stage 
 `RU-root Companies!Blocker` is a company-level stop signal for discovery/outreach.
 
 - A non-empty `Blocker` means: skip the company's careers scan, do not recommend applying, and do not initiate referral/recruiter outreach unless Anton explicitly overrides the blocker.
-- A confirmed `Rejected` stage in `Jobs` for a company present in `RU-root Companies` creates a default 90-calendar-day company cooldown from the rejection/last-contact date. Store a concise blocker such as `Rejected YYYY-MM-DD — cooldown until YYYY-MM-DD — <position>`.
+- A confirmed `Rejected` stage in the canonical tracker for a company present in `RU-root Companies` creates a default 90-calendar-day company cooldown from the rejection/last-contact date. Store a concise blocker such as `Rejected YYYY-MM-DD — cooldown until YYYY-MM-DD — <position>`.
 - If several confirmed rejections exist, use the latest one and extend the cooldown from that date.
 - An explicit user instruction not to pursue a company may create an indefinite blocker; state the reason/date instead of inventing an expiry.
 - Do not create a blocker from silence, a generic talent-pool message, an application receipt, or an ambiguous status.
-- When the cooldown has expired, verify the latest `Jobs` evidence before clearing the blocker. Clear/override immediately if Anton explicitly instructs it.
-- When a new confirmed rejection is recorded in `Jobs`, update the matching `RU-root Companies` blocker in the same workflow when that company is present in the corporate inventory.
+- When the cooldown has expired, verify the latest tracker evidence before clearing the blocker. Clear/override immediately if Anton explicitly instructs it.
+- When a new confirmed rejection is recorded, update the matching `RU-root Companies` blocker in the same workflow when that company is present in the corporate inventory.
 
 The blocker is company-level by design: its purpose is to avoid wasting effort by immediately knocking on another door at an employer that has just rejected Anton.
