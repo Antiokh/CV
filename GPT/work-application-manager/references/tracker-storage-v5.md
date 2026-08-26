@@ -11,9 +11,11 @@ Each vacancy record physically exists in exactly one canonical tab:
 | Canonical tab | Persistent Stage values | Agent vacancy-row writes |
 |---|---|---|
 | `Queue` | `To review`, `Reviewed`, `CV ready` | **Yes** |
-| `Active` | `Referral`, `Applied`, `Recruiter screen`, `Interview`, `Technical interview`, `Final`, `Offer` | **No** |
+| `Active` | `Referral`, `Applied`, `Recruiter screen`, `Assessment`, `Interview`, `Technical interview`, `Final`, `Offer` | **No** |
 | `Low fit` | `Not a fit` | **No** |
 | `Closed` | `Rejected`, `Withdrawn`, `Ghosted`, `Closed` | **No** |
+
+`Assessment` covers employer-requested test assignments, take-home tasks, online assessments and comparable evaluated exercises. It remains an `Active` lifecycle stage until the employer explicitly advances or closes the process.
 
 `Jobs` is a read-only aggregate over the four physical stores and is the preferred combined read/search surface.
 
@@ -185,6 +187,7 @@ Routing:
 
 - Queue -> `Apply` / `Applied`: normalize to Applied, set Date applied if blank, move to Active.
 - Queue -> `Referral`: move to Active without fabricating Date applied.
+- Queue / Active -> `Assessment`: keep or move the record in Active as the employer-evaluated test/task stage.
 - Queue -> `Not a fit`: move to Low fit.
 - Queue -> `Closed`, `Rejected`, `Withdrawn`, `Ghosted`: move to Closed.
 - Active -> `Rejected`, `Withdrawn`, `Ghosted`, `Closed`: move to Closed.
