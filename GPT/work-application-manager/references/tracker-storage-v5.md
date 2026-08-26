@@ -73,9 +73,15 @@ Do not write a durable out-of-Queue Stage through the API as a substitute for th
 
 ## Human/UI routing
 
-The bound Apps Script source is:
+The tracker logic source is:
 
 `GPT/work-application-manager/scripts/workinterviews-partitioned-tracker.gs`
+
+The bound spreadsheet also uses the simple edit entrypoint:
+
+`GPT/work-application-manager/scripts/workinterviews-simple-onedit.gs`
+
+The simple `onEdit(e)` delegates direct human spreadsheet edits to `trackerOnEdit(e)`. A separate installable `trackerOnEdit` trigger is not required and should not coexist with the simple entrypoint, because one edit could otherwise be processed twice.
 
 The human-facing Stage dropdown includes `Apply` as an action. `Apply` is normalized to durable `Applied` by the script.
 
@@ -89,10 +95,12 @@ The human-facing Stage dropdown includes `Apply` as an action. `Apply` is normal
 
 The script copies the complete canonical A:W record and AF helper, preserves the Row ID, verifies the destination, then removes the old source row. X:AE presentation helpers are partition-local and are not carried between tabs.
 
-## Queue presentation helpers
+## Queue presentation helpers and visual signals
 
 - X: `Referral candidates` — presentation-only names from the private LinkedIn Connections snapshot using the existing conservative exact Company Key match.
 - Y: `Duplicate elsewhere` — hidden exact duplicate guard against Active / Low fit / Closed using Row ID, Vacancy URL, Apply URL, and Company + Position. Rows flagged `DUPLICATE` are highlighted.
+- Company (A) uses dark-green font when the same company has at least one record in Active or Closed with a nonblank `Date applied`; this means there is confirmed prior application history with that company.
+- Position (B) uses bright-red bold font when the same exact Company + Position pair exists in Active, Low fit, or Closed.
 - W remains the hidden immutable Row ID.
 - Z:AE remain reserved.
 
@@ -105,12 +113,12 @@ The script copies the complete canonical A:W record and AF helper, preserves the
 - Read Jobs for combined reporting, deduplication, status/history snapshots, and Row ID discovery.
 - Resolve writable vacancy mutations back to Queue; if the Row ID is not in Queue, v5 blocks the agent mutation.
 
-`Jobs Yesterday` remains a safety snapshot/reporting artifact, not a canonical write target.
+`Jobs Yesterday` was retired and removed on 2026-08-26. Do not recreate it. Recovery/audit should use the physical canonical partitions, immutable Row IDs, Activity Log, aggregate Jobs view, and the retained full pre-migration backup.
 
-## Apps Script installation requirement
+## Apps Script trigger mode
 
-GitHub contains the canonical source, but UI movement becomes active only after that source is present in the spreadsheet's bound Apps Script project and its installable edit trigger is enabled.
+Direct human edits are handled by the spreadsheet-bound simple `onEdit(e)` entrypoint from `workinterviews-simple-onedit.gs`, which calls `trackerOnEdit(e)` in the main tracker script.
 
-Run `installPartitionedTrackerAutomation()` once in the bound WorkInterviews Apps Script project and authorize it. The function installs only the `trackerOnEdit` trigger and refreshes Stage dropdown validation.
+Do not create a separate installable `trackerOnEdit` on-edit trigger while the simple entrypoint is present.
 
-Sheets API / connector writes do not fire this trigger. That is why the v5 Queue-only agent boundary is mandatory rather than relying on `onEdit` as an enforcement layer.
+Sheets API / connector writes do not fire the UI routing trigger. That is why the v5 Queue-only agent boundary is mandatory rather than relying on `onEdit` as an enforcement layer.
