@@ -217,7 +217,7 @@ Sep 2008 - Sep 2009
 
 Bachelor in Management, Small Business Management specialization, National Institute of Business, Moscow, 2019  
 Professional retraining: Manager in Information Technologies, Humanities Institute, Moscow, 2019  
-Accounting and Finance background, College of Commerce and Banking No. 6, Moscow, 2006-2008
+Accounting and Finance background, College of Commerce and Banking No. 6, Moscow, 2008
 
 ## Professional Development
 
