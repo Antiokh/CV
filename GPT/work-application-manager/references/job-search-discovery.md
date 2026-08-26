@@ -35,6 +35,16 @@ Warm access is a first-class search signal. For every genuinely new vacancy that
 
 The purpose is to maximize interview probability, not just vacancy count. A slightly less attractive but still high-fit role with a credible warm introduction may deserve action before an equally high-fit cold application.
 
+## Vacancy availability evidence precedence
+
+When a source page presents contradictory hiring-state signals, treat the explicit terminal application state as authoritative over promotional or recruiter-activity metadata.
+
+- `No longer accepting applications`, `Applications closed`, `This job is no longer available`, a disabled/removed apply action, or an ATS response that no longer accepts submissions means the vacancy is **closed for new applications**, even if the same page also shows `Actively reviewing applicants`, `Promoted by hirer`, applicant counts, recruiter activity, or similar badges.
+- Promotional/recruiter badges describe hiring or review activity and may lag behind the actual application intake state. They must never override an explicit closed/not-accepting state.
+- When LinkedIn or another board shows both `Actively reviewing applicants` and `No longer accepting applications`, classify the vacancy as **not open** and do not ingest it as a new active opportunity.
+- Prefer the most direct submission-state evidence: the live ATS/apply endpoint or explicit application-state message beats listing metadata; explicit terminal state beats non-terminal activity badges.
+- If a pre-existing tracked vacancy is found closed during a discovery run, obey pre-existing Stage immutability: do not change its Stage inside discovery. Report the stale/closed evidence separately if useful. A separate status-changing workflow may set `Stage = Closed` when supported by direct evidence or explicit user instruction.
+
 ## Pre-existing Stage immutability during discovery
 
 A vacancy-discovery run may add new positions, but it must never change `Stage` for a `Jobs` row that existed before the run started.
@@ -46,7 +56,7 @@ At the start of every discovery run that may write to `Jobs`:
 3. if a discovered vacancy deduplicates to a pre-existing Row ID, preserve that row's `Stage` exactly and do not write `Date applied` or any other discovery-side field whose event automation could change `Stage`;
 4. only rows inserted during the current discovery run may receive an initial `Stage` or discovery-driven transition to `CV ready`;
 5. automatic CV generation, orphan-pack repair, completion reconciliation, enrichment, or material re-analysis during discovery must not override this rule for a pre-existing row;
-6. a pre-existing row may change `Stage` only in a separate status-changing workflow backed by explicit user instruction or direct hiring-process evidence, such as an ATS receipt, recruiter/interview message, rejection, offer, withdrawal, or other lifecycle event.
+6. a pre-existing row may change `Stage` only in a separate status-changing workflow backed by explicit user instruction or direct hiring-process evidence, such as an ATS receipt, recruiter/interview message, rejection, offer, withdrawal, ghosting, closure, or other lifecycle event.
 
 If a pre-existing row appears stale, incomplete, or inconsistent, report it separately without changing its `Stage` during the discovery/addition task.
 
@@ -58,11 +68,12 @@ If a pre-existing row appears stale, incomplete, or inconsistent, report it sepa
 4. Check Y Combinator / Work at a Startup / YC Jobs first for relevant Serbia/Europe/worldwide-eligible roles.
 5. Scan `RU-root Companies` rows with blank `Blocker` early, using their listed `Careers URL`; prefer the official/current careers page over a generic homepage or LinkedIn fallback.
 6. Search the remaining relevant `Job Sources` URLs for Anton's target roles and allowed geography/work model. Treat the Sheet as the coverage checklist; do not rely only on LinkedIn, search-engine results, or recommendation feeds.
-7. For each candidate vacancy that passes basic fit/geography screening, deduplicate against canonical `Jobs` by Vacancy URL and normalized Company + Position. If genuinely new, immediately run the mandatory `LinkedIn Connections` referral-candidate lookup before substantial downstream processing.
-8. Rank comparable opportunities using both fit and practical access: preserve `Fit %` as the role-fit score, while using credible first-degree network paths as a tie-breaker / action-priority boost.
-9. Apply the normal vacancy workflow subject to the pre-existing Stage immutability rule. Process every genuinely new high-fit vacancy transactionally before moving to the next new high-fit vacancy; do not batch-ingest a set of `Reviewed` rows first and defer CV generation until the end.
-10. Record material broken/stale source URLs when encountered so the inventories can be repaired rather than repeatedly retried.
-11. Run the mandatory completion reconciliation below before reporting the discovery run as complete.
+7. For each candidate vacancy, verify current application availability before treating it as active. Apply the vacancy availability evidence precedence rule above; terminal `closed` / `no longer accepting` evidence disqualifies the vacancy even when promotional activity badges suggest otherwise.
+8. For each candidate vacancy that passes basic fit/geography/availability screening, deduplicate against canonical `Jobs` by Vacancy URL and normalized Company + Position. If genuinely new, immediately run the mandatory `LinkedIn Connections` referral-candidate lookup before substantial downstream processing.
+9. Rank comparable opportunities using both fit and practical access: preserve `Fit %` as the role-fit score, while using credible first-degree network paths as a tie-breaker / action-priority boost.
+10. Apply the normal vacancy workflow subject to the pre-existing Stage immutability rule. Process every genuinely new high-fit vacancy transactionally before moving to the next new high-fit vacancy; do not batch-ingest a set of `Reviewed` rows first and defer CV generation until the end.
+11. Record material broken/stale source URLs when encountered so the inventories can be repaired rather than repeatedly retried.
+12. Run the mandatory completion reconciliation below before reporting the discovery run as complete.
 
 ## High-fit transactional CV invariant
 
