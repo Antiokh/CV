@@ -1,142 +1,137 @@
 # Vacancy discovery workflow
 
-This reference is mandatory for CV-mode vacancy discovery, scheduled job scans, and any request to find new employment opportunities for Anton.
+Use this reference for CV-mode vacancy discovery, scheduled job scans and requests to find new employment opportunities.
 
-## Live source inventories
+This file does not redefine tracker storage. Load `tracker-storage-v5.md` first; it is authoritative for writable tabs, Stage writes, Salary Data and Queue integrity.
 
-Do not hardcode job boards or employer lists. Before every broad discovery run, read the current Google Sheet `WorkInterviews` (`1k-Zbz7LMZJJcWfMp41yC-7mUaL_UI9__Bwy1SpPLbao`):
+## Live inventories
 
-- `Job Sources` — live coverage checklist for boards, aggregators, ATS directories, Serbia/CEE/Europe/remote sources, Telegram channels, and other vacancy sources.
-- `RU-root Companies` — live employer inventory. Skip rows with a non-empty `Blocker` unless Anton explicitly overrides it.
+Before every broad discovery run read current WorkInterviews:
 
-New rows in these inventories automatically become part of the next search.
+- `Job Sources` — live search coverage and priorities;
+- `RU-root Companies` — employer inventory and Blocker state.
 
-## Tracker read/write boundary
+Skip a company with a non-empty Blocker unless Anton explicitly overrides it.
 
-This is a hard invariant for ChatGPT/agent operations.
+## Hard tracker boundary
 
-- `Jobs` is the preferred **read-only aggregate** for unified vacancy reads, deduplication, Row ID lookup, Stage snapshots, and history/status verification.
-- Agents may write vacancy-row data **only to `Queue`**.
-- `Active`, `Low fit`, and `Closed` are read-only to agents. They may be consulted when useful, but agents must never insert, update, clear, delete, or move vacancy rows there.
-- Never write into `Jobs`; it is an aggregate VSTACK view and writes inside its spill range can break it with `#REF!`.
-- Do not perform owning-partition routing and do not emulate cross-tab moves.
-- For any agent-side mutation of a tracked vacancy, resolve the immutable `Row ID` in `Queue` and write only there. If the requested change cannot be represented safely under Queue-only writes, report the constraint instead of writing another tracker tab.
-- This rule supersedes all older instructions that allowed writes to `Jobs`, `Active`, `Low fit`, or `Closed`.
+During discovery:
 
-## Search-source priority
+- read/deduplicate through aggregate `Jobs`;
+- write genuinely new vacancy rows only to Queue;
+- agent Stage writes are limited to `To review`, `Reviewed`, `CV ready`;
+- never write to Jobs / Active / Low fit / Closed;
+- never emulate cross-tab lifecycle routing;
+- preserve pre-existing vacancy Stage and Date applied throughout the discovery run;
+- if a pre-existing Row ID resolves outside Queue, it is read/history only for discovery.
 
-Spend discovery effort in this order unless the user names a narrower source:
+## Search priority
 
-1. **Y Combinator / Work at a Startup / YC Jobs**.
-2. **`RU-root Companies` with blank `Blocker`**, using current official Careers URLs.
-3. **High-priority `Job Sources`** according to their live notes/relevance.
-4. Secondary/low-relevance sources when needed for coverage gaps.
+Unless Anton requests a narrower source:
 
-Source priority changes search order, not `Fit %`. Do not inflate fit because a company is YC-backed, Russian-rooted, prestigious, familiar, or network-accessible.
+1. Y Combinator / Work at a Startup / YC Jobs;
+2. RU-root Companies with blank Blocker using current official careers pages;
+3. high-priority Job Sources;
+4. secondary sources for coverage gaps.
 
-## Network-first opportunity ranking
+Source priority affects search effort, not Fit %.
 
-For every genuinely new vacancy that passes basic role-fit and geographic-eligibility screening, deduplicate first, then perform the `LinkedIn Connections` lookup before substantial salary/application-pack work.
+## New-vacancy sequence
 
-- Search exact normalized `Company Key`, then only evidence-backed aliases.
-- Prefer recruiter/TA, likely hiring manager/function leader, then role-relevant employee.
-- Warm access affects practical priority, never `Fit %`.
-- A connection is only a referral candidate. Do not populate `Referral` or change `Stage` unless outreach/introduction is actually evidenced.
+For each candidate opportunity:
 
-## Vacancy availability evidence precedence
+1. verify it is still accepting applications;
+2. verify Serbia/Europe/EMEA/Worldwide eligibility as applicable;
+3. deduplicate against Jobs by Row ID when known, Vacancy URL and normalized Company + Position; Apply URL is supporting evidence;
+4. for a genuinely new candidate, perform the LinkedIn Connections lookup before expensive pack work;
+5. capture substantive vacancy text and source/application metadata;
+6. create Position.md and verify it;
+7. assign evidence-based Fit %;
+8. research salary and normalize it through the current structured Salary Data contract;
+9. create the Queue row with immutable Row ID through the atomic creation protocol from `tracker-storage-v5.md`;
+10. complete the application-pack gate when fit >60%;
+11. read back Queue Z and required Salary Data fields before reporting the vacancy processed.
 
-Explicit terminal application state wins over promotional/recruiter activity metadata.
+## Salary is mandatory before Reviewed / CV ready
 
-- `No longer accepting applications`, `Applications closed`, `This job is no longer available`, disabled/removed Apply, or an ATS that no longer accepts submissions means **closed for new applications**.
-- This remains true even when the same page says `Actively reviewing applicants`, `Promoted by hirer`, shows applicant counts, or other activity badges.
-- Prefer the live ATS/apply endpoint or explicit submission-state message over listing metadata.
-- Therefore `Actively reviewing applicants` + `No longer accepting applications` => **not open; do not ingest as a new opportunity**.
-- If such evidence is found for a pre-existing vacancy during discovery, preserve its snapshotted Stage and report the stale/closed evidence; discovery itself must not change that pre-existing Stage.
+Current live salary rules apply to discovery regardless of fit:
 
-## Pre-existing Stage immutability during discovery
+- `To review` may temporarily have incomplete salary research while work is in progress.
+- Do not leave a vacancy as `Reviewed` or `CV ready` unless its matching Salary Data row has `Normalization status = OK`.
+- Employer silence on compensation is not a waiver; produce a defensible market estimate using the current source order and evidence threshold.
+- If a defensible two-sided range / currency / NET-GROSS basis / static FX cannot be established, keep the vacancy `To review`, record the exact blocker and do not claim review completion.
+- Never write a literal estimate to vacancy F or AF; both are computed from Salary Data.
 
-Before the first tracker write in a discovery run:
+## Network-first ranking
 
-1. read populated vacancies through aggregate `Jobs` and snapshot every existing immutable `Row ID` + `Stage`;
-2. treat every snapshotted Row ID as pre-existing for the entire run;
-3. if a candidate deduplicates to a pre-existing Row ID, do not change its Stage, Date applied, or other discovery-side lifecycle state;
-4. do not use discovery for material re-analysis, orphan-pack repair, or automatic Stage promotion of pre-existing rows;
-5. a pre-existing row may change Stage only in a separate status-changing workflow backed by explicit user instruction or direct hiring-lifecycle evidence.
+For every genuinely new vacancy that passes basic fit/geography screening, check the private LinkedIn Connections snapshot after dedup and before substantial salary/application-pack work.
 
-## Discovery sequence
+Use exact normalized Company Key first, then evidence-backed aliases only. Suggest at most three useful contacts: recruiter/TA, likely functional leader/hiring manager, relevant employee.
 
-1. Load current runtime, router, `work-application-manager/SKILL.md`, this reference, and hidden `Agent Instructions`.
-2. Snapshot pre-existing Row IDs + Stages from aggregate `Jobs`.
-3. Read `Job Sources` and `RU-root Companies` fresh.
-4. Search YC first, then unblocked RU-root employers, then high-priority sources, then secondary sources.
-5. Verify each vacancy is still accepting applications and separately verify Serbia/Europe/EMEA/Worldwide eligibility.
-6. Deduplicate against aggregate `Jobs` by Vacancy URL and normalized Company + Position.
-7. For genuinely new candidates, run mandatory LinkedIn referral lookup.
-8. Rank by practical attractiveness using fit, geographic certainty, salary/level, and warm-network path.
-9. For each genuinely new vacancy, execute salary research, source capture, Position.md, evidence-backed tracker fields, UUID Row ID, and concurrency-safe write **to Queue only**.
-10. Apply the transactional high-fit gate before ingesting the next new high-fit vacancy.
-11. Record material broken/stale source URLs when encountered.
-12. Run completion reconciliation before reporting.
+Networking may affect practical priority but never Fit %. A connection is not a referral until outreach/introduction is actually confirmed.
 
-## High-fit transactional CV invariant
+## Vacancy availability precedence
 
-For a new vacancy created in the current run with displayed `Fit % > 60%`, geographic eligibility not disproved, and no explicit user decline, complete or explicitly block the application pack before ingesting the next new high-fit vacancy.
+Explicit terminal application-state evidence wins over promotional badges.
 
-### Successful pack state
+Examples of terminal evidence: no longer accepting applications, applications closed, vacancy unavailable, disabled/removed Apply, ATS refusing submission.
 
-The new `Queue` row must have:
+`Actively reviewing applicants` does not make a closed vacancy open.
 
-- verified `Position.md`;
+For a pre-existing tracker record discovered to be closed, preserve its run-start Stage and report the evidence; discovery does not perform lifecycle mutation.
+
+## Pre-existing Stage immutability
+
+Before the first Queue write:
+
+1. snapshot every pre-existing Row ID + Stage from Jobs;
+2. treat those Row IDs as immutable lifecycle state for the discovery run;
+3. do not change their Stage / Date applied / protected history;
+4. do not use discovery to repair orphaned packs or advance/reject old applications;
+5. report material inconsistencies instead.
+
+## High-fit transactional gate
+
+For each **new** vacancy inserted in the current run with displayed Fit >60%, geographic eligibility not disproved and no explicit user decline, finish or explicitly block the pack before ingesting the next new high-fit vacancy.
+
+Successful Queue state requires:
+
+- verified Position.md;
 - tailored CV Markdown;
 - final DOCX after mandatory render/visual QA;
 - humanized cover TXT;
-- readback of all four canonical Drive artifacts;
-- verified public `anyone with the link` reader access where required by current tracker rules;
-- verified `Vacancy file`, `CV`, and `Cover` links;
-- `Stage = CV ready` in `Queue` unless explicit evidence supports a different value that is safe to represent in Queue.
+- required Drive readbacks and shareability checks;
+- verified Vacancy file / CV / Cover links;
+- Salary Data J = `OK`;
+- Queue Z = `OK`;
+- Stage exactly `CV ready`.
 
-A plain `Reviewed` row with `Fit % > 60%` and empty `CV` is not a successful completion state.
+A later evidenced lifecycle event does **not** authorize an agent to write `Applied`/Assessment/Interview/etc. into Queue. Log/report the event and leave human/UI routing to the bound script.
 
-### Explicit blocked state
+## Blocked state
 
-If a required step is genuinely unavailable:
+When a required step genuinely cannot be completed:
 
-- keep the new row in `Queue`, normally `Stage = Reviewed`;
+- keep the vacancy in the safest truthful Queue state, normally `To review` while salary is unresolved or `Reviewed` only if all Reviewed gates are satisfied;
 - preserve verified artifacts already created;
-- put `CV BLOCKED: <specific cause>` in `Notes`;
-- put the concrete recovery action in `Next action`;
-- never invent file URLs or claim the pack is complete.
+- put a specific blocker in Notes (`CV BLOCKED: ...` when the application pack itself is blocked);
+- put the concrete recovery action in Next action;
+- never invent a file URL, salary value or Stage.
 
-If another supported generation/render path is available in the same run, try it before accepting the blocker.
+If a supported alternate generation/render path exists in the same run, try it before accepting a blocker.
 
-## Backpressure
+## Completion reconciliation
 
-- Finish or explicitly block one new high-fit vacancy before ingesting the next.
-- Do not trade application-pack completeness for discovery volume.
-- If DOCX/render/Drive or another mandatory gate fails, record the blocker and stop creating further incomplete high-fit tracker rows.
-- Existing vacancies remain read/dedup/history records during discovery; do not repair them in this workflow.
+Before reporting discovery complete:
 
-## Mandatory completion reconciliation
+1. re-read every Row ID created in this run from Queue;
+2. verify salary status and Queue Z;
+3. for every new Fit >60% row, verify complete pack / explicit blocker / explicit Anton decline;
+4. re-read Jobs and confirm every pre-existing Row ID touched by the run still has the run-start Stage;
+5. if a pre-existing Stage changed unexpectedly, stop further writes and report the conflict.
 
-Before final output:
+## Company cooldown
 
-1. Re-read every row created in this run by immutable Row ID from `Queue`.
-2. For every new `Fit % > 60%` row, confirm exactly one terminal state:
-   - complete pack with verified links and `Stage = CV ready`, or
-   - explicit `CV BLOCKED:` + concrete recovery action, or
-   - explicit user decline recorded in Notes.
-3. Re-read aggregate `Jobs` and verify that every pre-existing row touched/read during the run still has the same Stage as the run-start snapshot.
-4. If a pre-existing Stage changed unexpectedly, stop further writes and report the conflict. Do not silently overwrite concurrent/user changes.
+A non-empty `RU-root Companies!Blocker` is a stop signal for discovery and outreach unless Anton overrides it.
 
-When a pre-existing high-fit row is missing a pack, it may be reported as an orphaned state, but repair requires a separate explicit workflow.
-
-## Company blocker / rejection cooldown
-
-`RU-root Companies!Blocker` is a company-level stop signal.
-
-- Non-empty Blocker => skip company careers scan, recommendation, and referral/recruiter outreach unless Anton overrides.
-- Confirmed rejection creates a default 90-calendar-day company cooldown from the rejection/last-contact date when applicable.
-- Do not create blockers from silence, generic talent-pool mail, application receipts, or ambiguous statuses.
-- Clear/override only from current evidence or Anton's explicit instruction.
-
-The purpose is to avoid repeatedly spending effort on employers that are temporarily or explicitly blocked.
+A confirmed rejection normally creates a 90-calendar-day company cooldown from rejection/last-contact date when applicable. Do not create blockers from silence, talent-pool mail, generic receipts or ambiguous status.
