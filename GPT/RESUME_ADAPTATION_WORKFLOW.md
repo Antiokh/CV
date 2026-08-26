@@ -1,189 +1,167 @@
 # Resume Adaptation Workflow
 
-Use this workflow for master resumes, tailored resumes, HH/Greenhouse/ATS profiles, cover letters, and recruiter-facing summaries.
+Use this file for **resume writing, ATS alignment, human voice and document QA**. It is not an application-tracker specification.
 
-The goal is not to hide that AI helped with drafting. The goal is to preserve Anton's real voice, factual density, and uneven lived-in specificity while still matching ATS/recruiter language.
+All WorkInterviews storage, Stage, salary, Activity Log, Gmail-status and concurrency mechanics belong exclusively to `work-application-manager/SKILL.md`, `work-application-manager/references/tracker-storage-v5.md`, `work-application-manager/references/activity-log.md`, and live Agent Instructions.
 
-## Core Rule
+## Core rule
 
-Maximize fit signal without lying, flattening the story, or making the text sound like a polished generic AI resume.
+Maximize truthful fit signal without flattening Anton's actual career story or turning the resume into generic corporate AI prose.
 
-Every adapted resume must keep three things in balance:
+Balance:
 
-- factual truth from the profile and source files;
-- ATS/recruiter keywords from the vacancy or platform;
-- human texture: specific situations, imperfect but real phrasing, varied rhythm, and first-hand context.
+- factual truth from canonical profile/experience/project evidence;
+- ATS/recruiter language from the target vacancy;
+- human texture: concrete situations, constraints, outcomes and varied rhythm.
 
-## Standard Workflow
+For tailored CVs also load `CV_EVIDENCE_FIRST_RULES.md` when available.
 
-1. Identify the target
-- platform: HH, Greenhouse, LinkedIn, direct recruiter, email, PDF;
-- language: Russian, English, or Serbian;
-- role mode: managerial/executive, technical delivery, or hybrid employment;
-- hard constraints: length, one-profile limitation, required sections, keyword needs.
+## Workflow
 
-2. Extract role and ATS signal
-- title, seniority, responsibilities, repeated words;
-- required technologies, management practices, industries, delivery expectations;
-- hidden hiring logic: rescue, implementation, ownership, team leadership, architecture, hands-on delivery, stakeholder work.
+1. Identify target role, seniority, language, platform and hard constraints.
+2. Extract role signal: responsibilities, requirements, repeated vocabulary, leadership/hands-on balance, stakeholder intensity and domain context.
+3. Identify the hiring problem behind the vacancy: rescue, implementation, architecture, ownership, adoption, delivery, team leadership, product direction, etc.
+4. Compare with verified experience; separate strongest direct proof, transferable proof and real gaps.
+5. Assign Fit % through the employment workflow. If fit is strictly above 60%, follow `work-application-manager/SKILL.md` for the automatic tailored-CV/application-pack behavior.
+6. Select evidence by relevance, not biography completeness, while preserving chronology.
+7. Draft in vacancy language and reuse employer vocabulary only where truthful.
+8. Humanize before detector checks.
+9. Run detector checks only when actually available and useful; preserve raw results and rate-limit failures.
+10. Render/inspect final DOCX and fix visible layout defects before calling it final.
 
-3. Score fit and apply the automatic-CV gate
-- assign an explicit fit score from 0% to 100%;
-- if fit is strictly above 60%, immediately generate a tailored CV for the position, even when the initial request was only to analyze the vacancy;
-- do not wait for a separate request or confirmation unless essential personal data is missing;
-- if fit is 60% or below, provide the analysis and risks without automatically generating a CV unless the user asks for one.
+## Evidence hierarchy
 
-4. Select evidence, not biography
-- choose the strongest 3-7 proof points;
-- move relevant roles and bullets up in emphasis;
-- keep true but distracting material lower or shorter;
-- do not invent metrics, team size, authority, industries, or titles.
-- when the vacancy does not explicitly request project work or clearly describe project-delivery responsibilities, do not make projects the main proof category and do not add a dedicated `Selected Projects` / `AI Projects` section;
-- in that case, lead with relevant employment experience, responsibilities, and outcomes; use project facts only as concise supporting evidence inside the appropriate experience entry;
-- emphasize a project section only when the vacancy itself makes project work materially relevant.
+Lead with directly relevant supported experience. Reinforce with analogous experience only after direct proof is visible.
 
-5. Draft in the target language
-- mirror vacancy vocabulary where truthful;
-- keep stack keywords visible for ATS;
-- use direct wording and practical proof;
-- avoid corporate filler, motivational fluff, and perfect symmetrical lists.
+Use supported metrics, scale and before/after outcomes aggressively when they exist. Never invent metrics, team size, authority, title, industry exposure or ownership.
 
-6. Humanize before detector checks
-- rewrite summary as a lived career trajectory, not a balanced executive paragraph;
-- make competency sections sound like "what I actually take on";
-- tie technology stacks to project situations rather than pure taxonomies;
-- vary bullet length and sentence shape;
-- include concrete friction: old systems, Excel/email/chat workarounds, broken access rules, migration pain, adoption issues, debugging loops;
-- keep one or two slightly plain, workmanlike sentences if they are true.
+Relevance changes:
 
-7. Run detector checks when available
-- split the resume by sections;
-- record detector, URL, date, block name, score, label, and rate-limit failures;
-- treat scores as screening signals only, not truth;
-- preserve old versions and raw detector results.
+- bullet selection;
+- depth of each role;
+- summary/Role Fit wording;
+- which technologies are surfaced.
 
-8. Tune high-risk blocks without losing facts
-- if Summary/Profile scores high, add first-person context, career sequence, and real project conditions;
-- if Core Skills/Competencies score high, replace abstract list items with "what I usually do" phrasing;
-- if Technical Stack scores high, keep ATS keywords but embed them in project-context paragraphs;
-- if Languages or Education score high on a short list, treat it as likely detector artifact and optionally rewrite as one natural sentence;
-- do not remove important ATS keywords only to satisfy a detector.
+Relevance does **not** reorder career chronology.
 
-9. Preserve versions
-- never delete the previous version;
-- create dated versions for major rewrites;
-- keep raw detector JSON and a readable report;
-- note which scores are confirmed and which were blocked by 403/429/rate limits.
+## Chronology
 
-## Job Application Tracking
+Employment experience is a timeline, not a relevance ranking.
 
-For every vacancy, CV, cover letter, or hiring-stage task, use Google Sheet `WorkInterviews` (`1k-Zbz7LMZJJcWfMp41yC-7mUaL_UI9__Bwy1SpPLbao`), tab `Jobs`, as the lifecycle/index source of truth. The full vacancy body is canonical in Drive `Position.md`, not in the Sheet.
+Preserve the canonical relative order of major roles from current evidence. The only known overlap exception is ZIL versus Directorate of Cultural Centers of Moscow; they may swap according to role emphasis because the periods overlap.
 
-- Before the first tracker or Drive write, read the hidden tab `Agent Instructions`; when a newer explicit user instruction changes the workflow, update that tab as well.
-- Upsert one row per vacancy by `Vacancy URL` and normalized `Company + Position`; after creation use immutable UUID v4 in hidden `W: Row ID` as the durable identity, never the row number.
-- Use the live visible A:V schema: `Company`, `Position`, `Fit %`, `Stage`, `Salary expectation`, `Estimated salary range`, `Referral`, `Recruiter`, `Apply URL`, `CV`, `Cover`, `Vacancy file`, `Archetype`, `Location`, `Vacancy URL`, `Posted date`, `Date found`, `Date applied`, `Last contact`, `Next action`, `Vacancy snapshot`, `Notes`; hidden W is `Row ID`.
-- Immediately before every write, repeat the lookup and read current `A:W`. Create a new row only through one batch that inserts the row, copies safe structure, and writes all initial values plus UUID. Update existing rows only after re-resolving the UUID and only in intended cells. Read back and search again after writing; never overwrite or auto-merge a detected conflict.
-- On initial analysis, inspect every visible `A:V` field and extract every evidence-backed applicable value before discarding job-board UI. Before completion, audit `A:V` again; leave a value blank only when genuinely unknown or inapplicable and record material research blockers in `Notes`. Keep Vacancy URL as the source page and Apply URL as the actual submission destination.
-- Decode the `url` parameter of LinkedIn `safety/go` links and store the validated direct HTTP(S) destination with its own query parameters. Do not store the wrapper, infer an ATS, or invent a careers URL. For LinkedIn Easy Apply / auto-apply without a distinct destination, set `Apply URL = Vacancy URL`.
-- Keep Posted date and Date found independent. Convert precise relative publication labels only with a known reference date; leave coarse values blank and preserve useful original wording in Notes.
-- For old-chat migration, prefer original pasted evidence and the historical chat date. Do not browse the current vacancy to reconstruct historical Apply URL or Posted date unless explicitly requested.
-- If no CV exists yet, use `Stage = Reviewed`.
-- Find or create `WorkApplications/<Company>/<PositionTitle>/` and save/update `Position.md` with the source metadata and full substantive vacancy text. Verify it through Drive readback and write its Drive URL to `Vacancy file`.
-- Keep `Vacancy snapshot` to a concise one-paragraph identifying summary and `Notes` to concise fit/gap/process context. Never duplicate the full vacancy body in the Sheet.
-- Store `Fit %` as one native numeric whole percentage from `0%` through `100%`; API writes use a fraction such as `0.68` for displayed `68%`. Never store a range, approximation, percent text, label, or prose. Normalize historical numeric ranges to the rounded midpoint while retaining the original wording in `Notes`; keep word-only assessments out of `Fit %` unless numeric evidence exists. Evaluate the automatic-CV gate as displayed `>60%` / numeric `>0.60`.
-- Populate `Salary expectation` only from Anton's explicit confirmed expectation. For every new vacancy and material re-analysis, always research `Estimated salary range`: Infostud first for Serbia and Glassdoor first for all other locations, then current job disclosures and reputable internet sources. Match geography, seniority, work model, and contract type; include currency, gross/net, and period. Put source URL(s), research date, and material caveats concisely in `Notes`. If evidence remains insufficient, leave the range blank but record the sources checked and insufficiency reason.
-- Populate `Recruiter` with verified hiring contacts. Use a people chip only for a uniquely verified email; otherwise use the exact name linked to a verified LinkedIn profile, or plain text when no verified contact destination exists. Preserve `Referral` separately and never invent contact data.
-- For every new vacancy and before recommending application, search the hidden `LinkedIn Connections` snapshot by exact normalized `Company Key` in bounded column H and read A:J only for matched rows. Test only evidence-backed aliases and reject loose substring matches. Proactively return at most three candidates: Recruiting/HR, a relevant hiring manager/function leader, and a relevant employee. Include exact export-listed name/company/title/URL, Connected On, snapshot date, and a short reason. Treat each as a possibly stale candidate, not a confirmed current employee or referral; do not write `Referral`, alter stage, claim outreach, or expose email without Anton's confirmation or explicit need.
-- Preserve `CLIP` wrapping for `Vacancy snapshot`, `Notes`, and `Vacancy file`; keep data rows compact and do not let these fields determine row height.
-- Use `YYYY-MM-DD` in `Europe/Belgrade`. Preserve populated cells and leave unknown values blank.
-- A reviewed vacancy may have only `Position.md`. When the automatic-CV gate applies, complete the same folder with `Anton_Nazarov<PositionTitle>.md` for the CV source, `Anton_Nazarov_<PositionTitle>.docx` for the final Word CV, and `Anton_Nazarov<PositionTitle>.txt` for the plain-text cover letter.
-- Before saving TXT, apply `WorkApplications/_skills/humanizer-ru/SKILL.md` for Russian or `WorkApplications/_skills/humanizer-en/SKILL.md` for English in embedded/file mode; store only final humanized text.
-- Prefer updating existing artifacts for revisions, verify claimed artifacts by Drive readback, write the DOCX URL to `CV`, write the TXT URL to `Cover`, set `Stage = CV ready` if not submitted, and set the concrete `Next action`.
-- Creating or uploading a CV does not mean the application was submitted.
-- Set `Stage = Applied` only from the user's report or an explicit company/ATS receipt confirming this application was submitted. Fill `Date applied` only when the actual submission date is directly evidenced.
-- Continue updating the same row through recruiter screen, interview, technical interview, final, offer, rejection, withdrawal, ghosting, or closure.
-- Never invent application date, fit, stage, `Salary expectation`, contact, submission, or CV-file existence. Treat `Estimated salary range` as a sourced estimate and never copy candidate expectations into it.
-- Do not call a complete application pack complete until DOCX visual QA, all four Drive uploads/readbacks, and the Sheet readback succeed. If an integration is unavailable, report the blocker.
-- The user authorizes read-only Gmail checks for company, recruiter, and ATS messages tied to an existing vacancy. Search narrowly, inspect the matched message/thread, and update the same Sheet row only from explicit evidence. An acknowledgement may confirm `Applied`, but generic review language is not recruiter movement. Never infer a later stage from alerts, marketing, reminders, talent-pool mail, or silence. Update `Last contact`, `Next action`, and a concise sender/subject/date provenance note; do not copy unnecessary sensitive content. Do not send, draft, label, archive, delete, or otherwise modify mail unless separately requested.
-- Do not use Notion unless the user explicitly re-enables it later.
+Do not omit an intermediate role when that would create a misleading multi-year gap; keep at least a compact employer/title/dates entry.
 
-## Patterns That Worked
+## Managerial / executive resumes
 
-For Russian HH master resume, these changes reduced `aitextdetector.ai` scores:
+Do not frame Anton primarily as a developer with some management experience.
 
-- `Профессиональный профиль`: 75% Likely AI -> 25% Human Written
-- `Ключевые компетенции`: 75% Likely AI -> 25% Human Written
-- `Технический стек`: 85% AI Generated -> 25% Human Written
-- `Языки`: 95% AI Generated -> 10% Human Written
+Lead with:
 
-The effective pattern was not "make it casual". It was:
+- technology/transformation ownership;
+- implementation responsibility;
+- architecture/system decisions;
+- stakeholder and adoption work;
+- process/governance improvement;
+- team/vendor coordination;
+- measurable outcomes.
 
-- more specific career sequence;
-- less symmetrical taxonomy;
-- more first-hand project context;
-- technology keywords tied to actual use;
-- short factual blocks rewritten as practical sentences.
+Hard skills and stack are supporting evidence.
 
-Example direction:
+Avoid making no-code/freelance identity the headline unless directly relevant to the target role.
 
-Bad / detector-risky:
+## Technical / specialist resumes
 
-- "Backend and data: PostgreSQL, Supabase, SQL, RLS, Edge Functions..."
+Expose shipped systems, architecture, integrations, stack, debugging, data/access rules, delivery constraints and technical ownership. Management should differentiate the candidate rather than hide the technical proof.
 
-Better:
+## Project emphasis
 
-- "In recent projects I usually worked with Supabase, PostgreSQL, SQL, RLS, Edge Functions and WeWeb as one chain: data model, roles, interface, webhook, document or notification, then support and fixes after real users touched it."
+Do not automatically add a `Selected Projects` or `AI Projects` section.
 
-Bad / detector-risky:
+If the vacancy does not explicitly ask for project work or materially describe project-delivery responsibilities, lead with employment experience and integrate project facts into the relevant role where possible.
 
-- "Technical leadership, systems architecture, delivery ownership."
+Use a dedicated project section when the vacancy makes project execution itself a hiring signal.
 
-Better:
+## Human voice
 
-- "I usually take responsibility for turning a messy process into a working system: roles, statuses, routes, data, access rules, rollout, and the first uncomfortable weeks of user adoption."
+Prefer lived, specific language over symmetrical competency taxonomies.
 
-## Detector Interpretation Rules
+Useful patterns:
 
-Do not panic over individual scores.
+- describe the actual friction: legacy systems, manual Excel/email/chat processes, broken access rules, migration problems, adoption failures, debugging loops;
+- tie tools to the problem they solved rather than listing categories;
+- vary bullet and sentence length;
+- keep some plain workmanlike wording when it is true;
+- avoid repeating the same claim in Profile, Role Fit, Experience and Technical Scope.
 
-Common false-positive cases:
+Avoid:
 
-- very short factual lists, especially languages;
-- dense technology sections;
-- education and course lists;
-- headings and contact blocks.
+- polished abstract noun chains (`delivery / governance / transformation / architecture`) without proof;
+- identical bullet rhythm;
+- generic verbs without situation/outcome;
+- long technology catalogues detached from work;
+- deleting useful ATS terms only to improve an AI-detector score.
 
-Higher risk usually comes from:
+## Detector checks
 
-- polished executive summary style;
-- abstract nouns such as delivery, governance, transformation, implementation, architecture;
-- repeated bullet rhythm;
-- symmetrical skill taxonomies;
-- generic verbs: designed, built, managed, integrated, led, improved.
+Detector scores are weak screening signals, not truth.
 
-When tuning, fix the text quality first. Detector score is secondary.
+When detectors are run, record detector, URL, date, block, score/label and any 403/429/rate-limit failure. Never claim a detector ran when it did not.
 
-## Output Requirements
+Common false positives include short factual language lists, education, contact blocks and dense technology sections.
 
-For each serious resume adaptation, produce or update:
+Tune high-risk blocks by adding real career sequence, concrete situations and varied structure while preserving facts and ATS keywords.
 
-- final resume file;
-- preserved dated version;
-- detector raw results if checks were run;
-- short detector report with scores by block;
-- notes about rate limits or unavailable services;
-- source/profile updates if new factual details appeared.
+## Scanability / information architecture
 
-For every generated or materially revised Word CV, the `.docx` is not final until it passes this visual QA gate:
+Preferred compact header order:
 
-1. render the DOCX to page images, directly or through PDF;
+1. Name
+2. target role / clear positioning
+3. location + phone + email + LinkedIn
+4. languages on the next compact line
+
+Telegram is secondary and is removed before phone/email/LinkedIn when space is tight.
+
+Role Fit is a recruiter scan layer, normally about 5–6 distinct points, not a duplicate mini-CV.
+
+Experience blocks may be unequal: highly relevant roles can carry substantially more proof than secondary timeline roles.
+
+When shortening, preserve in order:
+
+1. direct requirement evidence;
+2. measurable result;
+3. scale/scope;
+4. transferable proof;
+5. implementation detail.
+
+## Word layout benchmark
+
+Readability outranks an arbitrary page target.
+
+Use the current user-edited Word CV references and live Agent Instructions for exact benchmark details when available. General target:
+
+- restrained ATS-friendly layout;
+- readable body around 10 pt, employer/role/date line around 11 pt, section headings around 12 pt, name around 17–18 pt;
+- compact but not cramped spacing;
+- no duplicated Languages block;
+- no repeated technology catalogue after every employer.
+
+Two pages are preferred when evidence remains complete; a third page is acceptable for senior/executive/architect roles when it carries relevant proof. Do not shrink readable text merely to force a page count.
+
+## Mandatory DOCX visual QA
+
+For every generated or materially revised DOCX:
+
+1. render it to page images directly or through PDF;
 2. inspect every page at 100% zoom;
-3. check every manual page break, section break, and page transition for unintended blank pages or excessive empty space immediately after a break;
-4. check line spacing and paragraph spacing across body text, headings, dates, and bullets for consistent rendering, with no accidental double spacing, stretched lines, cramped blocks, clipping, or irregular gaps;
-5. check clean bullet wrapping, headings kept with following content, balanced page endings, and a restrained, strict, professional appearance;
-6. fix any defect, re-render, and inspect all pages again;
-7. deliver and call the DOCX final only after the latest render passes. If rendering is unavailable, state the blocker and do not claim visual QA passed.
+3. inspect page/section breaks and transitions for blank pages or excessive empty areas;
+4. verify consistent line and paragraph spacing in body, headings, dates and bullets;
+5. verify clean wrapping, no clipping/overlap, headings kept with following content and deliberate page endings;
+6. fix defects, rerender and inspect every page again;
+7. call the DOCX final only after the latest render passes;
+8. if rendering is unavailable, state the blocker and do not claim visual QA passed.
 
-Do not claim a detector was run if it was not.
-Do not claim a block is safe if the endpoint returned 403/429.
-Do not remove facts from the source profile to make a detector happy.
+## Operational boundary
+
+This workflow deliberately contains no writable-tab list, no column-level salary storage contract, no cross-tab routing procedure and no Gmail status mutation rules. Those change independently and must be loaded fresh from the employment workflow's canonical operational references.
