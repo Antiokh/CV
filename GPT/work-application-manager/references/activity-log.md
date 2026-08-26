@@ -1,31 +1,29 @@
-# WorkInterviews activity log
+# WorkInterviews Activity Log
 
-This reference defines the append-only event history for the candidate-side employment tracker.
+This reference defines the canonical append-only event history for candidate-side employment workflows.
 
 Spreadsheet: `WorkInterviews` (`1k-Zbz7LMZJJcWfMp41yC-7mUaL_UI9__Bwy1SpPLbao`).
-Activity tab: `Activity Log`.
+Tab: `Activity Log`.
 
-The tracker Stage is only the current coarse lifecycle state. `Activity Log` records the detailed timeline between Stage changes: application emails, inbound replies, recruiter messages, case studies, interviews, follow-ups, status changes, user decisions, and integrity/recovery events.
+Tracker Stage is the current coarse lifecycle state. Activity Log records the detailed timeline: application emails, inbound replies, recruiter messages, assessments/case studies, interviews, follow-ups, user decisions, Stage transitions, conflicts and recovery events.
 
 ## Foreign key
 
-Every event tied to a vacancy MUST use the vacancy's immutable `Row ID` from column W as its foreign key. Company/Position are denormalized display fields only and must not be used as durable identity.
+Every vacancy-linked event uses the vacancy's immutable `Row ID` as the foreign key. Company and Position are denormalized display copies only.
 
-A row move between Queue / Active / Low fit / Closed never changes Row ID, therefore historical events remain attached to the vacancy after partition routing.
+Row moves between Queue / Active / Low fit / Closed never change Row ID, so the timeline remains attached to the same vacancy throughout the lifecycle.
 
-## Append-only rule
+## Append-only contract
 
-`Activity Log` is append-only.
-
-- Never edit or delete an existing event merely because a later interpretation changes.
-- Corrections are new events with a new Event ID and a summary that identifies what is being corrected.
-- Every Event ID is UUID v4.
+- Never edit/delete an existing event merely because interpretation changes later.
+- Corrections are new events with a new Event ID and an explicit correction summary.
+- Event ID is UUID v4.
 - Preserve event time separately from log insertion time.
-- Do not rewrite the log during vacancy discovery or reconciliation.
+- Do not rewrite/reorder the log during discovery or reconciliation.
 
-## Columns
+Activity Log writes are allowed for Row IDs owned by Active / Low fit / Closed because event logging is not a vacancy-row mutation.
 
-A:Y:
+## Columns A:Y
 
 1. Event ID
 2. Event time
@@ -53,66 +51,82 @@ A:Y:
 24. Raw payload
 25. Created by
 
-Unknown fields remain blank. Do not invent recipient headers, mailbox aliases, thread IDs, dates, or message content.
+Unknown evidence remains blank. Never invent mailbox headers, identifiers, timestamps or content.
 
 ## Idempotency
 
-For external events, `Source key` prevents duplicate logging.
+For external events use a stable Source key:
 
-- Gmail message: `gmail:<message-id>`.
-- Other provider events should use a stable provider-specific key when available.
-- Before appending, search Activity Log for the exact Source key. If it already exists, do not append a second copy.
-- Thread ID is context, not an idempotency key: multiple relevant messages in one thread are separate events.
+- Gmail: `gmail:<message-id>`.
+- Other providers: stable provider-specific identifier when available.
+
+Immediately before append, search for exact Source key. If it already exists, do not append again. Thread ID is context, not idempotency: multiple messages in one thread are distinct events.
+
+Read-before-append is not a database uniqueness constraint, so concurrent writers can theoretically race. `auditPartitionedTracker()` checks duplicate Activity Log Source keys; treat any duplicate Source key as an integrity error and reconcile by appending a correction rather than deleting history blindly.
 
 ## Gmail matching
 
-Do not require an inbound email to share the same sender, recipient, subject, or Gmail thread as the outbound application.
+Do not require an inbound message to share the same sender, recipient, subject or Gmail thread as the outbound application.
 
-Use multiple signals and record the match rationale in `Match basis`:
+Use combined evidence and record it in `Match basis`:
 
-1. exact Gmail Message/Thread evidence when available;
-2. immutable vacancy Row ID already associated with a known message/contact;
-3. known recruiter/contact email addresses from prior Activity Log events;
-4. company name and evidence-backed company/domain aliases;
-5. position/title tokens in subject or body;
-6. explicit application/CV language such as confirmation that the CV/application was received;
-7. application identifier, ATS link, requisition ID, or recruiter name;
-8. temporal proximity to an outbound application or prior hiring event.
+1. exact Message/Thread evidence when available;
+2. Row ID already linked to known correspondence;
+3. known recruiter/contact addresses from prior Activity Log events;
+4. company name and evidence-backed domain/brand aliases;
+5. role/title tokens in subject/body;
+6. explicit CV/application language;
+7. ATS/requisition/application IDs, recruiter name or application URL;
+8. temporal proximity to outbound application/prior hiring events.
 
-A different mailbox or a new Gmail thread is not negative evidence by itself. Example: an application sent to `natalija.kokeric@zepter.com` may legitimately continue from `karijera@zepter.rs` in a new thread when the message explicitly names Zepter, CTO/CTTO, and confirms receipt of the CV.
+A new mailbox or new Gmail thread is not negative evidence by itself.
 
-If the evidence strongly identifies the vacancy, append the email event even when it does not justify a Stage change. If the match is genuinely ambiguous between multiple vacancies, do not guess; leave it unlinked and report the ambiguity.
+Example: an application to `natalija.kokeric@zepter.com` can legitimately continue from `karijera@zepter.rs` in a new thread when Zepter + CTO/CTTO + explicit CV-receipt language strongly identify the same process.
+
+If multiple vacancies remain genuinely plausible, do not guess. Leave the message unlinked and report the ambiguity.
 
 ## Mailbox/contact history
 
-For every linked email event, preserve the actual evidence-backed From / To / Cc addresses. This creates a per-vacancy contact history automatically through Row ID filtering.
+Preserve evidence-backed From / To / Cc addresses for each linked email. Filtering Activity Log by Row ID is the authoritative per-position mailbox/contact history.
 
-Do not collapse different employer/recruiter mailboxes into one synthetic address. A company may use personal recruiter mailboxes, ATS senders, HR aliases, career aliases, and different domains during one process.
+Do not collapse recruiter, HR, career, ATS or personal mailboxes into a synthetic single address.
 
 ## Stage versus event semantics
 
-Logging an event does not automatically mean Stage must change.
+Logging an event does not automatically authorize a Stage change.
 
 Examples:
 
-- `Application email sent` is direct evidence of submission, but historical Stage reconstruction still follows the lifecycle rules and explicit evidence.
-- `Case study requested` is a process event even if the coarse Stage remains Recruiter screen/Interview because the Stage vocabulary has no dedicated assessment state.
-- a generic recruiter acknowledgement can be logged without advancing Stage;
-- an explicit interview invitation may support an Interview stage;
-- explicit rejection supports a terminal Stage under the existing lifecycle rules.
+- `Application email sent` can be direct submission evidence.
+- `Case study requested`, take-home assignment or online test normally supports the current `Assessment` stage when the evidence is explicit; the event itself should still be logged even if the protected vacancy row cannot be agent-mutated.
+- a generic recruiter acknowledgement may be logged without advancing Stage;
+- an explicit interview invitation can support `Interview`;
+- explicit rejection can support a terminal Stage.
 
-When a real Stage transition occurs, append a `Stage changed` event with Stage before / Stage after and the evidence or user action that caused it.
+When an actual Stage transition is performed by the human/UI script, append a `Stage changed` event with Stage before/after and the user/evidence cause.
 
-## Gmail status checks
+Under tracker-storage v5, agents classify and log later-stage evidence but do not write protected Active/Low fit/Closed vacancy rows.
 
-A Gmail status workflow should first resolve candidate messages, then link every strongly matched message to Activity Log before deciding whether the canonical vacancy Stage needs a change. This prevents useful correspondence from disappearing merely because it does not fit the Stage enum.
+## Gmail status workflow
 
-The log is not a mailbox archive: save concise summaries and identifying headers, not full sensitive correspondence unless a raw payload is specifically required for recovery/debugging.
+1. Find candidate messages narrowly.
+2. Resolve the vacancy using multi-signal evidence.
+3. Append every strongly matched substantive message to Activity Log **before** deciding Stage implications.
+4. Classify lifecycle evidence only when explicit.
+5. If the vacancy row is protected from agent writes, report the supported transition and leave physical routing to human/UI automation.
 
-## Integrity/recovery events
+The log is not a mailbox archive. Store concise identifying headers + summary + match rationale; avoid full sensitive message bodies unless minimum raw payload is necessary for recovery/debugging.
 
-Tracker repair may append `Recovery snapshot`, `Conflict detected`, or `Correction` events. Raw payload may contain the minimum structured state needed to prevent data loss. This is especially appropriate when a forbidden direct write is found in the Jobs aggregate spill range: preserve the orphan data in the log before clearing the read-only view.
+## Integrity and recovery
 
-## UI / Apps Script logging
+Allowed recovery event types include `Recovery snapshot`, `Conflict detected`, and `Correction`.
 
-Bound Apps Script routing should append an Activity Log event for human Stage/Date-applied actions and row moves. The event must use the same Row ID and describe the source/destination Stage or partition. UI logging must never create a new vacancy Row ID.
+If a forbidden direct write blocks the Jobs aggregate, preserve the minimum displaced state as a Row-ID-linked Recovery snapshot before clearing the obstruction. Never silently discard newer information.
+
+`auditPartitionedTracker()` checks Activity Log Source-key duplicates and orphan Row IDs alongside tracker structural checks.
+
+## UI logging
+
+The single canonical bound script is `scripts/workinterviews-partitioned-tracker.gs`.
+
+Human Stage / Date applied actions and physical moves should append events using the same vacancy Row ID. UI logging never creates a replacement vacancy Row ID.
