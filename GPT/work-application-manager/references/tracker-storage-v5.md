@@ -1,177 +1,224 @@
 # WorkInterviews tracker storage v5
 
-This is the current hard storage/write boundary for candidate-side employment workflows.
-It supersedes `tracker-storage-v4.md` and any older instruction that treats `Jobs` as writable or allows ChatGPT/agents to move vacancy rows between canonical partitions.
+This is the current hard storage/write boundary for candidate-side employment workflows. It supersedes `tracker-storage-v4.md` and older instructions that treat `Jobs` as writable, allow agents to route vacancy rows between lifecycle sheets, or store salary as free text in F / annual EUR in AF.
 
 Spreadsheet: `WorkInterviews` (`1k-Zbz7LMZJJcWfMp41yC-7mUaL_UI9__Bwy1SpPLbao`).
 
-## Physical storage model
+## Physical vacancy storage
 
 Each vacancy record physically exists in exactly one canonical tab:
 
-| Canonical tab | Persistent Stage values | Agent write access |
+| Canonical tab | Persistent Stage values | Agent vacancy-row writes |
 |---|---|---|
 | `Queue` | `To review`, `Reviewed`, `CV ready` | **Yes** |
 | `Active` | `Referral`, `Applied`, `Recruiter screen`, `Interview`, `Technical interview`, `Final`, `Offer` | **No** |
 | `Low fit` | `Not a fit` | **No** |
 | `Closed` | `Rejected`, `Withdrawn`, `Ghosted`, `Closed` | **No** |
 
-`Jobs` is a read-only aggregate formula view over all four physical stores. It is the preferred combined read/search surface, but never a write target.
+`Jobs` is a read-only aggregate over the four physical stores and is the preferred combined read/search surface.
 
-All canonical tabs retain the same A:AF physical schema. A:V are the canonical tracker fields, W is immutable `Row ID`, X:AE are presentation/helper space, and AF is `Salary midpoint EUR/year`. In Queue, R `Date applied` and S `Last contact` are hidden from the UI because they are not normal agent-ingestion fields; they remain physically present so row moves keep one stable schema.
+Canonical tabs retain A:AF. A:V are tracker fields, W is immutable `Row ID`, X:AE are presentation/helper space, and AF is the derived `Salary midpoint EUR/month`. In Queue, R `Date applied` and S `Last contact` are hidden because normal discovery/ingestion must not populate them.
 
 ## Hard agent write boundary
 
 ChatGPT/agent/API vacancy-row mutations are Queue-only.
 
 - Never insert, update, move, clear, sort, or delete vacancy rows in `Active`, `Low fit`, `Closed`, or the `Jobs` spill range.
-- Never emulate the Apps Script partition move through the Sheets API.
-- If a requested mutation belongs to a record already stored outside Queue, preserve that record and report the constraint rather than creating a second Queue copy.
-- If a status change would route a Queue row out of Queue, the agent must not perform the cross-tab move itself. Human UI / bound Apps Script owns that transition.
-- Do not populate Queue `Date applied` or `Last contact` during normal ingestion/analysis. Application evidence is routed by the human/UI lifecycle automation; correspondence/process history belongs in Activity Log.
+- Never emulate Apps Script partition movement through the Sheets API.
+- Resolve identity in aggregate `Jobs`, then resolve the same immutable Row ID in Queue immediately before any permitted vacancy-row write.
+- If a record is owned by another partition, preserve it and report the constraint instead of creating a second Queue copy.
+- Do not populate Queue `Date applied` or `Last contact` during normal discovery/analysis.
 
-This restriction is intentionally stricter than ordinary Row-ID-safe API updates. Its purpose is to prevent discovery/ingestion agents from corrupting already-applied or terminal application history.
+Two auxiliary stores are narrow exceptions because they are not vacancy-row ownership changes:
+
+- `Activity Log` may append immutable Row-ID-linked history events according to its own rules.
+- hidden `Salary Data` may be inserted/updated only for a Row ID whose vacancy is currently owned by Queue, according to the salary rules below.
 
 ## Queue completeness gate
 
-Queue has a hidden Z column named `Queue integrity`. It is the machine-readable completeness contract for agent writes.
+Queue hidden Z is `Queue integrity`, the machine-readable completion contract.
 
-Every new Queue row, and every Queue row an agent claims to have completed, must be freshly read back after writing. `Queue integrity` must equal `OK` before the agent reports successful completion.
+Every new Queue row and every Queue row an agent claims to have completed must be freshly read back. `Queue integrity` must equal exactly `OK` before success is reported.
 
-Core required fields are:
+Core required fields are Company, Position, numeric Fit %, Stage, Vacancy file, Archetype, Location, Vacancy URL, native Date found, Next action, Vacancy snapshot, Notes, and immutable Row ID. Posted date may be blank only when precise evidence is unavailable; when populated it must be a native date.
 
-- Company
-- Position
-- Fit % as a native numeric percentage
-- Stage
-- Vacancy file
-- Archetype
-- Location
-- Vacancy URL
-- Date found as a native Sheet date
-- Next action
-- Vacancy snapshot
-- Notes
-- immutable Row ID
+For displayed Fit strictly above 60%, all of the following are additionally required:
 
-For displayed Fit % strictly above 60%, these are additionally mandatory:
+- matching `Salary Data` row with `Normalization status = OK`;
+- verified CV URL;
+- verified Cover URL.
 
-- Estimated salary range
-- AF `Salary midpoint EUR/year` as a native number
-- verified CV URL
-- verified Cover URL
+`Salary expectation` is deliberately not model-generated. It may contain only Anton's explicit current confirmed expectation.
 
-`Salary expectation` is deliberately **not** a required model-generated field. It may only contain Anton's explicit current confirmed expectation and must never be inferred from vacancy or market data.
+An incomplete high-fit salary/CV/Cover state is a blocker, not permission to invent data. Queue visually highlights missing high-fit data, but Z is the enforcement surface.
 
-A missing/invalid high-fit salary/CV/Cover field is a blocker, not permission to invent data or report the row complete. An explicit Anton decline for one specific vacancy may waive CV/Cover; record the decline in Notes. This current rule supersedes older general preferences to omit per-role CV/cover for YC/profile-based application flows.
+## Structured salary schema — current override
 
-Queue visually highlights missing high-fit Estimated salary range, CV, Cover, or numeric AF midpoint. The visible formatting is a secondary signal; Z is the enforcement/readback surface.
+Salary is no longer stored as free text in canonical F.
 
-## Native date contract
+Hidden `Salary Data` is keyed by immutable Row ID:
 
-Queue `Posted date` and `Date found` must be native Google Sheets dates, not date-looking text.
+| Col | Field | Contract |
+|---|---|---|
+| A | Row ID | exact immutable vacancy Row ID; unique |
+| B | Range min / month | native numeric amount in source currency |
+| C | Range max / month | native numeric amount in source currency |
+| D | Currency | 3-letter ISO code; use `RSD`, not `DIN` |
+| E | Type | exactly `NET` or `GROSS` |
+| F | FX EUR per unit | static numeric EUR per one source-currency unit |
+| G | Range min EUR/month | derived |
+| H | Range max EUR/month | derived |
+| I | Midpoint EUR/month | derived |
+| J | Normalization status | derived integrity status; must be `OK` for a complete high-fit vacancy |
+| K | Legacy estimate text | read-only migration audit |
+| L | Legacy midpoint EUR/year | read-only migration audit |
 
-- Through the Sheets API write the date as a numeric Sheet serial and apply/display the `yyyy-mm-dd` number format.
-- Never write a quoted/escaped string, a leading-apostrophe value, or a `TEXT`/`DATEVALUE` formula merely to make a string look like a date.
-- Immediately read back `effectiveValue`; a populated valid date must be a numeric value (`numberValue`), not `stringValue`.
-- `Date found` is required for every Queue vacancy.
-- `Posted date` may be blank only when precise publication evidence is genuinely unavailable. If populated, it must also be a native date.
+B:F are the canonical salary inputs. G:J are formulas. K:L exist only to preserve/migrate historical salary evidence and must not be used for new records.
 
-Existing Queue date-like text values were normalized to native numeric dates on 2026-08-26.
+### Monthly normalization
 
-## Deduplication before every Queue write
+Every salary estimate must end as a monthly range before it is complete.
+
+- annual -> divide by 12;
+- weekly -> multiply by 52/12;
+- hourly -> multiply by 2080/12;
+- true fixed salary -> min = max;
+- one-sided range -> do not invent the missing bound; find defensible supporting market evidence or leave salary incomplete;
+- do not fold equity into B/C;
+- bonus, OTE, equity and compensation-composition caveats belong in the visible salary note.
+
+### Currency and FX
+
+For a new non-EUR estimate, store one verified point-in-time FX rate in Salary Data F and keep it static. EUR uses `1`.
+
+Never use `GOOGLEFINANCE` or another live FX formula for canonical salary history; historical values must not drift with exchange rates. The salary note must state the rate, rate date, and source.
+
+Historical migration performed on 2026-08-26 used the previously stored EUR annual midpoint as a fixed conversion anchor where available, preserving the prior normalized salary instead of re-pricing old records at a new rate.
+
+### Visible salary and heatmap
+
+Canonical F is `Estimated salary (EUR/month)` and is a formula lookup from Salary Data. Example output:
+
+- `€4.5k–6k gross/mo`
+- `€950–1.2k net/mo`
+
+Never write a literal value into canonical F. Write/update only its native Google Sheets note for provenance.
+
+The note must include research date, salary source URL(s), original source range/currency/period, NET/GROSS basis, normalization method when the source was not monthly, FX source/rate for non-EUR data, geography/proxy caveats, and material compensation caveats.
+
+AF is `Salary midpoint EUR/month`, also formula-derived and read-only. Heatmaps use AF, so all compared values have one currency and one period.
+
+Salary Data remains external when a vacancy moves between Queue / Active / Low fit / Closed. Apps Script only needs to preserve immutable Row ID and canonical formulas; it does not copy or delete the Salary Data record.
+
+## Native field contract
+
+Agent/API writes must use native values, not strings that merely look correct.
+
+- Fit %: native number 0..1; display as whole percent.
+- Posted date / Date found: native Google Sheets dates displayed `yyyy-mm-dd`; never quoted/apostrophe-prefixed strings or TEXT/DATEVALUE wrappers.
+- URL fields: absolute valid HTTP(S) URLs; Apply URL may be `mailto:` only when email is the actual application channel.
+- Salary Data B/C/F: native numbers.
+- Salary Data D: uppercase ISO currency.
+- Salary Data E: NET or GROSS.
+
+After agent writes, read back `effectiveValue` / `effectiveFormat` when type correctness matters. Sheets API writes do not trigger Apps Script normalization.
+
+The spreadsheet-bound simple UI entrypoint is:
+
+`GPT/work-application-manager/scripts/workinterviews-simple-onedit.gs`
+
+It normalizes direct human edits for Fit %, dates, links, and Salary Data inputs before delegating lifecycle edits to `trackerOnEdit(e)`.
+
+## Deduplication before Queue writes
 
 Before inserting or changing a Queue vacancy:
 
-1. Read/search the aggregate `Jobs` view for the vacancy identity and current Row ID/Stage.
-2. Also verify the physical canonical tabs when needed to resolve location or conflicts.
-3. Match immutable Row ID first when known.
-4. Check Vacancy URL and normalized Company + Position; use a verified Apply URL as supporting identity evidence.
-5. If a match exists in `Active`, `Low fit`, or `Closed`, do not recreate it in Queue and do not mutate the owning tab. Report the existing record/location instead.
-6. If a match exists in Queue, freshly re-read that Queue row A:W plus AF and update only intended fields.
+1. Search aggregate Jobs for identity and current Row ID/Stage.
+2. Match immutable Row ID first when known.
+3. Check Vacancy URL and normalized Company + Position; Apply URL is supporting identity evidence.
+4. If a match exists in Active / Low fit / Closed, do not recreate or mutate it.
+5. If the match exists in Queue, freshly re-read that Queue row before writing.
 
-The Queue sheet also contains a formula-driven exact duplicate guard against the three non-Queue partitions. It is a secondary integrity signal, not a substitute for the normalized preflight above.
+Queue Y is a formula-driven exact duplicate guard against non-Queue partitions. It is secondary to the normalized preflight above.
 
 ## New vacancy creation
 
 A genuinely new candidate vacancy is created in Queue only.
 
-After the final cross-partition duplicate check:
-
-1. Generate one UUID v4 Row ID.
-2. Freshly resolve the Queue insertion boundary.
-3. Use one `spreadsheets.batchUpdate` call that structurally inserts/reserves one Queue row and writes the complete initial record including Row ID.
-4. Preserve Queue presentation helpers. X/Y/Z are system-owned helper columns; never replace their formulas/results with hardcoded values. AA:AE stay reserved.
-5. Ensure the inserted row inherits/contains the Queue Z integrity formula. If structural insertion leaves Z blank, copy the adjacent Queue Z formula into that row; never hardcode `OK`.
-6. Read back the new Queue row, native date value types, Row ID, AF, and Z.
-7. Do not report the row complete while Z is anything other than `OK`.
-8. Search aggregate Jobs again. The new Row ID must exist exactly once.
-
-Never create a new vacancy directly in Active, Low fit, Closed, or Jobs from an agent workflow under v5.
+1. Generate one UUID v4 Row ID after cross-partition dedup.
+2. Structurally reserve one Queue row.
+3. Preserve/inherit system formulas: F computed salary, X referral candidates, Y duplicate guard, Z integrity, AF salary midpoint. Never hardcode their results.
+4. Write supported source fields without replacing F/AF with literals.
+5. For salary research, upsert one Salary Data record with the exact same Row ID and B:F structured inputs; no duplicate Salary Data Row IDs.
+6. Put salary provenance in the native note on Queue F, not in its formula value.
+7. Read back Queue values/types, Row ID, F, AF and Z; also read Salary Data J when high-fit.
+8. Do not report completion until Z is `OK`.
+9. Search Jobs again; the vacancy Row ID must exist exactly once.
 
 ## Queue updates
 
 For an existing Queue row:
 
-1. Resolve it by immutable Row ID after aggregate/cross-partition dedup.
-2. Freshly read the current Queue row immediately before writing.
-3. Update only intended cells; never rewrite the complete row just to change one field.
-4. Read back Row ID, every written value, native date types, AF, and Queue integrity Z.
-5. If the workflow claims the vacancy/pack is complete, Z must be `OK`; otherwise continue the required work or report the concrete blocker instead of claiming success.
-6. Re-check Jobs / physical partitions for duplicate identity conflicts.
+1. Resolve by immutable Row ID after aggregate dedup.
+2. Freshly read immediately before writing.
+3. Update only intended source cells; do not rewrite the full row for a small change.
+4. Do not replace formula-derived F/AF.
+5. Salary changes are upserts to the same Row ID in Salary Data B:F plus a provenance-note update on visible F.
+6. Read back written values, native types and Queue Z.
+7. If the workflow claims completion, Z must be `OK`.
 
-Do not write a durable out-of-Queue Stage through the API as a substitute for the UI automation. API writes do not fire Apps Script `onEdit` triggers.
+Do not write a durable out-of-Queue Stage through the API as a substitute for UI routing.
 
-## Human/UI routing
+## Human/UI lifecycle routing
 
-The tracker logic source is:
+Main tracker logic:
 
 `GPT/work-application-manager/scripts/workinterviews-partitioned-tracker.gs`
 
-The bound spreadsheet also uses the simple edit entrypoint:
+Simple edit entrypoint / normalizer:
 
 `GPT/work-application-manager/scripts/workinterviews-simple-onedit.gs`
 
-The simple `onEdit(e)` delegates direct human spreadsheet edits to `trackerOnEdit(e)`. A separate installable `trackerOnEdit` trigger is not required and should not coexist with the simple entrypoint, because one edit could otherwise be processed twice.
+The simple `onEdit(e)` normalizes direct human edits, then delegates to `trackerOnEdit(e)`. A separate installable `trackerOnEdit` trigger must not coexist with it because the same edit could be processed twice.
 
-The human-facing Stage dropdown includes `Apply` as an action. `Apply` is normalized to durable `Applied` by the script.
+Routing:
 
-- Queue -> `Apply` / `Applied`: set Stage `Applied`; fill Date applied when blank; move the complete record with the same Row ID to Active.
+- Queue -> `Apply` / `Applied`: normalize to Applied, set Date applied if blank, move to Active.
 - Queue -> `Referral`: move to Active without fabricating Date applied.
 - Queue -> `Not a fit`: move to Low fit.
-- Queue -> `Closed`, `Rejected`, `Withdrawn`, or `Ghosted`: move to Closed.
-- Active -> `Rejected`, `Withdrawn`, `Ghosted`, or `Closed`: move to Closed.
-- A human-entered nonblank Date applied on a pre-application Queue row normalizes Stage to Applied and moves it to Active.
-- A valid Date applied is a hard floor against automated regression to Queue/Low fit.
+- Queue -> `Closed`, `Rejected`, `Withdrawn`, `Ghosted`: move to Closed.
+- Active -> `Rejected`, `Withdrawn`, `Ghosted`, `Closed`: move to Closed.
+- Human nonblank Date applied on a pre-application Queue row -> normalize to Applied and move to Active.
+- Valid Date applied is a hard floor against regression.
 
-The script copies the complete canonical A:W record and AF helper, preserves the Row ID, verifies the destination, then removes the old source row. X:AE presentation helpers are partition-local and are not carried between tabs.
+The vacancy move preserves the complete canonical A:W record and AF formula/helper and the same immutable Row ID. X:AE presentation helpers are partition-local. Structured salary is not moved because Salary Data is linked externally by Row ID.
 
-## Queue presentation helpers and visual signals
+## Queue presentation signals
 
-- X: `Referral candidates` — presentation-only names from the private LinkedIn Connections snapshot using the existing conservative exact Company Key match.
-- Y: `Duplicate elsewhere` — hidden exact duplicate guard against Active / Low fit / Closed using Row ID, Vacancy URL, Apply URL, and Company + Position. Rows flagged `DUPLICATE` are highlighted.
-- Z: `Queue integrity` — hidden required-field/type gate described above. Agents must read it back after writes and may not hardcode its result.
-- Company (A) uses dark-green font when the same company has at least one record in Active or Closed with a nonblank `Date applied`; this means there is confirmed prior application history with that company.
-- Position (B) uses bright-red bold font when the same exact Company + Position pair exists in Active, Low fit, or Closed.
-- Missing high-fit Estimated salary range / CV / Cover / numeric AF midpoint and invalid Queue dates are highlighted red.
-- W remains the hidden immutable Row ID.
-- AA:AE remain reserved.
+- X `Referral candidates`: presentation-only names from the private LinkedIn Connections snapshot.
+- Y `Duplicate elsewhere`: hidden exact duplicate guard.
+- Z `Queue integrity`: hidden completion/type gate; agents must read it back and may never hardcode `OK`.
+- Company A uses dark-green font when that company has confirmed prior application history in Active/Closed.
+- Position B uses bright-red bold font when exact Company + Position exists in Active / Low fit / Closed.
+- Salary F uses a five-band heatmap driven by homogeneous AF EUR/month values.
+- Queue no longer bolds entire `Reviewed` / `CV ready` rows; those states are already inherent to the Queue workflow.
+- W remains hidden immutable Row ID; AA:AE remain reserved.
 
-## Jobs aggregate view
+## Jobs aggregate
 
 `Jobs` stacks Queue, Active, Low fit, and Closed and filters by nonblank Row ID.
 
-- Treat Jobs row numbers as ephemeral presentation coordinates.
-- Never write Stage, Date applied, recruiter data, artifact links, salary fields, notes, or new vacancy rows to Jobs.
-- Read Jobs for combined reporting, deduplication, status/history snapshots, and Row ID discovery.
-- Resolve writable vacancy mutations back to Queue; if the Row ID is not in Queue, v5 blocks the agent mutation.
+- Row numbers are ephemeral presentation coordinates.
+- Never write vacancy data into Jobs.
+- Read Jobs for combined reporting, deduplication, status/history snapshots and Row ID discovery.
+- Resolve permitted vacancy mutations back to Queue.
 
-`Jobs Yesterday` was retired and removed on 2026-08-26. Do not recreate it. Recovery/audit should use the physical canonical partitions, immutable Row IDs, Activity Log, aggregate Jobs view, and the retained full pre-migration backup.
+`Jobs Yesterday` was retired and removed on 2026-08-26. Do not recreate it. Use physical partitions, immutable Row IDs, Activity Log, aggregate Jobs, and the retained full pre-migration backup for recovery/audit.
 
 ## Apps Script trigger mode
 
-Direct human edits are handled by the spreadsheet-bound simple `onEdit(e)` entrypoint from `workinterviews-simple-onedit.gs`, which calls `trackerOnEdit(e)` in the main tracker script.
+Direct human edits are handled by the spreadsheet-bound simple `onEdit(e)` from `workinterviews-simple-onedit.gs`; it calls `trackerOnEdit(e)` after normalization.
 
 Do not create a separate installable `trackerOnEdit` on-edit trigger while the simple entrypoint is present.
 
-Sheets API / connector writes do not fire the UI routing trigger. That is why the v5 Queue-only agent boundary plus Queue integrity readback are mandatory rather than relying on `onEdit` as an enforcement layer.
+Sheets API / connector writes do not fire UI edit triggers. Hard enforcement for agents therefore remains the Queue-only boundary, structured Salary Data contract, aggregate duplicate preflight, native-value readback, and Queue integrity Z gate.
