@@ -18,7 +18,7 @@ Each vacancy record physically exists in exactly one canonical tab:
 
 `Jobs` is a read-only aggregate formula view over all four physical stores. It is the preferred combined read/search surface, but never a write target.
 
-All canonical tabs retain the same A:AF physical schema. A:V are the visible tracker fields, W is immutable `Row ID`, X:AE are presentation/helper space, and AF is `Salary midpoint EUR/year`.
+All canonical tabs retain the same A:AF physical schema. A:V are the canonical tracker fields, W is immutable `Row ID`, X:AE are presentation/helper space, and AF is `Salary midpoint EUR/year`. In Queue, R `Date applied` and S `Last contact` are hidden from the UI because they are not normal agent-ingestion fields; they remain physically present so row moves keep one stable schema.
 
 ## Hard agent write boundary
 
@@ -28,8 +28,56 @@ ChatGPT/agent/API vacancy-row mutations are Queue-only.
 - Never emulate the Apps Script partition move through the Sheets API.
 - If a requested mutation belongs to a record already stored outside Queue, preserve that record and report the constraint rather than creating a second Queue copy.
 - If a status change would route a Queue row out of Queue, the agent must not perform the cross-tab move itself. Human UI / bound Apps Script owns that transition.
+- Do not populate Queue `Date applied` or `Last contact` during normal ingestion/analysis. Application evidence is routed by the human/UI lifecycle automation; correspondence/process history belongs in Activity Log.
 
 This restriction is intentionally stricter than ordinary Row-ID-safe API updates. Its purpose is to prevent discovery/ingestion agents from corrupting already-applied or terminal application history.
+
+## Queue completeness gate
+
+Queue has a hidden Z column named `Queue integrity`. It is the machine-readable completeness contract for agent writes.
+
+Every new Queue row, and every Queue row an agent claims to have completed, must be freshly read back after writing. `Queue integrity` must equal `OK` before the agent reports successful completion.
+
+Core required fields are:
+
+- Company
+- Position
+- Fit % as a native numeric percentage
+- Stage
+- Vacancy file
+- Archetype
+- Location
+- Vacancy URL
+- Date found as a native Sheet date
+- Next action
+- Vacancy snapshot
+- Notes
+- immutable Row ID
+
+For displayed Fit % strictly above 60%, these are additionally mandatory:
+
+- Estimated salary range
+- AF `Salary midpoint EUR/year` as a native number
+- verified CV URL
+- verified Cover URL
+
+`Salary expectation` is deliberately **not** a required model-generated field. It may only contain Anton's explicit current confirmed expectation and must never be inferred from vacancy or market data.
+
+A missing/invalid high-fit salary/CV/Cover field is a blocker, not permission to invent data or report the row complete. An explicit Anton decline for one specific vacancy may waive CV/Cover; record the decline in Notes. This current rule supersedes older general preferences to omit per-role CV/cover for YC/profile-based application flows.
+
+Queue visually highlights missing high-fit Estimated salary range, CV, Cover, or numeric AF midpoint. The visible formatting is a secondary signal; Z is the enforcement/readback surface.
+
+## Native date contract
+
+Queue `Posted date` and `Date found` must be native Google Sheets dates, not date-looking text.
+
+- Through the Sheets API write the date as a numeric Sheet serial and apply/display the `yyyy-mm-dd` number format.
+- Never write a quoted/escaped string, a leading-apostrophe value, or a `TEXT`/`DATEVALUE` formula merely to make a string look like a date.
+- Immediately read back `effectiveValue`; a populated valid date must be a numeric value (`numberValue`), not `stringValue`.
+- `Date found` is required for every Queue vacancy.
+- `Posted date` may be blank only when precise publication evidence is genuinely unavailable. If populated, it must also be a native date.
+
+Existing Queue date-like text values were normalized to native numeric dates on 2026-08-26.
 
 ## Deduplication before every Queue write
 
@@ -53,9 +101,11 @@ After the final cross-partition duplicate check:
 1. Generate one UUID v4 Row ID.
 2. Freshly resolve the Queue insertion boundary.
 3. Use one `spreadsheets.batchUpdate` call that structurally inserts/reserves one Queue row and writes the complete initial record including Row ID.
-4. Preserve Queue presentation helpers; do not overwrite X:AE.
-5. Read back the new Queue row and verify Row ID plus every written value.
-6. Search aggregate Jobs again. The new Row ID must exist exactly once.
+4. Preserve Queue presentation helpers. X/Y/Z are system-owned helper columns; never replace their formulas/results with hardcoded values. AA:AE stay reserved.
+5. Ensure the inserted row inherits/contains the Queue Z integrity formula. If structural insertion leaves Z blank, copy the adjacent Queue Z formula into that row; never hardcode `OK`.
+6. Read back the new Queue row, native date value types, Row ID, AF, and Z.
+7. Do not report the row complete while Z is anything other than `OK`.
+8. Search aggregate Jobs again. The new Row ID must exist exactly once.
 
 Never create a new vacancy directly in Active, Low fit, Closed, or Jobs from an agent workflow under v5.
 
@@ -66,8 +116,9 @@ For an existing Queue row:
 1. Resolve it by immutable Row ID after aggregate/cross-partition dedup.
 2. Freshly read the current Queue row immediately before writing.
 3. Update only intended cells; never rewrite the complete row just to change one field.
-4. Read back Row ID and every written value.
-5. Re-check Jobs / physical partitions for duplicate identity conflicts.
+4. Read back Row ID, every written value, native date types, AF, and Queue integrity Z.
+5. If the workflow claims the vacancy/pack is complete, Z must be `OK`; otherwise continue the required work or report the concrete blocker instead of claiming success.
+6. Re-check Jobs / physical partitions for duplicate identity conflicts.
 
 Do not write a durable out-of-Queue Stage through the API as a substitute for the UI automation. API writes do not fire Apps Script `onEdit` triggers.
 
@@ -99,10 +150,12 @@ The script copies the complete canonical A:W record and AF helper, preserves the
 
 - X: `Referral candidates` — presentation-only names from the private LinkedIn Connections snapshot using the existing conservative exact Company Key match.
 - Y: `Duplicate elsewhere` — hidden exact duplicate guard against Active / Low fit / Closed using Row ID, Vacancy URL, Apply URL, and Company + Position. Rows flagged `DUPLICATE` are highlighted.
+- Z: `Queue integrity` — hidden required-field/type gate described above. Agents must read it back after writes and may not hardcode its result.
 - Company (A) uses dark-green font when the same company has at least one record in Active or Closed with a nonblank `Date applied`; this means there is confirmed prior application history with that company.
 - Position (B) uses bright-red bold font when the same exact Company + Position pair exists in Active, Low fit, or Closed.
+- Missing high-fit Estimated salary range / CV / Cover / numeric AF midpoint and invalid Queue dates are highlighted red.
 - W remains the hidden immutable Row ID.
-- Z:AE remain reserved.
+- AA:AE remain reserved.
 
 ## Jobs aggregate view
 
@@ -121,4 +174,4 @@ Direct human edits are handled by the spreadsheet-bound simple `onEdit(e)` entry
 
 Do not create a separate installable `trackerOnEdit` on-edit trigger while the simple entrypoint is present.
 
-Sheets API / connector writes do not fire the UI routing trigger. That is why the v5 Queue-only agent boundary is mandatory rather than relying on `onEdit` as an enforcement layer.
+Sheets API / connector writes do not fire the UI routing trigger. That is why the v5 Queue-only agent boundary plus Queue integrity readback are mandatory rather than relying on `onEdit` as an enforcement layer.
