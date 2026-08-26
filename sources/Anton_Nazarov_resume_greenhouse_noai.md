@@ -217,7 +217,6 @@ Sep 2008 - Sep 2009
 
 Bachelor in Management, Small Business Management specialization, National Institute of Business, Moscow, 2019  
 Professional retraining: Manager in Information Technologies, Humanities Institute, Moscow, 2019  
-Applied Informatics in Economics / Applied Economics in Informatics coursework, Humanities Institute, Moscow, 2011-2019; later transferred before graduation  
 Accounting and Finance background, College of Commerce and Banking No. 6, Moscow, 2006-2008
 
 ## Professional Development
