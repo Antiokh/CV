@@ -6,9 +6,9 @@ Classify the request before loading evidence or producing an artifact. Keep the 
 
 Use for employment vacancies, permanent or contract roles where Anton is the candidate, recruiters, hiring processes, tailored resumes, cover letters, interviews, and employer/ATS status updates.
 
-- Use `work-application-manager/SKILL.md`.
+- Use `work-application-manager/SKILL.md`, then load `work-application-manager/references/tracker-storage-v4.md`. The v4 tracker-storage reference overrides conflicting legacy tracker-storage wording in the skill or Sheet: canonical vacancy rows live physically in `Queue`, `Active`, `Low fit`, or `Closed`; `Jobs` is a read-only aggregate view and is never a canonical write target.
 - Use `Antiokh/CV` as the primary evidence repository.
-- Apply fit scoring, automatic CV generation above 60%, `WorkApplications`, the `Jobs` Sheet, DOCX QA, and read-only Gmail status checks.
+- Apply fit scoring, automatic CV generation above 60%, `WorkApplications`, the WorkInterviews tracker, DOCX QA, and read-only Gmail status checks.
 - For vacancy discovery, scheduled job scans, and requests to find new roles, also load `work-application-manager/references/job-search-discovery.md`. It requires a fresh read of the live `Job Sources` and `RU-root Companies` tabs in `WorkInterviews`, including company-level `Blocker` cooldowns, before searching.
 - Vacancy discovery must follow the high-fit transactional gate and final completion reconciliation defined in `work-application-manager/references/job-search-discovery.md`.
 - Present Anton as an individual candidate. Do not replace the career narrative with NeedleBit service positioning.
@@ -20,7 +20,7 @@ Use for client leads, Upwork projects, RFPs, fixed-price or hourly delivery brie
 - Use `freelance-agency-manager/SKILL.md`.
 - Use `Antiokh/needlebit-marketing` as the canonical positioning and commercial source; use `Antiokh/CV` only for supporting evidence routed by its proof inventory.
 - Present NeedleBit as the delivery entity and Anton as its senior architecture/delivery lead where relevant.
-- Do not apply the automatic-CV gate, create a job-application pack, or write to the `Jobs` Sheet.
+- Do not apply the automatic-CV gate, create a job-application pack, or write to the WorkInterviews employment tracker.
 
 ## Boundary rules
 
