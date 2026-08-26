@@ -3,7 +3,7 @@
  *
  * Canonical storage:
  *   Queue   -> To review / Reviewed / CV ready
- *   Active  -> Referral / Applied / Recruiter screen / Interview /
+ *   Active  -> Referral / Applied / Recruiter screen / Assessment / Interview /
  *              Technical interview / Final / Offer
  *   Low fit -> Not a fit
  *   Closed  -> Rejected / Withdrawn / Ghosted / Closed
@@ -40,6 +40,7 @@ const WORKINTERVIEWS_TRACKER_V5 = Object.freeze({
     'Referral',
     'Applied',
     'Recruiter screen',
+    'Assessment',
     'Interview',
     'Technical interview',
     'Final',
@@ -54,6 +55,7 @@ const WORKINTERVIEWS_TRACKER_V5 = Object.freeze({
     'Apply',
     'Applied',
     'Recruiter screen',
+    'Assessment',
     'Interview',
     'Technical interview',
     'Final',
@@ -470,7 +472,7 @@ function ensureActivityLogSheet_(ss) {
 
   const headers = WORKINTERVIEWS_TRACKER_V5.ACTIVITY_HEADERS;
   const current = sheet.getRange(1, 1, 1, headers.length).getDisplayValues()[0];
-  if (current.join('\u0001') !== headers.join('\u0001')) {
+  if (current.join('\\u0001') !== headers.join('\\u0001')) {
     sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
   }
   return sheet;
@@ -634,7 +636,10 @@ function auditPartitionedTracker() {
 
   SpreadsheetApp.getUi().alert(
     violations.length
-      ? `Partition audit found ${violations.length} issue(s):\n\n${violations.slice(0, 25).join('\n')}`
+      ? `Partition audit found ${violations.length} issue(s):\
+\
+${violations.slice(0, 25).join('\
+')}`
       : `Partition audit passed. ${seen.size} unique Row IDs; no placement or cross-partition duplicate violations.`
   );
 }
