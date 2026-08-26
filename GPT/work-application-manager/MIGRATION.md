@@ -1,60 +1,107 @@
 # Old Chat Employment Migration
 
-Load this file only when the user asks an existing employment/project chat to export or upload its accumulated data to `WorkInterviews`, including short commands such as `отгрузи данные в <WorkInterviews URL>` or equivalent.
+Use this file only when Anton asks an existing employment chat to export/migrate accumulated application data to WorkInterviews.
 
-This is archival migration, not a new vacancy analysis.
+This is archival preservation, not a new vacancy analysis and not a loophole around tracker-storage safety.
 
 ## Read order
 
-1. Read current `GPT/work-application-manager/SKILL.md` from `Antiokh/CV` main.
-2. Read the live hidden `Agent Instructions` tab in `WorkInterviews` before writes.
-3. Apply this migration file as the focused migration overlay.
+1. `GPT/GPT_RUNTIME.md`
+2. `GPT/MODE_ROUTER.md`
+3. `GPT/work-application-manager/SKILL.md`
+4. `GPT/work-application-manager/references/tracker-storage-v5.md`
+5. `GPT/work-application-manager/references/activity-log.md`
+6. live hidden `Agent Instructions`
+7. this migration overlay
 
 Newer explicit user instructions win.
 
+## Hard storage boundary
+
+Migration does **not** override v5:
+
+- Jobs remains read-only.
+- Existing Active / Low fit / Closed vacancy rows remain agent-read-only.
+- Never update or reconstruct an existing protected lifecycle row through API.
+- Never create a duplicate Queue row for a vacancy that already exists in Jobs.
+- Never write a later/terminal Stage into Queue as a substitute for physical routing.
+
+A migration that cannot be represented safely under this boundary is incomplete and must be reported as such rather than forcing a write.
+
 ## Migration semantics
 
-Inspect the entire current chat and recover all unique employment/application information already supported by the conversation.
+Inspect the entire current chat and recover supported historical facts only. Do not rerun fit analysis, salary research, vacancy availability checks or current web reconstruction merely because migration was requested.
 
 For each distinct vacancy:
 
-- upsert the existing `Jobs` row by Vacancy URL, then normalized Company + Position and other strong identifiers; immediately before writing, re-read A:W and use the immutable `Row ID` UUID rather than a cached row number;
-- preserve historical Vacancy URL, decoded Apply URL, dates, fit, stage, explicitly confirmed Salary expectation, sourced historical Estimated salary range, Referral, Recruiter contacts, recruiter/interview history, feedback, application identifiers, and useful process facts when actually evidenced;
-- normalize only the storage type of historical fit without re-analyzing it: convert a numeric range to its rounded whole-percent midpoint in native numeric `Fit %` form (`65-70` becomes `68%` / API value `0.68`) and preserve the original wording in `Notes`; keep word-only assessments in `Notes` and leave `Fit %` blank unless numeric evidence exists;
-- preserve the historical substantive vacancy body in `WorkApplications/<Company>/<PositionTitle>/Position.md`;
-- verify `Position.md` through Drive readback and write only its verified URL to `Vacancy file`;
-- keep `Vacancy snapshot` and `Notes` concise and preserve `CLIP`/compact row height;
-- recover existing CV and cover-letter artifacts when they genuinely existed and remain available.
+1. Resolve/deduplicate through aggregate Jobs using Row ID when known, then Vacancy URL and normalized Company + Position.
+2. If the vacancy already exists:
+   - preserve the existing physical vacancy row;
+   - update vacancy-row fields only when the Row ID is currently writable in Queue and the update is allowed by v5;
+   - if the Row ID is in Active / Low fit / Closed, do not mutate it;
+   - append recoverable recruiter/interview/application/correspondence history to Activity Log when the Row ID exists and the event is not already logged.
+3. If the vacancy does not exist and its historically correct current lifecycle is representable as a Queue stage (`To review`, `Reviewed`, `CV ready`), create it in Queue through the normal atomic/deduplicated creation workflow.
+4. If the vacancy does not exist and its historically correct current lifecycle is `Referral`, `Applied`, `Recruiter screen`, `Assessment`, `Interview`, `Technical interview`, `Final`, `Offer`, `Not a fit`, `Rejected`, `Withdrawn`, `Ghosted`, or `Closed`, **do not fabricate a Queue state and do not write directly to a protected partition**. Report a migration blocker requiring human/UI reconciliation. The chat is not safe to delete until that record is durably represented.
 
-Do not rerun fit analysis, salary research, automatic-CV generation, current-vacancy web research, or modern/reposted-vacancy reconstruction merely because migration was requested. Do not invent application events, dates, stages, salary values, contacts, or files.
+This explicit blocker is safer than silently changing historical lifecycle truth.
 
-Apply the concurrency-safe write protocol from `SKILL.md`: new rows require a UUID and one atomic insert/copy/write batch; existing rows require fresh UUID resolution, field-level updates, and A:W readback. Preserve and report conflicts or duplicates instead of overwriting or auto-merging them.
+## Historical evidence to preserve
 
-## Missing cover letter repair
+When supported by the old chat, preserve:
 
-There is one deliberate artifact-repair exception to pure archival behavior.
+- Vacancy URL and Apply URL;
+- Posted date and Date found when evidence supports them;
+- historical fit without re-scoring;
+- explicitly confirmed Salary expectation;
+- historical salary evidence/provenance;
+- recruiter/contact identities;
+- application identifiers;
+- submission/interview/assessment/rejection/offer events;
+- useful feedback and process facts;
+- existing CV/cover artifacts;
+- full substantive vacancy text.
 
-If a tailored CV for a vacancy already exists, is linked in the tracker, is available in the chat, or is successfully recovered during migration, then the canonical application pack must also contain the cover-letter TXT even if the old chat never created it.
+Do not invent application events, dates, stages, contacts, salary values or files.
 
-When the CV exists and the cover letter is missing:
+## Vacancy source and artifacts
 
-1. do **not** create or redesign the CV merely because migration is running;
-2. use the historical vacancy in `Position.md` plus verified CV/profile evidence as the factual basis;
-3. draft the cover letter in the vacancy language;
-4. load and apply the current matching cached humanizer from `WorkApplications/_skills/` exactly as required by `SKILL.md` and live `Agent Instructions`;
-5. save only final letter text as `Anton_Nazarov<PositionTitle>.txt`;
-6. verify the TXT through Drive readback;
-7. write its verified Drive URL to `Cover`.
+Preserve the historical substantive vacancy body in:
 
-This rule completes an already-existing CV/application pack. It must **not** trigger creation of a new CV for a vacancy that never had one.
+`WorkApplications/<Company>/<PositionTitle>/Position.md`
 
-If the user explicitly declines cover-letter creation for a vacancy, respect that instruction and report the pack as intentionally incomplete rather than fabricating the artifact.
+Verify by Drive readback and write its URL to `Vacancy file` only when the owning vacancy row is writable under v5.
 
-## Delete-safety gate
+Keep Vacancy snapshot and Notes concise. Full vacancy/correspondence text belongs in artifacts/Activity Log, not Sheet prose.
 
-Before saying the old chat is safe to delete, verify the affected Sheet rows and Drive artifacts.
+For historical Fit ranges, normalize storage only: use the rounded numeric midpoint and preserve original wording in Notes. Word-only assessments remain prose unless defensible numeric evidence already exists.
 
-If a tailored CV exists for a migrated vacancy, migration is not complete until the canonical cover-letter TXT also exists and its verified URL is stored in `Cover`, unless the user explicitly declined it.
+## Salary migration
+
+Do not write old free-text salary values into vacancy F or annual midpoint values into AF.
+
+Current salary storage is the structured `Salary Data` schema in `tracker-storage-v5.md`. Historical salary evidence may be preserved in its legacy audit fields / notes according to current rules, but new canonical structured Salary Data writes are allowed only when the vacancy Row ID is currently owned by Queue.
+
+If a protected historical record requires salary repair, report it rather than mutating Salary Data outside the permitted boundary.
+
+## Activity Log migration
+
+For an existing Row ID, append historical events when they are materially useful and supported by the chat. Use stable Source keys when an external message/event identifier is known. Do not duplicate an event already present.
+
+Examples: application sent, recruiter reply, assessment requested/completed, interview invitation/completion, rejection, withdrawal, offer, significant follow-up.
+
+Corrections are new events; never rewrite prior Activity Log events.
+
+## Missing cover-letter repair
+
+If a tailored CV already exists or is successfully recovered and the vacancy row is writable in Queue, the canonical pack should also contain the cover-letter TXT unless Anton explicitly declined it.
+
+Use the historical vacancy + verified profile/CV evidence, apply the current language humanizer, save the canonical TXT, verify it and store its URL in Cover.
+
+For protected Active/Low fit/Closed rows, do not mutate the vacancy row merely to attach a missing artifact; preserve/recover the file where possible and report the tracker-link blocker.
+
+## Delete-safety result
+
+Before saying an old chat is safe to delete, verify all unique recoverable data that can be persisted safely.
 
 End with exactly one of:
 
@@ -64,4 +111,6 @@ End with exactly one of:
 
 `NO UNIQUE MIGRATION DATA — SAFE TO DELETE THIS CHAT`
 
-Do not write Upwork, NeedleBit, freelance-client, RFP, consulting-delivery, or agency-opportunity data into this employment tracker.
+Use `MIGRATION INCOMPLETE` whenever any unique vacancy/process fact remains unrepresented because v5 prevents a safe write. Never relax the storage boundary merely to produce a green migration result.
+
+Do not write Upwork, NeedleBit, freelance-client, RFP, consulting-delivery or agency-opportunity data into WorkInterviews.
