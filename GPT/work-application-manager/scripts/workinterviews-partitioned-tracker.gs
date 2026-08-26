@@ -31,7 +31,8 @@ const WORKINTERVIEWS_TRACKER_V4 = Object.freeze({
     VACANCY_URL: 15,
     DATE_APPLIED: 18,
     ROW_ID: 23,
-    DUPLICATE_HELPER: 24,
+    REFERRAL_CANDIDATES: 24,
+    DUPLICATE_HELPER: 25,
     SALARY_MIDPOINT: 32,
   }),
   LAST_CANONICAL_COL: 23, // A:W. X:AE are presentation/helper columns.
@@ -85,17 +86,17 @@ function installPartitionedTrackerAutomation() {
   ensureStageValidation_(ss);
   PropertiesService.getDocumentProperties().setProperty(
     'WORKINTERVIEWS_TRACKER_STORAGE_VERSION',
-    '4.0.0'
+    '5.0.0'
   );
 
   ss.toast(
-    'Partitioned tracker automation v4 installed.',
+    'Partitioned tracker automation v5 installed.',
     'WorkInterviews',
     8
   );
 }
 
-/** Remove only the trigger owned by this v4 script. */
+/** Remove only the trigger owned by this tracker script. */
 function uninstallPartitionedTrackerAutomation() {
   ScriptApp.getProjectTriggers()
     .filter(trigger => trigger.getHandlerFunction() === 'trackerOnEdit')
@@ -104,8 +105,8 @@ function uninstallPartitionedTrackerAutomation() {
 
 /**
  * Installable edit-trigger entry point.
- * API writes do not fire this trigger; API/agent writers must perform the same
- * routing explicitly according to tracker-storage-v4.md and Agent Instructions.
+ * API writes do not fire this trigger; under tracker storage v5 agents are
+ * Queue-only and must never emulate these cross-partition moves through API.
  */
 function trackerOnEdit(e) {
   if (!e || !e.range || !e.source) return;
