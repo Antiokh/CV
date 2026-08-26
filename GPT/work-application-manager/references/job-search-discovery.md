@@ -2,7 +2,12 @@
 
 Use this reference for CV-mode vacancy discovery, scheduled job scans and requests to find new employment opportunities.
 
-This file does not redefine tracker storage. Load `tracker-storage-v5.md` first; it is authoritative for writable tabs, Stage writes, Salary Data and Queue integrity.
+This file does not redefine the modular contracts. Load:
+
+- `tracker-storage-v5.md` for vacancy ownership/agent writes/lifecycle integrity;
+- `salary-normalization-v6.md` for salary research/storage/completion;
+- `cv-markdown-v1.md` for tailored CV artifact semantics;
+- `activity-log.md` when hiring/process evidence is encountered.
 
 ## Live inventories
 
@@ -43,24 +48,26 @@ For each candidate opportunity:
 1. verify it is still accepting applications;
 2. verify Serbia/Europe/EMEA/Worldwide eligibility as applicable;
 3. deduplicate against Jobs by Row ID when known, Vacancy URL and normalized Company + Position; Apply URL is supporting evidence;
-4. for a genuinely new candidate, perform the LinkedIn Connections lookup before expensive pack work;
+4. for a genuinely new candidate, perform LinkedIn Connections lookup before expensive pack work;
 5. capture substantive vacancy text and source/application metadata;
 6. create Position.md and verify it;
 7. assign evidence-based Fit %;
-8. research salary and normalize it through the current structured Salary Data contract;
-9. create the Queue row with immutable Row ID through the atomic creation protocol from `tracker-storage-v5.md`;
-10. complete the application-pack gate when fit >60%;
+8. research/normalize salary according to `salary-normalization-v6.md`;
+9. create the Queue row with immutable Row ID through the atomic protocol from `tracker-storage-v5.md`;
+10. complete the Markdown-first application-pack gate when fit >60%;
 11. read back Queue Z and required Salary Data fields before reporting the vacancy processed.
 
-## Salary is mandatory before Reviewed / CV ready
+## Salary gate
 
-Current live salary rules apply to discovery regardless of fit:
+`salary-normalization-v6.md` is authoritative.
+
+In particular:
 
 - `To review` may temporarily have incomplete salary research while work is in progress.
-- Do not leave a vacancy as `Reviewed` or `CV ready` unless its matching Salary Data row has `Normalization status = OK`.
-- Employer silence on compensation is not a waiver; produce a defensible market estimate using the current source order and evidence threshold.
-- If a defensible two-sided range / currency / NET-GROSS basis / static FX cannot be established, keep the vacancy `To review`, record the exact blocker and do not claim review completion.
-- Never write a literal estimate to vacancy F or AF; both are computed from Salary Data.
+- Do not leave a vacancy as `Reviewed` or `CV ready` unless the matching Salary Data J is `OK`.
+- Employer silence on compensation is not a waiver; research a defensible market estimate.
+- If a defensible two-sided range / currency / NET-GROSS basis / static FX cannot be established, keep `To review`, record the exact blocker and do not claim review completion.
+- Never literal-write vacancy F or AF; both are computed from Salary Data.
 
 ## Network-first ranking
 
@@ -68,13 +75,11 @@ For every genuinely new vacancy that passes basic fit/geography screening, check
 
 Use exact normalized Company Key first, then evidence-backed aliases only. Suggest at most three useful contacts: recruiter/TA, likely functional leader/hiring manager, relevant employee.
 
-Networking may affect practical priority but never Fit %. A connection is not a referral until outreach/introduction is actually confirmed.
+Networking may affect practical priority but never Fit %. A connection is not a referral until outreach/introduction is confirmed.
 
 ## Vacancy availability precedence
 
-Explicit terminal application-state evidence wins over promotional badges.
-
-Examples of terminal evidence: no longer accepting applications, applications closed, vacancy unavailable, disabled/removed Apply, ATS refusing submission.
+Explicit terminal application-state evidence wins over promotional badges. Examples: no longer accepting applications, applications closed, vacancy unavailable, disabled/removed Apply, ATS refusing submission.
 
 `Actively reviewing applicants` does not make a closed vacancy open.
 
@@ -97,28 +102,30 @@ For each **new** vacancy inserted in the current run with displayed Fit >60%, ge
 Successful Queue state requires:
 
 - verified Position.md;
-- tailored CV Markdown;
-- final DOCX after mandatory render/visual QA;
-- humanized cover TXT;
-- required Drive readbacks and shareability checks;
-- verified Vacancy file / CV / Cover links;
+- verified canonical tailored CV Markdown;
+- tracker `CV` pointing to that Markdown Drive URL;
+- humanized Cover TXT when required by the workflow;
+- required Drive readbacks/shareability checks;
+- verified Vacancy file / CV / Cover links as applicable;
 - Salary Data J = `OK`;
 - Queue Z = `OK`;
 - Stage exactly `CV ready`.
 
-A later evidenced lifecycle event does **not** authorize an agent to write `Applied`/Assessment/Interview/etc. into Queue. Log/report the event and leave human/UI routing to the bound script.
+A persistent DOCX is **not** part of the default success gate. Export DOCX through `markdown-drive` only when Anton or the actual application channel requires Word. If Word is exported for final use, it must be generated from the current Markdown and visually QA'd before delivery/submission.
+
+A later evidenced lifecycle event does not authorize an agent to write `Applied` / Assessment / Interview / terminal stages into Queue. Log/report the event and leave UI routing to the bound script.
 
 ## Blocked state
 
-When a required step genuinely cannot be completed:
+When a required step cannot be completed:
 
 - keep the vacancy in the safest truthful Queue state, normally `To review` while salary is unresolved or `Reviewed` only if all Reviewed gates are satisfied;
 - preserve verified artifacts already created;
-- put a specific blocker in Notes (`CV BLOCKED: ...` when the application pack itself is blocked);
+- put a specific blocker in Notes (`CV BLOCKED: ...` when the canonical CV pack itself is blocked);
 - put the concrete recovery action in Next action;
 - never invent a file URL, salary value or Stage.
 
-If a supported alternate generation/render path exists in the same run, try it before accepting a blocker.
+Failure to export an optional DOCX is not a CV-ready blocker unless Word is actually required for the concrete submission.
 
 ## Completion reconciliation
 
@@ -126,12 +133,12 @@ Before reporting discovery complete:
 
 1. re-read every Row ID created in this run from Queue;
 2. verify salary status and Queue Z;
-3. for every new Fit >60% row, verify complete pack / explicit blocker / explicit Anton decline;
+3. for every new Fit >60% row, verify complete Markdown-first pack / explicit blocker / explicit Anton decline;
 4. re-read Jobs and confirm every pre-existing Row ID touched by the run still has the run-start Stage;
 5. if a pre-existing Stage changed unexpectedly, stop further writes and report the conflict.
 
 ## Company cooldown
 
-A non-empty `RU-root Companies!Blocker` is a stop signal for discovery and outreach unless Anton overrides it.
+A non-empty `RU-root Companies!Blocker` is a stop signal for discovery/outreach unless Anton overrides it.
 
 A confirmed rejection normally creates a 90-calendar-day company cooldown from rejection/last-contact date when applicable. Do not create blockers from silence, talent-pool mail, generic receipts or ambiguous status.
