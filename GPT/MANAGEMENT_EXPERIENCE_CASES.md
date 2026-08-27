@@ -17,6 +17,8 @@ Anton ran the IT function for a large cultural organization with around 200 PCs,
 
 He managed 5 IT staff and 2 installation engineers, controlled operating and modernization budgets, selected vendors and contractors, and communicated with higher-level public authorities.
 
+ZIL was in an anti-crisis turnaround during Anton's tenure. Anton was part of the management team that brought the organisation out of approximately RUB 30 million in accumulated debt. This is an organisation-level result, not an IT-only saving claim. His direct IT contribution included controlling operating and modernisation spend, extending the useful life of existing infrastructure, improving asset/licence visibility, replacing unmanaged support with measurable service operations, and reducing dependency on individual employees.
+
 ### Leadership proof
 
 - reorganized the department and its documentation
@@ -28,6 +30,8 @@ He managed 5 IT staff and 2 installation engineers, controlled operating and mod
 - audited information security and personal-data handling
 - prepared remediation proposals and implemented them
 - coordinated asset, licensing, and documentation cleanup
+- reconciled 800+ technology assets with accounting and technical teams and enabled formal write-off of approximately 100 missing or unusable assets
+- extended the useful life of approximately 150 workstations through targeted SSD upgrades, Windows 7-to-10 migration and licensing cleanup instead of blanket replacement
 - developed departmental regulations, role descriptions, and internal procedures
 - supervised third-party development of a new website
 - designed business-process algorithms for future automation
@@ -43,6 +47,7 @@ He managed 5 IT staff and 2 installation engineers, controlled operating and mod
 - vendor coordination
 - security and continuity ownership
 - modernization under real organizational constraints
+- cost-conscious infrastructure management inside an organisation-wide anti-crisis turnaround
 
 ## Case 2. Directorate of Cultural Centers of Moscow
 
