@@ -18,35 +18,44 @@ I work best where growth has started to expose expensive manual processes, uncle
 
 I combine technology leadership, architecture, automation and process redesign to turn that complexity into measurable business results. The goal is not "more IT". The goal is technology that management can understand, control and use as a business asset.
 
+## Selected business results
+
+- Helped a service business achieve approximately **10x revenue growth in about three months** after redesigning customer intake, operations and product presentation; growth was organic, without paid advertising.
+- Reduced manual client-service work from **hours to minutes** through internal systems, integrations and automation.
+- Accelerated heavy reporting exports by approximately **20x** in a city-scale operational system serving a network of **100+ institutions**.
+- Reconciled **800+ technology assets** with accounting and technical teams and enabled the formal write-off of approximately **100 missing or unusable assets**.
+- Kept operations running through COVID by moving **100+ employees to secure remote work**, including access, collaboration tooling, training and support.
+- Migrated approximately **70,000 historical documents** into a structured operational system while consolidating field operations, client workflows and reporting.
+
 ## Professional experience
 
 ### NeedleBit, Serbia
 **Founder / Fractional CTO / Systems Architect**  
 Nov 2022 - Present
 
-- Supported client revenue growth of approximately **10x-13x** after redesigning business processes and automation.
-- Reduced client operations from **hours to minutes** by replacing manual work with internal systems, integrations and automation.
-- Consolidated field operations, client workflows and reporting into one system and migrated approximately **70,000 historical documents** into a structured backend.
-- Reduced vendor lock-in and key-person dependency by moving critical data and logic into controlled architecture, version control, explicit boundaries and documented change practices.
+- Work directly with founders and business owners where architecture, delivery and operations need one accountable technical owner.
+- Diagnose fragmented processes and turn business pain into system boundaries, architecture and staged delivery plans.
+- Design and deliver internal systems, portals, SaaS products, automation-heavy workflows and AI-enabled products.
+- Consolidate operational workflows, data and reporting into maintainable systems with explicit ownership and handover paths.
+- Reduce vendor lock-in and key-person dependency by moving critical data and logic into controlled architecture, version control, explicit boundaries and documented change practices.
 - Use AI-assisted engineering as a managed production process: bounded tasks, acceptance criteria, architectural guardrails, checkpoints and review rather than uncontrolled generation.
 
 ### ZIL Cultural Center
 **Head of IT**  
 Mar 2020 - Jun 2022
 
-- As part of the management team, contributed to the organisational transformation that eliminated approximately **RUB 30 million of debt burden**.
 - Turned ad-hoc IT support based on calls and personal messages into a managed process with a single queue, priorities, ownership and visible team workload.
-- Moved **100+ employees to remote work without interrupting operations** during COVID.
+- Extended the useful life of approximately **150 workstations** through targeted SSD upgrades, Windows 7-to-10 migration and licensing cleanup rather than treating ageing hardware as a blanket replacement problem.
 - Made an estate of approximately **200 endpoints, 7 servers and 20 virtual machines** more transparent and controllable by systematising access, security, assets, licensing and vendor work.
 - Led **5 IT specialists and 2 installation engineers** and owned budgets, procurement, operating priorities and technical contractors.
-- Reduced key-person dependency through documentation, access governance and explicit operating procedures that remained usable after handover.
+- Reduced key-person dependency through documentation, access governance and explicit operating procedures.
+- Built an IT operating model that remained stable after my departure and through subsequent leadership changes.
 
 ### Directorate of Cultural Centers of Moscow
 **Senior Manager / IT Architect / Analyst**  
 Jan 2017 - May 2023
 
 - Scaled an industry information system across **100+ institutions**, turning conflicting requirements from organisations, departments and public authorities into a common operating model.
-- Accelerated heavy export operations by approximately **20x**.
 - Made system changes more controllable through common data models, roles, access rules and explicit change procedures instead of local agreements.
 - Improved reporting and operational usability while modernising a live legacy IBM Domino environment without interrupting service.
 - Built a feedback and training loop for hundreds of users so recurring operational problems translated into concrete product improvements.
