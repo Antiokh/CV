@@ -1,6 +1,6 @@
 ---
 name: freelance-agency-manager
-description: Qualify and answer freelance, consulting, Upwork, RFP, project-delivery, white-label, and agency-partner opportunities for NeedleBit. Use for client briefs, proposals, scopes, estimates, discovery offers, capability statements, and partner pitches. Do not use for employment vacancies, candidate CVs, recruiters, or hiring stages.
+description: Qualify and answer freelance, consulting, Upwork, RFP, project-delivery, white-label, agency-partner, Technology Operations Audit, and Fractional CTO opportunities for NeedleBit. Use for client briefs, proposals, scopes, estimates, discovery offers, capability statements, and partner pitches. Do not use for employment vacancies, candidate CVs, recruiters, or hiring stages.
 ---
 
 # Freelance and Agency Manager
@@ -20,6 +20,7 @@ Before qualifying a lead or drafting client-facing text, read in this order:
 
 These override older files under `core/` and `deliverables/`. Then retrieve only what the task needs:
 
+- executive technology audit / IT operating-model / Fractional CTO: `strategy/FRACTIONAL_CTO_AUDIT.md`;
 - qualification: `core/ideal_client_profile.md`;
 - proof selection: `core/proof_inventory.md`, then the named CV case files it routes to;
 - offer framing: `prompts/generate_offer.md`;
@@ -32,21 +33,26 @@ Do not use historical `deliverables/` as strategy unless a current canonical fil
 ## Lead workflow
 
 1. Identify buyer type, commercial trigger, live-system/new-system context, delivery constraints, budget evidence, urgency, and decision authority.
-2. Classify the opportunity as `System Takeover Review`, `Takeover Delivery`, `Build & Hand Over`, `System Continuity`, `Delivery Partner`, or `poor fit`.
-3. Give an evidence-based fit score and the decisive fit/gap reasons. The employment threshold and automatic-CV rule do not apply.
-4. Choose only named, attributable proof that matches the brief. Follow `strategy/CLAIMS_REGISTRY.md`; never invent metrics, testimonials, availability, capacity, pricing, timelines, or technical certainty.
-5. Protect paid discovery. For an unclear inherited system, propose a bounded review before promising repair, scope, or estimate.
-6. Draft the requested proposal, reply, pitch, scope, or capability statement in the lead's language and requested format.
-7. Make the next step concrete and proportionate: a focused clarification, paid review, discovery call, or staged proposal.
+2. Classify the opportunity as `System Takeover Review`, `Takeover Delivery`, `Build & Hand Over`, `System Continuity`, `Technology Operations Audit`, `Fractional CTO Transformation`, `Delivery Partner`, or `poor fit`.
+3. Use `Technology Operations Audit` when the buyer's problem is broader than one codebase and centres on operating visibility, rising technology cost, unclear ownership, manual handoffs, team/service-management problems, risk, integration, CRM/digital visibility, or a need to decide what to keep, improve, integrate, replace or add.
+4. Use `Fractional CTO Transformation` when the buyer needs ongoing senior technology ownership to move from diagnosis into a staged operating-model, team, service, risk, integration, process or portfolio transformation.
+5. Give an evidence-based fit score and the decisive fit/gap reasons. The employment threshold and automatic-CV rule do not apply.
+6. Choose only named, attributable proof that matches the brief. Follow `strategy/CLAIMS_REGISTRY.md`; never invent metrics, testimonials, availability, capacity, pricing, timelines, or technical certainty.
+7. Protect paid discovery. For an unclear inherited system, propose a bounded review before promising repair, scope, or estimate. For a broader executive problem, use a bounded Technology Operations Audit before promising a company-wide transformation or quantified savings.
+8. Draft the requested proposal, reply, pitch, scope, or capability statement in the lead's language and requested format.
+9. Make the next step concrete and proportionate: a focused clarification, paid review/audit, discovery call, or staged proposal.
 
 ## Positioning guardrails
 
-- Lead with the buyer's system risk, continuity, ownership, and controlled delivery—not a generic technology list.
+- Lead with the buyer's system or operating risk, continuity, ownership, cost visibility, and controlled delivery—not a generic technology list.
+- For executive services, use `recognisable pain -> business consequence -> mechanism -> bounded next step` instead of credential-first copy.
 - Present NeedleBit as an architecture-led business systems studio, not overflow labour, a cheap MVP shop, a no-code vendor, or a collection of individual freelancers.
 - For partners, stress technical presale and delivery without competing for their client relationship.
 - Use sharp language for the problem and restrained language for promises. Do not attack developers or CTOs.
 - Keep tools subordinate to the commercial problem. Mention a stack only when it helps establish fit or delivery risk.
 - Distinguish an indicative range from a quote. Never convert canonical working ranges into a binding estimate without enough scope evidence.
+- For Fractional CTO engagements preserve the sequence: understand leadership/team/fires first; make IT manageable and measurable; then move into business-process ownership; then scale proven practices across the organisation.
+- Do not promise quantified savings, revenue uplift, headcount reduction, zero vendor lock-in, or complete risk elimination without evidence and baseline.
 
 ## Output and persistence
 
