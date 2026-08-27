@@ -13,7 +13,7 @@ Work authorization: Serbian sole proprietor (preduzetnik)
 
 Technology leader with 18+ years across corporate IT, banking, public-sector systems and founder-led businesses.
 
-I make technology useful to the business: increase revenue, reduce operating and infrastructure cost, remove manual work and key-person dependency, keep critical operations running, and give management visibility into workload, systems, spend and risk.
+I focus on business outcomes rather than technology for its own sake: profitable growth, lower operating cost, resilient operations, and management control. I use architecture, automation, service design and clear ownership to turn fragile or opaque operations into systems the business can actually run.
 
 ## Selected business results
 
@@ -30,36 +30,12 @@ I make technology useful to the business: increase revenue, reduce operating and
 **Founder / Fractional CTO / Systems Architect**  
 Nov 2022 - Present
 
-- Worked directly with founders and business owners on systems that affected revenue, service speed, operating cost and delivery reliability.
-- Helped a service business grow revenue approximately **10x in about three months** after redesigning customer intake, operations and product presentation, without paid advertising.
-- Reduced client-service work from **hours to minutes** by replacing manual steps with internal systems, integrations and automation.
+- Worked directly with founders and business owners, translating business constraints into architecture, automation and delivery priorities.
+- Redesigned customer intake, operational workflows and product presentation for a service business, replacing fragmented manual handling with a more structured operating flow.
+- Automated client-service steps through internal systems and integrations so routine work no longer depended on repeated manual handoffs.
 - Consolidated field operations, client workflows and reporting into one system and migrated approximately **70,000 historical documents** into a structured backend.
 - Reduced vendor and key-person dependency by moving critical data and logic into controlled, documented architecture with explicit ownership and handover paths.
 - Designed and delivered internal systems, portals and SaaS products across business operations, automation and AI-enabled workflows.
-
-### ZIL Cultural Center
-**Head of IT**  
-Mar 2020 - Jun 2022
-
-- As part of the management team, contributed to the anti-crisis turnaround that brought the organisation out of approximately **RUB 30m in accumulated debt**.
-- Replaced ad-hoc IT support through calls and personal messages with a managed queue, priorities, ownership and visible workload; extended the same service model to seven additional internal services.
-- Extended the useful life of approximately **150 workstations** through targeted SSD upgrades, Windows 7-to-10 migration and licensing cleanup instead of blanket hardware replacement.
-- Reconciled **800+ technology assets** with accounting and technical teams and enabled the formal write-off of approximately **100 missing or unusable assets**.
-- Moved **100+ employees to secure remote work without interrupting operations** during COVID.
-- Made an estate of approximately **200 endpoints, 7 servers and 20 virtual machines** more controllable through access governance, security, asset visibility, licensing and vendor management.
-- Led **5 IT specialists and 2 installation engineers** and owned budgets, procurement, operating priorities and technical contractors.
-- Formalised access, documentation, responsibilities and operating procedures; the IT model remained stable after my departure and through subsequent leadership changes.
-
-### Directorate of Cultural Centers of Moscow
-**Senior Manager / IT Architect / Analyst**  
-Jan 2017 - May 2023
-
-- Scaled an industry information system across **100+ institutions**, turning conflicting requirements from organisations, departments and public authorities into a common operating model.
-- Accelerated heavy reporting exports by approximately **20x** while improving reporting and operational usability.
-- Made system changes more controllable through common data models, roles, access rules and explicit change procedures instead of local agreements.
-- Modernised a live legacy IBM Domino environment without interrupting service.
-- Built a feedback and training loop for hundreds of users so recurring operational problems translated into concrete product improvements.
-- Participated in hiring, onboarding, task distribution and mentoring of employees and interns.
 
 ### New Business Environment
 **Implementation Curator / Product Manager**  
@@ -68,6 +44,30 @@ Aug 2022 - Nov 2022
 - Identified why technically completed ERP/CRM implementations were failing to become working tools for clients.
 - Shifted the definition of implementation success from **"system delivered" to actual adoption, managerial ownership and business impact**.
 - Improved role boundaries, client communication and post-delivery responsibility so implementation did not end at technical acceptance.
+
+### ZIL Cultural Center
+**Head of IT**  
+Mar 2020 - Jun 2022
+
+- Focused IT spending on operational value during an anti-crisis period, prioritising targeted modernisation and service discipline over indiscriminate replacement.
+- Replaced ad-hoc IT support through calls and personal messages with a managed queue, priorities, ownership and visible workload; extended the same service model to seven additional internal services.
+- Extended the useful life of approximately **150 workstations** through targeted SSD upgrades, Windows 7-to-10 migration and licensing cleanup instead of blanket hardware replacement.
+- Reconciled **800+ technology assets** with accounting and technical teams and enabled the formal write-off of approximately **100 missing or unusable assets**.
+- Designed and executed the secure remote-work transition during COVID while preserving operational continuity.
+- Made an estate of approximately **200 endpoints, 7 servers and 20 virtual machines** more controllable through access governance, security, asset visibility, licensing and vendor management.
+- Led **5 IT specialists and 2 installation engineers** and owned budgets, procurement, operating priorities and technical contractors.
+- Formalised access, documentation, responsibilities and operating procedures so the IT function no longer depended on informal knowledge and personal agreements.
+
+### Directorate of Cultural Centers of Moscow
+**Senior Manager / IT Architect / Analyst**  
+Jan 2017 - May 2023
+
+- Scaled an industry information system across **100+ institutions**, turning conflicting requirements from organisations, departments and public authorities into a common operating model.
+- Reworked reporting and export architecture to support heavy operational workloads and make long-running operations more predictable for users.
+- Made system changes more controllable through common data models, roles, access rules and explicit change procedures instead of local agreements.
+- Modernised a live legacy IBM Domino environment without interrupting service.
+- Built a feedback and training loop for hundreds of users so recurring operational problems translated into concrete product improvements.
+- Participated in hiring, onboarding, task distribution and mentoring of employees and interns.
 
 ### Moscow Social Development Agency
 **Deputy Head of Digital Development & IT / Acting Head of IT**  
