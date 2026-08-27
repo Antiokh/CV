@@ -26,7 +26,7 @@ When WorkInterviews, application state, vacancy ingestion, application artifacts
 
 1. `GPT/work-application-manager/references/tracker-storage-v5.md` — vacancy ownership, Queue-only agent writes, lifecycle/UI and integrity;
 2. `GPT/work-application-manager/references/salary-normalization-v6.md` — salary research, structured Salary Data, monthly normalization and completion gates;
-3. `GPT/work-application-manager/references/cv-markdown-v1.md` — Markdown-first canonical tailored CV and on-demand DOCX export;
+3. `GPT/work-application-manager/references/cv-markdown-v1.md` — Markdown-first canonical tailored CV plus compact tracker DOCX/PDF generator-link semantics;
 4. `GPT/work-application-manager/references/activity-log.md` — append-only process/correspondence history;
 5. live hidden `Agent Instructions` from WorkInterviews before the first tracker/Drive write.
 
@@ -54,15 +54,16 @@ At runtime enforce at minimum:
 
 ## 4. CV artifact hard guardrails
 
-Tailored CV artifact semantics come from `cv-markdown-v1.md`.
+Tailored CV artifact and tracker-link semantics come from `cv-markdown-v1.md`.
 
 - Markdown is the canonical authored/stored tailored CV.
-- Tracker `CV` points to the verified Markdown Drive URL by default.
+- Tracker `CV` displays compact rich text `DOCX PDF`; each label is a separate `markdown-drive` deep link generated from the canonical public Markdown URL using `export=docx` / `export=pdf`.
+- Do not expose the raw Markdown URL in the tracker `CV` cell; it remains encoded in and recoverable from both generator links.
 - Persistent pack normally contains Position.md + CV Markdown + required Cover TXT.
-- DOCX is an optional derivative exported through `markdown-drive` when Anton or the concrete application channel requires Word.
-- Missing DOCX does not block `CV ready`.
-- If Markdown changes after DOCX export, the DOCX is stale and must be regenerated before use.
-- DOCX visual QA is mandatory only when a Word derivative is actually exported for final use/delivery.
+- DOCX/PDF are optional derivatives exported through `markdown-drive` when Anton or the concrete application channel requires them.
+- Missing persisted derivatives do not block `CV ready`.
+- If Markdown changes after derivative export, the derivative is stale and must be regenerated before use.
+- Derivative visual QA is mandatory only when that derivative is actually exported for final use/delivery.
 
 ## 5. Evidence and positioning
 
@@ -102,7 +103,7 @@ If repository material conflicts:
 1. explicit current user instruction wins;
 2. live Agent Instructions + `tracker-storage-v5.md` win for vacancy storage/lifecycle mechanics;
 3. `salary-normalization-v6.md` wins for salary research/storage/completion;
-4. `cv-markdown-v1.md` wins for CV artifact format/storage/DOCX semantics;
+4. `cv-markdown-v1.md` wins for CV artifact format, tracker CV generator-link semantics and DOCX/PDF derivative handling;
 5. `activity-log.md` wins for process-history semantics;
 6. MODE_ROUTER + selected mode skill win over generic/archival docs;
 7. stop before destructive actions if precedence remains genuinely unresolved.
