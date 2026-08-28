@@ -12,6 +12,24 @@ A tailored CV must do three things in this order:
 
 The CV is not a short biography and not a keyword summary. It is an evidence document for a hiring decision.
 
+## Baseline CV selection for product and management roles
+
+For **product / product leadership / Product Owner / Product Manager** positions and for **managerial / IT leadership / operations / transformation** positions, start from `RESUME_FRACTIONAL_CTO.md` as the default CV baseline.
+
+Use it as a structural and positioning baseline, not as text to copy blindly. Preserve its business-result-first logic: show what changed for the business in revenue, cost, throughput, continuity, dependency, risk or management control before describing methods, tooling or activities.
+
+When tailoring this baseline:
+
+- keep the vacancy-specific target title and vocabulary truthful;
+- preserve chronology and evidence requirements from this file;
+- replace or expand bullets according to the vacancy's actual requirements;
+- for product roles, emphasize product ownership, adoption, customer/business outcomes, prioritization and cross-functional delivery while retaining the same evidence-first business framing;
+- for management roles, emphasize business outcomes, team/vendor/budget responsibility, continuity, operating control and transformation results;
+- do not reintroduce consulting-style marketing such as generic `how I work`, advisory-method sections, abstract transformation taxonomies or unsupported promises of future value;
+- do not let `Fractional CTO` wording in the filename force a fractional/consulting identity when the target is a permanent product or management role.
+
+For technical / specialist / architecture roles, choose the strongest technical baseline and evidence set for the vacancy instead of forcing `RESUME_FRACTIONAL_CTO.md` as the starting point.
+
 ## Hard chronology rule
 
 Work experience is always presented as a career timeline, not as a relevance ranking.

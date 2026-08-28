@@ -9,6 +9,33 @@ Converter:
 
 `markdown-drive` reads Markdown into a canonical MDAST model and exports semantic DOCX or PDF from that same source and ThemeSpec. The CV workflow should therefore author and preserve Markdown, not independently author Word/PDF documents.
 
+## Canonical renderer and deep links
+
+Use **Markdown Drive** as the preferred renderer for visual review of CV Markdown and for derived PDF / DOCX output. Do not judge final CV layout from raw Markdown text, Google Drive's text preview, GitHub rendering, or a separately authored Word document when Markdown Drive is available.
+
+The supported deep-link contract is:
+
+```text
+https://markdown-drive.pages.dev/?file=<URL-ENCODED-HTTPS-MARKDOWN-URL>
+https://markdown-drive.pages.dev/?file=<URL-ENCODED-HTTPS-MARKDOWN-URL>&export=pdf
+https://markdown-drive.pages.dev/?file=<URL-ENCODED-HTTPS-MARKDOWN-URL>&export=docx
+```
+
+Rules:
+
+- URL-encode the complete source URL as the `file` value.
+- `file` must resolve to an HTTPS Markdown source.
+- Omit `export` to open the rendered Preview.
+- `export` accepts exactly `pdf` or `docx`.
+- `export=pdf` loads the canonical Markdown, renders it through the normal Preview/ThemeSpec path, then invokes Markdown Drive's native browser print flow; the user still chooses **Save as PDF** in the browser dialog.
+- `export=docx` loads the same canonical Markdown and exports semantic DOCX from the same MDAST and ThemeSpec.
+- For Google Drive Markdown, prefer a public share URL. Markdown Drive extracts the Drive file ID and reads the already-public metadata/content through Google Drive REST using its restricted browser API key. This public path sends no OAuth bearer token and must not trigger account, consent, or Picker dialogs.
+- If a Drive file is private, the browser API key is unavailable/restricted, or public loading otherwise fails, use **Open from Google Drive** / Drive **Open with** explicitly as the authenticated recovery path. Do not trigger Google authorization automatically from a render link.
+- Generic HTTPS source URLs are subject to ordinary browser CORS and are fetched without source credentials. Do not add a proxy or alternate renderer to bypass this boundary.
+- If Preview loads but a deep-link export is blocked by browser policy, open Preview and use the visible export control. If source access fails, use the documented authenticated recovery path or restore public HTTPS/CORS access. Do not fabricate an independently formatted derivative.
+
+Outside the tracker `CV` cell, when presenting or storing a convenient general render link, prefer the Preview form with `file=...`; add `export=pdf` or `export=docx` only when the user or application flow actually requests that derivative. Tracker `CV` follows the separate compact `DOCX PDF` contract below.
+
 ## Hard rule: Markdown is canonical
 
 For every tailored CV, the canonical authored and stored source is Markdown.
@@ -137,6 +164,7 @@ Do not silently substitute a separate authoring/rendering pipeline when `markdow
 Old rules that required derivative visual QA for every generated CV are superseded.
 
 - Markdown QA is mandatory for every CV.
+- Markdown Drive Preview is the preferred visual rendering surface for the canonical Markdown.
 - DOCX/PDF visual QA is required only when that derivative is actually exported and is about to be used/delivered as a final submission artifact.
 - Missing persisted derivatives do not block `CV ready`.
 - If a derivative is exported, it must correspond to the current canonical Markdown revision. If the Markdown changes afterward, the old derivative is stale and must be regenerated before submission.
