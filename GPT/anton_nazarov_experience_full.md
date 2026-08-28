@@ -260,6 +260,16 @@ Anton's role was unusually broad and included:
 - webinars with feedback
 - server setup and backups
 
+This was not a support role inside someone else's product. Anton owned the product and technical logic of the system end to end: he defined how institutions, branches, locations, rooms, events, reports, questionnaires, exports, and service processes should work inside a single operational model.
+
+He also made key decisions around:
+- domain and data-model structure
+- reporting templates and report-generation logic
+- event lifecycle rules and reporting periods
+- edit restrictions and data-consistency controls
+- data exchange and service actions
+- translation of institutional pain points into system changes
+
 Technically, the project combined:
 - IBM Domino and web access
 - modular design
@@ -518,6 +528,8 @@ This period strongly demonstrates Anton's ability to:
 
 This role combined responsibilities similar to Head of IT, CIO, and operational CTO for a large cultural organization. It also had a strong anti-crisis and organizational-stabilization component.
 
+ZIL here refers to the cultural center rather than the industrial plant: a major public cultural venue in Moscow, historically associated with one of the city's landmark houses of culture, and reasonably positionable as one of the larger public cultural centers in Russia by scale. Official 2021 reporting shows at least 684 events and about 100,000 attendances across major public formats, alongside broad facilities, public programming, and substantial internal operations.
+
 ### Scope
 
 Anton was responsible for:
@@ -535,6 +547,8 @@ The operational scale included:
 - CCTV, telephony, and related building infrastructure
 - access control and technical support systems
 
+For readers outside Russia, this was not a single venue or a small cultural office: it was a city-level coordination structure for a large network of libraries and cultural centers across Moscow.
+
 ### Core Responsibilities
 
 - ensuring stable operation and modernization of the technical environment
@@ -548,6 +562,7 @@ The operational scale included:
 - introducing IT products and improvements
 - training staff
 - ensuring information security
+- stabilizing the environment with a 3-person core team and later expanding the in-house IT team to 5
 - managing 5 IT staff and 2 installation engineers
 - controlling department operating budget and modernization budget
 - integrating GLPI with Active Directory and automatic inventory
@@ -607,6 +622,8 @@ It also shows the ability to stabilize support operations, introduce transparent
 **Role:** Deputy Head of Digital Development and IT / Acting Head of IT
 
 Anton joined a newly created organization and helped build its IT function from scratch.
+
+The agency was a newly established public-sector structure connected to Moscow social-development programs, so many operational and technical foundations still had to be created.
 
 ### Core Responsibilities
 
@@ -698,6 +715,8 @@ Anton worked on an internal IBM Domino-based document workflow environment used 
 **Role:** Lead Software Developer / Systems Architect
 
 This period is important because Anton was directly involved in building a document management system from scratch in a banking environment.
+
+The employer was a Russian commercial bank, which meant the work sat inside a regulated environment with formal approvals, registration rules, internal controls, and 1C-linked operational processes.
 
 ### Responsibilities
 
@@ -803,6 +822,8 @@ This period shows early comfort with:
 **Role:** Junior Lotus Notes Developer
 
 This was an early corporate role focused on enterprise document and workflow systems.
+
+Domodedovo is one of the largest airports serving Moscow, so even this early role took place inside a large enterprise environment rather than a small local IT team.
 
 ### Responsibilities
 

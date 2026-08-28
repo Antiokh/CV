@@ -1,0 +1,581 @@
+Anton Nazarov
+
+CTO / Systems Architect @ NeedleBit
+
+Job Search Status
+Actively looking
+
+My Career Hub
+
+Profile
+Edit autofill information
+Personal Info
+Edit demographic data
+Job Preferences
+Refine your job search
+
+My Profile Strength
+
+All-Star Applicant
+
+Profile complete! Enjoy the full benefits of autofilling and tailoring your job applications.
+
+100%
+
+Upgrade to Premium
+
+Simplify+
+Beta
+
+Supercharge your job search with Simplify's AI features!
+
+AI Response Writer
+Smart Resume Optimizer
+Resume Manager
+Cover Letter Generator
+Subscribe to Simplify+
+
+Your Simplify profile is used directly to autofill your job applications!
+
+Show Profile to Recruiters
+
+ Get discovered by companies
+
+Your current employer can't see you
+
+Get more referrals!
+Set-Up Network
+
+Find hidden connections and warm intros in your network to boost your job applications
+
+Resume
+Anton_Nazarov_resume
+Default
+
+Last uploaded: 5/27/2026, 12:43:55 PM GMT+2
+
+Preview Resume
+Cover Letter
+
+1 cover letter
+
+Create Cover Letter
+Templates
+
+4 templates
+
+Create Template
+Work Experience
+
+CTO / Systems Architect
+
+NeedleBit
+
+Belgrade, BG, Serbia
+
+Nov 2022 - Present
+
+Full-Time
+
+I run an independent technology practice where projects are rarely just "build an app". Usually there is an operational problem behind the request: a service team losing time in chats and spreadsheets, a founder trying to see what is happening in the business, or an old tool that has to be replaced without stopping work. I cover architecture, implementation, cleanup, automation, and the first support/adoption loop after launch.
+
+- Delivered CRM, ERP, internal portal, reporting, marketplace, assessment, and field-operations systems for small businesses and startup teams.
+- Built across WeWeb, Supabase, Xano, Bubble, Glide, n8n, Make, PostgreSQL, APIs, Telegram integrations, and AI APIs, often combining several of them in one production workflow.
+- Reduced client service handling from hours to minutes by replacing manual chat, email, and spreadsheet workflows with structured automation.
+- Supported client revenue growth up to x10-x13 in service-business cases after process restructuring and system rollout.
+- Migrated approximately 70,000 historical documents from Google Drive into Supabase in a field-inspection/reporting platform.
+- Built dual-interface systems where an internal operations app and a client-facing portal shared the same backend model, instead of drifting into two separate products.
+- Designed self-hosted ERP workflows with role-based access, QR equipment access, Telegram Mini App login, and field task tracking.
+- Built AI-assisted workflows for image generation, data parsing, prompt debugging, and structured generation pipelines.
+- Added engineering discipline around AI-assisted delivery: repository instructions, acceptance criteria, helper layers, SQL workflows, Supabase schema/function synchronization, and database-to-git documentation.
+
+Selected projects: PromptlessPress, MetaFox Strengths Explorer, Exit Lead, Andronyevskaya ERP, Vencer Autismo, Educate Online, QR Cloud, Dobri Visarun, Dobri Tours, Cashdesk Accounting, Serbia Networking App, RuskaJela.
+
+Instructor
+
+OTUS
+
+Moscow, MS, Russia
+
+Sep 2023 - Dec 2023
+
+Contract
+
+- Taught practical topics around Bubble development, Figma/product interface work, AI tools, and international marketplace positioning.
+- Converted applied product and low-code delivery knowledge into lessons, examples, and student-facing explanations.
+
+Senior Manager / IT Architect / Analyst / Developer
+
+Directorate of Cultural Centers of Moscow
+
+Moscow, MS, Russia
+
+Jan 2017 - May 2023
+
+Part-Time
+
+This was a hybrid role: part architect, part developer, part analyst, part internal product owner. The system served Moscow's cultural sector, so technical changes also meant institutional communication, training, access rules, reporting obligations, and support for people in subordinate organizations who had to use the system in real work.
+
+- Worked with IT directors and heads of IT across 100+ subordinate cultural institutions.
+- Rebuilt a legacy IBM Domino data-collection system into a web-based information system with modular architecture while keeping reporting work alive.
+- Designed report generators, field generators, export constructors, filters, access rules, role-based controls, and reusable field/snippet generation tools for faster change delivery.
+- Replaced a 5-hour, single-user export workflow with web-based report generation that usually completed in 1.5 seconds to 1.5 minutes and became available to authorized users across institutions.
+- Built an interactive object map using Yandex Maps API, JSON/GeoJSON-style data, and public institutional data from the information system.
+- Migrated IBM Domino infrastructure from Windows to CentOS with nginx reverse proxy.
+- Improved security through web authentication changes and achieved an A+ SSL rating in the nginx reverse-proxy setup.
+- Identified security risks and structural issues in the legacy system and proposed remediation steps.
+- Created practical rules for access control and system modifications, because informal changes had become a real operational risk.
+- Moved support from phone and email to Tawk.to, making user questions and incidents easier to track.
+- Removed the system portal from Google, Bitdefender, Quttera, and Sangfor blocklists after phishing/malware false positives.
+- Prepared technical requirements for sector-level IT projects and represented technical needs in meetings with Moscow authorities.
+- Trained users through consultations and webinars and supported adoption across departments and subordinate institutions.
+- Hired, onboarded, and mentored employees and interns; prepared probation plans and task structures.
+
+Technologies: IBM/HCL Domino, Lotus Notes, XPages, JavaScript, Java, CSS, HTML, XML, Apache POI, CentOS, nginx, Yandex Maps API.
+
+Implementation Curator / Product Manager
+
+New Business Environment
+
+Moscow, MS, Russia
+
+Aug 2022 - Nov 2022
+
+Contract
+
+Worked in a commercial automation company building and implementing ERP/CRM systems on PlanFix.
+
+- Audited weak points in the implementation process and post-delivery adoption.
+- Improved ERP/CRM implementation methodology and project control practices.
+- Analyzed client business processes, usage scenarios, training needs, and delivery handoff issues.
+- Helped clarify unclear responsibility zones between managers, implementers, and clients.
+- Coached managers on product explanation, adoption logic, and system use.
+- Improved project transparency and the structure of implementation communication.
+
+Head of IT / CIO
+
+ZIL Cultural Center
+
+Moscow, MS, Russia
+
+Mar 2020 - Jun 2022
+
+Full-Time
+
+Led IT in a large cultural center where the work mixed normal infrastructure, old inherited decisions, urgent support, security, vendors, users, and physical systems such as CCTV and access control. A lot of the job was bringing service discipline and documentation back into an environment that still had to run every day.
+
+- Managed an environment of about 200 PCs, 7 servers, roughly 20 virtual machines, CCTV, telephony, file services, and access-related infrastructure.
+- Managed 5 IT staff and 2 installation engineers.
+- Moved 100+ employees to remote work during COVID using SoftEther VPN and Yandex Disk without stopping core operations.
+- Launched GLPI HelpDesk with automated inventory for IT and seven additional technical support services.
+- Integrated GLPI with Active Directory and automatic asset inventory.
+- Introduced Active Directory, GPOs, centralized access management, and security policies.
+- Used Group Policy to deploy browsers, required software, workstation settings, restrictions, and security policies.
+- Connected file access, Synology resources, GLPI assets, Octagram access control, MS SQL-backed internal databases, employee accounts, and offboarding into a centralized domain-based model.
+- Rolled out an integrated phonebook with maps of buildings, PCs, and people.
+- Integrated the local account model with the Moscow Department of Culture directory infrastructure.
+- Reorganized the IT department, documentation, responsibilities, request handling, and internal service discipline, including who owned which recurring issues.
+- Audited information security and personal-data handling, then prepared and implemented remediation steps.
+- Trained employees on basic information security, account discipline, remote-work safety, and internal-system usage.
+- Restored documentation for networks, communications, infrastructure, and department procedures.
+- Prepared technical specifications and supervised third-party development of a new website.
+- Adapted the website for mobile use and introduced a Progressive Web App approach.
+- Researched ticketing, CRM, ERP, ServiceDesk, and automation systems; prepared procurement and pilot materials.
+- Modernized video surveillance, computer fleet, storage, and parts of the server environment.
+- Rebuilt and stabilized the Hikvision CCTV environment, including disk replacement, RAID/mirroring, and recovery behavior after connection loss.
+- Monitored critical infrastructure through Zabbix, including switches, cameras, Octagram, Synology, and other core services.
+- Conducted physical inventory and cleaned up obsolete warehouse equipment.
+
+Technologies: Windows Server 2012 R2, Windows 7-10, CentOS, Ubuntu, Hyper-V, Hikvision, AxxonNext, GLPI, Zabbix, NethServer, Synology, Active Directory, GPO, Octagram, MS SQL, Kaspersky, SoftEther VPN, IBM/HCL Domino, Odoo, Docker.
+
+Deputy Head of Digital Development and IT / Acting Head of IT
+
+Moscow Social Development Agency
+
+Moscow, MS, Russia
+
+Sep 2019 - Mar 2020
+
+Full-Time
+
+Joined a newly created organization and helped build its IT function from the ground up.
+
+- Designed the initial IT architecture for workstations, servers, Ethernet, Wi-Fi, SIP telephony, and business systems.
+- Selected hardware and software for procurement, including PCs, MFPs, servers, and networking equipment.
+- Led HelpDesk implementation based on GLPI with automated inventory.
+- Built a phone directory with employee map display and Active Directory synchronization.
+- Prepared department documentation, regulations, role descriptions, and internal operating rules.
+- Audited infrastructure and prepared a plan for process and security improvements.
+- Managed hardware movement, licensing, access accounts, Active Directory, telephony, and mail-domain processes.
+- Participated in acceptance commissions for agency projects, including Healthy Moscow and My Social Center.
+
+Lotus / IBM Domino Developer
+
+Beluga Group
+
+Moscow, MS, Russia
+
+Nov 2016 - Mar 2017
+
+Full-Time
+
+- Supported and developed an internal IBM Domino document-management system used by more than 3,000 users.
+- Worked as third-line support for workflow and Domino application issues.
+- Processed a backlog of enhancement requests accumulated from earlier periods.
+- Unified the visual style of internal Domino databases.
+
+Lead Software Developer / Systems Architect
+
+Settlement and Savings Bank
+
+Moscow, MS, Russia
+
+Jan 2013 - Sep 2015
+
+Full-Time
+
+Built an internal electronic document management system in a banking environment.
+
+- Worked with bank leadership and department heads to map document types, routes, registration rules, ownership, statuses, and approval paths.
+- Converted informal document movement into technical requirements for automation.
+- Reviewed existing Russian DMS/EDMS products and prepared implementation assessments.
+- Designed and built an internal DMS from scratch on IBM Lotus Domino using object-oriented principles.
+- Implemented XML integration with 1C, including employee data export and template-based data exchange.
+- Prepared requirements for the 1C developer during integration with HR structures.
+- Supervised another developer, trained users, tested the system, and rolled it out to production.
+- Made document-flow bottlenecks visible to leadership by turning opaque routing into a measurable workflow.
+
+Technologies: IBM Lotus Domino, Lotus Notes, XPages, JavaScript, CSS, HTML, XML, Sametime, 1C integration.
+
+Lotus Notes Specialist
+
+I.T. Information Technology
+
+Moscow, MS, Russia
+
+Jan 2011 - Apr 2012
+
+Full-Time
+
+- Developed and maintained IBM Domino / Lotus Notes document-management systems in a systems-integration environment.
+- Introduced XPages technology into the company for the first time.
+- Rewrote the core Boss-Referent library in JavaScript / SSJS to support web interfaces.
+- Modified Boss-Referent for web use and added new modules and databases.
+- Fixed system and UI issues in Domino applications.
+- Trained new employees on the internal Lotus Notes workflow system.
+
+Technologies: IBM Domino, Lotus Notes, Boss-Referent, LEI, XPages, Lotus SSJS, JavaScript, CSS, HTML.
+
+Independent Technical Specialist
+
+Freelance
+
+Moscow, MS, Russia
+
+Jan 2009 - Jan 2011
+
+Contract
+
+- Built and maintained websites on CMS platforms.
+- Deployed and supported private World of Warcraft and Lineage servers.
+- Installed and supported Ubuntu desktop/server environments and web-server software.
+- Automated database updates from SVN repositories into MySQL using Bash scripts.
+- Configured automatic backups to cloud storage.
+- Built and repaired PCs, installed operating systems and applications, and handled user support.
+
+Junior Lotus Notes Developer
+
+Moscow Domodedovo Airport
+
+Moscow, MS, Russia
+
+Sep 2008 - Sep 2009
+
+Full-Time
+
+- Selected through an internal training and hiring process from a group of 12 candidates.
+- Developed, configured, modernized, tested, and supported Lotus Notes / Domino document workflow applications.
+- Built service applications and agents.
+- Integrated Lotus applications with Microsoft Office and other software through OLE.
+- Prepared project documentation and supported users.
+- Worked with Service Desk and testers on enterprise workflow issues.
+Education
+
+National Institute of Business, Moscow
+
+Sep 2011 - Jul 2019
+
+Bachelor of Business Administration (BBA), Business
+
+Humanities Institute, Moscow
+
+Sep 2011 - Jul 2019
+
+Bachelor's, Information Systems
+
+College of Commerce and Banking No. 6
+
+Sep 2006 - Jul 2008
+
+Bachelor's, Accounting
+
+Projects & Outside Experience
+
+Product Builder | Designer
+
+QR Cloud
+
+Apr 2023 - May 2023
+
+Remote
+
+Designed and built a mobile-first digital business card and company profile platform. Implemented profile editing, public business-card pages, QR generation, shareable links, company profiles, messenger/social links, and cloud-file links. The product packaged a small B2B contact-sharing problem into a structured branded platform with potential for broader service expansion.
+
+Full-Stack Builder | Product Logic Designer
+
+Vencer Autismo
+
+Nov 2022 - Apr 2023
+
+Remote
+
+Built an assessment and recommendation platform for structured child-development evaluation. Implemented multi-level tests, weighted scoring, normalized results, radar charts, longitudinal history, recommendation logic, and repeated sessions every two weeks. Translated an expert methodology into a repeatable digital product with user lifecycle, analytics, and content-based guidance.
+
+https://autismify.com/
+
+Developer | Automation Architect
+
+Dobri Visarun
+
+Oct 2022 - Feb 2023
+
+Belgrade, BG, Serbia
+
+Built a lightweight PWA and automation system for a service business with heavy manual lead handling, registration, and customer communication. Centralized trip selection, customer data collection, internal alerts, and Telegram bot notifications into a repeatable workflow. The system significantly reduced handling time per client and supported revenue/client growth reported up to x10–x13 after redesign and automation.
+
+https://dobri-visarun.glideapp.io/
+
+Product Designer | Developer
+
+Educate Online
+
+Dec 2022 - Dec 2022
+
+Remote
+
+Delivered a corporate assessment and mood/opinion analysis system for mass employee testing. Built multilingual-ready workflows, stylized sliders, response interfaces, visualized results, and external logic to work around Bubble computational limitations. Integrated Bing Translate to support base translation into new languages and delivered the project in roughly three weeks under platform constraints.
+
+Builder | Architect | AI workflow designer
+
+PromptlessPress
+
+Nov 2025 - Apr 2026
+
+Remote
+
+Built an AI-assisted visual content platform focused on structured image-generation workflows, reproducible prompt composition, and operational debugging. Designed the system architecture across Supabase, Edge Functions, SQL, frontend logic, and fal.ai-backed generation flows. Created repository-level AI instructions, helper layers, decision snapshots, and debug prompts to make AI-assisted delivery controlled, reviewable, and maintainable rather than ad hoc prompting.
+
+https://promptlesspress.com/
+
+Frontend Developer
+
+Sefcast
+
+Apr 2025 - May 2025
+
+Remote
+
+Contributed frontend work to an AI-assisted SEO analytics platform, focusing on WeWeb implementation, custom components, UI kit work, and interface structure. The backend was handled separately in Xano, while my scope was a more specialized frontend delivery role. This project shows that I can plug into a larger product team when the architecture and responsibility boundaries are already defined.
+
+https://app.sefcast.com/
+
+Developer | Database Architect
+
+Dobri Tours
+
+Feb 2023 - Mar 2023
+
+Belgrade, BG, Serbia
+
+Designed a tour management and loyalty platform to turn a fragmented travel offer into a structured product system. Built logic for language-specific tour catalogues, pricing, joining/request flows, ratings, reviews, agent booking workflows, loyalty points, discounts, and social distribution through Make.com. The project shows product thinking around marketplace dynamics, repeat purchases, and lightweight service-business automation.
+
+https://serbia-tours.glideapp.io/
+
+Full-Stack Builder | Systems Architect | Project Manager
+
+Andronyevskaya ERP
+
+Aug 2025 - Nov 2025
+
+Remote
+
+Designed and built a self-hosted ERP-style system for property technical support operations, with role-based modules for executors, managers, and administrators. Implemented QR-based equipment access, task workflows, real-time internal chat, Telegram Mini App login, Supabase backend logic, and WeWeb frontend interfaces. The project combined field operations, asset management, role structure, alerts, and deployment ownership in one maintainable operational system.
+
+Developer | Product Architect | Project Manager
+
+MetaFox Strengths Explorer
+
+Feb 2025 - Sep 2025
+
+Remote
+
+Built a browser-based strengths assessment and coaching platform with self-assessment flows, scoring logic, strengths categorization, PDF reporting, and peer-feedback mechanics. Helped translate an evolving offline coaching methodology into a clear digital product for individual, team, and leadership analysis. The project required both product logic and UX clarity because the core model was conceptually complex, not just a standard CRUD workflow.
+
+https://app.metafox.eu/
+
+Builder | Architect | Product Designer
+
+Exit Mold
+
+Jan 2024 - Sep 2024
+
+Remote
+
+Built a multi-surface inspection and reporting platform with Glide internal interfaces for inspectors, dispatchers, and admins, WeWeb client portal, Supabase backend, n8n automations, and DocsAutomator report generation. Designed shared data models, field workflows, client-facing report access, and automated document delivery. Migrated approximately 70,000 historical documents from Google Drive into Supabase and used OpenAI-assisted parsing for legacy contact data.
+
+https://exitmoldny.com/wp-content/uploads/2025/01/Exit-Mold-Revise-V2-1.mp4
+
+Developer | UX Designer
+
+Cashdesk Accounting
+
+Sep 2022 - Sep 2022
+
+Remote
+
+Rebuilt a weak legacy accounting and cash-desk workflow into a cleaner internal financial operations tool. Implemented role management for cashier, auditor, and administrator, income/cost tracking, currency conversion, CSV exports, automatic logout, and improved UX structure. The project turned an underdefined financial process into a more controlled, secure, and understandable business system.
+
+Portfolio & Links
+
+LinkedIn URL
+
+https://www.linkedin.com/in/nazarovanton
+
+GitHub URL
+
+https://github.com/Antiokh
+
+Portfolio URL
+
+https://github.com/Antiokh/CV
+
+Other URL
+
+https://www.upwork.com/freelancers/~01ef57d388c776f72a
+Skills
+Skills that you'd prefer to utilize in roles are highlighted with a heart
+n8n
+Postgres
+SQL
+REST APIs
+Figma
+LDAP
+JavaScript
+Java
+Nginx
+Product Management
+Database Administration
+Business Analytics
+Management
+Inventory Management
+Risk Management
+WeWeb
+Supabase
+PostgreSQL
+Docker
+Project Management
+Adobe Illustrator
+HTML/CSS
+MailChimp
+Next.js
+Node.js
+Python
+SEO
+Xano
+Make
+REST Api
+API
+Zapier
+OpenAPI
+PWA
+Progressive Web Apps
+IBM Domino
+HCL Domino
+TypeScript
+RxJavaScript
+Adobe Photoshop
+Adobe Lightroom
+Adobe XD
+Agile
+AJAX
+Asana
+Atlassian
+Bootstrap
+Business Strategy
+Canva
+Chart.js
+Communications
+Computer Networking
+Cryptography
+Customer Service
+D3.js
+Data Analysis
+Data Engineering
+Data Governance
+DevOps
+Drupal
+Git
+Github Actions
+Google Analytics
+Google Cloud Platform
+GraphQL
+Hyper-V
+IBM Db2
+Information Architecture
+jQuery
+Linux/Unix
+LLM
+Lottie
+Microservices
+Microsoft SQL Server
+MongoDB
+MySQL
+NoSQL
+OAuth
+OpenAI
+PHP
+Playwright
+Postman
+PowerShell
+PowerPoint/Keynote/Slides
+Product Design
+Public Policy
+Public Speaking
+Puppet
+QEMU
+React.js
+Red Hat
+TCP/IP
+UI/UX Design
+VBA
+VMWare
+Vue.js
+Web Development
+Webflow
+Wireshark
+Wordpress
+Zabbix
+Bubble
+Glide
+Airtable
+Languages
+Russian
+Serbian
+Matches
+Jobs
+Tracker
+Profile
+
+/profile/9f75ff68-b801-47de-9cc6-8e35c49acf5e
+
+Feedback

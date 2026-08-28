@@ -1,0 +1,31 @@
+# CV versus Freelance/Agency mode router
+
+Classify the request before loading evidence or producing an artifact. Keep the modes separate.
+
+## CV mode
+
+Use for employment vacancies, permanent or contract roles where Anton is the candidate, recruiters, hiring processes, tailored resumes, cover letters, interviews, and employer/ATS status updates.
+
+- Use `work-application-manager/SKILL.md`, then load `work-application-manager/references/tracker-storage-v5.md`, `work-application-manager/references/salary-normalization-v6.md`, `work-application-manager/references/cv-markdown-v1.md`, and `work-application-manager/references/activity-log.md`. The v5 tracker reference is the hard storage/write override: vacancy rows physically live in `Queue`, `Active`, `Low fit`, or `Closed`; `Jobs` is a read-only aggregate; ChatGPT/agent vacancy-row writes are Queue-only and cross-partition movement belongs to the bound UI/Apps Script automation. `salary-normalization-v6.md` is the hard salary override and supersedes conflicting salary text in the skill or older tracker references: salary research/calculation is mandatory before a vacancy may remain `Reviewed` or `CV ready`, regardless of Fit %, and a missing employer-published range requires market research rather than a silent blank. `cv-markdown-v1.md` is the hard CV artifact-format override: tailored CVs are authored and stored canonically as Markdown; tracker `CV` displays compact rich text `DOCX PDF`, with separate markdown-drive deep links generated from the canonical public Markdown URL; DOCX/PDF are on-demand derivatives and are not required to be persisted for `CV ready`. The activity-log reference is the canonical append-only history for email/recruiter/process events linked by immutable Row ID.
+- Use `Antiokh/CV` as the primary evidence repository.
+- Apply fit scoring, automatic Markdown CV generation above 60%, mandatory normalized salary research, `WorkApplications`, the WorkInterviews tracker, append-only Activity Log, Markdown-first CV storage, compact direct-export tracker links, and read-only Gmail status checks.
+- For vacancy discovery, scheduled job scans, and requests to find new roles, also load `work-application-manager/references/job-search-discovery.md`. It requires a fresh read of the live `Job Sources` and `RU-root Companies` tabs in `WorkInterviews`, including company-level `Blocker` cooldowns, before searching.
+- Vacancy discovery must follow the high-fit transactional gate and final completion reconciliation defined in `work-application-manager/references/job-search-discovery.md`.
+- Present Anton as an individual candidate. Do not replace the career narrative with NeedleBit service positioning.
+
+## Freelance/Agency mode
+
+Use for client leads, Upwork projects, RFPs, fixed-price or hourly delivery briefs, consulting requests, proposals, scopes, estimates, discovery, capability statements, and agency or fractional-CTO partnerships.
+
+- Use `freelance-agency-manager/SKILL.md`.
+- Use `Antiokh/needlebit-marketing` as the canonical positioning and commercial source; use `Antiokh/CV` only for supporting evidence routed by its proof inventory.
+- Present NeedleBit as the delivery entity and Anton as its senior architecture/delivery lead where relevant.
+- Do not apply the automatic-CV gate, create a job-application pack, or write to the WorkInterviews employment tracker.
+
+## Boundary rules
+
+- Employment language such as salary, benefits, reporting line, candidate requirements, recruiter stages, or an employment contract selects CV mode.
+- Buyer/vendor language such as client brief, project budget, milestones, deliverables, proposal, RFP, Upwork job, white-label delivery, or agency partnership selects Freelance/Agency mode.
+- A long-term client contract is still Freelance/Agency when the buyer is procuring delivery rather than hiring Anton into an employee role.
+- If one request genuinely contains both, split the outputs and source sets. Never let agency claims, pricing, or offer language leak into a CV, and never answer a client lead as a job candidate.
+- If the commercial relationship remains materially ambiguous after reading the source, ask one short clarification before creating files or updating external systems.

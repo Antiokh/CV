@@ -5,5 +5,20 @@ workflows/__pycache__/
 data/linkedin_recruiter_outreach.sqlite
 data/linkedin_recruiter_outreach.sqlite-*
 data/linkedin_recruiter_queue*.csv
-.external/
+node_modules/
+.browser-profiles/
+tmp_simplify_profile_chunk.js
 *.log
+modal_edit_project.js
+pandoc-demo.md
+pandoc-demo.pdf
+tmp_superjob_backups/
+tmp_upwork_covers/
+upwork_*.png
+.external/hh-ru-apply
+
+# Private generated LinkedIn connection import artifacts
+**/LinkedInConnections.prepared.csv
+**/LinkedInConnections.manifest.json
+**/linkedin-connections-prepared/
+**/batches/batch-*.json

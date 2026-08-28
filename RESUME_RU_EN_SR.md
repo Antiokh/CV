@@ -30,6 +30,8 @@ I also use AI-native development workflows in VS Code, with repository-specific 
 **New Business Environment - Implementation Curator / Product Manager**  
 *Aug 2022 - Nov 2022*
 
+Startup-level implementation company delivering ERP/CRM projects for commercial clients.
+
 - Led ERP/CRM implementations in PlanFix
 - Developed implementation methodology and scaling approach
 - Coached managers and improved delivery quality
@@ -37,25 +39,35 @@ I also use AI-native development workflows in VS Code, with repository-specific 
 **ZIL Cultural Center - Head of IT Department**  
 *Mar 2020 - Jun 2022*
 
+ZIL here refers to the cultural center, not the industrial plant: a major public cultural venue in Moscow and one of the city's landmark houses of culture, reasonably positionable as one of the larger public cultural centers in Russia by scale. The IT function supported 145 employees, 156 workstations, and 581 technology assets; official 2021 reporting shows at least 684 events and about 100,000 attendances across major public formats.
+
 - Owned the IT function of a large public organization
+- Started with a 3-person in-house team and grew it to 5 while stabilizing operations
 - Managed engineers, contractors, infrastructure, and security
 - Worked in a politically and organizationally complex public-sector environment
 
 **Directorate of Cultural Centers of Moscow - Senior Manager / IT Architect / Analyst**  
 *Jan 2017 - May 2023*
 
+City-level public-sector organization coordinating 100+ cultural institutions across Moscow, including libraries and local cultural centers.
+
 - Designed and rebuilt an industry-level information system
+- Owned the product and technical logic of AIS MosRazvitie, including the domain model, reporting workflows, and governance rules
 - Combined architecture, documentation, implementation, training, and support
 - Worked with reporting, analytics, security, and cross-institution workflows
 
 **Moscow Social Development Agency - Deputy Head of IT Department**  
 *Sep 2019 - Mar 2020*
 
+Newly created public-sector organization launched to support Moscow social-development programs and related operations.
+
 - Built IT infrastructure for a new organization
 - Audited infrastructure and processes
 - Defined technical strategy and requirements
 
 **Corporate Experience (Banking Sector) - Project Manager / Systems Architect**
+
+Includes a Russian commercial bank and other enterprise organizations with document workflow, internal systems, and business-IT alignment needs.
 
 - Management accounting, document workflows, and 1C integrations
 - Internal systems architecture and business-IT alignment
@@ -92,6 +104,8 @@ I also use AI-native development workflows in VS Code, with repository-specific 
 **Новая Бизнес Среда - Куратор внедрения / Менеджер продукта**  
 *Август 2022 - Ноябрь 2022*
 
+Компания startup-level формата, занимавшаяся внедрением ERP/CRM-решений для коммерческих клиентов.
+
 - Руководство внедрениями ERP/CRM в PlanFix
 - Разработка методологии внедрения и масштабирования
 - Коучинг руководителей и улучшение качества delivery
@@ -99,19 +113,27 @@ I also use AI-native development workflows in VS Code, with repository-specific 
 **Культурный центр ЗИЛ - Начальник IT-отдела**  
 *Март 2020 - Июнь 2022*
 
+Здесь ЗИЛ — это именно культурный центр, а не завод: крупная публичная культурная площадка Москвы и один из знаковых домов культуры города, который по масштабу можно уверенно позиционировать как одну из более крупных публичных культурных площадок России. IT-функция поддерживала 145 сотрудников, 156 рабочих мест и 581 единицу техники; по официальной отчетности за 2021 год центр провел не менее 684 мероприятий с суммарной посещаемостью около 100 тысяч по основным публичным форматам.
+
 - Полная ответственность за IT-функцию крупной публичной организации
+- Начинал с очной команды из 3 человек и довел ее до 5 по мере стабилизации работы
 - Управление инженерами, подрядчиками, инфраструктурой и безопасностью
 - Работа в политически и организационно сложной среде государственного сектора
 
 **Дирекция культурных центров Москвы - Ведущий менеджер / IT-архитектор / Аналитик**  
 *Январь 2017 - Май 2023*
 
+Городская структура, координировавшая более 100 культурных учреждений Москвы, включая библиотеки и районные культурные центры.
+
 - Проектирование и перестройка отраслевой информационной системы
+- Владение продуктовой и технической логикой АИС МосРазвитие, включая доменную модель, отчетные процессы и governance rules
 - Совмещение архитектуры, документации, реализации, обучения и сопровождения
 - Работа с отчетностью, аналитикой, безопасностью и межведомственными процессами
 
 **Московское агентство соцразвития - Заместитель начальника IT-отдела**  
 *Сентябрь 2019 - Март 2020*
+
+Новая публичная организация, запускавшая операционную и IT-инфраструктуру под социальные программы Москвы.
 
 - Построение IT-инфраструктуры для новой организации
 - Аудит инфраструктуры и процессов

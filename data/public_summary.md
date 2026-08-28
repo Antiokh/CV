@@ -1,41 +1,56 @@
 # Anton Nazarov — Public Summary
 
-Anton Nazarov is a technology leader and systems builder based in Belgrade, Serbia. He works at the intersection of engineering, product, and operations, turning fragmented workflows into structured systems teams can actually run, govern, and maintain.
+Anton Nazarov is a technology leader and systems architect based in Belgrade, Serbia. He works with organisations where delivery is slowing, technology cost is hard to explain, critical workflows depend on people or fragmented systems, and management lacks a reliable view of ownership, workload, risk and business value.
 
-He has 18 years of experience across startups, banking, public-sector reform, and independent product delivery. His work covers engineering leadership, systems architecture, product ownership, workflow automation, AI-assisted delivery, and complex internal systems.
+His strongest pattern is not "building software" in isolation. He makes the operating model visible first, stabilises what is critical, and then turns that control into lower manual dependency, better use of people and systems, clearer technology spend, safer change and measurable growth initiatives.
 
-What he is especially good at:
-- building from scratch
-- stabilizing messy environments
-- aligning business, operations, and technology
-- formalizing ambiguous processes into visible workflows
-- leading teams through change
-- turning operational chaos into working systems
+He has 18 years of experience across startups, banking, public-sector organisations and independent product delivery. His work covers CTO/Head of IT leadership, systems architecture, implementation ownership, IT service management, process formalisation, automation, AI-assisted delivery, security/governance and complex internal systems.
 
-Selected areas of experience:
-- banking document management and workflow systems
-- public-sector and institutional digital transformation
-- implementation ownership, rollout, and adoption support
-- team leadership and IT operations at cultural institutions
-- AI-assisted product and automation projects
-- product delivery in low-code and hybrid environments
+## Problems he is especially suited to solve
 
-Best-fit roles:
-- Engineering Manager
-- Head of Engineering
-- Systems Architect
-- Technical Product Lead
-- Digital Transformation Lead
+- delivery stalls while development cost keeps rising
+- IT becomes a budget black hole that management cannot connect to business value
+- teams and vendors pass responsibility between one another
+- workload, queues and bottlenecks are hidden
+- the real process lives across CRM, spreadsheets, email, chat and individual memory
+- important handoffs fail because someone forgot, got sick, did not know or did not have time
+- systems are fragmented and nobody owns what happens between them
+- key capabilities depend on one employee, contractor or vendor
+- CRM exists but employees still work outside it
+- digital journeys are not measured well enough to show where conversion is lost
+- management needs to decide what to keep, improve, integrate, replace or add without disrupting the business
+
+## Operating principles
+
+- **Single-point ownership:** every critical process, system, integration, vendor relationship and risk has one named accountable owner.
+- **Operational visibility:** workload, queues, incidents, bottlenecks and next actions become measurable.
+- **Technology-spend transparency:** systems, licences, vendors and internal effort map to business capability, owner, value, risk and lifecycle.
+- **Seamless system integration:** critical processes should not stop because somebody forgot, got sick, did not know or did not have time.
+- **AI for routine work:** AI is applied to specific repetitive workflows with guardrails and measurable outcomes rather than treated as a strategy by itself.
+- **Low-dependency architecture:** reduce critical switching cost and key-person/vendor dependency through explicit boundaries, portable data, controlled source/accounts and recoverability.
+- **Technology as a business asset:** evaluate internal capability for reuse, shared-service value and commercial potential where genuinely differentiated.
+- **Stabilise before transforming:** do not assume everything needs replacement.
+
+The business sequence is:
+
+**Transparency -> Efficiency -> Growth**
+
+## Best-fit roles
+
+- CTO
+- CIO
 - Fractional CTO
+- Head of IT
+- Head of Engineering
+- Systems Architect with delivery ownership
+- Digital Transformation Lead
+- Implementation / Operational Technology Lead
 
-Why clients hire him:
-- he can build from scratch
-- he can lead teams
-- he can restructure broken systems
-- he can translate business chaos into technical execution
-- he can work in both product and engineering contexts
+## Selected proof signals
 
-Selected proof signals:
-- bank document workflow was formalized into a measurable system that exposed bottlenecks and improved transparency for leadership
-- IT operations at a large cultural center were stabilized through HelpDesk governance, security cleanup, infrastructure modernization, and remote-work enablement
-- an institutional information system was reshaped into a source-of-truth platform with training, support workflows, and faster reporting/export operations
+- at ZIL Cultural Center, introduced HelpDesk, asset inventory and service governance that made workload, priorities and operational risk more visible while leading the IT function and infrastructure/security improvements
+- at Settlement and Savings Bank, reconstructed real cross-department document routes and turned them into a measurable workflow system that exposed processing bottlenecks to leadership
+- across the Directorate of Cultural Centers, worked with 100+ institutions on source-of-truth logic, reporting, analytics, access governance, rollout and modernization without operational breakage
+- in NeedleBit client work, named automation cases reduced manual service time from hours to minutes; the Dobri Visarun system/process redesign is associated with up to 10x–13x revenue growth in its specific case context
+
+For detailed executive/Fractional CTO positioning use `GPT/FRACTIONAL_CTO_AUDIT_PLAYBOOK.md` and `GPT/EXECUTIVE_POSITIONING.md`.

@@ -546,7 +546,7 @@ SOURCE_PART: 01A_PROFILE_JSON_PART_03
         "program": "Accounting and Finance background",
         "specialization": "Economics and Accounting by Industry",
         "field": "Finance",
-        "institution": "Commercial Banking College No. 6",
+        "institution": "ГБОУ СПО Коммерческо-банковский колледж № 6",
         "year_from": 2006,
         "year_to": 2008,
         "source_status": "confirmed in docx and PDF resume sources"
