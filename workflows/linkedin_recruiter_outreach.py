@@ -879,6 +879,17 @@ def serve_list_page(db_path: Path, host: str, port: int) -> None:
 
         def do_POST(self) -> None:  # noqa: N802
             parsed = urlparse(self.path)
+            if parsed.path not in {"/mark-sent", "/mark-opened"}:
+                self.send_error(404)
+                return
+
+            origin = self.headers.get("Origin")
+            host_header = self.headers.get("Host")
+            expected_origin = f"http://{host_header}" if host_header else f"http://{host}:{port}"
+            if origin is not None and origin != expected_origin:
+                self.send_error(403)
+                return
+
             length = int(self.headers.get("Content-Length", "0") or "0")
             data = parse_qs(self.rfile.read(length).decode("utf-8") if length else "")
             contact_id = parse_positive_int(data.get("id", ["0"])[0])
@@ -1042,7 +1053,7 @@ def main() -> None:
         "--status",
         action="append",
         choices=["queued", "opened", "snoozed"],
-        default=["queued", "opened"],
+        default=None,
         help="Outreach status to refresh. Can be passed more than once. Default: queued and opened.",
     )
 
@@ -1091,7 +1102,8 @@ def main() -> None:
         list_contacts(conn, args.status, args.limit)
     elif args.cmd == "refresh-drafts":
         template = load_template(args.template)
-        refresh_drafts(conn, template, args.status)
+        statuses = args.status or ["queued", "opened"]
+        refresh_drafts(conn, template, statuses)
     elif args.cmd == "open-next":
         open_next(conn, args.id, args.copy)
     elif args.cmd == "manual-campaign":
