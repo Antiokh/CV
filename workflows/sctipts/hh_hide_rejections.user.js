@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         HH.ru Hide Rejections
 // @namespace    https://needlebit.dev/
-// @version      0.1.0
+// @version      0.1.1
 // @description  Hide HH.ru rejection noise in chats/lists, with a toggle to show it again. Optionally opens unread rejection threads to let HH mark them read.
 // @match        https://hh.ru/*
 // @match        https://*.hh.ru/*
@@ -22,7 +22,7 @@
   const STORAGE_LAST_AUTOREAD = "hh-rejection-filter-last-autoread";
 
   const REFUSAL_PATTERNS = [
-    /\bотказ(?:али|ано|а|)\b/i,
+    /(?<![\p{L}\p{N}])отказ(?:али|ано|а)?(?![\p{L}\p{N}])/iu,
     /работодатель отказал/i,
     /отказ по отклику/i,
     /отклик отклон/i,
@@ -54,7 +54,7 @@
   ];
 
   const INVITATION_PATTERNS = [
-    /\bприглаш(?:ение|аем|ают|ены|ен|ена|у)\b/i,
+    /(?<![\p{L}\p{N}])приглаш(?:ение|аем|ают|ены|ен|ена|у)(?![\p{L}\p{N}])/iu,
     /работодатель пригласил/i,
     /пригласить вас/i,
     /готов[ыа]? пригласить/i,
@@ -206,6 +206,7 @@
 
   function startChatikFilter() {
     const chatikHiddenAttr = "data-hh-chatik-rejection-hidden";
+    let chatikScheduled = 0;
     const chatikCss = `
       [${chatikHiddenAttr}="true"] {
         display: none !important;
@@ -240,8 +241,11 @@
       if (hasPattern(text, INVITATION_PATTERNS)) return false;
       if (hasPattern(text, REFUSAL_STATUS_PATTERNS)) return true;
 
-      const rect = node.getBoundingClientRect();
-      if (rect.width < 18 || rect.width > 260 || rect.height < 10 || rect.height > 56) return false;
+      const alreadyHidden = Boolean(node.closest(`[${chatikHiddenAttr}="true"]`));
+      if (!alreadyHidden) {
+        const rect = node.getBoundingClientRect();
+        if (rect.width < 18 || rect.width > 260 || rect.height < 10 || rect.height > 56) return false;
+      }
 
       return isRedColor(window.getComputedStyle(node).color);
     }
@@ -250,13 +254,12 @@
       let current = node.parentElement;
       const candidates = [];
       for (let depth = 0; current && depth < 10; depth += 1) {
-        const rect = current.getBoundingClientRect();
+        const alreadyHidden = current.getAttribute(chatikHiddenAttr) === "true";
+        const rect = alreadyHidden ? null : current.getBoundingClientRect();
         const text = normalizeText(current.textContent);
         if (
           !current.matches("html, body") &&
-          rect.width >= 220 &&
-          rect.height >= 44 &&
-          rect.height <= 180 &&
+          (alreadyHidden || (rect.width >= 220 && rect.height >= 44 && rect.height <= 180)) &&
           text.length >= 12 &&
           text.length <= 800
         ) {
@@ -267,15 +270,27 @@
 
       return candidates
         .sort((a, b) => {
-          const aScore = (a.matches("[role='button'], li, [role='listitem']") ? 10 : 0) - a.getBoundingClientRect().height / 100;
-          const bScore = (b.matches("[role='button'], li, [role='listitem']") ? 10 : 0) - b.getBoundingClientRect().height / 100;
+          const aHeight = a.getAttribute(chatikHiddenAttr) === "true" ? 44 : a.getBoundingClientRect().height;
+          const bHeight = b.getAttribute(chatikHiddenAttr) === "true" ? 44 : b.getBoundingClientRect().height;
+          const aScore = (a.matches("[role='button'], li, [role='listitem']") ? 10 : 0) - aHeight / 100;
+          const bScore = (b.matches("[role='button'], li, [role='listitem']") ? 10 : 0) - bHeight / 100;
           return bScore - aScore;
         })[0] || null;
     }
 
     function scanChatik() {
       const rows = new Set();
-      const nodes = document.querySelectorAll("span, div, p, [data-qa], [class]");
+      const selector = [
+        "[data-qa*='rejection']",
+        "[data-qa*='discard']",
+        "[data-qa*='status']",
+        "[data-qa*='state']",
+        "[class*='rejection']",
+        "[class*='discard']",
+        "[class*='status']",
+        "[class*='Status']",
+      ].join(",");
+      const nodes = document.querySelectorAll(selector);
       for (const node of nodes) {
         if (!isChatikRedBadge(node)) continue;
         const row = findChatikRow(node);
@@ -290,6 +305,11 @@
       }
     }
 
+    function scheduleChatikScan(delay = 150) {
+      window.clearTimeout(chatikScheduled);
+      chatikScheduled = window.setTimeout(scanChatik, delay);
+    }
+
     function start() {
       if (!document.body) {
         window.setTimeout(start, 100);
@@ -297,7 +317,7 @@
       }
       addChatikStyle();
       scanChatik();
-      const observer = new MutationObserver(() => window.setTimeout(scanChatik, 100));
+      const observer = new MutationObserver(() => scheduleChatikScan());
       observer.observe(document.body, { childList: true, subtree: true, characterData: true });
     }
 
@@ -397,10 +417,12 @@
 
   function isReasonableCard(node) {
     if (!(node instanceof Element) || isPanelNode(node)) return false;
-    const rect = node.getBoundingClientRect();
     const text = normalizeText(node.textContent);
     if (text.length < 12 || text.length > 4500) return false;
-    if (rect.width < 180 || rect.height < 48) return false;
+    if (node.getAttribute(HIDDEN_ATTR) !== "true") {
+      const rect = node.getBoundingClientRect();
+      if (rect.width < 180 || rect.height < 48) return false;
+    }
     if (node.matches("html, body, main, #HH-React-Root")) return false;
     if (node.closest(`#${PANEL_ID}`)) return false;
     return true;
@@ -526,6 +548,7 @@
 
   function scan() {
     const cards = new Set();
+    const scanRoot = document.querySelector("[data-qa='negotiations-list']") || document.body;
     stats.exact = 0;
     stats.red = 0;
 
@@ -534,13 +557,13 @@
       stats.exact += 1;
     }
 
-    for (const textNode of getTextNodes(document.body)) {
+    for (const textNode of getTextNodes(scanRoot)) {
       if (!isRefusalText(textNode.nodeValue)) continue;
       const card = findCardFromTextNode(textNode);
       if (card) cards.add(card);
     }
 
-    for (const statusNode of getRedStatusNodes(document.body)) {
+    for (const statusNode of getRedStatusNodes(scanRoot)) {
       const card = findCardFromTextNode(statusNode, true);
       if (card) {
         cards.add(card);
@@ -617,19 +640,37 @@
     return card.querySelector("a[href*='negotiation'], a[href*='chat'], [role='button'], a[href]");
   }
 
-  function recentlyAutoRead(href) {
+  function readAutoReadMap() {
     const raw = sessionStorage.getItem(STORAGE_LAST_AUTOREAD);
-    if (!raw) return false;
+    if (!raw) return {};
     try {
-      const data = JSON.parse(raw);
-      return data.href === href && Date.now() - data.time < 45000;
+      const parsed = JSON.parse(raw);
+      if (!parsed || typeof parsed !== "object") return {};
+      if (typeof parsed.href === "string" && typeof parsed.time === "number") {
+        return { [parsed.href]: parsed.time };
+      }
+      return Object.fromEntries(
+        Object.entries(parsed).filter(([, time]) => typeof time === "number")
+      );
     } catch {
-      return false;
+      return {};
     }
   }
 
+  function recentlyAutoRead(href) {
+    const data = readAutoReadMap();
+    const time = data[href] || 0;
+    return Boolean(time) && Date.now() - time < 45000;
+  }
+
   function rememberAutoRead(href) {
-    sessionStorage.setItem(STORAGE_LAST_AUTOREAD, JSON.stringify({ href, time: Date.now() }));
+    const data = readAutoReadMap();
+    const now = Date.now();
+    for (const key of Object.keys(data)) {
+      if (now - data[key] >= 45000) delete data[key];
+    }
+    data[href] = now;
+    sessionStorage.setItem(STORAGE_LAST_AUTOREAD, JSON.stringify(data));
   }
 
   function maybeAutoRead(cards) {
@@ -723,7 +764,7 @@
     });
 
     window.setInterval(() => {
-      scheduleScan();
+      if (!document.hidden) scheduleScan();
     }, 2500);
 
     let lastUrl = location.href;
