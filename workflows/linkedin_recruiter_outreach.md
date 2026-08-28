@@ -100,8 +100,8 @@ Usage:
 1. Open the local list page.
 2. Click `Copy draft + open LinkedIn`.
 3. The local page copies the draft from the contact card, marks that contact as `opened` in SQLite, and opens the LinkedIn profile.
-4. The separate userscript runs on LinkedIn profile pages and opens the `Message` dialog when it sees LinkedIn's send-privately icon.
-5. Click LinkedIn `Message` manually, paste, review, and send.
+4. The separate userscript runs on LinkedIn profile pages and opens the `Message` dialog when it sees LinkedIn's send-privately icon. If no suitable button appears within about 20 seconds, it stops trying.
+5. If the dialog does not open, click LinkedIn `Message` manually. Then paste, review, and send.
 6. Return to the local list page and click `Mark sent`.
 
 This mode does not make any HTTP requests from LinkedIn back to the local server. The draft is copied on the local list page before LinkedIn opens.
