@@ -55,7 +55,7 @@ function Start-OutreachServer {
         }
     }
 
-    Write-Warning "$Name did not respond at $HealthUrl. Check $errLog"
+    throw "$Name did not respond at $HealthUrl. Check $errLog"
 }
 
 Set-Location -LiteralPath $repo
