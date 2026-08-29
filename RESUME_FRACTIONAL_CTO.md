@@ -22,7 +22,7 @@ Management experience combines direct leadership of specialized IT teams with in
 - Helped a service business achieve approximately **10x revenue growth in about three months** after redesigning customer intake, operations and product presentation; growth was organic, without paid advertising.
 - Reduced manual client-service work from **hours to minutes** through internal systems, integrations and automation.
 - As part of the management team at ZIL, contributed to the anti-crisis turnaround that brought the organisation out of approximately **RUB 30m in accumulated debt**; within IT, focused spending on operational value, extended the life of existing infrastructure and replaced unmanaged support with measurable service operations.
-- Extended the useful life of approximately **150 workstations** instead of blanket replacement and reconciled **800+ technology assets**, enabling formal write-off of approximately **100 missing or unusable assets**.
+- Extended the useful life of approximately **150 workstations** instead of blanket replacement and completed a broader reconciliation of **800+ accounting and physical asset records**, enabling formal write-off of approximately **100 missing or unusable assets**; this was separate from the earlier **581-asset operational baseline**.
 - Recovered administrative control over critical ZIL infrastructure after an inherited administrator left without handover: reconstructed privileged access and critical credentials and reduced key-person dependency.
 - Kept operations running through COVID by moving **100+ employees to secure remote work** without interrupting work.
 - Coordinated technology requirements and delivery with **100+ IT specialists across 100+ cultural institutions** without direct line authority, combining system governance, procurement coordination and institutional stakeholder management.
@@ -54,20 +54,21 @@ Aug 2022 - Nov 2022
 **Head of IT**  
 Mar 2020 - Jun 2022
 
-Led IT for a major public cultural venue with **145 employees, 156 workstations and 581 documented technology assets**; the environment included **7 servers and approximately 20 virtual machines** plus CCTV, telephony, access control and internal business systems.
+Led IT for a major public cultural venue. An **August 2020 documented operational baseline** covered **145 employees, 156 workstations and 581 technology assets**; the wider environment included **7 servers and approximately 20 virtual machines** plus CCTV, telephony, access control and internal business systems.
 
 - Led **5 IT specialists and 2 installation engineers**, assigning specialized ownership across service desk/documentation, workplace infrastructure, servers/DevOps, web/digital systems and business applications, with adjacent backup coverage for critical functions.
 - Recovered administrative control after an inherited system administrator resigned without handover: reconstructed privileged access, restored critical credentials and removed single-person dependency from critical infrastructure.
 - Focused IT spending on operational value during an anti-crisis period, prioritising targeted modernisation and service discipline over indiscriminate replacement.
 - Extended the useful life of approximately **150 workstations** through targeted SSD upgrades, Windows 7-to-10 migration and licensing cleanup instead of blanket hardware replacement.
-- Reconciled **800+ technology assets** with accounting and technical teams and enabled the formal write-off of approximately **100 missing or unusable assets**.
+- Conducted a broader accounting and physical reconciliation covering **800+ asset records** and enabled the formal write-off of approximately **100 missing or unusable assets**.
 - Replaced ad-hoc support through calls and personal messages with a managed HelpDesk queue, priorities, ownership and visible workload; extended the same service model to **seven additional internal services**.
 - Designed and executed the secure remote-work transition for **100+ employees** during COVID while preserving operational continuity.
 - Formalised access, documentation, responsibilities and operating procedures so critical operations no longer depended on informal knowledge and personal agreements.
 
 ### Directorate of Cultural Centers of Moscow
 **Senior Manager / IT Architect / Analyst**  
-Jan 2017 - May 2023
+Jan 2017 - May 2023  
+*Long-running cross-institutional role held concurrently with later institutional leadership and independent consulting appointments.*
 
 City-level organisation coordinating **100+ cultural institutions**. My role combined indirect functional coordination of **100+ institutional IT specialists** with system ownership, technology governance, centralized procurement coordination and stakeholder management across organisations outside my direct reporting line.
 
