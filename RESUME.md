@@ -6,21 +6,21 @@ Portfolio: [Portfolio Index](./portfolio/README.md)
 
 ## Profile
 
-Technology leader and systems architect with 18 years of professional experience across startups, enterprise, and government environments. I build and restructure products and internal systems at the intersection of engineering, business, and operations, with strong ownership of architecture, delivery, automation, team leadership, and long-term technical direction.
+Technology leader and systems architect with 18 years of professional experience across startups, enterprise, and government environments. I build and restructure products, teams, and internal systems at the intersection of engineering, business, and operations, with ownership of architecture, delivery, automation, technical direction, and organizational design.
 
-Strongest pattern: turning fragmented workflows and weak tooling into scalable systems teams can actually run.
+Management scope ranges from building specialized in-house IT teams to indirect functional leadership and coordination of 100+ IT specialists across subordinate cultural institutions. I work through clear ownership, strong functional leads, measurable operations, and explicit responsibility rather than micromanagement.
 
-I also keep an active eye on product ideas through Serbian IT events and conferences, where I look for practical patterns, workflow improvements, and ways AI-driven dialogue or feedback loops could make services more useful.
+Strongest pattern: turning fragmented workflows and weak tooling into systems with clear ownership that teams and organizations can actually run.
 
 ## Core Strengths
 
 - Engineering leadership and systems architecture
-- Organizational design: clear ownership, role specialization, backup coverage, and cross-functional coordination
+- Management at scale: direct team leadership plus indirect coordination of 100+ IT specialists across distributed institutions
+- Organizational design: specialization, explicit ownership, backup coverage, and cross-functional coordination
 - Product delivery from MVP to production
 - Business process automation and operational restructuring
 - AI-native development workflows in VS Code
 - Supabase / WeWeb / low-code hybrid system design
-- Cross-functional leadership in uncertain and high-pressure environments
 
 ## Selected Experience
 
@@ -42,31 +42,24 @@ Key outcomes:
 ### ZIL Cultural Center, Head of IT
 **Mar 2020 - Jun 2022**
 
-ZIL here refers to the cultural center, not the industrial plant: a major public cultural venue in Moscow, historically one of the city's landmark houses of culture, and reasonably positionable as one of the larger public cultural centers in Russia by scale. In this role the IT function supported 145 employees, 156 workstations, and 581 technology assets; official 2021 reporting shows at least 684 events and about 100,000 attendances across major public formats.
+ZIL here refers to the cultural center, not the industrial plant: a major public cultural venue in Moscow. The IT function supported 145 employees, 156 workstations, and 581 technology assets; official 2021 reporting shows at least 684 events and about 100,000 attendances across major public formats.
 
-- Built and managed a 5-person specialized IT function covering service desk and documentation, workplace infrastructure, DevOps and servers, web/digital systems, and business applications
-- Designed roles around complementary strengths rather than interchangeable generalists, with explicit ownership documented through job descriptions, HelpDesk routing, and responsibility areas
-- Built deliberate backup coverage between adjacent roles so critical functions remained covered without sacrificing specialization; any unassigned responsibility remained with the Head of IT until a clear owner was established
-- Expanded responsibilities as team members demonstrated capability, including CRM and information-system implementation, infrastructure, user support, documentation, web delivery, and cross-functional work with design
-- Kept the team operational and stable for 2 years without departures while modernizing the entire IT environment of a large cultural center
-- Ran IT operations, support coordination, vendor management, and infrastructure priorities
-- Led the remote-work transition during COVID for 100+ employees
-- Introduced HelpDesk, asset tracking, Active Directory, and infrastructure modernization
-- Rebuilt and coordinated the automation of a large cultural center environment
+- Built and managed a 5-person specialized IT function covering service desk, documentation, infrastructure, DevOps, web/digital systems, and business applications
+- Designed clear functional ownership with limited backup overlap: specialists owned different domains, while critical responsibilities always had a defined fallback and no operational area remained unowned
+- Kept the team stable for 2 years without departures while modernizing the IT environment and expanding responsibility into CRM, information systems, web delivery, and cross-functional work with design
+- Led the remote-work transition for 100+ employees during COVID while maintaining IT operations and support continuity
+- Introduced HelpDesk, asset tracking, Active Directory, and infrastructure modernization, making support and operational responsibility more visible and controllable
 
 ### Directorate of Cultural Centers of Moscow, Senior Manager / IT Architect / Analyst
 **Jan 2017 - May 2023**
 
-The Directorate was a city-level public-sector organization coordinating 100+ cultural institutions across Moscow, including libraries and local cultural centers. My role operated across institutional boundaries, combining technology governance, procurement coordination, system ownership, and stakeholder management without relying on direct reporting authority.
+The Directorate was a city-level public-sector organization coordinating 100+ cultural institutions across Moscow. My role combined indirect functional coordination of 100+ institutional IT specialists with system ownership, technology governance, procurement coordination, and stakeholder management across organizations that did not report to me directly.
 
-- Represented the Directorate in centralized IT equipment procurement for cultural institutions: consolidated needs, coordinated proposed allocations, identified which requirements could fit available procurement quotas, and tracked deliveries through completion
-- Worked across institutional and departmental boundaries where procurement budgets were controlled centrally by a separate organization, aligning technical needs with quotas, procurement rules, and available supply rather than directly owning the budget
-- Led the reform and rebuilding of an industry-level information system for cultural institutions
-- Owned the product and technical logic of AIS MosRazvitie, including data model, reporting workflows, governance rules, and system behavior
-- Coordinated requirements, priorities, implementation decisions, and operational constraints with institutional and Directorate stakeholders
-- Combined stakeholder work, documentation, architecture, implementation, training, webinars, server setup, and backups
-- Improved security, access control, reporting, analytics, and operational independence across departments
-- Worked with the client organization and the delivery team to keep the system moving from concept to stable operation
+- Coordinated technology decisions and operating requirements across a distributed network of institutions and their IT specialists without direct administrative authority
+- Represented the Directorate in centralized IT equipment procurement: consolidated institutional needs, worked with procurement quotas, aligned technical requirements with available allocations, and tracked deliveries through completion
+- Led the reform and rebuilding of AIS MosRazvitie, an industry-level information system for cultural institutions, owning its product and technical logic, data model, reporting workflows, access rules, and governance
+- Improved security, access control, reporting, analytics, and operational independence across the institutional network
+- Connected Directorate stakeholders, institutional teams, and delivery specialists around common requirements, priorities, implementation decisions, and operating rules
 
 ## Highlighted Projects
 
