@@ -8,16 +8,17 @@ Portfolio: [Portfolio Index](./portfolio/README.md)
 
 Technology leader and systems architect with 18 years of professional experience across startups, enterprise, and government environments. I build and restructure products, teams, and internal systems at the intersection of engineering, business, and operations, with ownership of architecture, delivery, automation, technical direction, and organizational design.
 
-Leadership scope includes direct management of specialized IT teams and indirect functional coordination of 100+ IT specialists across 100+ subordinate cultural institutions. Experience includes organizational design, procurement coordination, vendor management, service operations, infrastructure modernization, and cross-organizational technology governance.
+Leadership scope includes direct management of specialized IT teams and indirect functional leadership and coordination of 100+ IT specialists across 100+ subordinate cultural institutions. Experience includes organizational design, procurement coordination, vendor management, service operations, infrastructure modernization, business continuity, and cross-organizational technology governance.
 
 Strongest pattern: turning fragmented operations into systems with clear ownership, measurable work, and lower dependence on individual employees or vendors.
 
 ## Core Strengths
 
 - Engineering leadership and systems architecture
-- Management at scale: direct team leadership plus indirect functional coordination of 100+ IT specialists across 100+ institutions
+- Management at scale: direct team leadership plus indirect functional leadership and coordination of 100+ IT specialists across 100+ institutions
 - Organizational design: specialization, explicit ownership, backup coverage, and cross-functional coordination
 - Cost and operational control: infrastructure lifecycle, procurement, vendors, service transparency
+- Business continuity and recovery: privileged-access recovery, role transitions, and operational resilience
 - Product delivery from MVP to production
 - Business process automation and operational restructuring
 - AI-native development workflows in VS Code
@@ -46,20 +47,22 @@ Key outcomes:
 Major public cultural venue in Moscow. The IT function supported 145 employees, 156 workstations, and hundreds of technology assets across business operations and public events.
 
 - Managed 5 IT staff and coordinated 2 installation engineers; structured the function around specialized ownership with enough adjacent backup coverage to keep critical responsibilities covered
+- Recovered administrative control after an inherited system administrator resigned without handover: reconstructed privileged access, restored critical credentials, and reduced single-person dependency across the infrastructure
 - Contributed to the management turnaround that brought the organization out of approximately RUB 30 million in accumulated debt; IT contribution focused on spend control, infrastructure lifecycle, asset visibility, and reducing avoidable replacement and support costs
 - Reconciled 800+ technology assets with accounting and technical teams, enabling formal write-off of approximately 100 missing or unusable assets
 - Extended the useful life of approximately 150 workstations through targeted SSD upgrades, OS migration, and licensing cleanup instead of blanket replacement
-- Introduced HelpDesk, asset tracking, Active Directory, and clearer service ownership; kept the team stable for 2 years without departures
+- Introduced HelpDesk, asset tracking, Active Directory, and clearer service ownership; handled team transitions and replacement without loss of operational continuity
 - Led the remote-work transition for 100+ employees during COVID while maintaining support and operational continuity
 
 ### Directorate of Cultural Centers of Moscow, Senior Manager / IT Architect / Analyst
 **Jan 2017 - May 2023**
 
-City-level public-sector organization coordinating 100+ cultural institutions across Moscow. My role combined indirect functional coordination of 100+ institutional IT specialists with system ownership, technology governance, procurement coordination, and stakeholder management across organizations outside my direct reporting line.
+City-level public-sector organization coordinating 100+ cultural institutions across Moscow. My role combined indirect functional leadership and coordination of 100+ institutional IT specialists with system ownership, technology governance, procurement coordination, and stakeholder management across organizations outside my direct reporting line.
 
 - Coordinated technology requirements and implementation decisions with IT directors, heads of IT, and specialists across 100+ subordinate institutions without direct administrative authority
 - Represented the Directorate in centralized IT equipment procurement: consolidated institutional needs, worked with procurement quotas, aligned technical requirements with available allocations, and tracked deliveries through completion
 - Led the reform of AIS MosRazvitie, an industry-level information system for cultural institutions, owning its product and technical logic, data model, reporting workflows, access rules, and governance
+- Restored availability and reputation of Directorate web systems after an erroneous phishing classification: engaged major security vendors and removed the public website and core information system from security blocklists
 - Reduced management-accounting friction by aligning system terminology and data structures with the operational reality of institutions; improved reporting, analytics, security, and access control
 - Supported adoption across the network through structured feedback, system improvements, and webinar-based training for hundreds of users
 
