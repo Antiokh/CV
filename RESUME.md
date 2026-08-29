@@ -8,15 +8,16 @@ Portfolio: [Portfolio Index](./portfolio/README.md)
 
 Technology leader and systems architect with 18 years of professional experience across startups, enterprise, and government environments. I build and restructure products, teams, and internal systems at the intersection of engineering, business, and operations, with ownership of architecture, delivery, automation, technical direction, and organizational design.
 
-Management scope ranges from building specialized in-house IT teams to indirect functional leadership and coordination of 100+ IT specialists across subordinate cultural institutions. I work through clear ownership, strong functional leads, measurable operations, and explicit responsibility rather than micromanagement.
+Leadership scope includes direct management of specialized IT teams and indirect functional coordination of 100+ IT specialists across 100+ subordinate cultural institutions. Experience includes organizational design, procurement coordination, vendor management, service operations, infrastructure modernization, and cross-organizational technology governance.
 
-Strongest pattern: turning fragmented workflows and weak tooling into systems with clear ownership that teams and organizations can actually run.
+Strongest pattern: turning fragmented operations into systems with clear ownership, measurable work, and lower dependence on individual employees or vendors.
 
 ## Core Strengths
 
 - Engineering leadership and systems architecture
-- Management at scale: direct team leadership plus indirect coordination of 100+ IT specialists across distributed institutions
+- Management at scale: direct team leadership plus indirect functional coordination of 100+ IT specialists across 100+ institutions
 - Organizational design: specialization, explicit ownership, backup coverage, and cross-functional coordination
+- Cost and operational control: infrastructure lifecycle, procurement, vendors, service transparency
 - Product delivery from MVP to production
 - Business process automation and operational restructuring
 - AI-native development workflows in VS Code
@@ -42,24 +43,25 @@ Key outcomes:
 ### ZIL Cultural Center, Head of IT
 **Mar 2020 - Jun 2022**
 
-ZIL here refers to the cultural center, not the industrial plant: a major public cultural venue in Moscow. The IT function supported 145 employees, 156 workstations, and 581 technology assets; official 2021 reporting shows at least 684 events and about 100,000 attendances across major public formats.
+Major public cultural venue in Moscow. The IT function supported 145 employees, 156 workstations, and hundreds of technology assets across business operations and public events.
 
-- Built and managed a 5-person specialized IT function covering service desk, documentation, infrastructure, DevOps, web/digital systems, and business applications
-- Designed clear functional ownership with limited backup overlap: specialists owned different domains, while critical responsibilities always had a defined fallback and no operational area remained unowned
-- Kept the team stable for 2 years without departures while modernizing the IT environment and expanding responsibility into CRM, information systems, web delivery, and cross-functional work with design
-- Led the remote-work transition for 100+ employees during COVID while maintaining IT operations and support continuity
-- Introduced HelpDesk, asset tracking, Active Directory, and infrastructure modernization, making support and operational responsibility more visible and controllable
+- Managed 5 IT staff and coordinated 2 installation engineers; structured the function around specialized ownership with enough adjacent backup coverage to keep critical responsibilities covered
+- Contributed to the management turnaround that brought the organization out of approximately RUB 30 million in accumulated debt; IT contribution focused on spend control, infrastructure lifecycle, asset visibility, and reducing avoidable replacement and support costs
+- Reconciled 800+ technology assets with accounting and technical teams, enabling formal write-off of approximately 100 missing or unusable assets
+- Extended the useful life of approximately 150 workstations through targeted SSD upgrades, OS migration, and licensing cleanup instead of blanket replacement
+- Introduced HelpDesk, asset tracking, Active Directory, and clearer service ownership; kept the team stable for 2 years without departures
+- Led the remote-work transition for 100+ employees during COVID while maintaining support and operational continuity
 
 ### Directorate of Cultural Centers of Moscow, Senior Manager / IT Architect / Analyst
 **Jan 2017 - May 2023**
 
-The Directorate was a city-level public-sector organization coordinating 100+ cultural institutions across Moscow. My role combined indirect functional coordination of 100+ institutional IT specialists with system ownership, technology governance, procurement coordination, and stakeholder management across organizations that did not report to me directly.
+City-level public-sector organization coordinating 100+ cultural institutions across Moscow. My role combined indirect functional coordination of 100+ institutional IT specialists with system ownership, technology governance, procurement coordination, and stakeholder management across organizations outside my direct reporting line.
 
-- Coordinated technology decisions and operating requirements across a distributed network of institutions and their IT specialists without direct administrative authority
+- Coordinated technology requirements and implementation decisions with IT directors, heads of IT, and specialists across 100+ subordinate institutions without direct administrative authority
 - Represented the Directorate in centralized IT equipment procurement: consolidated institutional needs, worked with procurement quotas, aligned technical requirements with available allocations, and tracked deliveries through completion
-- Led the reform and rebuilding of AIS MosRazvitie, an industry-level information system for cultural institutions, owning its product and technical logic, data model, reporting workflows, access rules, and governance
-- Improved security, access control, reporting, analytics, and operational independence across the institutional network
-- Connected Directorate stakeholders, institutional teams, and delivery specialists around common requirements, priorities, implementation decisions, and operating rules
+- Led the reform of AIS MosRazvitie, an industry-level information system for cultural institutions, owning its product and technical logic, data model, reporting workflows, access rules, and governance
+- Reduced management-accounting friction by aligning system terminology and data structures with the operational reality of institutions; improved reporting, analytics, security, and access control
+- Supported adoption across the network through structured feedback, system improvements, and webinar-based training for hundreds of users
 
 ## Highlighted Projects
 
