@@ -29,7 +29,7 @@ My strongest pattern is turning fragmented operations into systems with clear ow
 - Reduced routine client-service work from **hours to minutes** through internal systems, integrations, and automation.
 - As part of the management team at ZIL, contributed to the anti-crisis turnaround that brought the organization out of approximately **RUB 30 million in accumulated debt**; within IT, focused spending on operational value, infrastructure lifecycle, and measurable service operations.
 - Extended the useful life of approximately **150 workstations** through targeted upgrades and licensing cleanup instead of blanket hardware replacement.
-- Reconciled **800+ technology assets** with accounting and technical teams and enabled formal write-off of approximately **100 missing or unusable assets**.
+- Reconciled **800+ accounting and physical asset records** with accounting and technical teams and enabled formal write-off of approximately **100 missing or unusable assets**; this was a broader reconciliation exercise than the **581-asset operational baseline** documented earlier in the role.
 - Moved **100+ employees** to secure remote work during COVID without interrupting core operations.
 - Replaced a **5-hour, single-user reporting export** in a city-scale information system with web-based generation typically completing in **1.5 seconds to 1.5 minutes** and available to authorized users across institutions.
 - Consolidated field operations and client workflows while migrating approximately **70,000 historical documents** into a structured backend.
@@ -49,19 +49,20 @@ My strongest pattern is turning fragmented operations into systems with clear ow
 ### ZIL Cultural Center, Head of IT
 **Mar 2020 - Jun 2022**
 
-ZIL here refers to the **Cultural Center**, not the industrial plant: a major public cultural venue in Moscow. The IT function supported **145 employees, 156 workstations, and 581 technology assets** in the documented baseline; the wider environment included **7 servers and roughly 20 virtual machines**, CCTV, telephony, file services, access control, and public-facing systems.
+ZIL here refers to the **Cultural Center**, not the industrial plant: a major public cultural venue in Moscow. An **August 2020 documented operational baseline** covered **145 employees, 156 workstations, and 581 technology assets**; the wider environment included **7 servers and roughly 20 virtual machines**, CCTV, telephony, file services, access control, and public-facing systems.
 
 - Led **5 IT specialists and coordinated 2 installation engineers**, structuring the function around complementary specializations rather than interchangeable generalists: service desk/documentation, workplace and hardware support, DevOps/server operations, web/digital delivery, and business systems.
 - Defined explicit ownership in role descriptions and HelpDesk routing, with deliberate overlap between adjacent roles so critical work had backup coverage without destroying specialization.
 - Recovered administrative control after a system administrator resigned without transferring passwords, privileged access, or documentation; reconstructed critical credentials and then centralized access and documentation to reduce key-person dependency.
 - Replaced ad-hoc support through calls and personal messages with a managed HelpDesk queue, ownership, priorities, and visible workload; extended the same service model to **seven additional internal technical services**.
 - Contributed to the approximately **RUB 30m** organizational debt turnaround by controlling IT spend, extending infrastructure life, improving asset visibility, and reducing avoidable replacement and support costs.
-- Reconciled **800+ assets**, enabled write-off of approximately **100** missing or unusable items, and extended the useful life of approximately **150 workstations** through targeted SSD upgrades, OS migration, and licensing cleanup.
+- Conducted a broader accounting and physical reconciliation covering **800+ asset records**, enabling write-off of approximately **100** missing or unusable items; separately extended the useful life of approximately **150 workstations** through targeted SSD upgrades, OS migration, and licensing cleanup.
 - Moved **100+ employees** to secure remote work during COVID while maintaining business continuity.
 - Introduced Active Directory, GPOs, centralized access management, automated inventory, monitoring, and clearer operating procedures across infrastructure and support.
 
 ### Directorate of Cultural Centers of Moscow, Senior Manager / IT Architect / Analyst
-**Jan 2017 - May 2023**
+**Jan 2017 - May 2023**  
+*Long-running cross-institutional role held concurrently with later institutional leadership and independent consulting appointments.*
 
 City-level public-sector organization coordinating **100+ cultural institutions across Moscow**. My role combined product and technical ownership with indirect functional leadership across **100+ institutional IT specialists**, procurement coordination, and stakeholder management across organizations outside my direct reporting line.
 
