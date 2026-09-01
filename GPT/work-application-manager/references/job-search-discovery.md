@@ -6,7 +6,7 @@ This file does not redefine the modular contracts. Load:
 
 - `tracker-storage-v5.md` for vacancy ownership/agent writes/lifecycle integrity;
 - `salary-normalization-v6.md` for salary research/storage/completion;
-- `cv-markdown-v1.md` for tailored CV artifact semantics;
+- `cv-markdown-v2.md` for tailored CV source/write/presentation semantics;
 - `activity-log.md` when hiring/process evidence is encountered.
 
 ## Live inventories
@@ -103,15 +103,15 @@ Successful Queue state requires:
 
 - verified Position.md;
 - verified canonical tailored CV Markdown;
-- tracker `CV` pointing to that Markdown Drive URL;
+- Queue `CV` containing the verified public Markdown source URL or its derived `DOCX PDF` presentation;
 - humanized Cover TXT when required by the workflow;
 - required Drive readbacks/shareability checks;
-- verified Vacancy file / CV / Cover links as applicable;
+- verified Vacancy file / CV / Cover values as applicable;
 - Salary Data J = `OK`;
 - Queue Z = `OK`;
 - Stage exactly `CV ready`.
 
-A persistent DOCX is **not** part of the default success gate. Export DOCX through `markdown-drive` only when Anton or the actual application channel requires Word. If Word is exported for final use, it must be generated from the current Markdown and visually QA'd before delivery/submission.
+Agents write only the raw verified Markdown source URL to Queue `CV`; they do not construct markdown-drive DOCX/PDF links. The bound Queue presentation helper renders those variants on sheet open/manual sync. A persistent DOCX is **not** part of the default success gate. Export DOCX through `markdown-drive` only when Anton or the actual application channel requires Word. If Word is exported for final use, it must be generated from the current Markdown and visually QA'd before delivery/submission.
 
 A later evidenced lifecycle event does not authorize an agent to write `Applied` / Assessment / Interview / terminal stages into Queue. Log/report the event and leave UI routing to the bound script.
 
