@@ -11,7 +11,7 @@ This is archival preservation, not a new vacancy analysis and not a loophole aro
 3. `GPT/work-application-manager/SKILL.md`
 4. `GPT/work-application-manager/references/tracker-storage-v5.md`
 5. `GPT/work-application-manager/references/salary-normalization-v6.md`
-6. `GPT/work-application-manager/references/cv-markdown-v1.md`
+6. `GPT/work-application-manager/references/cv-markdown-v2.md`
 7. `GPT/work-application-manager/references/activity-log.md`
 8. live hidden `Agent Instructions`
 9. this migration overlay
@@ -87,13 +87,14 @@ For historical Fit ranges, normalize storage type only: use rounded numeric midp
 
 ## CV artifact migration
 
-`cv-markdown-v1.md` is authoritative: Markdown is the current canonical tailored CV source and tracker `CV` points to Markdown by default.
+`cv-markdown-v2.md` is authoritative: Markdown is the current canonical tailored CV source.
 
 - Recover an existing canonical Markdown CV when available.
 - If an old chat contains only a Word derivative, preserve that historical artifact, but do not treat it as permission to independently maintain Word as a second canonical source.
 - Do not require creation of a persistent DOCX merely to complete migration.
+- If the owning vacancy row is currently writable in Queue, write only the verified canonical Markdown source URL into Queue `CV`; the bound Queue presentation helper will render `DOCX PDF` later. Do not construct export links manually.
 - If a tailored Markdown CV exists/is recovered and the writable Queue record requires Cover, create/recover the canonical humanized TXT unless Anton explicitly declined it.
-- For protected Active/Low fit/Closed rows, preserve/recover artifacts where possible but do not mutate the protected vacancy row merely to attach them; report the tracker-link blocker.
+- For protected Active/Low fit/Closed rows, preserve existing CV presentation links exactly as lifecycle evidence. Do not rewrite them merely to conform to the new Queue-only rendering rule.
 
 ## Activity Log migration
 
