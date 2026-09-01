@@ -1,6 +1,6 @@
 # CV Markdown-first workflow v2
 
-This is the current hard CV artifact/storage contract for candidate-side employment workflows. It supersedes `cv-markdown-v1.md` wherever v1 requires an agent to construct Markdown Drive URLs, write `DOCX PDF` rich-text runs into a vacancy row, or use the visible tracker `CV` cell as canonical artifact storage.
+This is the current hard CV artifact/storage contract for candidate-side employment workflows. It supersedes `cv-markdown-v1.md` wherever v1 requires an agent to construct Markdown Drive export URLs or author multiple rich-text links inside the tracker `CV` cell.
 
 Converter:
 
@@ -26,81 +26,69 @@ WorkApplications/<Company>/<PositionTitle>/Anton_Nazarov<PositionTitle>.txt
 
 The TXT cover exists when required by the workflow. Persisted DOCX/PDF are optional.
 
-## 2. Hidden Artifacts registry
+## 2. Queue CV write contract
 
-WorkInterviews has a hidden `Artifacts` sheet keyed by immutable vacancy Row ID.
-
-Canonical v1 schema:
-
-| Column | Field | Ownership |
-|---|---|---|
-| A | Row ID | immutable vacancy foreign key |
-| B | CV Source URL | agent-writable verified source URL |
-| C | Source kind | `markdown` for new canonical CVs; `legacy` only for migrated historical sources |
-| D | Updated at | informational timestamp |
-
-Rules:
-
-- one Artifacts row per Row ID; upsert by exact Row ID, never duplicate;
-- new/current CV generation writes the publicly readable canonical Markdown URL to `Artifacts!B` and `markdown` to `Artifacts!C`;
-- `legacy` is migration compatibility only and must not be used for a newly authored CV;
-- Artifacts is auxiliary artifact storage, not lifecycle storage, so its row remains stable when a vacancy moves Queue -> Active / Low fit / Closed;
-- artifact recovery/migration may update Artifacts for an existing Row ID in any lifecycle partition without mutating that vacancy row;
-- verify the source file and required public sharing before calling the Artifacts entry valid.
-
-## 3. Agent write boundary
-
-Agents do **not** write vacancy column J (`CV`).
+For a vacancy currently owned by `Queue`, the agent writes only the verified public canonical Markdown source URL into `Queue!CV`.
 
 Agents must not:
 
-- URL-encode the Markdown source for tracker presentation;
-- construct `markdown-drive` preview/export URLs for the tracker;
-- create multiple hyperlink runs in `CV`;
-- use `CV` display text as proof that the canonical source exists;
-- repair a missing/stale presentation link by overwriting Queue/Active/Low fit/Closed J.
+- URL-encode the source URL for tracker presentation;
+- construct `markdown-drive` DOCX/PDF URLs;
+- build multiple hyperlink/rich-text runs in `CV`;
+- write or repair `CV` in Active / Low fit / Closed.
 
-The agent task ends at the verified canonical source + Artifacts upsert.
+The raw Markdown URL is therefore the API-write representation. The bound Apps Script converts it into the human-facing Queue presentation.
 
-This deliberately separates facts from presentation: the agent stores the source; deterministic spreadsheet/script logic renders the UI.
+A new/current CV source must be a real Markdown source. Historical non-Markdown CV links may be preserved as legacy evidence during migration; do not relabel them as Markdown.
 
-## 4. Tracker CV presentation
+## 3. Queue-only presentation
 
-Vacancy column J is a derived presentation surface.
+Only `Queue!CV` needs the generated variant UI.
 
-For a canonical source URL `SOURCE_URL`, Markdown Drive Preview is:
+When the bound spreadsheet opens, the CV presentation helper scans Queue rows. If a Queue CV cell contains a canonical source URL, it replaces that raw source with visible text:
 
 ```text
-https://markdown-drive.pages.dev/?file=<URL-ENCODED-SOURCE_URL>
+DOCX PDF
 ```
 
-Derived exports remain:
+where the two labels are separate rich-text hyperlinks to:
 
 ```text
 https://markdown-drive.pages.dev/?file=<URL-ENCODED-SOURCE_URL>&export=docx
 https://markdown-drive.pages.dev/?file=<URL-ENCODED-SOURCE_URL>&export=pdf
 ```
 
-The bound presentation helper may render a compact single `CV` link to Preview or another deterministic presentation approved by Anton. The canonical URL always remains in Artifacts, never hidden inside the presentation as its only storage location.
+The source remains recoverable from either generated link.
 
-Important UI constraint: Google Sheets rich-link smart chips are not a portable representation for arbitrary external Markdown Drive exporter URLs. Do not make agent correctness depend on a chip. If two separate direct-export targets are ever required with true one-target-per-click behavior, use separate UI cells/controls rather than asking the agent to build multiple links inside one cell.
+The helper also recognizes an already-rendered `DOCX PDF` cell and leaves it unchanged.
 
-`Jobs` is a formula aggregate and may not preserve rich-text hyperlink metadata from physical partitions. This is expected. Resolve canonical CV source through Row ID -> Artifacts, not by scraping Jobs!J.
+## 4. Lifecycle copy semantics
+
+Do not re-render CV presentation in Active / Low fit / Closed.
+
+The canonical lifecycle script moves vacancy rows with `Range.copyTo(..., SpreadsheetApp.CopyPasteType.PASTE_NORMAL, false)` across canonical columns A:W. That operation carries the already-formed Queue CV rich-text hyperlinks with the row.
+
+Therefore:
+
+- variant generation belongs only to Queue;
+- a human Stage move copies the current CV presentation as part of the row;
+- later lifecycle partitions keep that copied presentation snapshot;
+- agents remain forbidden from writing protected lifecycle rows merely to refresh CV links.
+
+`Jobs` is a formula aggregate and may not preserve rich-text link metadata. It remains a read/index surface, not the place to recover CV links for mutation.
 
 ## 5. CV ready gate
 
-For Fit > 60%, the CV artifact requirement is satisfied by a valid matching Artifacts record whose CV Source URL points to the verified/shareable canonical Markdown CV.
+For Fit > 60%, the CV artifact requirement is satisfied when:
 
-`CV ready` does not depend on vacancy J being freshly rendered. Presentation may lag source storage without invalidating the artifact.
-
-Other gates remain unchanged:
-
+- the canonical Markdown source has been created, verified and publicly readable;
+- `Queue!CV` contains either that verified raw source URL awaiting UI rendering or the derived `DOCX PDF` presentation generated from it;
 - required Cover exists and is verified;
 - Salary Data normalization passes;
 - Queue integrity passes;
 - Markdown content QA passes.
 
-During migration only, an existing legacy CV presentation may remain usable while Artifacts is being backfilled. New CV work must use the Artifacts registry.
+Because connector/API writes do not fire simple Apps Script triggers, a newly written raw Markdown URL may remain visible until the spreadsheet is next opened. This is acceptable: the source is already valid and Queue Z sees a nonblank CV value. The next UI open deterministically renders the variants.
 
 ## 6. Markdown authoring contract
 
@@ -125,11 +113,8 @@ Use Markdown Drive when a concrete Word/PDF derivative is requested or required 
 
 ## 8. Migration compatibility
 
-When migrating existing tracker data:
+Existing rendered Queue `DOCX PDF` cells remain valid. Existing Active / Low fit / Closed CV links remain untouched.
 
-- extract the canonical source from valid legacy Markdown Drive links when possible and write it to Artifacts;
-- preserve an old direct Google Doc/Drive CV URL as `Source kind = legacy` only when it is real historical evidence;
-- do not relabel a non-Markdown historical source as canonical Markdown;
-- migration must preserve source access before replacing any visible tracker presentation.
+When a legacy rendered Queue cell must be rebuilt, recover the encoded source URL from either Markdown Drive link and re-render deterministically. Do not browse or guess a missing source.
 
-This file is the hard override for CV artifact registry/storage and tracker presentation semantics until superseded by a later explicit rule.
+This file is the hard override for Queue CV source-write and presentation semantics until superseded by a later explicit rule.
