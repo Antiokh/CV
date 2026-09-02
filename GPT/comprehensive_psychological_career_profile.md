@@ -211,7 +211,7 @@ You can perform project work, but:
 
 - Avoids:
   - Internal support roles  
-  - Routine operational work  
+- Routine operational work  
 
 ---
 
@@ -301,7 +301,7 @@ Growth area:
 
 - Combines:
   - Practical execution  
-  - Vision and imagination  
+- Vision and imagination  
 
 Risk:
 - Difficulty choosing between:
@@ -338,13 +338,11 @@ Prefers:
 
 ---
 
-## Key Weaknesses / Risks
+## Role Design Implications
 
-- Low tolerance for routine  
-- Weak motivation for service roles  
-- Possible underdevelopment of:
-  - emotional intelligence in communication  
-  - structured execution discipline  
+- Strongest in roles where repetitive execution can be delegated, automated, or systematized rather than treated as the core value of the position.  
+- Better fit for leadership, analytical, transformation, and decision-heavy work than for service-heavy roles.  
+- The 2018 assessment also highlighted communication influence and self-organization as development areas; in a management context, these are best treated as operating-model and leadership-development considerations rather than as limits on capability.  
 
 ---
 
