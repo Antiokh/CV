@@ -69,6 +69,7 @@ Typical problems I am brought into:
 
 ### Public engineering projects
 
+- **[Markdown Drive](https://markdown-drive.pages.dev/)** — WYSIWYG Markdown tool for Google Drive, HTTPS sources, and local files with shared theming plus client-side PDF and semantic DOCX export. Built from concept to production in approximately **one week** and published in the **Google Workspace Marketplace**, demonstrating fast product delivery through architecture, UX, OAuth/Drive integration, document rendering, export pipelines, testing, and deployment. [Live](https://markdown-drive.pages.dev/)
 - **[RSLive / «Инструкция по Сербии»](./portfolio/rslive/README.md)** — maintained evidence-oriented knowledge system with a separate content source of truth, semantic indexing, editorial governance, and automated publishing. [Live](https://rslive.ru/) · [Source](https://github.com/Antiokh/rslive_content)
 - **[humanizer_russian](./portfolio/humanizer_russian/README.md)** — source-aware Russian editorial engine with deterministic linting, provenance, conflict handling, CI integration, and controlled model evaluation. [Source](https://github.com/Antiokh/humanizer_russian)
 - **[Supabase Project Starter](./portfolio/supabase_project_starter/README.md)** — reusable Supabase engineering baseline for human and AI-agent delivery, with source-of-truth boundaries, shared helpers, SQL patterns, and deployment-aware rules. [Source](https://github.com/Antiokh/supabase-project-starter)
