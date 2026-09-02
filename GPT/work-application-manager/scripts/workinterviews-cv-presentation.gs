@@ -23,14 +23,21 @@ const WORKINTERVIEWS_CV_PRESENTATION = Object.freeze({
   OPAQUE_MARKDOWN_TAG: '#markdown',
 });
 
-/** Simple open trigger: render pending validated Queue sources and add a repair menu. */
+/** Simple open trigger: repair schema, render pending Queue sources and add menu. */
 function onOpen(e) {
   const ss = e && e.source ? e.source : SpreadsheetApp.getActiveSpreadsheet();
   assertCvPresentationSpreadsheet_(ss);
+
+  if (typeof repairWorkInterviewsSchema_ === 'function') {
+    repairWorkInterviewsSchema_(ss);
+  }
+
   syncQueueCvPresentation_(ss);
+
   SpreadsheetApp.getUi()
     .createMenu('WorkInterviews')
     .addItem('Sync Queue CV links', 'syncQueueCvPresentation')
+    .addItem('Repair tracker schema', 'repairWorkInterviewsSchema')
     .addToUi();
 }
 
