@@ -15,14 +15,20 @@ Technology leader with 18+ years across corporate IT, banking, public-sector sys
 
 I focus on business outcomes rather than technology for its own sake: profitable growth, lower operating cost, resilient operations, and management control. I use architecture, automation, service design and clear ownership to turn fragile or opaque operations into systems the business can actually run.
 
+Management experience combines direct leadership of specialized IT teams with indirect functional coordination of **100+ IT specialists across 100+ subordinate institutions**, including technology governance, procurement coordination, service operations, infrastructure modernization and cross-organizational delivery.
+
 ## Selected business results
 
 - Helped a service business achieve approximately **10x revenue growth in about three months** after redesigning customer intake, operations and product presentation; growth was organic, without paid advertising.
 - Reduced manual client-service work from **hours to minutes** through internal systems, integrations and automation.
 - As part of the management team at ZIL, contributed to the anti-crisis turnaround that brought the organisation out of approximately **RUB 30m in accumulated debt**; within IT, focused spending on operational value, extended the life of existing infrastructure and replaced unmanaged support with measurable service operations.
+- Extended the useful life of approximately **150 workstations** instead of blanket replacement and completed a broader reconciliation of **800+ accounting and physical asset records**, enabling formal write-off of approximately **100 missing or unusable assets**; this was separate from the earlier **581-asset operational baseline**.
+- Recovered administrative control over critical ZIL infrastructure after an inherited administrator left without handover: reconstructed privileged access and critical credentials and reduced key-person dependency.
 - Kept operations running through COVID by moving **100+ employees to secure remote work** without interrupting work.
-- Accelerated heavy reporting exports by approximately **20x** in a city-scale operational system serving **100+ institutions**.
-- Built an IT operating model at ZIL that remained stable after my departure and through subsequent leadership changes.
+- Coordinated technology requirements and delivery with **100+ IT specialists across 100+ cultural institutions** without direct line authority, combining system governance, procurement coordination and institutional stakeholder management.
+- Replaced a **5-hour single-user export workflow** in a city-scale information system with web-based reporting that typically completed in **1.5 seconds to 1.5 minutes** and became available to authorized users across institutions.
+- Restored the Directorate's public website and core information system after erroneous phishing/malware classification by working directly with security vendors and removing the systems from **Google, Bitdefender, Quttera and Sangfor blocklists**.
+- Built a ZIL IT operating model that remained stable after my departure and through subsequent leadership changes.
 
 ## Professional experience
 
@@ -49,25 +55,34 @@ Aug 2022 - Nov 2022
 **Head of IT**  
 Mar 2020 - Jun 2022
 
+Led IT for a major public cultural venue. An **August 2020 documented operational baseline** covered **145 employees, 156 workstations and 581 technology assets**; the wider environment included **7 servers and approximately 20 virtual machines** plus CCTV, telephony, access control and internal business systems.
+
+- Managed **5 IT staff and 2 installation engineers**, assigning specialized ownership across service desk/documentation, workplace infrastructure, servers/DevOps, web/digital systems and business applications, with adjacent backup coverage for critical functions.
+- Controlled operating and modernization budgets, selected vendors and contractors, and owned operating priorities during an anti-crisis period.
+- Recovered administrative control after an inherited system administrator resigned without handover: reconstructed privileged access, restored critical credentials and removed single-person dependency from critical infrastructure.
 - Focused IT spending on operational value during an anti-crisis period, prioritising targeted modernisation and service discipline over indiscriminate replacement.
-- Replaced ad-hoc IT support through calls and personal messages with a managed queue, priorities, ownership and visible workload; extended the same service model to seven additional internal services.
 - Extended the useful life of approximately **150 workstations** through targeted SSD upgrades, Windows 7-to-10 migration and licensing cleanup instead of blanket hardware replacement.
-- Reconciled **800+ technology assets** with accounting and technical teams and enabled the formal write-off of approximately **100 missing or unusable assets**.
-- Designed and executed the secure remote-work transition during COVID while preserving operational continuity.
-- Made an estate of approximately **200 endpoints, 7 servers and 20 virtual machines** more controllable through access governance, security, asset visibility, licensing and vendor management.
-- Led **5 IT specialists and 2 installation engineers** and owned budgets, procurement, operating priorities and technical contractors.
-- Formalised access, documentation, responsibilities and operating procedures so the IT function no longer depended on informal knowledge and personal agreements.
+- Conducted a broader accounting and physical reconciliation covering **800+ asset records** and enabled the formal write-off of approximately **100 missing or unusable assets**.
+- Replaced ad-hoc support through calls and personal messages with a managed HelpDesk queue, priorities, ownership and visible workload; extended the same service model to **seven additional internal services**.
+- Designed and executed the secure remote-work transition for **100+ employees** during COVID while preserving operational continuity.
+- Formalised access, documentation, responsibilities and operating procedures so critical operations no longer depended on informal knowledge and personal agreements.
 
 ### Directorate of Cultural Centers of Moscow
 **Senior Manager / IT Architect / Analyst**  
-Jan 2017 - May 2023
+Jan 2017 - May 2023  
+*Long-running cross-institutional role held concurrently with later institutional leadership and independent consulting appointments.*
 
-- Scaled an industry information system across **100+ institutions**, turning conflicting requirements from organisations, departments and public authorities into a common operating model.
-- Reworked reporting and export architecture to support heavy operational workloads and make long-running operations more predictable for users.
+City-level organisation coordinating **100+ cultural institutions**. My role combined indirect functional coordination of **100+ institutional IT specialists** with system ownership, technology governance, centralized procurement coordination and stakeholder management across organisations outside my direct reporting line.
+
+- Coordinated technology requirements, implementation decisions and operational priorities with IT directors, heads of IT and specialists across the institutional network.
+- Represented the Directorate in centralized IT equipment procurement: consolidated institutional needs, aligned technical requirements with available procurement quotas and tracked deliveries through completion; financial allocations themselves were controlled by a separate procurement organisation.
+- Owned end-to-end product and technical decision-making for AIS MosRazvitie, including product logic, architecture, data model, reporting workflows, access rules, governance and user adoption.
+- Replaced a **5-hour single-user export workflow** with web-based reporting that typically completed in **1.5 seconds to 1.5 minutes** and could be used by authorized users across institutions.
+- Restored availability and security reputation of the Directorate's public website and core information system after false phishing/malware classifications by working directly with **Google, Bitdefender, Quttera and Sangfor** to remove the systems from their blocklists.
 - Made system changes more controllable through common data models, roles, access rules and explicit change procedures instead of local agreements.
 - Modernised a live legacy IBM Domino environment without interrupting service.
+- Hired, onboarded, adapted, and mentored staff and interns, and designed probation and onboarding processes.
 - Built a feedback and training loop for hundreds of users so recurring operational problems translated into concrete product improvements.
-- Participated in hiring, onboarding, task distribution and mentoring of employees and interns.
 
 ### Moscow Social Development Agency
 **Deputy Head of Digital Development & IT / Acting Head of IT**  
@@ -92,13 +107,15 @@ Domodedovo Airport, IT Company / Lotus Notes Department, Synergy and independent
 ## Management scope
 
 - Technology strategy and architecture
+- Direct team leadership plus indirect functional coordination across 100+ institutional IT specialists
+- Organizational design: specialized roles, explicit ownership and backup coverage
+- Hiring, onboarding, mentoring and team development
 - IT operations and service management
-- Team leadership, hiring, onboarding and mentoring
-- Budget, procurement, vendor and contractor management
-- Delivery, prioritisation and change management
+- Budget ownership, procurement planning, centralized quota coordination, vendor and contractor management
+- Delivery, prioritisation and cross-organizational change management
 - Business-process analysis and automation
 - CRM / ERP implementation and adoption
-- Information security, continuity and access governance
+- Information security, continuity, privileged-access recovery and access governance
 
 ## Technical scope
 

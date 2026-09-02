@@ -6,89 +6,118 @@ Portfolio: [Portfolio Index](./portfolio/README.md)
 
 ## Profile
 
-Technology leader and systems architect with 18 years of professional experience across startups, enterprise, and government environments. I build and restructure products and internal systems at the intersection of engineering, business, and operations, with strong ownership of architecture, delivery, automation, team leadership, and long-term technical direction.
+Technology leader and systems architect with 18 years of professional experience across startups, enterprise, banking, and government environments. I build and restructure technology functions, products, and internal systems at the intersection of engineering, business, and operations.
 
-Strongest pattern: turning fragmented workflows and weak tooling into scalable systems teams can actually run.
+Management scope includes direct leadership of specialized IT teams and indirect functional leadership and coordination of **100+ IT specialists across 100+ subordinate cultural institutions**. I have worked through both formal reporting lines and cross-organizational authority: aligning owners, priorities, procurement, infrastructure, security, delivery, and operating rules without needing every participant to report directly to me.
 
-I also keep an active eye on product ideas through Serbian IT events and conferences, where I look for practical patterns, workflow improvements, and ways AI-driven dialogue or feedback loops could make services more useful.
+My strongest pattern is turning fragmented operations into systems with clear ownership, measurable work, lower operating risk, and less dependence on individual employees or vendors.
 
 ## Core Strengths
 
-- Engineering leadership and systems architecture
-- Product delivery from MVP to production
-- Business process automation and operational restructuring
-- AI-native development workflows in VS Code
-- Supabase / WeWeb / low-code hybrid system design
-- Cross-functional leadership in uncertain and high-pressure environments
+- Management at scale: direct team leadership plus indirect functional leadership across **100+ IT specialists / 100+ institutions**
+- Organizational design: role specialization, explicit ownership, adjacent backup coverage, and cross-functional coordination
+- Technology strategy, systems architecture, and delivery ownership
+- Cost and operational control: procurement, infrastructure lifecycle, vendors, assets, and service transparency
+- Business continuity and security: access governance, key-person risk reduction, incident recovery, and operational resilience
+- Business-process automation, ERP/CRM implementation, and product adoption
+- Legacy modernization without interrupting daily operations
+- Hands-on technical depth across PostgreSQL, Supabase, automation, APIs, infrastructure, and enterprise systems
+
+## Selected Business Results
+
+- Helped a service business achieve approximately **10x revenue growth in about three months** after redesigning customer intake, operations, and product presentation; growth was organic, without paid advertising.
+- Reduced routine client-service work from **hours to minutes** through internal systems, integrations, and automation.
+- As part of the management team at ZIL, contributed to the anti-crisis turnaround that brought the organization out of approximately **RUB 30 million in accumulated debt**; within IT, focused spending on operational value, infrastructure lifecycle, and measurable service operations.
+- Extended the useful life of approximately **150 workstations** through targeted upgrades and licensing cleanup instead of blanket hardware replacement.
+- Reconciled **800+ accounting and physical asset records** with accounting and technical teams and enabled formal write-off of approximately **100 missing or unusable assets**; this was a broader reconciliation exercise than the **581-asset operational baseline** documented earlier in the role.
+- Moved **100+ employees** to secure remote work during COVID without interrupting core operations.
+- Replaced a **5-hour, single-user reporting export** in a city-scale information system with web-based generation typically completing in **1.5 seconds to 1.5 minutes** and available to authorized users across institutions.
+- Consolidated field operations and client workflows while migrating approximately **70,000 historical documents** into a structured backend.
 
 ## Selected Experience
 
-### NeedleBit, CTO / Systems Architect / Product Builder
+### NeedleBit, Founder / CTO / Systems Architect
 **Nov 2022 - Present**
 
-- Defined technical strategy and architecture for multiple client and internal products
-- Worked with other developers and a designer on product delivery and implementation
-- Built systems using WeWeb, Supabase, Xano, Bubble, Glide, n8n, Make, and custom integrations
-- Delivered SaaS products, internal tools, portals, automation systems, and operational platforms
-- Built AI-assisted engineering workflows with repository instructions, helper layers, and architectural guardrails
-- Improved PostgreSQL function versioning and database-to-git synchronization for auditable SQL workflows
-
-Key outcomes:
-- Reduced service time from hours to minutes through automation
-- Increased client revenue up to x13 through system redesign and process restructuring
-- Delivered end-to-end systems across backend, frontend, automation, UX, and operations
+- Work directly with founders and business owners, translating operating constraints into architecture, automation, delivery priorities, and ownership boundaries.
+- Designed and delivered CRM, ERP, internal portal, reporting, marketplace, assessment, and field-operations systems across WeWeb, Supabase, Xano, Bubble, Glide, n8n, Make, PostgreSQL, APIs, Telegram integrations, and AI APIs.
+- Reduced service handling from hours to minutes by replacing manual chat, email, and spreadsheet workflows with structured automation.
+- Supported approximately 10x revenue growth in a service-business case after process restructuring and system rollout.
+- Reduced vendor and key-person dependency by moving critical data and logic into controlled, documented architecture with explicit ownership and handover paths.
+- Built AI-assisted engineering workflows with repository instructions, acceptance criteria, helper layers, SQL workflows, and database-to-git synchronization.
 
 ### ZIL Cultural Center, Head of IT
 **Mar 2020 - Jun 2022**
 
-ZIL here refers to the cultural center, not the industrial plant: a major public cultural venue in Moscow, historically one of the city's landmark houses of culture, and reasonably positionable as one of the larger public cultural centers in Russia by scale. In this role the IT function supported 145 employees, 156 workstations, and 581 technology assets; official 2021 reporting shows at least 684 events and about 100,000 attendances across major public formats.
+ZIL here refers to the **Cultural Center**, not the industrial plant: a major public cultural venue in Moscow. An **August 2020 documented operational baseline** covered **145 employees, 156 workstations, and 581 technology assets**; the wider environment included **7 servers and roughly 20 virtual machines**, CCTV, telephony, file services, access control, and public-facing systems.
 
-- Started by stabilizing the environment with a core team of 3 people, then grew the in-house IT team to 5 as operations became more structured
-- Kept the team operational and stable for 2 years without departures while modernizing the entire IT environment of a large cultural center
-- Ran IT operations, support coordination, vendor management, and infrastructure priorities
-- Led the remote-work transition during COVID for 100+ employees
-- Introduced HelpDesk, asset tracking, Active Directory, and infrastructure modernization
-- Rebuilt and coordinated the automation of a large cultural center environment
+- Managed **5 IT staff and 2 installation engineers**, structuring the function around complementary specializations rather than interchangeable generalists: service desk/documentation, workplace and hardware support, DevOps/server operations, web/digital delivery, and business systems.
+- Managed operating and modernization budgets, selected vendors and contractors, and kept the in-house team stable for **two years without departures** while modernizing the IT environment.
+- Defined explicit ownership in role descriptions and HelpDesk routing, with deliberate overlap between adjacent roles so critical work had backup coverage without destroying specialization.
+- Recovered administrative control after a system administrator resigned without transferring passwords, privileged access, or documentation; reconstructed critical credentials and then centralized access and documentation to reduce key-person dependency.
+- Replaced ad-hoc support through calls and personal messages with a managed HelpDesk queue, ownership, priorities, and visible workload; extended the same service model to **seven additional internal technical services**.
+- Contributed to the approximately **RUB 30m** organizational debt turnaround by controlling IT spend, extending infrastructure life, improving asset visibility, and reducing avoidable replacement and support costs.
+- Conducted a broader accounting and physical reconciliation covering **800+ asset records**, enabling write-off of approximately **100** missing or unusable items; separately extended the useful life of approximately **150 workstations** through targeted SSD upgrades, OS migration, and licensing cleanup.
+- Moved **100+ employees** to secure remote work during COVID while maintaining business continuity.
+- Introduced Active Directory, GPOs, centralized access management, automated inventory, monitoring, and clearer operating procedures across infrastructure and support.
 
 ### Directorate of Cultural Centers of Moscow, Senior Manager / IT Architect / Analyst
-**Jan 2017 - May 2023**
+**Jan 2017 - May 2023**  
+*Long-running cross-institutional role held concurrently with later institutional leadership and independent consulting appointments.*
 
-The Directorate was a city-level public-sector organization coordinating 100+ cultural institutions across Moscow, including libraries and local cultural centers.
+City-level public-sector organization coordinating **100+ cultural institutions across Moscow**. My role combined product and technical ownership with indirect functional leadership across **100+ institutional IT specialists**, procurement coordination, and stakeholder management across organizations outside my direct reporting line.
 
-- Led the reform and rebuilding of an industry-level information system for cultural institutions
-- Owned the product and technical logic of AIS MosRazvitie, including data model, reporting workflows, governance rules, and system behavior
-- Combined stakeholder work, documentation, architecture, implementation, training, webinars, server setup, and backups
-- Improved security, access control, reporting, analytics, and operational independence across departments
-- Worked with the client organization and the delivery team to keep the system moving from concept to stable operation
+- Worked with IT directors, heads of IT, and specialists across **100+ subordinate institutions**, aligning technical requirements, operating rules, implementation decisions, and adoption without direct administrative authority.
+- Owned end-to-end product and technical decision-making for **AIS MosRazvitie**, including product logic, architecture, data model, reporting workflows, access rules, governance, implementation, and user adoption.
+- Replaced a **5-hour, single-user export workflow** with web-based report generation typically completing in **1.5 seconds to 1.5 minutes** for authorized users across institutions.
+- Represented the Directorate in centralized IT equipment procurement: consolidated institutional needs, worked with procurement quotas, aligned technical requirements with available allocations, and tracked deliveries through completion.
+- Restored availability and reputation after Directorate web systems were incorrectly classified as phishing/malware: worked with **Google, Bitdefender, Quttera, and Sangfor** to remove the public portal and core information system from security blocklists.
+- Modernized the live IBM Domino environment, migrated infrastructure from Windows to CentOS/nginx, strengthened authentication and access control, and achieved an **A+ SSL rating** without interrupting service.
+- Prepared technical requirements for sector-level IT projects and represented technical needs in meetings with Moscow authorities.
+- Hired, onboarded, adapted, and mentored staff and interns, and designed probation and onboarding processes.
+- Built a feedback, support, documentation, and webinar-based training loop for hundreds of users so recurring operational problems translated into concrete system improvements.
+
+### Moscow Social Development Agency, Deputy Head of Digital Development & IT / Acting Head of IT
+**Sep 2019 - Mar 2020**
+
+- Helped build the IT function of a newly created organization from scratch: infrastructure, support, security, asset control, procurement, documentation, and operating rules.
+- Designed the initial architecture for workstations, servers, Ethernet/Wi-Fi, SIP telephony, access accounts, and business systems; introduced HelpDesk and automated asset inventory.
+- Planned team activity, controlled execution, participated in contractor selection, and served on acceptance commissions for major agency projects including Healthy Moscow and My Social Center.
+
+### Settlement and Savings Bank, Lead Software Developer / Systems Architect
+**Jan 2013 - Sep 2015**
+
+- Worked with bank leadership and department heads to turn informal document movement into explicit routes, ownership, statuses, approval paths, and measurable processing times.
+- Designed and built an internal electronic document-management system from scratch on IBM Lotus Domino and integrated it with 1C through XML.
+- Owned delivery from process analysis through implementation, rollout, training, and support while coordinating another developer.
 
 ## Highlighted Projects
 
-- **PromptlessPress:** AI-assisted visual content platform with fal.ai pipelines, prompt-debug interfaces, and structured generation logic
+- **AIS MosRazvitie:** city-scale government information system across 100+ cultural institutions, with reporting, governance, security, workflows, integrations, and user adoption
+- **Exit Lead:** dual-interface field operations and client-reporting platform with approximately 70,000 historical documents migrated into a structured backend
+- **Andronyevskaya ERP:** self-hosted operational system with role-based workflows, Telegram Mini App access, QR-linked assets, real-time tasks, and automation
+- **PromptlessPress:** AI-assisted generation platform with reproducible workflows, structured prompts, debug tooling, and engineering guardrails
 - **MetaFox Strengths Explorer:** assessment platform with scoring logic, PDF reporting, peer feedback, and admin tooling
-- **Exit Lead:** dual-frontend inspection/reporting platform on Glide + WeWeb + Supabase with automated PDF generation
-- **Andronyevskaya ERP:** self-hosted property support ERP with Telegram Mini App login, QR workflows, and role-based operations
-- **AIS MosRazvitie:** large-scale government information system with reporting, security, workflows, and interactive maps
 
 ## Tech Stack
 
-**Architecture / Product:** system architecture, delivery design, process optimization, stakeholder alignment  
+**Architecture / Product:** systems architecture, delivery design, process optimization, stakeholder alignment, ITSM, governance  
 **Frontend / Builders:** WeWeb, Bubble, Glide, Webflow  
-**Backend / Data / Automation:** Supabase, Xano, PostgreSQL, SQL, Supabase Edge Functions, n8n, Make, REST APIs, Telegram integrations  
-**Code / AI:** JavaScript, Python, Node.js, OpenAI, fal.ai, AI-assisted development workflows  
-**Enterprise / Legacy:** IBM Domino / Lotus Notes, Active Directory, Windows Server, Linux
+**Backend / Data / Automation:** Supabase, Xano, PostgreSQL, SQL, Edge Functions, n8n, Make, REST APIs, Telegram integrations  
+**Code / AI:** JavaScript, TypeScript, Python, Node.js, OpenAI API, fal.ai, AI-assisted development workflows  
+**Enterprise / Infrastructure:** IBM/HCL Domino, Active Directory, GPO, Windows Server, Linux, nginx, Docker, Hyper-V, GLPI, Zabbix, Synology
 
 ## Education
 
 - Bachelor in Management, Small Business Management specialization, National Institute of Business, Moscow, 2019
 - Professional retraining: Manager in Information Technologies, Humanities Institute, Moscow, 2019
-- Applied Informatics in Economics / Applied Economics in Informatics coursework, Humanities Institute, Moscow, 2011-2019; later transferred before graduation
 - Background in Accounting and Finance
 
 ## Languages
 
 - Russian: Native
 - English: Fluent
-- Serbian: Fluent
+- Serbian: Working proficiency
 
 ## Additional
 
