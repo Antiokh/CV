@@ -1,82 +1,98 @@
-# Anton Nazarov
-**Engineering Manager / CTO / Systems Architect / Tech Lead**
+# Anton Nazarov — CTO / Technology Director
 
-Belgrade, Serbia  
+**Career evidence, management cases, technical depth, and selected systems**  
+Belgrade, Serbia
 
-Technology leader and systems architect with 18 years of experience across startups, enterprise, banking, and government environments.
+I help organisations make technology economically useful: increase revenue, reduce operating cost, remove critical dependency on individual employees and vendors, and give management clear control over systems, workload, spend, and risk.
 
-I build and restructure complex systems at the intersection of **engineering, business, and operations**, taking ownership of architecture, delivery, stakeholder alignment, adoption, automation, and long-term technical direction.
+My background combines 18+ years across founder-led businesses, banking, enterprise IT, and public-sector systems. I take responsibility not only for architecture, but for the operating consequences of technical decisions: ownership, adoption, continuity, cost, delivery, and maintainability.
 
-My strongest pattern is turning fragmented workflows, weak tooling, and operational chaos into structured systems that teams can actually run, govern, and maintain.
+This repository is the evidence layer behind that positioning — resumes, career history, management cases, technical proof, and project case studies.
 
-I work best as a **playing coach**: hands-on enough to ship, senior enough to align product, architecture, and business goals.
+## Primary CTO CV
 
-I also work comfortably in **AI-native and agentic development workflows**, using VS Code, repository-specific instructions, architectural guardrails, and structured tasking to speed up implementation without losing technical discipline.
+**[Read the Markdown CV](./RESUME_FRACTIONAL_CTO.md)** · **[DOCX](https://markdown-drive.pages.dev/?file=https%3A%2F%2Fraw.githubusercontent.com%2FAntiokh%2FCV%2Fmain%2FRESUME_FRACTIONAL_CTO.md&export=docx)** · **[PDF](https://markdown-drive.pages.dev/?file=https%3A%2F%2Fraw.githubusercontent.com%2FAntiokh%2FCV%2Fmain%2FRESUME_FRACTIONAL_CTO.md&export=pdf)** · [LinkedIn](https://www.linkedin.com/in/nazarovanton/)
 
-## Core Value
+General entry points: [Short Resume](./RESUME.md) · [Portfolio Index](./portfolio/README.md) · [Detailed Experience](./details/anton_nazarov_experience_full.md)
 
-- Bridging **business <-> technology <-> operations**
-- Designing **scalable architectures and internal systems**
-- Formalizing messy processes into **visible, governed workflows**
-- Driving **automation, cost optimization, and process clarity**
-- Leading teams in **uncertain and high-pressure environments**
-- Turning chaos into **structured, working systems**
+## Selected business results
 
-## Key Strengths
+- Helped a service business achieve approximately **10× revenue growth in about three months** after redesigning customer intake, operations, and product presentation; growth was organic, without paid advertising. [Case study](./portfolio/dobri_visarun/README.md)
+- Reduced routine client-service work from **hours to minutes** through internal systems, integrations, and automation. [Case study](./portfolio/dobri_visarun/README.md)
+- As part of the management team at ZIL, contributed to the anti-crisis turnaround that brought the organisation out of approximately **RUB 30m in accumulated debt**; within IT, focused spending on operational value and replaced unmanaged support with measurable service operations. [Detailed experience](./details/anton_nazarov_experience_full.md)
+- Extended the useful life of approximately **150 workstations** through targeted upgrades and licensing cleanup, and reconciled **800+ accounting and physical asset records**, enabling formal write-off of approximately **100 missing or unusable assets**. [Detailed experience](./details/anton_nazarov_experience_full.md)
+- Moved **100+ employees** to secure remote work during COVID without interrupting operations. [Detailed experience](./details/anton_nazarov_experience_full.md)
+- Coordinated technology requirements and delivery with **100+ IT specialists across 100+ cultural institutions** without direct line authority. [Primary CTO CV](./RESUME_FRACTIONAL_CTO.md)
+- Replaced a **5-hour, single-user reporting export** in a city-scale information system with web-based generation typically completing in **1.5 seconds to 1.5 minutes** and available to authorised users across institutions. [AIS MosRazvitie](./portfolio/ais_mosrazvitie/README.md)
+- Consolidated field operations and client workflows while migrating approximately **70,000 historical documents** into a structured backend. [Exit Lead](./portfolio/exit_lead/README.md)
+- Built an IT operating model at ZIL that remained stable after my departure and through subsequent leadership changes. [Detailed experience](./details/anton_nazarov_experience_full.md)
 
-- **Communicator** - creates shared understanding through clear summaries, precise wording, and aligned interpretation
-- **Examiner** - verifies assumptions, catches inconsistencies, and spots risks early
-- **Inventor** - generates original solutions, connects ideas, and experiments with new approaches
-- **Learner** - improves quickly through feedback, reflection, and repeated practice
-- **Decision Maker** - brings clarity by choosing direction, naming tradeoffs, and closing open loops
+## Executive value
 
-## Quick entry points
+My recurring pattern is **Transparency → Efficiency → Growth**.
 
-If you want the short version, start with:
-- [Short Resume](./RESUME.md)
-- [Public Summary](./data/public_summary.md)
-- [Portfolio Index](./portfolio/README.md)
+First, make the technology operating model visible: who owns what, where work is stuck, what systems and vendors matter, what they cost, and where the risks are. Then stabilise the critical function. After that, decide what should be automated, integrated, replaced, built, or scaled.
+
+Typical problems I am brought into:
+
+- delivery slows while technology cost rises;
+- IT becomes a black box and management cannot connect spend to value;
+- responsibilities are unclear across employees, teams, contractors, and vendors;
+- critical processes depend on spreadsheets, chats, manual handoffs, or individual memory;
+- key systems depend on one employee, contractor, or platform;
+- CRM/ERP exists, but people continue to work outside it;
+- management lacks visibility into workload, bottlenecks, service quality, risk, or the real cost of change;
+- a working legacy environment needs modernisation without operational breakage.
+
+## Evidence map
+
+| Question | Evidence |
+| --- | --- |
+| Can he run technology as a business function? | [Management experience cases](./GPT/MANAGEMENT_EXPERIENCE_CASES.md) · [Executive positioning](./GPT/EXECUTIVE_POSITIONING.md) · [Detailed experience](./details/anton_nazarov_experience_full.md) |
+| Can he lead through both direct authority and a cross-organisational matrix? | [Primary CTO CV](./RESUME_FRACTIONAL_CTO.md) · [Detailed experience](./details/anton_nazarov_experience_full.md) |
+| Can he design teams and reduce key-person dependency? | [Primary CTO CV](./RESUME_FRACTIONAL_CTO.md) · [Management experience cases](./GPT/MANAGEMENT_EXPERIENCE_CASES.md) |
+| Can he turn operational chaos into governed systems? | [Management translation layer](./GPT/MANAGEMENT_TRANSLATION_LAYER.md) · [Portfolio](./portfolio/README.md) |
+| Can he operate across executives, users, technical teams, and institutions? | [Detailed experience](./details/anton_nazarov_experience_full.md) · [AIS MosRazvitie](./portfolio/ais_mosrazvitie/README.md) |
+| Can he remain technically credible and hands-on? | [Technical delivery positioning](./GPT/TECHNICAL_DELIVERY_POSITIONING.md) · [Portfolio](./portfolio/README.md) |
+| Can he use AI without turning engineering into uncontrolled prompt-and-pray delivery? | [AI-native delivery](./GPT/AI_NATIVE_DELIVERY.md) · [PromptlessPress](./portfolio/promptlesspress/README.md) |
+| Is there proof beyond employment history? | [Public engineering projects](#public-engineering-projects) · [Portfolio index](./portfolio/README.md) |
+
+## Selected systems
+
+### Business and operational systems
+
+- **[Dobri Visarun](./portfolio/dobri_visarun/README.md)** — service-business automation and restructuring associated with approximately 10× organic revenue growth and routine handling reduced from hours to minutes.
+- **[AIS MosRazvitie](./portfolio/ais_mosrazvitie/README.md)** — industry-level information system across 100+ institutions, combining reporting, analytics, governance, integrations, and user adoption.
+- **[Exit Lead](./portfolio/exit_lead/README.md)** — field operations, client workflows, automated reporting, and migration of approximately 70,000 historical documents.
+- **[Andronyevskaya ERP](./portfolio/andronyevskaya_erp/README.md)** — self-hosted operational system with role-based workflows, Telegram Mini App access, QR-linked assets, real-time tasks, and automation.
+- **[PromptlessPress](./portfolio/promptlesspress/README.md)** — AI-assisted generation system with reproducible execution flows, structured prompts, debug tooling, and engineering guardrails.
+
+### Public engineering projects
+
+- **[Markdown Drive](https://markdown-drive.pages.dev/)** — WYSIWYG Markdown tool for Google Drive, HTTPS sources, and local files with shared theming plus client-side PDF and semantic DOCX export. Built from concept to production in approximately **one week** and published in the **Google Workspace Marketplace**, demonstrating fast product delivery through architecture, UX, OAuth/Drive integration, document rendering, export pipelines, testing, and deployment. [Live](https://markdown-drive.pages.dev/)
+- **[RSLive / «Инструкция по Сербии»](./portfolio/rslive/README.md)** — maintained evidence-oriented knowledge system with a separate content source of truth, semantic indexing, editorial governance, and automated publishing. [Live](https://rslive.ru/) · [Source](https://github.com/Antiokh/rslive_content)
+- **[humanizer_russian](./portfolio/humanizer_russian/README.md)** — source-aware Russian editorial engine with deterministic linting, provenance, conflict handling, CI integration, and controlled model evaluation. [Source](https://github.com/Antiokh/humanizer_russian)
+- **[Supabase Project Starter](./portfolio/supabase_project_starter/README.md)** — reusable Supabase engineering baseline for human and AI-agent delivery, with source-of-truth boundaries, shared helpers, SQL patterns, and deployment-aware rules. [Source](https://github.com/Antiokh/supabase-project-starter)
+- **[WeWeb Component Starter](./portfolio/ww_component_starter/README.md)** — reusable Vue/WeWeb component engineering kit covering schema/runtime/editor contracts, platform APIs, and advanced component patterns. [Source](https://github.com/Antiokh/ww-component-starter)
+- **[tgs.py](./portfolio/tgs.py/README.md)** — Telegram operations toolkit with structured exports, automation scaffolding, packaging, licensing, and an early desktop GUI. [Source](https://github.com/Antiokh/tgs.py)
+
+## Management scope
+
+Direct leadership of specialised IT teams plus indirect functional coordination across **100+ IT specialists / 100+ institutions** · organisational design with specialised roles, explicit ownership, and adjacent backup coverage · technology strategy and architecture · IT operations and service management · hiring, onboarding, mentoring, and team development · budget, procurement, vendor, and contractor management · delivery and cross-organisational prioritisation · business-process analysis and automation · ERP/CRM implementation and adoption · information security, continuity, privileged-access recovery, and access governance.
+
+## Technical depth
+
+`PostgreSQL` `Supabase` `SQL` `REST APIs` `JavaScript` `TypeScript` `Python` `Node.js` `Docker` `Linux` `NGINX` `Git/GitHub` `n8n` `Make` `OpenAI API` `WeWeb` `Xano` `Active Directory` `GLPI` `VMware`
+
+The stack is supporting evidence, not the positioning. The recurring responsibility is deciding what the business should own, automate, integrate, modernise, or stop paying for — and carrying those decisions through implementation and adoption.
+
+## Deeper evidence
+
+- [Management Experience Cases](./GPT/MANAGEMENT_EXPERIENCE_CASES.md)
+- [Executive Positioning](./GPT/EXECUTIVE_POSITIONING.md)
+- [Management Translation Layer](./GPT/MANAGEMENT_TRANSLATION_LAYER.md)
+- [Technical Delivery Positioning](./GPT/TECHNICAL_DELIVERY_POSITIONING.md)
+- [AI-Native Delivery](./GPT/AI_NATIVE_DELIVERY.md)
 - [Detailed Experience](./details/anton_nazarov_experience_full.md)
-
-## Focus Pet Projects
-
-- **[RSLive - Serbia Relocation Encyclopedia](./portfolio/rslive/README.md)** - a public evidence-oriented knowledge system with a separate content source of truth, Astro/Starlight runtime, semantic indexing, editorial governance, and automated publishing. [Live](https://rslive.ru/) · [Source](https://github.com/Antiokh/rslive_content)
-- **[humanizer_russian - Russian Editorial Engine](./portfolio/humanizer_russian/README.md)** - a source-aware editorial system that separates linguistic norm from editorial preference and combines deterministic linting, provenance, conflict handling, CI integration, and controlled model-evaluation infrastructure. [Source](https://github.com/Antiokh/humanizer_russian)
-
-## Public Engineering Projects
-
-- **[Supabase Project Starter](./portfolio/supabase_project_starter/README.md)** - reusable Supabase engineering baseline for human and AI-agent work, with deployment-aware rules, source-of-truth boundaries, shared helpers, SQL patterns, and project initialization guidance. [Source](https://github.com/Antiokh/supabase-project-starter)
-- **[WeWeb Component Starter](./portfolio/ww_component_starter/README.md)** - custom-component engineering kit that formalizes the WeWeb schema/runtime/editor contract, platform APIs, advanced Vue component patterns, and agent-oriented development workflow. [Source](https://github.com/Antiokh/ww-component-starter)
-- **[tgs.py](./portfolio/tgs.py/README.md)** - Telegram operations toolkit with a CLI-first architecture, structured exports, automation scaffolding, licensing, packaging, and an early desktop GUI. [Source](https://github.com/Antiokh/tgs.py)
-
-If you want the deeper positioning and market fit, see:
-- [Role Market Fit Matrix](./data/role_market_fit.md)
-- [Career Strategy](./data/career_strategy.md)
-- [Pack Template](./data/pack_template.md)
-- [Application Workflow](./workflows/application_workflow.md)
-- [Evidence Map Guide](./workflows/evidence_map_guide.md)
-- [Profile Suggestions](./workflows/ai_profile_suggestions.md)
-
-## Private application workspace
-
-Use the local `applications/` folder for live, private application work:
-- `applications/README.md`
-- `applications/_tracking/application_tracker.md`
-- `applications/_tracking/status_dump.md`
-
-## For agents
-
-If you are using this repository as an agent workspace, start here:
-- [Workflows Overview](./workflows/README.md)
-- [Application Workflow](./workflows/application_workflow.md)
-- [Evidence Map Guide](./workflows/evidence_map_guide.md)
-- [Role Market Fit Matrix](./data/role_market_fit.md)
-- [Career Strategy](./data/career_strategy.md)
-- [Pack Template](./data/pack_template.md)
-
-## Additional references
-
-- [Structured Profile Data](./data/anton_nazarov_profile.json)
 - [Recommendations Dataset](./data/anton_nazarov_recommendations.json)
-- [Personality / Strengths Reference](./details/metafox_strengths_report.md)
-- [Career Profile Reference](./details/comprehensive_psychological_career_profile.md)
+- [Portfolio Index](./portfolio/README.md)
