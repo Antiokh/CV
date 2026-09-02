@@ -13,14 +13,14 @@ For every WorkInterviews / application-status / vacancy-ingestion workflow, load
 
 1. `references/tracker-storage-v5.md` — canonical vacancy ownership, Queue-only agent write boundary, lifecycle routing and integrity rules.
 2. `references/salary-normalization-v6.md` — canonical salary research, structured Salary Data, monthly normalization and completion gates.
-3. `references/cv-markdown-v1.md` — canonical Markdown-first CV artifact/storage contract and on-demand DOCX semantics.
+3. `references/cv-markdown-v2.md` — canonical Markdown-first CV source, Queue-only generated presentation and on-demand derivative semantics.
 4. `references/activity-log.md` — canonical append-only correspondence/process history.
 5. `references/job-search-discovery.md` when finding new vacancies.
 6. `MIGRATION.md` only for old-chat archival migration.
 
 Before the first tracker/Drive write, also read the live hidden `Agent Instructions` tab in WorkInterviews. A newer explicit user instruction wins; update the live instructions when the user changes the operating contract.
 
-Do not restate or override these modular contracts from this skill. In particular: `Jobs` is not writable; agents do not route rows by API; F/AF are computed salary fields; tailored CV Markdown is canonical and DOCX is optional unless a concrete submission requires it.
+Do not restate or override these modular contracts from this skill. In particular: `Jobs` is not writable; agents do not route rows by API; F/AF are computed salary fields; tailored CV Markdown is canonical; agents write only its verified source URL into Queue `CV`; the bound UI helper renders `DOCX PDF`; DOCX/PDF are optional unless a concrete submission requires them.
 
 Spreadsheet: `WorkInterviews` (`1k-Zbz7LMZJJcWfMp41yC-7mUaL_UI9__Bwy1SpPLbao`).
 Drive root: `WorkApplications` (`1wQMbnH4CODaARJSY221H06oCFJV2ukAK`).
@@ -35,7 +35,7 @@ Drive root: `WorkApplications` (`1wQMbnH4CODaARJSY221H06oCFJV2ukAK`).
 6. Keep `Vacancy snapshot` compact and `Notes` concise.
 7. Assign one evidence-based numeric Fit %.
 8. Research and normalize salary according to `salary-normalization-v6.md`; do not promote a Queue vacancy to Reviewed/CV ready while the salary gate is unresolved.
-9. If displayed fit is strictly above 60%, create the tailored application pack unless Anton explicitly declines. Artifact semantics come from `cv-markdown-v1.md`.
+9. If displayed fit is strictly above 60%, create the tailored application pack unless Anton explicitly declines. Artifact semantics come from `cv-markdown-v2.md`: verify/share the Markdown source, then write that canonical source URL directly to Queue `CV`. Do not construct Markdown Drive export links or rich-text runs.
 10. If the vacancy does not materially request project work, do not make Selected Projects / AI Projects the positioning center; lead with relevant employment evidence.
 
 ## Drive application structure
@@ -50,11 +50,9 @@ A normal persistent generated pack is Markdown-first and contains:
 - `Anton_Nazarov<PositionTitle>.md` — canonical tailored CV;
 - `Anton_Nazarov<PositionTitle>.txt` — final humanized cover letter when required.
 
-A `.docx` is an optional derived export, normally named `Anton_Nazarov_<PositionTitle>.docx`, produced through `markdown-drive` only when Anton or the concrete application channel needs Word. Do not independently author or maintain Word as a second canonical CV source. If Markdown and DOCX differ, Markdown wins and Word must be regenerated.
+A `.docx` or `.pdf` is an optional derived export produced through `markdown-drive` only when Anton or the concrete application channel needs it. Do not independently author or maintain Word/PDF as a second canonical CV source. If Markdown and a derivative differ, Markdown wins and the derivative must be regenerated.
 
 Normalize spaces/unsafe punctuation inside `PositionTitle` consistently. Verify every claimed persistent artifact by Drive readback.
-
-Tracker `CV` points to the verified canonical Markdown Drive URL by default. A missing DOCX does not block `CV ready`.
 
 ### Sharing
 
@@ -75,6 +73,8 @@ General rules:
 - Posted date / Date found are native Sheet dates when populated;
 - Vacancy URL is source page; Apply URL is submission destination;
 - decode LinkedIn `safety/go` external URLs rather than storing wrappers;
+- Queue `CV` receives only the verified canonical Markdown source URL from agents;
+- Active / Low fit / Closed `CV` is never agent-rewritten; lifecycle copy preserves the already-rendered Queue links;
 - never invent dates, contacts, stages, submission, salary expectation or file existence;
 - do not use the Sheet as long-form document storage.
 
@@ -98,14 +98,17 @@ For a newer Connections.csv, follow `references/linkedin-connections-import.md`;
 
 ## Tailored CV
 
-Canonical tailored CV authoring/storage follows `cv-markdown-v1.md`.
+Canonical tailored CV authoring/storage follows `cv-markdown-v2.md`.
 
 - Draft and fact-check Markdown directly.
-- Tracker `CV` points to Markdown.
+- Verify the stored Markdown and required public sharing.
+- Write only the verified source URL into Queue `CV`.
+- Never URL-encode the source for tracker UI, construct Markdown Drive tracker links, or author multiple rich-text runs.
+- The bound Queue presentation helper renders `DOCX PDF`; because API writes do not fire Apps Script, raw source may remain visible until the next sheet open/manual sync.
 - Markdown QA is mandatory.
-- DOCX is exported through `markdown-drive` only on demand / when the actual application needs Word.
-- If a DOCX is exported for final use, render and visually inspect that derivative before delivery/submission.
-- A later Markdown revision makes earlier DOCX exports stale.
+- DOCX/PDF are exported through `markdown-drive` only on demand / when the actual application needs them.
+- If a derivative is exported for final use, render and visually inspect that derivative before delivery/submission.
+- A later Markdown revision makes earlier derivatives stale.
 
 For resume content/ATS/human voice also apply `CV_EVIDENCE_FIRST_RULES.md` and `RESUME_ADAPTATION_WORKFLOW.md` when relevant.
 
@@ -151,9 +154,10 @@ Do not copy unnecessary sensitive email body text into the tracker. Do not send,
 Do not call a vacancy/application pack complete until all applicable current gates pass:
 
 - canonical Markdown artifacts/readbacks and required share permissions;
+- Queue `CV` contains the verified source URL or its derived `DOCX PDF` presentation;
 - salary-normalization-v6 completion state;
 - tracker readback / Queue Z where applicable;
 - cover-letter humanizer/readback where required;
-- DOCX export + visual QA only when a concrete Word derivative is actually required or requested.
+- DOCX/PDF export + visual QA only when that concrete derivative is actually required or requested.
 
 Do not use Notion unless Anton explicitly re-enables it.
