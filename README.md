@@ -1,7 +1,7 @@
 # Anton Nazarov
 **Engineering Manager / CTO / Systems Architect / Tech Lead**
 
-Belgrade, Serbia  
+Belgrade, Serbia
 
 Technology leader and systems architect with 18 years of experience across startups, enterprise, banking, and government environments.
 
@@ -11,7 +11,7 @@ My strongest pattern is turning fragmented workflows, weak tooling, and operatio
 
 I work best as a **playing coach**: hands-on enough to ship, senior enough to align product, architecture, and business goals.
 
-I also work comfortably in **AI-native and agentic development workflows**, using VS Code, repository-specific instructions, architectural guardrails, and structured tasking to speed up implementation without losing technical discipline.
+I also work comfortably in **AI-native and agentic development workflows**, using repository-specific instructions, architectural guardrails, and structured tasking to speed up implementation without losing technical discipline.
 
 ## Core Value
 
@@ -24,59 +24,34 @@ I also work comfortably in **AI-native and agentic development workflows**, usin
 
 ## Key Strengths
 
-- **Communicator** - creates shared understanding through clear summaries, precise wording, and aligned interpretation
-- **Examiner** - verifies assumptions, catches inconsistencies, and spots risks early
-- **Inventor** - generates original solutions, connects ideas, and experiments with new approaches
-- **Learner** - improves quickly through feedback, reflection, and repeated practice
-- **Decision Maker** - brings clarity by choosing direction, naming tradeoffs, and closing open loops
+- **Communicator** — creates shared understanding through clear summaries, precise wording, and aligned interpretation
+- **Examiner** — verifies assumptions, catches inconsistencies, and spots risks early
+- **Inventor** — generates original solutions, connects ideas, and experiments with new approaches
+- **Learner** — improves quickly through feedback, reflection, and repeated practice
+- **Decision Maker** — brings clarity by choosing direction, naming tradeoffs, and closing open loops
 
 ## Quick entry points
 
-If you want the short version, start with:
 - [Short Resume](./RESUME.md)
 - [Public Summary](./data/public_summary.md)
 - [Portfolio Index](./portfolio/README.md)
 - [Detailed Experience](./details/anton_nazarov_experience_full.md)
+- [Management Cases](./details/anton_nazarov_management_cases_full.md)
 
 ## Focus Pet Projects
 
-- **[RSLive - Serbia Relocation Encyclopedia](./portfolio/rslive/README.md)** - a public evidence-oriented knowledge system with a separate content source of truth, Astro/Starlight runtime, semantic indexing, editorial governance, and automated publishing. [Live](https://rslive.ru/) · [Source](https://github.com/Antiokh/rslive_content)
-- **[humanizer_russian - Russian Editorial Engine](./portfolio/humanizer_russian/README.md)** - a source-aware editorial system that separates linguistic norm from editorial preference and combines deterministic linting, provenance, conflict handling, CI integration, and controlled model-evaluation infrastructure. [Source](https://github.com/Antiokh/humanizer_russian)
+- **[RSLive — Serbia Relocation Encyclopedia](./portfolio/rslive/README.md)** — a public evidence-oriented knowledge system with a separate content source of truth, Astro/Starlight runtime, semantic indexing, editorial governance, and automated publishing. [Live](https://rslive.ru/) · [Source](https://github.com/Antiokh/rslive_content)
+- **[humanizer_russian — Russian Editorial Engine](./portfolio/humanizer_russian/README.md)** — a source-aware editorial system that separates linguistic norm from editorial preference and combines deterministic linting, provenance, conflict handling, CI integration, and controlled model-evaluation infrastructure. [Source](https://github.com/Antiokh/humanizer_russian)
 
 ## Public Engineering Projects
 
-- **[Supabase Project Starter](./portfolio/supabase_project_starter/README.md)** - reusable Supabase engineering baseline for human and AI-agent work, with deployment-aware rules, source-of-truth boundaries, shared helpers, SQL patterns, and project initialization guidance. [Source](https://github.com/Antiokh/supabase-project-starter)
-- **[WeWeb Component Starter](./portfolio/ww_component_starter/README.md)** - custom-component engineering kit that formalizes the WeWeb schema/runtime/editor contract, platform APIs, advanced Vue component patterns, and agent-oriented development workflow. [Source](https://github.com/Antiokh/ww-component-starter)
-- **[tgs.py](./portfolio/tgs.py/README.md)** - Telegram operations toolkit with a CLI-first architecture, structured exports, automation scaffolding, licensing, packaging, and an early desktop GUI. [Source](https://github.com/Antiokh/tgs.py)
+- **[Supabase Project Starter](./portfolio/supabase_project_starter/README.md)** — reusable Supabase engineering baseline for human and AI-agent work, with deployment-aware rules, source-of-truth boundaries, shared helpers, SQL patterns, and project initialization guidance. [Source](https://github.com/Antiokh/supabase-project-starter)
+- **[WeWeb Component Starter](./portfolio/ww_component_starter/README.md)** — custom-component engineering kit that formalizes the WeWeb schema/runtime/editor contract, platform APIs, advanced Vue component patterns, and agent-oriented development workflow. [Source](https://github.com/Antiokh/ww-component-starter)
+- **[tgs.py](./portfolio/tgs.py/README.md)** — Telegram operations toolkit with a CLI-first architecture, structured exports, automation scaffolding, licensing, packaging, and an early desktop GUI. [Source](https://github.com/Antiokh/tgs.py)
 
-If you want the deeper positioning and market fit, see:
-- [Role Market Fit Matrix](./data/role_market_fit.md)
-- [Career Strategy](./data/career_strategy.md)
-- [Pack Template](./data/pack_template.md)
-- [Application Workflow](./workflows/application_workflow.md)
-- [Evidence Map Guide](./workflows/evidence_map_guide.md)
-- [Profile Suggestions](./workflows/ai_profile_suggestions.md)
+## Supporting evidence
 
-## Private application workspace
-
-Use the local `applications/` folder for live, private application work:
-- `applications/README.md`
-- `applications/_tracking/application_tracker.md`
-- `applications/_tracking/status_dump.md`
-
-## For agents
-
-If you are using this repository as an agent workspace, start here:
-- [Workflows Overview](./workflows/README.md)
-- [Application Workflow](./workflows/application_workflow.md)
-- [Evidence Map Guide](./workflows/evidence_map_guide.md)
-- [Role Market Fit Matrix](./data/role_market_fit.md)
-- [Career Strategy](./data/career_strategy.md)
-- [Pack Template](./data/pack_template.md)
-
-## Additional references
-
-- [Structured Profile Data](./data/anton_nazarov_profile.json)
 - [Recommendations Dataset](./data/anton_nazarov_recommendations.json)
-- [Personality / Strengths Reference](./details/metafox_strengths_report.md)
-- [Career Profile Reference](./details/comprehensive_psychological_career_profile.md)
+- [Strengths Reference](./details/metafox_strengths_report.md)
+- [MetaFox Strengths Explorer PDF](./sources/anton_nazarov_metafox_strengths_explorer_2026.pdf)
+- [Structured Public Profile](./data/anton_nazarov_profile.json)
