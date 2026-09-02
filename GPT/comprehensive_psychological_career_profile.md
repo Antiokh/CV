@@ -211,7 +211,7 @@ You can perform project work, but:
 
 - Avoids:
   - Internal support roles  
-- Routine operational work  
+  - Routine operational work  
 
 ---
 
@@ -301,7 +301,7 @@ Growth area:
 
 - Combines:
   - Practical execution  
-- Vision and imagination  
+  - Vision and imagination  
 
 Risk:
 - Difficulty choosing between:
