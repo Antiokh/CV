@@ -65,7 +65,7 @@ Led IT for a major public cultural venue. An **August 2020 documented operationa
 - Conducted a broader accounting and physical reconciliation covering **800+ asset records** and enabled the formal write-off of approximately **100 missing or unusable assets**.
 - Replaced ad-hoc support through calls and personal messages with a managed HelpDesk queue, priorities, ownership and visible workload; extended the same service model to **seven additional internal services**.
 - Designed and executed the secure remote-work transition for **100+ employees** during COVID while preserving operational continuity.
-- Formalised access, documentation, responsibilities and operating procedures so critical operations no longer depended on informal knowledge and personal agreements; the resulting operating model remained stable after my departure.
+- Formalised access, documentation, responsibilities and operating procedures so critical operations no longer depended on informal knowledge and personal agreements.
 
 ### Directorate of Cultural Centers of Moscow
 **Senior Manager / IT Architect / Analyst**  
