@@ -1,51 +1,41 @@
 # Application Agent Guide
 
-This guide is for using this repository as the source of truth when preparing job applications.
+This guide is for using the public CV repository as an evidence source when preparing job applications.
 
 ## Goal
 
-Produce tailored application materials without polluting or distorting the canonical profile files.
+Produce tailored application materials without polluting or distorting canonical public profile files.
 
-## Canonical Sources
+## Canonical Public Sources
 
-Always start from these files:
+Always start from:
 
 - [README.md](../README.md)
 - [RESUME.md](../RESUME.md)
 - [RESUME_RU_EN_SR.md](../RESUME_RU_EN_SR.md)
+- [Public Summary](../data/public_summary.md)
 - [Portfolio Index](../portfolio/README.md)
 - [Full Professional Experience](../details/anton_nazarov_experience_full.md)
-- [AI Profile Suggestions](./ai_profile_suggestions.md)
+- [Management Cases](../details/anton_nazarov_management_cases_full.md)
+- [Recommendations Dataset](../data/anton_nazarov_recommendations.json)
+- [Strengths Reference](../details/metafox_strengths_report.md)
 - [Application Workflow](./application_workflow.md)
 - [Evidence Map Guide](./evidence_map_guide.md)
-- [Role Market Fit Matrix](../data/role_market_fit.md)
-- [Career Strategy](../data/career_strategy.md)
 - [Pack Template](../data/pack_template.md)
 
-## Authorship / Traceability
-
-When this agent makes edits in the repository, it may mark them as coming from `Clav` in commit metadata and/or notes.
-
-Use this to distinguish:
-- agent-made changes
-- manual human edits
-- generated application artifacts
-
-If the distinction matters for a file or a package, make it explicit in the file name, note, or commit message.
+Private role-selection, compensation, psychometric and development material belongs in the private marketing workspace and must not be copied into public CV files.
 
 ## Output Location
 
 All job-specific output belongs in the local `applications/` folder, which is ignored by git.
 
 Recommended structure:
-
 - `applications/company_name/`
-- `applications/company_name/job_description.md`
-- `applications/company_name/resume_en.md` or `resume_ru.md`
-- `applications/company_name/cover_letter.md` or `cover_letter_ru.md`
-- `applications/company_name/notes.md` or `notes_ru.md`
-- `applications/company_name/negotiation_strategy.md` or `negotiation_ru.md`
-- optional PDF exports of the main docs
+- `job_description.md`
+- `resume_en.md` or `resume_ru.md`
+- `cover_letter.md` or `cover_letter_ru.md`
+- `notes.md` or `notes_ru.md`
+- optional PDF exports
 
 ## Language Handling
 
@@ -53,64 +43,37 @@ Match the package language to the vacancy language whenever possible.
 
 - English vacancy -> English pack
 - Russian vacancy -> Russian pack
-- mixed / uncertain -> use the language of the application surface and keep the core resume consistent
+- mixed / uncertain -> use the language of the application surface
 
-For Russian packs, use the official Russian legal-entity name when it is known and relevant.
-
-Do not mix languages inside the main resume unless it is intentionally a bilingual pack.
+Do not mix languages inside the main resume unless it is intentionally bilingual.
 
 ## Workflow
 
 1. Read the job description first.
-2. Identify the target role category:
-   - Head of Engineering
-   - Systems Architect
-   - Technical Product Lead
-   - Founding Engineer
-   - Fractional CTO
-   - other
-3. Pick the strongest matching evidence from portfolio and experience.
-4. Rewrite summary and selected experience around fit, not around completeness.
-5. Keep claims tied to evidence already present in this repo.
+2. Identify the dominant role category.
+3. Pick the strongest matching evidence from portfolio, experience, management cases and recommendations.
+4. Rewrite the summary and selected experience around fit, not completeness.
+5. Keep claims tied to evidence already present in the public repo.
 6. Save tailored outputs only inside `applications/`.
 
 ## Rules
 
 - Do not rewrite canonical files just to fit one vacancy.
-- Do not invent outcomes, metrics, or ownership.
-- If a case has no numeric result, emphasize:
-  - scope
-  - architecture
-  - workflow complexity
-  - migration
-  - operational improvement
-  - integration difficulty
-- Prefer 3-5 strongest proof points over broad coverage.
+- Do not invent outcomes, metrics or ownership.
+- If a case has no numeric result, emphasize scope, architecture, workflow complexity, migration, operational improvement or integration difficulty.
+- Prefer 3–5 strongest proof points over broad coverage.
 - Keep each tailored resume role-aligned, not biography-like.
 
 ## Good Evidence Types
 
-Strong evidence in this repo usually falls into one of these categories:
-
+Strong evidence usually includes:
 - rebuilt a broken or fragmented operational process
-- designed architecture across frontend, backend, data, and automation
-- introduced role-based control, reporting, or admin tooling
+- designed architecture across frontend, backend, data and automation
+- introduced role-based control, reporting or admin tooling
 - migrated legacy data or systems
 - built AI-assisted workflows with real engineering discipline
 - handled both technical execution and organizational alignment
 
-## Avoid
+## Public Positioning Rule
 
-- listing too many tools without a narrative
-- overusing weak projects when stronger ones exist
-- describing yourself as a narrow low-code freelancer
-- mixing incompatible role narratives in one application
-
-## Default Recommendation
-
-If no better strategy is obvious, optimize the application around:
-
-- systems thinking
-- architecture ownership
-- operational product delivery
-- AI-assisted engineering maturity
+The public repository is an outward-facing evidence surface. Do not add private weaknesses, psychometric risk notes, compensation strategy, draining-zone analysis or internal role-avoidance reasoning to it.

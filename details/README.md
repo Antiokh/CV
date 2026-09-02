@@ -1,17 +1,14 @@
 # Details
 
-This folder contains human-facing long-form and supporting profile materials.
-
-Structured JSON data lives in `../data/`.
-Workflow and agent-oriented guidance lives in `../workflows/`.
+Long-form public evidence supporting Anton Nazarov's CV and portfolio.
 
 ## Included
 
 - [Full Professional Experience](./anton_nazarov_experience_full.md)
-- [Metafox Strengths Report](./metafox_strengths_report.md)
-- [Comprehensive Psychological & Career Profile](./comprehensive_psychological_career_profile.md)
-- [Structured Profile Data](../data/anton_nazarov_profile.json)
-- [Profile Suggestions](../workflows/ai_profile_suggestions.md)
-- [Application Workflow](../workflows/application_workflow.md)
-- [Application Agent Guide](../workflows/application_agent_guide.md)
-- [Job Targeting Guide](../workflows/job_targeting_guide.md)
+- [Management Cases](./anton_nazarov_management_cases_full.md)
+- [Career Path Story](./anton_nazarov_career_path_story.md)
+- [MetaFox Strengths Report](./metafox_strengths_report.md)
+- [Structured Public Profile](../data/anton_nazarov_profile.json)
+- [Recommendations Dataset](../data/anton_nazarov_recommendations.json)
+
+Private psychometric interpretation, role-selection strategy, compensation logic and development notes are intentionally kept outside this public repository.
