@@ -51,7 +51,8 @@ My strongest pattern is turning fragmented operations into systems with clear ow
 
 ZIL here refers to the **Cultural Center**, not the industrial plant: a major public cultural venue in Moscow. An **August 2020 documented operational baseline** covered **145 employees, 156 workstations, and 581 technology assets**; the wider environment included **7 servers and roughly 20 virtual machines**, CCTV, telephony, file services, access control, and public-facing systems.
 
-- Led **5 IT specialists and coordinated 2 installation engineers**, structuring the function around complementary specializations rather than interchangeable generalists: service desk/documentation, workplace and hardware support, DevOps/server operations, web/digital delivery, and business systems.
+- Managed **5 IT staff and 2 installation engineers**, structuring the function around complementary specializations rather than interchangeable generalists: service desk/documentation, workplace and hardware support, DevOps/server operations, web/digital delivery, and business systems.
+- Managed operating and modernization budgets, selected vendors and contractors, and kept the in-house team stable for **two years without departures** while modernizing the IT environment.
 - Defined explicit ownership in role descriptions and HelpDesk routing, with deliberate overlap between adjacent roles so critical work had backup coverage without destroying specialization.
 - Recovered administrative control after a system administrator resigned without transferring passwords, privileged access, or documentation; reconstructed critical credentials and then centralized access and documentation to reduce key-person dependency.
 - Replaced ad-hoc support through calls and personal messages with a managed HelpDesk queue, ownership, priorities, and visible workload; extended the same service model to **seven additional internal technical services**.
@@ -73,6 +74,7 @@ City-level public-sector organization coordinating **100+ cultural institutions 
 - Restored availability and reputation after Directorate web systems were incorrectly classified as phishing/malware: worked with **Google, Bitdefender, Quttera, and Sangfor** to remove the public portal and core information system from security blocklists.
 - Modernized the live IBM Domino environment, migrated infrastructure from Windows to CentOS/nginx, strengthened authentication and access control, and achieved an **A+ SSL rating** without interrupting service.
 - Prepared technical requirements for sector-level IT projects and represented technical needs in meetings with Moscow authorities.
+- Hired, onboarded, adapted, and mentored staff and interns, and designed probation and onboarding processes.
 - Built a feedback, support, documentation, and webinar-based training loop for hundreds of users so recurring operational problems translated into concrete system improvements.
 
 ### Moscow Social Development Agency, Deputy Head of Digital Development & IT / Acting Head of IT
