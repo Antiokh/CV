@@ -244,6 +244,9 @@ function moveRecord_(ss, sourceSheet, sourceRow, targetSheetName, rowId) {
   if (!targetSheet) throw new Error(`Missing target sheet: ${targetSheetName}`);
   const unexpected = findRowIdLocations_(ss, rowId).filter(loc => !(loc.sheetName === sourceSheet.getName() && loc.row === sourceRow));
   if (unexpected.length) throw new Error(`Row ID ${rowId} already exists outside source row: ${JSON.stringify(unexpected)}`);
+  if (sourceSheet.getName() === 'Queue' && typeof ensureQueueCvPresentationBeforeMove_ === 'function') {
+    ensureQueueCvPresentationBeforeMove_(sourceSheet, sourceRow);
+  }
   let targetRow = nextAppendRow_(targetSheet);
   if (targetRow > targetSheet.getMaxRows()) {
     targetSheet.insertRowsAfter(targetSheet.getMaxRows(), 20);
