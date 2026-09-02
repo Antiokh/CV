@@ -20,8 +20,10 @@ General entry points: [Short Resume](./RESUME.md) · [Portfolio Index](./portfol
 - Helped a service business achieve approximately **10× revenue growth in about three months** after redesigning customer intake, operations, and product presentation; growth was organic, without paid advertising. [Case study](./portfolio/dobri_visarun/README.md)
 - Reduced routine client-service work from **hours to minutes** through internal systems, integrations, and automation. [Case study](./portfolio/dobri_visarun/README.md)
 - As part of the management team at ZIL, contributed to the anti-crisis turnaround that brought the organisation out of approximately **RUB 30m in accumulated debt**; within IT, focused spending on operational value and replaced unmanaged support with measurable service operations. [Detailed experience](./details/anton_nazarov_experience_full.md)
+- Extended the useful life of approximately **150 workstations** through targeted upgrades and licensing cleanup, and reconciled **800+ accounting and physical asset records**, enabling formal write-off of approximately **100 missing or unusable assets**. [Detailed experience](./details/anton_nazarov_experience_full.md)
 - Moved **100+ employees** to secure remote work during COVID without interrupting operations. [Detailed experience](./details/anton_nazarov_experience_full.md)
-- Accelerated heavy reporting exports by approximately **20×** in a city-scale operational system serving **100+ institutions**. [AIS MosRazvitie](./portfolio/ais_mosrazvitie/README.md)
+- Coordinated technology requirements and delivery with **100+ IT specialists across 100+ cultural institutions** without direct line authority. [Primary CTO CV](./RESUME_FRACTIONAL_CTO.md)
+- Replaced a **5-hour, single-user reporting export** in a city-scale information system with web-based generation typically completing in **1.5 seconds to 1.5 minutes** and available to authorised users across institutions. [AIS MosRazvitie](./portfolio/ais_mosrazvitie/README.md)
 - Consolidated field operations and client workflows while migrating approximately **70,000 historical documents** into a structured backend. [Exit Lead](./portfolio/exit_lead/README.md)
 - Built an IT operating model at ZIL that remained stable after my departure and through subsequent leadership changes. [Detailed experience](./details/anton_nazarov_experience_full.md)
 
@@ -47,6 +49,8 @@ Typical problems I am brought into:
 | Question | Evidence |
 | --- | --- |
 | Can he run technology as a business function? | [Management experience cases](./GPT/MANAGEMENT_EXPERIENCE_CASES.md) · [Executive positioning](./GPT/EXECUTIVE_POSITIONING.md) · [Detailed experience](./details/anton_nazarov_experience_full.md) |
+| Can he lead through both direct authority and a cross-organisational matrix? | [Primary CTO CV](./RESUME_FRACTIONAL_CTO.md) · [Detailed experience](./details/anton_nazarov_experience_full.md) |
+| Can he design teams and reduce key-person dependency? | [Primary CTO CV](./RESUME_FRACTIONAL_CTO.md) · [Management experience cases](./GPT/MANAGEMENT_EXPERIENCE_CASES.md) |
 | Can he turn operational chaos into governed systems? | [Management translation layer](./GPT/MANAGEMENT_TRANSLATION_LAYER.md) · [Portfolio](./portfolio/README.md) |
 | Can he operate across executives, users, technical teams, and institutions? | [Detailed experience](./details/anton_nazarov_experience_full.md) · [AIS MosRazvitie](./portfolio/ais_mosrazvitie/README.md) |
 | Can he remain technically credible and hands-on? | [Technical delivery positioning](./GPT/TECHNICAL_DELIVERY_POSITIONING.md) · [Portfolio](./portfolio/README.md) |
@@ -73,7 +77,7 @@ Typical problems I am brought into:
 
 ## Management scope
 
-Technology strategy and architecture · IT operations and service management · team leadership, hiring, onboarding, and mentoring · budget, procurement, vendor, and contractor management · delivery and prioritisation · business-process analysis and automation · ERP/CRM implementation and adoption · information security, continuity, and access governance.
+Direct leadership of specialised IT teams plus indirect functional coordination across **100+ IT specialists / 100+ institutions** · organisational design with specialised roles, explicit ownership, and adjacent backup coverage · technology strategy and architecture · IT operations and service management · hiring, onboarding, mentoring, and team development · budget, procurement, vendor, and contractor management · delivery and cross-organisational prioritisation · business-process analysis and automation · ERP/CRM implementation and adoption · information security, continuity, privileged-access recovery, and access governance.
 
 ## Technical depth
 
@@ -89,6 +93,5 @@ The stack is supporting evidence, not the positioning. The recurring responsibil
 - [Technical Delivery Positioning](./GPT/TECHNICAL_DELIVERY_POSITIONING.md)
 - [AI-Native Delivery](./GPT/AI_NATIVE_DELIVERY.md)
 - [Detailed Experience](./details/anton_nazarov_experience_full.md)
-- [Structured Profile Data](./data/anton_nazarov_profile.json)
 - [Recommendations Dataset](./data/anton_nazarov_recommendations.json)
 - [Portfolio Index](./portfolio/README.md)
