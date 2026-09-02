@@ -80,6 +80,7 @@ City-level organisation coordinating **100+ cultural institutions**. My role com
 - Replaced a **5-hour single-user export workflow** with web-based reporting that typically completed in **1.5 seconds to 1.5 minutes** and could be used by authorized users across institutions.
 - Restored availability and security reputation of the Directorate's public website and core information system after false phishing/malware classifications by working directly with **Google, Bitdefender, Quttera and Sangfor** to remove the systems from their blocklists.
 - Made system changes more controllable through common data models, roles, access rules and explicit change procedures instead of local agreements.
+- Modernised a live legacy IBM Domino environment without interrupting service.
 - Hired, onboarded, adapted, and mentored staff and interns, and designed probation and onboarding processes.
 - Built a feedback and training loop for hundreds of users so recurring operational problems translated into concrete product improvements.
 
