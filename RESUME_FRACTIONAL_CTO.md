@@ -28,6 +28,7 @@ Management experience combines direct leadership of specialized IT teams with in
 - Coordinated technology requirements and delivery with **100+ IT specialists across 100+ cultural institutions** without direct line authority, combining system governance, procurement coordination and institutional stakeholder management.
 - Replaced a **5-hour single-user export workflow** in a city-scale information system with web-based reporting that typically completed in **1.5 seconds to 1.5 minutes** and became available to authorized users across institutions.
 - Restored the Directorate's public website and core information system after erroneous phishing/malware classification by working directly with security vendors and removing the systems from **Google, Bitdefender, Quttera and Sangfor blocklists**.
+- Built a ZIL IT operating model that remained stable after my departure and through subsequent leadership changes.
 
 ## Professional experience
 
@@ -56,14 +57,15 @@ Mar 2020 - Jun 2022
 
 Led IT for a major public cultural venue. An **August 2020 documented operational baseline** covered **145 employees, 156 workstations and 581 technology assets**; the wider environment included **7 servers and approximately 20 virtual machines** plus CCTV, telephony, access control and internal business systems.
 
-- Led **5 IT specialists and 2 installation engineers**, assigning specialized ownership across service desk/documentation, workplace infrastructure, servers/DevOps, web/digital systems and business applications, with adjacent backup coverage for critical functions.
+- Managed **5 IT staff and 2 installation engineers**, assigning specialized ownership across service desk/documentation, workplace infrastructure, servers/DevOps, web/digital systems and business applications, with adjacent backup coverage for critical functions.
+- Controlled operating and modernization budgets, selected vendors and contractors, and owned operating priorities during an anti-crisis period.
 - Recovered administrative control after an inherited system administrator resigned without handover: reconstructed privileged access, restored critical credentials and removed single-person dependency from critical infrastructure.
 - Focused IT spending on operational value during an anti-crisis period, prioritising targeted modernisation and service discipline over indiscriminate replacement.
 - Extended the useful life of approximately **150 workstations** through targeted SSD upgrades, Windows 7-to-10 migration and licensing cleanup instead of blanket hardware replacement.
 - Conducted a broader accounting and physical reconciliation covering **800+ asset records** and enabled the formal write-off of approximately **100 missing or unusable assets**.
 - Replaced ad-hoc support through calls and personal messages with a managed HelpDesk queue, priorities, ownership and visible workload; extended the same service model to **seven additional internal services**.
 - Designed and executed the secure remote-work transition for **100+ employees** during COVID while preserving operational continuity.
-- Formalised access, documentation, responsibilities and operating procedures so critical operations no longer depended on informal knowledge and personal agreements.
+- Formalised access, documentation, responsibilities and operating procedures so critical operations no longer depended on informal knowledge and personal agreements; the resulting operating model remained stable after my departure.
 
 ### Directorate of Cultural Centers of Moscow
 **Senior Manager / IT Architect / Analyst**  
@@ -78,6 +80,7 @@ City-level organisation coordinating **100+ cultural institutions**. My role com
 - Replaced a **5-hour single-user export workflow** with web-based reporting that typically completed in **1.5 seconds to 1.5 minutes** and could be used by authorized users across institutions.
 - Restored availability and security reputation of the Directorate's public website and core information system after false phishing/malware classifications by working directly with **Google, Bitdefender, Quttera and Sangfor** to remove the systems from their blocklists.
 - Made system changes more controllable through common data models, roles, access rules and explicit change procedures instead of local agreements.
+- Hired, onboarded, adapted, and mentored staff and interns, and designed probation and onboarding processes.
 - Built a feedback and training loop for hundreds of users so recurring operational problems translated into concrete product improvements.
 
 ### Moscow Social Development Agency
@@ -105,8 +108,9 @@ Domodedovo Airport, IT Company / Lotus Notes Department, Synergy and independent
 - Technology strategy and architecture
 - Direct team leadership plus indirect functional coordination across 100+ institutional IT specialists
 - Organizational design: specialized roles, explicit ownership and backup coverage
+- Hiring, onboarding, mentoring and team development
 - IT operations and service management
-- Procurement planning, centralized quota coordination, vendor and contractor management
+- Budget ownership, procurement planning, centralized quota coordination, vendor and contractor management
 - Delivery, prioritisation and cross-organizational change management
 - Business-process analysis and automation
 - CRM / ERP implementation and adoption
