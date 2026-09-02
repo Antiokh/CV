@@ -1,0 +1,452 @@
+﻿# 01A_PROFILE_JSON_PART_02
+
+NotebookLM source title: 01A_PROFILE_JSON_PART_02
+Original file included: anton_nazarov_profile.json
+
+---
+SOURCE_FILE: anton_nazarov_profile.json
+SOURCE_PART: 01A_PROFILE_JSON_PART_02
+---
+
+  "role_archetypes": [
+    {
+      "role": "CTO / Head of Engineering",
+      "fit": "high",
+      "why": "Owns architecture, delivery direction, systems thinking, and senior technical alignment."
+    },
+    {
+      "role": "Systems Architect / Solutions Architect",
+      "fit": "high",
+      "why": "Repeatedly rebuilds operations as maintainable systems with clear backend, workflow, and integration boundaries."
+    },
+    {
+      "role": "Digital Transformation Lead",
+      "fit": "high",
+      "why": "Maps real processes, lowers operational risk, and introduces practical automation tied to business use."
+    },
+    {
+      "role": "Head of IT / Infrastructure and Operations Lead",
+      "fit": "high",
+      "why": "Ran institutional IT, support, security, procurement, remote work migration, and internal governance."
+    },
+    {
+      "role": "Engineering Manager / Delivery Leader",
+      "fit": "high",
+      "why": "Combines people leadership, implementation ownership, stakeholder alignment, and delivery stabilization in messy environments."
+    },
+    {
+      "role": "Technical Product / Implementation Lead",
+      "fit": "high",
+      "why": "Combines stakeholder work, architecture, delivery, adoption, and business-system design."
+    },
+    {
+      "role": "People-facing systems leader",
+      "fit": "high",
+      "why": "Works best where communication, adoption, training, and stakeholder alignment are part of the actual job, not an afterthought."
+    }
+  ],
+  "experience_summary": {
+    "cross_cutting_themes": [
+      "information system design and rebuilding",
+      "digital transformation and process automation",
+      "process discovery and formalization of informal workflows",
+      "architecture plus direct implementation",
+      "documentation and process formalization",
+      "infrastructure management and information security",
+      "ERP / CRM implementation",
+      "integration design and modular architecture",
+      "stakeholder coordination across technical and institutional layers",
+      "user training, mentoring, and webinars",
+      "AI-assisted engineering and repository-level delivery discipline",
+      "implementation ownership, rollout, and adoption support"
+    ],
+    "career_stages": [
+      {
+        "start_date": "2008-09",
+        "end_date": "2013-01",
+        "ongoing": false,
+        "label": "Early enterprise and systems work",
+        "focus": [
+          "Lotus Notes / Domino development",
+          "corporate automation",
+          "infrastructure and backend problem solving"
+        ]
+      },
+      {
+        "start_date": "2013-01",
+        "end_date": "2015-09",
+        "ongoing": false,
+        "label": "Banking systems",
+        "focus": [
+          "document management architecture",
+          "workflow automation",
+          "process analysis",
+          "integration with 1C"
+        ]
+      },
+      {
+        "start_date": "2016-01",
+        "end_date": "2016-12",
+        "ongoing": false,
+        "label": "Freelance transition into promotion and SMM",
+        "focus": [
+          "freelance experimentation",
+          "promotion and SMM learning",
+          "event-related coordination and audience work",
+          "expanding beyond pure technical execution into communication and market-facing work"
+        ]
+      },
+      {
+        "start_date": "2017-01",
+        "end_date": "2023-05",
+        "ongoing": false,
+        "label": "Government and institutional systems",
+        "focus": [
+          "industry-scale information systems",
+          "IT leadership",
+          "infrastructure and security",
+          "training, documentation, and institutional coordination"
+        ]
+      },
+      {
+        "start_date": "2022-11",
+        "end_date": null,
+        "ongoing": true,
+        "label": "NeedleBit / Independent practice",
+        "focus": [
+          "client and internal products",
+          "low-code, hybrid, and automation-heavy systems",
+          "architecture and product restructuring",
+          "AI-native engineering workflows"
+        ]
+      }
+    ]
+  },
+  "employment_history": [
+    {
+      "company": "Domodedovo Airport",
+      "legal_name": "Airport Management Company Limited",
+      "start_date": "2008-09",
+      "end_date": "2009-09",
+      "ongoing": false,
+      "titles": [
+        "Junior Lotus Notes Developer"
+      ],
+      "results": [
+        "entered enterprise systems work through a competitive internal training and selection process",
+        "built an early foundation in corporate document systems, support, and user-facing adaptation",
+        "worked on configuration, modernization, third-line support, project documentation, and tester consultation around the internal document system"
+      ]
+    },
+    {
+      "company": "Freelance / Private Practice",
+      "start_date": "2009-01",
+      "end_date": "2011-01",
+      "ongoing": false,
+      "titles": [
+        "Independent Technical Specialist"
+      ],
+      "results": [
+        "developed full ownership from setup to maintenance across small technical systems",
+        "automated database updates and backups in early freelance infrastructure work"
+      ]
+    },
+    {
+      "company": "IT Company / Lotus Notes Department",
+      "legal_name": "ООО \"Фирма АйТи. Информационные технологии\"",
+      "start_date": "2011-01",
+      "end_date": "2012-04",
+      "ongoing": false,
+      "titles": [
+        "Lotus Notes Specialist"
+      ],
+      "results": [
+        "introduced XPages technology into the company for the first time",
+        "rewrote the core Boss-Referent library in JavaScript / SSJS for web support",
+        "extended document workflow capabilities with new modules and databases",
+        "ran introductory lectures on the internal Lotus Notes workflow system for new employees, including top management"
+      ]
+    },
+    {
+      "company": "IscTravel Law Agency",
+      "legal_form_candidate": "ООО",
+      "legal_name_confidence": "tentative",
+      "start_date": "2012-11",
+      "end_date": "2012-12",
+      "ongoing": false,
+      "titles": [
+        "Project-based technical specialist"
+      ],
+      "focus": [
+        "short-form work in a travel-law business context",
+        "web, tools, and database-oriented technical support"
+      ],
+      "results": [
+        "fills the transition period between enterprise document-flow work and banking automation",
+        "shows early cross-industry movement beyond pure enterprise IT into service-business contexts"
+      ],
+      "source_status": "confirmed in Anton_Nazarov_CV.pdf; exact title not specified"
+    },
+    {
+      "company": "Settlement and Savings Bank",
+      "legal_name": "ООО КБ \"Банк Расчетов и Сбережений\"",
+      "start_date": "2013-01",
+      "end_date": "2015-09",
+      "ongoing": false,
+      "titles": [
+        "Lead Software Developer",
+        "Systems Architect"
+      ],
+      "focus": [
+        "document management system from scratch",
+        "process analysis",
+        "workflow automation",
+        "1C integration",
+        "user training"
+      ],
+      "results": [
+        "mapped document-routing paths with bank leadership and turned them into automation requirements",
+        "held more than ten working sessions with executives and department heads to reconstruct real document flows and address models",
+        "helped define document nomenclature, registration-number methodology, and storage logic together with department leadership and the office administration function",
+        "turned an opaque document-flow problem into a measurable workflow that exposed bottlenecks to leadership",
+        "reviewed existing EDMS products, prepared implementation assessments, and helped drive the decision to build the system in-house",
+        "coordinated 1C and Lotus developers around one delivery track",
+        "designed and built an internal document management system from scratch",
+        "implemented XML-based integration with 1C and related internal data flows",
+        "combined development, testing, rollout, and user training in a banking environment"
+      ]
+    },
+    {
+      "company": "Freelance / SMM and Promotion Transition",
+      "start_date": "2016-01",
+      "end_date": "2016-12",
+      "ongoing": false,
+      "titles": [
+        "Freelance Specialist",
+        "SMM Learner"
+      ],
+      "focus": [
+        "freelance work while retraining into SMM and promotion",
+        "event management and promotion learning",
+        "market-facing communication and audience work",
+        "expanding practical skills beyond pure technical delivery"
+      ],
+      "results": [
+        "broadened profile toward communication, promotion, and audience-facing work",
+        "built a bridge between technical delivery and people-oriented coordination"
+      ]
+    },
+    {
+      "company": "Synergy JSC",
+      "legal_name": "ООО \"Торговый дом Синергия Маркет\"",
+      "start_date": "2016-11",
+      "end_date": "2017-03",
+      "ongoing": false,
+      "titles": [
+        "Lotus Developer"
+      ],
+      "results": [
+        "brought databases into a unified visual style",
+        "reduced a large backlog of accumulated change requests and technical improvements"
+      ]
+    },
+    {
+      "company": "Directorate of Cultural Centers of Moscow",
+      "legal_name": "ГКУК г. Москвы \"Дирекция культурных центров\"",
+      "start_date": "2017-01",
+      "end_date": "2023-05",
+      "ongoing": false,
+      "titles": [
+        "Senior Manager",
+        "IT Architect",
+        "Analyst",
+        "Developer + PM",
+        "Expert"
+      ],
+      "focus": [
+        "industry-level information system in the cultural sector",
+        "IBM Domino-based web portal evolution",
+        "architecture, implementation, documentation, training, and support",
+        "interactive maps, reporting, analytics, and exports",
+        "government and institutional stakeholder coordination",
+        "legacy modernization without operational breakage",
+        "taxonomy and source-of-truth alignment across departments",
+        "technical requirements drafting",
+        "internal consulting across a network of subordinate institutions",
+        "hiring, onboarding, mentoring, and probation-process design",
+        "security, access control, and governance improvements"
+      ],
+      "responsibility_areas": [
+        "working with IT directors and heads of IT across 100+ subordinate institutions",
+        "interaction with executive authorities of the city of Moscow",
+        "interaction with the Moscow Department of Information Technologies on automation questions",
+        "implementation initiatives based on IBM Domino",
+        "server infrastructure including HP ProLiant, VMware, and CentOS 7",
+        "IBM Domino migration from Windows to CentOS with nginx",
+        "modular architecture and report-generator design",
+        "field, export, and filter generators",
+        "Yandex Maps integration with live data",
+        "taxonomy clarification across institutions, departments, spaces, events, and reporting entities",
+        "webinar-based training and adoption support",
+        "IBM Notes training for internal staff and consulting support for subordinate institutions",
+        "portal recovery from search and security blocklists",
+        "support workflow shift from phone/email to instant messaging",
+        "procurement of certificates and licenses",
+        "interviewing, onboarding, adaptation, and mentoring of employees and interns",
+        "drafting technical specifications for Directorate IT projects"
+      ],
+      "results": [
+        "built and evolved a scalable industry-level information system for cultural institutions",
+        "automated structured data collection across about 100 library and cultural institutions",
+        "accelerated export operations by about 20x and added expected-time estimation for long-running operations",
+        "reshaped a legacy portal into a more practical operational source of truth for departments and institutions",
+        "improved security, authorization, and access control",
+        "implemented edit-locking, conditional visibility, live session-based settings, filtered exports, full-text search, and a feedback section in one institutional platform",
+        "introduced governance around VPN access and database-field changes",
+        "trained internal staff in IBM Notes and supported adoption across Directorate departments and subordinate institutions",
+        "enabled parallel report generation and stronger operational independence across departments",
+        "combined architecture, implementation, governance, support, and user adoption in one long-running institutional system"
+      ]
+    },
+    {
+      "company": "Moscow Social Development Agency",
+      "legal_name": "АНО «Московское агентство соцразвития»",
+      "start_date": "2019-09",
+      "end_date": "2020-03",
+      "ongoing": false,
+      "titles": [
+        "Deputy Head of Digital Development and IT",
+        "Acting Head of IT"
+      ],
+      "focus": [
+        "building IT function from scratch",
+        "IT team leadership",
+        "support model and documentation",
+        "security and procurement",
+        "operating-model setup for a new organization"
+      ],
+      "results": [
+        "launched full IT operations for a new organization including infrastructure, support, and documentation",
+        "implemented HelpDesk and internal service workflows",
+        "established a practical operating structure for support, licensing, hardware movement, and security",
+        "helped formalize how a newly created organization would run internal IT operations"
+      ]
+    },
+    {
+      "company": "ZIL Cultural Center",
+      "legal_name": "ГАУК г. Москвы \"Культурный центр ЗИЛ\"",
+      "start_date": "2020-03",
+      "end_date": "2022-06",
+      "ongoing": false,
+      "titles": [
+        "Head of IT"
+      ],
+      "focus": [
+        "anti-crisis IT stabilization in a politically complex institution",
+        "IT strategy and technical development",
+        "back-office technical support",
+        "network infrastructure",
+        "information systems and technology park oversight",
+        "security and support processes",
+        "vendor and contractor management",
+        "documentation, regulations, and governance",
+        "remote work migration during COVID",
+        "HelpDesk and asset inventory implementation",
+        "website and PWA modernization",
+        "business-process planning for future automation"
+      ],
+      "responsibility_areas": [
+        "around 200 PCs, 7 servers, about 20 virtual machines, CCTV, telephony, and access-related infrastructure",
+        "management of 5 IT staff and 2 installation engineers",
+        "project documentation and IT projects",
+        "procurement preparation and market research",
+        "communication with higher-level public authorities",
+        "training staff",
+        "information security and personal-data handling",
+        "Active Directory and policy rollout",
+        "inventory, storage cleanup, and equipment lifecycle control",
+        "asset, licensing, and documentation cleanup",
+        "department operating budget and infrastructure modernization budget responsibility",
+        "GLPI integration with Active Directory and automatic inventory",
+        "integrated phonebook with maps of buildings, PCs, and people",
+        "research and selection of business systems such as CRM, ticket sales, and ServiceDesk"
+      ],
+      "results": [
+        "migrated 100+ employees to remote work during COVID",
+        "launched HelpDesk plus seven support services based on GLPI with automated asset inventory",
+        "rebuilt service discipline and request transparency through structured HelpDesk governance",
+        "introduced Active Directory, security policies, and infrastructure modernization",
+        "reorganized documentation, procedures, and departmental governance for a large public institution",
+        "combined infrastructure modernization with business-process planning and operating-model improvements"
+      ]
+    },
+    {
+      "company": "New Business Environment",
+      "start_date": "2022-08",
+      "end_date": "2022-11",
+      "ongoing": false,
+      "titles": [
+        "Implementation Curator",
+        "Product Manager"
+      ],
+      "focus": [
+        "ERP/CRM implementations in PlanFix",
+        "implementation methodology",
+        "client adoption analysis",
+        "manager coaching",
+        "delivery discipline",
+        "founder advisory on delivery model and responsibility boundaries"
+      ],
+      "results": [
+        "analyzed why adoption stalled after ERP/CRM delivery in a commercial automation environment",
+        "improved the project delivery model",
+        "clarified responsibility gaps that weakened decision-making and implementation control",
+        "increased system adoption and manager engagement"
+      ]
+    },
+    {
+      "company": "NeedleBit",
+      "location": "Serbia",
+      "start_date": "2022-11",
+      "end_date": null,
+      "ongoing": true,
+      "titles": [
+        "Founder",
+        "CTO",
+        "Systems Architect",
+        "Project Manager"
+      ],
+      "focus": [
+        "technical strategy and architecture for multiple client and internal products",
+        "low-code, no-code, and hybrid systems",
+        "MVP-to-production delivery",
+        "founder consulting",
+        "AI-assisted engineering workflows",
+        "Supabase Edge Function helper layers",
+        "database-to-git SQL discipline"
+      ],
+      "notable_outcomes": [
+        "reduced service time from hours to minutes through automation",
+        "increased client revenue up to x13 through redesign and process restructuring",
+        "built PWA products that removed dependency on App Stores",
+        "improved PostgreSQL function versioning and auditable SQL workflows"
+      ]
+    },
+    {
+      "company": "OTUS",
+      "start_date": "2023-09",
+      "end_date": "2023-12",
+      "ongoing": false,
+      "titles": [
+        "Instructor"
+      ],
+      "focus": [
+        "Bubble development",
+        "Figma",
+        "AI / neural network usage",
+        "international marketplace positioning"
+      ],
+      "results": []
+    }
+  ],
+

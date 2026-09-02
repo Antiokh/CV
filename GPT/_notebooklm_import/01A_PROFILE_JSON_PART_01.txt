@@ -1,0 +1,298 @@
+﻿# 01A_PROFILE_JSON_PART_01
+
+NotebookLM source title: 01A_PROFILE_JSON_PART_01
+Original file included: anton_nazarov_profile.json
+
+---
+SOURCE_FILE: anton_nazarov_profile.json
+SOURCE_PART: 01A_PROFILE_JSON_PART_01
+---
+
+{
+  "profile_version": "2026-05-18",
+  "purpose": "Canonical structured profile object for resumes, portfolio positioning, Upwork/LinkedIn rewriting, application generation, and agent-assisted profile maintenance.",
+  "identity": {
+    "full_name": "Anton Nazarov",
+    "location": {
+      "city": "Belgrade",
+      "country": "Serbia"
+    },
+    "contacts": {
+      "phone": "+381 62 979 5315",
+      "telegram": "@antiokh",
+      "linkedin": "https://www.linkedin.com/in/nazarovanton/"
+    },
+    "languages": [
+      {
+        "language": "Russian",
+        "level": "Native"
+      },
+      {
+        "language": "English",
+        "level": "Fluent"
+      },
+      {
+        "language": "Serbian",
+        "level": "Fluent"
+      }
+    ],
+    "work_authorization": "Serbian sole proprietor (preduzetnik)",
+    "business_entity": {
+      "country": "Serbia",
+      "legal_form": "Preduzetnik / sole proprietor",
+      "status": "active",
+      "registry_authority": "APR (Serbian Business Registers Agency)",
+      "registration_number": "67121236",
+      "tax_id": "113837189",
+      "registered_name": "Anton Nazarov PR Anton Nazarov PR Veb Portali Beograd - Stari Grad",
+      "registered_activity_code": "6312",
+      "registered_activity": "Web portals",
+      "registration_date": "2023-07-24",
+      "registered_city": "Belgrade",
+      "registered_municipality": "Stari Grad",
+      "source_status": "confirmed in APR registration PDF"
+    },
+    "residence_and_work_permit": {
+      "country": "Serbia",
+      "status": "active",
+      "permit_type": "Unified temporary residence and work permit",
+      "basis": "Self-employment tied to registered sole proprietorship",
+      "issuing_authority": "PU for the City of Belgrade",
+      "issue_date": "2024-08-16",
+      "valid_until": "2027-08-02",
+      "city": "Belgrade",
+      "municipality": "Vozdovac",
+      "source_status": "confirmed in Serbian ID / permit PDF"
+    }
+  },
+  "professional_identity": {
+    "short_label": "Technology leader and systems architect with strong hands-on delivery ability",
+    "positioning": [
+      "CTO",
+      "Head of Engineering",
+      "Systems Architect",
+      "Tech Lead",
+      "Digital Transformation Lead",
+      "Implementation / Product Delivery Lead",
+      "Head of IT"
+    ],
+    "years_building_since": 2005,
+    "professional_experience_since": 2008,
+    "professional_experience_years": 18,
+    "core_pattern": "Turns fragmented workflows, weak tooling, and operational chaos into structured systems that organizations can run, maintain, and scale.",
+    "working_style": [
+      "playing coach",
+      "architect-level implementer",
+      "hands-on builder with leadership range",
+      "comfortable in messy, ambiguous, high-pressure environments"
+    ],
+    "preferred_problem_space": [
+      "internal systems",
+      "ERP and CRM implementation",
+      "business process automation",
+      "operational platforms",
+      "backend and automation architecture",
+      "AI-assisted product workflows",
+      "system rescue and restructuring",
+      "migration away from fragile or limiting platforms"
+    ]
+  },
+  "core_value_proposition": {
+    "summary": "Builds and restructures complex systems at the intersection of engineering, business, and operations.",
+    "business_outcomes": [
+      "reduces manual work and human-factor mistakes",
+      "lowers dependency on specific employees",
+      "improves management visibility and reporting clarity",
+      "reduces vendor lock-in",
+      "creates maintainable systems that support real operations",
+      "aligns product structure with technical and business constraints"
+    ],
+    "transformation_pattern": [
+      "enters messy environment",
+      "maps real workflows and stakeholders",
+      "identifies structural risks and bottlenecks",
+      "designs system boundaries and data structure",
+      "implements automation and delivery workflows",
+      "supports adoption through documentation, training, and clear explanation"
+    ]
+  },
+  "leadership_and_communication": {
+    "leadership_capabilities": [
+      "team leadership and mentoring",
+      "hiring, onboarding, and staff adaptation",
+      "vendor and contractor coordination",
+      "implementation ownership",
+      "support model design",
+      "departmental process and governance design",
+      "resistance handling in change-heavy environments",
+      "manager coaching",
+      "cross-functional delivery coordination",
+      "adoption and rollout leadership",
+      "AI-assisted execution management"
+    ],
+    "communication_capabilities": [
+      "stakeholder interviews and alignment",
+      "technical requirements drafting",
+      "translation of business processes into technical structures",
+      "webinars and user training",
+      "executive and institutional communication",
+      "documentation and knowledge transfer",
+      "clear explanation of technical trade-offs to non-technical audiences",
+      "creating shared understanding across business, operations, and technology"
+    ],
+    "change_management_capabilities": [
+      "system rollout and adoption support",
+      "organizational process formalization",
+      "taxonomy and source-of-truth alignment across departments",
+      "remote-work transition enablement",
+      "legacy-to-modern transition without operational breakage",
+      "governance, access rules, and support process setup",
+      "implementation in politically and institutionally complex environments"
+    ],
+    "human_facing_preference": "Prefers roles that combine technology with people, stakeholder work, implementation leadership, and organizational change rather than purely isolated technical execution."
+  },
+  "managerial_positioning_track": {
+    "core_message": "Anton is best positioned for managerial roles not as a developer with some management experience, but as a manager and systems architect who can formalize chaos, align stakeholders, and carry implementation through to adoption.",
+    "primary_identity_options": [
+      "CTO",
+      "CIO",
+      "Head of IT",
+      "Head of Engineering",
+      "Engineering Manager",
+      "Delivery Manager",
+      "Implementation Manager",
+      "Digital Transformation Lead",
+      "AI Transformation Lead",
+      "Technical Product / Implementation Lead"
+    ],
+    "main_emphasis": [
+      "management and people leadership",
+      "stakeholder communication",
+      "implementation ownership",
+      "process and system design",
+      "organizational change",
+      "delivery ownership",
+      "governance",
+      "adoption and rollout",
+      "architecture as strategic competency"
+    ],
+    "core_proof_patterns": [
+      "formalized hidden or informal workflows into governed systems",
+      "aligned departments, institutions, or clients around shared operational logic",
+      "used architecture as a management instrument rather than only a technical artifact",
+      "combined rollout, training, support, and governance with implementation",
+      "worked effectively in politically sensitive, resistance-heavy, or ambiguous environments",
+      "used solo and founder-facing work as proof of full-cycle ownership rather than narrow freelancing"
+    ],
+    "managerial_role_fit": [
+      "organizationally messy environments",
+      "internal systems and operational platforms",
+      "transformation and implementation-heavy roles",
+      "stakeholder-heavy delivery contexts",
+      "roles that require both technical depth and people/process ownership"
+    ],
+    "anti_patterns": [
+      "leading with low-code or no-code identity",
+      "leading with tool lists",
+      "framing the profile as generic freelancing",
+      "describing the work mainly as app building",
+      "using hard skills as the headline instead of supporting evidence"
+    ]
+  },
+  "soft_skills_track": {
+    "core_soft_skills": [
+      "structured communication",
+      "stakeholder alignment",
+      "resistance handling",
+      "calm decision-making under pressure",
+      "process discovery",
+      "knowledge transfer",
+      "organizational empathy",
+      "cross-functional translation",
+      "ownership and follow-through"
+    ],
+    "management_behaviors": [
+      "enters ambiguous environments and creates shared understanding",
+      "asks clarifying questions until terminology and responsibilities become explicit",
+      "breaks complex implementation into observable stages",
+      "uses documentation, statuses, and rules to reduce ambiguity",
+      "protects delivery quality through intermediate control and feedback loops",
+      "supports adoption through training, explanation, and support design",
+      "can combine firmness on structure with respectful human communication"
+    ],
+    "stakeholder_style": [
+      "comfortable with executives, department heads, users, founders, and technical specialists",
+      "translates business friction into process and system language",
+      "surfaces hidden bottlenecks without relying on blame-heavy rhetoric",
+      "builds trust by making complexity observable and understandable"
+    ],
+    "pressure_and_change_style": [
+      "works well in anti-crisis or unstable environments",
+      "keeps operating focus when systems, teams, or expectations are fragmented",
+      "can carry difficult implementation work through resistance and uncertainty"
+    ],
+    "ai_management_translation": [
+      "task decomposition",
+      "acceptance criteria",
+      "guardrails",
+      "checkpoints",
+      "quality gates",
+      "context management",
+      "agent orchestration"
+    ]
+  },
+  "strengths": {
+    "source": "MetaFox Strengths Report",
+    "top_strengths": [
+      "Communicator",
+      "Examiner",
+      "Inventor",
+      "Learner",
+      "Decision Maker"
+    ],
+    "translated_capabilities": [
+      "structured communication in complex technical and business environments",
+      "system-level analysis with strong quality control",
+      "fast learning and adaptation in changing product contexts",
+      "practical invention balanced by decision-making",
+      "leadership through clarity, influence, and follow-through"
+    ]
+  },
+  "external_assessment_signals": {
+    "metafox": {
+      "summary": "MetaFox highlights communication, analysis, invention, learning, and decision-making as the strongest recurring pattern.",
+      "top_strengths": [
+        "Communicator",
+        "Examiner",
+        "Inventor",
+        "Learner",
+        "Decision Maker"
+      ],
+      "implication": "Supports roles that require structured communication, systems thinking, quality control, leadership through clarity, and original problem solving."
+    },
+    "hh_career_guidance": {
+      "summary": "HeadHunter career guidance points most strongly toward management, analytics, communication, and innovation, with projects/technology as secondary but relevant directions.",
+      "strong_domains": [
+        "management",
+        "communications",
+        "innovation",
+        "analytics"
+      ],
+      "secondary_domains": [
+        "projects",
+        "technology",
+        "control",
+        "administration"
+      ],
+      "personality_signals": [
+        "balanced introversion and extraversion",
+        "thinking-dominant decision style",
+        "balanced intuition and sensing",
+        "moderately improvisational work style",
+        "high influence / dominance"
+      ],
+      "implication": "Supports movement toward people-facing leadership, transformation, analysis, and implementation roles rather than purely isolated technical execution."
+    },
+    "combined_reading": "Both external assessments align with the repository-level pattern: Anton is strongest in roles that combine analysis, communication, decision-making, innovation, and leadership around systems and change."
+  },
+

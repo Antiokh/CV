@@ -1,27 +1,44 @@
 # Evidence Map Guide
 
-This guide explains how to use `data/evidence_map.json` when generating resumes, cover letters and role-targeted outputs from public evidence.
+This guide explains how to use `data/evidence_map.json` when generating resumes, cover letters, negotiation notes, and role-targeted outputs.
 
 ## What The Evidence Map Is
 
-The evidence map is a retrieval layer on top of the canonical public profile. It does not replace the master CV or portfolio.
+The evidence map is a retrieval layer on top of the canonical profile.
+It does not replace the master CV or portfolio.
+It helps the agent quickly answer:
 
-It helps answer:
 - which experience best matches a role
 - which projects should be surfaced for a vacancy
-- which evidence supports management, ownership, architecture, product or AI claims
+- which evidence supports management, ownership, architecture, product, or AI claims
 - how a project relates to its parent organization
-- which adjacent roles are supported by evidence
+- which adjacent roles should be considered when the target role is ambiguous
 
 ## When To Use It
 
-Consult the evidence map before generating tailored resumes, cover letters, interview talking points or role-specific summaries.
+Always consult the evidence map before generating:
+
+- tailored resumes
+- cover letters
+- negotiation strategies
+- interview talking points
+- role-specific summaries
+
+Use it especially when the vacancy could plausibly fit more than one narrative, for example:
+
+- Engineering Manager
+- Product Owner
+- Systems Architect
+- Technical Product Lead
+- Senior AI / Workflow Engineer
+- Fractional CTO
+- Head of Engineering
 
 ## How To Read It
 
 ### 1. Start with tags
 
-Tags show the main retrieval axis, including:
+Tags show the main retrieval axis:
 - `engineering_manager`
 - `product_owner`
 - `systems_architect`
@@ -31,6 +48,7 @@ Tags show the main retrieval axis, including:
 - `banking`
 - `public_sector`
 - `product_delivery`
+- `feedback_loops`
 - `architecture`
 - `delivery_lead`
 - `technical_product_lead`
@@ -38,57 +56,99 @@ Tags show the main retrieval axis, including:
 
 ### 2. Look at parent-child relationships
 
-Some projects belong to a larger organizational context. Parent experience often carries the strongest leadership and ownership signal; child projects can provide implementation detail.
+Some projects belong to a larger organizational context.
+
+Example:
+- `AIS MosRazvitie` belongs to `directorate_reform`
+- `metafox`, `dobri_visarun`, and `promptlesspress` belong to `needlebit`
+
+This matters because the parent experience often carries the strongest role-fit signal.
 
 ### 3. Read the evidence list
 
-Use evidence bullets as the factual basis for resume bullets, cover-letter claims and interview examples.
+Each entity includes short evidence bullets.
+Use these bullets as the factual basis for:
+- resume bullets
+- cover letter claims
+- interview examples
+- compensation justification
 
-### 4. Read `best_for_roles`
+### 4. Read the best_for_roles field
 
-This is a fast evidence-to-role hint, not a private assessment of the candidate.
+This is the fast role-fit hint.
+It tells the agent which roles should surface this entity first.
+
+### 5. Read the market / earnings fit layer
+
+The separate `data/role_market_fit.md` file adds the market-value layer:
+- realised strengths
+- unrealised strengths
+- roles where Anton is most useful to the market
+- roles with the best earning potential
+- proof points for clients
+
+When the task is about money, compensation, or career direction, consult the market-fit matrix together with the evidence map.
 
 ## Retrieval Logic
 
 When matching a vacancy:
 
 1. identify the dominant role type
-2. identify adjacent plausible roles
-3. find the top tags matching the vacancy
-4. surface entities whose `best_for_roles` match
-5. prioritize parent experiences for leadership or ownership vacancies
-6. prioritize child projects for product, AI or implementation detail
-7. keep the final narrative tied to factual public evidence
+2. identify adjacent roles that are plausible fits
+3. find the top tags that match the vacancy
+4. surface all entities whose `best_for_roles` match
+5. give priority to parent experiences when the vacancy is about leadership or ownership
+6. give priority to child projects when the vacancy is about product, AI, or implementation detail
+7. if the goal is higher earnings, prefer roles with both high fit and high earning potential in `data/role_market_fit.md`
 
 ## Role-Adjacent Thinking
 
-Do not search only for the exact job title. For example:
-- Engineering Manager may also use Head of Engineering, Delivery Lead, Platform Lead and Fractional CTO evidence.
-- Product Owner may also use Technical Product Lead and Product Operations evidence.
-- Systems Architect may also use Solutions Architect and Platform Lead evidence.
-- AI workflow roles may also use Product Builder and Technical Product Lead evidence.
+Do not only search for the exact job title.
+For example:
+- Engineering Manager should also consider Head of Engineering, Delivery Lead, Platform Lead, and Fractional CTO signals.
+- Product Owner should also consider Technical Product Lead and Product Operations signals.
+- Systems Architect should also consider Solutions Architect and Platform Lead signals.
+- AI workflow roles should also consider Product Builder and Technical Product Lead signals.
 
 ## Important Rules
 
 - Do not treat every project as standalone if it belongs to a larger organizational context.
-- Do not treat a technical project as mere development if evidence shows PM or ownership.
+- Do not treat a technical project as mere development if the evidence shows PM or ownership.
+- Do not overuse weak but flashy signals if the map shows stronger fit elsewhere.
 - Prefer the combination of role + parent context + evidence over title alone.
-- Keep claims traceable to public evidence.
-- Do not add private psychometric analysis, compensation strategy, draining-zone analysis or internal role-avoidance logic to this public retrieval layer.
+- When in doubt, privilege management/ownership evidence for EM-style vacancies and product/feedback evidence for PO-style vacancies.
+- When the objective is to earn more, give more weight to roles that combine strong fit with higher earning potential.
 
-## Practical Examples
+## Practical Example
 
-For an Engineering Manager vacancy, surface ZIL IT leadership, Directorate reform, bank document-system work and NeedleBit where delivery leadership is useful.
+For an Engineering Manager vacancy:
+- surface `zil_it_leadership`
+- surface `directorate_reform`
+- surface `bank_document_system`
+- include `needlebit` if team collaboration and delivery leadership are useful
 
-For a Product Owner vacancy, surface MetaFox, Dobri Visarun, PromptlessPress and bank workflow ownership when relevant.
+For a Product Owner vacancy:
+- surface `metafox`
+- surface `dobri_visarun`
+- surface `promptlesspress`
+- include `bank_document_system` if the role needs process ownership and product logic
 
-For a Senior AI Workflow Engineer vacancy, surface PromptlessPress, NeedleBit and AI-assisted product evidence.
+For a Senior AI Workflow Engineer vacancy:
+- surface `promptlesspress`
+- surface `needlebit`
+- surface `metafox` if AI-assisted workflows or product logic are relevant
 
-For a Fractional CTO vacancy, surface NeedleBit, Directorate reform, bank systems work and ZIL IT leadership.
+For a Fractional CTO vacancy:
+- surface `needlebit`
+- surface `directorate_reform`
+- surface `bank_document_system`
+- surface `zil_it_leadership`
 
 ## Output Guidance
 
-- use the evidence map to choose facts to emphasize
+When generating final materials:
+
+- use the evidence map to choose which facts to emphasize
 - do not repeat every possible fact
 - keep one dominant narrative per application
 - preserve factual accuracy and source traceability
