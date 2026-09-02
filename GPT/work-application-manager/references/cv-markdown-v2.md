@@ -121,22 +121,43 @@ Because connector/API writes do not fire simple Apps Script triggers, a newly wr
 
 Write semantic, renderer-independent Markdown:
 
-- clear heading hierarchy;
+- one clear title/H1 area and a clear H2/H3 section hierarchy;
 - ordinary paragraphs;
 - compact bullets;
 - normal Markdown links;
 - concise emphasis where useful.
 
-Avoid HTML/CSS layout hacks, fake spacing/columns, decorative layout machinery, unnecessary tables and embedded images unless explicitly required.
+Avoid HTML/CSS layout hacks, fake spacing/columns, decorative layout machinery, unnecessary tables and embedded images unless explicitly required. Images are intentionally conservative in the converter, so ordinary CVs should remain text-first. Formatting and page geometry belong to Markdown Drive ThemeSpec/converter settings, not ad-hoc Markdown hacks.
 
-## 7. Export and QA
+## 7. Markdown Drive preview, export and recovery
 
-Use Markdown Drive when a concrete Word/PDF derivative is requested or required by the submission channel.
+Markdown Drive remains the preferred rendering surface for visual review of canonical CV Markdown. Do not judge final layout from raw Markdown text, Google Drive's text preview, GitHub rendering, or a separately authored Word document when Markdown Drive Preview is available.
+
+Outside tracker `CV`, a general render/preview link may use:
+
+```text
+https://markdown-drive.pages.dev/?file=<URL-ENCODED-HTTPS-MARKDOWN-URL>
+```
+
+Add `&export=docx` or `&export=pdf` only when a derivative is actually requested. This outside-tracker convenience does not authorize agents to construct rich-text export links inside tracker `CV`; Queue presentation remains owned by the bound Apps Script.
+
+Source/recovery behavior from the prior contract remains in force:
+
+- For Google Drive Markdown, prefer a public share URL. Markdown Drive can resolve the public file without an OAuth bearer token; a normal render link should not trigger account/consent/Picker dialogs.
+- If the Drive source is private or public loading fails, use **Open from Google Drive** / Drive **Open with** as the explicit authenticated recovery path rather than silently switching authoring pipelines.
+- Generic HTTPS sources remain subject to normal browser CORS and are fetched without source credentials. Do not introduce a proxy or alternate renderer merely to bypass that boundary.
+- If Preview loads but a deep-link export is blocked by browser policy, use the visible export control from Preview.
+- If source access fails, restore public HTTPS/CORS access or use the documented authenticated recovery path; do not fabricate an independently formatted derivative.
+
+Use Markdown Drive when the user/application requests Word or PDF, when an ATS needs an uploadable derivative, or when final rendering must be inspected for a concrete submission.
 
 - Markdown QA is mandatory for every tailored CV.
+- Markdown Drive Preview is the preferred visual rendering surface for the canonical Markdown.
 - DOCX/PDF visual QA is required only when that derivative is actually exported for final use/delivery.
 - Missing persisted derivatives do not block `CV ready`.
 - Never edit a derivative to diverge from Markdown; fix Markdown/theme and regenerate.
+- If Markdown changes after export, the derivative is stale and must be regenerated before use.
+- If the canonical Markdown source URL itself changes, rebuild the Queue presentation while the row is still writable in Queue; never mutate a protected lifecycle row merely to refresh links.
 
 ## 8. Migration compatibility
 
