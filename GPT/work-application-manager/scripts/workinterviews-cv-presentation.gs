@@ -116,9 +116,10 @@ function canonicalCvSourceFromCell_(display, wholeLink) {
       const match = value.match(/[?&]file=([^&]+)/i);
       if (!match) continue;
       try {
-        const decoded = decodeURIComponent(match[1]);
-        const validated = canonicalMarkdownSourceUrl_(decoded);
-        if (validated) return validated;
+        const decoded = stripOpaqueMarkdownTag_(decodeURIComponent(match[1]));
+        // An existing Markdown Drive link is itself prior renderer evidence.
+        // Trust its encoded HTTP(S) source so legacy rendered links remain repairable.
+        if (/^https?:\/\/[^\s]+$/i.test(decoded)) return decoded;
       } catch (err) {
         continue;
       }
@@ -146,16 +147,19 @@ function canonicalMarkdownSourceUrl_(value) {
   const raw = String(value || '').trim();
   if (!/^https?:\/\/[^\s]+$/i.test(raw)) return '';
 
-  const tag = WORKINTERVIEWS_CV_PRESENTATION.OPAQUE_MARKDOWN_TAG;
-  if (raw.toLowerCase().endsWith(tag)) {
-    const clean = raw.slice(0, -tag.length);
-    return /^https?:\/\/[^\s]+$/i.test(clean) ? clean : '';
-  }
+  const clean = stripOpaqueMarkdownTag_(raw);
+  if (clean !== raw) return /^https?:\/\/[^\s]+$/i.test(clean) ? clean : '';
 
   if (/^https?:\/\/[^?#]+\.md(?:[?#].*)?$/i.test(raw)) return raw;
   if (/^https:\/\/docs\.google\.com\/document\/d\/[^/?#]+\/export\?[^#]*\bformat=txt(?:&|$)/i.test(raw)) return raw;
 
   return '';
+}
+
+function stripOpaqueMarkdownTag_(value) {
+  const raw = String(value || '').trim();
+  const tag = WORKINTERVIEWS_CV_PRESENTATION.OPAQUE_MARKDOWN_TAG;
+  return raw.toLowerCase().endsWith(tag) ? raw.slice(0, -tag.length) : raw;
 }
 
 function assertCvPresentationSpreadsheet_(ss) {
