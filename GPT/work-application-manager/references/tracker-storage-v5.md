@@ -32,7 +32,7 @@ ChatGPT/agent/API vacancy-row writes are **Queue-only and Queue-stage-only**.
 - Agent Stage writes are limited to Queue persistent stages: `To review`, `Reviewed`, `CV ready`.
 - Never write `Referral`, `Applied`, `Recruiter screen`, `Assessment`, `Interview`, `Technical interview`, `Final`, `Offer`, `Not a fit`, `Rejected`, `Withdrawn`, `Ghosted`, or `Closed` into Queue as an API substitute for UI routing.
 - Never insert/update/delete/move vacancy rows in Active, Low fit, Closed or Jobs.
-- For a new/current tailored CV, Queue column J receives only the verified canonical Markdown source URL. Agents do not build Markdown Drive export URLs or rich-text runs. Active / Low fit / Closed J is never agent-rewritten.
+- For a new/current tailored CV, Queue column J receives only the verified canonical Markdown source URL. Agents do not build Markdown Drive export URLs or rich-text runs. If the public source URL is syntactically opaque (notably a Drive `/file/d/.../view` URL), append `#markdown` only after verifying that the target is the canonical public Markdown file; the renderer strips the marker before export. Active / Low fit / Closed J is never agent-rewritten.
 - If lifecycle evidence concerns a Row ID outside Queue, record/report it through Activity Log; do not mutate the protected vacancy row.
 - If a Queue row already has valid Date applied, treat it as requiring human/UI reconciliation. Never clear the date or route it by API.
 
@@ -61,7 +61,7 @@ Core completeness requires supported values for Company, Position, numeric Fit %
 
 Salary completion requirements are defined exclusively by `salary-normalization-v6.md`. Current salary-v6 rule: a Queue vacancy must not remain `Reviewed` or `CV ready` unless its matching Salary Data row has `Normalization status = OK`.
 
-High-fit CV completion follows `cv-markdown-v2.md`: Queue J may contain the verified raw canonical Markdown URL immediately after an API write or the derived `DOCX PDF` rich-text presentation after UI rendering. Both are nonblank and valid representations of the same CV source. High-fit completion also requires Cover unless explicitly waived by Anton for that vacancy.
+High-fit CV completion follows `cv-markdown-v2.md`: Queue J may contain the verified raw canonical Markdown URL immediately after an API write or the derived `DOCX PDF` rich-text presentation after UI rendering. Opaque raw URLs must carry the verified `#markdown` type marker so the simple trigger can distinguish them from historical non-Markdown links. High-fit completion also requires Cover unless explicitly waived by Anton for that vacancy.
 
 `Salary expectation` remains user-only and may be blank.
 
@@ -89,7 +89,7 @@ Agent/API vacancy writes use native values:
 - Fit %: number 0..1, displayed as whole percent.
 - Posted date / Date found: native Google Sheets dates displayed `yyyy-mm-dd`, not date-looking strings.
 - URLs: valid absolute HTTP(S); Apply URL may be `mailto:` only when email is the actual application channel.
-- Queue CV source write: valid absolute public HTTP(S) URL to the canonical Markdown source.
+- Queue CV source write: valid absolute public HTTP(S) URL to the canonical Markdown source. If the URL does not itself expose Markdown type, append the verified `#markdown` fragment defined by `cv-markdown-v2.md`.
 
 Read back effective values/formats where type correctness matters. API writes do not trigger UI normalization.
 
@@ -105,7 +105,7 @@ Queue CV presentation is handled by:
 
 `GPT/work-application-manager/scripts/workinterviews-cv-presentation.gs`
 
-That helper defines a simple `onOpen(e)` plus manual sync and **no onEdit**. It scans only Queue and converts raw source URLs into `DOCX PDF` rich-text export links. It never touches Active / Low fit / Closed.
+That helper defines a simple `onOpen(e)` plus `onSelectionChange(e)`, manual sync and **no onEdit**. It scans only Queue and converts validated raw Markdown sources into `DOCX PDF` rich-text export links. It never touches Active / Low fit / Closed and leaves unverified/legacy links unchanged.
 
 `workinterviews-simple-onedit.gs` is a deprecated tombstone and must not be installed.
 
@@ -126,9 +126,11 @@ Moves preserve the same Row ID.
 
 ### CV copy semantics
 
-`moveRecord_()` copies canonical columns A:W using `Range.copyTo(..., SpreadsheetApp.CopyPasteType.PASTE_NORMAL, false)`. The already-formed Queue CV rich-text links therefore move with the row. This is intentional: Queue is the only place where CV variants need rendering, while later partitions simply preserve the copied result.
+`moveRecord_()` copies canonical columns A:W using `Range.copyTo(..., SpreadsheetApp.CopyPasteType.PASTE_NORMAL, false)`. Before copying a row out of Queue it invokes `ensureQueueCvPresentationBeforeMove_()` when the CV presentation helper is installed. A pending validated raw Markdown source is therefore rendered synchronously before the copy, so lifecycle moves do not leak the API-write representation into Active / Low fit / Closed merely because the spreadsheet was already open.
 
-If an API write leaves a raw Markdown URL visible while the sheet is already open, use the WorkInterviews menu -> `Sync Queue CV links` or reload the spreadsheet before moving that row. No protected lifecycle row should be edited just to render links.
+A historical/unverified CV link that does not pass the Markdown-source validation is not relabeled. It is copied unchanged as lifecycle evidence.
+
+This pre-move hook is deliberately guarded so deploying/replacing the lifecycle script does not hard-fail while the presentation helper is temporarily absent; the canonical completed deployment includes both scripts.
 
 ## Activity history
 
@@ -155,12 +157,12 @@ Warnings may reflect legitimate incomplete work. Errors indicate structural/inte
 In WorkInterviews -> Extensions -> Apps Script:
 
 1. Keep/update `workinterviews-partitioned-tracker.gs` as the lifecycle-routing source.
-2. Add `workinterviews-cv-presentation.gs` to the same bound Apps Script project.
+2. Add/update `workinterviews-cv-presentation.gs` in the same bound Apps Script project.
 3. Do **not** copy `workinterviews-simple-onedit.gs`.
 4. Save.
 5. Run `installPartitionedTrackerAutomation()` once if the lifecycle script was newly installed/replaced.
-6. Reload the spreadsheet. `onOpen(e)` will convert any raw Queue CV source URLs to `DOCX PDF`.
+6. Reload the spreadsheet. `onOpen(e)` will convert pending validated Queue CV sources to `DOCX PDF`.
 7. Run `auditPartitionedTracker()` and inspect the result.
 8. Test one intended Stage transition through the dropdown and verify the copied CV links remain clickable in the destination row.
 
-Sheets API / connector writes never fire simple UI triggers. Agent safety remains enforced by the Queue-only boundary, fresh Row ID resolution, duplicate preflight, canonical salary-v6 rules, Queue CV source-write contract and Queue integrity Z.
+Sheets API / connector writes never fire simple UI triggers. Agent safety remains enforced by the Queue-only boundary, fresh Row ID resolution, duplicate preflight, canonical salary-v6 rules, validated Queue CV source-write contract and Queue integrity Z.
