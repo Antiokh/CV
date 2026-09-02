@@ -42,7 +42,7 @@ const WORKINTERVIEWS_TRACKER_V6 = Object.freeze({
   }),
   LAST_CANONICAL_COL: 23,
   DATE_COLS: Object.freeze([16, 17, 18, 19]),
-  URL_COLS: Object.freeze([9, 10, 11, 12, 15]),
+  URL_COLS: Object.freeze([9, 11, 12, 15]),
   QUEUE_STAGES: Object.freeze(['To review', 'Reviewed', 'CV ready']),
   ACTIVE_STAGES: Object.freeze([
     'Referral', 'Applied', 'Recruiter screen', 'Assessment', 'Interview',
@@ -95,10 +95,11 @@ function installPartitionedTrackerAutomation() {
     .filter(trigger => trigger.getHandlerFunction() === 'trackerOnEdit')
     .forEach(trigger => ScriptApp.deleteTrigger(trigger));
   ensureActivityLogSheet_(ss);
-  ensureStageValidation_(ss);
-  PropertiesService.getDocumentProperties().setProperty('WORKINTERVIEWS_TRACKER_STORAGE_VERSION', '6.0.0');
+  assertSheetSchemaHelperAvailable_();
+  repairWorkInterviewsSchema_(ss);
+  PropertiesService.getDocumentProperties().setProperty('WORKINTERVIEWS_TRACKER_STORAGE_VERSION', '6.1.0');
   PropertiesService.getDocumentProperties().setProperty('WORKINTERVIEWS_TRACKER_TRIGGER_MODE', 'simple-onEdit');
-  ss.toast('Tracker v6 ready: simple onEdit only; legacy trackerOnEdit triggers removed.', 'WorkInterviews', 10);
+  ss.toast('Tracker v6.1 ready: lifecycle + canonical sheet schema repaired.', 'WorkInterviews', 10);
 }
 
 function switchPartitionedTrackerToSimpleOnEdit() {
@@ -244,6 +245,13 @@ function moveRecord_(ss, sourceSheet, sourceRow, targetSheetName, rowId) {
   if (!targetSheet) throw new Error(`Missing target sheet: ${targetSheetName}`);
   const unexpected = findRowIdLocations_(ss, rowId).filter(loc => !(loc.sheetName === sourceSheet.getName() && loc.row === sourceRow));
   if (unexpected.length) throw new Error(`Row ID ${rowId} already exists outside source row: ${JSON.stringify(unexpected)}`);
+
+  // API/connector writes do not fire onEdit. Normalize typed values immediately
+  // before copy so dates arrive in the destination as native Date objects and
+  // keep the Sheets date picker/calendar behavior after schema repair.
+  assertSheetSchemaHelperAvailable_();
+  normalizeTrackerRowTypesBeforeMove_(sourceSheet, sourceRow);
+
   if (sourceSheet.getName() === 'Queue' && typeof ensureQueueCvPresentationBeforeMove_ === 'function') {
     ensureQueueCvPresentationBeforeMove_(sourceSheet, sourceRow);
   }
@@ -265,6 +273,13 @@ function moveRecord_(ss, sourceSheet, sourceRow, targetSheetName, rowId) {
   }
   sourceSheet.deleteRow(sourceRow);
   SpreadsheetApp.flush();
+
+  // deleteRow()/insertRowsAfter() can fragment conditional-format and validation
+  // ranges. Reapply the canonical declarative schema to both affected sheets.
+  repairWorkInterviewsSheetSchema_(sourceSheet);
+  repairWorkInterviewsSheetSchema_(targetSheet);
+  SpreadsheetApp.flush();
+
   const after = findRowIdLocations_(ss, rowId);
   if (after.length !== 1 || after[0].sheetName !== targetSheetName) throw new Error(`Post-move Row ID audit failed for ${rowId}: ${JSON.stringify(after)}`);
 }
@@ -368,11 +383,16 @@ function findRowIdLocations_(ss, rowId) {
 }
 
 function ensureStageValidation_(ss) {
-  const validation = SpreadsheetApp.newDataValidation().requireValueInList(WORKINTERVIEWS_TRACKER_V6.ALL_STAGE_OPTIONS, true).setAllowInvalid(false).build();
-  WORKINTERVIEWS_TRACKER_V6.STORAGE_SHEETS.forEach(sheetName => {
-    const sheet = ss.getSheetByName(sheetName);
-    if (sheet && sheet.getMaxRows() >= 2) sheet.getRange(2, WORKINTERVIEWS_TRACKER_V6.COL.STAGE, sheet.getMaxRows() - 1, 1).setDataValidation(validation);
-  });
+  assertSheetSchemaHelperAvailable_();
+  repairWorkInterviewsValidation_(ss);
+}
+
+function assertSheetSchemaHelperAvailable_() {
+  if (typeof repairWorkInterviewsSchema_ !== 'function' ||
+      typeof repairWorkInterviewsSheetSchema_ !== 'function' ||
+      typeof normalizeTrackerRowTypesBeforeMove_ !== 'function') {
+    throw new Error('Missing workinterviews-sheet-schema.gs. Add schema.gs to the bound Apps Script project before using tracker v6.1.');
+  }
 }
 
 function warnIfQueueDuplicate_(ss, row) {
@@ -613,6 +633,15 @@ function auditPartitionedTracker() {
   }
   const dupQueue = countQueueDuplicateFlags_(ss);
   if (dupQueue) errors.push(`Queue duplicate guard flags ${dupQueue} row(s).`);
+
+  if (typeof auditWorkInterviewsSchema_ !== 'function') {
+    errors.push('Schema helper missing: workinterviews-sheet-schema.gs is not installed.');
+  } else {
+    const schemaAudit = auditWorkInterviewsSchema_(ss);
+    errors.push(...schemaAudit.errors);
+    warnings.push(...schemaAudit.warnings);
+  }
+
   const message = [
     `Errors: ${errors.length}`,
     `Warnings: ${warnings.length}`,
