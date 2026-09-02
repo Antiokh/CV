@@ -261,7 +261,7 @@
       "implication": "Supports roles that require structured communication, systems thinking, quality control, leadership through clarity, and original problem solving."
     },
     "hh_career_guidance": {
-      "summary": "HeadHunter career guidance points most strongly toward management, analytics, communication, and innovation, with projects/technology as secondary but relevant directions.",
+      "summary": "HeadHunter career guidance is a 2018 role-interest and career-preference assessment, not a capability rating. It points most strongly toward management, analytics, communication, and innovation, with projects/technology as secondary but relevant preference directions.",
       "strong_domains": [
         "management",
         "communications",
@@ -281,7 +281,7 @@
         "moderately improvisational work style",
         "high influence / dominance"
       ],
-      "implication": "Supports movement toward people-facing leadership, transformation, analysis, and implementation roles rather than purely isolated technical execution."
+      "implication": "The assessment describes role preference rather than technical depth. Combined with the career evidence in this profile, it supports roles where proven technical capability is applied to leadership, transformation, analysis, implementation, and decision-making rather than treated as an end in itself."
     },
     "combined_reading": "Both external assessments align with the repository-level pattern: Anton is strongest in roles that combine analysis, communication, decision-making, innovation, and leadership around systems and change."
   },
@@ -543,7 +543,7 @@
       "focus": [
         "industry-level information system in the cultural sector",
         "IBM Domino-based web portal evolution",
-        "architecture, implementation, documentation, training, and support",
+        "end-to-end product ownership, architecture, implementation, documentation, training, and support",
         "interactive maps, reporting, analytics, and exports",
         "government and institutional stakeholder coordination",
         "legacy modernization without operational breakage",
@@ -557,6 +557,7 @@
         "working with IT directors and heads of IT across 100+ subordinate institutions",
         "interaction with executive authorities of the city of Moscow",
         "interaction with the Moscow Department of Information Technologies on automation questions",
+        "end-to-end ownership of AIS MosRazvitie product logic, domain model, and implementation decisions",
         "implementation initiatives based on IBM Domino",
         "server infrastructure including HP ProLiant, VMware, and CentOS 7",
         "IBM Domino migration from Windows to CentOS with nginx",
@@ -564,6 +565,8 @@
         "field, export, and filter generators",
         "Yandex Maps integration with live data",
         "taxonomy clarification across institutions, departments, spaces, events, and reporting entities",
+        "design of governance rules for institutions, branches, locations, rooms, events, reports, questionnaires, and data-exchange flows",
+        "ownership of event lifecycle rules, reporting periods, edit restrictions, and data-consistency controls",
         "webinar-based training and adoption support",
         "IBM Notes training for internal staff and consulting support for subordinate institutions",
         "portal recovery from search and security blocklists",
@@ -577,12 +580,14 @@
         "automated structured data collection across about 100 library and cultural institutions",
         "accelerated export operations by about 20x and added expected-time estimation for long-running operations",
         "reshaped a legacy portal into a more practical operational source of truth for departments and institutions",
+        "turned fragmented operational needs into a structured AIS with reports, exports, templates, questionnaires, automation, and user-facing workflows",
         "improved security, authorization, and access control",
         "implemented edit-locking, conditional visibility, live session-based settings, filtered exports, full-text search, and a feedback section in one institutional platform",
         "introduced governance around VPN access and database-field changes",
         "trained internal staff in IBM Notes and supported adoption across Directorate departments and subordinate institutions",
         "enabled parallel report generation and stronger operational independence across departments",
-        "combined architecture, implementation, governance, support, and user adoption in one long-running institutional system"
+        "translated institutional pain points into system changes through documentation, training, feedback collection, and ongoing rollout support",
+        "combined product ownership, architecture, implementation, governance, support, and user adoption in one long-running institutional system"
       ]
     },
     {
@@ -634,6 +639,7 @@
       ],
       "responsibility_areas": [
         "around 200 PCs, 7 servers, about 20 virtual machines, CCTV, telephony, and access-related infrastructure",
+        "initial stabilization with a 3-person in-house team, later expanded to 5 IT staff",
         "management of 5 IT staff and 2 installation engineers",
         "project documentation and IT projects",
         "procurement preparation and market research",
@@ -650,6 +656,7 @@
       ],
       "results": [
         "migrated 100+ employees to remote work during COVID",
+        "stabilized a neglected IT environment with a lean 3-person core team and later scaled the in-house team to 5",
         "launched HelpDesk plus seven support services based on GLPI with automated asset inventory",
         "rebuilt service discipline and request transparency through structured HelpDesk governance",
         "introduced Active Directory, security policies, and infrastructure modernization",
@@ -1042,17 +1049,20 @@
         "Analyst",
         "Developer",
         "Trainer",
-        "Operational owner"
+        "Operational owner",
+        "Product owner"
       ],
       "signals": [
         "legacy modernization",
         "analytics and maps",
         "documentation and training",
-        "government stakeholders"
+        "government stakeholders",
+        "end-to-end ownership"
       ],
       "results": [
+        "owned product logic, architecture, reporting workflows, questionnaires, data exchange, service operations, and governance rules for a city-scale institutional system",
         "improved institutional reporting, analytics, and role-based control",
-        "made system adoption practical through training, webinars, and support workflow changes"
+        "made system adoption practical through training, webinars, support workflow changes, and translation of user pain points into system updates"
       ]
     },
     {
@@ -1418,6 +1428,28 @@
         "year_to": 2022
       },
       {
+        "topic": "Certification: Airtable Builder",
+        "field": "Airtable platform and builder-level implementation",
+        "institution": "Airtable Academy",
+        "year_from": 2026,
+        "year_to": 2026,
+        "completion_date": "2026-07-06",
+        "expires_on": "2028-08-06",
+        "verification_url": "https://verify.skilljar.com/c/huzp8pq2h9cg",
+        "source_status": "verified on certificate page"
+      },
+      {
+        "topic": "n8n Quickstart",
+        "field": "workflow automation and introductory AI-agent tooling in n8n",
+        "institution": "n8n GmbH / n8n Academy",
+        "year_from": 2026,
+        "year_to": 2026,
+        "completion_date": "2026-06-26",
+        "expires_on": null,
+        "verification_url": "https://badges.n8n.io/bc8053b4-127d-49a5-90c2-045e6f06b068",
+        "source_status": "verified on badge page"
+      },
+      {
         "topic": "Low-code and implementation training",
         "field": "low-code delivery and implementation",
         "year_from": null,
@@ -1444,7 +1476,8 @@
     "source_files": [
       "details/anton_nazarov_education_path_raw.md",
       "sources/education/humanities_institute_it_management_retraining_diploma_2019.jpg",
-      "sources/education/national_institute_of_business_bachelor_management_2019.jpg"
+      "sources/education/national_institute_of_business_bachelor_management_2019.jpg",
+      "sources/certifications_2026-07.md"
     ]
   },
   "additional_experience": [
