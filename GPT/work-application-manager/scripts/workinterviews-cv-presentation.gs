@@ -3,9 +3,11 @@
  *
  * Agent/API contract:
  *   Queue!J receives only the verified canonical Markdown source URL.
+ *   Opaque source URLs (notably Drive /file/d/.../view links) carry a #markdown
+ *   type marker after verification; the marker is stripped before export.
  *
  * UI contract:
- *   this helper converts that source into two rich-text links: DOCX PDF.
+ *   this helper converts a validated source into two rich-text links: DOCX PDF.
  *   Active / Low fit / Closed are never re-rendered: lifecycle copyTo(PASTE_NORMAL)
  *   carries the already-formed Queue rich text with the row.
  *
@@ -18,9 +20,10 @@ const WORKINTERVIEWS_CV_PRESENTATION = Object.freeze({
   QUEUE_SHEET: 'Queue',
   CV_COL: 10,
   MARKDOWN_DRIVE: 'https://markdown-drive.pages.dev/?file=',
+  OPAQUE_MARKDOWN_TAG: '#markdown',
 });
 
-/** Simple open trigger: render pending Queue source URLs and add a repair menu. */
+/** Simple open trigger: render pending validated Queue sources and add a repair menu. */
 function onOpen(e) {
   const ss = e && e.source ? e.source : SpreadsheetApp.getActiveSpreadsheet();
   assertCvPresentationSpreadsheet_(ss);
@@ -53,8 +56,8 @@ function syncQueueCvPresentation() {
 }
 
 /**
- * Convert only raw Queue CV source URLs. Existing DOCX PDF rich text is untouched.
- * Protected lifecycle sheets are intentionally ignored.
+ * Convert only validated raw Queue Markdown sources. Existing DOCX PDF rich text
+ * and unverified/legacy links are untouched. Protected lifecycle sheets are ignored.
  */
 function syncQueueCvPresentation_(ss) {
   const sheet = ss.getSheetByName(WORKINTERVIEWS_CV_PRESENTATION.QUEUE_SHEET);
@@ -65,6 +68,16 @@ function syncQueueCvPresentation_(ss) {
     if (renderQueueCvCell_(sheet, row)) changed += 1;
   }
   return changed;
+}
+
+/**
+ * Lifecycle hook called immediately before Queue rows are copied out of Queue.
+ * Validated raw Markdown sources are rendered synchronously so the destination
+ * receives DOCX/PDF links. Legacy/unverified links are preserved unchanged.
+ */
+function ensureQueueCvPresentationBeforeMove_(sheet, row) {
+  if (!sheet || sheet.getName() !== WORKINTERVIEWS_CV_PRESENTATION.QUEUE_SHEET) return false;
+  return renderQueueCvCell_(sheet, row);
 }
 
 function renderQueueCvCell_(sheet, row) {
@@ -103,14 +116,44 @@ function canonicalCvSourceFromCell_(display, wholeLink) {
       const match = value.match(/[?&]file=([^&]+)/i);
       if (!match) continue;
       try {
-        return decodeURIComponent(match[1]);
+        const decoded = decodeURIComponent(match[1]);
+        const validated = canonicalMarkdownSourceUrl_(decoded);
+        if (validated) return validated;
       } catch (err) {
         continue;
       }
     }
 
-    if (/^https?:\/\//i.test(value)) return value;
+    const validated = canonicalMarkdownSourceUrl_(value);
+    if (validated) return validated;
   }
+
+  return '';
+}
+
+/**
+ * Syntactic source validation usable from simple triggers without Drive/HTTP auth.
+ *
+ * Accepted without a marker:
+ *   - URLs whose path itself ends in .md;
+ *   - Google Docs text-export URLs used by the historical Markdown workflow.
+ *
+ * Opaque URLs such as Drive /file/d/.../view must be verified by the writer and
+ * tagged with #markdown. The fragment never reaches the source server and is
+ * removed before the Markdown Drive export URL is built.
+ */
+function canonicalMarkdownSourceUrl_(value) {
+  const raw = String(value || '').trim();
+  if (!/^https?:\/\/[^\s]+$/i.test(raw)) return '';
+
+  const tag = WORKINTERVIEWS_CV_PRESENTATION.OPAQUE_MARKDOWN_TAG;
+  if (raw.toLowerCase().endsWith(tag)) {
+    const clean = raw.slice(0, -tag.length);
+    return /^https?:\/\/[^\s]+$/i.test(clean) ? clean : '';
+  }
+
+  if (/^https?:\/\/[^?#]+\.md(?:[?#].*)?$/i.test(raw)) return raw;
+  if (/^https:\/\/docs\.google\.com\/document\/d\/[^/?#]+\/export\?[^#]*\bformat=txt(?:&|$)/i.test(raw)) return raw;
 
   return '';
 }
