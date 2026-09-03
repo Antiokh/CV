@@ -306,9 +306,9 @@ A claimed defect must identify the affected user or role, environment, device, b
 
 The warranty does not cover an issue caused by: (a) Client or third-party changes after delivery; (b) misuse or use outside the agreed purpose; (c) inaccurate Client data or content; (d) a third-party outage, API change, pricing change, regional block, throttling or policy change; (e) an operating environment or configuration changed after acceptance; (f) a new or changed requirement; (g) failure to follow documented operating requirements; (h) a component outside the agreed scope; or (i) insufficient Client-controlled infrastructure, network access or hosting capacity.
 
-### 11.5 No unlimited support
+### 11.5 No unlimited post-delivery support
 
-Warranty correction is not ongoing maintenance, feature development, operational support, monitoring or on-call service. Any continuing support, reserved capacity, service level or response-time commitment must be stated separately in an SOW or support agreement.
+The warranty in this Section is limited to correction of defects in accepted Deliverables. It does not by itself include feature development, product changes, monitoring, operational support, on-call service, adaptation to third-party changes or a service level commitment. Recurring maintenance, administration, configuration, integration or optimization may separately form part of the principal Services during an active SOW and is governed by that SOW's scope and fees. Any continuing support, reserved capacity, service level or response-time commitment after the applicable SOW scope must be stated separately in an SOW or support agreement.
 
 ### 11.6 No perfection guarantee
 
