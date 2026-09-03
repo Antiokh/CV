@@ -141,7 +141,19 @@ This matters for fixed-price, milestone and capacity-reservation projects. A gen
 
 The SOW should state the commercial treatment expressly rather than rely on a punitive or ambiguous cancellation penalty.
 
-## 9. Changes deliberately not made
+## 9. Warranty language was aligned with the new principal subject
+
+The earlier clause said that warranty correction was not "ongoing maintenance". After making maintenance one of the principal service categories, that sentence became internally confusing.
+
+The revised Section 11.5 now distinguishes:
+
+- **warranty** — free correction of qualifying defects in an accepted Deliverable;
+- **active paid Services** — recurring maintenance, configuration, administration, integration or optimization where included in an SOW;
+- **post-scope support/SLA** — continuing support, reserved capacity, monitoring or response-time obligations that must be separately agreed.
+
+This preserves the original commercial protection against unlimited free post-delivery support without contradicting the Agreement's new principal subject.
+
+## 10. Changes deliberately not made
 
 Several protections in the existing draft remain intentionally intact.
 
@@ -155,7 +167,7 @@ Several protections in the existing draft remain intentionally intact.
 
 **Third-party platform risk remains outside warranty unless Contractor misimplemented the agreed integration.** This continues to protect Contractor from becoming an insurer for SaaS providers, APIs, regional restrictions, hosting limits and policy changes.
 
-## 10. Practical rule for future SOWs
+## 11. Practical rule for future SOWs
 
 The framework wording only works if each SOW follows the same hierarchy.
 
