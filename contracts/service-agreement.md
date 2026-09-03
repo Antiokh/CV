@@ -1,6 +1,6 @@
-# Web Portal Maintenance, Configuration and Optimization Services Agreement
+# Web Portal Services Agreement
 
-This Web Portal Maintenance, Configuration and Optimization Services Agreement (the **"Agreement"**) is made and effective as of **[Effective Date]** between **[Client Legal Name]**, with registered address at **[Client Address]** (the **"Client"**), and **Anton Nazarov PR Veb Portali Beograd - Stari Grad**, a Serbian registered entrepreneur (preduzetnik), APR registration no. **67121236**, PIB **113837189**, with registered office at **Bulevar Despota Stefana 15, 11000 Belgrade (Stari Grad), Republic of Serbia**, legal email **mail@needlebit.dev** (the **"Contractor"**). Client and Contractor are each a **"Party"** and together the **"Parties"**.
+This Web Portal Services Agreement (the **"Agreement"**) is made and effective as of **[Effective Date]** between **[Client Legal Name]**, with registered address at **[Client Address]** (the **"Client"**), and **Anton Nazarov PR Veb Portali Beograd - Stari Grad**, a Serbian registered entrepreneur (preduzetnik), APR registration no. **67121236**, PIB **113837189**, with registered office at **Bulevar Despota Stefana 15, 11000 Belgrade (Stari Grad), Republic of Serbia**, legal email **mail@needlebit.dev** (the **"Contractor"**). Client and Contractor are each a **"Party"** and together the **"Parties"**.
 
 The Parties agree as follows.
 
