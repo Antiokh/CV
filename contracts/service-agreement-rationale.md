@@ -2,9 +2,11 @@
 
 This note explains why the service agreement template was tightened. It is intentionally separate from the contract text. The agreement should remain clean legal/business language; this file records the practical reasoning and project experience behind the changes.
 
+The framework agreement is now positioned primarily around **maintenance, configuration, administration, integration, support and optimization of a client's web portal and related web-facing business systems**. Development, scripting, automation and implementation remain expressly permitted where they are needed to perform those services. A separate Serbian-law review note explains the legal reasoning for that distinction: [`service-agreement-serbian-law-review.md`](./service-agreement-serbian-law-review.md).
+
 ## Background
 
-The template is designed for software, no-code/low-code, automation and business-system implementation projects where the real work is not limited to writing code. These projects often involve unclear initial scope, evolving client expectations, third-party platforms, paid development environments, hosting, APIs, deployment, handover, and post-delivery support.
+The template is designed for software-enabled, no-code/low-code, automation and business-system projects where the real work is not limited to writing code. These projects often involve unclear initial scope, evolving client expectations, third-party platforms, paid development environments, hosting, APIs, deployment, handover, and post-delivery support.
 
 A recent problematic project exposed several recurring risks:
 
@@ -70,13 +72,13 @@ Reason: the useful distinction is not "AI versus no AI". It is controlled privat
 
 ### 8. Acceptance is based on agreed review mechanics and affirmative use
 
-The acceptance clause includes explicit confirmation, expiration of the agreed review period without a valid rejection, production or material business use, requesting new features based on the delivered version, and third-party continuation from the delivered version.
+The acceptance clause includes explicit confirmation, expiration of the agreed review period after an express invitation to inspect and accept the Deliverable, production or material business use, requesting new features based on the delivered version, and third-party continuation from the delivered version.
 
 Testing, acceptance testing and feedback during the review period do not by themselves constitute acceptance.
 
-Reason: the client must have a real opportunity to test and reject a nonconforming Deliverable without that testing itself triggering acceptance. At the same time, the acceptance process cannot remain open indefinitely when the agreed review period has passed or the client has moved on to production use or further development.
+Reason: the client must have a real opportunity to test and reject a nonconforming Deliverable without that testing itself triggering acceptance. At the same time, the acceptance process cannot remain open indefinitely when the contractor has expressly invited inspection and acceptance, the agreed review period has passed without a valid rejection or justified obstacle, or the client has moved on to production use or further development.
 
-The review-period-expiry mechanism should be confirmed under Serbian law before the template is used as a final execution form for a material engagement.
+The Serbian-law review note records the legal basis for keeping this mechanism, including Article 614 of the Law on Obligations.
 
 ### 9. Acceptance is milestone-based and final for accepted scope
 
@@ -102,11 +104,13 @@ The agreement requires the client to own or have administrator access to critica
 
 Reason: business-critical production infrastructure should not depend on the contractor's personal account, but once the project runs on the client's infrastructure, issues in that environment must not automatically be treated as defects in the contractor's code.
 
-### 13. Warranty is not support
+### 13. Warranty is not unlimited post-delivery support
 
-The warranty section now states that warranty correction is not maintenance, feature development, monitoring, operational support, on-call work or an SLA.
+The warranty section now states that warranty correction covers qualifying defects in accepted Deliverables. It does not by itself include feature development, product changes, monitoring, operational support, on-call work, third-party adaptation or an SLA.
 
-Reason: after delivery, clients often blur warranty, support, QA, product management and new development. The contract should separate them.
+Recurring maintenance, administration, configuration, integration or optimization can still be part of the principal paid Services during an active SOW. Those services are governed by the SOW's scope and fees rather than being transformed into free warranty work.
+
+Reason: after delivery, clients often blur warranty, support, QA, product management and new development. The contract should separate them without contradicting the framework's principal web-portal service model.
 
 ### 14. Valid defect reports require reproduction details
 
@@ -144,11 +148,25 @@ Passwords, API keys, access tokens, private keys and similar authentication secr
 
 Reason: once a secret is exposed, trying to prove whether somebody actually copied it is the wrong security test. Rotation is cheaper and more reliable than treating an exposed credential as trustworthy.
 
+### 20. The contract avoids employer-style control language
+
+The client can review progress, outcomes and agreed project artifacts, but the agreement now makes clear that Contractor independently organizes working time, place, staffing, tools and internal working methods. The 10:00-19:00 period is expressly a communication window, not prescribed working hours.
+
+Reason: this better reflects an independent business relationship and avoids unnecessary contractual indicators of employer-style control. The real working relationship still has to match the contract; wording alone does not determine the Serbian test of independence.
+
+### 21. Convenience termination cannot silently erase reserved capacity
+
+The agreement still allows convenience termination, but an SOW may expressly define a minimum commitment, reserved-capacity term or amount earned upon reservation and surviving early convenience termination.
+
+Reason: if the contractor reserves capacity or rejects other work for the project, a generic ten-day termination right should not automatically make that commercial commitment worthless.
+
 ## Practical SOW checklist
 
 For every future project, the SOW should explicitly define:
 
-- project boundary: what is being built, changed, reviewed or taken over;
+- principal web-portal service category: maintenance, configuration, administration, integration, support or optimization;
+- project boundary: what is being maintained, configured, optimized, integrated, reviewed or changed;
+- implementation, scripting, automation, coding or development that is included as necessary technical work;
 - included deliverables and explicit exclusions;
 - acceptance criteria by milestone;
 - client dependencies and feedback deadlines;
@@ -163,7 +181,8 @@ For every future project, the SOW should explicitly define:
 - AI-assisted-tool restrictions or approval of the default private/isolated no-shared-memory modes;
 - backup and rollback owner and recovery method for high-risk interventions;
 - designated messenger/email/workspace channels;
-- billing currency, rate or project price, billing triggers and payment-before-handover rule.
+- billing currency, rate or project price, billing triggers and payment-before-handover rule;
+- minimum commitment or reserved-capacity treatment, if applicable.
 
 ## Commercial principle
 
@@ -171,8 +190,8 @@ The contractor should fix broken promised functionality. The contractor should n
 
 A clean project needs three separate buckets:
 
-1. agreed delivery;
+1. agreed paid Services and delivery;
 2. warranty defects against written acceptance criteria;
-3. paid changes, support, remobilisation and third-party adaptation.
+3. paid changes, continuing support, remobilisation and third-party adaptation.
 
 The revised agreement exists to keep those buckets separate.
