@@ -120,6 +120,8 @@ The amended Agreement separates three concepts:
 - Contractor independently organizes working time, place, staffing, tools and internal methods, subject to project deadlines, security rules and necessary access to Client systems;
 - 10:00-19:00 is a communication window, not Contractor's prescribed working time.
 
+The Agreement now also records the ordinary operating fact that Contractor normally uses Contractor's own equipment, tools and working environment, while allowing Client-provided devices, networks or environments where security, compatibility or access genuinely requires them.
+
 This drafting reduces accidental employment-style language. It does not "solve" the Serbian **test samostalnosti** by contract wording alone. The Serbian Tax Administration expressly warns that artificial contractual language is not decisive where actual conduct shows a different relationship. The real operating model must match the contract.
 
 Reference:
@@ -153,7 +155,72 @@ The revised Section 11.5 now distinguishes:
 
 This preserves the original commercial protection against unlimited free post-delivery support without contradicting the Agreement's new principal subject.
 
-## 10. Changes deliberately not made
+## 10. Fixed-price revision rounds are now controllable
+
+Older agreement variants and a website-design template highlighted a practical problem that was only indirectly addressed by the Change Request language: a Client can keep asking for new design, copy, UX or implementation iterations while describing them as ordinary "feedback".
+
+Section 5.6 now permits an SOW to state a defined number of included revision or iteration rounds for fixed-price and milestone work. A round is treated as a consolidated set of feedback on the current version.
+
+The clause also makes clear that:
+
+- exceeding the included number of rounds can be a Change Request;
+- reopening something previously approved or accepted can be a Change Request;
+- a material change of direction during later review is not automatically included merely because the underlying feature name remains the same;
+- genuine Defects and corrections necessary to meet an existing written acceptance criterion remain included.
+
+For hourly Services the round count does not artificially limit feedback: revision time remains billable at the hourly rate unless it is warranty/Defect correction.
+
+Exhibit A now has an explicit field for the included revision/iteration count.
+
+## 11. No guarantee of the Client's business result
+
+A technically conforming portal, integration or automation cannot by itself guarantee revenue, conversion, traffic, sales, search ranking, adoption or another business outcome controlled by market conditions, Client operations, marketing, pricing, product quality and other external variables.
+
+Section 11.7 therefore distinguishes delivery obligations from commercial outcome guarantees. A specific measurable result can still be guaranteed if an SOW deliberately says so and defines how and when it is measured. Otherwise, the normal obligation is to deliver the agreed Services and acceptance criteria, not to insure the Client's business model.
+
+This is especially relevant where the Services touch marketing funnels, e-commerce, automation, search visibility or AI-assisted processes, because technical implementation and commercial performance can otherwise be conflated after the fact.
+
+## 12. Contractor controls technical means unless the SOW mandates them
+
+Earlier agreement variants expressly gave Contractor latitude to choose the method of implementation and to propose alternatives when an intended method became impossible.
+
+Section 2.6 now states the rule more precisely: where the SOW defines an outcome without mandating a particular technical method, Contractor can select or change implementation methods so long as the agreed outcome and material characteristics remain intact.
+
+Where the Client itself mandated a technical method and that method becomes unavailable, unreliable, commercially unreasonable or incompatible with a third-party platform, Contractor must notify Client and propose a reasonable alternative where possible.
+
+This is important for web-portal work because no-code platforms, SaaS products, APIs, hosting providers and AI tooling can change behavior, pricing, availability and technical constraints during a project.
+
+## 13. Client silence on a blocking technical decision cannot become Contractor delay
+
+The alternative-method clause includes a separate mechanism for a blocked Client decision.
+
+By default, Contractor's notice identifies the decision required and gives Client **3 Business Days** to respond, unless the SOW provides another period or genuine urgency reasonably requires a shorter deadline.
+
+While the response is outstanding:
+
+- unaffected work may continue;
+- affected work and deadlines dependent on the decision are suspended;
+- the schedule moves under the Client-dependency mechanism in Section 3.4;
+- the resulting delay is expressly not attributable to Contractor.
+
+If Client remains silent after the deadline, Contractor has two options depending on the consequence of proceeding:
+
+1. proceed with a reasonable alternative where it preserves the agreed outcome and material characteristics and does not materially increase Client's fees; or
+2. leave the affected work suspended where proceeding would materially change scope, fees, acceptance criteria, security/compliance requirements or Client-controlled production infrastructure.
+
+The drafting intentionally does **not** treat silence as blanket consent. Silence cannot by itself authorize additional fees, a material reduction of the Deliverable or another material Change Order. That keeps the schedule protection without creating a weak argument that Client passivity supposedly approved a materially different bargain.
+
+Exhibit A allows a project-specific response period to replace the 3-Business-Day default where appropriate.
+
+## 14. Repeated goodwill does not rewrite the contract
+
+Section 18.2 now goes beyond a conventional no-waiver clause. Repeated accommodation, informal practice, course of dealing, course of performance or trade usage does not expand scope or modify the Agreement/SOW unless the change is expressly approved in writing under the Agreement.
+
+The practical reason is simple: doing a few small fixes for free, replying outside normal communication hours, temporarily helping with an excluded system or tolerating an informal workflow should not silently become evidence that the same accommodation is permanently included in the price.
+
+This works together with Section 5.5, which already allows Contractor to make minor goodwill adjustments without waiving the right to charge for later changes.
+
+## 15. Changes deliberately not made
 
 Several protections in the existing draft remain intentionally intact.
 
@@ -167,7 +234,9 @@ Several protections in the existing draft remain intentionally intact.
 
 **Third-party platform risk remains outside warranty unless Contractor misimplemented the agreed integration.** This continues to protect Contractor from becoming an insurer for SaaS providers, APIs, regional restrictions, hosting limits and policy changes.
 
-## 11. Practical rule for future SOWs
+Older clauses that granted broad monitoring rights, free specification changes, six-month warranties, immediate unconditional IP transfer, broad IP indemnities or paper-only notices were not restored because the current framework handles those risks more precisely and on materially better terms for Contractor.
+
+## 16. Practical rule for future SOWs
 
 The framework wording only works if each SOW follows the same hierarchy.
 
@@ -176,5 +245,7 @@ A normal SOW should begin with a service description such as:
 > Maintenance, configuration, integration and optimization of the Client's web portal, including implementation and modification of software components where reasonably necessary to perform the stated Services.
 
 Then list concrete technical work and Deliverables underneath it.
+
+For fixed-price or milestone work, also fill in the revision-round count, the acceptance criteria and any project-specific Client decision-response period. If those fields are left vague, the general protections still apply, but the project record becomes less precise.
 
 Avoid making the first line of a routine SOW simply "development of software X" when the actual commercial engagement is ongoing configuration, integration, maintenance or optimization of a web portal. Conversely, do not disguise a genuinely standalone software-development engagement as maintenance merely for formal appearance. Serbian tax and regulatory analysis depends on substance as well as documents.
