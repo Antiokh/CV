@@ -138,14 +138,21 @@ function repairWorkInterviewsSchema() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   assertWorkInterviewsSchemaSpreadsheet_(ss);
   const result = repairWorkInterviewsSchema_(ss);
+  const suffix = result.errors.length ? `, ${result.errors.length} repair error(s)` : '';
   ss.toast(
-    `Schema repaired: ${result.sheets} sheet(s), ${result.normalizedValues} typed value(s) normalized.`,
+    `Schema repaired: ${result.sheets} sheet(s), ${result.normalizedValues} typed value(s) normalized${suffix}.`,
     'WorkInterviews schema',
-    8,
+    result.errors.length ? 12 : 8,
   );
+  if (result.errors.length) {
+    SpreadsheetApp.getUi().alert(
+      'WorkInterviews schema repair completed with errors\n\n' +
+      result.errors.slice(0, 20).join('\n'),
+    );
+  }
 }
 
-/** Repair all or selected storage sheets. */
+/** Repair all or selected storage sheets. A failure on one sheet never blocks the others. */
 function repairWorkInterviewsSchema_(ss, sheetNames) {
   assertWorkInterviewsSchemaSpreadsheet_(ss);
   const names = Array.isArray(sheetNames) && sheetNames.length
@@ -154,28 +161,58 @@ function repairWorkInterviewsSchema_(ss, sheetNames) {
 
   let normalizedValues = 0;
   let sheets = 0;
+  const errors = [];
   names.forEach(name => {
     const sheet = ss.getSheetByName(name);
     if (!sheet) return;
     const result = repairWorkInterviewsSheetSchema_(sheet);
     normalizedValues += result.normalizedValues;
+    if (result.errors.length) errors.push(...result.errors);
     sheets += 1;
   });
-  return { sheets, normalizedValues };
+  return { sheets, normalizedValues, errors };
 }
 
-/** Repair one storage sheet after insert/delete/move. */
+/**
+ * Repair one storage sheet after insert/delete/move. Conditional formatting is
+ * rebuilt FIRST so legacy red/bold fragments cannot survive merely because a
+ * later validation/filter repair hits an unrelated error. Each remaining step
+ * is isolated and reported; structural lifecycle moves already enforce row types
+ * separately before copy via normalizeTrackerRowTypesBeforeMove_().
+ */
 function repairWorkInterviewsSheetSchema_(sheet) {
   if (!sheet || !WORKINTERVIEWS_SHEET_SCHEMA.STORAGE_SHEETS.includes(sheet.getName())) {
-    return { normalizedValues: 0 };
+    return { normalizedValues: 0, errors: [] };
   }
 
-  const normalizedValues = normalizeWorkInterviewsTypedColumns_(sheet);
-  applyWorkInterviewsNumberFormats_(sheet);
-  repairWorkInterviewsValidationForSheet_(sheet);
-  repairWorkInterviewsFilter_(sheet);
-  repairWorkInterviewsConditionalFormatting_(sheet);
-  return { normalizedValues };
+  const errors = [];
+  let normalizedValues = 0;
+  runWorkInterviewsSchemaRepairStep_(sheet, 'conditional formatting', errors, () => {
+    repairWorkInterviewsConditionalFormatting_(sheet);
+  });
+  runWorkInterviewsSchemaRepairStep_(sheet, 'typed values', errors, () => {
+    normalizedValues = normalizeWorkInterviewsTypedColumns_(sheet);
+  });
+  runWorkInterviewsSchemaRepairStep_(sheet, 'number/date formats', errors, () => {
+    applyWorkInterviewsNumberFormats_(sheet);
+  });
+  runWorkInterviewsSchemaRepairStep_(sheet, 'data validation', errors, () => {
+    repairWorkInterviewsValidationForSheet_(sheet);
+  });
+  runWorkInterviewsSchemaRepairStep_(sheet, 'filter', errors, () => {
+    repairWorkInterviewsFilter_(sheet);
+  });
+  return { normalizedValues, errors };
+}
+
+function runWorkInterviewsSchemaRepairStep_(sheet, label, errors, fn) {
+  try {
+    fn();
+  } catch (err) {
+    const message = `${sheet.getName()}: ${label} repair failed: ${err && err.message ? err.message : err}`;
+    errors.push(message);
+    console.error(message);
+  }
 }
 
 /** Compatibility helper used by core install logic. */
@@ -295,7 +332,7 @@ function repairWorkInterviewsValidationForSheet_(sheet) {
   ].forEach(col => sheet.getRange(2, col, rows, 1).clearDataValidations());
 
   const fitValidation = SpreadsheetApp.newDataValidation()
-    .requireFormulaSatisfied('=OR(C2="",AND(ISNUMBER(C2),C2>=0,C2<=1))')
+    .requireFormulaSatisfied('=OR(C2="",AND(ISNUMBER(C2),C2>=0,C2<=100))')
     .setAllowInvalid(false)
     .setHelpText('Fit % must be numeric. Use 0%..100% (or 0..1).')
     .build();
