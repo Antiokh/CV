@@ -12,3 +12,5 @@ The agreement is the client-facing contractual document intended for review, neg
 
 - [General service-agreement rationale](./contracts/service-agreement-rationale.md) — practical/commercial reasons for the broader template changes.
 - [Serbian-law review notes](./contracts/service-agreement-serbian-law-review.md) — September 2026 review of the principal subject, acceptance, IP, liability, default interest, independence wording, warranty boundary and convenience termination.
+
+The Serbian-law pass has been incorporated into the current draft. Client-specific VAT/tax, DPA/data-transfer, mandatory-jurisdiction and regulated-industry requirements still belong in the applicable SOW or execution review.
