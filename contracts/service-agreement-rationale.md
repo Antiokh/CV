@@ -34,6 +34,8 @@ Reason: vague functional descriptions are dangerous. If the behaviour of files, 
 
 A new undefined-behaviour clause says that if a feature, screen, role, notification, integration or edge case is not defined in the SOW, later definition of that behaviour is a Change Request unless objectively required by a written acceptance criterion.
 
+For terminology, a **Change Request** is a proposed change. A **Change Order** is the written change instrument approved by both Parties under Section 5.2 that authorizes the changed work and records the resulting scope, price, schedule, dependency, risk or acceptance impact. A Change Request does not become approved work merely because it was requested.
+
 Reason: this protects against open-ended product discovery being smuggled into warranty work.
 
 ### 3. Defect versus new requirement is explicit
@@ -72,7 +74,7 @@ Reason: the useful distinction is not "AI versus no AI". It is controlled privat
 
 ### 8. Acceptance is based on agreed review mechanics and affirmative use
 
-The acceptance clause includes explicit confirmation, expiration of the agreed review period after an express invitation to inspect and accept the Deliverable, production or material business use, requesting new features based on the delivered version, and third-party continuation from the delivered version.
+The acceptance clause includes explicit confirmation, expiration of the agreed review period after an express invitation to inspect and accept the Deliverable, production or material business use, and — only after the applicable review period has expired without a pending valid rejection — requesting new features based on the delivered version or instructing a third party to continue from it.
 
 Testing, acceptance testing and feedback during the review period do not by themselves constitute acceptance.
 
@@ -90,7 +92,9 @@ Reason: one unpaid final handover/testing stage should not reopen already accept
 
 The agreement now makes ownership transfer and Contractor-controlled handover materials subject to payment of the applicable Deliverable or milestone rather than every later amount under the entire SOW. Client-owned production accounts, data and credentials are not held hostage to an unrelated payment dispute.
 
-Reason: transferring unpaid Contractor-controlled editable assets weakens the contractor's position, but an unpaid later milestone should not prevent the client from receiving rights in an earlier accepted and paid milestone. The payment condition should track the asset or milestone it protects.
+The custom-Deliverable assignment also states the intended economic-rights scope expressly: exclusive worldwide rights for the full applicable term, including the transferable rights needed to reproduce, distribute, make available, adapt, modify, integrate, use, deploy and maintain the paid Deliverable and to authorize downstream users. Background Materials, Third-Party Materials and non-transferable moral rights remain outside that assignment.
+
+Reason: transferring unpaid Contractor-controlled editable assets weakens the contractor's position, but an unpaid later milestone should not prevent the client from receiving rights in an earlier accepted and paid milestone. The payment condition should track the asset or milestone it protects, while the rights actually transferred should be clear enough for the client to continue the project without ambiguity.
 
 ### 11. Third-party services are outside the warranty unless misimplemented
 
@@ -159,6 +163,12 @@ Reason: this better reflects an independent business relationship and avoids unn
 The agreement still allows convenience termination, but an SOW may expressly define a minimum commitment, reserved-capacity term or amount earned upon reservation and surviving early convenience termination.
 
 Reason: if the contractor reserves capacity or rejects other work for the project, a generic ten-day termination right should not automatically make that commercial commitment worthless.
+
+### 22. Contractor-breach handover has a bounded continuity path
+
+If the Client terminates specifically for Contractor's uncured material breach, the agreement now gives the Client a route to obtain paid Deliverables immediately and to elect to acquire conforming, reasonably usable unpaid work in progress at a defined valuation method. Client-owned data and credentials are returned promptly regardless of the payment dispute, while Contractor-controlled source/workspaces for unpaid work remain linked to payment of the elected usable work.
+
+Reason: a genuine Contractor breach should not strand the Client or make continuation impossible, but it also should not convert every unfinished internal artifact into free transferred property. The breach-handover mechanism gives the Client continuity while preserving the Background Materials, Third-Party Materials and payment boundaries.
 
 ## Practical SOW checklist
 
