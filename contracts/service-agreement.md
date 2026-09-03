@@ -163,7 +163,7 @@ A rejection must identify specific material nonconformities with the SOW or stat
 A Deliverable is deemed accepted when the earliest of the following occurs:
 
 1. Client confirms acceptance in writing;
-2. after Contractor has expressly invited Client to inspect and accept the Deliverable under Section 6.1, the review period expires without a valid rejection or a documented justified reason why inspection cannot reasonably be completed within that period;
+2. after Contractor has expressly invited Client to inspect and accept the Deliverable under Section 6.1, the review period expires without a valid rejection, unless Client has identified a documented justified reason why inspection cannot reasonably be completed within that period and the Parties agree a reasonable extended review period;
 3. Client places the Deliverable into production or materially uses it for its intended business purpose, other than solely for acceptance testing;
 4. Client requests new features, changed behaviour or further development based on the delivered version; or
 5. Client instructs a third party to continue development from the delivered version without first issuing a valid rejection.
