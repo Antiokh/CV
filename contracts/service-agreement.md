@@ -58,6 +58,16 @@ An external AI service is approved for Client Confidential Information or person
 
 Use of AI-assisted tools does not reduce Contractor's responsibility for Deliverables within the agreed scope. At the same time, such tools, subscriptions, usage quotas and specialist development environments may be treated as project expenses where they are required for the project and approved under Section 4 or the SOW.
 
+### 2.6 Technical methods and blocked Client decisions
+
+Where an SOW defines an outcome or acceptance criterion without mandating a specific technical method, Contractor may select or change the implementation method, provided the agreed outcome and material characteristics of the Deliverable are preserved.
+
+If a Client-mandated method becomes technically unavailable, materially unreliable, commercially unreasonable, incompatible with a third-party platform, or materially more burdensome because of changed external conditions, Contractor shall notify Client through a Designated Channel and, where reasonably possible, propose a reasonable alternative together with any known material impact on scope, price, timing, risk or acceptance criteria.
+
+If Contractor reasonably requires a Client decision, approval or instruction in order to proceed with affected work, Contractor's notice shall identify the decision required and state a response deadline. Unless the SOW states otherwise or genuine urgency reasonably requires a shorter period, the response deadline is **3 Business Days** after receipt of the notice. Until the required response is received, Contractor may continue unaffected work, but any affected work and deadlines dependent on that decision are suspended and the corresponding project dates move under Section 3.4. The resulting delay is a Client dependency delay and is not a breach or delay attributable to Contractor.
+
+If Client does not respond by the stated deadline, Contractor may, using reasonable professional judgment: (a) proceed with a reasonable alternative that preserves the agreed outcome and material characteristics without materially increasing Client's fees or materially reducing the agreed functionality; or (b) keep the affected work suspended where proceeding without Client approval would materially alter scope, fees, acceptance criteria, security or compliance requirements, or a Client-controlled production environment. Silence does not by itself approve additional fees, a material reduction of the agreed Deliverable, or another material Change Order. Any such material change remains subject to Section 5.
+
 ## 3. Client responsibilities and dependencies
 
 ### 3.1 Information, access and materials
@@ -147,6 +157,12 @@ A correction required to make a Deliverable materially conform to the agreed SOW
 ### 5.5 Minor goodwill adjustments
 
 Contractor may, at its discretion, perform minor adjustments without a separate Change Order. Doing so does not waive Contractor's right to require a Change Order for other work and does not create an obligation to perform further adjustments without additional charge.
+
+### 5.6 Revision and iteration rounds
+
+For fixed-price or milestone Services, an SOW may state the number of review, revision or iteration rounds included in the agreed price. One revision round means a consolidated set of feedback on the then-current version of the relevant Deliverable. Requests exceeding the included number of rounds, reopening a matter previously approved or accepted, or materially changing direction within a later round are Change Requests unless the requested correction is required to remedy a Defect or satisfy an existing written acceptance criterion.
+
+If an SOW does not state a number of included revision rounds, the Agreement does not imply an unlimited redesign or iteration obligation; Sections 5.1 through 5.5 and the written acceptance criteria determine what work is included. For hourly Services, Client feedback is not limited by a revision-round count, but time spent implementing revisions is billable at the applicable rate unless the work is required to remedy a Defect or satisfy an existing written acceptance criterion.
 
 ## 6. Delivery and acceptance
 
@@ -314,6 +330,10 @@ The warranty in this Section is limited to correction of defects in accepted Del
 
 Except for the express warranty above, Contractor does not warrant that software or systems will be completely error-free, uninterrupted, immune from attack or compatible with every future platform or third-party change.
 
+### 11.7 No business-outcome guarantee
+
+Unless an SOW expressly guarantees a specific measurable result and states how and when that result is measured, Contractor does not warrant any particular revenue, profit, conversion rate, sales volume, traffic level, search ranking, customer acquisition, user adoption, financing, regulatory approval or other commercial or business outcome resulting from the Services.
+
 ## 12. Liability and claims
 
 ### 12.1 Liability cap
@@ -394,7 +414,11 @@ Unless an SOW provides an on-call or support commitment, ordinary project commun
 
 ### 16.1 Independent contractor
 
-Contractor is an independent contractor, not an employee, agent, partner or joint venturer of Client. Subject to agreed deadlines, dependencies, security requirements and required access to Client-controlled systems, Contractor independently determines when, where and how the Services are performed and how Contractor's personnel, tools and internal work are organized. Client may define the required outcomes, acceptance criteria, interfaces and project constraints but does not supervise Contractor as an employer. Neither Party may bind the other except as expressly authorized in writing.
+Contractor is an independent contractor, not an employee, agent, partner or joint venturer of Client. Subject to agreed deadlines, dependencies, security requirements and required access to Client-controlled systems, Contractor independently determines when, where and how the Services are performed and how Contractor's personnel, tools and internal work are organized. Client may define the required outcomes, acceptance criteria, interfaces and project constraints but does not supervise Contractor as an employer.
+
+Contractor ordinarily performs the Services using Contractor's own equipment, tools and working environment. Client-provided devices, accounts, networks, environments or infrastructure may be used where reasonably required for security, compatibility or access to Client-controlled systems, without changing Contractor's independent-contractor status.
+
+Neither Party may bind the other except as expressly authorized in writing.
 
 ### 16.2 Other clients and reusable knowledge
 
@@ -424,9 +448,9 @@ Subject to any mandatory jurisdiction rule that cannot be changed by contract, d
 
 This Agreement, its SOWs and approved Change Orders constitute the entire agreement concerning their subject and supersede prior oral or written discussions on that subject. They may be amended only in writing, including through a written electronic approval where this Agreement permits it.
 
-### 18.2 No waiver
+### 18.2 No waiver or implied expansion by practice
 
-Failure or delay in exercising a right is not a waiver of that right. A waiver is effective only for the specific matter for which it is given.
+Failure or delay in exercising a right is not a waiver of that right. A waiver is effective only for the specific matter for which it is given. No course of dealing, course of performance, repeated accommodation, informal practice or usage of trade expands the scope or modifies this Agreement or an SOW unless expressly approved in writing as provided by this Agreement.
 
 ### 18.3 Severability
 
@@ -493,6 +517,8 @@ Client will provide:
 - [Decision maker and feedback time]
 - [Third-party approvals or accounts]
 
+- **Client decision response period if different from Section 2.6:** [Period / default applies]
+
 ## A.5 Platforms and third-party services
 
 - **Client-owned production accounts:** [List]
@@ -532,6 +558,7 @@ A Deliverable is acceptable when:
 3. [Test / output / workflow criterion]
 
 - **Review period if different from Agreement:** [Period]
+- **Included revision / iteration rounds:** [Number / not applicable / hourly Services]
 - **Acceptance environment:** [Environment / URL / repository / version]
 - **Delivery / inspection notice channel:** [Designated Channel]
 - **Defect report requirements:** [Affected role, environment, steps to reproduce, expected result, actual result, logs/screenshots/video where available]
