@@ -179,10 +179,10 @@ A rejection must identify specific material nonconformities with the SOW or stat
 A Deliverable is deemed accepted when the earliest of the following occurs:
 
 1. Client confirms acceptance in writing;
-2. after Contractor has expressly invited Client to inspect and accept the Deliverable under Section 6.1, the review period expires without a valid rejection, unless Client has identified a documented justified reason why inspection cannot reasonably be completed within that period and the Parties agree a reasonable extended review period;
+2. after Contractor has delivered or resubmitted the Deliverable under Sections 6.1 or 6.4 and invited Client to inspect it, the applicable review period expires without a valid rejection, unless Client has identified a documented justified reason why inspection cannot reasonably be completed within that period and the Parties agree a reasonable extended review period;
 3. Client places the Deliverable into production or materially uses it for its intended business purpose, other than solely for acceptance testing;
-4. Client requests new features, changed behaviour or further development based on the delivered version; or
-5. Client instructs a third party to continue development from the delivered version without first issuing a valid rejection.
+4. after the applicable review period has expired and no valid rejection is pending, Client requests new features, changed behaviour or further development based on the delivered version; or
+5. after the applicable review period has expired and no valid rejection is pending, Client instructs a third party to continue development from the delivered version.
 
 Testing, acceptance testing or feedback provided during the review period does not by itself constitute acceptance.
 
@@ -208,7 +208,7 @@ For any dispute about what was delivered by a deadline, the relevant version is 
 
 The Parties expressly agree that this Section 7 governs the allocation of economic rights in all custom Deliverables, including any computer program, source code or software component created, configured or modified in performing the Services, and is intended, to the maximum extent permitted by applicable law, to apply instead of any different default allocation that might otherwise apply to commissioned software.
 
-Subject to full payment of all undisputed amounts due for the applicable Deliverable or milestone, Contractor assigns to Client the transferable economic rights Contractor owns in custom Deliverables created specifically for Client under that SOW, to the extent such rights may be transferred under applicable law. The assignment does not include Background Materials or Third-Party Materials.
+Subject to full payment of all undisputed amounts due for the applicable Deliverable or milestone, Contractor assigns to Client, on an exclusive and worldwide basis for the full duration of the applicable economic rights and without field-of-use restriction, the transferable economic rights Contractor owns in custom Deliverables created specifically for Client under that SOW. To the extent applicable to a particular Deliverable and transferable under applicable law, those rights include the rights to reproduce, distribute, communicate or make the Deliverable available to the public, adapt, modify, translate, integrate, create derivative versions, execute, use, deploy and maintain it, and to authorize third parties to exercise those rights. Client may further license or transfer the assigned economic rights, including to its affiliates, acquirers, employees, contractors and successor service providers. The assignment does not include Background Materials or Third-Party Materials and does not transfer personal or moral rights that applicable law does not permit to be transferred.
 
 ### 7.2 Personal or moral rights
 
@@ -384,9 +384,11 @@ Contractor may terminate or reschedule an SOW after the Client inactivity period
 
 After payment of all undisputed amounts due for the applicable Deliverables, Contractor shall provide Client with the paid Deliverables and project-specific work in progress then reasonably available, in its then-current state, together with the handover items required by the SOW. Contractor shall promptly return Client-owned data and Client-owned credentials and shall not disable Client's existing access to Client-owned production accounts because of a payment dispute. Transfer of Contractor-controlled editable workspaces, source repositories, export packages and account ownership remains subject to Section 7.8. Contractor is not required to complete unpaid work, disclose Background Materials beyond the license in Section 7.3, or continue hosting or operating third-party services after termination unless separately agreed.
 
+If Client terminates an SOW under Section 13.2 specifically for Contractor's uncured material breach, Client may request a **breach handover** of then-existing project-specific work. Contractor shall promptly provide Client-owned data and credentials, paid Deliverables, and a written inventory of conforming and reasonably usable unpaid work in progress and project-specific handover materials then available. Client may elect to acquire any listed unpaid work in progress at its reasonable value: for hourly Services, the agreed rate for conforming work actually performed and not already paid; for fixed-price or milestone Services, the reasonable proportionate value of conforming and usable work for the incomplete milestone, capped at that milestone's unpaid price. Any elected amount is invoiced and due under Section 4.3. Upon payment of the undisputed amount for elected work in progress, Contractor shall provide the corresponding current source files or repository state, project-specific documentation and configuration notes reasonably available, and material dependency information reasonably necessary for another qualified provider to continue the work. This breach-handover mechanism does not require Contractor to complete unfinished work, transfer Background Materials beyond the license in Section 7.3, transfer Third-Party Materials or rights Contractor does not own, or disclose unrelated internal notes, prompts, business records or reusable methods.
+
 ### 13.7 Survival
 
-Sections concerning payment, ownership and licenses, confidentiality, warranty for already accepted Deliverables, liability, termination handover, governing law and disputes survive termination to the extent necessary to give them effect.
+Sections concerning payment, ownership and licenses, confidentiality, data protection and security to the extent their subject matter continues after termination, warranty for already accepted Deliverables, liability, termination handover, governing law and disputes survive termination to the extent necessary to give them effect.
 
 ## 14. Force majeure
 
