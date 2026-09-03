@@ -50,7 +50,7 @@ The revised Sections 2.2, 6.1 and 6.3 require Contractor to:
 1. deliver the identified version;
 2. expressly invite Client to inspect it and accept or reject it;
 3. give the agreed review period;
-4. allow a documented justified reason where inspection genuinely cannot be completed in time.
+4. allow a documented justified reason where inspection genuinely cannot be completed in time, with any extension to be agreed for a reasonable period.
 
 This is materially stronger under the Serbian **Law on Obligations (Zakon o obligacionim odnosima)**. Article 614 provides that the customer must inspect completed work as soon as reasonably possible and notify defects without delay. More importantly, Article 614(2) states that where the customer does not respond, without justified reason, to the contractor's invitation to inspect and receive the completed work, the work is considered accepted.
 
