@@ -1,16 +1,18 @@
-# Software Development and Business Systems Services Agreement
+# Web Portal Maintenance, Configuration and Optimization Services Agreement
 
-This Software Development and Business Systems Services Agreement (the **"Agreement"**) is made and effective as of **[Effective Date]** between **[Client Legal Name]**, with registered address at **[Client Address]** (the **"Client"**), and **Anton Nazarov PR Veb Portali Beograd - Stari Grad**, a Serbian registered entrepreneur (preduzetnik), APR registration no. **67121236**, PIB **113837189**, with registered office at **Bulevar Despota Stefana 15, 11000 Belgrade (Stari Grad), Republic of Serbia**, legal email **mail@needlebit.dev** (the **"Contractor"**). Client and Contractor are each a **"Party"** and together the **"Parties"**.
+This Web Portal Maintenance, Configuration and Optimization Services Agreement (the **"Agreement"**) is made and effective as of **[Effective Date]** between **[Client Legal Name]**, with registered address at **[Client Address]** (the **"Client"**), and **Anton Nazarov PR Veb Portali Beograd - Stari Grad**, a Serbian registered entrepreneur (preduzetnik), APR registration no. **67121236**, PIB **113837189**, with registered office at **Bulevar Despota Stefana 15, 11000 Belgrade (Stari Grad), Republic of Serbia**, legal email **mail@needlebit.dev** (the **"Contractor"**). Client and Contractor are each a **"Party"** and together the **"Parties"**.
 
 The Parties agree as follows.
 
 For this Agreement, **"Business Day"** means Monday through Friday excluding public holidays in the Republic of Serbia. Unless stated otherwise, Business Day deadlines use Europe/Belgrade time. A Designated Channel communication received after 19:00 Europe/Belgrade on a Business Day, or on a non-Business Day, is treated as received on the next Business Day for a deadline measured in Business Days.
 
+The principal subject of the Services is the maintenance, configuration, administration, integration, support and optimization of the Client's web portal and related web-facing business systems. Where reasonably necessary to perform those Services, Contractor may design, implement, modify, script, automate, code, develop, deploy or replace software components. Such implementation or development activities are methods of performing the Services and do not by themselves change the principal subject of this Agreement unless an SOW expressly states otherwise.
+
 ## 1. Project documents and scope
 
 ### 1.1 Statement of Work
 
-The specific services, deliverables, milestones, commercial terms, dependencies, exclusions and acceptance criteria for a project shall be set out in a statement of work substantially in the form of **Exhibit A** (each a **"Statement of Work"** or **"SOW"**). The services described in an SOW are the **"Services"** and the project-specific results to be delivered by Contractor are the **"Deliverables"**.
+The specific services, deliverables, milestones, commercial terms, dependencies, exclusions and acceptance criteria for a project shall be set out in a statement of work substantially in the form of **Exhibit A** (each a **"Statement of Work"** or **"SOW"**). Each SOW shall identify the web portal or related web-facing system being maintained, configured, administered, integrated, supported or optimized. The services described in an SOW are the **"Services"** and the project-specific results to be delivered by Contractor are the **"Deliverables"**.
 
 ### 1.2 Complete scope
 
@@ -32,15 +34,15 @@ If the SOW does not define how a feature, role, screen, notification, file, inte
 
 ### 2.1 Standard of performance
 
-Contractor shall perform the Services in a professional and workmanlike manner and shall use reasonable professional judgment in selecting implementation methods, architecture and tools within the agreed scope.
+Contractor shall perform the Services in a professional and workmanlike manner and shall use reasonable professional judgment in selecting implementation methods, architecture and tools within the agreed scope and service objective.
 
 ### 2.2 Delivery method
 
-Deliverables may be delivered through a repository, project workspace, client-owned account, email, file transfer, deployment environment or another method stated in the SOW or agreed through a Designated Channel. A Deliverable is considered delivered only when Contractor makes the agreed version available through such a method and identifies it as submitted for review or acceptance.
+Deliverables may be delivered through a repository, project workspace, client-owned account, email, file transfer, deployment environment or another method stated in the SOW or agreed through a Designated Channel. A Deliverable is considered delivered only when Contractor makes the agreed version available through such a method, identifies it as submitted for review or acceptance, and expressly invites Client to inspect it and either accept it or issue a valid rejection under Section 6.
 
 ### 2.3 Project visibility and monitoring
 
-Client may reasonably observe and monitor Contractor's performance relating to the project, including progress, agreed repositories, project documentation and project-related environments. Contractor's other clients, internal systems, internal methods, unrelated communications and operations not directly related to the Services are not subject to Client monitoring or access.
+Client may reasonably review project progress and outcomes relating to the Services, including agreed milestones, repositories, project documentation, project-related environments and compliance with expressly agreed technical, security or business requirements. This right concerns the results and agreed project requirements; it does not give Client authority to direct Contractor's daily working hours, place of work, staffing, sequence of internal tasks or internal working methods, except to the extent a specific method is expressly required by the SOW for compatibility, security, compliance or access to Client-controlled systems. Contractor's other clients, internal systems, internal methods, unrelated communications and operations not directly related to the Services are not subject to Client monitoring or access.
 
 ### 2.4 Personnel and subcontractors
 
@@ -100,7 +102,7 @@ Unless the SOW states otherwise, invoices are due within **7 calendar days** aft
 
 ### 4.4 Late payment and suspension
 
-Amounts not disputed in good faith and not paid when due may accrue any default interest available under applicable law. If an undisputed amount remains overdue for **5 calendar days** after written notice, Contractor may suspend Services until payment clears. Any resulting schedule impact is treated as a Client dependency delay under Section 3.4.
+Amounts not disputed in good faith and not paid when due shall accrue statutory default interest from the due date until payment at the rate prescribed by applicable law, without the need for a further demand. If an undisputed amount remains overdue for **5 calendar days** after written notice, Contractor may suspend Services until payment clears. Any resulting schedule impact is treated as a Client dependency delay under Section 3.4.
 
 ### 4.5 Expenses
 
@@ -150,7 +152,7 @@ Contractor may, at its discretion, perform minor adjustments without a separate 
 
 ### 6.1 Review period
 
-Unless the SOW states otherwise, Client has **5 Business Days** after delivery of a Deliverable or milestone to accept it or reject it in writing.
+Unless the SOW states otherwise, Client has **5 Business Days** after Contractor delivers a Deliverable or milestone and sends a notice expressly inviting Client to inspect it and either accept it or reject it in writing.
 
 ### 6.2 Valid rejection
 
@@ -161,7 +163,7 @@ A rejection must identify specific material nonconformities with the SOW or stat
 A Deliverable is deemed accepted when the earliest of the following occurs:
 
 1. Client confirms acceptance in writing;
-2. the review period expires without a valid rejection;
+2. after Contractor has expressly invited Client to inspect and accept the Deliverable under Section 6.1, the review period expires without a valid rejection or a documented justified reason why inspection cannot reasonably be completed within that period;
 3. Client places the Deliverable into production or materially uses it for its intended business purpose, other than solely for acceptance testing;
 4. Client requests new features, changed behaviour or further development based on the delivered version; or
 5. Client instructs a third party to continue development from the delivered version without first issuing a valid rejection.
@@ -187,6 +189,8 @@ For any dispute about what was delivered by a deadline, the relevant version is 
 ## 7. Intellectual property and ownership
 
 ### 7.1 Custom Deliverables
+
+The Parties expressly agree that this Section 7 governs the allocation of economic rights in all custom Deliverables, including any computer program, source code or software component created, configured or modified in performing the Services, and is intended, to the maximum extent permitted by applicable law, to apply instead of any different default allocation that might otherwise apply to commissioned software.
 
 Subject to full payment of all undisputed amounts due for the applicable Deliverable or milestone, Contractor assigns to Client the transferable economic rights Contractor owns in custom Deliverables created specifically for Client under that SOW, to the extent such rights may be transferred under applicable law. The assignment does not include Background Materials or Third-Party Materials.
 
@@ -318,7 +322,7 @@ To the maximum extent permitted by applicable law, Contractor's aggregate liabil
 
 ### 12.2 Excluded damages
 
-To the maximum extent permitted by applicable law, neither Party is liable to the other for indirect, incidental, special, punitive or consequential damages, or for lost profit, lost revenue, lost business opportunity or loss of goodwill, arising out of the Agreement, even if the possibility of such loss was known. Contractor is not liable for loss or corruption of data to the extent Client failed to maintain backups it was responsible for under Section 3.6. Nothing in this Section excludes liability where exclusion is prohibited by applicable law.
+To the maximum extent permitted by applicable law, neither Party is liable to the other for indirect, incidental, special, punitive or consequential damages, or for lost profit, lost revenue, lost business opportunity or loss of goodwill, arising out of the Agreement, even if the possibility of such loss was known. Contractor is not liable for loss or corruption of data to the extent Client failed to maintain backups it was responsible for under Section 3.6. The exclusions and limitations in this Section 12.2 do not apply to fraud, wilful misconduct, gross negligence or other liability that cannot lawfully be limited or excluded.
 
 ### 12.3 Client-controlled legal and business risk
 
@@ -348,9 +352,9 @@ Contractor may terminate an affected SOW if an undisputed payment remains overdu
 
 ### 13.4 Termination for convenience
 
-Either Party may terminate an SOW for convenience on **10 Business Days'** written notice unless the SOW states a different commitment period. Client shall pay for Services performed through the termination date, approved expenses, completed milestones, work in progress reasonably attributable to the SOW, and non-cancellable third-party commitments already approved by Client.
+Either Party may terminate an SOW for convenience on **10 Business Days'** written notice unless the SOW states a different commitment period, minimum commitment or reserved-capacity term. Client shall pay for Services performed through the termination date, approved expenses, completed milestones, work in progress reasonably attributable to the SOW, and non-cancellable third-party commitments already approved by Client.
 
-For hourly Services, work in progress is billed at the agreed hourly rate through the termination date. For fixed-price or milestone Services, the SOW should state any cancellation valuation method; if it does not, Client shall pay the reasonable value of conforming and usable work performed for the affected incomplete milestone, capped at that milestone's unpaid price.
+A termination for convenience does not cancel a reserved-capacity payment, minimum commitment or other amount that the SOW expressly states is earned upon reservation or remains payable after early convenience termination, to the extent permitted by applicable law. For hourly Services, work in progress is billed at the agreed hourly rate through the termination date. For fixed-price or milestone Services, the SOW should state any cancellation valuation method; if it does not, Client shall pay the reasonable value of conforming and usable work performed for the affected incomplete milestone, capped at that milestone's unpaid price.
 
 ### 13.5 Inactivity
 
@@ -382,15 +386,15 @@ Routine project approvals, acceptance, Change Orders, expense approvals, schedul
 
 Notices of material breach, termination, legal claim or change of legal address shall be sent to the designated legal email address in the SOW or signature block. A notice is deemed received on the next Business Day after transmission unless the sender receives a delivery-failure message. Either Party may additionally send a courier or registered-mail copy, but such paper copy is not required unless mandatory law or the SOW expressly requires it.
 
-### 15.4 Business hours and availability
+### 15.4 Communication window and availability
 
-Unless an SOW provides an on-call or support commitment, normal working communications are handled during **10:00-19:00 Europe/Belgrade time, Monday to Friday**, excluding Serbian public holidays. No message sent outside those hours creates an implied immediate-response obligation, emergency SLA or 24/7 availability.
+Unless an SOW provides an on-call or support commitment, ordinary project communications are handled during **10:00-19:00 Europe/Belgrade time, Monday to Friday**, excluding Serbian public holidays. This window defines ordinary communication availability and the treatment of project messages; it does not prescribe Contractor's working hours, place of work or allocation of working time. No message sent outside those hours creates an implied immediate-response obligation, emergency SLA or 24/7 availability.
 
 ## 16. Independent contractor, assignment and other clients
 
 ### 16.1 Independent contractor
 
-Contractor is an independent contractor, not an employee, agent, partner or joint venturer of Client. Neither Party may bind the other except as expressly authorized in writing.
+Contractor is an independent contractor, not an employee, agent, partner or joint venturer of Client. Subject to agreed deadlines, dependencies, security requirements and required access to Client-controlled systems, Contractor independently determines when, where and how the Services are performed and how Contractor's personnel, tools and internal work are organized. Client may define the required outcomes, acceptance criteria, interfaces and project constraints but does not supervise Contractor as an employer. Neither Party may bind the other except as expressly authorized in writing.
 
 ### 16.2 Other clients and reusable knowledge
 
@@ -458,13 +462,17 @@ Headings are for convenience only and do not control interpretation.
 
 - **Project name:** [Project]
 - **Business objective:** [What the project is intended to achieve]
-- **Critical system/process boundary:** [What is actually being taken over, reviewed, built or changed]
+- **Web portal / related web-facing system:** [Portal, domain, application or system]
+- **Principal service category:** [maintenance / configuration / administration / integration / support / optimization]
+- **Critical system/process boundary:** [What is actually being maintained, configured, optimized, integrated, reviewed or changed]
 
 ## A.2 Included Services and Deliverables
 
 1. [Service / Deliverable]
 2. [Service / Deliverable]
 3. [Documentation / handover item]
+
+Implementation, scripting, automation, coding or development may be included where reasonably necessary to perform the principal web-portal Services described above. Such technical work is included only to the extent expressly stated in this SOW or objectively necessary to satisfy a written acceptance criterion.
 
 ## A.3 Explicit exclusions
 
@@ -509,6 +517,7 @@ Dates are based on the dependencies in this SOW and Section 3 of the Agreement.
 - **Billing currency:** [USD / EUR / other]
 - **Hourly rate / total price:** [USD 45/hour or EUR 40/hour for hourly Services — select one billing currency; otherwise project-specific amount]
 - **Advance / funded milestone / reserved capacity:** [If applicable]
+- **Minimum commitment / reserved-capacity treatment on convenience termination:** [None / describe amount, period and whether earned upon reservation]
 - **Invoice schedule:** [Schedule]
 - **Payment due date if different from Agreement:** [Term]
 - **Approved expense cap:** [Amount / none]
@@ -524,6 +533,7 @@ A Deliverable is acceptable when:
 
 - **Review period if different from Agreement:** [Period]
 - **Acceptance environment:** [Environment / URL / repository / version]
+- **Delivery / inspection notice channel:** [Designated Channel]
 - **Defect report requirements:** [Affected role, environment, steps to reproduce, expected result, actual result, logs/screenshots/video where available]
 
 ## A.9 Warranty and continuing support
