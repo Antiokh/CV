@@ -7,7 +7,8 @@ This file does not redefine the modular contracts. Load:
 - `tracker-storage-v5.md` for vacancy ownership/agent writes/lifecycle integrity;
 - `salary-normalization-v6.md` for salary research/storage/completion;
 - `cv-markdown-v2.md` for tailored CV source/write/presentation semantics;
-- `activity-log.md` when hiring/process evidence is encountered.
+- `activity-log.md` when hiring/process evidence is encountered;
+- `role-entry-strategy-v1.md` for interview-derived role targeting and cold-entry priority.
 
 ## Live inventories
 
@@ -41,6 +42,20 @@ Unless Anton requests a narrower source:
 
 Source priority affects search effort, not Fit %.
 
+## Role-entry priority
+
+Apply `role-entry-strategy-v1.md` independently from Fit scoring. Interview evidence as of 2026-09-04 indicates that otherwise comparable vacancies should receive application/search effort in this order:
+
+1. Product Manager / technical product roles with meaningful ownership, discovery, analytics and cross-functional delivery;
+2. applied AI Engineering / AI Principal roles where analytics, automation, architecture, tooling or product judgment are material;
+3. Engineering Manager roles where leadership/system judgment matters more than recent stack-specific coding, especially with AI scope or a warm path;
+4. CTO / Head / technology-leadership roles with strong pain/evidence fit, giving additional priority to trust-based/warm channels;
+5. generic non-AI Tech Lead / IC-heavy leadership only when unusually well matched and not primarily filtered on recent conventional coding depth.
+
+This order controls time allocation, shortlist priority and outreach strategy. It must **never** inflate or lower the evidence-based Fit % merely because a role is easier or harder to enter cold.
+
+When a strong company has several credible roles, do not automatically prefer the grandest title. Prefer the role with strong evidence-backed fit, cleaner first-screen recognition and meaningful ownership, especially Product or applied-AI roles that can establish trust inside the company. Apply sincerely to the actual role; do not tell the employer it is merely a stepping stone.
+
 ## New-vacancy sequence
 
 For each candidate opportunity:
@@ -48,14 +63,15 @@ For each candidate opportunity:
 1. verify it is still accepting applications;
 2. verify Serbia/Europe/EMEA/Worldwide eligibility as applicable;
 3. deduplicate against Jobs by Row ID when known, Vacancy URL and normalized Company + Position; Apply URL is supporting evidence;
-4. for a genuinely new candidate, perform LinkedIn Connections lookup before expensive pack work;
-5. capture substantive vacancy text and source/application metadata;
-6. create Position.md and verify it;
-7. assign evidence-based Fit %;
-8. research/normalize salary according to `salary-normalization-v6.md`;
-9. create the Queue row with immutable Row ID through the atomic protocol from `tracker-storage-v5.md`;
-10. complete the Markdown-first application-pack gate when fit >60%;
-11. read back Queue Z and required Salary Data fields before reporting the vacancy processed.
+4. classify the vacancy against `role-entry-strategy-v1.md` for application priority without changing Fit truthfulness;
+5. for a genuinely new candidate, perform LinkedIn Connections lookup before expensive pack work;
+6. capture substantive vacancy text and source/application metadata;
+7. create Position.md and verify it;
+8. assign evidence-based Fit %;
+9. research/normalize salary according to `salary-normalization-v6.md`;
+10. create the Queue row with immutable Row ID through the atomic protocol from `tracker-storage-v5.md`;
+11. complete the Markdown-first application-pack gate when fit >60%;
+12. read back Queue Z and required Salary Data fields before reporting the vacancy processed.
 
 ## Salary gate
 
@@ -76,6 +92,8 @@ For every genuinely new vacancy that passes basic fit/geography screening, check
 Use exact normalized Company Key first, then evidence-backed aliases only. Suggest at most three useful contacts: recruiter/TA, likely functional leader/hiring manager, relevant employee.
 
 Networking may affect practical priority but never Fit %. A connection is not a referral until outreach/introduction is confirmed.
+
+Under the current role-entry strategy, warm paths are especially valuable for Engineering Manager and CTO/Head roles because they allow management/architecture evidence to be evaluated before a narrow recent-coding filter. Product and applied-AI roles still benefit from referrals, but do not require a warm path to remain primary cold-application targets.
 
 ## Vacancy availability precedence
 
