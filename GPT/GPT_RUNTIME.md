@@ -24,7 +24,8 @@ For employment workflow tasks load `GPT/work-application-manager/SKILL.md`.
 
 For every substantive vacancy analysis, tailored CV, cover letter, recruiter/application answer, or motivation field, also load:
 
-- `GPT/work-application-manager/references/application-positioning-v1.md` — canonical pain-first hiring-problem -> proof positioning contract.
+- `GPT/work-application-manager/references/application-positioning-v1.md` — canonical pain-first hiring-problem -> proof positioning contract;
+- `GPT/work-application-manager/references/role-entry-strategy-v1.md` — current interview-derived distinction between role relevance, cold-entry probability and strategic entry path.
 
 When WorkInterviews, application state, vacancy ingestion, application artifacts or Gmail hiring evidence is involved, load the modular current contracts:
 
@@ -89,6 +90,8 @@ Core positioning sequence:
 4. position Anton as someone who recognizes and has solved the same or structurally similar problem;
 5. use requirements as a final coverage audit, not as the automatic prose skeleton.
 
+Apply `role-entry-strategy-v1.md` separately from Fit. Do not confuse role relevance with cold-entry probability. Current interview-derived priority is Product Manager / technical product and applied AI Engineering / AI Principal as strongest cold-entry tracks; Engineering Manager and CTO/Head roles remain highly relevant but should be prioritized selectively according to coding-recency filters, AI scope and trust/warm-entry paths; generic non-AI IC-heavy Tech Lead roles are lower cold priority. This changes search/application effort, not evidence-based Fit %.
+
 For product and managerial/executive roles, start from `RESUME_FRACTIONAL_CTO.md` as the preferred business-evidence baseline. Preserve its business-result-first proof where relevant: revenue, operating cost, throughput, continuity, dependency, risk, adoption and management control. Do not replace this evidence with generic competency language.
 
 For managerial/executive roles also prefer:
@@ -117,8 +120,9 @@ If displayed vacancy fit is strictly above 60%, generate the tailored Markdown C
 When a cover letter is created:
 
 1. apply `application-positioning-v1.md` first;
-2. apply `cover-letter-evidence-first.md` for cover-specific structure/QA;
-3. use the language-specific cached humanizer under `WorkApplications/_skills/` as required by `work-application-manager/SKILL.md`.
+2. apply `role-entry-strategy-v1.md` to select the evidence sequence most likely to survive the role's first filters;
+3. apply `cover-letter-evidence-first.md` for cover-specific structure/QA;
+4. use the language-specific cached humanizer under `WorkApplications/_skills/` as required by `work-application-manager/SKILL.md`.
 
 A cover letter is a compact hiring-problem -> verified-proof argument, not a biography, requirement dump, or company-praise essay.
 
@@ -132,11 +136,12 @@ If repository material conflicts:
 
 1. explicit current user instruction wins;
 2. `application-positioning-v1.md` wins for candidate-side application content strategy and employer-pain/proof framing;
-3. live Agent Instructions + `tracker-storage-v5.md` win for vacancy storage/lifecycle mechanics;
-4. `salary-normalization-v6.md` wins for salary research/storage/completion;
-5. `cv-markdown-v2.md` wins for CV source-write, Queue presentation and DOCX/PDF derivative handling;
-6. `activity-log.md` wins for process-history semantics;
-7. MODE_ROUTER + selected mode skill win over generic/archival docs;
-8. stop before destructive actions if precedence remains genuinely unresolved.
+3. `role-entry-strategy-v1.md` wins for interview-derived role targeting, cold-entry probability and application-effort priority, without changing Fit truthfulness;
+4. live Agent Instructions + `tracker-storage-v5.md` win for vacancy storage/lifecycle mechanics;
+5. `salary-normalization-v6.md` wins for salary research/storage/completion;
+6. `cv-markdown-v2.md` wins for CV source-write, Queue presentation and DOCX/PDF derivative handling;
+7. `activity-log.md` wins for process-history semantics;
+8. MODE_ROUTER + selected mode skill win over generic/archival docs;
+9. stop before destructive actions if precedence remains genuinely unresolved.
 
 RUNTIME_END
