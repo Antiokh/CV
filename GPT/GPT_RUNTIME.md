@@ -22,6 +22,10 @@ Never mix operational trackers, source sets or positioning rules across modes.
 
 For employment workflow tasks load `GPT/work-application-manager/SKILL.md`.
 
+For every substantive vacancy analysis, tailored CV, cover letter, recruiter/application answer, or motivation field, also load:
+
+- `GPT/work-application-manager/references/application-positioning-v1.md` — canonical pain-first hiring-problem -> proof positioning contract.
+
 When WorkInterviews, application state, vacancy ingestion, application artifacts or Gmail hiring evidence is involved, load the modular current contracts:
 
 1. `GPT/work-application-manager/references/tracker-storage-v5.md` — vacancy ownership, Queue-only agent writes, lifecycle/UI and integrity;
@@ -29,6 +33,8 @@ When WorkInterviews, application state, vacancy ingestion, application artifacts
 3. `GPT/work-application-manager/references/cv-markdown-v2.md` — Markdown-first canonical tailored CV plus Queue-only generated DOCX/PDF presentation;
 4. `GPT/work-application-manager/references/activity-log.md` — append-only process/correspondence history;
 5. live hidden `Agent Instructions` from WorkInterviews before the first tracker/Drive write.
+
+For a cover letter additionally load `GPT/work-application-manager/references/cover-letter-evidence-first.md` plus the language-specific humanizer cache required by the work-application-manager skill.
 
 For vacancy discovery also load `job-search-discovery.md` and fresh live `Job Sources` / `RU-root Companies` tabs.
 
@@ -73,7 +79,19 @@ Tailored CV artifact and tracker-presentation semantics come from `cv-markdown-v
 
 Use `Antiokh/CV` as the primary evidence repository in CV mode. Load only task-relevant evidence.
 
-For managerial/executive roles prefer:
+All substantive application positioning must follow `GPT/work-application-manager/references/application-positioning-v1.md`.
+
+Core positioning sequence:
+
+1. infer only the 1-3 hiring pains supported by the vacancy/context;
+2. identify the desired changed state and the requirements/nice-to-haves as hiring-risk filters;
+3. select normally 2-3 strongest verified proof cases;
+4. position Anton as someone who recognizes and has solved the same or structurally similar problem;
+5. use requirements as a final coverage audit, not as the automatic prose skeleton.
+
+For product and managerial/executive roles, start from `RESUME_FRACTIONAL_CTO.md` as the preferred business-evidence baseline. Preserve its business-result-first proof where relevant: revenue, operating cost, throughput, continuity, dependency, risk, adoption and management control. Do not replace this evidence with generic competency language.
+
+For managerial/executive roles also prefer:
 
 - `GPT/EXECUTIVE_POSITIONING.md`
 - `GPT/MANAGEMENT_EXPERIENCE_CASES.md`
@@ -90,11 +108,19 @@ For tailored CVs also load `GPT/CV_EVIDENCE_FIRST_RULES.md` when present and app
 
 Do not invent metrics, team size, authority, dates, industries, stages, salary expectation or application evidence.
 
+Do not make normal applications company-research essays. External research should appear in application copy only when it materially clarifies the hiring problem or positioning; generic market citations, funding/growth praise and internet-derived success language are not substitutes for Anton's proof.
+
 If displayed vacancy fit is strictly above 60%, generate the tailored Markdown CV/application pack unless Anton explicitly declines, subject to current salary/artifact/tracker gates.
 
 ## 6. Cover letters
 
-When a cover letter is created, use the language-specific cached humanizer under `WorkApplications/_skills/` as required by `work-application-manager/SKILL.md`.
+When a cover letter is created:
+
+1. apply `application-positioning-v1.md` first;
+2. apply `cover-letter-evidence-first.md` for cover-specific structure/QA;
+3. use the language-specific cached humanizer under `WorkApplications/_skills/` as required by `work-application-manager/SKILL.md`.
+
+A cover letter is a compact hiring-problem -> verified-proof argument, not a biography, requirement dump, or company-praise essay.
 
 ## 7. Freelance/Agency mode
 
@@ -105,11 +131,12 @@ Use `GPT/freelance-agency-manager/SKILL.md` and `Antiokh/needlebit-marketing` ac
 If repository material conflicts:
 
 1. explicit current user instruction wins;
-2. live Agent Instructions + `tracker-storage-v5.md` win for vacancy storage/lifecycle mechanics;
-3. `salary-normalization-v6.md` wins for salary research/storage/completion;
-4. `cv-markdown-v2.md` wins for CV source-write, Queue presentation and DOCX/PDF derivative handling;
-5. `activity-log.md` wins for process-history semantics;
-6. MODE_ROUTER + selected mode skill win over generic/archival docs;
-7. stop before destructive actions if precedence remains genuinely unresolved.
+2. `application-positioning-v1.md` wins for candidate-side application content strategy and employer-pain/proof framing;
+3. live Agent Instructions + `tracker-storage-v5.md` win for vacancy storage/lifecycle mechanics;
+4. `salary-normalization-v6.md` wins for salary research/storage/completion;
+5. `cv-markdown-v2.md` wins for CV source-write, Queue presentation and DOCX/PDF derivative handling;
+6. `activity-log.md` wins for process-history semantics;
+7. MODE_ROUTER + selected mode skill win over generic/archival docs;
+8. stop before destructive actions if precedence remains genuinely unresolved.
 
 RUNTIME_END
