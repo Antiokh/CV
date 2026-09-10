@@ -51,7 +51,7 @@ ZIL here refers to the cultural center, not the industrial plant: a major public
 
 City-level public-sector organization coordinating 100+ cultural institutions across Moscow, including libraries and local cultural centers.
 
-- Designed and rebuilt an industry-level information system
+- Turned AIS MosRazvitie from a legacy reporting system users broadly disliked into a fast, trusted operational core and source of truth for CRM and reporting workflows across 100+ Moscow cultural institutions and libraries; a 5-hour single-user export became web reporting typically completing in 1.5 seconds to 1.5 minutes
 - Owned the product and technical logic of AIS MosRazvitie, including the domain model, reporting workflows, and governance rules
 - Combined architecture, documentation, implementation, training, and support
 - Worked with reporting, analytics, security, and cross-institution workflows
@@ -125,7 +125,7 @@ Includes a Russian commercial bank and other enterprise organizations with docum
 
 Городская структура, координировавшая более 100 культурных учреждений Москвы, включая библиотеки и районные культурные центры.
 
-- Проектирование и перестройка отраслевой информационной системы
+- Превратил АИС МосРазвитие из непопулярной у пользователей legacy-системы в быстрый, востребованный операционный инструмент и единый источник данных для CRM и отчетности 100+ культурных учреждений и библиотек Москвы; 5-часовой single-user export стал web-отчетом за 1.5 секунды - 1.5 минуты
 - Владение продуктовой и технической логикой АИС МосРазвитие, включая доменную модель, отчетные процессы и governance rules
 - Совмещение архитектуры, документации, реализации, обучения и сопровождения
 - Работа с отчетностью, аналитикой, безопасностью и межведомственными процессами
@@ -190,7 +190,7 @@ Radim i u AI-native režimu u VS Code-u, kroz repozitorijumska uputstva, arhitek
 **Direkcija kulturnih centara Moskve - Viši menadžer / IT arhitekta / Analitičar**  
 *Januar 2017 - Maj 2023*
 
-- Projektovanje i restrukturiranje informacionog sistema na nivou cele mreže ustanova
+- Pretvorio AIS MosRazvitie iz legacy reporting sistema koji korisnici uglavnom nisu voleli u brz, pouzdan operativni sistem i jedinstveni izvor podataka za CRM i izveštavanje u 100+ moskovskih kulturnih ustanova i biblioteka; 5-časovni single-user export zamenjen je web izveštavanjem za 1.5 sekundi do 1.5 minuta
 - Kombinovanje arhitekture, dokumentacije, implementacije, obuke i podrške
 - Rad sa izveštavanjem, analitikom, bezbednošću i međuinstitucionalnim procesima
 

@@ -91,7 +91,7 @@ Founder / CTO / Systems Architect
 - Радио са IT директорима и руководиоцима IT више од 100 подређених културних установа.
 - Преградио legacy IBM Domino систем за прикупљање података у web-based information system са модуларном архитектуром, без прекида извештавања.
 - Пројектовао генераторе извештаја, генераторе поља, export constructors, filters, access rules, role-based controls и reusable field/snippet generation tools.
-- Заменио 5-часовни single-user export workflow web-based генерацијом извештаја која је обично радила за 1.5 секунди до 1.5 минута и била доступна овлашћеним корисницима.
+- Претворио AIS MosRazvitie из legacy reporting система који корисници углавном нису волели у брз, поуздан оперативни систем и јединствени извор података за CRM и извештавање у 100+ московских културних установа и библиотека; 5-часовни single-user export заменио web-based извештавањем које је обично трајало 1.5 секунди до 1.5 минута.
 - Направио интерактивну карту објеката на Yandex Maps API, JSON/GeoJSON-style подацима и јавним подацима из система.
 - Пренео IBM Domino infrastructure са Windows на CentOS са nginx reverse proxy.
 - Побољшао безбедност кроз web authentication промене и добио A+ SSL rating у nginx reverse-proxy setup-у.

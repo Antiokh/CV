@@ -76,7 +76,7 @@ Hybrid product owner / architect / developer / analyst role for a sector-level c
 - Rebuilt a legacy IBM Domino data-collection system into a web-based information system with modular architecture while keeping reporting work alive.
 - Owned the product logic of AIS MosRazvitie end to end, including domain model, reporting workflows, questionnaires, exports, service actions, and governance rules.
 - Designed report generators, field generators, export constructors, filters, access rules, role-based controls, and reusable field/snippet generation tools for faster change delivery.
-- Replaced a 5-hour, single-user export workflow with web-based report generation that usually completed in 1.5 seconds to 1.5 minutes and became available to authorized users across institutions.
+- Turned AIS MosRazvitie from a legacy reporting system users broadly disliked into a fast, trusted operational core and source of truth for CRM and reporting workflows across 100+ Moscow cultural institutions and libraries; replaced a 5-hour, single-user export workflow with web reporting typically completing in 1.5 seconds to 1.5 minutes.
 - Defined lifecycle rules for events, reporting periods, edit restrictions, and data-consistency controls across institutions, branches, locations, and spaces.
 - Built an interactive object map using Yandex Maps API, JSON/GeoJSON-style data, and public institutional data from the information system.
 - Migrated IBM Domino infrastructure from Windows to CentOS with nginx reverse proxy.

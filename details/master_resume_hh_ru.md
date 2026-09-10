@@ -94,7 +94,7 @@ Founder / CTO / Systems Architect
 - Перестроил legacy IBM Domino систему сбора данных в web-based information system с модульной архитектурой.
 - Отвечал за продуктовую и техническую логику АИС МосРазвитие: domain model, reporting workflows, questionnaires, exports, service actions и governance rules.
 - Проектировал генераторы отчетов, генераторы полей, export constructors, filters, access rules, role-based controls и reusable field/snippet generation tools для ускорения изменений.
-- Заменил 5-часовой single-user export workflow на web-based генерацию отчетов, которая обычно выполнялась за 1.5 секунды - 1.5 минуты и была доступна уполномоченным пользователям в учреждениях.
+- Превратил АИС МосРазвитие из непопулярной у пользователей legacy-системы в быстрый, востребованный операционный инструмент и единый источник данных для CRM и отчетности 100+ культурных учреждений и библиотек Москвы; 5-часовой single-user export заменил web-based генерацией отчетов за 1.5 секунды - 1.5 минуты.
 - Задал правила жизненного цикла мероприятий, отчетных периодов, ограничений редактирования и контроля целостности данных для учреждений, филиалов, площадок и помещений.
 - Создал интерактивную карту объектов на Yandex Maps API, JSON/GeoJSON-style data и публичных данных из информационной системы.
 - Перенес IBM Domino infrastructure с Windows на CentOS с nginx reverse proxy.

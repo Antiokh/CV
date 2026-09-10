@@ -31,7 +31,7 @@ My strongest pattern is turning fragmented operations into systems with clear ow
 - Extended the useful life of approximately **150 workstations** through targeted upgrades and licensing cleanup instead of blanket hardware replacement.
 - Reconciled **800+ accounting and physical asset records** with accounting and technical teams and enabled formal write-off of approximately **100 missing or unusable assets**; this was a broader reconciliation exercise than the **581-asset operational baseline** documented earlier in the role.
 - Moved **100+ employees** to secure remote work during COVID without interrupting core operations.
-- Replaced a **5-hour, single-user reporting export** in a city-scale information system with web-based generation typically completing in **1.5 seconds to 1.5 minutes** and available to authorized users across institutions.
+- Turned a widely disliked reporting system into a fast, trusted operational core and **source of truth for CRM and reporting workflows across 100+ Moscow cultural institutions and libraries**; replaced a **5-hour, single-user export** with web reporting typically completing in **1.5 seconds to 1.5 minutes**.
 - Consolidated field operations and client workflows while migrating approximately **70,000 historical documents** into a structured backend.
 
 ## Selected Experience
@@ -68,7 +68,7 @@ ZIL here refers to the **Cultural Center**, not the industrial plant: a major pu
 City-level public-sector organization coordinating **100+ cultural institutions across Moscow**. My role combined product and technical ownership with indirect functional leadership across **100+ institutional IT specialists**, procurement coordination, and stakeholder management across organizations outside my direct reporting line.
 
 - Worked with IT directors, heads of IT, and specialists across **100+ subordinate institutions**, aligning technical requirements, operating rules, implementation decisions, and adoption without direct administrative authority.
-- Owned end-to-end product and technical decision-making for **AIS MosRazvitie**, including product logic, architecture, data model, reporting workflows, access rules, governance, implementation, and user adoption.
+- Turned **AIS MosRazvitie** from a legacy reporting system users broadly disliked into a fast, trusted operational core and source of truth across **100+ Moscow cultural institutions and libraries**, while owning product logic, architecture, data model, reporting workflows, access rules, governance, implementation, and user adoption.
 - Replaced a **5-hour, single-user export workflow** with web-based report generation typically completing in **1.5 seconds to 1.5 minutes** for authorized users across institutions.
 - Represented the Directorate in centralized IT equipment procurement: consolidated institutional needs, worked with procurement quotas, aligned technical requirements with available allocations, and tracked deliveries through completion.
 - Restored availability and reputation after Directorate web systems were incorrectly classified as phishing/malware: worked with **Google, Bitdefender, Quttera, and Sangfor** to remove the public portal and core information system from security blocklists.

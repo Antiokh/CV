@@ -1,5 +1,5 @@
 {
-  "profile_version": "2026-05-18",
+  "profile_version": "2026-09-10",
   "purpose": "Canonical structured profile object for resumes, portfolio positioning, Upwork/LinkedIn rewriting, application generation, and agent-assisted profile maintenance.",
   "identity": {
     "full_name": "Anton Nazarov",
@@ -69,7 +69,7 @@
     "years_building_since": 2005,
     "professional_experience_since": 2008,
     "professional_experience_years": 18,
-    "core_pattern": "Turns fragmented workflows, weak tooling, and operational chaos into structured systems that organizations can run, maintain, and scale.",
+    "core_pattern": "Turns fragmented workflows, weak or disliked tooling, and operational chaos into fast, trusted systems that users adopt and organizations can rely on as operational sources of truth.",
     "working_style": [
       "playing coach",
       "architect-level implementer",
@@ -88,14 +88,15 @@
     ]
   },
   "core_value_proposition": {
-    "summary": "Builds and restructures complex systems at the intersection of engineering, business, and operations.",
+    "summary": "Builds and restructures complex systems at the intersection of engineering, business, and operations, turning weak or disliked tools into trusted systems people actually use.",
     "business_outcomes": [
       "reduces manual work and human-factor mistakes",
       "lowers dependency on specific employees",
       "improves management visibility and reporting clarity",
       "reduces vendor lock-in",
       "creates maintainable systems that support real operations",
-      "aligns product structure with technical and business constraints"
+      "aligns product structure with technical and business constraints",
+      "turns low-trust or disliked internal systems into tools users rely on and adopt"
     ],
     "transformation_pattern": [
       "enters messy environment",
@@ -576,6 +577,7 @@
         "drafting technical specifications for Directorate IT projects"
       ],
       "results": [
+        "turned AIS MosRazvitie from a broadly disliked legacy reporting system into a fast, trusted operational core and source of truth for CRM and reporting workflows across 100+ Moscow cultural institutions and libraries",
         "built and evolved a scalable industry-level information system for cultural institutions",
         "automated structured data collection across about 100 library and cultural institutions",
         "accelerated export operations by about 20x and added expected-time estimation for long-running operations",
@@ -587,7 +589,8 @@
         "trained internal staff in IBM Notes and supported adoption across Directorate departments and subordinate institutions",
         "enabled parallel report generation and stronger operational independence across departments",
         "translated institutional pain points into system changes through documentation, training, feedback collection, and ongoing rollout support",
-        "combined product ownership, architecture, implementation, governance, support, and user adoption in one long-running institutional system"
+        "combined product ownership, architecture, implementation, governance, support, and user adoption in one long-running institutional system",
+        "replaced a 5-hour single-user export workflow with web-based reporting typically completing in 1.5 seconds to 1.5 minutes and available to authorized users across institutions"
       ]
     },
     {
@@ -1060,6 +1063,7 @@
         "end-to-end ownership"
       ],
       "results": [
+        "turned a broadly disliked legacy reporting system into a fast, trusted operational core and source of truth for CRM and reporting workflows across 100+ Moscow cultural institutions and libraries",
         "owned product logic, architecture, reporting workflows, questionnaires, data exchange, service operations, and governance rules for a city-scale institutional system",
         "improved institutional reporting, analytics, and role-based control",
         "made system adoption practical through training, webinars, support workflow changes, and translation of user pain points into system updates"
@@ -3024,6 +3028,18 @@
       "source_file": "details/chatgpt_shared_cv_tech_survey_source.md",
       "reviewed_at": "2026-06-02",
       "note": "User pasted original dictated messages from the ChatGPT shared CV technology survey. These first-person dictations override softer GPT interpretations where they conflict."
+    }
+  },
+  "user_impact": {
+    "recurring_pattern": "Turns systems users resist or dislike into tools they trust, rely on, and use as operational sources of truth.",
+    "signature_case": {
+      "system": "AIS MosRazvitie",
+      "scope": "100+ Moscow cultural institutions, including libraries and cultural centers",
+      "before": "Legacy reporting/statistics system broadly disliked by users, with slow and specialist-dependent workflows.",
+      "after": "Fast, functional operational core and source of truth for CRM and reporting workflows across the institutional network.",
+      "qualitative_user_change": "User-confirmed qualitative assessment: from a system almost everyone hated to a system almost everyone loved.",
+      "measured_result": "Replaced a 5-hour single-user export workflow with web reporting typically completing in 1.5 seconds to 1.5 minutes.",
+      "source_status": "user-confirmed 2026-09-10; performance metrics already present in canonical CV evidence"
     }
   }
 }

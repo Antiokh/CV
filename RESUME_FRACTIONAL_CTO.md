@@ -26,7 +26,7 @@ Management experience combines direct leadership of specialized IT teams with in
 - Recovered administrative control over critical ZIL infrastructure after an inherited administrator left without handover: reconstructed privileged access and critical credentials and reduced key-person dependency.
 - Kept operations running through COVID by moving **100+ employees to secure remote work** without interrupting work.
 - Coordinated technology requirements and delivery with **100+ IT specialists across 100+ cultural institutions** without direct line authority, combining system governance, procurement coordination and institutional stakeholder management.
-- Replaced a **5-hour single-user export workflow** in a city-scale information system with web-based reporting that typically completed in **1.5 seconds to 1.5 minutes** and became available to authorized users across institutions.
+- Turned a widely disliked reporting system into a fast, trusted operational core and **source of truth for CRM and reporting workflows across 100+ Moscow cultural institutions and libraries**; replaced a **5-hour single-user export workflow** with web reporting typically completing in **1.5 seconds to 1.5 minutes**.
 - Restored the Directorate's public website and core information system after erroneous phishing/malware classification by working directly with security vendors and removing the systems from **Google, Bitdefender, Quttera and Sangfor blocklists**.
 - Built a ZIL IT operating model that remained stable after my departure and through subsequent leadership changes.
 
@@ -76,7 +76,7 @@ City-level organisation coordinating **100+ cultural institutions**. My role com
 
 - Coordinated technology requirements, implementation decisions and operational priorities with IT directors, heads of IT and specialists across the institutional network.
 - Represented the Directorate in centralized IT equipment procurement: consolidated institutional needs, aligned technical requirements with available procurement quotas and tracked deliveries through completion; financial allocations themselves were controlled by a separate procurement organisation.
-- Owned end-to-end product and technical decision-making for AIS MosRazvitie, including product logic, architecture, data model, reporting workflows, access rules, governance and user adoption.
+- Turned AIS MosRazvitie from a legacy reporting system users broadly disliked into a fast, trusted operational core and source of truth across **100+ Moscow cultural institutions and libraries**, while owning product logic, architecture, data model, reporting workflows, access rules, governance and user adoption.
 - Replaced a **5-hour single-user export workflow** with web-based reporting that typically completed in **1.5 seconds to 1.5 minutes** and could be used by authorized users across institutions.
 - Restored availability and security reputation of the Directorate's public website and core information system after false phishing/malware classifications by working directly with **Google, Bitdefender, Quttera and Sangfor** to remove the systems from their blocklists.
 - Made system changes more controllable through common data models, roles, access rules and explicit change procedures instead of local agreements.
