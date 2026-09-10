@@ -1,0 +1,157 @@
+name: One-off user impact update
+
+on:
+  push:
+    paths:
+      - .github/workflows/oneoff-user-impact-update.yml
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Update canonical profile and current CVs
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          def replace_once(path, old, new):
+              p = Path(path)
+              text = p.read_text(encoding='utf-8')
+              if new in text:
+                  return
+              if old not in text:
+                  raise RuntimeError(f'Expected text not found in {path}: {old[:120]!r}')
+              p.write_text(text.replace(old, new, 1), encoding='utf-8')
+
+          # Canonical structured profile.
+          p = Path('data/anton_nazarov_profile.json')
+          profile = json.loads(p.read_text(encoding='utf-8'))
+          profile['profile_version'] = '2026-09-10'
+          profile['professional_identity']['core_pattern'] = (
+              'Turns fragmented workflows, weak or disliked tooling, and operational chaos into fast, trusted systems '
+              'that users adopt and organizations can rely on as operational sources of truth.'
+          )
+          profile['core_value_proposition']['summary'] = (
+              'Builds and restructures complex systems at the intersection of engineering, business, and operations, '
+              'turning weak or disliked tools into trusted systems people actually use.'
+          )
+          outcomes = profile['core_value_proposition']['business_outcomes']
+          impact_outcome = 'turns low-trust or disliked internal systems into tools users rely on and adopt'
+          if impact_outcome not in outcomes:
+              outcomes.append(impact_outcome)
+
+          profile['user_impact'] = {
+              'recurring_pattern': 'Turns systems users resist or dislike into tools they trust, rely on, and use as operational sources of truth.',
+              'signature_case': {
+                  'system': 'AIS MosRazvitie',
+                  'scope': '100+ Moscow cultural institutions, including libraries and cultural centers',
+                  'before': 'Legacy reporting/statistics system broadly disliked by users, with slow and specialist-dependent workflows.',
+                  'after': 'Fast, functional operational core and source of truth for CRM and reporting workflows across the institutional network.',
+                  'qualitative_user_change': 'User-confirmed qualitative assessment: from a system almost everyone hated to a system almost everyone loved.',
+                  'measured_result': 'Replaced a 5-hour single-user export workflow with web reporting typically completing in 1.5 seconds to 1.5 minutes.',
+                  'source_status': 'user-confirmed 2026-09-10; performance metrics already present in canonical CV evidence'
+              }
+          }
+
+          for item in profile.get('employment_history', []):
+              if item.get('company') == 'Directorate of Cultural Centers of Moscow':
+                  results = item.setdefault('results', [])
+                  impact = ('turned AIS MosRazvitie from a broadly disliked legacy reporting system into a fast, trusted operational core '
+                            'and source of truth for CRM and reporting workflows across 100+ Moscow cultural institutions and libraries')
+                  if impact not in results:
+                      results.insert(0, impact)
+                  speed = ('replaced a 5-hour single-user export workflow with web-based reporting typically completing in '
+                           '1.5 seconds to 1.5 minutes and available to authorized users across institutions')
+                  if speed not in results:
+                      results.append(speed)
+                  break
+
+          for item in profile.get('selected_projects', []):
+              if item.get('name') == 'AIS MosRazvitie':
+                  results = item.setdefault('results', [])
+                  impact = ('turned a broadly disliked legacy reporting system into a fast, trusted operational core and source of truth '
+                            'for CRM and reporting workflows across 100+ Moscow cultural institutions and libraries')
+                  if impact not in results:
+                      results.insert(0, impact)
+                  break
+
+          p.write_text(json.dumps(profile, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+
+          # Root general CV.
+          replace_once(
+              'RESUME.md',
+              '- Replaced a **5-hour, single-user reporting export** in a city-scale information system with web-based generation typically completing in **1.5 seconds to 1.5 minutes** and available to authorized users across institutions.',
+              '- Turned a widely disliked reporting system into a fast, trusted operational core and **source of truth for CRM and reporting workflows across 100+ Moscow cultural institutions and libraries**; replaced a **5-hour, single-user export** with web reporting typically completing in **1.5 seconds to 1.5 minutes**.'
+          )
+          replace_once(
+              'RESUME.md',
+              '- Owned end-to-end product and technical decision-making for **AIS MosRazvitie**, including product logic, architecture, data model, reporting workflows, access rules, governance, implementation, and user adoption.',
+              '- Turned **AIS MosRazvitie** from a legacy reporting system users broadly disliked into a fast, trusted operational core and source of truth across **100+ Moscow cultural institutions and libraries**, while owning product logic, architecture, data model, reporting workflows, access rules, governance, implementation, and user adoption.'
+          )
+
+          # CTO / executive baseline.
+          replace_once(
+              'RESUME_FRACTIONAL_CTO.md',
+              '- Replaced a **5-hour single-user export workflow** in a city-scale information system with web-based reporting that typically completed in **1.5 seconds to 1.5 minutes** and became available to authorized users across institutions.',
+              '- Turned a widely disliked reporting system into a fast, trusted operational core and **source of truth for CRM and reporting workflows across 100+ Moscow cultural institutions and libraries**; replaced a **5-hour single-user export workflow** with web reporting typically completing in **1.5 seconds to 1.5 minutes**.'
+          )
+          replace_once(
+              'RESUME_FRACTIONAL_CTO.md',
+              '- Owned end-to-end product and technical decision-making for AIS MosRazvitie, including product logic, architecture, data model, reporting workflows, access rules, governance and user adoption.',
+              '- Turned AIS MosRazvitie from a legacy reporting system users broadly disliked into a fast, trusted operational core and source of truth across **100+ Moscow cultural institutions and libraries**, while owning product logic, architecture, data model, reporting workflows, access rules, governance and user adoption.'
+          )
+
+          # Compact three-language CV.
+          replace_once(
+              'RESUME_RU_EN_SR.md',
+              '- Designed and rebuilt an industry-level information system',
+              '- Turned AIS MosRazvitie from a legacy reporting system users broadly disliked into a fast, trusted operational core and source of truth for CRM and reporting workflows across 100+ Moscow cultural institutions and libraries; a 5-hour single-user export became web reporting typically completing in 1.5 seconds to 1.5 minutes'
+          )
+          replace_once(
+              'RESUME_RU_EN_SR.md',
+              '- Проектирование и перестройка отраслевой информационной системы',
+              '- Превратил АИС МосРазвитие из непопулярной у пользователей legacy-системы в быстрый, востребованный операционный инструмент и единый источник данных для CRM и отчетности 100+ культурных учреждений и библиотек Москвы; 5-часовой single-user export стал web-отчетом за 1.5 секунды - 1.5 минуты'
+          )
+          replace_once(
+              'RESUME_RU_EN_SR.md',
+              '- Projektovanje i restrukturiranje informacionog sistema na nivou cele mreže ustanova',
+              '- Pretvorio AIS MosRazvitie iz legacy reporting sistema koji korisnici uglavnom nisu voleli u brz, pouzdan operativni sistem i jedinstveni izvor podataka za CRM i izveštavanje u 100+ moskovskih kulturnih ustanova i biblioteka; 5-časovni single-user export zamenjen je web izveštavanjem za 1.5 sekundi do 1.5 minuta'
+          )
+
+          # Detailed English master CV.
+          replace_once(
+              'details/master_resume_greenhouse.md',
+              '- Replaced a 5-hour, single-user export workflow with web-based report generation that usually completed in 1.5 seconds to 1.5 minutes and became available to authorized users across institutions.',
+              '- Turned AIS MosRazvitie from a legacy reporting system users broadly disliked into a fast, trusted operational core and source of truth for CRM and reporting workflows across 100+ Moscow cultural institutions and libraries; replaced a 5-hour, single-user export workflow with web reporting typically completing in 1.5 seconds to 1.5 minutes.'
+          )
+
+          # Detailed Russian master CV.
+          replace_once(
+              'details/master_resume_hh_ru.md',
+              '- Заменил 5-часовой single-user export workflow на web-based генерацию отчетов, которая обычно выполнялась за 1.5 секунды - 1.5 минуты и была доступна уполномоченным пользователям в учреждениях.',
+              '- Превратил АИС МосРазвитие из непопулярной у пользователей legacy-системы в быстрый, востребованный операционный инструмент и единый источник данных для CRM и отчетности 100+ культурных учреждений и библиотек Москвы; 5-часовой single-user export заменил web-based генерацией отчетов за 1.5 секунды - 1.5 минуты.'
+          )
+
+          # Detailed Serbian Cyrillic master CV.
+          replace_once(
+              'details/master_resume_hh_sr_cyrl.md',
+              '- Заменио 5-часовни single-user export workflow web-based генерацијом извештаја која је обично радила за 1.5 секунди до 1.5 минута и била доступна овлашћеним корисницима.',
+              '- Претворио AIS MosRazvitie из legacy reporting система који корисници углавном нису волели у брз, поуздан оперативни систем и јединствени извор података за CRM и извештавање у 100+ московских културних установа и библиотека; 5-часовни single-user export заменио web-based извештавањем које је обично трајало 1.5 секунди до 1.5 минута.'
+          )
+          PY
+
+          rm -f .github/workflows/oneoff-user-impact-update.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/anton_nazarov_profile.json RESUME.md RESUME_FRACTIONAL_CTO.md RESUME_RU_EN_SR.md details/master_resume_greenhouse.md details/master_resume_hh_ru.md details/master_resume_hh_sr_cyrl.md .github/workflows/oneoff-user-impact-update.yml
+          git diff --cached --check
+          git commit -m "Add user adoption impact to canonical profile and CVs"
+          git push
