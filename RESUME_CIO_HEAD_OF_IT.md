@@ -51,8 +51,6 @@ Mar 2020 - Jun 2022
 
 Joined the management team during an anti-crisis period with three technology objectives: support internal cost optimization, make ZIL a more technologically progressive cultural venue, and strengthen its positioning as a modern, youth-oriented organization. I made reconstruction of the IT function the first priority because broader transformation would not be credible while IT itself remained poorly controlled or distrusted.
 
-An **August 2020 documented operational baseline** covered **145 employees, 156 workstations and 581 technology assets**; the wider environment included **7 servers and approximately 20 virtual machines** plus CCTV, telephony, access control, ticketing and internal business systems.
-
 - I audited the technology function and identified systemic risks across personal-data handling, information security, aging infrastructure, licensing, service operations, staff digital competence, regulatory requirements, ticketing and refund processes, and integration between HR, financial and ticketing systems.
 - I rebuilt the inherited support model around differentiated specialist roles and explicit ownership, managing **5 IT staff and 2 installation engineers**. The structure combined on-site service / endpoint capability, documentation and ITSM ownership, deeper remote infrastructure expertise and physical-technology support instead of relying on generic support roles.
 - Working with the documentation / Service Desk owner, we introduced HelpDesk as the system of record, documented recurring request types, assigned service expectations / SLA targets and created reusable operating documentation so support no longer depended on informal memory.
