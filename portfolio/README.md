@@ -1,0 +1,62 @@
+# Portfolio
+
+This folder contains project case studies that support the main CV with concrete product, architecture, and delivery examples.
+
+## Structure
+
+Each project lives in its own folder and should contain:
+
+- `README.md` - short public-facing case study
+- optional supporting files such as detailed notes, screenshots, links, or internal drafts
+
+Agent entry point: [agent_portfolio_navigator.md](./agent_portfolio_navigator.md)
+Formatting rules for project descriptions: [agent_case_study_format.md](./agent_case_study_format.md)
+Workflow for adding new cases: [agent_project_intake_guide.md](./agent_project_intake_guide.md)
+
+## Project Listing
+
+### Focus Pet Projects
+
+- [RSLive - Serbia Relocation Encyclopedia](./rslive/README.md) - evidence-oriented knowledge system with separated content/runtime architecture, editorial governance, semantic indexing, and automated publishing.
+- [humanizer_russian - Russian Editorial Engine](./humanizer_russian/README.md) - source-aware editorial system with deterministic linting, normalized knowledge libraries, provenance, conflict handling, CI integration, and explicit validation boundaries.
+
+### Public Engineering Projects
+
+- [Supabase Project Starter](./supabase_project_starter/README.md) - agent-ready Supabase engineering baseline with deployment-aware operating rules, source-of-truth boundaries, shared Edge Function helpers, SQL patterns, and reusable project infrastructure.
+- [WeWeb Component Starter](./ww_component_starter/README.md) - Vue/WeWeb custom-component engineering kit with platform API guidance, editor/runtime contracts, advanced component patterns, and agent-oriented development documentation.
+- [tgs.py](./tgs.py/README.md) - Telegram operations toolkit that grew from a CLI utility into a modular product with exports, automation scaffolding, licensing, packaging, and an early desktop GUI.
+
+### Ready
+
+- [Andronyevskaya ERP](./andronyevskaya_erp/README.md)
+- [AIS MosRazvitie](./ais_mosrazvitie/README.md)
+- [Business Directory](./business_directory/README.md)
+- [Cashdesk Accounting](./cashdesk_bubble/README.md)
+- [Dobri Tours](./dobri_tours/README.md)
+- [Dobri Visarun](./dobri_visarun/README.md)
+- [Educate Online](./educate_online/README.md)
+- [Exit Lead](./exit_lead/README.md)
+- [Flower Shop](./flowershop/README.md)
+- [French Plumbers ERP](./french_plumbers_erp/README.md)
+- [MakeMeLook](./makemelook/README.md)
+- [MetaFox Strengths Explorer](./metafox_strengths_explorer/README.md)
+- [MommyHana MBO](./mommy_hana/README.md)
+- [PromptlessPress](./promptlesspress/README.md)
+- [QR Cloud](./qr_cloud/README.md)
+- [RuskaJela](./ruskajela/README.md)
+- [Sefcast](./sefcast/README.md)
+- [Serbia Networking App](./serbia_networking_app/README.md)
+- [Vencer Autismo](./vencer_autismo/README.md)
+- [Space AI Demo](./space_ai_demo/README.md)
+
+## Purpose
+
+These case studies are meant to show:
+
+- what the product or system does
+- what technical or product problems were solved
+- what stack and architecture were used
+- what role Anton Nazarov played
+- what the business or operational result was
+
+The goal is not to document every implementation detail. The goal is to give clients and employers enough concrete evidence to understand the level of ownership, complexity, and decision-making involved.

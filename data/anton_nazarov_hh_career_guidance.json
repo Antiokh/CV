@@ -1,0 +1,145 @@
+{
+  "profile_version": "2026-03-24",
+  "document_type": "career_guidance_profile",
+  "source": {
+    "provider": "HeadHunter / Career Guidance",
+    "source_pdf": "sources/hh_career_guidance_report_ru_16670046.pdf",
+    "report_date": "2018-11-08",
+    "language": "ru",
+    "translation_status": "structured English summary based on the Russian original"
+  },
+  "recommended_professions": [
+    "Head of Analytics",
+    "Project Manager",
+    "Head of Development Team (IT)",
+    "Startup Manager / Head of New Projects",
+    "Head of Marketing",
+    "Art Director",
+    "Head of R&D",
+    "Creative Director",
+    "Trader / Dealer",
+    "Periodicals Editor",
+    "Media Analyst",
+    "Internet Portal Editor",
+    "Marketing Specialist",
+    "Head of Advertising and PR",
+    "Research Specialist"
+  ],
+  "professional_domains": {
+    "strong_recommendation": [
+      {
+        "domain": "Management",
+        "summary": "Managing people and work processes, making key decisions, and handling strategic planning.",
+        "fit": "high"
+      },
+      {
+        "domain": "Communications",
+        "summary": "Negotiation, presentations, promotion, and external-facing organizational processes.",
+        "fit": "high"
+      },
+      {
+        "domain": "Innovation",
+        "summary": "Developing new products, services, and technologies; creative and inventive work.",
+        "fit": "high"
+      },
+      {
+        "domain": "Analytics",
+        "summary": "Information analysis, forecasting, identifying mechanisms and root causes, and working through solutions.",
+        "fit": "high"
+      }
+    ],
+    "partial_recommendation": [
+      {
+        "domain": "Projects",
+        "summary": "Project management, new business directions, and entrepreneurship.",
+        "fit": "medium"
+      },
+      {
+        "domain": "Technology",
+        "summary": "Professional competence, practical implementation of technologies, and deep specialization.",
+        "fit": "medium"
+      },
+      {
+        "domain": "Control",
+        "summary": "Control and audit of other people's work, ensuring qualitative and quantitative performance indicators.",
+        "fit": "medium"
+      },
+      {
+        "domain": "Administration",
+        "summary": "Planning and administering work processes, maintaining order and operational stability.",
+        "fit": "medium"
+      }
+    ],
+    "not_recommended_as_primary": [
+      {
+        "domain": "Service",
+        "summary": "Client service, support, account management, and service-oriented roles.",
+        "fit": "low"
+      },
+      {
+        "domain": "Routine Functional Work",
+        "summary": "Purely execution-oriented, regulated, internal organizational work.",
+        "fit": "low"
+      }
+    ]
+  },
+  "professional_interests": {
+    "manager": "strong",
+    "entrepreneur": "neutral",
+    "communicator": "low_current_interest",
+    "administrator": "neutral"
+  },
+  "intelligence_structure": {
+    "calculations": "average",
+    "lexicon": "above_average",
+    "erudition": "above_average",
+    "visual_logic": "high",
+    "abstract_logic": "high",
+    "attention": "above_average"
+  },
+  "personality_dimensions": {
+    "introversion_extraversion": {
+      "result": "balanced",
+      "summary": "Balanced orientation toward both the external and internal world; combines action with reflection."
+    },
+    "feeling_thinking": {
+      "result": "thinking_dominant",
+      "summary": "Strong analytical orientation, objectivity, reliance on independent judgment, and consistent reasoning."
+    },
+    "sensing_intuition": {
+      "result": "balanced",
+      "summary": "Combines intuition with practicality, paying attention both to new possibilities and to current execution."
+    },
+    "improvisation_planning": {
+      "result": "moderately_improvisational",
+      "summary": "Flexible, adaptive, open to new options, and oriented toward process and optionality rather than rigid planning."
+    },
+    "yielding_influence": {
+      "result": "dominant",
+      "summary": "Tends to influence, defend interests, and push decisions toward implementation; useful for leadership roles."
+    }
+  },
+  "development_recommendations": [
+    "stress management",
+    "self-organization",
+    "confidence in communication",
+    "leadership and people management",
+    "creativity"
+  ],
+  "interpreted_takeaways": {
+    "core_pattern": [
+      "management and analytics are the main vector",
+      "communications and innovation are strong supporting axes",
+      "technology and project work fit best as part of broader roles rather than as the sole identity",
+      "pure service and purely execution-oriented roles are a weaker fit"
+    ],
+    "repo_alignment": [
+      "aligns with the current positioning as systems architect / digital transformation lead / people-facing systems leader",
+      "supports movement toward roles with management, analysis, implementation, and stakeholder-facing responsibility"
+    ]
+  },
+  "notes": [
+    "This JSON is a structured summary of the HeadHunter career guidance report rather than a full verbatim conversion.",
+    "The source report is in Russian and reflects the testing date of 2018-11-08."
+  ]
+}

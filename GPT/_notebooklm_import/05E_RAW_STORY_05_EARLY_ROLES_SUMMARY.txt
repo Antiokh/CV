@@ -1,0 +1,460 @@
+﻿# 05E_RAW_STORY_05_EARLY_ROLES_SUMMARY
+
+NotebookLM source title: 05E_RAW_STORY_05_EARLY_ROLES_SUMMARY
+Original file included: anton_nazarov_career_path_story_full_raw.md
+
+---
+SOURCE_FILE: anton_nazarov_career_path_story_full_raw.md
+SOURCE_PART: 05E_RAW_STORY_05_EARLY_ROLES_SUMMARY
+---
+
+# 7. Synergy / Синергия
+
+## Даты и роль
+
+Ноябрь 2016 — март 2017.
+
+Synergy JSC / ООО “Торговый дом Синергия Маркет”.
+
+Роль:
+- Lotus Developer.
+
+## Что делал
+
+Работал с внутренней IBM Domino / Lotus системой документооборота.
+
+Занимался:
+- full-stack development на IBM Domino / Lotus;
+- поддержкой внутренней системы документооборота;
+- third-line support;
+- накопленными change requests;
+- техническими улучшениями.
+
+## Достижения
+
+Привёл базы в единый визуальный стиль.
+
+Разгреб большой backlog накопившихся доработок за несколько лет.
+
+## Управленческая ценность
+
+Этот опыт менее менеджерский, чем банк / Дирекция / ЗИЛ.
+
+Но он показывает:
+- способность входить в legacy environment;
+- быстро закрывать накопленный technical debt;
+- работать с enterprise document workflow;
+- поддерживать внутренние системы на масштабе организации.
+
+---
+
+# 8. IT Company / Lotus Notes Department
+
+## Даты и роль
+
+Январь 2011 — апрель 2012.
+
+ООО “Фирма АйТи. Информационные технологии”.
+
+Роль:
+- Lotus Notes Specialist.
+
+## Что делал
+
+Работал с внутренней системой документооборота на Lotus Notes / Domino.
+
+Занимался:
+- Lotus Notes development;
+- поддержанием работоспособности системы;
+- исправлением ошибок;
+- новыми модулями;
+- web adaptation;
+- обучением новых сотрудников.
+
+## Достижения
+
+Впервые ввёл XPages technology в компании.
+
+Переписал core library Boss-Referent на JavaScript / SSJS для web support.
+
+Доработал Boss-Referent для web-use.
+
+Добавил новые модули и базы.
+
+Проводил вводные лекции по внутренней Lotus Notes workflow system для новых сотрудников, включая top management.
+
+## Управленческая ценность
+
+Здесь уже был элемент knowledge transfer:
+- обучение сотрудников;
+- объяснение системы;
+- внедрение новой технологии;
+- техническое лидерство в рамках отдела.
+
+---
+
+# 9. Domodedovo Airport / Домодедово
+
+## Даты и роль
+
+Сентябрь 2008 — сентябрь 2009.
+
+Airport Management Company Limited / Домодедово.
+
+Роль:
+- Junior Lotus Notes Developer.
+
+## Контекст
+
+Я вошёл в enterprise systems через внутреннее обучение и отбор.
+
+Меня выбрали из группы кандидатов.
+
+Это показывает раннюю обучаемость и способность быстро входить в корпоративные системы.
+
+## Что делал
+
+Занимался:
+- configuration;
+- modernization;
+- support of corporate document systems;
+- Lotus Notes / Domino;
+- integration via OLE;
+- service applications and agents;
+- project documentation;
+- user support;
+- consulting;
+- adapting applications for user needs;
+- service desk participation;
+- collaboration with testers.
+
+## Управленческая ценность
+
+Это ранний foundation:
+- corporate document systems;
+- user-facing adaptation;
+- support;
+- documentation;
+- enterprise workflows.
+
+---
+
+# 10. Freelance / Private Practice 2009–2011
+
+## Что делал
+
+Ранний независимый технический опыт.
+
+Занимался:
+- private World of Warcraft servers;
+- Lineage servers;
+- websites on CMS;
+- PC assembly;
+- OS/software installation;
+- maintenance;
+- virus cleanup;
+- infrastructure;
+- MySQL;
+- Bash scripts;
+- backups.
+
+Автоматизировал обновления базы данных из SVN repositories в MySQL через Bash.
+
+Настраивал автоматические backups в cloud storage.
+
+## Управленческая ценность
+
+Это ранний опыт полного владения маленькими системами:
+- setup;
+- maintenance;
+- troubleshooting;
+- automation;
+- responsibility end-to-end.
+
+---
+
+# 11. Event / Festival / Promotion Experience
+
+## Общая рамка
+
+У меня есть дополнительный опыт организации мероприятий, концертов, фестивалей, волонтёров, продвижения.
+
+Это не должно быть главным в IT CV, но может поддерживать leadership / coordination narrative.
+
+## Примеры
+
+- организация / соорганизация музыкального фестиваля “Быть Добру” в 2014–2015;
+- ярмарка;
+- волонтёрская команда;
+- концерты группы “Полынья” в 2017–2020;
+- обучение event management;
+- обучение promotion / SMM;
+- курсы и лекции от практиков фестивальной и медийной сферы;
+- мероприятия до 10k+ участников.
+
+## Что это доказывает
+
+- people coordination;
+- live operations;
+- logistics;
+- stress management;
+- public communication;
+- promotion;
+- audience work;
+- volunteer/team management;
+- способность управлять процессами не только в software.
+
+---
+
+# 12. Education / Management Background
+
+## Формальное образование
+
+У меня не случайная управленческая линия.
+
+Образование включает:
+- Commercial Banking College No. 6;
+- economics and accounting by industry;
+- Applied Informatics in Economics;
+- профессиональная переподготовка по IT для экономики и государственного управления;
+- Bachelor in Management;
+- specialization: Small Business Management.
+
+Я сознательно усиливал management, analytics, QA, implementation side вместо того, чтобы оставаться только в техническом треке.
+
+## Дополнительное обучение
+
+Было обучение:
+- Lotus Notes programmer training;
+- event management and promotion;
+- Java fundamentals;
+- ITIL / DevOps service thinking;
+- IT management;
+- negotiations under pressure;
+- stress / calmness under pressure;
+- zero-code / western-market product building;
+- low-code delivery;
+- AI / practical digital product work.
+
+## Карьерная диагностика
+
+Психологический / карьерный профиль показывает managerial–analytical type with strong systems thinking.
+
+Сильные направления:
+- management;
+- analytics;
+- communication;
+- innovation;
+- leadership;
+- strategy;
+- information work.
+
+Technology там скорее tool, not identity.
+
+Это совпадает с реальной карьерой:
+я лучше всего работаю там, где нужно соединять:
+- системы;
+- людей;
+- процессы;
+- данные;
+- архитектуру;
+- решение;
+- внедрение.
+
+---
+
+# 13. Общий итог по менеджерскому опыту
+
+Менеджерский опыт начинается не с должности “Head of IT”.
+
+Он распределён по почти всей карьере.
+
+## Банк
+
+Менеджмент проявлялся через:
+- работу с руководством;
+- process mapping;
+- документооборот;
+- регуляторные риски;
+- сопротивление отделов;
+- внедрение;
+- контроль статусов;
+- интеграцию;
+- обучение.
+
+## Дирекция
+
+Менеджмент проявлялся через:
+- cross-institution coordination;
+- работу с 100+ учреждениями;
+- таксономию;
+- data model;
+- source of truth;
+- обучение 200–300 пользователей;
+- support model;
+- governance;
+- взаимодействие с органами власти.
+
+## ЗИЛ
+
+Менеджмент был прямым:
+- Head of IT;
+- команда;
+- подрядчики;
+- бюджет;
+- кризис;
+- политика;
+- безопасность;
+- инфраструктура;
+- GLPI;
+- инвентаризация;
+- удалённая работа;
+- governance;
+- операционная модель.
+
+## Новая Бизнес Среда
+
+Менеджмент проявлялся через:
+- implementation methodology;
+- client adoption;
+- delivery model;
+- founder advisory;
+- internal responsibility domains;
+- конфликт CTO / project leadership;
+- operating model diagnosis.
+
+## NeedleBit
+
+Менеджмент проявлялся через:
+- founder/client communication;
+- discovery;
+- full-cycle ownership;
+- architecture;
+- delivery;
+- QA;
+- product thinking;
+- platform trade-offs;
+- AI-assisted execution management.
+
+## AI
+
+Менеджмент проявляется через:
+- SMART / FAST tasking;
+- decomposition;
+- guardrails;
+- checkpoints;
+- quality gates;
+- acceptance criteria;
+- agent orchestration.
+
+---
+
+# 14. Главная формула позиционирования
+
+Я не “разработчик, который немного руководил”.
+
+И не “менеджер, который когда-то кодил”.
+
+Лучше:
+
+Я менеджер и системный архитектор, который умеет превращать организационный хаос в работающие системы — и достаточно глубоко понимает технологии, чтобы не зависеть полностью от чужой интерпретации.
+
+Или:
+
+A manager who understands systems deeply enough to build them,
+and a systems architect who understands people deeply enough to implement change.
+
+---
+
+# 15. Роли, куда это лучше всего подходит
+
+- CTO
+- CIO
+- Head of IT
+- Head of Engineering
+- Engineering Manager
+- Project Manager
+- Product Manager
+- Product Owner
+- Delivery Manager
+- Implementation Manager
+- Digital Transformation Lead
+- AI Transformation Lead
+- Operations / Process Automation Lead
+- Internal Systems Lead
+- Technical Product Lead
+- Systems Architect with stakeholder ownership
+- Team Lead in implementation-heavy environment
+
+---
+
+# 16. Что нельзя делать в менеджерских откликах
+
+Нельзя начинать с:
+- WeWeb;
+- Bubble;
+- Glide;
+- low-code;
+- no-code;
+- freelancer;
+- “I build apps”;
+- длинных списков стеков;
+- coding speed;
+- tool dumping.
+
+Это сразу сужает восприятие.
+
+Для менеджерских ролей нужно начинать с:
+- management;
+- stakeholder communication;
+- implementation ownership;
+- delivery;
+- process/system design;
+- organizational change;
+- governance;
+- adoption;
+- architecture as strategic competency.
+
+Hard skills должны идти как доказательство:
+“я могу не только говорить с бизнесом, но и понимать, что реально происходит в архитектуре и delivery”.
+
+---
+
+# 17. Что можно делать в Upwork / specialist задачах
+
+Для Upwork, freelance, MVP, AI-native coder, low-code, integrations, automation задач можно выводить:
+- shipped projects;
+- architecture;
+- stack;
+- integrations;
+- Supabase;
+- WeWeb;
+- Xano;
+- n8n;
+- APIs;
+- AI workflows;
+- speed of delivery;
+- technical ownership;
+- scalability;
+- production-grade polish.
+
+Там management лучше подавать как differentiator:
+“я не просто исполнитель, я умею понимать клиента, переводить бизнес-задачу в систему и доводить внедрение до результата”.
+
+---
+
+# 18. Финальная исходная рамка для файла проекта
+
+Этот материал должен жить не в инструкции проекта, а в отдельном файле:
+
+anton_nazarov_management_cases_full.md
+
+Инструкция проекта должна быть только роутером.
+
+Она должна понимать:
+- managerial vacancy → использовать management cases;
+- technical/specialist vacancy → использовать delivery/technical cases;
+- Upwork task → использовать Upwork/project/stack cases;
+- NeedleBit marketing → использовать NeedleBit positioning;
+- interview/self-positioning → использовать management + psychology + career story.
+

@@ -1,0 +1,148 @@
+POSITIONING ARCHETYPES ROUTER
+
+Purpose:
+Route the task into the correct narrative before writing.
+
+Always start from:
+1. task type
+2. target audience
+3. target artifact
+4. strongest proof category
+
+PRIMARY ARCHETYPES
+
+1. Executive / Transformation Leader
+Use for:
+- CTO
+- CIO
+- Head of IT
+- Head of Engineering
+- Engineering Manager
+- Delivery Manager
+- Digital Transformation
+- implementation-heavy leadership
+
+Lead with:
+- technical leadership
+- implementation ownership
+- systems and process design
+- stakeholder management
+- governance
+- adoption and rollout
+- operational restructuring
+
+Primary proof categories:
+- institutional or organizational complexity
+- team leadership
+- vendor and contractor coordination
+- support model design
+- security, governance, or policy work
+- implementation across multiple stakeholders
+
+Avoid:
+- tool-led opening
+- freelancer framing
+- low-code identity
+- stack-heavy summaries
+
+2. Technical Delivery Specialist
+Use for:
+- fullstack
+- AI-native coder
+- automation specialist
+- integration engineer
+- implementation-heavy builder
+- technical architect
+
+Lead with:
+- shipped systems
+- architecture
+- integrations
+- technical ownership
+- delivery speed
+- maintainability
+- AI-assisted execution
+
+Primary proof categories:
+- end-to-end systems
+- backend/frontend/data boundaries
+- migrations
+- multi-role products
+- AI-assisted workflows
+
+Avoid:
+- excessive executive abstraction
+- vague business language without technical proof
+
+3. Upwork / Freelance Delivery
+Use for:
+- proposals
+- estimates
+- first replies
+- marketplace positioning
+
+Lead with:
+- quick understanding of the problem
+- closest relevant project proof
+- realistic approach
+- architecture confidence
+- reliability and clarity
+
+Primary proof categories:
+- business systems
+- automation
+- integrations
+- rescue / restructuring work
+- maintainable builds
+
+Avoid:
+- leadership title inflation
+- generic consulting language
+
+4. NeedleBit Marketing
+Use for:
+- site copy
+- offer packaging
+- social posts
+- company positioning
+
+Lead with:
+- control
+- continuity
+- clarity
+- resilience
+- private infrastructure
+- maintainability
+
+Primary proof categories:
+- process extraction
+- dependency reduction
+- operational system design
+- adoption-aware implementation
+- cross-environment credibility
+
+Avoid:
+- cheap agency language
+- no-code-first framing
+- stack-first messaging
+- panic-marketing
+
+5. Interview / Career Discovery
+Use for:
+- recruiter answers
+- mock interviews
+- career story
+- motivation and fit
+
+Lead with:
+- honest explanation
+- role-fit clarity
+- coherence across business, leadership, and technical work
+
+TIE-BREAK RULES
+
+- If the target is a vacancy, route by the vacancy first.
+- If the output is a CV, choose one dominant archetype only.
+- If the task is NeedleBit-facing, career files are evidence only, not the main narrative.
+- If the task is Upwork-facing, do not let executive framing dominate.
+- If the role is leadership-heavy but still hands-on, choose Executive / Transformation Leader and use technical evidence as support.

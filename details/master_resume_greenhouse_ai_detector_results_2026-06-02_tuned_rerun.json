@@ -1,0 +1,481 @@
+[
+  {
+    "block": "Header",
+    "chars": 228,
+    "words": 25,
+    "status": "ok",
+    "http_status": 200,
+    "raw": {
+      "success": true,
+      "data": {
+        "score": 10,
+        "label": "Human Written",
+        "confidence": "High",
+        "signals": [
+          {
+            "name": "Perplexity",
+            "level": "high",
+            "detail": "The text consists of straightforward, predictable information with no complex language."
+          },
+          {
+            "name": "Burstiness",
+            "level": "high",
+            "detail": "The text is very short and lacks variation in sentence length or complexity."
+          },
+          {
+            "name": "Vocabulary patterns",
+            "level": "low",
+            "detail": "The language is direct and lacks formal hedging phrases."
+          },
+          {
+            "name": "Repetitive structure",
+            "level": "low",
+            "detail": "There is no parallel structure present in the text."
+          },
+          {
+            "name": "Transitional phrases",
+            "level": "low",
+            "detail": "There are no transitional phrases used in the text."
+          },
+          {
+            "name": "Specificity",
+            "level": "high",
+            "detail": "The text contains specific personal information, indicating a human touch."
+          },
+          {
+            "name": "Emotional range",
+            "level": "low",
+            "detail": "The text is factual and lacks emotional variation."
+          }
+        ],
+        "summary": "The text is a straightforward presentation of contact information and professional details, indicating a high likelihood of being human-written. It lacks the complexity and formal structure typical of AI-generated content.",
+        "word_count": 25,
+        "char_count": 228
+      }
+    },
+    "score": 10,
+    "label": "Human Written",
+    "confidence": "High",
+    "summary": "The text is a straightforward presentation of contact information and professional details, indicating a high likelihood of being human-written. It lacks the complexity and formal structure typical of AI-generated content."
+  },
+  {
+    "block": "Summary",
+    "chars": 1256,
+    "words": 187,
+    "status": "ok",
+    "http_status": 200,
+    "raw": {
+      "success": true,
+      "data": {
+        "score": 35,
+        "label": "Likely Human",
+        "confidence": "Medium",
+        "signals": [
+          {
+            "name": "Perplexity",
+            "level": "medium",
+            "detail": "The text shows a moderate level of predictability in word choices, suggesting a mix of human and AI characteristics."
+          },
+          {
+            "name": "Burstiness",
+            "level": "high",
+            "detail": "The text features varied sentence lengths and complexities, indicating a human-like writing style."
+          },
+          {
+            "name": "Vocabulary patterns",
+            "level": "medium",
+            "detail": "While there are some formal phrases, the overall language is more straightforward and less hedging."
+          },
+          {
+            "name": "Repetitive structure",
+            "level": "low",
+            "detail": "The text does not exhibit significant parallel constructions typical of AI-generated content."
+          },
+          {
+            "name": "Transitional phrases",
+            "level": "low",
+            "detail": "There is minimal use of transitional phrases, which are often overused in AI text."
+          },
+          {
+            "name": "Specificity",
+            "level": "high",
+            "detail": "The text contains specific details about the author's experiences and projects, which is more characteristic of human writing."
+          },
+          {
+            "name": "Emotional range",
+            "level": "medium",
+            "detail": "The text shows some emotional engagement, particularly in describing the author's work and challenges."
+          }
+        ],
+        "summary": "The text presents a detailed account of the author's professional experience and skills, with a high degree of specificity and varied sentence structure. While some elements could suggest AI influence, the overall style and personal insights lean more towards human authorship.",
+        "word_count": 191,
+        "char_count": 1256
+      }
+    },
+    "score": 35,
+    "label": "Likely Human",
+    "confidence": "Medium",
+    "summary": "The text presents a detailed account of the author's professional experience and skills, with a high degree of specificity and varied sentence structure. While some elements could suggest AI influence, the overall style and personal insights lean more towards human authorship."
+  },
+  {
+    "block": "Core Skills",
+    "chars": 937,
+    "words": 128,
+    "status": "ok",
+    "http_status": 200,
+    "raw": {
+      "success": true,
+      "data": {
+        "score": 75,
+        "label": "Likely AI",
+        "confidence": "Medium",
+        "signals": [
+          {
+            "name": "Perplexity",
+            "level": "medium",
+            "detail": "The text has a structured and predictable flow, suggesting low perplexity."
+          },
+          {
+            "name": "Burstiness",
+            "level": "medium",
+            "detail": "The sentence lengths are somewhat uniform, lacking significant variation."
+          },
+          {
+            "name": "Vocabulary patterns",
+            "level": "high",
+            "detail": "The language is formal and technical, typical of AI-generated content."
+          },
+          {
+            "name": "Repetitive structure",
+            "level": "medium",
+            "detail": "The use of parallel constructions in bullet points indicates a structured approach."
+          },
+          {
+            "name": "Transitional phrases",
+            "level": "low",
+            "detail": "There is minimal use of transitional phrases, which is less typical of AI."
+          },
+          {
+            "name": "Specificity",
+            "level": "medium",
+            "detail": "While the text is specific in terms of skills, it lacks personal anecdotes or unique details."
+          },
+          {
+            "name": "Emotional range",
+            "level": "low",
+            "detail": "The text is factual and lacks emotional variation, which is common in AI-generated text."
+          }
+        ],
+        "summary": "The text demonstrates characteristics typical of AI generation, such as structured vocabulary and low emotional range. While it contains specific skills, the overall predictability and formal tone suggest it is likely AI-generated.",
+        "word_count": 127,
+        "char_count": 937
+      }
+    },
+    "score": 75,
+    "label": "Likely AI",
+    "confidence": "Medium",
+    "summary": "The text demonstrates characteristics typical of AI generation, such as structured vocabulary and low emotional range. While it contains specific skills, the overall predictability and formal tone suggest it is likely AI-generated."
+  },
+  {
+    "block": "Technical Stack",
+    "chars": 2475,
+    "words": 330,
+    "status": "ok",
+    "http_status": 200,
+    "raw": {
+      "success": true,
+      "data": {
+        "score": 25,
+        "label": "Human Written",
+        "confidence": "High",
+        "signals": [
+          {
+            "name": "Perplexity",
+            "level": "high",
+            "detail": "The text exhibits a high level of complexity and specificity in its vocabulary, indicating a more human-like thought process."
+          },
+          {
+            "name": "Burstiness",
+            "level": "high",
+            "detail": "The text features varied sentence lengths and structures, which is characteristic of human writing."
+          },
+          {
+            "name": "Vocabulary patterns",
+            "level": "low",
+            "detail": "The language used is technical and specific, lacking the formal hedging often found in AI-generated text."
+          },
+          {
+            "name": "Repetitive structure",
+            "level": "low",
+            "detail": "The text does not rely on parallel constructions, showing a more organic flow of ideas."
+          },
+          {
+            "name": "Transitional phrases",
+            "level": "low",
+            "detail": "There is minimal use of transitional phrases like 'However' or 'Moreover', which are common in AI text."
+          },
+          {
+            "name": "Specificity",
+            "level": "high",
+            "detail": "The text includes specific personal experiences and detailed descriptions of projects and tools used."
+          },
+          {
+            "name": "Emotional range",
+            "level": "medium",
+            "detail": "While the text is technical, it conveys a sense of personal engagement with the subject matter."
+          }
+        ],
+        "summary": "The text demonstrates a high likelihood of being human-written due to its complexity, specificity, and varied sentence structure. It reflects personal experiences and detailed knowledge of technical tools, which are less common in AI-generated content.",
+        "word_count": 347,
+        "char_count": 2475
+      }
+    },
+    "score": 25,
+    "label": "Human Written",
+    "confidence": "High",
+    "summary": "The text demonstrates a high likelihood of being human-written due to its complexity, specificity, and varied sentence structure. It reflects personal experiences and detailed knowledge of technical tools, which are less common in AI-generated content."
+  },
+  {
+    "block": "Professional Experience",
+    "chars": 12807,
+    "words": 1777,
+    "status": "ok",
+    "http_status": 200,
+    "raw": {
+      "success": true,
+      "data": {
+        "score": 25,
+        "label": "Human Written",
+        "confidence": "High",
+        "signals": [
+          {
+            "name": "Perplexity",
+            "level": "high",
+            "detail": "The text demonstrates a high level of complexity and specificity in word choices, indicating a more human-like unpredictability."
+          },
+          {
+            "name": "Burstiness",
+            "level": "high",
+            "detail": "The text features a varied sentence length and complexity, typical of human writing."
+          },
+          {
+            "name": "Vocabulary patterns",
+            "level": "low",
+            "detail": "The language used is straightforward and lacks the formal hedging often found in AI-generated text."
+          },
+          {
+            "name": "Repetitive structure",
+            "level": "low",
+            "detail": "The text does not exhibit parallel sentence constructions commonly associated with AI."
+          },
+          {
+            "name": "Transitional phrases",
+            "level": "low",
+            "detail": "There is minimal use of transitional phrases like 'However' or 'Moreover', which are often overused in AI text."
+          },
+          {
+            "name": "Specificity",
+            "level": "high",
+            "detail": "The text contains numerous specific details about projects and technologies, indicating a personal touch."
+          },
+          {
+            "name": "Emotional range",
+            "level": "medium",
+            "detail": "While the text is primarily factual, it reflects a level of engagement and personal experience that suggests human authorship."
+          }
+        ],
+        "summary": "The text is highly detailed and specific, showcasing a variety of experiences and projects that suggest it was written by a human. The complexity and variability in sentence structure, along with the personal insights and specific examples, further support this conclusion.",
+        "word_count": 1735,
+        "char_count": 12807
+      }
+    },
+    "score": 25,
+    "label": "Human Written",
+    "confidence": "High",
+    "summary": "The text is highly detailed and specific, showcasing a variety of experiences and projects that suggest it was written by a human. The complexity and variability in sentence structure, along with the personal insights and specific examples, further support this conclusion."
+  },
+  {
+    "block": "Education",
+    "chars": 476,
+    "words": 56,
+    "status": "ok",
+    "http_status": 200,
+    "raw": {
+      "success": true,
+      "data": {
+        "score": 25,
+        "label": "Human Written",
+        "confidence": "High",
+        "signals": [
+          {
+            "name": "Perplexity",
+            "level": "high",
+            "detail": "The text has a straightforward and predictable structure, typical of human-written resumes."
+          },
+          {
+            "name": "Burstiness",
+            "level": "low",
+            "detail": "The text maintains a consistent sentence length and complexity, which is less varied than typical human writing."
+          },
+          {
+            "name": "Vocabulary patterns",
+            "level": "low",
+            "detail": "The language is direct and lacks formal hedging phrases, indicating a human touch."
+          },
+          {
+            "name": "Repetitive structure",
+            "level": "low",
+            "detail": "There is minimal parallel construction, as the text lists educational experiences without repetitive phrasing."
+          },
+          {
+            "name": "Transitional phrases",
+            "level": "low",
+            "detail": "The text does not overuse transitional phrases, maintaining a straightforward listing format."
+          },
+          {
+            "name": "Specificity",
+            "level": "high",
+            "detail": "The text includes specific details about education and institutions, which is typical of human writing."
+          },
+          {
+            "name": "Emotional range",
+            "level": "low",
+            "detail": "The text is factual and lacks emotional variation, but this is expected in a resume context."
+          }
+        ],
+        "summary": "The text appears to be human-written, as it contains specific details about educational background and lacks the formal structure and predictability often associated with AI-generated content. The straightforward presentation aligns with typical resume formats, further supporting the likelihood of human authorship.",
+        "word_count": 51,
+        "char_count": 476
+      }
+    },
+    "score": 25,
+    "label": "Human Written",
+    "confidence": "High",
+    "summary": "The text appears to be human-written, as it contains specific details about educational background and lacks the formal structure and predictability often associated with AI-generated content. The straightforward presentation aligns with typical resume formats, further supporting the likelihood of human authorship."
+  },
+  {
+    "block": "Professional Development",
+    "chars": 417,
+    "words": 52,
+    "status": "ok",
+    "http_status": 200,
+    "raw": {
+      "success": true,
+      "data": {
+        "score": 25,
+        "label": "Human Written",
+        "confidence": "High",
+        "signals": [
+          {
+            "name": "Perplexity",
+            "level": "high",
+            "detail": "The text presents a straightforward list of training courses, indicating predictable word choices."
+          },
+          {
+            "name": "Burstiness",
+            "level": "high",
+            "detail": "The text consists of short, uniform entries with little variation in length or complexity."
+          },
+          {
+            "name": "Vocabulary patterns",
+            "level": "low",
+            "detail": "The language is direct and lacks formal hedging phrases typical of AI."
+          },
+          {
+            "name": "Repetitive structure",
+            "level": "medium",
+            "detail": "The structure is consistent but not overly repetitive, as it lists different courses."
+          },
+          {
+            "name": "Transitional phrases",
+            "level": "low",
+            "detail": "There is no overuse of transitional phrases; the text is a simple list."
+          },
+          {
+            "name": "Specificity",
+            "level": "high",
+            "detail": "The text includes specific details about training courses and institutions."
+          },
+          {
+            "name": "Emotional range",
+            "level": "low",
+            "detail": "The text is factual and lacks emotional variation."
+          }
+        ],
+        "summary": "The text is a straightforward list of professional development courses, characterized by predictable language and a lack of emotional depth. Its specificity and directness suggest it is likely human-written, with a high confidence in this assessment.",
+        "word_count": 45,
+        "char_count": 417
+      }
+    },
+    "score": 25,
+    "label": "Human Written",
+    "confidence": "High",
+    "summary": "The text is a straightforward list of professional development courses, characterized by predictable language and a lack of emotional depth. Its specificity and directness suggest it is likely human-written, with a high confidence in this assessment."
+  },
+  {
+    "block": "Languages",
+    "chars": 65,
+    "words": 8,
+    "status": "ok",
+    "http_status": 200,
+    "raw": {
+      "success": true,
+      "data": {
+        "score": 10,
+        "label": "Human Written",
+        "confidence": "High",
+        "signals": [
+          {
+            "name": "Perplexity",
+            "level": "high",
+            "detail": "The text is straightforward and predictable."
+          },
+          {
+            "name": "Burstiness",
+            "level": "high",
+            "detail": "The text consists of short, simple phrases."
+          },
+          {
+            "name": "Vocabulary patterns",
+            "level": "low",
+            "detail": "The language is direct and lacks formal hedging."
+          },
+          {
+            "name": "Repetitive structure",
+            "level": "low",
+            "detail": "There is no parallel construction present."
+          },
+          {
+            "name": "Transitional phrases",
+            "level": "low",
+            "detail": "No transitional phrases are used."
+          },
+          {
+            "name": "Specificity",
+            "level": "high",
+            "detail": "The text contains specific language skills."
+          },
+          {
+            "name": "Emotional range",
+            "level": "low",
+            "detail": "The text is factual and lacks emotional variation."
+          }
+        ],
+        "summary": "The text is concise and straightforward, listing language proficiencies without complexity or emotional nuance. Its simplicity and specificity strongly indicate it was written by a human.",
+        "word_count": 7,
+        "char_count": 65
+      }
+    },
+    "score": 10,
+    "label": "Human Written",
+    "confidence": "High",
+    "summary": "The text is concise and straightforward, listing language proficiencies without complexity or emotional nuance. Its simplicity and specificity strongly indicate it was written by a human."
+  },
+  {
+    "block": "Additional Experience",
+    "chars": 309,
+    "words": 43,
+    "status": "error",
+    "error": "<HTTPError 429: 'Too Many Requests'>"
+  }
+]

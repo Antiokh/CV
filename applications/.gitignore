@@ -1,0 +1,4 @@
+# This folder is intentionally kept out of git.
+# Use it for job-specific resumes, cover letters, company notes, and generated application materials.
+*
+!.gitignore

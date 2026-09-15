@@ -1,0 +1,15 @@
+# 00_ROUTER_AND_GUARDRAILS — DEPRECATED SNAPSHOT
+
+This generated NotebookLM import previously embedded copies of operational files. It is no longer safe as an instruction source because copied WorkInterviews rules can become stale independently of the canonical repository files.
+
+DO NOT use this file for tracker, salary, Stage, Gmail, bootstrap or application-workflow decisions.
+
+Current operational entrypoint:
+
+1. `GPT/GPT_RUNTIME.md`
+2. `GPT/MODE_ROUTER.md`
+3. mode-specific skill
+4. current references routed by that skill
+5. live `Agent Instructions` where required
+
+If NotebookLM sources are regenerated in the future, operational bundles should contain pointers/precedence metadata rather than duplicated tracker mechanics.
