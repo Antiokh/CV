@@ -120,6 +120,12 @@ Anton states that he directly handled / closed procurement procedures under **22
 
 This is evidence of **total-cost decision-making**, not just procurement administration.
 
+### Vendor negotiation / pilot economics
+
+Anton also states that he negotiated **discounts and free trial operation for a specialized CRM**, reducing the cost and risk of committing to the system before proving fit in production-like use.
+
+This supports vendor-management and pilot-before-buy decision making.
+
 ---
 
 ## 5. Security, personal data and access governance
@@ -246,6 +252,8 @@ The following statements are retained as close to the original wording as practi
 ### Workstation / licensing economics
 
 > Кейс про SSD это кейс бюджетного спасения ситуации, где почти всё оборудование вышло из строя и вместо покупки новых компов за 70-100к мы купили диски за 2к, сэкономив ещё 16.000.000, я ж не сам эти диски заменял, миграции windows — это чит-код лицензирования, где мы сэкономили около 6.000.000 на этом.
+
+> Потом я выбил скидки и бесплатную тестовую эксплуатацию профильной CRM.
 
 ### Procurement
 
