@@ -2,6 +2,13 @@
 
 This is the canonical content-strategy contract for Anton Nazarov's candidate-side employment applications. It governs vacancy interpretation, tailored CV positioning, cover letters, recruiter/application answers, and short motivation fields. It does not replace tracker, salary, artifact, or lifecycle contracts.
 
+Use it together with:
+
+- `GPT/EXPECTATION_TAXONOMY.md` — hiring expectations, hard filters and management-scale semantics;
+- `GPT/ANTON_EVIDENCE_MATRIX.md` — strongest supported Anton proof for each expectation;
+- `GPT/ROLE_SIGNAL_PROFILES.md` — role-family default signal order and CV shell;
+- `role-entry-strategy-v1.md` — cold-entry probability and strategic application path.
+
 ## Core principle
 
 An application is not a description of Anton and not a summary of the vacancy.
@@ -17,9 +24,9 @@ Do not let the application degenerate into either extreme:
 - external research, company praise, market commentary, generic "successful company" language, or citations that do not help prove Anton can solve the hiring problem;
 - candidate-centered self-description such as "I am strategic / technical / collaborative / a strong fit" without a concrete problem, action, and result.
 
-## Mandatory pre-draft analysis: Pain Map
+## Mandatory pre-draft analysis: Pain Map + Expectation Map
 
-Before writing a CV adaptation, cover letter, or substantive application answer, build an internal Pain Map from the vacancy itself.
+Before writing a CV adaptation, cover letter, or substantive application answer, build both an internal Pain Map and an Expectation Map.
 
 ### 1. Hiring pain
 
@@ -53,28 +60,57 @@ For each major pain, state internally what success would look like for the emplo
 
 Examples: faster decisions, higher adoption, fewer manual handoffs, clearer ownership, better unit economics, measurable service operations, reliable delivery, scalable booking flow, improved conversion, resilient infrastructure, or a product team that ships and learns faster.
 
-### 3. Hiring-risk filters
+### 3. Hiring expectations and risk filters
 
-Extract requirements, experience thresholds, nice-to-haves, domain/tooling constraints, geography/work authorization, company-size preference, title/seniority signals, and management/technical scope.
+Translate responsibilities, requirements, experience thresholds and repeated role language into expectation classes from `EXPECTATION_TAXONOMY.md`.
 
-These are important, but they are **not automatically the narrative structure** of the application. Use them to test whether the proposed proof actually removes hiring risk.
+For each material expectation record:
 
-### 4. Select the strongest proof
+- the exact vacancy wording/evidence;
+- `MUST / STRONG / OPTIONAL` priority;
+- whether it is a true hard filter;
+- expected visibility in the application (`TOP / EXPERIENCE / TECHNICAL_SCOPE / OMIT`);
+- management-scale semantics where relevant.
 
-Search the canonical evidence repository before drafting. For product and managerial roles, use `RESUME_FRACTIONAL_CTO.md` as the default business-evidence baseline, then deepen with canonical experience/case files as needed.
+Do not infer the wrong kind of scale:
 
-Select normally **two or three strongest proof cases**, not a biography dump.
+- total organization size is not automatically direct-report count;
+- functional coordination without line authority is not manager-of-managers experience;
+- report/user/asset counts are not interchangeable forms of production scale.
+
+Requirements and nice-to-haves are important, but they are **not automatically the narrative structure** of the application. Use them to test whether the proposed proof actually removes hiring risk.
+
+### 4. Select the strongest exact proof
+
+Search `ANTON_EVIDENCE_MATRIX.md` and the underlying canonical evidence before drafting.
+
+Select normally **two or three strongest proof cases** for the hiring pain, while separately preserving evidence needed to close explicit hard filters.
 
 Rank evidence by:
 
-1. same pain + same domain/customer/business model;
-2. same pain in another domain;
-3. same management/product/technical pattern with comparable scale or constraints;
-4. adjacent tools/skills only when the vacancy explicitly filters for them.
+1. proves the exact MUST expectation / hard filter;
+2. same pain + same domain/customer/business model;
+3. same pain in another domain;
+4. same management/product/technical pattern with comparable scale or constraints;
+5. adjacent tools/skills only when the vacancy explicitly filters for them.
 
-A strong case may close several requirements at once. Prefer one memorable, quantified case over five weak competency statements.
+A strong case may close several expectations at once. Prefer one memorable, quantified case over five weak competency statements.
 
-### 5. Build a solution thesis
+Do not choose an impressive metric merely because it is large. It must prove the correct expectation.
+
+Examples:
+
+- `~10x revenue growth` is strong business impact, but does not replace direct people-management evidence when the role screens for management;
+- `100+ IT specialists across 100+ institutions` is strong influence-without-authority evidence, but not 100+ direct reports;
+- `200–300 report runs/day` is self-service adoption/throughput context, not high-load distributed-systems evidence.
+
+### 5. Apply the role signal profile
+
+Use `ROLE_SIGNAL_PROFILES.md` to choose the closest canonical CV shell and default evidence order.
+
+The concrete vacancy always overrides the role profile. A role called CTO can still screen primarily for hands-on coding; a Product role can screen heavily for domain/regulatory experience; a Head role may or may not explicitly require manager-of-managers experience.
+
+### 6. Build a solution thesis
 
 Form one internal sentence that connects the employer's problem to Anton's pattern of solving it:
 
@@ -94,9 +130,29 @@ Examples of strong evidence structure:
 
 - a service business had fragmented manual lead handling -> Anton talked to customers, redesigned booking/registration/communication and automated the operating flow -> routine handling fell from hours to minutes and revenue grew roughly 10x / up to 13x depending on the canonical source -> directly relevant to a service-business product struggling to scale customer operations;
 - technically completed ERP/CRM implementations were not being adopted -> Anton diagnosed ownership and post-launch responsibility rather than adding features -> implementation success was reframed around adoption and business impact -> relevant to roles where delivery quality is measured by actual use, not shipment;
-- an institution ran support through calls and personal messages -> Anton introduced managed HelpDesk queues, priorities and ownership and extended the model to seven additional services -> workload and accountability became visible -> relevant to operational leadership roles with chaotic service delivery.
+- an institution ran support through calls and personal messages -> Anton introduced managed HelpDesk queues, priorities and ownership and extended the model to other services -> workload and accountability became visible and recurring demand fell materially -> relevant to operational leadership roles with chaotic service delivery.
 
 Do not manufacture the final "why it matters here" when the analogy is weak.
+
+## Fit, CV evidence coverage and cold-entry probability
+
+Keep these separate.
+
+### Fit
+
+Whether Anton's actual experience credibly covers the work/problem.
+
+### CV evidence coverage
+
+Whether the **actual artifact** visibly proves the important expectations, especially those likely to be screened first.
+
+A high-Fit vacancy can have a bad CV if the strongest evidence is hidden or the wrong metric is foregrounded.
+
+### Cold-entry probability
+
+How likely the first recruiter/technical filter is to recognize the Fit from Anton's chronology and current evidence. Governed by `role-entry-strategy-v1.md`.
+
+Do not change Fit just because the CV is under-covered or cold entry is difficult. Fix the artifact or change application priority separately.
 
 ## Output architecture
 
@@ -113,14 +169,16 @@ The letter should usually be shorter than a full requirement checklist. Requirem
 
 ### Tailored CV
 
-The CV should preserve chronology, but its **Profile, Role Fit, bullet selection, and depth** must support the Pain Map.
+The CV should preserve chronology, but its **Profile, Role Fit, bullet selection, and depth** must support both the Pain Map and the Expectation Map.
 
-- Profile: frame the recurring problem class Anton solves for this role.
+- Profile: frame the recurring problem class Anton solves for this role and close the most important first-screen identity/scale issue where appropriate.
 - Role Fit: normally 4-6 proof points connecting major hiring pains/risks to evidence.
 - Experience: provide the detailed facts behind those proof points.
 - Technical Scope: close ATS/tooling filters without competing with the business evidence.
 
-Do not turn Role Fit into a generic requirement paraphrase. The strongest business evidence from `RESUME_FRACTIONAL_CTO.md` should survive adaptation unless a more relevant verified case replaces it.
+Role Fit must be generated from the highest-priority expectation rows, not from a generic competency list.
+
+Do not turn Role Fit into a generic requirement paraphrase. The strongest business evidence from `RESUME_FRACTIONAL_CTO.md` / `RESUME.md` should survive adaptation unless a more relevant verified case replaces it.
 
 ### Short application questions
 
@@ -130,6 +188,8 @@ Use the same compression:
 
 **their problem -> matching proof -> why that makes the work interesting/relevant.**
 
+Use the expectation map to ensure the answer closes the most likely first-screen risk rather than just giving Anton's most impressive anecdote.
+
 Only include genuine company-specific motivation when it is supported and useful.
 
 ## Nice-to-have handling
@@ -138,14 +198,15 @@ Nice-to-haves are high-information signals, not a mechanical opening rule.
 
 Surface a nice-to-have early when it provides unusually strong proof of the employer's core problem, exact domain, customer type, workflow, or tool. Do not lead with a minor nice-to-have merely because the vacancy labels it preferred.
 
-Exact-domain evidence with business impact can outrank a generic essential requirement because it reduces uncertainty faster.
+Exact-domain evidence with business impact can outrank a generic essential requirement because it reduces uncertainty faster, unless the essential requirement is a literal hard filter.
 
 ## Requirements as QA, not prose skeleton
 
-After drafting, run a requirement-coverage audit:
+After drafting, run an expectation-coverage audit:
 
-- every hard filter must be explicitly or implicitly closed by visible evidence;
-- every central responsibility must have at least one credible proof or be recognized internally as a gap;
+- every hard filter must be explicitly or implicitly closed by visible evidence or retained as a genuine internal gap;
+- every `MUST` expectation must have at least one credible proof or be recognized as a gap;
+- every supported first-screen MUST must be visible early enough to be noticed;
 - nice-to-haves with strong evidence should be visible;
 - unsupported requirements remain gaps; do not imply experience that is not evidenced.
 
@@ -193,7 +254,9 @@ Show:
 - what business or operational state changed;
 - what evidence shows the change persisted or mattered.
 
-`RESUME_FRACTIONAL_CTO.md` is the preferred starting evidence layer for this framing because it already emphasizes revenue, operating cost, throughput, continuity, dependency, risk, management control, adoption, and measurable service outcomes.
+When management scale matters, state the correct scale type explicitly rather than relying on ambiguous `led / managed / coordinated` language.
+
+`RESUME_FRACTIONAL_CTO.md` remains a strong business-result baseline for managerial/product work, but `ROLE_SIGNAL_PROFILES.md` may route a vacancy to a more specialized canonical shell.
 
 ## Final QA
 
@@ -201,15 +264,20 @@ Before finalizing any substantive application artifact, ask:
 
 1. What are the 1-3 hiring pains I believe this vacancy is trying to solve?
 2. Which words in the vacancy support that interpretation?
-3. What are Anton's 2-3 strongest verified cases for those pains?
-4. Does the opening speak to the employer's problem, or merely introduce Anton?
-5. Does every proof contain an action/decision and an outcome or observable change?
-6. Are hard filters covered without turning the letter into a checklist?
-7. Did a nice-to-have surface early only because it is genuinely high-value evidence?
-8. Did I preserve supported business-result evidence from the master CV where relevant?
-9. Did I add internet/company trivia that does not help prove solution fit? Remove it.
-10. Did I write adjectives about Anton where a fact could do the job? Replace them.
-11. Could this paragraph be sent by hundreds of applicants after changing the company name? If yes, delete or rewrite it.
-12. Is every metric, title, responsibility, tool, domain claim, and causal statement supported by canonical evidence?
+3. What are the material `MUST / STRONG / OPTIONAL` expectations?
+4. Which are true hard filters?
+5. What are Anton's strongest exact evidence blocks for every MUST expectation?
+6. Did I distinguish direct span, total org scope, hierarchy depth and functional coordination correctly?
+7. Does the opening speak to the employer's problem, or merely introduce Anton?
+8. Does every major proof contain an action/decision and an outcome or observable change?
+9. Are supported first-screen filters visible early enough, rather than buried in Skills or an old role?
+10. Did an impressive but irrelevant metric displace a required signal?
+11. Did a nice-to-have surface early only because it is genuinely high-value evidence?
+12. Did I preserve supported business-result evidence from the master CV where relevant?
+13. Did I add internet/company trivia that does not help prove solution fit? Remove it.
+14. Did I write adjectives about Anton where a fact could do the job? Replace them.
+15. Could this paragraph be sent by hundreds of applicants after changing the company name? If yes, delete or rewrite it.
+16. Is every metric, title, responsibility, tool, domain claim, and causal statement supported by canonical evidence?
+17. Is the CV evidence coverage `Covered` or `Covered with gaps`, rather than `Under-covered`?
 
-The target is not "a polished application." The target is a compact, credible argument that Anton has already solved the kind of problem the employer is hiring someone to solve.
+The target is not "a polished application." The target is a compact, credible argument that Anton has already solved the kind of problem the employer is hiring someone to solve **and that the first-screen reader can actually see the evidence they are screening for**.

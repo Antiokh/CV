@@ -7,20 +7,28 @@ description: Manage Anton Nazarov's employment vacancy analysis, tailored CV cre
 
 Confirm CV mode through `MODE_ROUTER.md`. For candidate-side employment work use this skill; for buyer/vendor/client delivery use `freelance-agency-manager` instead.
 
-## Mandatory operational references
+## Mandatory content references
 
 For every substantive vacancy analysis, tailored CV, cover letter, recruiter/application answer, or motivation field, load:
 
 1. `references/application-positioning-v1.md` — canonical pain-first content strategy: hiring problem -> strongest verified proof -> risk-filter coverage.
+2. `../EXPECTATION_TAXONOMY.md` — canonical hiring expectations, hard-filter semantics, management-scale parsing and CV evidence-coverage model.
+3. `../ANTON_EVIDENCE_MATRIX.md` — canonical routing from expectations to Anton's strongest supported evidence and known caveats/gaps.
+4. `../ROLE_SIGNAL_PROFILES.md` — default signal order and CV-shell routing by role family; concrete vacancy wording overrides role-family priors.
+5. `references/role-entry-strategy-v1.md` — current interview-derived distinction between actual Fit, cold-entry probability and strategic entry path.
+
+The expectation/evidence layer is mandatory because a strong business result does not automatically prove the screening signal a vacancy is checking. Example: revenue growth does not prove people management; 100+ functional coordination does not prove direct reports; 200–300 report runs/day does not prove high-load production scale.
+
+## Mandatory operational references
 
 For every WorkInterviews / application-status / vacancy-ingestion workflow, also load the current modular contracts before acting:
 
-2. `references/tracker-storage-v5.md` — canonical vacancy ownership, Queue-only agent write boundary, lifecycle routing and integrity rules.
-3. `references/salary-normalization-v6.md` — canonical salary research, structured Salary Data, monthly normalization and completion gates.
-4. `references/cv-markdown-v2.md` — canonical Markdown-first CV source, Queue-only generated presentation and on-demand derivative semantics.
-5. `references/activity-log.md` — canonical append-only correspondence/process history.
-6. `references/job-search-discovery.md` when finding new vacancies.
-7. `MIGRATION.md` only for old-chat archival migration.
+1. `references/tracker-storage-v5.md` — canonical vacancy ownership, Queue-only agent write boundary, lifecycle routing and integrity rules.
+2. `references/salary-normalization-v6.md` — canonical salary research, structured Salary Data, monthly normalization and completion gates.
+3. `references/cv-markdown-v2.md` — canonical Markdown-first CV source, Queue-only generated presentation and on-demand derivative semantics.
+4. `references/activity-log.md` — canonical append-only correspondence/process history.
+5. `references/job-search-discovery.md` when finding new vacancies.
+6. `MIGRATION.md` only for old-chat archival migration.
 
 For a cover letter additionally load `references/cover-letter-evidence-first.md` plus the matching cached humanizer.
 
@@ -38,12 +46,25 @@ Drive root: `WorkApplications` (`1wQMbnH4CODaARJSY221H06oCFJV2ukAK`).
 3. Capture every evidence-backed field available from the source: company, position, location/work model, Vacancy URL, Apply URL, Posted date, Date found, recruiter/process information, substantive text and fit context.
 4. Create/update `WorkApplications/<Company>/<PositionTitle>/Position.md` whenever substantive vacancy text is recoverable. The full vacancy body belongs there, not in the Sheet.
 5. Verify Position.md by Drive readback and store its URL in `Vacancy file` on the writable Queue row.
-6. Build the internal Pain Map from `application-positioning-v1.md` before substantive fit narration or application writing: identify 1-3 evidence-backed hiring pains, desired changed state, hard filters, and strongest verified proof cases.
-7. Keep `Vacancy snapshot` compact and `Notes` concise. Notes may preserve material positioning risks/gaps, but do not dump the full Pain Map into the Sheet.
-8. Assign one evidence-based numeric Fit %. Fit should reflect actual requirement/problem coverage, not generic seniority or confidence.
-9. Research and normalize salary according to `salary-normalization-v6.md`; do not promote a Queue vacancy to Reviewed/CV ready while the salary gate is unresolved.
-10. If displayed fit is strictly above 60%, create the tailored application pack unless Anton explicitly declines. Artifact semantics come from `cv-markdown-v2.md`: verify/share the Markdown source, then write that canonical source URL directly to Queue `CV`. Do not construct Markdown Drive export links or rich-text runs.
-11. If the vacancy does not materially request project work, do not make Selected Projects / AI Projects the positioning center; lead with relevant employment evidence and business outcomes.
+6. Build the internal Pain Map from `application-positioning-v1.md`: identify 1–3 evidence-backed hiring pains and desired changed state.
+7. Build the internal **Expectation Map** from `EXPECTATION_TAXONOMY.md`. For each material expectation record:
+   - exact vacancy wording/evidence;
+   - `MUST / STRONG / OPTIONAL`;
+   - whether it is a real hard filter;
+   - management-scale semantics where relevant;
+   - required visibility (`TOP / EXPERIENCE / TECHNICAL_SCOPE / OMIT`).
+8. Map each material expectation to `ANTON_EVIDENCE_MATRIX.md`, selecting the strongest exact proof, evidence-strength score 0–5 and any gap/caveat.
+9. Apply `ROLE_SIGNAL_PROFILES.md` to choose the closest existing CV shell and default evidence order. Vacancy-specific expectations override the role-family profile.
+10. Keep three judgments separate:
+   - **Fit %** — actual experience/problem coverage;
+   - **CV evidence coverage** — whether the document visibly proves the important expectations;
+   - **cold-entry probability** — likelihood first filters recognize the fit, from `role-entry-strategy-v1.md`.
+11. Keep `Vacancy snapshot` compact and `Notes` concise. Notes may preserve material positioning risks/gaps, but do not dump the full Pain/Expectation Maps into the Sheet.
+12. Assign one evidence-based numeric Fit %. Fit should reflect actual requirement/problem coverage, not generic seniority or confidence.
+13. Research and normalize salary according to `salary-normalization-v6.md`; do not promote a Queue vacancy to Reviewed/CV ready while the salary gate is unresolved.
+14. If displayed fit is strictly above 60%, create the tailored application pack unless Anton explicitly declines. Artifact semantics come from `cv-markdown-v2.md`: verify/share the Markdown source, then write that canonical source URL directly to Queue `CV`. Do not construct Markdown Drive export links or rich-text runs.
+15. Before finalizing any tailored CV, run the MUST-expectation coverage audit: every MUST expectation must be visibly covered by the strongest available evidence or retained internally as a real gap. A CV is not ready merely because Anton has the experience; the proof must be visible early enough for the first screen.
+16. If the vacancy does not materially request project work, do not make Selected Projects / AI Projects the positioning center; lead with relevant employment evidence and business outcomes.
 
 ## Application positioning
 
@@ -54,12 +75,25 @@ The core sequence is:
 1. read the vacancy as a compressed description of a business/operational/product/technical problem;
 2. infer only pains supported by the vacancy/context, distinguishing explicit pain from a strongly implied hypothesis;
 3. identify the changed state the employer wants;
-4. treat requirements and nice-to-haves primarily as hiring-risk filters, not as the automatic prose structure;
-5. select normally two or three strongest verified proof cases from canonical evidence;
+4. translate responsibilities/requirements into explicit hiring expectations and risk filters through `EXPECTATION_TAXONOMY.md`;
+5. select the strongest exact proof through `ANTON_EVIDENCE_MATRIX.md` rather than merely the most impressive available metric;
 6. present Anton as someone who recognizes and has solved the same or structurally similar problem;
-7. run a requirement-coverage audit after the narrative is coherent.
+7. apply `ROLE_SIGNAL_PROFILES.md` for evidence order/shell choice and `role-entry-strategy-v1.md` for cold-entry sequencing;
+8. run a requirement/expectation-coverage audit after the narrative is coherent.
 
-For product and managerial roles, use `RESUME_FRACTIONAL_CTO.md` as the preferred starting business-evidence layer. Preserve strong proof around revenue, operating cost, throughput, continuity, dependency, adoption, risk and management control where relevant. Do not replace this with generic `strategic / technical / collaborative / experienced` self-description.
+### Management-scale rule
+
+Never conflate:
+
+- direct reports;
+- total team / organization size;
+- hierarchy depth / manager-of-managers;
+- number of teams/functions;
+- functional coordination without line authority.
+
+Anton currently has verified evidence for a **5 IT + 2 installation-engineer direct team** and separately **100+ institutional IT specialists across 100+ institutions without line authority**. The second number must never be written as direct reports or a manager-of-managers hierarchy.
+
+For product and managerial roles, use `RESUME_FRACTIONAL_CTO.md` as a preferred business-evidence baseline unless `ROLE_SIGNAL_PROFILES.md` routes the vacancy to a stronger specialized shell. Preserve proof around revenue, operating cost, throughput, continuity, dependency, adoption, risk and management control where relevant. Do not replace this with generic `strategic / technical / collaborative / experienced` self-description.
 
 External company/market research should influence application copy only when it materially clarifies the hiring problem, context, or positioning. Do not turn normal covers/application answers into citation-heavy research notes, company praise, funding/growth commentary, or generic success language.
 
@@ -125,12 +159,20 @@ For a newer Connections.csv, follow `references/linkedin-connections-import.md`;
 
 Canonical tailored CV authoring/storage follows `cv-markdown-v2.md`.
 
-Content strategy must also follow `application-positioning-v1.md` plus `CV_EVIDENCE_FIRST_RULES.md` and `RESUME_ADAPTATION_WORKFLOW.md` when relevant.
+Content strategy must also follow:
+
+- `application-positioning-v1.md`;
+- `EXPECTATION_TAXONOMY.md`;
+- `ANTON_EVIDENCE_MATRIX.md`;
+- `ROLE_SIGNAL_PROFILES.md`;
+- `CV_EVIDENCE_FIRST_RULES.md`;
+- `RESUME_ADAPTATION_WORKFLOW.md`.
 
 - Draft and fact-check Markdown directly.
-- Build Profile, Role Fit, bullet selection, and experience depth around the vacancy Pain Map while preserving chronology.
+- Build Profile, Role Fit, bullet selection and experience depth around both the Pain Map and the highest-priority expectation rows while preserving chronology.
 - Role Fit should connect major hiring pains/risks to proof, not paraphrase the vacancy into competency bullets.
-- Preserve the strongest relevant business-result evidence from the master CV; do not dilute it into adjectives about Anton.
+- Use the strongest evidence that proves each exact expectation. Do not let a more impressive but irrelevant number displace a first-screen signal.
+- Preserve the strongest relevant business-result evidence from the master CV where relevant; do not dilute it into adjectives about Anton.
 - Verify the stored Markdown and required public sharing.
 - Write only the verified source URL into Queue `CV`.
 - Never URL-encode the source for tracker UI, construct Markdown Drive tracker links, or author multiple rich-text runs.
@@ -140,11 +182,21 @@ Content strategy must also follow `application-positioning-v1.md` plus `CV_EVIDE
 - If a derivative is exported for final use, render and visually inspect that derivative before delivery/submission.
 - A later Markdown revision makes earlier derivatives stale.
 
+### Tailored-CV completion gate
+
+A tailored CV is not complete until:
+
+- every MUST expectation is mapped to evidence or marked as a genuine gap;
+- every supported first-screen MUST is visible early enough to be noticed;
+- direct span / total org scope / hierarchy depth are not conflated;
+- high-load, people-management, budget, product ownership and other scale signals use the correct type of evidence;
+- the draft's **CV evidence coverage** is not `Under-covered` under `RESUME_ADAPTATION_WORKFLOW.md`.
+
 ## Humanized cover letter
 
 Write in the vacancy language.
 
-Before drafting, apply `application-positioning-v1.md`; before finalizing, apply `cover-letter-evidence-first.md` and load the matching cached humanizer:
+Before drafting, apply `application-positioning-v1.md`, build the expectation/evidence map, and apply `role-entry-strategy-v1.md`; before finalizing, apply `cover-letter-evidence-first.md` and load the matching cached humanizer:
 
 - RU: `WorkApplications/_skills/humanizer-ru/SKILL.md`
 - EN: `WorkApplications/_skills/humanizer-en/SKILL.md`
@@ -153,15 +205,17 @@ If the required cached skill is unavailable, report the blocker instead of silen
 
 Store only final letter text in TXT: no Markdown heading, subject, JSON or explanation unless explicitly requested.
 
-The cover must be a compact hiring-problem -> verified-proof argument. Normally use 2-3 strong cases plus compact filter closure. Requirements are a QA checklist, not a mandatory bullet-by-bullet prose skeleton. Nice-to-have evidence leads only when it is the strongest proof of the employer's core problem.
+The cover must be a compact hiring-problem -> verified-proof argument. Normally use 2–3 strong cases plus compact filter closure. Requirements are a QA checklist, not a mandatory bullet-by-bullet prose skeleton. Nice-to-have evidence leads only when it is the strongest proof of the employer's core problem.
 
 Never invent motivation, authority, metrics, team size or domain exposure. Avoid generic candidate-centered filler and company-praise/research prose that does not strengthen solution fit.
 
 ## Application questions / motivation fields
 
-For substantive prompts such as `Why this company?`, `What interests you?`, `Why are you a fit?`, or `Tell us about relevant experience`, apply the same pain-first compression:
+For substantive prompts such as `Why this company?`, `What interests you?`, `Why are you a fit?`, or `Tell us about relevant experience`, apply the same compression:
 
 **their problem -> matching verified proof -> why that makes the work relevant.**
+
+Use the expectation map to ensure the answer closes the most important screen rather than merely giving the most impressive anecdote.
 
 Do not default to generic motivation, biography, or company praise merely because the wording asks `why`.
 
@@ -195,7 +249,7 @@ Do not copy unnecessary sensitive email body text into the tracker. Do not send,
 
 Do not call a vacancy/application pack complete until all applicable current gates pass:
 
-- pain-first positioning / requirement-coverage QA for substantive application artifacts;
+- pain-first positioning plus expectation/evidence mapping and MUST-coverage QA;
 - canonical Markdown artifacts/readbacks and required share permissions;
 - Queue `CV` contains the verified source URL or its derived `DOCX PDF` presentation;
 - salary-normalization-v6 completion state;

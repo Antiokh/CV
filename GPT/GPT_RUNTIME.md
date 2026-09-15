@@ -25,7 +25,10 @@ For employment workflow tasks load `GPT/work-application-manager/SKILL.md`.
 For every substantive vacancy analysis, tailored CV, cover letter, recruiter/application answer, or motivation field, also load:
 
 - `GPT/work-application-manager/references/application-positioning-v1.md` — canonical pain-first hiring-problem -> proof positioning contract;
-- `GPT/work-application-manager/references/role-entry-strategy-v1.md` — current interview-derived distinction between role relevance, cold-entry probability and strategic entry path.
+- `GPT/work-application-manager/references/role-entry-strategy-v1.md` — current interview-derived distinction between role relevance, cold-entry probability and strategic entry path;
+- `GPT/EXPECTATION_TAXONOMY.md` — canonical vocabulary for hiring expectations, hard filters, management-scale parsing, evidence strength and CV evidence coverage;
+- `GPT/ANTON_EVIDENCE_MATRIX.md` — canonical routing index from expectations to Anton's strongest supported proof, including explicit caveats/gaps;
+- `GPT/ROLE_SIGNAL_PROFILES.md` — role-family signal priorities and existing CV-shell routing. Vacancy-specific expectations always override generic role priors.
 
 When WorkInterviews, application state, vacancy ingestion, application artifacts or Gmail hiring evidence is involved, load the modular current contracts:
 
@@ -82,17 +85,27 @@ Use `Antiokh/CV` as the primary evidence repository in CV mode. Load only task-r
 
 All substantive application positioning must follow `GPT/work-application-manager/references/application-positioning-v1.md`.
 
+Before selecting CV bullets, also apply the expectation/evidence routing layer:
+
+1. extract the vacancy's material expectations and classify them through `EXPECTATION_TAXONOMY.md`;
+2. mark each expectation `MUST`, `STRONG`, or `OPTIONAL`, and identify real hard filters;
+3. parse management scale explicitly into direct span, total org scope, hierarchy depth, number of teams/functions and functional coordination without line authority;
+4. map each material expectation to the strongest Anton proof in `ANTON_EVIDENCE_MATRIX.md`, with an evidence-strength score and any caveat/gap;
+5. use `ROLE_SIGNAL_PROFILES.md` to choose the closest CV shell and default evidence order, but let the concrete vacancy override role-family priors;
+6. keep **role Fit** separate from **CV evidence coverage**. High real Fit with invisible proof is a document failure and must be corrected;
+7. before finalizing, ensure every MUST expectation is either visibly proved in the CV or explicitly retained as an internal gap.
+
 Core positioning sequence:
 
 1. infer only the 1-3 hiring pains supported by the vacancy/context;
 2. identify the desired changed state and the requirements/nice-to-haves as hiring-risk filters;
-3. select normally 2-3 strongest verified proof cases;
+3. select normally 2-3 strongest verified proof cases, while preserving explicit hard-filter evidence even when a different result is more impressive;
 4. position Anton as someone who recognizes and has solved the same or structurally similar problem;
-5. use requirements as a final coverage audit, not as the automatic prose skeleton.
+5. use requirements and the expectation map as a final coverage audit, not as the automatic prose skeleton.
 
 Apply `role-entry-strategy-v1.md` separately from Fit. Do not confuse role relevance with cold-entry probability. Current interview-derived priority is Product Manager / technical product and applied AI Engineering / AI Principal as strongest cold-entry tracks; Engineering Manager and CTO/Head roles remain highly relevant but should be prioritized selectively according to coding-recency filters, AI scope and trust/warm-entry paths; generic non-AI IC-heavy Tech Lead roles are lower cold priority. This changes search/application effort, not evidence-based Fit %.
 
-For product and managerial/executive roles, start from `RESUME_FRACTIONAL_CTO.md` as the preferred business-evidence baseline. Preserve its business-result-first proof where relevant: revenue, operating cost, throughput, continuity, dependency, risk, adoption and management control. Do not replace this evidence with generic competency language.
+For product and managerial/executive roles, start from `RESUME_FRACTIONAL_CTO.md` as the preferred business-evidence baseline unless `ROLE_SIGNAL_PROFILES.md` routes the vacancy to a stronger specialized shell. Preserve its business-result-first proof where relevant: revenue, operating cost, throughput, continuity, dependency, risk, adoption and management control. Do not replace this evidence with generic competency language.
 
 For managerial/executive roles also prefer:
 
@@ -120,9 +133,10 @@ If displayed vacancy fit is strictly above 60%, generate the tailored Markdown C
 When a cover letter is created:
 
 1. apply `application-positioning-v1.md` first;
-2. apply `role-entry-strategy-v1.md` to select the evidence sequence most likely to survive the role's first filters;
-3. apply `cover-letter-evidence-first.md` for cover-specific structure/QA;
-4. use the language-specific cached humanizer under `WorkApplications/_skills/` as required by `work-application-manager/SKILL.md`.
+2. build the expectation map and select proof through `EXPECTATION_TAXONOMY.md`, `ANTON_EVIDENCE_MATRIX.md`, and `ROLE_SIGNAL_PROFILES.md`;
+3. apply `role-entry-strategy-v1.md` to select the evidence sequence most likely to survive the role's first filters;
+4. apply `cover-letter-evidence-first.md` for cover-specific structure/QA;
+5. use the language-specific cached humanizer under `WorkApplications/_skills/` as required by `work-application-manager/SKILL.md`.
 
 A cover letter is a compact hiring-problem -> verified-proof argument, not a biography, requirement dump, or company-praise essay.
 
@@ -136,12 +150,15 @@ If repository material conflicts:
 
 1. explicit current user instruction wins;
 2. `application-positioning-v1.md` wins for candidate-side application content strategy and employer-pain/proof framing;
-3. `role-entry-strategy-v1.md` wins for interview-derived role targeting, cold-entry probability and application-effort priority, without changing Fit truthfulness;
-4. live Agent Instructions + `tracker-storage-v5.md` win for vacancy storage/lifecycle mechanics;
-5. `salary-normalization-v6.md` wins for salary research/storage/completion;
-6. `cv-markdown-v2.md` wins for CV source-write, Queue presentation and DOCX/PDF derivative handling;
-7. `activity-log.md` wins for process-history semantics;
-8. MODE_ROUTER + selected mode skill win over generic/archival docs;
-9. stop before destructive actions if precedence remains genuinely unresolved.
+3. `EXPECTATION_TAXONOMY.md` wins for expectation/filter definitions and management-scale parsing;
+4. `ANTON_EVIDENCE_MATRIX.md` wins for routing among already-supported Anton proof blocks, but never overrides the underlying factual source if they conflict;
+5. `ROLE_SIGNAL_PROFILES.md` wins for generic role-family signal ordering/shell routing, while a concrete vacancy overrides its priors;
+6. `role-entry-strategy-v1.md` wins for interview-derived role targeting, cold-entry probability and application-effort priority, without changing Fit truthfulness;
+7. live Agent Instructions + `tracker-storage-v5.md` win for vacancy storage/lifecycle mechanics;
+8. `salary-normalization-v6.md` wins for salary research/storage/completion;
+9. `cv-markdown-v2.md` wins for CV source-write, Queue presentation and DOCX/PDF derivative handling;
+10. `activity-log.md` wins for process-history semantics;
+11. MODE_ROUTER + selected mode skill win over generic/archival docs;
+12. stop before destructive actions if precedence remains genuinely unresolved.
 
 RUNTIME_END
