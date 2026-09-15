@@ -17,18 +17,17 @@ I focus on business outcomes rather than technology for its own sake: profitable
 
 Management experience combines direct leadership of specialized IT teams with indirect functional coordination of **100+ IT specialists across 100+ subordinate institutions**, including technology governance, procurement coordination, service operations, infrastructure modernization and cross-organizational delivery.
 
-## Selected business results
+My executive scope has included anti-crisis operating priorities, continuity decisions during COVID, recovery from privileged-access loss, and cross-organizational coordination without direct line authority. I work through priorities, systems and influence rather than personal task control, and build operating models that can continue without constant executive intervention.
 
-- Helped a service business achieve approximately **10x revenue growth in about three months** after redesigning customer intake, operations and product presentation; growth was organic, without paid advertising.
-- Reduced manual client-service work from **hours to minutes** through internal systems, integrations and automation.
-- As part of the management team at ZIL, contributed to the anti-crisis turnaround that brought the organisation out of approximately **RUB 30m in accumulated debt**; within IT, focused spending on operational value, extended the life of existing infrastructure and replaced unmanaged support with measurable service operations.
-- Extended the useful life of approximately **150 workstations** instead of blanket replacement and completed a broader reconciliation of **800+ accounting and physical asset records**, enabling formal write-off of approximately **100 missing or unusable assets**; this was separate from the earlier **581-asset operational baseline**.
-- Recovered administrative control over critical ZIL infrastructure after an inherited administrator left without handover: reconstructed privileged access and critical credentials and reduced key-person dependency.
-- Kept operations running through COVID by moving **100+ employees to secure remote work** without interrupting work.
-- Coordinated technology requirements and delivery with **100+ IT specialists across 100+ cultural institutions** without direct line authority, combining system governance, procurement coordination and institutional stakeholder management.
-- Turned a widely disliked reporting system into a fast, trusted operational core and **source of truth for CRM and reporting workflows across 100+ Moscow cultural institutions and libraries**; replaced a **5-hour single-user export workflow** with web reporting typically completing in **1.5 seconds to 1.5 minutes**.
-- Restored the Directorate's public website and core information system after erroneous phishing/malware classification by working directly with security vendors and removing the systems from **Google, Bitdefender, Quttera and Sangfor blocklists**.
-- Built a ZIL IT operating model that remained stable after my departure and through subsequent leadership changes.
+## Executive leadership evidence
+
+- **Decision-making under pressure:** at ZIL, handled anti-crisis operating priorities, recovered privileged access and critical credentials after an inherited administrator left without handover, and moved **100+ employees** to secure remote work during COVID without interrupting operations.
+- **Resource prioritisation:** controlled operating and modernisation priorities, extended the useful life of approximately **150 workstations** instead of blanket replacement, reconciled **800+ asset records** and enabled formal write-off of approximately **100 missing or unusable assets**. This work supported the wider management turnaround from approximately **RUB 30m in accumulated debt** without claiming the organisation-level result as an IT-only saving.
+- **Systems thinking:** replaced ad-hoc support through calls and personal messages with a managed HelpDesk model, then extended the same service logic to **seven additional internal services** while formalising ownership, access, documentation and operating procedures.
+- **Influence without direct authority:** coordinated technology requirements and delivery with **100+ IT specialists across 100+ cultural institutions**, combining governance, procurement coordination and institutional stakeholder management outside a direct reporting line.
+- **Change and adoption:** turned a widely disliked reporting system into a fast, trusted operational core and **source of truth for CRM and reporting workflows across 100+ Moscow cultural institutions and libraries**; replaced a **5-hour single-user export workflow** with web reporting typically completing in **1.5 seconds to 1.5 minutes**.
+- **Organisational resilience:** built a ZIL IT operating model that remained stable after my departure and through subsequent leadership changes, with explicit ownership, backup coverage and reduced key-person dependency.
+- **Business orientation:** helped a service business achieve approximately **10x revenue growth in about three months** after redesigning customer intake, operations and product presentation, and reduced routine client-service work from **hours to minutes** through internal systems, integrations and automation.
 
 ## Professional experience
 
