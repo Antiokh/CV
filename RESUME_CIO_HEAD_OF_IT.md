@@ -20,11 +20,11 @@ Management experience combines direct leadership of specialized IT teams with in
 ## Role Fit
 
 - Rebuilt an under-controlled IT function at ZIL into a trusted transformation capability during an anti-crisis period, combining cost optimization, security, governance, service management and cross-department digitalization.
+- Redesigned the support operating model around specialist ownership, measurable request handling and delegated execution, including use of fractional DevOps where deeper infrastructure expertise was more economical than a generic full-time role.
 - Avoided approximately **RUB 22m** in workstation replacement and licensing costs through lifecycle and licensing strategy rather than blanket replacement.
 - Managed procurement decisions under **223-FZ** using total transaction cost rather than unit price alone; challenged embedded or overpriced positions where economically rational.
 - Closed critical personal-data and information-security gaps, introduced role-based access and endpoint controls, and established broad operational monitoring.
-- Managed **5 IT staff and 2 installation engineers** at ZIL and coordinated technology requirements with **100+ IT specialists across 100+ cultural institutions** without direct line authority.
-- Built and evolved enterprise systems, HelpDesk / ITSM, asset management, reporting, workflow automation and integrations across finance, HR, ticketing and operational processes.
+- Built and evolved enterprise systems, HelpDesk / ITSM, asset and license lifecycle management, reporting, workflow automation and integrations across finance, HR, ticketing and operational processes.
 
 ## Professional Experience
 
@@ -54,13 +54,15 @@ Joined the management team during an anti-crisis period with three technology ob
 An **August 2020 documented operational baseline** covered **145 employees, 156 workstations and 581 technology assets**; the wider environment included **7 servers and approximately 20 virtual machines** plus CCTV, telephony, access control, ticketing and internal business systems.
 
 - I audited the technology function and identified systemic risks across personal-data handling, information security, aging infrastructure, licensing, service operations, staff digital competence, regulatory requirements, ticketing and refund processes, and integration between HR, financial and ticketing systems.
-- I designed a lean functional operating model and managed **5 IT staff and 2 installation engineers**, with explicit specialist ownership and limited overlap so critical functions had backup coverage without unnecessary payroll duplication.
-- I chose lifecycle extension and licensing optimization over blanket replacement where economically justified; my team executed the modernization program, avoiding approximately **RUB 22m** in potential workstation replacement and licensing costs.
-- I managed procurement decisions under **223-FZ**, challenging embedded or overpriced positions while evaluating the full organizational cost of additional tender procedures rather than optimizing unit price in isolation.
-- I negotiated vendor terms, including discounts and a free trial period for a specialized CRM, reducing commitment risk before full adoption.
-- I defined the access, security and control model; my team closed critical personal-data and information-security gaps, implemented role-based access and endpoint controls, and expanded monitoring across infrastructure, user activity, public web systems and information-leakage risks.
-- I rebuilt technology governance by rewriting procedures for event technology, equipment custody and accountability. My team replaced informal support with managed queues, ownership and visible workload, creating a more predictable service model.
-- We restored trust in IT and used that credibility to support digital transformation across **nearly every department**. During COVID, we also moved **100+ employees** to secure remote work and supported paid event streaming as a new digital format.
+- I rebuilt the inherited support model around differentiated specialist roles and explicit ownership, managing **5 IT staff and 2 installation engineers**. The structure combined on-site service / endpoint capability, documentation and ITSM ownership, deeper remote infrastructure expertise and physical-technology support instead of relying on generic support roles.
+- Working with the documentation / Service Desk owner, we introduced HelpDesk as the system of record, documented recurring request types, assigned service expectations / SLA targets and created reusable operating documentation so support no longer depended on informal memory.
+- I chose lifecycle extension and licensing optimization over blanket replacement where economically justified; my team executed the modernization program, avoiding approximately **RUB 22m** in potential workstation replacement and licensing costs while coordinating inventory, write-off and asset records with accounting.
+- I managed procurement decisions under **223-FZ**, challenging embedded or overpriced positions while evaluating the full organizational cost of additional tender procedures rather than optimizing unit price in isolation. I also negotiated discounts and a free trial period for a specialized CRM before full commitment.
+- I led a structured CRM-selection process with event and client-facing departments: requirements and data collection, market research, candidate comparison, user pilots and operational fit testing before narrowing the viable options.
+- I defined the access, security and control model; my team rebuilt shared-storage and domain permissions, standardized endpoint configuration, automated parts of account offboarding from HR data, introduced public-computer privacy controls, and expanded monitoring across infrastructure, user activity, public web systems and information-leakage risks.
+- We turned GLPI into more than a ticket queue: assets, licenses, keys and certificates were tracked with renewal reminders far enough in advance to start procurement, and the same ITSM pattern was reused across additional internal service functions.
+- My team also restored and expanded CCTV / recording coverage, access-card controls and related physical-security systems; access data was connected with HR / working-time processes, improving auditability and operational control.
+- We restored trust in IT and used that credibility to support digital transformation across **nearly every department**. During COVID, we also moved **100+ employees** to secure remote work and launched paid event streaming as a new digital format.
 - I contributed product and technology ideas for ZIL's modernization, including the new website and early personalization / AI concepts for cultural recommendations and visitor-facing digital experiences.
 - I regularly represented ZIL in higher-level organizations, including the **Moscow Department of Information Technologies (DIT)**, and chose centrally provided technologies where reuse was cheaper and operationally lighter than building equivalent capabilities in-house.
 
@@ -104,12 +106,15 @@ Domodedovo Airport, IT Company / Lotus Notes Department, Synergy and independent
 
 - IT strategy, operating-model design and digital transformation
 - Direct team leadership and indirect cross-organizational technology coordination
+- Organizational and capability design, specialist ownership, delegation and fractional expertise
 - Budget-conscious modernization, lifecycle management and cost optimization
 - Procurement strategy, 223-FZ procedures, vendor negotiation and total-cost decision-making
-- IT operations, service management, observability and business continuity
-- Information security, personal-data protection, role-based access and endpoint governance
-- Asset management, licensing and technology governance
-- Enterprise systems, CRM / ERP, reporting, workflow automation and integration
+- IT operations, service management, SLA design, observability and business continuity
+- Information security, personal-data protection, identity lifecycle, role-based access and endpoint governance
+- Asset, license, certificate and contract lifecycle management
+- **Business-process redesign, analysis and automation**
+- **CRM / ERP / business-applications implementation, integration and adoption**
+- Enterprise reporting, workflow automation and cross-functional systems integration
 - Executive stakeholder representation and adoption of shared / centralized platforms
 - Hiring, onboarding, mentoring, ownership design and backup coverage
 
