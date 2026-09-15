@@ -29,7 +29,7 @@ Recent work combines product ownership with current hands-on understanding of Po
 ## Professional Experience
 
 ### NeedleBit, Serbia
-**Founder / CTO / Systems Architect / Product Lead**  
+**Founder / CTO / Systems Architect / Project Manager**  
 Nov 2022 - Present
 
 - Work directly with founders and business owners to define product scope, operating logic, system boundaries, priorities and delivery trade-offs.
@@ -50,11 +50,11 @@ Aug 2022 - Nov 2022
 - Worked with founders and managers on implementation methodology, delivery structure and decision-making.
 
 ### Directorate of Cultural Centers of Moscow
-**Senior Manager / IT Architect / Analyst / Product Owner**  
+**Senior Manager / IT Architect / Analyst**  
 Jan 2017 - May 2023  
 *Long-running cross-institutional role held concurrently with later institutional leadership appointments.*
 
-- Owned the evolution of **AIS MosRazvitie**, an industry-level information system serving **100+ cultural institutions and libraries**.
+- Owned the product logic and evolution of **AIS MosRazvitie**, an industry-level information system serving **100+ cultural institutions and libraries**.
 - Reconstructed inconsistent organizational terminology and reporting logic across institutions, then translated it into a shared taxonomy, data model, roles and product rules.
 - Turned a widely disliked legacy reporting system into a trusted operational source of truth for reporting and CRM-related workflows.
 - Replaced a **5-hour single-user export workflow** with web reporting typically completing in **1.5 seconds to 1.5 minutes**.
