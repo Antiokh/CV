@@ -34,7 +34,7 @@ Nov 2022 - Present
 
 - Work directly with founders and operating teams to redesign fragmented business processes, select practical technology and reduce dependency on manual work or individual employees.
 - Define architecture, ownership, access rules, integrations and delivery priorities across CRM, portals, reporting, automation and AI-enabled workflows.
-- My team and I reduced routine client-service work from **hours to minutes** by replacing repeated manual handoffs with structured systems and automation.
+- Reduced routine client-service work from **hours to minutes** by replacing repeated manual handoffs with structured systems and automation.
 - Consolidated field operations, client workflows and reporting into one platform and migrated approximately **70,000 historical documents** into a structured backend.
 - Reduce vendor and key-person dependency by keeping critical data and business logic in controlled systems with explicit ownership, documentation and handover paths.
 
@@ -76,7 +76,7 @@ City-level organization coordinating **100+ cultural institutions**. My role com
 - Owned architecture and operational evolution of **AIS MosRazvitie**, a platform used across **100+ institutions and libraries** for reporting and CRM-related workflows.
 - Turned a widely disliked legacy system into a trusted operational source of truth by aligning data models, roles, access rules, reporting logic and governance.
 - Replaced a **5-hour single-user export workflow** with web reporting typically completing in **1.5 seconds to 1.5 minutes**.
-- My team and institutional counterparts improved security, change control, documentation and user support while modernizing a live legacy IBM Domino environment without interrupting service.
+- Working with institutional counterparts, improved security, change control, documentation and user support while modernizing a live legacy IBM Domino environment without interrupting service.
 - Built feedback, documentation and webinar-based training loops for hundreds of users so recurring operational issues translated into concrete system improvements.
 
 ### Moscow Social Development Agency
@@ -84,7 +84,7 @@ City-level organization coordinating **100+ cultural institutions**. My role com
 Sep 2019 - Mar 2020
 
 - Helped establish the IT function of a newly created organization practically from scratch: infrastructure, support, security, asset control, procurement and operating rules.
-- My team introduced HelpDesk and automated asset inventory, making support workload and equipment more visible and controllable.
+- Introduced HelpDesk and automated asset inventory, making support workload and equipment more visible and controllable.
 - Planned team activity, controlled execution and participated in contractor selection and acceptance of major IT projects.
 
 ### Settlement and Savings Bank
