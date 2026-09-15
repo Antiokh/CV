@@ -58,6 +58,40 @@ Sequence:
 
 **Transparency -> Efficiency -> Growth**
 
+## C-level differentiators to surface explicitly in CTO / CIO CVs
+
+For CTO, CIO, Head of IT and similar executive resumes, do not leave executive maturity implicit and do not hide it inside a generic `soft skills` list. Surface a compact scan layer that shows how Anton operates at executive scope, with evidence immediately behind each point.
+
+The strongest recurring differentiators are:
+
+1. **Decision quality under pressure** — making continuity, access, security, budget and operating decisions when the situation is incomplete or unstable rather than waiting for perfect information.
+2. **Executive prioritisation and resource allocation** — deciding what deserves money, time and management attention, including what not to replace, not to build or not to escalate.
+3. **Systems thinking** — treating incidents, support load, ownership gaps, access, documentation, architecture and process as connected parts of one operating model rather than isolated technical tasks.
+4. **Influence without direct authority** — aligning peers, institutional IT leaders, vendors, business stakeholders and adjacent functions that do not report directly to Anton.
+5. **Adaptation and change leadership** — changing the operating approach when conditions change, while preserving continuity and adoption.
+6. **Organisational resilience** — building ownership, backup coverage, documentation and service mechanisms so the function does not depend on constant personal intervention by the executive.
+7. **Business orientation** — connecting technology decisions to revenue, operating cost, risk, throughput, continuity and management control rather than treating technology output as the final result.
+
+Do not present these as unsupported virtues such as `calm`, `strategic`, `flexible` or `influential`. Use explicit operating evidence.
+
+### Default proof anchors for Anton
+
+For CTO / CIO resumes, preserve ZIL as a primary proof source rather than compressing it into generic IT-management bullets:
+
+- **Decision under pressure / adaptation:** recovered privileged access and critical credentials after an inherited administrator left without handover; moved **100+ employees** to secure remote work during COVID without interrupting operations.
+- **Prioritisation / resource allocation:** controlled operating and modernisation priorities during an anti-crisis period; extended the useful life of approximately **150 workstations** instead of blanket replacement; reconciled **800+ asset records** and enabled formal write-off of approximately **100** missing or unusable assets.
+- **Systems thinking:** replaced ad-hoc support with a managed HelpDesk model and extended it to **seven additional internal services**; formalised access, responsibilities, documentation and service ownership.
+- **Organisational resilience:** the ZIL IT operating model remained stable after Anton's departure and subsequent leadership changes.
+- **Business context:** Anton was part of the management team during the organisation-wide turnaround from approximately **RUB 30m in accumulated debt**; describe his direct contribution through spend control, infrastructure lifecycle, service discipline and operating visibility rather than claiming the whole turnaround as an IT result.
+
+Use the Directorate of Cultural Centers as the primary proof source for **influence without direct authority**: coordination with **100+ IT specialists across 100+ institutions**, technology governance, procurement coordination, common rules, adoption and cross-institutional delivery.
+
+Use NeedleBit / founder-led work for **business orientation and adaptation** when the target role values product economics, automation, growth or modern AI-enabled delivery.
+
+A useful resume pattern is:
+
+`C-level operating capability -> concrete executive situation -> action / decision -> observable business or operating result`
+
 ## Core operating principles
 
 1. **Single-point ownership** — every critical process, system, integration, vendor and risk has a named accountable owner.
