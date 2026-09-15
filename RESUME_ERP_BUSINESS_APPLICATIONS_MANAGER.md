@@ -29,7 +29,7 @@ The recurring result is better visibility and less dependence on spreadsheets, p
 ## Professional Experience
 
 ### NeedleBit, Serbia
-**CTO / Systems Architect / Business Applications Lead**  
+**Founder / CTO / Systems Architect / Project Manager**  
 Nov 2022 - Present
 
 - Work with founders and operating teams to turn manual or fragmented workflows into structured CRM, ERP, portal, reporting and automation systems.
