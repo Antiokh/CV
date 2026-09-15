@@ -29,7 +29,7 @@ Management experience includes direct leadership of specialized IT teams, vendor
 ## Professional Experience
 
 ### NeedleBit, Serbia
-**Founder / CTO / Systems Architect / Delivery Lead**  
+**Founder / CTO / Systems Architect / Project Manager**  
 Nov 2022 - Present
 
 - Work directly with founders and business owners to turn incomplete requirements into delivery scope, architecture, work breakdown, priorities and implementation decisions.
@@ -84,7 +84,7 @@ Sep 2019 - Mar 2020
 - Introduced HelpDesk and automated inventory to make workload and assets observable rather than informal.
 
 ### Settlement and Savings Bank
-**Lead Software Developer / Systems Architect / Implementation Lead**  
+**Lead Software Developer / Systems Architect**  
 Jan 2013 - Sep 2015
 
 - Held working sessions with executives and department heads to reconstruct document routes, ownership, deadlines and regulatory rules.
