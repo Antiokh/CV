@@ -13,22 +13,18 @@ Work authorization: Serbian sole proprietor (preduzetnik)
 
 Technology leader with 18+ years across corporate IT, banking, public-sector systems and founder-led businesses.
 
-I focus on business outcomes rather than technology for its own sake: profitable growth, lower operating cost, resilient operations, and management control. I use architecture, automation, service design and clear ownership to turn fragile or opaque operations into systems the business can actually run.
+I use technology to improve business economics, reduce operating risk, create management control and enable new products. My recurring pattern is to enter an under-controlled environment, identify the constraints that matter to the business, rebuild the operating model and then use the resulting trust and capacity to drive broader transformation.
 
 Management experience combines direct leadership of specialized IT teams with indirect functional coordination of **100+ IT specialists across 100+ subordinate institutions**, including technology governance, procurement coordination, service operations, infrastructure modernization and cross-organizational delivery.
 
 ## Selected business results
 
 - Helped a service business achieve approximately **10x revenue growth in about three months** after redesigning customer intake, operations and product presentation; growth was organic, without paid advertising.
-- Reduced manual client-service work from **hours to minutes** through internal systems, integrations and automation.
-- As part of the management team at ZIL, contributed to the anti-crisis turnaround that brought the organisation out of approximately **RUB 30m in accumulated debt**; within IT, focused spending on operational value, extended the life of existing infrastructure and replaced unmanaged support with measurable service operations.
-- Extended the useful life of approximately **150 workstations** instead of blanket replacement and completed a broader reconciliation of **800+ accounting and physical asset records**, enabling formal write-off of approximately **100 missing or unusable assets**; this was separate from the earlier **581-asset operational baseline**.
-- Recovered administrative control over critical ZIL infrastructure after an inherited administrator left without handover: reconstructed privileged access and critical credentials and reduced key-person dependency.
-- Kept operations running through COVID by moving **100+ employees to secure remote work** without interrupting work.
+- As part of the management team at ZIL, supported an anti-crisis turnaround from approximately **RUB 30m in accumulated debt** through internal optimization, automation and tighter technology economics; avoided approximately **RUB 22m** in workstation replacement and licensing costs through lifecycle and licensing strategy.
+- Rebuilt the ZIL IT function from a distrusted support unit into a credible transformation partner, enabling digitalization across **nearly every department** and new digital formats including paid event streaming during COVID.
 - Coordinated technology requirements and delivery with **100+ IT specialists across 100+ cultural institutions** without direct line authority, combining system governance, procurement coordination and institutional stakeholder management.
 - Turned a widely disliked reporting system into a fast, trusted operational core and **source of truth for CRM and reporting workflows across 100+ Moscow cultural institutions and libraries**; replaced a **5-hour single-user export workflow** with web reporting typically completing in **1.5 seconds to 1.5 minutes**.
-- Restored the Directorate's public website and core information system after erroneous phishing/malware classification by working directly with security vendors and removing the systems from **Google, Bitdefender, Quttera and Sangfor blocklists**.
-- Built a ZIL IT operating model that remained stable after my departure and through subsequent leadership changes.
+- Reduced routine client-service work from **hours to minutes** through internal systems, integrations and automation.
 
 ## Professional experience
 
@@ -55,17 +51,18 @@ Aug 2022 - Nov 2022
 **Head of IT**  
 Mar 2020 - Jun 2022
 
-Led IT for a major public cultural venue. An **August 2020 documented operational baseline** covered **145 employees, 156 workstations and 581 technology assets**; the wider environment included **7 servers and approximately 20 virtual machines** plus CCTV, telephony, access control and internal business systems.
+Joined the management team during an anti-crisis period with three technology objectives: reduce operating cost through internal optimization and automation; make ZIL a more technologically progressive cultural venue; and support its repositioning as a modern, youth-oriented organization. I made rebuilding the IT function itself the first priority because broader digital transformation would not be credible while IT remained under-controlled or distrusted.
 
-- Managed **5 IT staff and 2 installation engineers**, assigning specialized ownership across service desk/documentation, workplace infrastructure, servers/DevOps, web/digital systems and business applications, with adjacent backup coverage for critical functions.
-- Controlled operating and modernization budgets, selected vendors and contractors, and owned operating priorities during an anti-crisis period.
-- Recovered administrative control after an inherited system administrator resigned without handover: reconstructed privileged access, restored critical credentials and removed single-person dependency from critical infrastructure.
-- Focused IT spending on operational value during an anti-crisis period, prioritising targeted modernisation and service discipline over indiscriminate replacement.
-- Extended the useful life of approximately **150 workstations** through targeted SSD upgrades, Windows 7-to-10 migration and licensing cleanup instead of blanket hardware replacement.
-- Conducted a broader accounting and physical reconciliation covering **800+ asset records** and enabled the formal write-off of approximately **100 missing or unusable assets**.
-- Replaced ad-hoc support through calls and personal messages with a managed HelpDesk queue, priorities, ownership and visible workload; extended the same service model to **seven additional internal services**.
-- Designed and executed the secure remote-work transition for **100+ employees** during COVID while preserving operational continuity.
-- Formalised access, documentation, responsibilities and operating procedures so critical operations no longer depended on informal knowledge and personal agreements.
+An **August 2020 documented operational baseline** covered **145 employees, 156 workstations and 581 technology assets**; the wider environment included **7 servers and approximately 20 virtual machines** plus CCTV, telephony, access control, ticketing and internal business systems.
+
+- Audited the technology function and identified systemic risks across personal-data handling, information security, aging infrastructure, licensing, service operations, staff digital competence, regulatory requirements, ticketing and refund processes, and integration between HR, financial and ticketing systems.
+- Built a lean functional team of **5 IT staff and 2 installation engineers**, with explicit specialist ownership and limited overlap so critical functions had backup coverage without unnecessary payroll duplication.
+- Used technology as a cost-reduction tool during the financial turnaround: moved suitable work from manual processes into digital systems and avoided approximately **RUB 22m** in workstation replacement and licensing costs through lifecycle and licensing strategy rather than blanket replacement.
+- Managed procurement decisions under **223-FZ**, challenging embedded or overpriced positions while evaluating the total transaction cost of the tender process rather than optimizing unit price in isolation.
+- Closed critical personal-data and information-security gaps, introduced role-based access and endpoint controls, and established monitoring across infrastructure resources, user activity, public web systems and information-leakage risks.
+- Rebuilt technology governance: rewrote procedures for event technology, equipment custody and accountability; replaced informal support with managed queues, ownership and visible workload; and used the resulting transparency to restore trust in the IT function.
+- That restored trust enabled digital transformation across **nearly every department**. The team also moved **100+ employees** to secure remote work during COVID, supported paid event streaming, and contributed to the new website and other digital initiatives intended to make ZIL feel more modern and youth-oriented.
+- Served as a regular ZIL representative in higher-level organizations, including the **Moscow Department of Information Technologies (DIT)**, and directly implemented centrally provided technologies where reuse was economically and operationally preferable to building equivalent capabilities in-house.
 
 ### Directorate of Cultural Centers of Moscow
 **Senior Manager / IT Architect / Analyst**  
@@ -106,16 +103,17 @@ Domodedovo Airport, IT Company / Lotus Notes Department, Synergy and independent
 
 ## Management scope
 
-- Technology strategy and architecture
+- Technology strategy, operating-model design and digital transformation
 - Direct team leadership plus indirect functional coordination across 100+ institutional IT specialists
 - Organizational design: specialized roles, explicit ownership and backup coverage
 - Hiring, onboarding, mentoring and team development
-- IT operations and service management
-- Budget ownership, procurement planning, centralized quota coordination, vendor and contractor management
+- Cost optimization, technology lifecycle and budget-conscious modernization
+- Procurement strategy, including 223-FZ procedures and total-cost decision-making
+- IT operations, service management, observability and business continuity
+- Information security, personal-data protection, role-based access and technology governance
+- Executive stakeholder representation and cross-organizational technology adoption
 - Delivery, prioritisation and cross-organizational change management
-- Business-process analysis and automation
-- CRM / ERP implementation and adoption
-- Information security, continuity, privileged-access recovery and access governance
+- Business-process analysis, automation and CRM / ERP implementation
 
 ## Technical scope
 
