@@ -73,7 +73,7 @@ Typical problems I am brought into:
 - **[RSLive / «Инструкция по Сербии»](./portfolio/rslive/README.md)** — maintained evidence-oriented knowledge system with a separate content source of truth, semantic indexing, editorial governance, and automated publishing. [Live](https://rslive.ru/) · [Source](https://github.com/Antiokh/rslive_content)
 - **[humanizer_russian](./portfolio/humanizer_russian/README.md)** — source-aware Russian editorial engine with deterministic linting, provenance, conflict handling, CI integration, and controlled model evaluation. [Source](https://github.com/Antiokh/humanizer_russian)
 - **[Supabase Project Starter](./portfolio/supabase_project_starter/README.md)** — reusable Supabase engineering baseline for human and AI-agent delivery, with source-of-truth boundaries, shared helpers, SQL patterns, and deployment-aware rules. [Source](https://github.com/Antiokh/supabase-project-starter)
-- **[WeWeb Component Starter](./portfolio/ww_component_starter/README.md)** — reusable Vue/WeWeb component engineering kit covering schema/runtime/editor contracts, platform APIs, and advanced component patterns. [Source](https://github.com/Antiokh/ww_component_starter)
+- **[WeWeb Component Starter](./portfolio/ww_component_starter/README.md)** — reusable Vue/WeWeb component engineering kit covering schema/runtime/editor contracts, platform APIs, and advanced component patterns. [Source](https://github.com/Antiokh/ww-component-starter)
 - **[tgs.py](./portfolio/tgs.py/README.md)** — Telegram operations toolkit with structured exports, automation scaffolding, packaging, licensing, and an early desktop GUI. [Source](https://github.com/Antiokh/tgs.py)
 
 ## Management scope
