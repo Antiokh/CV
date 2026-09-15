@@ -1,19 +1,98 @@
-# Service Agreement Review Branch
+# Anton Nazarov — CTO / Technology Director
 
-> **Review-only / non-mergeable branch.** This branch is maintained solely for client review and discussion of the service agreement. It is intentionally isolated from the repository's normal history and must not be merged into `main`. The associated pull request is kept in Draft state to prevent accidental merging.
+**Career evidence, management cases, technical depth, and selected systems**  
+Belgrade, Serbia
 
-## Service Agreement
+I help organisations make technology economically useful: increase revenue, reduce operating cost, remove critical dependency on individual employees and vendors, and give management clear control over systems, workload, spend, and risk.
 
-**[View in Markdown Drive](https://markdown-drive.pages.dev/?file=https%3A%2F%2Fraw.githubusercontent.com%2FAntiokh%2FCV%2Freview%2Fservice-agreement-template%2Fcontracts%2Fservice-agreement.md)** · **[DOCX](https://markdown-drive.pages.dev/?file=https%3A%2F%2Fraw.githubusercontent.com%2FAntiokh%2FCV%2Freview%2Fservice-agreement-template%2Fcontracts%2Fservice-agreement.md&export=docx)** · **[PDF](https://markdown-drive.pages.dev/?file=https%3A%2F%2Fraw.githubusercontent.com%2FAntiokh%2FCV%2Freview%2Fservice-agreement-template%2Fcontracts%2Fservice-agreement.md&export=pdf)** · [Markdown](./contracts/service-agreement.md)
+My background combines 18+ years across founder-led businesses, banking, enterprise IT, and public-sector systems. I take responsibility not only for architecture, but for the operating consequences of technical decisions: ownership, adoption, continuity, cost, delivery, and maintainability.
 
-The agreement is the client-facing contractual document intended for review, negotiation and project-specific completion through its SOW fields. Its principal subject is web-portal maintenance, configuration, administration, integration, support and optimization; implementation and development remain permitted technical methods where required by an SOW.
+This repository is the evidence layer behind that positioning — resumes, career history, management cases, technical proof, and project case studies.
 
-## Review notes
+## Primary CTO CV
 
-- **[AI clause-by-clause review guide](./contracts/service-agreement-ai-review-guide.md)** — companion for GPT, Claude, lawyers and procurement reviewers explaining every operative clause and SOW/Change Order field: the risk it addresses, the drafting intent, the project-completion benefit, the counterbalance and the failure mode that should remain controlled if the wording is negotiated.
-- [General service-agreement rationale](./contracts/service-agreement-rationale.md) — practical/commercial reasons for the broader template changes and the project experience behind them.
-- [Serbian-law review notes](./contracts/service-agreement-serbian-law-review.md) — September 2026 review of the principal subject, acceptance, IP, liability, default interest, independence wording, warranty boundary and convenience termination.
+**[Read the Markdown CV](./RESUME_FRACTIONAL_CTO.md)** · **[DOCX](https://markdown-drive.pages.dev/?file=https%3A%2F%2Fraw.githubusercontent.com%2FAntiokh%2FCV%2Fmain%2FRESUME_FRACTIONAL_CTO.md&export=docx)** · **[PDF](https://markdown-drive.pages.dev/?file=https%3A%2F%2Fraw.githubusercontent.com%2FAntiokh%2FCV%2Fmain%2FRESUME_FRACTIONAL_CTO.md&export=pdf)** · [LinkedIn](https://www.linkedin.com/in/nazarovanton/)
 
-The AI guide is explanatory only and is not part of the Agreement. It expressly instructs automated reviewers to keep identifying genuine legal or client-specific problems rather than mechanically defending the draft; its purpose is to prevent isolated clauses from being reviewed without the project-control mechanism they belong to.
+General entry points: [Short Resume](./RESUME.md) · [Portfolio Index](./portfolio/README.md) · [Detailed Experience](./details/anton_nazarov_experience_full.md)
 
-The Serbian-law pass has been incorporated into the current draft. Client-specific VAT/tax, DPA/data-transfer, mandatory-jurisdiction and regulated-industry requirements still belong in the applicable SOW or execution review.
+## Selected business results
+
+- Helped a service business achieve approximately **10× revenue growth in about three months** after redesigning customer intake, operations, and product presentation; growth was organic, without paid advertising. [Case study](./portfolio/dobri_visarun/README.md)
+- Reduced routine client-service work from **hours to minutes** through internal systems, integrations, and automation. [Case study](./portfolio/dobri_visarun/README.md)
+- As part of the management team at ZIL, contributed to the anti-crisis turnaround that brought the organisation out of approximately **RUB 30m in accumulated debt**; within IT, focused spending on operational value and replaced unmanaged support with measurable service operations. [Detailed experience](./details/anton_nazarov_experience_full.md)
+- Extended the useful life of approximately **150 workstations** through targeted upgrades and licensing cleanup, and reconciled **800+ accounting and physical asset records**, enabling formal write-off of approximately **100 missing or unusable assets**. [Detailed experience](./details/anton_nazarov_experience_full.md)
+- Moved **100+ employees** to secure remote work during COVID without interrupting operations. [Detailed experience](./details/anton_nazarov_experience_full.md)
+- Coordinated technology requirements and delivery with **100+ IT specialists across 100+ cultural institutions** without direct line authority. [Primary CTO CV](./RESUME_FRACTIONAL_CTO.md)
+- Replaced a **5-hour, single-user reporting export** in a city-scale information system with web-based generation typically completing in **1.5 seconds to 1.5 minutes** and available to authorised users across institutions. [AIS MosRazvitie](./portfolio/ais_mosrazvitie/README.md)
+- Consolidated field operations and client workflows while migrating approximately **70,000 historical documents** into a structured backend. [Exit Lead](./portfolio/exit_lead/README.md)
+- Built an IT operating model at ZIL that remained stable after my departure and through subsequent leadership changes. [Detailed experience](./details/anton_nazarov_experience_full.md)
+
+## Executive value
+
+My recurring pattern is **Transparency → Efficiency → Growth**.
+
+First, make the technology operating model visible: who owns what, where work is stuck, what systems and vendors matter, what they cost, and where the risks are. Then stabilise the critical function. After that, decide what should be automated, integrated, replaced, built, or scaled.
+
+Typical problems I am brought into:
+
+- delivery slows while technology cost rises;
+- IT becomes a black box and management cannot connect spend to value;
+- responsibilities are unclear across employees, teams, contractors, and vendors;
+- critical processes depend on spreadsheets, chats, manual handoffs, or individual memory;
+- key systems depend on one employee, contractor, or platform;
+- CRM/ERP exists, but people continue to work outside it;
+- management lacks visibility into workload, bottlenecks, service quality, risk, or the real cost of change;
+- a working legacy environment needs modernisation without operational breakage.
+
+## Evidence map
+
+| Question | Evidence |
+| --- | --- |
+| Can he run technology as a business function? | [Management experience cases](./GPT/MANAGEMENT_EXPERIENCE_CASES.md) · [Executive positioning](./GPT/EXECUTIVE_POSITIONING.md) · [Detailed experience](./details/anton_nazarov_experience_full.md) |
+| Can he lead through both direct authority and a cross-organisational matrix? | [Primary CTO CV](./RESUME_FRACTIONAL_CTO.md) · [Detailed experience](./details/anton_nazarov_experience_full.md) |
+| Can he design teams and reduce key-person dependency? | [Primary CTO CV](./RESUME_FRACTIONAL_CTO.md) · [Management experience cases](./GPT/MANAGEMENT_EXPERIENCE_CASES.md) |
+| Can he turn operational chaos into governed systems? | [Management translation layer](./GPT/MANAGEMENT_TRANSLATION_LAYER.md) · [Portfolio](./portfolio/README.md) |
+| Can he operate across executives, users, technical teams, and institutions? | [Detailed experience](./details/anton_nazarov_experience_full.md) · [AIS MosRazvitie](./portfolio/ais_mosrazvitie/README.md) |
+| Can he remain technically credible and hands-on? | [Technical delivery positioning](./GPT/TECHNICAL_DELIVERY_POSITIONING.md) · [Portfolio](./portfolio/README.md) |
+| Can he use AI without turning engineering into uncontrolled prompt-and-pray delivery? | [AI-native delivery](./GPT/AI_NATIVE_DELIVERY.md) · [PromptlessPress](./portfolio/promptlesspress/README.md) |
+| Is there proof beyond employment history? | [Public engineering projects](#public-engineering-projects) · [Portfolio index](./portfolio/README.md) |
+
+## Selected systems
+
+### Business and operational systems
+
+- **[Dobri Visarun](./portfolio/dobri_visarun/README.md)** — service-business automation and restructuring associated with approximately 10× organic revenue growth and routine handling reduced from hours to minutes.
+- **[AIS MosRazvitie](./portfolio/ais_mosrazvitie/README.md)** — industry-level information system across 100+ institutions, combining reporting, analytics, governance, integrations, and user adoption.
+- **[Exit Lead](./portfolio/exit_lead/README.md)** — field operations, client workflows, automated reporting, and migration of approximately 70,000 historical documents.
+- **[Andronyevskaya ERP](./portfolio/andronyevskaya_erp/README.md)** — self-hosted operational system with role-based workflows, Telegram Mini App access, QR-linked assets, real-time tasks, and automation.
+- **[PromptlessPress](./portfolio/promptlesspress/README.md)** — AI-assisted generation system with reproducible execution flows, structured prompts, debug tooling, and engineering guardrails.
+
+### Public engineering projects
+
+- **[Markdown Drive](https://markdown-drive.pages.dev/)** — WYSIWYG Markdown tool for Google Drive, HTTPS sources, and local files with shared theming plus client-side PDF and semantic DOCX export. Built from concept to production in approximately **one week** and published in the **Google Workspace Marketplace**, demonstrating fast product delivery through architecture, UX, OAuth/Drive integration, document rendering, export pipelines, testing, and deployment. [Live](https://markdown-drive.pages.dev/)
+- **[RSLive / «Инструкция по Сербии»](./portfolio/rslive/README.md)** — maintained evidence-oriented knowledge system with a separate content source of truth, semantic indexing, editorial governance, and automated publishing. [Live](https://rslive.ru/) · [Source](https://github.com/Antiokh/rslive_content)
+- **[humanizer_russian](./portfolio/humanizer_russian/README.md)** — source-aware Russian editorial engine with deterministic linting, provenance, conflict handling, CI integration, and controlled model evaluation. [Source](https://github.com/Antiokh/humanizer_russian)
+- **[Supabase Project Starter](./portfolio/supabase_project_starter/README.md)** — reusable Supabase engineering baseline for human and AI-agent delivery, with source-of-truth boundaries, shared helpers, SQL patterns, and deployment-aware rules. [Source](https://github.com/Antiokh/supabase-project-starter)
+- **[WeWeb Component Starter](./portfolio/ww_component_starter/README.md)** — reusable Vue/WeWeb component engineering kit covering schema/runtime/editor contracts, platform APIs, and advanced component patterns. [Source](https://github.com/Antiokh/ww_component_starter)
+- **[tgs.py](./portfolio/tgs.py/README.md)** — Telegram operations toolkit with structured exports, automation scaffolding, packaging, licensing, and an early desktop GUI. [Source](https://github.com/Antiokh/tgs.py)
+
+## Management scope
+
+Direct leadership of specialised IT teams plus indirect functional coordination across **100+ IT specialists / 100+ institutions** · organisational design with specialised roles, explicit ownership, and adjacent backup coverage · technology strategy and architecture · IT operations and service management · hiring, onboarding, mentoring, and team development · budget, procurement, vendor, and contractor management · delivery and cross-organisational prioritisation · business-process analysis and automation · ERP/CRM implementation and adoption · information security, continuity, privileged-access recovery, and access governance.
+
+## Technical depth
+
+`PostgreSQL` `Supabase` `SQL` `REST APIs` `JavaScript` `TypeScript` `Python` `Node.js` `Docker` `Linux` `NGINX` `Git/GitHub` `n8n` `Make` `OpenAI API` `WeWeb` `Xano` `Active Directory` `GLPI` `VMware`
+
+The stack is supporting evidence, not the positioning. The recurring responsibility is deciding what the business should own, automate, integrate, modernise, or stop paying for — and carrying those decisions through implementation and adoption.
+
+## Deeper evidence
+
+- [Management Experience Cases](./GPT/MANAGEMENT_EXPERIENCE_CASES.md)
+- [Executive Positioning](./GPT/EXECUTIVE_POSITIONING.md)
+- [Management Translation Layer](./GPT/MANAGEMENT_TRANSLATION_LAYER.md)
+- [Technical Delivery Positioning](./GPT/TECHNICAL_DELIVERY_POSITIONING.md)
+- [AI-Native Delivery](./GPT/AI_NATIVE_DELIVERY.md)
+- [Detailed Experience](./details/anton_nazarov_experience_full.md)
+- [Recommendations Dataset](./data/anton_nazarov_recommendations.json)
+- [Portfolio Index](./portfolio/README.md)
