@@ -29,7 +29,7 @@ My background combines current hands-on work with OpenAI APIs, agentic workflows
 ## Professional Experience
 
 ### NeedleBit, Serbia
-**Founder / CTO / AI Product & Systems Lead**  
+**Founder / CTO / Systems Architect / Project Manager**  
 Nov 2022 - Present
 
 - Design and deliver AI-enabled products and automation-heavy systems using OpenAI APIs, structured prompt pipelines, agentic workflows, Supabase/PostgreSQL, Edge Functions, n8n, Make, REST APIs and modern web interfaces.
