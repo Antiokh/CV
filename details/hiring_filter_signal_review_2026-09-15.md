@@ -4,24 +4,25 @@ Purpose: distinguish strong career evidence from the signals that are actually u
 
 ## Core observation
 
-A strong outcome and a hard hiring filter are not the same thing.
+A strong outcome and a hard hiring filter are not the same thing. Management scale also needs to be parsed correctly: **team / organization size is not the same as direct-report count**.
 
 Examples:
 
-- `~10x revenue growth` is a strong business result, but it does not satisfy a vacancy that explicitly requires management of 20+ direct reports or management of Engineering Managers.
+- `~10x revenue growth` is a strong business result, but it does not satisfy a vacancy that explicitly requires a particular management layer, manager-of-managers experience, or ownership of a larger engineering organization.
 - `100+ IT specialists across 100+ institutions` is strong cross-organizational leadership evidence, but it must not be presented as 100+ line reports.
+- A vacancy saying `lead 20`, `lead 35+`, `70+ engineers` or `127-person engineering organization` normally describes **total organizational scope unless the wording explicitly says direct reports**. At Head / Director level, large organizations are normally managed through leads and managers.
 - `200–300 report runs/day` is useful adoption/throughput context for MosRazvitie, but it is not credible high-load evidence and should not be used to answer production-scale distributed-systems requirements.
 
 ## Engineering Manager / Head / Director filters seen repeatedly in the tracker
 
-Current vacancy examples repeatedly make people-management scale explicit:
+Current vacancy examples repeatedly make management scope explicit, but the scope is not always direct-report count:
 
-- Tide Engineering Manager: 8–12 engineers.
-- DataHub Engineering Manager, Ingestion: 10–11 engineers.
+- Tide Engineering Manager: team of 8–12 engineers.
+- DataHub Engineering Manager, Ingestion: team of 10–11 engineers.
 - Kanpla Engineering Manager: about 10 engineers.
-- JustMarkets Head of Corporate IT: distributed IT Administration / Help Desk organization of 20+.
+- JustMarkets Head of Corporate IT: distributed IT Administration / Help Desk organization of 20+; this is organizational scope, not evidence that 20+ report directly to one person.
 - Maze Engineering Director: scale an engineering organization from roughly 20 toward 35+ engineers / technical leads.
-- Made of Storm Head of Frontend Engineering: roughly 70+ frontend engineers through Team Leads.
+- Made of Storm Head of Frontend Engineering: roughly 70+ frontend engineers **through Team Leads**.
 - Greencastle Head of Engineering Delivery: delivery ownership across a 127-person engineering organization.
 - Xapo Head of Engineering: engineering leadership across three product tribes; explicit manager-of-managers evidence is a screening issue.
 - Paymentology Director of Engineering: lead Engineering Managers and multiple teams.
@@ -29,12 +30,13 @@ Current vacancy examples repeatedly make people-management scale explicit:
 
 The recurring first-screen signals are therefore:
 
-1. **Direct-report count and org shape.** How many people reported directly, how many teams, whether there were Team Leads / Engineering Managers underneath.
-2. **People-management tenure.** Hiring, performance management, coaching, compensation/promotion decisions, difficult personnel decisions, team growth and retention.
-3. **Manager-of-managers experience** for Head/Director roles. Indirect coordination helps but does not replace this when the vacancy says it explicitly.
-4. **Delivery scope.** One team vs multiple teams / product tribes / function-level ownership.
-5. **Technical credibility appropriate to the role.** Some EM jobs are management-led; others explicitly require 20–70% coding, code review or current cloud-native depth.
-6. **Production-domain scale when explicitly required.** Distributed systems, high-volume payments, CDN/DNS, cloud/Kubernetes or specific backend scale can be a hard technical filter.
+1. **Management scope and org shape.** How large was the whole team/function, how many people reported directly, how many teams existed, and whether Team Leads / Engineering Managers sat underneath. These are separate numbers and must not be conflated.
+2. **Span of control.** For an ordinary people manager, a direct span materially above roughly one team is unusual and should not be inferred from total org size. A 20–70+ person scope at Head/Director level normally implies a hierarchy rather than 20–70 direct reports.
+3. **Manager-of-managers / hierarchy depth** for Head/Director roles. Indirect coordination helps but does not replace formal management of leads/managers when the vacancy explicitly asks for it.
+4. **People-management tenure.** Hiring, performance management, coaching, difficult personnel decisions, team growth, role design and retention.
+5. **Delivery scope.** One team vs multiple teams / product tribes / function-level ownership.
+6. **Technical credibility appropriate to the role.** Some EM jobs are management-led; others explicitly require 20–70% coding, code review or current cloud-native depth.
+7. **Production-domain scale when explicitly required.** Distributed systems, high-volume payments, CDN/DNS, cloud/Kubernetes or specific backend scale can be a hard technical filter.
 
 ### Anton's strongest truthful evidence against these filters
 
@@ -47,7 +49,9 @@ The recurring first-screen signals are therefore:
 
 ### Honest limitation
 
-The current evidence does **not** support claiming 20+, 40+, 70+ or 100+ direct reports, nor a conventional manager-of-managers hierarchy. For vacancies where those are mandatory, this remains a real first-screen risk and should be addressed honestly rather than blurred through the 100+ institutional coordination figure.
+The current evidence supports a **7-person verified direct span** and a much larger **100+ specialist functional-coordination scope**, but not a conventional large software-engineering hierarchy with several Engineering Managers / Team Leads reporting upward through Anton.
+
+That distinction matters more than raw headcount. A vacancy asking for ownership of a 20–70+ person organization may still be plausible if the real filter is function-level leadership, org design and management through leads. A vacancy explicitly requiring prior management of Engineering Managers, several team leads, or a comparable formal reporting hierarchy remains a genuine first-screen risk.
 
 ## CTO / Head of Engineering signals
 
@@ -64,7 +68,7 @@ Across current Head/Director vacancies, the strongest recurring signals are:
 - budget / vendor / build-buy judgment where the role is broader than pure product engineering;
 - sometimes current hands-on coding or review depth.
 
-Anton has stronger evidence in **operating-model design, technology economics, architecture, vendor/build-buy judgment, cross-functional transformation and business continuity** than in large conventional software-engineering org hierarchy.
+Anton has stronger evidence in **operating-model design, technology economics, architecture, vendor/build-buy judgment, cross-functional transformation and business continuity** than in a conventional multi-layer software-engineering reporting hierarchy.
 
 High-value CTO evidence to prefer over low-level implementation detail:
 
@@ -81,7 +85,7 @@ High-value CTO evidence to prefer over low-level implementation detail:
 
 Current corporate-IT leadership roles commonly emphasize:
 
-- direct team size / service-desk organization;
+- total IT organization / service-desk scope and reporting structure;
 - IAM / joiner-mover-leaver processes;
 - SLAs/KPIs and support/service management;
 - security, endpoint governance and compliance;
@@ -92,7 +96,7 @@ Current corporate-IT leadership roles commonly emphasize:
 - distributed workplace / EUC operations;
 - executive stakeholder management.
 
-Anton has direct evidence for nearly all of these except large direct-report count and a precisely documented large annual budget.
+Anton has direct evidence for nearly all of these. The main scale caveat is that the verified line-management span is 7, while broader scale came through cross-organizational functional coordination rather than a 20+ direct-report structure.
 
 Particularly useful evidence:
 
@@ -182,11 +186,17 @@ Anton's strongest architecture signals:
 
 ## Routing rule for future CVs
 
-When a vacancy contains an explicit scale gate, satisfy or expose the gate first. Do not try to compensate for a missing direct-team requirement with unrelated strong metrics.
+When a vacancy contains an explicit management-scale gate, parse the wording before deciding that Anton does or does not satisfy it:
+
+- `team of X`, `organization of X`, `responsible for X engineers` = normally **total scope**, not automatically direct reports;
+- `X direct reports`, `Engineering Managers report to you`, `manage managers / team leads` = explicit hierarchy evidence;
+- `lead multiple teams / tribes` = multi-team scope, but reporting structure must be checked rather than invented.
+
+Do not reject a vacancy simply because its total organization is larger than Anton's 7-person direct team. Conversely, do not use the 100+ functional-coordination figure to imply a reporting hierarchy that did not exist.
 
 Suggested evidence priority:
 
-1. explicit hard filter (direct reports, manager-of-managers, specific production domain, hands-on share);
+1. explicit hard filter as actually written: direct span, hierarchy depth, total org scope, specific production domain, hands-on share;
 2. business result;
 3. ownership / decision authority;
 4. scope and scale;
