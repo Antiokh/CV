@@ -54,8 +54,6 @@ Mar 2020 - Jun 2022
 
 Joined the management team during an anti-crisis period with three technology objectives: reduce operating cost through internal optimization and automation; make ZIL a more technologically progressive cultural venue; and support its repositioning as a modern, youth-oriented organization. I made rebuilding the IT function itself the first priority because broader digital transformation would not be credible while IT remained under-controlled or distrusted.
 
-An **August 2020 documented operational baseline** covered **145 employees, 156 workstations and 581 technology assets**; the wider environment included **7 servers and approximately 20 virtual machines** plus CCTV, telephony, access control, ticketing and internal business systems.
-
 - I audited the technology function and identified systemic risks across personal-data handling, information security, aging infrastructure, licensing, service operations, staff digital competence, regulatory requirements, ticketing and refund processes, and integration between HR, financial and ticketing systems.
 - I built a lean functional team of **5 IT staff and 2 installation engineers**, with explicit specialist ownership and limited overlap so critical functions had backup coverage without unnecessary payroll duplication.
 - I chose lifecycle extension and licensing optimization over blanket replacement where the economics supported it; my team executed the modernization program, avoiding approximately **RUB 22m** in workstation replacement and licensing costs.
