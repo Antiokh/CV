@@ -4,7 +4,7 @@
 
 ## Service Agreement
 
-**[View in Markdown Drive](https://markdown-drive.pages.dev/?file=https%3A%2F%2Fraw.githubusercontent.com%2FAntiokh%2FCV%2Freview%2Fservice-agreement-template%2Fcontracts%2Fservice-agreement.md)** · **[DOCX](https://markdown-drive.pages.dev/?file=https%3A%2F%2Fraw.githubusercontent.com%2FAntiokh%2FCV%2Freview%2Fservice-agreement-template%2Fcontracts%2Fservice-agreement.md&export=docx)** · **[PDF](https://markdown-drive.pages.dev/?file=https%3A%2F%2Fraw.githubusercontent.com%2FAntiokh%2FCV%2Freview%2Fservice-agreement-template%2Fcontracts%2Fservice-agreement.md&export=pdf)** · [Markdown](./contracts/service-agreement.md)
+**[View in Markdown Drive](https://markdown-drive.pages.dev/?file=https%3A%2F%2Fraw.githubusercontent.com%2FAntiokh%2FCV%2Fservice-agreement-template%2Fcontracts%2Fservice-agreement.md)** · **[DOCX](https://markdown-drive.pages.dev/?file=https%3A%2F%2Fraw.githubusercontent.com%2FAntiokh%2FCV%2Fservice-agreement-template%2Fcontracts%2Fservice-agreement.md&export=docx)** · **[PDF](https://markdown-drive.pages.dev/?file=https%3A%2F%2Fraw.githubusercontent.com%2FAntiokh%2FCV%2Fservice-agreement-template%2Fcontracts%2Fservice-agreement.md&export=pdf)** · [Markdown](./contracts/service-agreement.md)
 
 The agreement is the client-facing contractual document intended for review, negotiation and project-specific completion through its SOW fields. Its principal subject is web-portal maintenance, configuration, administration, integration, support and optimization; implementation and development remain permitted technical methods where required by an SOW.
 
