@@ -98,7 +98,7 @@ Jan 2013 - Sep 2015
 **AI / LLM:** OpenAI API, prompt systems, agentic workflows, context engineering, structured evaluation and guardrails, fal.ai  
 **Automation:** n8n, Make, webhooks, scheduled jobs, workflow automation, Telegram integrations  
 **Architecture & Data:** PostgreSQL, Supabase, SQL, RLS, Edge Functions, REST APIs, data modeling, migration, document processing  
-**Engineering:** JavaScript/TypeScript, Python, Node.js, Git/GigHub, Docker, Linux, NGINX  
+**Engineering:** JavaScript/TypeScript, Python, Node.js, Git/GitHub, Docker, Linux, NGINX  
 **Transformation:** process discovery, business-case framing, implementation, adoption, training, governance, stakeholder alignment
 
 ## Education & Credentials
