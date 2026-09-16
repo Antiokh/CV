@@ -129,3 +129,9 @@ Humanities Institute, Moscow, 2019
 
 **Accounting and Finance background**  
 Commercial Banking College No. 6, Moscow, 2006-2008
+
+## Selected Management & Commercial Training
+
+- IT Management — Specialist Training Center, 2018
+- Negotiation and pressure management — Igor Ryzov Academy, 2020–2021
+- Event management, promotion & SMM — KudaGo Lectures / Ekaterina Pavlova Concert Agency / Andrey Zakharyan, 2016–2017
