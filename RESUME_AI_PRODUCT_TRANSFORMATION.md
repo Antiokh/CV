@@ -98,7 +98,7 @@ Jan 2013 - Sep 2015
 **AI / LLM:** OpenAI API, prompt systems, agentic workflows, context engineering, structured evaluation and guardrails, fal.ai  
 **Automation:** n8n, Make, webhooks, scheduled jobs, workflow automation, Telegram integrations  
 **Architecture & Data:** PostgreSQL, Supabase, SQL, RLS, Edge Functions, REST APIs, data modeling, migration, document processing  
-**Engineering:** JavaScript/TypeScript, Python, Node.js, Git/GitHub, Docker, Linux, NGINX  
+**Engineering:** JavaScript/TypeScript, Python, Node.js, Git/GigHub, Docker, Linux, NGINX  
 **Transformation:** process discovery, business-case framing, implementation, adoption, training, governance, stakeholder alignment
 
 ## Education & Credentials
@@ -110,3 +110,9 @@ National Institute of Business, Moscow, 2019
 Humanities Institute, Moscow, 2019
 
 **n8n Certification** — 2026
+
+## Selected Management & Commercial Training
+
+- IT Management — Specialist Training Center, 2018
+- Negotiation and pressure management — Igor Ryzov Academy, 2020–2021
+- Event management, promotion & SMM — KudaGo Lectures / Ekaterina Pavlova Concert Agency / Andrey Zakharyan, 2016–2017
