@@ -1,3 +1,10 @@
+# Legacy MosRazvitie formulation note
+
+> **Canonical factual source:** `sources/employers/directorate_cultural_centers_moscow.md`  
+> This file is retained because it preserves an earlier ChatGPT wording / positioning discussion. It is **not** the preferred source of facts and must not override the employer dossier. Use it only as historical phrasing context.
+
+---
+
 Да, это принципиальная разница. Тогда формулировка должна быть не **Participated**, а **Led / Owned / Designed / Architected / Managed end-to-end**.
 
 Нормальная версия:

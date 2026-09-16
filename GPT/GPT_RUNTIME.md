@@ -83,6 +83,16 @@ Tailored CV artifact and tracker-presentation semantics come from `cv-markdown-v
 
 Use `Antiokh/CV` as the primary evidence repository in CV mode. Load only task-relevant evidence.
 
+### Employer evidence routing
+
+For factual employment evidence, use `sources/employers/README.md` as the source router and load the relevant `sources/employers/<employer>.md` dossier before opening loose debrief/raw files.
+
+The employer dossier is the canonical **working factual layer** for that employer. Dated `cross_role_*`, `zil_*_debrief`, raw voice notes, historical CVs and similar files are retained as provenance/audit material. Open them only when verifying a detail, resolving a conflict, recovering a fact not yet consolidated, or incorporating new first-person evidence.
+
+Project-specific `portfolio/` evidence may supplement the employer dossier when technical/project depth is needed. If a new recollection changes an employer fact, reconcile the employer dossier first; only then update `ANTON_EVIDENCE_MATRIX.md`, role profiles or CVs.
+
+A richer or longer dossier does not imply stronger role fit. Documentation density must never substitute for vacancy-specific signal strength.
+
 All substantive application positioning must follow `GPT/work-application-manager/references/application-positioning-v1.md`.
 
 Before selecting CV bullets, also apply the expectation/evidence routing layer:
@@ -91,9 +101,10 @@ Before selecting CV bullets, also apply the expectation/evidence routing layer:
 2. mark each expectation `MUST`, `STRONG`, or `OPTIONAL`, and identify real hard filters;
 3. parse management scale explicitly into direct span, total org scope, hierarchy depth, number of teams/functions and functional coordination without line authority;
 4. map each material expectation to the strongest Anton proof in `ANTON_EVIDENCE_MATRIX.md`, with an evidence-strength score and any caveat/gap;
-5. use `ROLE_SIGNAL_PROFILES.md` to choose the closest CV shell and default evidence order, but let the concrete vacancy override role-family priors;
-6. keep **role Fit** separate from **CV evidence coverage**. High real Fit with invisible proof is a document failure and must be corrected;
-7. before finalizing, ensure every MUST expectation is either visibly proved in the CV or explicitly retained as an internal gap.
+5. verify the selected proof against the relevant canonical employer dossier / project evidence rather than relying on an older CV formulation;
+6. use `ROLE_SIGNAL_PROFILES.md` to choose the closest CV shell and default evidence order, but let the concrete vacancy override role-family priors;
+7. keep **role Fit** separate from **CV evidence coverage**. High real Fit with invisible proof is a document failure and must be corrected;
+8. before finalizing, ensure every MUST expectation is either visibly proved in the CV or explicitly retained as an internal gap.
 
 Core positioning sequence:
 
@@ -112,13 +123,14 @@ For managerial/executive roles also prefer:
 - `GPT/EXECUTIVE_POSITIONING.md`
 - `GPT/MANAGEMENT_EXPERIENCE_CASES.md`
 - `GPT/MANAGEMENT_TRANSLATION_LAYER.md`
-- deeper factual experience sources as needed.
+- relevant canonical employer dossiers from `sources/employers/`
+- deeper raw factual sources only when the employer dossier does not resolve the question.
 
 For technical/specialist roles prefer:
 
 - `GPT/TECHNICAL_DELIVERY_POSITIONING.md`
 - `GPT/AI_NATIVE_DELIVERY.md`
-- relevant canonical experience/project evidence.
+- relevant canonical employer dossier plus project evidence.
 
 For tailored CVs also load `GPT/CV_EVIDENCE_FIRST_RULES.md` when present and apply `GPT/RESUME_ADAPTATION_WORKFLOW.md` as a writing/QA workflow only. Operational storage remains delegated to the modular work-application-manager contracts.
 
@@ -134,9 +146,10 @@ When a cover letter is created:
 
 1. apply `application-positioning-v1.md` first;
 2. build the expectation map and select proof through `EXPECTATION_TAXONOMY.md`, `ANTON_EVIDENCE_MATRIX.md`, and `ROLE_SIGNAL_PROFILES.md`;
-3. apply `role-entry-strategy-v1.md` to select the evidence sequence most likely to survive the role's first filters;
-4. apply `cover-letter-evidence-first.md` for cover-specific structure/QA;
-5. use the language-specific cached humanizer under `WorkApplications/_skills/` as required by `work-application-manager/SKILL.md`.
+3. verify the selected proof against the relevant employer dossier / project evidence;
+4. apply `role-entry-strategy-v1.md` to select the evidence sequence most likely to survive the role's first filters;
+5. apply `cover-letter-evidence-first.md` for cover-specific structure/QA;
+6. use the language-specific cached humanizer under `WorkApplications/_skills/` as required by `work-application-manager/SKILL.md`.
 
 A cover letter is a compact hiring-problem -> verified-proof argument, not a biography, requirement dump, or company-praise essay.
 
@@ -151,14 +164,15 @@ If repository material conflicts:
 1. explicit current user instruction wins;
 2. `application-positioning-v1.md` wins for candidate-side application content strategy and employer-pain/proof framing;
 3. `EXPECTATION_TAXONOMY.md` wins for expectation/filter definitions and management-scale parsing;
-4. `ANTON_EVIDENCE_MATRIX.md` wins for routing among already-supported Anton proof blocks, but never overrides the underlying factual source if they conflict;
-5. `ROLE_SIGNAL_PROFILES.md` wins for generic role-family signal ordering/shell routing, while a concrete vacancy overrides its priors;
-6. `role-entry-strategy-v1.md` wins for interview-derived role targeting, cold-entry probability and application-effort priority, without changing Fit truthfulness;
-7. live Agent Instructions + `tracker-storage-v5.md` win for vacancy storage/lifecycle mechanics;
-8. `salary-normalization-v6.md` wins for salary research/storage/completion;
-9. `cv-markdown-v2.md` wins for CV source-write, Queue presentation and DOCX/PDF derivative handling;
-10. `activity-log.md` wins for process-history semantics;
-11. MODE_ROUTER + selected mode skill win over generic/archival docs;
-12. stop before destructive actions if precedence remains genuinely unresolved.
+4. the relevant `sources/employers/<employer>.md` dossier wins as the consolidated working factual source for that employer unless a stronger underlying documentary source clearly contradicts it;
+5. `ANTON_EVIDENCE_MATRIX.md` wins for routing among already-supported Anton proof blocks, but never overrides the employer dossier / underlying factual source if they conflict;
+6. `ROLE_SIGNAL_PROFILES.md` wins for generic role-family signal ordering/shell routing, while a concrete vacancy overrides its priors;
+7. `role-entry-strategy-v1.md` wins for interview-derived role targeting, cold-entry probability and application-effort priority, without changing Fit truthfulness;
+8. live Agent Instructions + `tracker-storage-v5.md` win for vacancy storage/lifecycle mechanics;
+9. `salary-normalization-v6.md` wins for salary research/storage/completion;
+10. `cv-markdown-v2.md` wins for CV source-write, Queue presentation and DOCX/PDF derivative handling;
+11. `activity-log.md` wins for process-history semantics;
+12. MODE_ROUTER + selected mode skill win over generic/archival docs;
+13. stop before destructive actions if precedence remains genuinely unresolved.
 
 RUNTIME_END
