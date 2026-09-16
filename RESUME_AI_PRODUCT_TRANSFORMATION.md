@@ -110,3 +110,9 @@ National Institute of Business, Moscow, 2019
 Humanities Institute, Moscow, 2019
 
 **n8n Certification** — 2026
+
+## Selected Management & Commercial Training
+
+- IT Management — Specialist Training Center, 2018
+- Negotiation and pressure management — Igor Ryzov Academy, 2020–2021
+- Event management, promotion & SMM — KudaGo Lectures / Ekaterina Pavlova Concert Agency / Andrey Zakharyan, 2016–2017
