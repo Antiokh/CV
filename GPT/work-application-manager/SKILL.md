@@ -158,7 +158,7 @@ For a newer Connections.csv, follow `references/linkedin-connections-import.md`;
 
 ## Tailored CV
 
-Canonical tailored CV authoring/storage follows `cv-markdown-v2.md`.
+Canonical vacancy CV authoring/storage follows the runtime-selected CV contract; on live v7 this is `cv-markdown-v3.md`, including baseline-vs-tailored state semantics.
 
 Content strategy must also follow:
 
@@ -224,7 +224,7 @@ Do not default to generic motivation, biography, or company praise merely becaus
 
 Creating a CV/artifact is not application-submission evidence.
 
-- Agent vacancy Stage writes are governed by `tracker-storage-v5.md` and stay within Queue persistent stages.
+- Agent vacancy Stage writes are governed by the runtime-selected tracker contract; on live v7 this is `tracker-storage-v6.md`, and writes stay within Queue persistent stages.
 - `Applied` requires Anton's report or explicit company/ATS evidence that this specific application was submitted.
 - `Assessment`, recruiter screen, interview, technical interview, final, offer and terminal states require direct evidence/user instruction.
 - Agents never emulate human UI routing through API.
@@ -254,7 +254,7 @@ Do not call a vacancy/application pack complete until all applicable current gat
 - canonical Markdown artifacts/readbacks and required share permissions;
 - Queue `CV` contains the verified source URL or its derived `DOCX PDF` presentation;
 - salary-normalization-v6 completion state;
-- tracker readback / Queue Z where applicable;
+- tracker readback / Queue AB where applicable on live v7;
 - cover-letter humanizer/readback where required;
 - DOCX/PDF export + visual QA only when that concrete derivative is actually required or requested.
 
