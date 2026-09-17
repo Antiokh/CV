@@ -1,20 +1,19 @@
 /**
  * WorkInterviews CV-column migration / maintenance v7.
  *
- * IMPORTANT: this file no longer renders Queue J through onOpen/onSelectionChange.
- * The steady-state contract is formula-only:
+ * Steady-state contract:
  *   J = CV MD canonical source URL
- *   K = CV DOCX derived from J with an independent row formula
- *   L = CV PDF derived from J with an independent row formula
+ *   K = CV DOCX, independent per-row formula derived from J
+ *   L = CV PDF, independent per-row formula derived from J
+ *
+ * K/L use HYPERLINK with a URL-encoded `file=` parameter and short visible
+ * titles (`DOCX` / `PDF`). They are formulas in every data row, not manual URLs
+ * and not spill/array results.
  *
  * `migrateWorkInterviewsCvColumnsV7()` is a ONE-TIME migration from the legacy
- * J=CV rich-text presentation layout. It recovers the Markdown source from old
- * `DOCX PDF` rich text where possible, inserts K:L, installs formulas, repairs
- * Jobs, then hands schema formatting/validation to workinterviews-sheet-schema.gs.
- *
- * `repairCvDerivativeFormulas()` is safe to run again at any time. It rebuilds
- * every K/L data cell from J using ordinary per-row formulas (no ARRAYFORMULA,
- * VSTACK, MAP, spill ranges, rich-text mutation, or manual generated URLs).
+ * J=CV rich-text presentation layout.
+ * `repairCvDerivativeFormulas()` is safe to run repeatedly and reconstructs
+ * every K/L formula from J.
  */
 
 const WORKINTERVIEWS_CV_V7 = Object.freeze({
@@ -41,8 +40,7 @@ function migrateWorkInterviewsCvColumnsV7() {
     if (allLegacy) {
       const recovered = {};
       WORKINTERVIEWS_CV_V7.STORAGE_SHEETS.forEach(name => {
-        const sheet = ss.getSheetByName(name);
-        recovered[name] = recoverLegacyCvSources_(sheet);
+        recovered[name] = recoverLegacyCvSources_(ss.getSheetByName(name));
       });
 
       WORKINTERVIEWS_CV_V7.STORAGE_SHEETS.forEach(name => {
@@ -51,10 +49,12 @@ function migrateWorkInterviewsCvColumnsV7() {
         sheet.getRange('J1').setValue('CV MD');
         sheet.getRange('K1').setValue('CV DOCX');
         sheet.getRange('L1').setValue('CV PDF');
-        if (recovered[name].length) sheet.getRange(2, 10, recovered[name].length, 1).setValues(recovered[name].map(v => [v]));
+        if (recovered[name].length) {
+          sheet.getRange(2, 10, recovered[name].length, 1).setValues(recovered[name].map(v => [v]));
+        }
         sheet.setColumnWidth(10, 280);
-        sheet.setColumnWidth(11, 220);
-        sheet.setColumnWidth(12, 220);
+        sheet.setColumnWidth(11, 80);
+        sheet.setColumnWidth(12, 80);
       });
 
       const jobs = ss.getSheetByName('Jobs');
@@ -114,15 +114,16 @@ function repairCvDerivativeFormulas_Internal_(ss) {
       }
     }
 
-    sheet.setColumnWidth(11, 220);
-    sheet.setColumnWidth(12, 220);
+    sheet.setColumnWidth(11, 80);
+    sheet.setColumnWidth(12, 80);
   });
   SpreadsheetApp.flush();
 }
 
 function cvDerivativeRowFormula_(exportFormat) {
+  const label = String(exportFormat || '').toUpperCase();
   const url = `"https://markdown-drive.pages.dev/?file="&ENCODEURL(REGEXREPLACE(J2,"(?i)#markdown$",""))&"&export=${exportFormat}"`;
-  return `=IF(J2="","",IF(OR(REGEXMATCH(J2,"(?i)#markdown$"),REGEXMATCH(J2,"(?i)^https?://[^?#]+\\.md(?:[?#].*)?$"),REGEXMATCH(J2,"(?i)^https://docs\\.google\\.com/document/d/[^/?#]+/export\\?[^#]*format=txt")),HYPERLINK(${url},${url}),""))`;
+  return `=IF(J2="","",IF(OR(REGEXMATCH(J2,"(?i)#markdown$"),REGEXMATCH(J2,"(?i)^https?://[^?#]+\\.md(?:[?#].*)?$"),REGEXMATCH(J2,"(?i)^https://docs\\.google\\.com/document/d/[^/?#]+/export\\?[^#]*format=txt")),HYPERLINK(${url},"${label}"),""))`;
 }
 
 function repairJobsAggregateV7_(ss) {
@@ -215,8 +216,8 @@ function auditCvColumnMigrationV7_(ss) {
     if (sheet.getMaxRows() > 1) {
       const k2 = sheet.getRange('K2').getFormula();
       const l2 = sheet.getRange('L2').getFormula();
-      if (!/^=IF\(J2=/i.test(k2) || !/&export=docx/i.test(k2)) errors.push(`${name}!K2 per-row formula missing`);
-      if (!/^=IF\(J2=/i.test(l2) || !/&export=pdf/i.test(l2)) errors.push(`${name}!L2 per-row formula missing`);
+      if (!/^=IF\(J2=/i.test(k2) || !/&export=docx/i.test(k2) || !/"DOCX"/i.test(k2)) errors.push(`${name}!K2 titled per-row formula missing`);
+      if (!/^=IF\(J2=/i.test(l2) || !/&export=pdf/i.test(l2) || !/"PDF"/i.test(l2)) errors.push(`${name}!L2 titled per-row formula missing`);
       sourceRows += sheet.getRange(2, 10, sheet.getMaxRows() - 1, 1).getDisplayValues().reduce((n, r) => n + (String(r[0] || '').trim() ? 1 : 0), 0);
     }
     if (sheet.getMaxRows() > 2) {
@@ -232,5 +233,7 @@ function auditCvColumnMigrationV7_(ss) {
 }
 
 function assertCvV7Spreadsheet_(ss) {
-  if (!ss || ss.getId() !== WORKINTERVIEWS_CV_V7.SPREADSHEET_ID) throw new Error('CV v7 migration must run only in the canonical WorkInterviews spreadsheet.');
+  if (!ss || ss.getId() !== WORKINTERVIEWS_CV_V7.SPREADSHEET_ID) {
+    throw new Error('CV v7 migration must run only in the canonical WorkInterviews spreadsheet.');
+  }
 }
