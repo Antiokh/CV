@@ -39,7 +39,7 @@ Before selecting bullets, load and apply:
    - **Fit** — does Anton actually have credible experience for the work/problem?
    - **CV evidence coverage** — does the draft visibly prove the vacancy's important expectations?
    - **cold-entry probability** — how likely first filters are to recognize that fit, from `role-entry-strategy-v1.md`.
-9. Assign Fit % through the employment workflow. If fit is strictly above 60%, follow `work-application-manager/SKILL.md` for the automatic tailored-CV/application-pack behavior.
+9. Assign Fit % through the employment workflow. For a normal one-off vacancy with fit strictly above 60%, follow `work-application-manager/SKILL.md` for automatic tailored-CV/application-pack behavior. For broad scheduled discovery, the capture exception in `job-search-discovery.md` + `archetype-cv-routing-v1.md` applies: first create a vacancy-owned baseline role CV in `To review`, then run this adaptation workflow during Queue personalization before `CV ready`.
 10. Select evidence by relevance and first-screen value, not biography completeness, while preserving chronology.
 11. Draft in vacancy language and reuse employer vocabulary only where truthful.
 12. Run a first-screen coverage pass before polishing: every `MUST` expectation must either be visibly proved with the strongest available evidence or remain an explicit internal gap.
