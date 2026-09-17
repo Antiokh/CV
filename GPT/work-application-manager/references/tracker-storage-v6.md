@@ -110,6 +110,13 @@ On a new or repaired Queue row:
 
 Queue persistent stages: `To review`, `Reviewed`, `CV ready`.
 
+CV-state semantics:
+- `To review` may contain a verified vacancy-owned **baseline** CV copied from the Archetype-routed canonical role template.
+- `Reviewed` means review/enrichment has materially progressed; do not infer tailored-CV completion from this stage alone.
+- `CV ready` requires a genuinely **tailored** vacancy-specific CV plus the current salary/cover/integrity/content gates. A baseline template copy alone can never justify `CV ready`.
+
+Baseline routing is defined by `archetype-cv-routing-v1.md`.
+
 Active stages: `Referral`, `Applied`, `Recruiter screen`, `Assessment`, `Interview`, `Technical interview`, `Final`, `Offer`.
 
 Low fit stage: `Not a fit`.
