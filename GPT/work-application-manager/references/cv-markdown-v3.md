@@ -4,7 +4,14 @@ This contract supersedes `cv-markdown-v2.md` wherever tracker CV presentation/st
 
 ## Canonical artifact
 
-The canonical tailored CV artifact is Markdown stored in the vacancy/application folder. Markdown is the authored source of truth. DOCX/PDF are derivatives.
+The canonical vacancy CV artifact is Markdown stored in the vacancy/application folder. Markdown is the authored source of truth. DOCX/PDF are derivatives.
+
+A vacancy-owned Markdown CV has two valid workflow states:
+
+- **baseline** — a verbatim vacancy-owned copy of the canonical role CV selected by `archetype-cv-routing-v1.md`. This is valid for broad-capture `To review` rows and provides a usable fallback CV while enrichment is pending.
+- **tailored** — the vacancy-owned Markdown after vacancy-specific Pain Map / Expectation Map / evidence adaptation and content QA. This state is required for `CV ready`.
+
+Do not point many vacancies at one shared template artifact. Each ingested vacancy gets its own Markdown file in its application folder. Later personalization should update/replace that vacancy-owned artifact, not silently switch to another same-named vacancy CV.
 
 A tailored CV must use verified Anton evidence only. Vacancy wording may determine emphasis/order but cannot create facts, metrics, authority, team size, stack, dates or results.
 
@@ -94,7 +101,9 @@ DOCX/PDF files do not have to be separately persisted merely because K/L export 
 
 ## QA
 
-Before a CV row is treated as ready:
+For a newly captured `To review` row, baseline QA requires: correct Archetype route, vacancy-owned Markdown copy, verified source/file ID, public sharing, and functioning K/L formulas. Salary/Cover/personalization may still be pending.
+
+Before a row is treated as `CV ready`:
 
 1. the Markdown source exists and is the correct vacancy-tailored CV;
 2. J points to that exact source/file ID, not another same-named vacancy CV;
