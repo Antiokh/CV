@@ -95,6 +95,8 @@ function repairCvDerivativeFormulas_Internal_(ss) {
     const state = inspectCvV7SheetState_(sheet);
     if (state.state !== 'v7') throw new Error(`${name} is not on the v7 CV schema: ${JSON.stringify(state.headers)}`);
 
+    // Clear only the derived columns. This also removes accidental values that
+    // would block the array spill; J and all authored tracker data remain intact.
     if (sheet.getMaxRows() > 1) sheet.getRange(2, 11, sheet.getMaxRows() - 1, 2).clearContent().clearNote();
     sheet.getRange('K1').setFormula(cvDerivativeFormula_('DOCX', 'docx'));
     sheet.getRange('L1').setFormula(cvDerivativeFormula_('PDF', 'pdf'));
@@ -103,6 +105,7 @@ function repairCvDerivativeFormulas_Internal_(ss) {
 }
 
 function cvDerivativeFormula_(label, exportFormat) {
+  // #markdown is a type marker for opaque verified sources; do not pass it to the exporter.
   return `=VSTACK("CV ${label}",MAP(J2:J,LAMBDA(src,IF(src="","",LET(clean,REGEXREPLACE(src,"(?i)#markdown$",""),valid,OR(REGEXMATCH(src,"(?i)#markdown$"),REGEXMATCH(src,"(?i)^https?://[^?#]+\\.md(?:[?#].*)?$"),REGEXMATCH(src,"(?i)^https://docs\\.google\\.com/document/d/[^/?#]+/export\\?[^#]*format=txt")),IF(valid,HYPERLINK("https://markdown-drive.pages.dev/?file="&ENCODEURL(clean)&"&export=${exportFormat}","${label}"),""))))))`;
 }
 
@@ -117,7 +120,7 @@ function repairJobsAggregateV7_(ss) {
 
 function inspectCvV7SheetState_(sheet) {
   if (!sheet) return { name: '(missing)', state: 'missing', headers: [] };
-  const max = Math.max(34, sheet.getMaxColumns());
+  const max = sheet.getMaxColumns();
   const headers = sheet.getRange(1, 1, 1, max).getDisplayValues()[0];
   const h = i => String(headers[i - 1] || '').trim();
   const legacy = h(10) === 'CV' && h(11) === 'Cover' && h(12) === 'Vacancy file' && h(23) === 'Row ID';
@@ -135,6 +138,7 @@ function recoverLegacyCvSources_(sheet) {
   const result = [];
   for (let i = 0; i < displays.length; i += 1) {
     if (formulas[i][0]) {
+      // Legacy J should not be formula-owned, but preserve any visible URL rather than destroy data.
       result.push(String(displays[i][0] || '').trim());
       continue;
     }
@@ -145,6 +149,7 @@ function recoverLegacyCvSources_(sheet) {
 
 function recoverLegacyCvSourceCell_(display, richText) {
   if (!display && !richText) return '';
+
   const urls = [];
   if (richText) {
     const whole = richText.getLinkUrl();
@@ -155,10 +160,14 @@ function recoverLegacyCvSourceCell_(display, richText) {
       if (url && !urls.includes(url)) urls.push(url);
     });
   }
+
+  // Prefer a source recovered from a markdown-drive derivative link.
   for (const url of urls) {
     const recovered = sourceFromMarkdownDriveUrl_(url);
     if (recovered) return markOpaqueMarkdownSource_(recovered);
   }
+
+  // Raw canonical source may have been stored directly in legacy J.
   if (/^https?:\/\/\S+$/i.test(display)) return display;
   for (const url of urls) if (/^https?:\/\/\S+$/i.test(url)) return url;
   return display;
