@@ -16,6 +16,7 @@ Related canonical files:
 - `GPT/work-application-manager/references/role-entry-strategy-v1.md`
 - `GPT/CV_EVIDENCE_FIRST_RULES.md`
 - `GPT/RESUME_ADAPTATION_WORKFLOW.md`
+- `GPT/work-application-manager/references/archetype-cv-routing-v1.md` — fast broad-capture mapping from tracker Archetype to a baseline role CV; this file still owns the deeper vacancy-specific evidence order and final tailored shell.
 
 ## General routing rules
 
