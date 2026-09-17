@@ -61,7 +61,7 @@ User-facing filters cover A:X. Y and helper columns are outside the normal filte
 
 J/K/L deliberately separate source state from presentation:
 
-- `J / CV MD` stores the original canonical Markdown source URL and remains inspectable/debuggable.
+- `J / CV MD` stores the original verified Markdown source URL and remains inspectable/debuggable.
 - `K / CV DOCX` is an ordinary per-row Google Sheets formula derived from J through `markdown-drive` with `export=docx`.
 - `L / CV PDF` is the same with `export=pdf`.
 - Agents, API clients and lifecycle scripts never write K or L.
@@ -69,24 +69,28 @@ J/K/L deliberately separate source state from presentation:
 - Every physical storage sheet owns the same per-row K/L formulas. There are no CV spill/array formulas.
 - Lifecycle moves skip K:L. They copy A:J and M:Y; the destination rows already have local K/L formulas.
 
-Preferred canonical Drive source:
+Preferred canonical Drive source for newly created CVs:
 
 ```text
 https://drive.google.com/file/d/<FILE_ID>/view#markdown
 ```
 
-The underlying Drive object must be the intended public `text/markdown` CV file. A Drive URL with sharing query parameters is acceptable in J; the K/L formula extracts the Drive file ID and normalizes the source to `/view#markdown` before URL-encoding it.
+The preferred underlying object is a public `text/markdown` file. Legacy rows may also point to native Google Docs whose names are `.md` / `.markdown` and whose document bodies contain literal Markdown. Public `markdown-drive` URL launch supports those Google Docs-backed sources through Drive `files.export`.
 
-The `#markdown` fragment is part of the canonical source URL and is preserved. It becomes `%23markdown` inside the wrapper `file=` parameter.
+For both raw Drive files and legacy `docs.google.com/document/d/...` sources, K/L extract the same Drive file ID and construct the wrapper against:
+
+```text
+https://drive.google.com/file/d/<FILE_ID>/view#markdown
+```
+
+The `#markdown` fragment is part of the wrapper source URL and is preserved. It becomes `%23markdown` inside the encoded `file=` parameter.
 
 Other accepted sources are:
 
 1. public HTTP(S) URLs whose path explicitly ends in `.md`;
-2. verified non-Google HTTP(S) sources carrying the terminal `#markdown` marker.
+2. verified HTTP(S) sources carrying the terminal `#markdown` marker.
 
-Native Google Docs links (`docs.google.com/document/d/...`, including `/export?format=txt`) are not valid canonical `CV MD` sources for the current wrapper contract. K/L intentionally stay blank until J is repaired to a real Markdown source.
-
-Legacy non-Markdown links may remain in J for historical records, but they do not authorize a derivative link.
+Never replace a legacy Google Doc with a different raw Markdown file merely because the filename matches. Different vacancy-tailored CVs may share filenames; source file ID/content is authoritative.
 
 ## Agent write policy
 
@@ -96,7 +100,7 @@ On a new or repaired Queue row:
 
 - write vacancy/application data only to authored columns;
 - write the verified canonical Markdown CV source only to J;
-- for Drive-hosted CVs, prefer the real raw `text/markdown` Drive file URL, not a native Google Doc URL;
+- for new Drive-hosted CVs, prefer a real raw `text/markdown` Drive file URL; existing Google Docs-backed Markdown sources remain supported;
 - never write or clear K/L manually;
 - never replace F or AH formulas with literal salary values;
 - never fabricate Row ID, dates, salary evidence, URLs or lifecycle evidence;
@@ -138,10 +142,11 @@ Canonical bound source files:
 
 `repairCvDerivativeFormulas()` must reconstruct ordinary per-row K/L formulas that:
 
-1. normalize Drive `/file/d/<ID>/...` sources to `/file/d/<ID>/view#markdown`;
-2. URL-encode the complete source URL, including `#markdown`;
-3. render short hyperlink titles `DOCX` / `PDF`;
-4. leave unsupported/native Google Docs sources blank rather than creating a broken wrapper URL.
+1. recognize both Drive `/file/d/<ID>/...` and Google Docs `/document/d/<ID>/...` sources;
+2. normalize either Google source to `/file/d/<ID>/view#markdown`;
+3. URL-encode the complete source URL, including `#markdown`;
+4. render short hyperlink titles `DOCX` / `PDF`;
+5. leave unsupported non-Markdown sources blank rather than creating a broken wrapper URL.
 
 Do not install a second edit trigger. Do not restore the retired Queue rich-text CV renderer.
 
