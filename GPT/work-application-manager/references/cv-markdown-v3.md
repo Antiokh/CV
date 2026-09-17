@@ -1,6 +1,6 @@
 # Canonical tailored CV: Markdown v3
 
-This contract supersedes `cv-markdown-v2.md` wherever tracker CV presentation/storage semantics conflict. Authoring/evidence rules remain Markdown-first; the major v3 change is that source and derivatives are now separate tracker columns.
+This contract supersedes `cv-markdown-v2.md` wherever tracker CV presentation/storage semantics conflict. Authoring/evidence rules remain Markdown-first; the major v3 change is that source and derivatives are separate tracker columns.
 
 ## Canonical artifact
 
@@ -13,41 +13,69 @@ A tailored CV must use verified Anton evidence only. Vacancy wording may determi
 WorkInterviews uses three distinct CV columns:
 
 - `J / CV MD` — canonical public/accessible Markdown source URL;
-- `K / CV DOCX` — formula-derived `markdown-drive` DOCX export link;
-- `L / CV PDF` — formula-derived `markdown-drive` PDF export link.
+- `K / CV DOCX` — per-row formula-derived `markdown-drive` DOCX export link;
+- `L / CV PDF` — per-row formula-derived `markdown-drive` PDF export link.
 
-Agents write only J. Agents do not construct or write K/L links, rich-text runs, HYPERLINK cells or encoded wrapper URLs.
+Agents write only J. Agents do not construct or write K/L links, rich-text runs or encoded wrapper URLs.
 
 The old model where Queue J was mutated from a raw source URL into visible rich-text `DOCX PDF` is retired. There is no CV presentation `onOpen` or `onSelectionChange` renderer.
 
 Because J remains raw, debugging is direct: inspect J to validate the source; inspect K/L to validate the formula/export layer independently.
 
-## Accepted Markdown source forms
+## Preferred Drive source
 
-K/L derivative formulas are generated only when J is one of:
+For Drive-hosted CVs, the canonical source is a real Google Drive file with MIME type `text/markdown`, publicly readable by link. Store it in J as a normal Drive file URL. The canonical share form is:
 
-1. explicit HTTP(S) `.md` source;
-2. Google Docs plain-text export URL with `format=txt`;
-3. verified opaque HTTP(S) source with terminal `#markdown` marker.
+```text
+https://drive.google.com/file/d/<FILE_ID>/view#markdown
+```
 
-For form 3, `#markdown` is a type marker and is removed before export.
+A Drive URL with extra sharing query parameters is acceptable in J, but K/L normalize it to the canonical `/view#markdown` form before URL-encoding it for `markdown-drive`.
 
-Do not tag a file `#markdown` merely because its filename looks plausible. Verify that the underlying artifact is actually the intended Markdown CV first.
+The `#markdown` fragment is preserved as part of the source URL. Do not strip it before constructing the wrapper URL.
+
+Native Google Docs URLs such as:
+
+```text
+https://docs.google.com/document/d/<ID>/edit
+https://docs.google.com/document/d/<ID>/export?format=txt
+```
+
+are **not** valid canonical `CV MD` sources for the current `markdown-drive` public URL-launch contract. K/L must stay blank for those rows until J is repaired to a real Markdown file source.
+
+## Other accepted Markdown source forms
+
+Besides canonical Drive Markdown files, K/L may be generated for:
+
+1. an explicit public HTTP(S) `.md` source;
+2. a verified non-Google HTTP(S) source carrying a terminal `#markdown` marker.
+
+Do not tag a URL `#markdown` merely because its content looks plausible. Verify that the source is actually the intended Markdown CV first.
 
 ## Derivative URLs
 
-The sheet formula constructs:
+For a canonical Drive source, the formula first normalizes J to:
 
 ```text
-https://markdown-drive.pages.dev/?file=<URL-encoded canonical source>&export=docx
-https://markdown-drive.pages.dev/?file=<URL-encoded canonical source>&export=pdf
+https://drive.google.com/file/d/<FILE_ID>/view#markdown
 ```
 
-The formula is the presentation layer. Do not persist those wrapper URLs back into J.
+and then constructs:
+
+```text
+https://markdown-drive.pages.dev/?file=<URL-encoded complete source URL>&export=docx
+https://markdown-drive.pages.dev/?file=<URL-encoded complete source URL>&export=pdf
+```
+
+For example, the `#markdown` fragment becomes `%23markdown` inside the encoded `file=` parameter.
+
+The visible hyperlink titles are `DOCX` and `PDF`. The formula is the presentation layer. Do not persist wrapper URLs back into J.
 
 ## Lifecycle behavior
 
-Every physical storage sheet has its own K1/L1 spill formulas. Lifecycle moves copy J with the vacancy but deliberately skip K:L. The target sheet then derives DOCX/PDF locally from its copied J source.
+Every physical storage sheet has ordinary per-row formulas in K and L. There are no spill/array formulas for CV derivatives.
+
+Lifecycle moves copy J with the vacancy but deliberately skip K:L. The target sheet already owns formulas for its rows and derives DOCX/PDF locally from the copied J source.
 
 Therefore:
 
@@ -74,9 +102,10 @@ Before a CV row is treated as ready:
 
 1. the Markdown source exists and is the correct vacancy-tailored CV;
 2. J points to that source, not another vacancy's CV;
-3. K and L resolve from J when J is a supported source form;
-4. if J is opaque, it carries `#markdown` only after source verification;
-5. the Markdown itself passes evidence/content QA;
-6. if a DOCX/PDF derivative is actually exported for final use, perform the required derivative visual QA at that time.
+3. for Drive-hosted CVs, J resolves to a real `text/markdown` Drive file rather than a native Google Doc;
+4. K and L are ordinary row formulas and resolve from J using the canonical source URL;
+5. `#markdown` is preserved/encoded rather than removed;
+6. the Markdown itself passes evidence/content QA;
+7. if a DOCX/PDF derivative is actually exported for final use, perform the required derivative visual QA at that time.
 
 Missing separately persisted DOCX/PDF files do not block readiness when K/L export links are valid.
