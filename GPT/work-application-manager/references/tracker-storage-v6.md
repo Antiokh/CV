@@ -62,22 +62,31 @@ User-facing filters cover A:X. Y and helper columns are outside the normal filte
 J/K/L deliberately separate source state from presentation:
 
 - `J / CV MD` stores the original canonical Markdown source URL and remains inspectable/debuggable.
-- `K / CV DOCX` is a Google Sheets formula derived from J through `markdown-drive` with `export=docx`.
+- `K / CV DOCX` is an ordinary per-row Google Sheets formula derived from J through `markdown-drive` with `export=docx`.
 - `L / CV PDF` is the same with `export=pdf`.
 - Agents, API clients and lifecycle scripts never write K or L.
 - There is no `onOpen`, `onSelectionChange` or rich-text mutation for CV presentation.
-- Every physical storage sheet owns the same K1/L1 spill formulas, so Active/Low fit/Closed derive their links from their own J value after lifecycle moves.
-- Lifecycle moves skip K:L. They copy A:J and M:Y, preventing spill blockage.
+- Every physical storage sheet owns the same per-row K/L formulas. There are no CV spill/array formulas.
+- Lifecycle moves skip K:L. They copy A:J and M:Y; the destination rows already have local K/L formulas.
 
-Accepted canonical Markdown source forms for generated K/L links:
+Preferred canonical Drive source:
 
-1. HTTP(S) URL whose path is explicitly `.md`;
-2. Google Docs text export URL (`/document/d/.../export?...format=txt`);
-3. an already-verified opaque HTTP(S) source carrying the terminal `#markdown` type marker.
+```text
+https://drive.google.com/file/d/<FILE_ID>/view#markdown
+```
 
-For form 3 the marker is stripped before the source URL is URL-encoded for `markdown-drive`.
+The underlying Drive object must be the intended public `text/markdown` CV file. A Drive URL with sharing query parameters is acceptable in J; the K/L formula extracts the Drive file ID and normalizes the source to `/view#markdown` before URL-encoding it.
 
-Legacy non-Markdown links may remain in J for historical records, but K/L intentionally stay blank until J is replaced with a verified Markdown source.
+The `#markdown` fragment is part of the canonical source URL and is preserved. It becomes `%23markdown` inside the wrapper `file=` parameter.
+
+Other accepted sources are:
+
+1. public HTTP(S) URLs whose path explicitly ends in `.md`;
+2. verified non-Google HTTP(S) sources carrying the terminal `#markdown` marker.
+
+Native Google Docs links (`docs.google.com/document/d/...`, including `/export?format=txt`) are not valid canonical `CV MD` sources for the current wrapper contract. K/L intentionally stay blank until J is repaired to a real Markdown source.
+
+Legacy non-Markdown links may remain in J for historical records, but they do not authorize a derivative link.
 
 ## Agent write policy
 
@@ -87,6 +96,7 @@ On a new or repaired Queue row:
 
 - write vacancy/application data only to authored columns;
 - write the verified canonical Markdown CV source only to J;
+- for Drive-hosted CVs, prefer the real raw `text/markdown` Drive file URL, not a native Google Doc URL;
 - never write or clear K/L manually;
 - never replace F or AH formulas with literal salary values;
 - never fabricate Row ID, dates, salary evidence, URLs or lifecycle evidence;
@@ -108,7 +118,7 @@ If `Date applied` exists, a record cannot regress to Queue or Low fit. The lifec
 
 ## Derived/helper formulas
 
-The v7 migration preserves existing Queue helper formulas by inserting K:L after J, which lets Sheets shift formula references with the data. The canonical new helper addresses are Z / AA / AB and salary midpoint AH.
+The v7 migration preserves existing Queue helper formulas by inserting K:L after J, which lets Sheets shift formula references with the data. The canonical helper addresses are Z / AA / AB and salary midpoint AH.
 
 `Jobs!A1` canonical aggregate after migration:
 
@@ -124,7 +134,14 @@ Canonical bound source files:
 
 - `scripts/workinterviews-partitioned-tracker.gs` — lifecycle v7; one simple `onEdit(e)` entrypoint; column layout above; moves skip K:L.
 - `scripts/workinterviews-sheet-schema.gs` — schema/validation/filter/conditional-format v7 for the shifted columns.
-- `scripts/workinterviews-cv-presentation.gs` — no presentation triggers. It contains only the one-time legacy migration and a manual formula-repair helper.
+- `scripts/workinterviews-cv-presentation.gs` — no presentation triggers. It contains the one-time legacy migration and the formula-repair helper.
+
+`repairCvDerivativeFormulas()` must reconstruct ordinary per-row K/L formulas that:
+
+1. normalize Drive `/file/d/<ID>/...` sources to `/file/d/<ID>/view#markdown`;
+2. URL-encode the complete source URL, including `#markdown`;
+3. render short hyperlink titles `DOCX` / `PDF`;
+4. leave unsupported/native Google Docs sources blank rather than creating a broken wrapper URL.
 
 Do not install a second edit trigger. Do not restore the retired Queue rich-text CV renderer.
 
