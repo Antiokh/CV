@@ -4,13 +4,17 @@
  * IMPORTANT: this file no longer renders Queue J through onOpen/onSelectionChange.
  * The steady-state contract is formula-only:
  *   J = CV MD canonical source URL
- *   K = CV DOCX derived from J as a visible direct-export URL
- *   L = CV PDF derived from J as a visible direct-export URL
+ *   K = CV DOCX derived from J with an independent row formula
+ *   L = CV PDF derived from J with an independent row formula
  *
  * `migrateWorkInterviewsCvColumnsV7()` is a ONE-TIME migration from the legacy
  * J=CV rich-text presentation layout. It recovers the Markdown source from old
  * `DOCX PDF` rich text where possible, inserts K:L, installs formulas, repairs
  * Jobs, then hands schema formatting/validation to workinterviews-sheet-schema.gs.
+ *
+ * `repairCvDerivativeFormulas()` is safe to run again at any time. It rebuilds
+ * every K/L data cell from J using ordinary per-row formulas (no ARRAYFORMULA,
+ * VSTACK, MAP, spill ranges, rich-text mutation, or manual generated URLs).
  */
 
 const WORKINTERVIEWS_CV_V7 = Object.freeze({
@@ -85,7 +89,9 @@ function repairCvDerivativeFormulas() {
   repairCvDerivativeFormulas_Internal_(ss);
   repairJobsAggregateV7_(ss);
   if (typeof repairWorkInterviewsSchema_ === 'function') repairWorkInterviewsSchema_(ss);
-  ss.toast('CV DOCX/PDF formulas repaired from CV MD.', 'WorkInterviews CV', 7);
+  const audit = auditCvColumnMigrationV7_(ss);
+  if (audit.errors.length) throw new Error('CV derivative repair failed: ' + audit.errors.join(' | '));
+  ss.toast('Per-row CV DOCX/PDF formulas repaired from CV MD.', 'WorkInterviews CV', 7);
 }
 
 function repairCvDerivativeFormulas_Internal_(ss) {
@@ -93,17 +99,30 @@ function repairCvDerivativeFormulas_Internal_(ss) {
     const sheet = ss.getSheetByName(name);
     const state = inspectCvV7SheetState_(sheet);
     if (state.state !== 'v7') throw new Error(`${name} is not on the v7 CV schema: ${JSON.stringify(state.headers)}`);
-    if (sheet.getMaxRows() > 1) sheet.getRange(2, 11, sheet.getMaxRows() - 1, 2).clearContent().clearNote();
-    sheet.getRange('K1').setFormula(cvDerivativeFormula_('DOCX', 'docx'));
-    sheet.getRange('L1').setFormula(cvDerivativeFormula_('PDF', 'pdf'));
+
+    const dataRows = Math.max(0, sheet.getMaxRows() - 1);
+    sheet.getRange('K1').setValue('CV DOCX');
+    sheet.getRange('L1').setValue('CV PDF');
+
+    if (dataRows > 0) {
+      sheet.getRange(2, 11, dataRows, 2).clearContent().clearNote();
+      sheet.getRange('K2').setFormula(cvDerivativeRowFormula_('docx'));
+      sheet.getRange('L2').setFormula(cvDerivativeRowFormula_('pdf'));
+      if (dataRows > 1) {
+        sheet.getRange(2, 11, dataRows, 1).fillDown();
+        sheet.getRange(2, 12, dataRows, 1).fillDown();
+      }
+    }
+
     sheet.setColumnWidth(11, 220);
     sheet.setColumnWidth(12, 220);
   });
   SpreadsheetApp.flush();
 }
 
-function cvDerivativeFormula_(label, exportFormat) {
-  return `=VSTACK("CV ${label}",MAP(J2:J,LAMBDA(src,IF(src="","",LET(clean,REGEXREPLACE(src,"(?i)#markdown$",""),valid,OR(REGEXMATCH(src,"(?i)#markdown$"),REGEXMATCH(src,"(?i)^https?://[^?#]+\\.md(?:[?#].*)?$"),REGEXMATCH(src,"(?i)^https://docs\\.google\\.com/document/d/[^/?#]+/export\\?[^#]*format=txt")),url,"https://markdown-drive.pages.dev/?file="&ENCODEURL(clean)&"&export=${exportFormat}",IF(valid,HYPERLINK(url,url),""))))))`;
+function cvDerivativeRowFormula_(exportFormat) {
+  const url = `"https://markdown-drive.pages.dev/?file="&ENCODEURL(REGEXREPLACE(J2,"(?i)#markdown$",""))&"&export=${exportFormat}"`;
+  return `=IF(J2="","",IF(OR(REGEXMATCH(J2,"(?i)#markdown$"),REGEXMATCH(J2,"(?i)^https?://[^?#]+\\.md(?:[?#].*)?$"),REGEXMATCH(J2,"(?i)^https://docs\\.google\\.com/document/d/[^/?#]+/export\\?[^#]*format=txt")),HYPERLINK(${url},${url}),""))`;
 }
 
 function repairJobsAggregateV7_(ss) {
@@ -191,9 +210,21 @@ function auditCvColumnMigrationV7_(ss) {
     const sheet = ss.getSheetByName(name);
     const state = inspectCvV7SheetState_(sheet);
     if (state.state !== 'v7') errors.push(`${name}: expected CV MD / CV DOCX / CV PDF schema`);
-    if (!/^=VSTACK\("CV DOCX"/i.test(sheet.getRange('K1').getFormula())) errors.push(`${name}!K1 formula missing`);
-    if (!/^=VSTACK\("CV PDF"/i.test(sheet.getRange('L1').getFormula())) errors.push(`${name}!L1 formula missing`);
-    if (sheet.getMaxRows() > 1) sourceRows += sheet.getRange(2, 10, sheet.getMaxRows() - 1, 1).getDisplayValues().reduce((n, r) => n + (String(r[0] || '').trim() ? 1 : 0), 0);
+    if (String(sheet.getRange('K1').getDisplayValue()).trim() !== 'CV DOCX') errors.push(`${name}!K1 header missing`);
+    if (String(sheet.getRange('L1').getDisplayValue()).trim() !== 'CV PDF') errors.push(`${name}!L1 header missing`);
+    if (sheet.getMaxRows() > 1) {
+      const k2 = sheet.getRange('K2').getFormula();
+      const l2 = sheet.getRange('L2').getFormula();
+      if (!/^=IF\(J2=/i.test(k2) || !/&export=docx/i.test(k2)) errors.push(`${name}!K2 per-row formula missing`);
+      if (!/^=IF\(J2=/i.test(l2) || !/&export=pdf/i.test(l2)) errors.push(`${name}!L2 per-row formula missing`);
+      sourceRows += sheet.getRange(2, 10, sheet.getMaxRows() - 1, 1).getDisplayValues().reduce((n, r) => n + (String(r[0] || '').trim() ? 1 : 0), 0);
+    }
+    if (sheet.getMaxRows() > 2) {
+      const k3 = sheet.getRange('K3').getFormula();
+      const l3 = sheet.getRange('L3').getFormula();
+      if (k3 && !/J3/.test(k3)) errors.push(`${name}!K3 relative row formula broken`);
+      if (l3 && !/J3/.test(l3)) errors.push(`${name}!L3 relative row formula broken`);
+    }
   });
   const jobs = ss.getSheetByName('Jobs');
   if (!jobs || !/Queue!A2:AH/.test(jobs.getRange('A1').getFormula())) errors.push('Jobs!A1 v7 aggregate formula missing');
