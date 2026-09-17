@@ -4,9 +4,10 @@ Use this reference for CV-mode vacancy discovery, scheduled job scans and reques
 
 This file does not redefine the modular contracts. Load:
 
-- `tracker-storage-v5.md` for vacancy ownership/agent writes/lifecycle integrity;
+- the runtime-selected tracker contract; on live v7, `tracker-storage-v6.md` owns physical columns and helper addresses;
 - `salary-normalization-v6.md` for salary research/storage/completion;
-- `cv-markdown-v2.md` for tailored CV source/write/presentation semantics;
+- the runtime-selected CV contract; on live v7, `cv-markdown-v3.md` owns J/K/L semantics;
+- `archetype-cv-routing-v1.md` for fast baseline CV selection during broad capture;
 - `activity-log.md` when hiring/process evidence is encountered;
 - `role-entry-strategy-v1.md` for interview-derived role targeting and cold-entry priority.
 
@@ -56,22 +57,41 @@ This order controls time allocation, shortlist priority and outreach strategy. I
 
 When a strong company has several credible roles, do not automatically prefer the grandest title. Prefer the role with strong evidence-backed fit, cleaner first-screen recognition and meaningful ownership, especially Product or applied-AI roles that can establish trust inside the company. Apply sincerely to the actual role; do not tell the employer it is merely a stepping stone.
 
-## New-vacancy sequence
+## Broad discovery and capture sequence
+
+Discovery has two phases. Breadth comes first; deep personalization comes second.
+
+### Phase 1 — capture the vetted new pool with baseline CVs
 
 For each candidate opportunity:
 
 1. verify it is still accepting applications;
 2. verify Serbia/Europe/EMEA/Worldwide eligibility as applicable;
 3. deduplicate against Jobs by Row ID when known, Vacancy URL and normalized Company + Position; Apply URL is supporting evidence;
-4. classify the vacancy against `role-entry-strategy-v1.md` for application priority without changing Fit truthfulness;
-5. for a genuinely new candidate, perform LinkedIn Connections lookup before expensive pack work;
-6. capture substantive vacancy text and source/application metadata;
-7. create Position.md and verify it;
-8. assign evidence-based Fit %;
-9. research/normalize salary according to `salary-normalization-v6.md`;
-10. create the Queue row with immutable Row ID through the atomic protocol from `tracker-storage-v5.md`;
-11. complete the Markdown-first application-pack gate when fit >60%;
-12. read back Queue Z and required Salary Data fields before reporting the vacancy processed.
+4. classify the vacancy against `role-entry-strategy-v1.md` for priority without changing Fit truthfulness;
+5. capture substantive vacancy text and source/application metadata;
+6. assign evidence-based Fit % and an evidence-backed Archetype;
+7. after the breadth gate, ingest each vetted vacancy into Queue as `To review` with immutable Row ID and all cheap/source-obvious fields available now;
+8. create/verify Position.md when substantive vacancy text is available;
+9. route Archetype through `archetype-cv-routing-v1.md`;
+10. copy the selected canonical role CV verbatim into the vacancy folder as the vacancy-owned Markdown CV, verify/read back content and public sharing, and write only that source URL to J;
+11. on live v7, verify K/L are existing row-local formulas and resolve to `DOCX` / `PDF`; never write K/L;
+12. continue capturing the vetted pool without waiting for deep salary research, referral research, Cover, Pain/Expectation mapping, or CV personalization.
+
+A baseline CV is an allowed `To review` state and is not evidence of `CV ready`.
+
+### Phase 2 — complete Queue rows one by one
+
+After new-pool capture, process incomplete Queue rows by practical attractiveness and age:
+
+1. complete missing vacancy metadata, salary normalization, recruiter/referral lookup and other applicable fields;
+2. build Pain Map + Expectation Map and verify evidence;
+3. convert the vacancy-owned baseline CV into a genuinely vacancy-tailored CV;
+4. create and humanize Cover when required by the workflow;
+5. verify J plus v7 K/L derivatives, Salary Data, public artifacts and Queue integrity AB;
+6. advance to `Reviewed` / `CV ready` only when the current gates are genuinely satisfied.
+
+Do not stop new-vacancy capture because one row needs expensive personalization. Do not let old incomplete Queue rows starve indefinitely across runs.
 
 ## Salary gate
 
@@ -83,7 +103,7 @@ In particular:
 - Do not leave a vacancy as `Reviewed` or `CV ready` unless the matching Salary Data J is `OK`.
 - Employer silence on compensation is not a waiver; research a defensible market estimate.
 - If a defensible two-sided range / currency / NET-GROSS basis / static FX cannot be established, keep `To review`, record the exact blocker and do not claim review completion.
-- Never literal-write vacancy F or AF; both are computed from Salary Data.
+- On live v7, never literal-write vacancy F or AH; both are computed from Salary Data. Older AF references are superseded by the tracker v6 layout.
 
 ## Network-first ranking
 
@@ -113,23 +133,31 @@ Before the first Queue write:
 4. do not use discovery to repair orphaned packs or advance/reject old applications;
 5. report material inconsistencies instead.
 
-## High-fit transactional gate
+## Baseline-capture and tailored-readiness gate
 
-For each **new** vacancy inserted in the current run with displayed Fit >60%, geographic eligibility not disproved and no explicit user decline, finish or explicitly block the pack before ingesting the next new high-fit vacancy.
+For broad scheduled discovery, a newly ingested high-fit vacancy does **not** need to become `CV ready` before the next vacancy is captured. It needs a truthful `To review` record and, when Archetype routing is resolvable, a verified vacancy-owned baseline Markdown CV.
 
-Successful Queue state requires:
+Baseline-capture success on live v7 requires:
 
-- verified Position.md;
-- verified canonical tailored CV Markdown;
-- Queue `CV` containing the verified public Markdown source URL or its derived `DOCX PDF` presentation;
-- humanized Cover TXT when required by the workflow;
-- required Drive readbacks/shareability checks;
-- verified Vacancy file / CV / Cover values as applicable;
-- Salary Data J = `OK`;
-- Queue Z = `OK`;
-- Stage exactly `CV ready`.
+- immutable Row ID in Y;
+- evidence-backed Archetype in O;
+- source-obvious vacancy fields captured;
+- Position.md when substantive source text is available;
+- vacancy-owned baseline Markdown CV copied from the routed canonical template and its verified public URL in J;
+- K/L left formula-owned and resolving from J;
+- Stage = `To review`.
 
-Agents write only the raw verified Markdown source URL to Queue `CV`; they do not construct markdown-drive DOCX/PDF links. The bound Queue presentation helper renders those variants on sheet open/manual sync. A persistent DOCX is **not** part of the default success gate. Export DOCX through `markdown-drive` only when Anton or the actual application channel requires Word. If Word is exported for final use, it must be generated from the current Markdown and visually QA'd before delivery/submission.
+Deep completion is separate. A row may reach `CV ready` only after:
+
+- salary research is complete and matching Salary Data J = `OK`;
+- applicable metadata/referral/recruiter enrichment is complete;
+- the vacancy-owned Markdown CV is genuinely tailored to the vacancy, not still a verbatim template copy;
+- required Cover is created/humanized/verified;
+- public artifact readbacks succeed;
+- Queue AB = `OK`;
+- content/evidence QA passes.
+
+Agents never write K/L. DOCX/PDF are formula derivatives of J and separately persisted exports remain optional unless a concrete application channel requires them.
 
 A later evidenced lifecycle event does not authorize an agent to write `Applied` / Assessment / Interview / terminal stages into Queue. Log/report the event and leave UI routing to the bound script.
 
@@ -147,13 +175,14 @@ Failure to export an optional DOCX is not a CV-ready blocker unless Word is actu
 
 ## Completion reconciliation
 
-Before reporting discovery complete:
+Before reporting a broad run complete:
 
 1. re-read every Row ID created in this run from Queue;
-2. verify salary status and Queue Z;
-3. for every new Fit >60% row, verify complete Markdown-first pack / explicit blocker / explicit Anton decline;
-4. re-read Jobs and confirm every pre-existing Row ID touched by the run still has the run-start Stage;
-5. if a pre-existing Stage changed unexpectedly, stop further writes and report the conflict.
+2. verify every captured row has the intended `To review` state, evidence-backed Archetype and correct vacancy-owned baseline CV source in J unless a specific routing/artifact blocker is recorded;
+3. on live v7, verify K/L remain formulas derived from J and Queue AB is read after completion-phase mutations where the integrity gate applies;
+4. report how many Queue rows remain baseline/incomplete versus fully tailored `CV ready`;
+5. re-read Jobs and confirm every pre-existing protected lifecycle state remains unchanged except for explicit Queue completion work allowed by the current workflow;
+6. if an unexpected lifecycle change occurs, stop further writes and report the conflict.
 
 ## Company cooldown
 
