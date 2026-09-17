@@ -54,7 +54,7 @@ After v7 is live, `tracker-storage-v6.md` owns physical salary/helper addresses 
 
 For a cover letter additionally load `GPT/work-application-manager/references/cover-letter-evidence-first.md` plus the language-specific humanizer cache required by the work-application-manager skill.
 
-For vacancy discovery also load `job-search-discovery.md` and fresh live `Job Sources` / `RU-root Companies` tabs.
+For vacancy discovery also load `job-search-discovery.md`, `GPT/work-application-manager/references/archetype-cv-routing-v1.md`, and fresh live `Job Sources` / `RU-root Companies` tabs.
 
 For old-chat archival export load `MIGRATION.md` only after the current skill and modular contracts.
 
@@ -171,7 +171,7 @@ Do not invent metrics, team size, authority, dates, industries, stages, salary e
 
 Do not make normal applications company-research essays. External research should appear in application copy only when it materially clarifies the hiring problem or positioning; generic market citations, funding/growth praise and internet-derived success language are not substitutes for Anton's proof.
 
-If displayed vacancy fit is strictly above 60%, generate the tailored Markdown CV/application pack unless Anton explicitly declines, subject to current salary/artifact/tracker gates.
+If displayed vacancy fit is strictly above 60%, a normal one-off vacancy workflow still generates the tailored Markdown CV/application pack unless Anton explicitly declines. **Broad scheduled discovery is the exception:** follow `archetype-cv-routing-v1.md` and `job-search-discovery.md` to capture the vetted pool first with vacancy-owned baseline role CVs in `To review`, then personalize incomplete Queue rows one by one. A baseline CV is never sufficient for `CV ready`.
 
 ## 6. Cover letters
 
