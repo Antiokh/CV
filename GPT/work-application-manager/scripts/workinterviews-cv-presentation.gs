@@ -45,6 +45,8 @@ function migrateWorkInterviewsCvColumnsV7() {
         const sheet = ss.getSheetByName(name);
         sheet.insertColumnsAfter(10, 2);
         sheet.getRange('J1').setValue('CV MD');
+        sheet.getRange('K1').setValue('CV DOCX');
+        sheet.getRange('L1').setValue('CV PDF');
         if (recovered[name].length) sheet.getRange(2, 10, recovered[name].length, 1).setValues(recovered[name].map(v => [v]));
         sheet.setColumnWidth(10, 280);
         sheet.setColumnWidth(11, 80);
@@ -57,12 +59,10 @@ function migrateWorkInterviewsCvColumnsV7() {
       SpreadsheetApp.flush();
       if (jobs.getMaxColumns() === 32) jobs.insertColumnsAfter(10, 2);
       else if (jobs.getMaxColumns() < 34) jobs.insertColumnsAfter(jobs.getMaxColumns(), 34 - jobs.getMaxColumns());
-      // Jobs is derived only; after clearing the spill it is safe to shift K:L for presentation continuity.
     }
 
     repairCvDerivativeFormulas_Internal_(ss);
     repairJobsAggregateV7_(ss);
-
     if (typeof repairWorkInterviewsSchema_ === 'function') repairWorkInterviewsSchema_(ss);
     PropertiesService.getDocumentProperties().setProperty('WORKINTERVIEWS_CV_COLUMNS_VERSION', '7.0.0');
     PropertiesService.getDocumentProperties().deleteProperty('WORKINTERVIEWS_CV_PRESENTATION_VERSION');
@@ -79,7 +79,6 @@ function migrateWorkInterviewsCvColumnsV7() {
   }
 }
 
-/** Manual maintenance entrypoint. Safe after migration; no rich-text mutation. */
 function repairCvDerivativeFormulas() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   assertCvV7Spreadsheet_(ss);
@@ -94,9 +93,6 @@ function repairCvDerivativeFormulas_Internal_(ss) {
     const sheet = ss.getSheetByName(name);
     const state = inspectCvV7SheetState_(sheet);
     if (state.state !== 'v7') throw new Error(`${name} is not on the v7 CV schema: ${JSON.stringify(state.headers)}`);
-
-    // Clear only the derived columns. This also removes accidental values that
-    // would block the array spill; J and all authored tracker data remain intact.
     if (sheet.getMaxRows() > 1) sheet.getRange(2, 11, sheet.getMaxRows() - 1, 2).clearContent().clearNote();
     sheet.getRange('K1').setFormula(cvDerivativeFormula_('DOCX', 'docx'));
     sheet.getRange('L1').setFormula(cvDerivativeFormula_('PDF', 'pdf'));
@@ -105,7 +101,6 @@ function repairCvDerivativeFormulas_Internal_(ss) {
 }
 
 function cvDerivativeFormula_(label, exportFormat) {
-  // #markdown is a type marker for opaque verified sources; do not pass it to the exporter.
   return `=VSTACK("CV ${label}",MAP(J2:J,LAMBDA(src,IF(src="","",LET(clean,REGEXREPLACE(src,"(?i)#markdown$",""),valid,OR(REGEXMATCH(src,"(?i)#markdown$"),REGEXMATCH(src,"(?i)^https?://[^?#]+\\.md(?:[?#].*)?$"),REGEXMATCH(src,"(?i)^https://docs\\.google\\.com/document/d/[^/?#]+/export\\?[^#]*format=txt")),IF(valid,HYPERLINK("https://markdown-drive.pages.dev/?file="&ENCODEURL(clean)&"&export=${exportFormat}","${label}"),""))))))`;
 }
 
@@ -138,7 +133,6 @@ function recoverLegacyCvSources_(sheet) {
   const result = [];
   for (let i = 0; i < displays.length; i += 1) {
     if (formulas[i][0]) {
-      // Legacy J should not be formula-owned, but preserve any visible URL rather than destroy data.
       result.push(String(displays[i][0] || '').trim());
       continue;
     }
@@ -149,7 +143,6 @@ function recoverLegacyCvSources_(sheet) {
 
 function recoverLegacyCvSourceCell_(display, richText) {
   if (!display && !richText) return '';
-
   const urls = [];
   if (richText) {
     const whole = richText.getLinkUrl();
@@ -160,14 +153,10 @@ function recoverLegacyCvSourceCell_(display, richText) {
       if (url && !urls.includes(url)) urls.push(url);
     });
   }
-
-  // Prefer a source recovered from a markdown-drive derivative link.
   for (const url of urls) {
     const recovered = sourceFromMarkdownDriveUrl_(url);
     if (recovered) return markOpaqueMarkdownSource_(recovered);
   }
-
-  // Raw canonical source may have been stored directly in legacy J.
   if (/^https?:\/\/\S+$/i.test(display)) return display;
   for (const url of urls) if (/^https?:\/\/\S+$/i.test(url)) return url;
   return display;
@@ -202,9 +191,7 @@ function auditCvColumnMigrationV7_(ss) {
     if (state.state !== 'v7') errors.push(`${name}: expected CV MD / CV DOCX / CV PDF schema`);
     if (!/^=VSTACK\("CV DOCX"/i.test(sheet.getRange('K1').getFormula())) errors.push(`${name}!K1 formula missing`);
     if (!/^=VSTACK\("CV PDF"/i.test(sheet.getRange('L1').getFormula())) errors.push(`${name}!L1 formula missing`);
-    if (sheet.getMaxRows() > 1) {
-      sourceRows += sheet.getRange(2, 10, sheet.getMaxRows() - 1, 1).getDisplayValues().reduce((n, r) => n + (String(r[0] || '').trim() ? 1 : 0), 0);
-    }
+    if (sheet.getMaxRows() > 1) sourceRows += sheet.getRange(2, 10, sheet.getMaxRows() - 1, 1).getDisplayValues().reduce((n, r) => n + (String(r[0] || '').trim() ? 1 : 0), 0);
   });
   const jobs = ss.getSheetByName('Jobs');
   if (!jobs || !/Queue!A2:AH/.test(jobs.getRange('A1').getFormula())) errors.push('Jobs!A1 v7 aggregate formula missing');
@@ -212,7 +199,5 @@ function auditCvColumnMigrationV7_(ss) {
 }
 
 function assertCvV7Spreadsheet_(ss) {
-  if (!ss || ss.getId() !== WORKINTERVIEWS_CV_V7.SPREADSHEET_ID) {
-    throw new Error('CV v7 migration must run only in the canonical WorkInterviews spreadsheet.');
-  }
+  if (!ss || ss.getId() !== WORKINTERVIEWS_CV_V7.SPREADSHEET_ID) throw new Error('CV v7 migration must run only in the canonical WorkInterviews spreadsheet.');
 }
