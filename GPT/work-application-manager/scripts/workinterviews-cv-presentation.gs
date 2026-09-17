@@ -1,176 +1,209 @@
 /**
- * WorkInterviews Queue-only CV presentation helper.
+ * WorkInterviews CV-column migration / maintenance v7.
  *
- * Agent/API contract:
- *   Queue!J receives only the verified canonical Markdown source URL.
- *   Opaque source URLs (notably Drive /file/d/.../view links) carry a #markdown
- *   type marker after verification; the marker is stripped before export.
+ * IMPORTANT: this file no longer renders Queue J through onOpen/onSelectionChange.
+ * The steady-state contract is formula-only:
+ *   J = CV MD canonical source URL
+ *   K = CV DOCX derived from J
+ *   L = CV PDF derived from J
  *
- * UI contract:
- *   this helper converts a validated source into two rich-text links: DOCX PDF.
- *   Active / Low fit / Closed are never re-rendered: lifecycle copyTo(PASTE_NORMAL)
- *   carries the already-formed Queue rich text with the row.
- *
- * IMPORTANT: this file intentionally defines no onEdit(e). The tracker keeps its
- * single lifecycle onEdit entrypoint in workinterviews-partitioned-tracker.gs.
+ * `migrateWorkInterviewsCvColumnsV7()` is a ONE-TIME migration from the legacy
+ * J=CV rich-text presentation layout. It recovers the Markdown source from old
+ * `DOCX PDF` rich text where possible, inserts K:L, installs formulas, repairs
+ * Jobs, then hands schema formatting/validation to workinterviews-sheet-schema.gs.
  */
 
-const WORKINTERVIEWS_CV_PRESENTATION = Object.freeze({
+const WORKINTERVIEWS_CV_V7 = Object.freeze({
   SPREADSHEET_ID: '1k-Zbz7LMZJJcWfMp41yC-7mUaL_UI9__Bwy1SpPLbao',
-  QUEUE_SHEET: 'Queue',
-  CV_COL: 10,
-  MARKDOWN_DRIVE: 'https://markdown-drive.pages.dev/?file=',
-  OPAQUE_MARKDOWN_TAG: '#markdown',
+  STORAGE_SHEETS: Object.freeze(['Queue', 'Active', 'Low fit', 'Closed']),
+  WRAPPER: 'https://markdown-drive.pages.dev/',
+  LEGACY_HEADERS: Object.freeze({ J: 'CV', K: 'Cover', L: 'Vacancy file', W: 'Row ID', AF: 'Salary midpoint EUR/month' }),
+  V7_HEADERS: Object.freeze({ J: 'CV MD', K: 'CV DOCX', L: 'CV PDF', M: 'Cover', N: 'Vacancy file', Y: 'Row ID', AH: 'Salary midpoint EUR/month' }),
 });
 
-/** Simple open trigger: repair schema, render pending Queue sources and add menu. */
-function onOpen(e) {
-  const ss = e && e.source ? e.source : SpreadsheetApp.getActiveSpreadsheet();
-  assertCvPresentationSpreadsheet_(ss);
-
-  if (typeof repairWorkInterviewsSchema_ === 'function') {
-    repairWorkInterviewsSchema_(ss);
-  }
-
-  syncQueueCvPresentation_(ss);
-
-  SpreadsheetApp.getUi()
-    .createMenu('WorkInterviews')
-    .addItem('Sync Queue CV links', 'syncQueueCvPresentation')
-    .addItem('Repair tracker schema', 'repairWorkInterviewsSchema')
-    .addToUi();
-}
-
-/**
- * If an API/connector writes a raw source while the sheet is already open,
- * selecting that Queue row is enough to render it before a later Stage move.
- */
-function onSelectionChange(e) {
-  if (!e || !e.range || !e.source) return;
-  assertCvPresentationSpreadsheet_(e.source);
-  const sheet = e.range.getSheet();
-  if (sheet.getName() !== WORKINTERVIEWS_CV_PRESENTATION.QUEUE_SHEET) return;
-  if (e.range.getRow() < 2) return;
-  renderQueueCvCell_(sheet, e.range.getRow());
-}
-
-/** Manual wrapper for an already-open sheet after API/connector writes. */
-function syncQueueCvPresentation() {
+function migrateWorkInterviewsCvColumnsV7() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
-  assertCvPresentationSpreadsheet_(ss);
-  const changed = syncQueueCvPresentation_(ss);
-  ss.toast(`Queue CV links synced: ${changed}.`, 'WorkInterviews', 6);
-}
-
-/**
- * Convert only validated raw Queue Markdown sources. Existing DOCX PDF rich text
- * and unverified/legacy links are untouched. Protected lifecycle sheets are ignored.
- */
-function syncQueueCvPresentation_(ss) {
-  const sheet = ss.getSheetByName(WORKINTERVIEWS_CV_PRESENTATION.QUEUE_SHEET);
-  if (!sheet || sheet.getLastRow() < 2) return 0;
-
-  let changed = 0;
-  for (let row = 2; row <= sheet.getLastRow(); row += 1) {
-    if (renderQueueCvCell_(sheet, row)) changed += 1;
-  }
-  return changed;
-}
-
-/**
- * Lifecycle hook called immediately before Queue rows are copied out of Queue.
- * Validated raw Markdown sources are rendered synchronously so the destination
- * receives DOCX/PDF links. Legacy/unverified links are preserved unchanged.
- */
-function ensureQueueCvPresentationBeforeMove_(sheet, row) {
-  if (!sheet || sheet.getName() !== WORKINTERVIEWS_CV_PRESENTATION.QUEUE_SHEET) return false;
-  return renderQueueCvCell_(sheet, row);
-}
-
-function renderQueueCvCell_(sheet, row) {
-  const cell = sheet.getRange(row, WORKINTERVIEWS_CV_PRESENTATION.CV_COL);
-  const display = String(cell.getDisplayValue() || '').trim();
-  if (!display || display === 'DOCX PDF') return false;
-
-  const rich = cell.getRichTextValue();
-  const wholeLink = rich ? rich.getLinkUrl() : '';
-  const source = canonicalCvSourceFromCell_(display, wholeLink);
-  if (!source) return false;
-
-  const encoded = encodeURIComponent(source);
-  const docxUrl = `${WORKINTERVIEWS_CV_PRESENTATION.MARKDOWN_DRIVE}${encoded}&export=docx`;
-  const pdfUrl = `${WORKINTERVIEWS_CV_PRESENTATION.MARKDOWN_DRIVE}${encoded}&export=pdf`;
-  const text = 'DOCX PDF';
-
-  const rendered = SpreadsheetApp.newRichTextValue()
-    .setText(text)
-    .setLinkUrl(0, 4, docxUrl)
-    .setLinkUrl(5, 8, pdfUrl)
-    .build();
-
-  cell.setRichTextValue(rendered);
-  cell.setWrapStrategy(SpreadsheetApp.WrapStrategy.CLIP);
-  return true;
-}
-
-function canonicalCvSourceFromCell_(display, wholeLink) {
-  const candidates = [wholeLink, display]
-    .map(value => String(value || '').trim())
-    .filter(Boolean);
-
-  for (const value of candidates) {
-    if (/^https:\/\/markdown-drive\.pages\.dev\//i.test(value)) {
-      const match = value.match(/[?&]file=([^&]+)/i);
-      if (!match) continue;
-      try {
-        const decoded = stripOpaqueMarkdownTag_(decodeURIComponent(match[1]));
-        // An existing Markdown Drive link is itself prior renderer evidence.
-        // Trust its encoded HTTP(S) source so legacy rendered links remain repairable.
-        if (/^https?:\/\/[^\s]+$/i.test(decoded)) return decoded;
-      } catch (err) {
-        continue;
-      }
+  assertCvV7Spreadsheet_(ss);
+  const lock = LockService.getDocumentLock();
+  lock.waitLock(30000);
+  try {
+    const states = WORKINTERVIEWS_CV_V7.STORAGE_SHEETS.map(name => inspectCvV7SheetState_(ss.getSheetByName(name)));
+    const allV7 = states.every(s => s.state === 'v7');
+    const allLegacy = states.every(s => s.state === 'legacy');
+    if (!allV7 && !allLegacy) {
+      throw new Error('Mixed/unknown storage-sheet schema. Migration aborted before structural writes: ' + JSON.stringify(states));
     }
 
-    const validated = canonicalMarkdownSourceUrl_(value);
-    if (validated) return validated;
+    if (allLegacy) {
+      const recovered = {};
+      WORKINTERVIEWS_CV_V7.STORAGE_SHEETS.forEach(name => {
+        const sheet = ss.getSheetByName(name);
+        recovered[name] = recoverLegacyCvSources_(sheet);
+      });
+
+      WORKINTERVIEWS_CV_V7.STORAGE_SHEETS.forEach(name => {
+        const sheet = ss.getSheetByName(name);
+        sheet.insertColumnsAfter(10, 2);
+        sheet.getRange('J1').setValue('CV MD');
+        if (recovered[name].length) sheet.getRange(2, 10, recovered[name].length, 1).setValues(recovered[name].map(v => [v]));
+        sheet.setColumnWidth(10, 280);
+        sheet.setColumnWidth(11, 80);
+        sheet.setColumnWidth(12, 80);
+      });
+
+      const jobs = ss.getSheetByName('Jobs');
+      if (!jobs) throw new Error('Jobs sheet missing.');
+      jobs.getRange('A1').clearContent();
+      SpreadsheetApp.flush();
+      if (jobs.getMaxColumns() === 32) jobs.insertColumnsAfter(10, 2);
+      else if (jobs.getMaxColumns() < 34) jobs.insertColumnsAfter(jobs.getMaxColumns(), 34 - jobs.getMaxColumns());
+      // Jobs is derived only; after clearing the spill it is safe to shift K:L for presentation continuity.
+    }
+
+    repairCvDerivativeFormulas_Internal_(ss);
+    repairJobsAggregateV7_(ss);
+
+    if (typeof repairWorkInterviewsSchema_ === 'function') repairWorkInterviewsSchema_(ss);
+    PropertiesService.getDocumentProperties().setProperty('WORKINTERVIEWS_CV_COLUMNS_VERSION', '7.0.0');
+    PropertiesService.getDocumentProperties().deleteProperty('WORKINTERVIEWS_CV_PRESENTATION_VERSION');
+    SpreadsheetApp.flush();
+
+    const audit = auditCvColumnMigrationV7_(ss);
+    if (audit.errors.length) {
+      SpreadsheetApp.getUi().alert('CV v7 migration finished with errors\n\n' + audit.errors.join('\n'));
+      return;
+    }
+    ss.toast(`CV columns v7 ready. Recovered legacy source rows: ${audit.sourceRows}.`, 'WorkInterviews CV', 10);
+  } finally {
+    lock.releaseLock();
   }
-
-  return '';
 }
 
-/**
- * Syntactic source validation usable from simple triggers without Drive/HTTP auth.
- *
- * Accepted without a marker:
- *   - URLs whose path itself ends in .md;
- *   - Google Docs text-export URLs used by the historical Markdown workflow.
- *
- * Opaque URLs such as Drive /file/d/.../view must be verified by the writer and
- * tagged with #markdown. The fragment never reaches the source server and is
- * removed before the Markdown Drive export URL is built.
- */
-function canonicalMarkdownSourceUrl_(value) {
-  const raw = String(value || '').trim();
-  if (!/^https?:\/\/[^\s]+$/i.test(raw)) return '';
-
-  const clean = stripOpaqueMarkdownTag_(raw);
-  if (clean !== raw) return /^https?:\/\/[^\s]+$/i.test(clean) ? clean : '';
-
-  if (/^https?:\/\/[^?#]+\.md(?:[?#].*)?$/i.test(raw)) return raw;
-  if (/^https:\/\/docs\.google\.com\/document\/d\/[^/?#]+\/export\?[^#]*\bformat=txt(?:&|$)/i.test(raw)) return raw;
-
-  return '';
+/** Manual maintenance entrypoint. Safe after migration; no rich-text mutation. */
+function repairCvDerivativeFormulas() {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  assertCvV7Spreadsheet_(ss);
+  repairCvDerivativeFormulas_Internal_(ss);
+  repairJobsAggregateV7_(ss);
+  if (typeof repairWorkInterviewsSchema_ === 'function') repairWorkInterviewsSchema_(ss);
+  ss.toast('CV DOCX/PDF formulas repaired from CV MD.', 'WorkInterviews CV', 7);
 }
 
-function stripOpaqueMarkdownTag_(value) {
-  const raw = String(value || '').trim();
-  const tag = WORKINTERVIEWS_CV_PRESENTATION.OPAQUE_MARKDOWN_TAG;
-  return raw.toLowerCase().endsWith(tag) ? raw.slice(0, -tag.length) : raw;
+function repairCvDerivativeFormulas_Internal_(ss) {
+  WORKINTERVIEWS_CV_V7.STORAGE_SHEETS.forEach(name => {
+    const sheet = ss.getSheetByName(name);
+    const state = inspectCvV7SheetState_(sheet);
+    if (state.state !== 'v7') throw new Error(`${name} is not on the v7 CV schema: ${JSON.stringify(state.headers)}`);
+
+    if (sheet.getMaxRows() > 1) sheet.getRange(2, 11, sheet.getMaxRows() - 1, 2).clearContent().clearNote();
+    sheet.getRange('K1').setFormula(cvDerivativeFormula_('DOCX', 'docx'));
+    sheet.getRange('L1').setFormula(cvDerivativeFormula_('PDF', 'pdf'));
+  });
+  SpreadsheetApp.flush();
 }
 
-function assertCvPresentationSpreadsheet_(ss) {
-  if (!ss || ss.getId() !== WORKINTERVIEWS_CV_PRESENTATION.SPREADSHEET_ID) {
-    throw new Error('CV presentation helper must run only in the canonical WorkInterviews spreadsheet.');
+function cvDerivativeFormula_(label, exportFormat) {
+  return `=VSTACK("CV ${label}",MAP(J2:J,LAMBDA(src,IF(src="","",LET(clean,REGEXREPLACE(src,"(?i)#markdown$",""),valid,OR(REGEXMATCH(src,"(?i)#markdown$"),REGEXMATCH(src,"(?i)^https?://[^?#]+\\.md(?:[?#].*)?$"),REGEXMATCH(src,"(?i)^https://docs\\.google\\.com/document/d/[^/?#]+/export\\?[^#]*format=txt")),IF(valid,HYPERLINK("https://markdown-drive.pages.dev/?file="&ENCODEURL(clean)&"&export=${exportFormat}","${label}"),""))))))`;
+}
+
+function repairJobsAggregateV7_(ss) {
+  const jobs = ss.getSheetByName('Jobs');
+  if (!jobs) throw new Error('Jobs sheet missing.');
+  if (jobs.getMaxColumns() < 34) jobs.insertColumnsAfter(jobs.getMaxColumns(), 34 - jobs.getMaxColumns());
+  jobs.getRange('A1').clearContent();
+  SpreadsheetApp.flush();
+  jobs.getRange('A1').setFormula('=LET(data,VSTACK(Queue!A2:AH,Active!A2:AH,\'Low fit\'!A2:AH,Closed!A2:AH),VSTACK(Queue!A1:AH1,FILTER(data,CHOOSECOLS(data,25)<>"")))');
+}
+
+function inspectCvV7SheetState_(sheet) {
+  if (!sheet) return { name: '(missing)', state: 'missing', headers: [] };
+  const max = Math.max(34, sheet.getMaxColumns());
+  const headers = sheet.getRange(1, 1, 1, max).getDisplayValues()[0];
+  const h = i => String(headers[i - 1] || '').trim();
+  const legacy = h(10) === 'CV' && h(11) === 'Cover' && h(12) === 'Vacancy file' && h(23) === 'Row ID';
+  const v7 = h(10) === 'CV MD' && h(11) === 'CV DOCX' && h(12) === 'CV PDF' && h(13) === 'Cover' && h(14) === 'Vacancy file' && h(25) === 'Row ID';
+  return { name: sheet.getName(), state: v7 ? 'v7' : legacy ? 'legacy' : 'unknown', headers: [h(10), h(11), h(12), h(13), h(14), h(23), h(25)] };
+}
+
+function recoverLegacyCvSources_(sheet) {
+  const maxRows = sheet.getMaxRows();
+  if (maxRows < 2) return [];
+  const range = sheet.getRange(2, 10, maxRows - 1, 1);
+  const displays = range.getDisplayValues();
+  const rich = range.getRichTextValues();
+  const formulas = range.getFormulas();
+  const result = [];
+  for (let i = 0; i < displays.length; i += 1) {
+    if (formulas[i][0]) {
+      result.push(String(displays[i][0] || '').trim());
+      continue;
+    }
+    result.push(recoverLegacyCvSourceCell_(String(displays[i][0] || '').trim(), rich[i][0]));
+  }
+  return result;
+}
+
+function recoverLegacyCvSourceCell_(display, richText) {
+  if (!display && !richText) return '';
+  const urls = [];
+  if (richText) {
+    const whole = richText.getLinkUrl();
+    if (whole) urls.push(whole);
+    const runs = richText.getRuns ? richText.getRuns() : [];
+    runs.forEach(run => {
+      const url = run.getLinkUrl();
+      if (url && !urls.includes(url)) urls.push(url);
+    });
+  }
+  for (const url of urls) {
+    const recovered = sourceFromMarkdownDriveUrl_(url);
+    if (recovered) return markOpaqueMarkdownSource_(recovered);
+  }
+  if (/^https?:\/\/\S+$/i.test(display)) return display;
+  for (const url of urls) if (/^https?:\/\/\S+$/i.test(url)) return url;
+  return display;
+}
+
+function sourceFromMarkdownDriveUrl_(url) {
+  const text = String(url || '').trim();
+  if (!text || text.indexOf('markdown-drive.pages.dev') === -1) return '';
+  const match = text.match(/[?&]file=([^&]+)/i);
+  if (!match) return '';
+  try {
+    return decodeURIComponent(match[1]).replace(/#markdown$/i, '');
+  } catch (err) {
+    return '';
+  }
+}
+
+function markOpaqueMarkdownSource_(source) {
+  const text = String(source || '').trim().replace(/#markdown$/i, '');
+  if (!text) return '';
+  if (/^https?:\/\/[^?#]+\.md(?:[?#].*)?$/i.test(text)) return text;
+  if (/^https:\/\/docs\.google\.com\/document\/d\/[^/?#]+\/export\?[^#]*format=txt/i.test(text)) return text;
+  return text + '#markdown';
+}
+
+function auditCvColumnMigrationV7_(ss) {
+  const errors = [];
+  let sourceRows = 0;
+  WORKINTERVIEWS_CV_V7.STORAGE_SHEETS.forEach(name => {
+    const sheet = ss.getSheetByName(name);
+    const state = inspectCvV7SheetState_(sheet);
+    if (state.state !== 'v7') errors.push(`${name}: expected CV MD / CV DOCX / CV PDF schema`);
+    if (!/^=VSTACK\("CV DOCX"/i.test(sheet.getRange('K1').getFormula())) errors.push(`${name}!K1 formula missing`);
+    if (!/^=VSTACK\("CV PDF"/i.test(sheet.getRange('L1').getFormula())) errors.push(`${name}!L1 formula missing`);
+    if (sheet.getMaxRows() > 1) {
+      sourceRows += sheet.getRange(2, 10, sheet.getMaxRows() - 1, 1).getDisplayValues().reduce((n, r) => n + (String(r[0] || '').trim() ? 1 : 0), 0);
+    }
+  });
+  const jobs = ss.getSheetByName('Jobs');
+  if (!jobs || !/Queue!A2:AH/.test(jobs.getRange('A1').getFormula())) errors.push('Jobs!A1 v7 aggregate formula missing');
+  return { errors, sourceRows };
+}
+
+function assertCvV7Spreadsheet_(ss) {
+  if (!ss || ss.getId() !== WORKINTERVIEWS_CV_V7.SPREADSHEET_ID) {
+    throw new Error('CV v7 migration must run only in the canonical WorkInterviews spreadsheet.');
   }
 }
