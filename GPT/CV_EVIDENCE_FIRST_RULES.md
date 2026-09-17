@@ -1,6 +1,6 @@
 # Evidence-First CV Adaptation Rules
 
-These rules are mandatory for every tailored employment CV. They override any older brevity rule when brevity would remove evidence needed to prove fit.
+These rules are mandatory for every **tailored** employment CV. They override any older brevity rule when brevity would remove evidence needed to prove fit. A verbatim Archetype-routed baseline CV created during broad capture is intentionally not yet a tailored CV; apply these rules when that vacancy is personalized before `CV ready`.
 
 ## Purpose
 
