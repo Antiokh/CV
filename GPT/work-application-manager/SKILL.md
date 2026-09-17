@@ -23,25 +23,26 @@ The expectation/evidence layer is mandatory because a strong business result doe
 
 For every WorkInterviews / application-status / vacancy-ingestion workflow, also load the current modular contracts before acting:
 
-1. `references/tracker-storage-v5.md` — canonical vacancy ownership, Queue-only agent write boundary, lifecycle routing and integrity rules.
+1. the runtime-selected tracker contract; on the live v7 schema load `references/tracker-storage-v6.md` after v5 and let v6 win for physical columns, helpers and lifecycle copy semantics.
 2. `references/salary-normalization-v6.md` — canonical salary research, structured Salary Data, monthly normalization and completion gates.
-3. `references/cv-markdown-v2.md` — canonical Markdown-first CV source, Queue-only generated presentation and on-demand derivative semantics.
+3. the runtime-selected CV contract; on live v7 load `references/cv-markdown-v3.md` after v2 and let v3 win for J/K/L ownership and derivative semantics.
 4. `references/activity-log.md` — canonical append-only correspondence/process history.
 5. `references/job-search-discovery.md` when finding new vacancies.
-6. `MIGRATION.md` only for old-chat archival migration.
+6. `references/archetype-cv-routing-v1.md` for broad capture and baseline role-CV routing.
+7. `MIGRATION.md` only for old-chat archival migration.
 
 For a cover letter additionally load `references/cover-letter-evidence-first.md` plus the matching cached humanizer.
 
 Before the first tracker/Drive write, also read the live hidden `Agent Instructions` tab in WorkInterviews. A newer explicit user instruction wins; update the live instructions when the user changes the operating contract.
 
-Do not restate or override the modular storage/salary/artifact contracts from this skill. In particular: `Jobs` is not writable; agents do not route rows by API; F/AF are computed salary fields; tailored CV Markdown is canonical; agents write only its verified source URL into Queue `CV`; the bound UI helper renders `DOCX PDF`; DOCX/PDF are optional unless a concrete submission requires them.
+Do not restate or override the modular storage/salary/artifact contracts from this skill. On live v7: `Jobs` is not writable; agents do not route rows by API; F/AH are computed salary fields; J is the only authored CV tracker field; K/L are row-local formula derivatives and are never agent-written. A vacancy-owned Markdown CV may be `baseline` while Stage is `To review`, but must be genuinely tailored before `CV ready`.
 
 Spreadsheet: `WorkInterviews` (`1k-Zbz7LMZJJcWfMp41yC-7mUaL_UI9__Bwy1SpPLbao`).
 Drive root: `WorkApplications` (`1wQMbnH4CODaARJSY221H06oCFJV2ukAK`).
 
 ## Vacancy workflow
 
-1. Resolve/deduplicate through aggregate `Jobs` according to `tracker-storage-v5.md`.
+1. Resolve/deduplicate through aggregate `Jobs` according to the runtime-selected tracker contract.
 2. Create a genuinely new vacancy only through the permitted Queue workflow.
 3. Capture every evidence-backed field available from the source: company, position, location/work model, Vacancy URL, Apply URL, Posted date, Date found, recruiter/process information, substantive text and fit context.
 4. Create/update `WorkApplications/<Company>/<PositionTitle>/Position.md` whenever substantive vacancy text is recoverable. The full vacancy body belongs there, not in the Sheet.
@@ -61,8 +62,8 @@ Drive root: `WorkApplications` (`1wQMbnH4CODaARJSY221H06oCFJV2ukAK`).
    - **cold-entry probability** — likelihood first filters recognize the fit, from `role-entry-strategy-v1.md`.
 11. Keep `Vacancy snapshot` compact and `Notes` concise. Notes may preserve material positioning risks/gaps, but do not dump the full Pain/Expectation Maps into the Sheet.
 12. Assign one evidence-based numeric Fit %. Fit should reflect actual requirement/problem coverage, not generic seniority or confidence.
-13. Research and normalize salary according to `salary-normalization-v6.md`; do not promote a Queue vacancy to Reviewed/CV ready while the salary gate is unresolved.
-14. If displayed fit is strictly above 60%, create the tailored application pack unless Anton explicitly declines. Artifact semantics come from `cv-markdown-v2.md`: verify/share the Markdown source, then write that canonical source URL directly to Queue `CV`. Do not construct Markdown Drive export links or rich-text runs.
+13. In a normal one-off vacancy workflow, research and normalize salary and create the tailored application pack before claiming readiness. In **broad discovery/capture**, follow `job-search-discovery.md` instead: capture the vetted pool first with a vacancy-owned baseline CV chosen through `archetype-cv-routing-v1.md`, keeping Stage = `To review`.
+14. During Queue completion, process incomplete rows one by one: finish salary/referral/metadata, build Pain/Expectation Maps, convert the vacancy-owned baseline Markdown into a genuinely tailored CV, create the required humanized Cover, and verify v7 J/K/L + AB gates.
 15. Before finalizing any tailored CV, run the MUST-expectation coverage audit: every MUST expectation must be visibly covered by the strongest available evidence or retained internally as a real gap. A CV is not ready merely because Anton has the experience; the proof must be visible early enough for the first screen.
 16. If the vacancy does not materially request project work, do not make Selected Projects / AI Projects the positioning center; lead with relevant employment evidence and business outcomes.
 
@@ -119,7 +120,7 @@ Every WorkApplications artifact intended to be referenced from the tracker or sh
 
 ## Tracker data quality
 
-Current writable surfaces, Stage ownership, helper columns and Queue integrity are defined by `tracker-storage-v5.md` and live Agent Instructions.
+Current writable surfaces, Stage ownership, helper columns and Queue integrity are defined by the runtime-selected tracker contract and live Agent Instructions; on live v7 the governing layout is `tracker-storage-v6.md`.
 
 General rules:
 
@@ -143,7 +144,7 @@ General rules:
 
 All market-salary research, source hierarchy, evidence threshold, NET/GROSS semantics, monthly conversion, static FX, structured `Salary Data`, F-note provenance and completion readback are defined exclusively by `salary-normalization-v6.md`.
 
-Key safety consequence: vacancy F (`Estimated salary (EUR/month)`) and AF (`Salary midpoint EUR/month`) are formulas. Never write literal values into them. Never use older free-text F / annual-EUR AF instructions.
+Key safety consequence on live v7: vacancy F (`Estimated salary (EUR/month)`) and AH (`Salary midpoint EUR/month`) are formulas. Never write literal values into them. Older AF references are superseded by `tracker-storage-v6.md`.
 
 ## Recruiter contacts and LinkedIn referrals
 
