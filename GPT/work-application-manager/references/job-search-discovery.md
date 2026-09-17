@@ -105,11 +105,11 @@ In particular:
 - If a defensible two-sided range / currency / NET-GROSS basis / static FX cannot be established, keep `To review`, record the exact blocker and do not claim review completion.
 - On live v7, never literal-write vacancy F or AH; both are computed from Salary Data. Older AF references are superseded by the tracker v6 layout.
 
-## Network-first ranking
+## Network lookup and ranking
 
-For every genuinely new vacancy that passes basic fit/geography screening, check the private LinkedIn Connections snapshot after dedup and before substantial salary/application-pack work.
+Broad capture does not wait for LinkedIn/referral research. Capture the vetted vacancy and its Archetype-routed baseline CV first.
 
-Use exact normalized Company Key first, then evidence-backed aliases only. Suggest at most three useful contacts: recruiter/TA, likely functional leader/hiring manager, relevant employee.
+During Phase 2 completion, check the private LinkedIn Connections snapshot before final prioritization/application action. Use exact normalized Company Key first, then evidence-backed aliases only. Suggest at most three useful contacts: recruiter/TA, likely functional leader/hiring manager, relevant employee.
 
 Networking may affect practical priority but never Fit %. A connection is not a referral until outreach/introduction is confirmed.
 
@@ -123,15 +123,20 @@ Explicit terminal application-state evidence wins over promotional badges. Examp
 
 For a pre-existing tracker record discovered to be closed, preserve its run-start Stage and report the evidence; discovery does not perform lifecycle mutation.
 
-## Pre-existing Stage immutability
+## Pre-existing lifecycle safety across the two phases
 
-Before the first Queue write:
+Before Phase 1 Queue writes:
 
-1. snapshot every pre-existing Row ID + Stage from Jobs;
-2. treat those Row IDs as immutable lifecycle state for the discovery run;
-3. do not change their Stage / Date applied / protected history;
-4. do not use discovery to repair orphaned packs or advance/reject old applications;
-5. report material inconsistencies instead.
+1. snapshot pre-existing Row ID + Stage from Jobs;
+2. during discovery/broad capture, do not change Stage, Date applied or protected history on pre-existing rows;
+3. Phase 1 creates only genuinely new `To review` rows.
+
+During Phase 2 Queue completion:
+
+4. pre-existing Queue rows may be enriched and their Stage may advance monotonically only within Queue persistent stages `To review -> Reviewed -> CV ready` when the corresponding gates are actually satisfied;
+5. Date applied and later/terminal lifecycle evidence remain protected and are never fabricated or regressed;
+6. rows in Active / Low fit / Closed remain read-only to agents;
+7. report material identity/lifecycle inconsistencies instead of routing rows by API.
 
 ## Baseline-capture and tailored-readiness gate
 
