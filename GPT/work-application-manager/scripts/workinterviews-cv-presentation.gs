@@ -6,12 +6,14 @@
  *   K = CV DOCX, independent per-row formula derived from J
  *   L = CV PDF, independent per-row formula derived from J
  *
- * Preferred J form for Drive-hosted CVs is a real text/markdown file:
+ * Preferred J form for Drive-hosted CVs is:
  *   https://drive.google.com/file/d/<ID>/view#markdown
- * K/L normalize Drive file URLs to that form, URL-encode the complete source
- * including #markdown, and expose short HYPERLINK titles (`DOCX` / `PDF`).
- * Native Google Docs `/document/d/...` links are NOT valid markdown-drive
- * source URLs and intentionally produce blank K/L until J is repaired.
+ *
+ * K/L accept both real Drive text/markdown files and legacy Google Docs-backed
+ * Markdown sources. For both forms they extract the Drive file ID, normalize the
+ * source to /file/d/<ID>/view#markdown, URL-encode the complete source including
+ * #markdown, and expose short HYPERLINK titles (`DOCX` / `PDF`). markdown-drive
+ * supports public Google Docs-backed .md/.markdown files through Drive files.export.
  *
  * K/L are formulas in every data row, not manual URLs and not spill/array results.
  *
@@ -127,10 +129,10 @@ function repairCvDerivativeFormulas_Internal_(ss) {
 
 function cvDerivativeRowFormula_(exportFormat) {
   const label = String(exportFormat || '').toUpperCase();
-  const driveSource = `"https://drive.google.com/file/d/"&REGEXEXTRACT(J2,"(?i)/file/d/([^/?#]+)")&"/view#markdown"`;
-  const driveUrl = `"https://markdown-drive.pages.dev/?file="&ENCODEURL(${driveSource})&"&export=${exportFormat}"`;
+  const googleSource = `"https://drive.google.com/file/d/"&REGEXEXTRACT(J2,"(?i)/(?:file|document)/d/([^/?#]+)")&"/view#markdown"`;
+  const googleUrl = `"https://markdown-drive.pages.dev/?file="&ENCODEURL(${googleSource})&"&export=${exportFormat}"`;
   const genericUrl = `"https://markdown-drive.pages.dev/?file="&ENCODEURL(J2)&"&export=${exportFormat}"`;
-  return `=IF(J2="","",IF(REGEXMATCH(J2,"(?i)^https://drive\\.google\\.com/file/d/[^/?#]+/"),HYPERLINK(${driveUrl},"${label}"),IF(AND(NOT(REGEXMATCH(J2,"(?i)^https://docs\\.google\\.com/")),OR(REGEXMATCH(J2,"(?i)^https?://[^?#]+\\.md(?:[?#].*)?$"),REGEXMATCH(J2,"(?i)#markdown$"))),HYPERLINK(${genericUrl},"${label}"),"")))`;
+  return `=IF(J2="","",IF(OR(REGEXMATCH(J2,"(?i)^https://drive\\.google\\.com/file/d/[^/?#]+/"),REGEXMATCH(J2,"(?i)^https://docs\\.google\\.com/document/d/[^/?#]+/")),HYPERLINK(${googleUrl},"${label}"),IF(OR(REGEXMATCH(J2,"(?i)^https?://[^?#]+\\.md(?:[?#].*)?$"),REGEXMATCH(J2,"(?i)#markdown$")),HYPERLINK(${genericUrl},"${label}"),"")))`;
 }
 
 function repairJobsAggregateV7_(ss) {
@@ -208,6 +210,8 @@ function normalizeCvMarkdownSource_(source) {
   if (!text) return '';
   const drive = text.match(/^https:\/\/drive\.google\.com\/file\/d\/([^/?#]+)/i);
   if (drive) return `https://drive.google.com/file/d/${drive[1]}/view#markdown`;
+  const doc = text.match(/^https:\/\/docs\.google\.com\/document\/d\/([^/?#]+)/i);
+  if (doc) return `https://drive.google.com/file/d/${doc[1]}/view#markdown`;
   return text;
 }
 
@@ -223,8 +227,8 @@ function auditCvColumnMigrationV7_(ss) {
     if (sheet.getMaxRows() > 1) {
       const k2 = sheet.getRange('K2').getFormula();
       const l2 = sheet.getRange('L2').getFormula();
-      if (!/^=IF\(J2=/i.test(k2) || !/&export=docx/i.test(k2) || !/"DOCX"/i.test(k2) || !/view#markdown/i.test(k2)) errors.push(`${name}!K2 titled canonical Drive formula missing`);
-      if (!/^=IF\(J2=/i.test(l2) || !/&export=pdf/i.test(l2) || !/"PDF"/i.test(l2) || !/view#markdown/i.test(l2)) errors.push(`${name}!L2 titled canonical Drive formula missing`);
+      if (!/^=IF\(J2=/i.test(k2) || !/&export=docx/i.test(k2) || !/"DOCX"/i.test(k2) || !/view#markdown/i.test(k2)) errors.push(`${name}!K2 titled canonical Google formula missing`);
+      if (!/^=IF\(J2=/i.test(l2) || !/&export=pdf/i.test(l2) || !/"PDF"/i.test(l2) || !/view#markdown/i.test(l2)) errors.push(`${name}!L2 titled canonical Google formula missing`);
       sourceRows += sheet.getRange(2, 10, sheet.getMaxRows() - 1, 1).getDisplayValues().reduce((n, r) => n + (String(r[0] || '').trim() ? 1 : 0), 0);
     }
     if (sheet.getMaxRows() > 2) {
