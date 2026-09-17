@@ -4,8 +4,8 @@
  * IMPORTANT: this file no longer renders Queue J through onOpen/onSelectionChange.
  * The steady-state contract is formula-only:
  *   J = CV MD canonical source URL
- *   K = CV DOCX derived from J
- *   L = CV PDF derived from J
+ *   K = CV DOCX derived from J as a visible direct-export URL
+ *   L = CV PDF derived from J as a visible direct-export URL
  *
  * `migrateWorkInterviewsCvColumnsV7()` is a ONE-TIME migration from the legacy
  * J=CV rich-text presentation layout. It recovers the Markdown source from old
@@ -49,8 +49,8 @@ function migrateWorkInterviewsCvColumnsV7() {
         sheet.getRange('L1').setValue('CV PDF');
         if (recovered[name].length) sheet.getRange(2, 10, recovered[name].length, 1).setValues(recovered[name].map(v => [v]));
         sheet.setColumnWidth(10, 280);
-        sheet.setColumnWidth(11, 80);
-        sheet.setColumnWidth(12, 80);
+        sheet.setColumnWidth(11, 220);
+        sheet.setColumnWidth(12, 220);
       });
 
       const jobs = ss.getSheetByName('Jobs');
@@ -96,12 +96,14 @@ function repairCvDerivativeFormulas_Internal_(ss) {
     if (sheet.getMaxRows() > 1) sheet.getRange(2, 11, sheet.getMaxRows() - 1, 2).clearContent().clearNote();
     sheet.getRange('K1').setFormula(cvDerivativeFormula_('DOCX', 'docx'));
     sheet.getRange('L1').setFormula(cvDerivativeFormula_('PDF', 'pdf'));
+    sheet.setColumnWidth(11, 220);
+    sheet.setColumnWidth(12, 220);
   });
   SpreadsheetApp.flush();
 }
 
 function cvDerivativeFormula_(label, exportFormat) {
-  return `=VSTACK("CV ${label}",MAP(J2:J,LAMBDA(src,IF(src="","",LET(clean,REGEXREPLACE(src,"(?i)#markdown$",""),valid,OR(REGEXMATCH(src,"(?i)#markdown$"),REGEXMATCH(src,"(?i)^https?://[^?#]+\\.md(?:[?#].*)?$"),REGEXMATCH(src,"(?i)^https://docs\\.google\\.com/document/d/[^/?#]+/export\\?[^#]*format=txt")),IF(valid,HYPERLINK("https://markdown-drive.pages.dev/?file="&ENCODEURL(clean)&"&export=${exportFormat}","${label}"),""))))))`;
+  return `=VSTACK("CV ${label}",MAP(J2:J,LAMBDA(src,IF(src="","",LET(clean,REGEXREPLACE(src,"(?i)#markdown$",""),valid,OR(REGEXMATCH(src,"(?i)#markdown$"),REGEXMATCH(src,"(?i)^https?://[^?#]+\\.md(?:[?#].*)?$"),REGEXMATCH(src,"(?i)^https://docs\\.google\\.com/document/d/[^/?#]+/export\\?[^#]*format=txt")),url,"https://markdown-drive.pages.dev/?file="&ENCODEURL(clean)&"&export=${exportFormat}",IF(valid,HYPERLINK(url,url),""))))))`;
 }
 
 function repairJobsAggregateV7_(ss) {
