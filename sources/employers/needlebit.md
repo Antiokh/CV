@@ -380,6 +380,8 @@ This is interview-positioning evidence; normally not CV copy.
 - `sources/cross_role_business_outcomes_followup_2026-09-15.md`
 - `GPT/AI_NATIVE_DELIVERY.md`
 - project-specific `portfolio/*/README.md` files
+- `details/confirmed_profile_updates_2026-08-11.md` — later delivery-team / cloud / AI confirmations
+- `GPT/anton_nazarov_profile.json` — structured current-practice evidence
 - `RESUME.md`
 
 Future cross-project NeedleBit evidence should update **this dossier first**; project-specific implementation details should remain in the matching portfolio case as well.
