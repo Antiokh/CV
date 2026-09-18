@@ -13,6 +13,18 @@
 - Modified Boss-Referent for web use, added modules / databases and fixed application issues.
 - Trained new employees on the internal workflow system.
 
+## Additional recovered technical and knowledge-transfer detail
+
+The 2026-09-18 audit recovered the following source-backed details:
+
+- Anton conducted introductory training / lectures on the internal Lotus Notes workflow system for new employees, including **top-management participants**.
+- He introduced XPages when it was still new in the working environment and translated / reworked Boss-Referent library logic from LotusScript toward JavaScript / SSJS for web use.
+- Raw technical-path evidence says **two or three databases** were moved into pure web-format use cases for users who did not need the full Boss-Referent client; examples remembered include parking-pass and visitor workflows.
+- Anton had **MS SQL** exposure in an integration context through **Lotus Enterprise Integrator (LEI)** / AccessApp-related work. This was integration-layer experience, not his primary database stack.
+- Raw technical dictation also places some support / UI adaptation work in a Rosreestr client context during this period. Treat Rosreestr as a project/client context rather than a separate employer unless documentary evidence says otherwise.
+
+These details are useful for enterprise-integration, legacy modernization and technical-leadership vacancies, but should stay supporting evidence for senior management CVs.
+
 ## Why this role matters
 
 This is early evidence of:
@@ -39,6 +51,9 @@ This is early evidence of:
 - `RESUME.md`
 - `sources/Anton_Nazarov_resume_greenhouse_noai.md`
 - `details/anton_nazarov_tech_path_raw.md`
+- `details/anton_nazarov_enterprise_it_path_raw.md` — LEI / MS SQL integration context
+- `details/chatgpt_shared_cv_tech_survey_source.md` — raw Boss-Referent / web-conversion recollection
+- `GPT/_notebooklm_import/05E_RAW_STORY_05_EARLY_ROLES_SUMMARY.txt` — training / early-role summary
 - `GPT/anton_nazarov_experience_full.md`
 
 Future corrections should update **this dossier first**.

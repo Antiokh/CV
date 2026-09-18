@@ -16,6 +16,18 @@ Repository sources use both **Synergy JSC / Synergy Market** and **Beluga Group*
 - Processed an inherited backlog of enhancement / maintenance requests and improved consistency across internal Domino applications.
 - Historical career evidence also records XPages / web modernization work and JavaScript / SSJS changes around Boss-Referent-style workflow components; exact employer attribution for every technical detail should be checked against the detailed technical-path source before using a highly specific claim.
 
+## Additional recovered technical / cleanup detail
+
+The completeness audit recovered several details from the raw early-career sources:
+
+- Anton brought a set of internal databases toward a **more consistent visual style**.
+- Work included XPages bug fixing, maintenance of non-XPages internal databases and cleanup of older defects.
+- A significant part of the role was reducing a backlog of change requests / technical improvements accumulated over several years.
+
+These details strengthen the interpretation that Anton entered a legacy environment and cleaned up accumulated technical debt.
+
+The repository uses Synergy JSC / Synergy Market and Beluga Group for this same period. Keep the alias explicit rather than creating two separate jobs.
+
 ## Why this role matters
 
 This is useful mainly as evidence that Anton had enterprise-scale production / support exposure before later management roles:

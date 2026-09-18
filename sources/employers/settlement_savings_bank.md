@@ -121,6 +121,25 @@ IBM Lotus Notes / Domino, XPages, JavaScript, CSS/HTML, XML, 1C integration, Sam
 
 Technology is supporting evidence. Lead with process ownership, regulatory risk, traceability and cross-functional implementation for managerial/product roles.
 
+## Additional recovered delivery / discovery evidence
+
+The 2026-09-18 completeness audit recovered several details preserved in structured profile and technical-path sources:
+
+- Anton held **more than ten working sessions** with executives and department heads while reconstructing real document routes and turning them into automation requirements.
+- Before building the internal system, he reviewed existing DMS / EDMS products, prepared implementation assessments and participated in the decision to **build the system in-house**.
+- Raw technical-path evidence describes a weekly delivery cadence: weekly plan, review/check, change report, meetings with additional departments, requirement gathering and the next technical scope.
+- The same raw source says several departments were automated from scratch as the bank-wide workflow expanded.
+
+### Earlier bank work before the main DMS program
+
+Raw technical-path evidence also records that Anton initially supported an inherited **English / multilingual XPages service for foreign clients**, updating and maintaining a system written by a previous developer.
+
+This is useful technical / client-facing context but is secondary to the bank-wide process-governance case.
+
+### Metric / causality guardrail
+
+More than ten working sessions is supported in the structured profile and existing ERP CV, but it is a scope-of-discovery metric, not a business outcome. Lead with the resulting governance / workflow visibility rather than the meeting count unless stakeholder-discovery depth is a vacancy requirement.
+
 ## Strongest signals by role
 
 ### Product / Technical Product
@@ -164,6 +183,8 @@ Technology is supporting evidence. Lead with process ownership, regulatory risk,
 - `GPT/anton_nazarov_experience_full.md`
 - `sources/cross_role_business_outcomes_debrief_2026-09-15.md`
 - `sources/cross_role_business_outcomes_second_pass_2026-09-15.md`
+- `details/anton_nazarov_tech_path_raw.md` — multilingual service and weekly delivery-cadence recollection
+- `GPT/anton_nazarov_profile.json` — structured workshop / DMS-assessment evidence
 - `RESUME.md`
 
 Future bank corrections or new evidence should update **this dossier first**.

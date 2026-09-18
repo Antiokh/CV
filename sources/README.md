@@ -31,9 +31,21 @@ When new employment evidence appears, update the relevant employer dossier first
 - [Moscow Social Development Agency](./employers/moscow_social_development_agency.md)
 - [Beluga Group / Synergy JSC](./employers/beluga_group.md)
 - [Settlement and Savings Bank](./employers/settlement_savings_bank.md)
+- [IscTravel Law Agency](./employers/isctravel_law_agency.md)
 - [I.T. Information Technology](./employers/it_information_technology.md)
 - [Freelance / Private Practice 2009–2011](./employers/freelance_private_practice_2009_2011.md)
 - [Domodedovo Airport](./employers/domodedovo_airport.md)
+
+## Supplemental non-employer career evidence
+
+- [Event, promotion and 2016 transition](./experience/event_promotion_and_2016_transition.md)
+- [Supplemental experience router](./experience/README.md)
+
+This layer preserves real career evidence that does not map cleanly to one employer.
+
+## Completeness audit
+
+- [Employer dossier completeness audit — 2026-09-18](./employers/COMPLETENESS_AUDIT_2026-09-18.md)
 
 ## Other documentary sources
 

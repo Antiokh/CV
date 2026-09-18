@@ -258,6 +258,70 @@ The stack is supporting evidence. For managerial/product CVs, lead with ownershi
 - translating recurring operational pain into product change;
 - stakeholder alignment and rollout.
 
+## Completeness additions from older technical / structured sources
+
+A repository-wide audit on 2026-09-18 recovered additional Directorate details that had been preserved in older profile, technical-path and job-board sources but were not explicit in the first employer dossier.
+
+### Management-scope precision
+
+- A later first-person confirmation records functional interaction / coordination with approximately **126 people across subordinate institutions**.
+- This is a more precise recollection inside the already-safe 100+ specialists across 100+ institutions scope.
+- It is still **functional coordination without line authority**. Do not convert ~126 into direct reports.
+- For ordinary CVs, 100+ remains the safer rounded wording unless the exact scope is useful and Anton wants to defend ~126.
+
+### Requirements, procurement and internal consulting
+
+Additional preserved responsibilities include:
+
+- drafting technical specifications / requirements for Directorate IT projects;
+- procurement of certificates and software / infrastructure licenses;
+- IBM Notes training for internal staff as well as consulting / support for subordinate institutions;
+- governance around VPN access and changes to database fields / shared system structures.
+
+### Specific platform capabilities preserved in older sources
+
+Historical structured profile / CV material also records:
+
+- edit locking during controlled workflow / reporting stages;
+- conditional field / section visibility;
+- live session-based settings;
+- filtered exports;
+- full-text search;
+- a user feedback section;
+- reusable report, field, form, filter and export generators;
+- batch / service actions;
+- Word / PDF / Excel-oriented formal output in addition to structured HTTP/XML exchange.
+
+Use these as technical/product depth when a vacancy specifically needs workflow-platform, document-generation or enterprise application evidence.
+
+### Infrastructure topology and performance detail
+
+Older technical-path evidence records:
+
+- production on physical **HP ProLiant** server infrastructure;
+- development / replica environment on **VMware**;
+- CentOS 7 / Linux and nginx reverse-proxy deployment;
+- database replication and production/development separation;
+- a first-person recollection that the database / application layer became roughly **2.5x faster** when moved from Windows to Linux.
+
+The Windows → CentOS/nginx migration itself is well established. Treat the ~2.5x infrastructure-speed recollection as secondary first-person evidence, not a headline metric unless separately corroborated.
+
+### Apache POI / export-engine depth
+
+Technical-path notes preserve work on:
+
+- server-side Java / Apache POI report generation;
+- Excel formatting and generation constraints;
+- handling Apache POI / Excel limits;
+- reusable report / table / field generators.
+
+### Older metric variants that must stay separate
+
+Two older source variants should **not** be silently merged into newer evidence:
+
+1. Older structured profiles say exports were accelerated by about **20x** and that long-running operations received expected-time estimation. The later, more precise debrief establishes the stronger report-specific evidence: one major events report went from about **5 hours** to seconds/minutes. Preserve 20x + ETA as historical supporting evidence, but prefer the report-specific timing in current CVs.
+2. An older technical-path recollection says the system could support roughly **200–300 users** comfortably. Separately, later debrief/log evidence says the platform executed roughly **200–300 report runs per working day**. These are **different metrics**. Until the user-count recollection is independently reconciled, do not turn the 200–300 report-run metric into a user-count claim or vice versa.
+
 ## Claims to avoid or qualify
 
 - **Do not** call 200–300 reports/day high-load.
@@ -280,6 +344,9 @@ Primary raw and intermediate sources retained for traceability:
 - `sources/directorate_support_model_debrief_2026-09-15.md`
 - `sources/mosrazvitie.md` — historical assistant-formulation note; not primary factual source after this dossier
 - `portfolio/ais_mosrazvitie/README.md`
+- `details/confirmed_profile_updates_2026-08-11.md` — later confirmation of ~126-person functional coordination scope
+- `details/anton_nazarov_tech_path_raw.md` — detailed reporting / infrastructure / performance recollections
+- `GPT/anton_nazarov_profile.json` — structured historical profile facts and feature inventory
 - `RESUME.md` — master evidence inventory, not provenance by itself
 
 If future debriefs add or correct facts about this employer, update **this dossier first**, then update derived CV/evidence files.

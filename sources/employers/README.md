@@ -38,9 +38,16 @@ Employer dossiers contain source/provenance labels and caveats. **Those labels a
 ### Earlier enterprise / technical roles
 
 - [Beluga Group / Synergy JSC](./beluga_group.md) — Nov 2016–Mar 2017
+- [IscTravel Law Agency](./isctravel_law_agency.md) — short Nov–Dec 2012 engagement
 - [I.T. Information Technology](./it_information_technology.md) — Jan 2011–Apr 2012
 - [Freelance / Private Practice](./freelance_private_practice_2009_2011.md) — Jan 2009–Jan 2011
 - [Domodedovo Airport](./domodedovo_airport.md) — Sep 2008–Sep 2009
+
+## Supplemental non-employer experience
+
+Career evidence that does not map cleanly to one employer is stored separately under [sources/experience](../experience/README.md). This includes the 2016 SMM / promotion transition and event / festival / volunteer evidence.
+
+Do not invent an employer solely to make these periods fit the employer-dossier structure.
 
 ## Important distinctions
 
@@ -66,6 +73,10 @@ Existing top-level files such as:
 - `GPT/anton_nazarov_career_path_story_full_raw.md`
 
 remain valid provenance. They should not normally be loaded as independent competing summaries after the facts have been consolidated here.
+
+## Completeness audit
+
+The first normalization pass was audited against structured profiles, raw technical paths, old CVs and current review attachments. See [COMPLETENESS_AUDIT_2026-09-18.md](./COMPLETENESS_AUDIT_2026-09-18.md) for recovered gaps, deliberately unresolved conflicts and reviewed source classes.
 
 ## Update rule
 
