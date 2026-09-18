@@ -52,6 +52,16 @@ In either schema also load:
 
 After v7 is live, `tracker-storage-v6.md` owns physical salary/helper addresses (`F`, `AH`, `AB`, `Y`) wherever older salary/storage documents still name the pre-migration columns (`AF`, `Z`, `W`). `salary-normalization-v6.md` continues to own salary research/provenance/normalization semantics.
 
+### First tracker action: compact internal Queue gaps
+
+For every CV/employment run that will inspect or mutate WorkInterviews Queue, the **first tracker action after bootstrap/schema selection and live Agent Instructions load** is Queue compaction.
+
+On live v7, inspect only `Company (A)`, `Position (B)` and immutable `Row ID (Y)`. Treat a row as an internal empty gap only when all three display values satisfy `String(value ?? '').trim() === ''`. Do not use `isBlank()`, do not inspect formula-owned/helper columns, and do not infer emptiness from a single field.
+
+Delete only internal gap rows that occur before the last populated A/B/Y row. Delete contiguous ranges bottom-up. Preserve trailing spare rows/capacity. Any row where at least one of A/B/Y is non-empty is **not** an empty row and must remain for integrity repair.
+
+After compaction, discard all previously remembered physical Queue row numbers and resolve records again by immutable Row ID before further reads/writes.
+
 For a cover letter additionally load `GPT/work-application-manager/references/cover-letter-evidence-first.md` plus the language-specific humanizer cache required by the work-application-manager skill.
 
 For vacancy discovery also load `job-search-discovery.md`, `GPT/work-application-manager/references/archetype-cv-routing-v1.md`, and fresh live `Job Sources` / `RU-root Companies` tabs.
