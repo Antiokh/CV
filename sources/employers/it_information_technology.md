@@ -51,6 +51,9 @@ This is early evidence of:
 - `RESUME.md`
 - `sources/Anton_Nazarov_resume_greenhouse_noai.md`
 - `details/anton_nazarov_tech_path_raw.md`
+- `details/anton_nazarov_enterprise_it_path_raw.md` — LEI / MS SQL integration context
+- `details/chatgpt_shared_cv_tech_survey_source.md` — raw Boss-Referent / web-conversion recollection
+- `GPT/_notebooklm_import/05E_RAW_STORY_05_EARLY_ROLES_SUMMARY.txt` — training / early-role summary
 - `GPT/anton_nazarov_experience_full.md`
 
 Future corrections should update **this dossier first**.
