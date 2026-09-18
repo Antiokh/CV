@@ -259,6 +259,61 @@ Use:
 
 Do not invent team size.
 
+## Additional delivery-scope and modern-engineering evidence
+
+A repository-wide audit on 2026-09-18 recovered several later-confirmed NeedleBit / independent-practice details that were not explicit in the first dossier.
+
+### Flexible delivery team / parallel work
+
+A direct confirmation from August 2026 states that Anton:
+
+- brings developers and designers into projects as needed;
+- manages delegated delivery rather than treating every project as solo implementation;
+- can run **two product tracks in parallel**.
+
+This supports delivery / coordination evidence, but it does **not** establish a large permanent team or a manager-of-managers structure.
+
+### Product / commercial shape
+
+The same confirmation describes much of the recent portfolio as **B2C and/or SaaS-oriented**, including Telegram Mini App work.
+
+Several products were delivered as **PWA / browser-first products**, in some cases deliberately avoiding dependence on App Store distribution. Use this when a vacancy values web/PWA delivery or distribution independence.
+
+### Delivery method
+
+Anton describes his practical delivery model as:
+
+- Waterfall-like planning at macro / milestone level;
+- spiral / Agile iteration at smaller scope;
+- Kanban for current work.
+
+This is a working-style description, not a formal-methodology certification.
+
+### Current web / cloud engineering context
+
+Later-confirmed technical evidence includes:
+
+- long JavaScript experience; historically strong Vue.js exposure;
+- more recent use of Next.js;
+- React can be used where appropriate with AI-assisted development;
+- practical AWS exposure plus some non-AWS cloud infrastructure;
+- automated **GitHub → Cloudflare** build/deploy pipelines with tests on several projects.
+
+Provider-specific claims beyond these should come from project evidence.
+
+### AI product-architecture considerations
+
+For AI / companion-style products Anton explicitly considers:
+
+- long-term user/model memory;
+- provider and content-policy constraints;
+- fallback models / providers for model unavailability;
+- AI used both as delivery tooling and as product functionality.
+
+### MAX experimentation guardrail
+
+As of August 2026 Anton was learning / experimenting with integration into **MAX**. This is **not established production experience** and should not be presented as such.
+
 ## Why employment after independent practice is coherent
 
 Raw career evidence frames the return to employment as strategic rather than a failure of technical capability.
