@@ -351,6 +351,92 @@ Use these as interview/change-management evidence rather than inflammatory CV co
 - finance/legal/procurement/service workflows;
 - paid streaming / website modernization.
 
+## Completeness additions from enterprise-infrastructure sources
+
+A repository-wide audit on 2026-09-18 recovered a substantial technical / operational layer that had been present in older enterprise-IT dictation and Greenhouse/LinkedIn source material but was too compressed in the first dossier.
+
+### Wider infrastructure scope — separate from the 2020 presentation baseline
+
+Separate historical sources describe the wider operating environment as approximately:
+
+- **~200 PCs**;
+- **7 servers**;
+- **~20 virtual machines**;
+- CCTV, telephony, file services and access-control / building technology.
+
+This is useful scope evidence, but it is **not the same source/event** as the August 2020 presentation numbers of 145 employees, 156 workstations and 581 technology assets. Never combine the two sets and call the result one documented baseline.
+
+### Identity, storage and access-control integration
+
+Older first-person enterprise-IT evidence records an integrated operating model around:
+
+- **Active Directory / GPO** as the central identity / policy layer;
+- Group Policy deployment of browsers, required software, workstation settings, restrictions and security policies;
+- **Synology** storage using domain accounts / groups for file permissions;
+- **Octagram** access control, passes and access points;
+- automated / synchronized employee and address-book data tied to staffing / account state;
+- centralized offboarding so disabling an identity removed access across connected resources;
+- local identity / directory synchronization with the wider **Moscow Department of Culture** infrastructure.
+
+### GLPI / inventory integration
+
+GLPI was used as more than a ticket queue:
+
+- HelpDesk / service requests;
+- automated workstation / asset inventory;
+- inventory numbers and equipment lifecycle;
+- licensing / renewal context;
+- domain integration;
+- support and asset records in the same operating model.
+
+### Remote access and endpoint security
+
+Older sources explicitly preserve:
+
+- **SoftEther VPN** for remote users / COVID-era remote access;
+- **Yandex Disk** in the remote-work collaboration context;
+- **Kaspersky** endpoint / licensing / security context.
+
+These are implementation details beneath the already-canonical 100+ employees moved to secure remote work result.
+
+### CCTV, monitoring and resilience
+
+First-person technical evidence records:
+
+- a major CCTV rebuild on **Hikvision**;
+- disk replacement, RAID / mirroring and recovery behavior;
+- **Zabbix** monitoring of switches, cameras, Octagram, Synology and other critical infrastructure;
+- Windows / CentOS systems and support of Octagram servers / XML-related integrations.
+
+Avoid converting this into uptime percentages that were never recorded.
+
+### Integrated phonebook / building map
+
+Older profile and Greenhouse material records an integrated internal phonebook with maps of buildings, PCs and employees. This is separate from the higher-value cross-department workflow cases but useful evidence of pragmatic internal-product delivery and directory / location integration.
+
+### Relational-database migration — uncertain implementation detail
+
+A raw enterprise-IT recollection says insecure ad-hoc internal databases were moved into a proper relational database and that the target was **probably MS SQL** because Octagram already used it.
+
+Preserve the architectural fact — migration away from poorly protected ad-hoc storage — but **do not hard-claim MS SQL as the target for that specific migration** until Anton confirms it.
+
+### Presentation portfolio: implemented vs planned/evaluated
+
+The 2020 ZIL presentation lists a modernization portfolio including **GLPI, FusionInventory, Zabbix, Active Directory, OnlyOffice, Odoo and internal booking services**, plus project labels such as **ЕБС, ЕАБИС, ЕПС, CRM, website and VR**.
+
+Important distinction:
+
+- GLPI, AD and later Zabbix / related infrastructure have independent implementation evidence elsewhere in the repository;
+- Odoo has separate evaluation/rejection evidence;
+- some other presentation items may have been planned, evaluated or in implementation rather than fully deployed;
+- the abbreviations ЕБС / ЕАБИС / ЕПС are not safely expanded by current evidence.
+
+Keep this list as program / portfolio evidence, not proof that every listed product was fully implemented.
+
+### Budget responsibility
+
+Older experience sources explicitly describe responsibility for both the **department operating budget** and **infrastructure-modernization budget**, alongside procurement and vendor work. Exact annual totals remain unverified; the remembered RUB7–8m procurement total should still not be promoted to an audited budget figure.
+
 ## Claims to avoid or qualify
 
 - Do not attribute the full RUB30m debt turnaround to Anton or IT.
