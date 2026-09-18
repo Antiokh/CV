@@ -39,6 +39,8 @@ It fills the early-career timeline and shows that Anton's infrastructure / web r
 ## Provenance
 
 - `RESUME.md`
+- `GPT/_notebooklm_import/05E_RAW_STORY_05_EARLY_ROLES_SUMMARY.txt` — detailed early freelance work
+- `details/anton_nazarov_experience_full.md` — early practice detail
 - `GPT/anton_nazarov_experience_full.md`
 - `sources/Anton_Nazarov_resume_greenhouse_noai.md`
 
