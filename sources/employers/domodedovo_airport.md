@@ -13,6 +13,17 @@
 - Integrated Lotus applications with Microsoft Office through OLE.
 - Prepared documentation and worked with Service Desk / testers on production issues.
 
+## Additional recovered early technical detail
+
+Raw technical dictation preserves several concrete tasks that were not explicit in the first dossier:
+
+- notification / mail-distribution scripts;
+- work with user / directory and calendar-related data;
+- client-side library / external-component integration in the Lotus environment;
+- user-facing UI adaptation, including discussing practical usability problems with users rather than only implementing back-end changes.
+
+The raw recollection around an external Java/DLL component and LotusScript/OLE contains imprecise wording about the interop mechanism. Preserve the general integration evidence, but do not publish a highly specific language/runtime claim until Anton confirms the exact mechanism.
+
 ## Why this role matters
 
 This is the start of Anton's enterprise-software career and establishes early exposure to:
