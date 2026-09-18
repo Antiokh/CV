@@ -46,6 +46,9 @@ For senior CVs it is timeline / technical-depth evidence, not a major result sec
 - `RESUME.md`
 - canonical profile JSON
 - `GPT/anton_nazarov_experience_full.md`
+- `details/chatgpt_shared_cv_tech_survey_source.md` — raw mail/calendar/client-library recollection
+- `details/anton_nazarov_tech_path_raw.md` — early enterprise technical-path detail
+- `GPT/_notebooklm_import/05E_RAW_STORY_05_EARLY_ROLES_SUMMARY.txt` — early-role summary
 - `sources/Anton_Nazarov_resume_greenhouse_noai.md`
 
 Future corrections should update **this dossier first**.
