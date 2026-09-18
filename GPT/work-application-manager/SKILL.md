@@ -40,6 +40,16 @@ Do not restate or override the modular storage/salary/artifact contracts from th
 Spreadsheet: `WorkInterviews` (`1k-Zbz7LMZJJcWfMp41yC-7mUaL_UI9__Bwy1SpPLbao`).
 Drive root: `WorkApplications` (`1wQMbnH4CODaARJSY221H06oCFJV2ukAK`).
 
+## Queue startup compaction
+
+Before any substantive Queue scan, enrichment, discovery ingest or vacancy-row write in a WorkInterviews run, compact internal Queue gaps according to the runtime-selected tracker contract.
+
+On live v7 a physical Queue row is eligible for deletion only when trimmed display values of **A / Company**, **B / Position** and **Y / Row ID** are all empty. Use string trim comparison, not `isBlank()`. Ignore formulas/helpers in F/K/L/Z:AH for this decision.
+
+Delete only internal empty rows before the last populated A/B/Y row, bottom-up. Keep trailing capacity. If any of A/B/Y is non-empty, preserve the row and treat it as a possible incomplete/corrupt record rather than whitespace.
+
+After compaction, all previous physical row coordinates are stale. Re-resolve every writable record by immutable Row ID before mutating it.
+
 ## Vacancy workflow
 
 1. Resolve/deduplicate through aggregate `Jobs` according to the runtime-selected tracker contract.
