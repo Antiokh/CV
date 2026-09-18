@@ -183,6 +183,8 @@ More than ten working sessions is supported in the structured profile and existi
 - `GPT/anton_nazarov_experience_full.md`
 - `sources/cross_role_business_outcomes_debrief_2026-09-15.md`
 - `sources/cross_role_business_outcomes_second_pass_2026-09-15.md`
+- `details/anton_nazarov_tech_path_raw.md` — multilingual service and weekly delivery-cadence recollection
+- `GPT/anton_nazarov_profile.json` — structured workshop / DMS-assessment evidence
 - `RESUME.md`
 
 Future bank corrections or new evidence should update **this dossier first**.
