@@ -18,6 +18,26 @@ Cross-partition moves belong to the bound lifecycle Apps Script / human UI. API/
 
 `Row ID` is the durable vacancy identity. Company, Position and row number are not durable identity.
 
+## Queue compaction invariant
+
+Every agent WorkInterviews run starts its tracker work by compacting internal physical gaps in Queue.
+
+On v7, determine an empty Queue row from exactly these three non-formula identity fields:
+
+- A / `Company`
+- B / `Position`
+- Y / `Row ID`
+
+Read their display values and compare `String(value ?? '').trim()` with the empty string. A row is deletable only when **all three trimmed values are empty**.
+
+Do **not** use `isBlank()`; formula-owned cells may exist on an otherwise empty physical row. Do not include F, K, L, Z:AH or any other formula/helper field in the emptiness test.
+
+Only internal gaps before the last populated A/B/Y row are compacted. Preserve trailing spare rows. Delete contiguous empty ranges bottom-up so earlier row coordinates cannot invalidate later deletion coordinates.
+
+If any of A/B/Y is non-empty, do not delete that row. A partial identity is an integrity problem, not whitespace.
+
+After compaction, physical Queue row numbers must be treated as invalidated cache. All subsequent mutations resolve the target again by immutable Row ID immediately before writing.
+
 ## Canonical vacancy columns
 
 The physical storage sheets share this exact layout:
