@@ -132,7 +132,7 @@ For factual employment evidence, use `sources/employers/README.md` as the source
 
 The employer dossier is the canonical **working factual layer** for that employer. Dated `cross_role_*`, `zil_*_debrief`, raw voice notes, historical CVs and similar files are retained as provenance/audit material. Open them only when verifying a detail, resolving a conflict, recovering a fact not yet consolidated, or incorporating new first-person evidence.
 
-Project-specific `portfolio/` evidence may supplement the employer dossier when technical/project depth is needed. If a new recollection changes an employer fact, reconcile the employer dossier first; only then update `ANTON_EVIDENCE_MATRIX.md`, role profiles or CVs.
+Project-specific `portfolio/` evidence may supplement the employer dossier when technical/project depth is needed. Non-employer career evidence such as event/promotion/volunteer work and transition periods lives under `sources/experience/`; do not invent an employer to absorb it. If a new recollection changes an employer fact, reconcile the employer dossier first; only then update `ANTON_EVIDENCE_MATRIX.md`, role profiles or CVs.
 
 A richer or longer dossier does not imply stronger role fit. Documentation density must never substitute for vacancy-specific signal strength.
 
