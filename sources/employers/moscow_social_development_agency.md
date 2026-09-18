@@ -157,6 +157,9 @@ These are supporting signals for greenfield architecture, operating control and 
 - `sources/cross_role_business_outcomes_debrief_2026-09-15.md`
 - `sources/cross_role_business_outcomes_second_pass_2026-09-15.md`
 - `sources/cross_role_business_outcomes_followup_2026-09-15.md`
+- `GPT/anton_nazarov_experience_full.md` — phone-directory / architecture / leadership detail
+- `sources/Anton_Nazarov_resume_greenhouse_noai.md` — human-written historical CV evidence
+- `GPT/anton_nazarov_profile.json` — structured Agency facts
 - `RESUME.md`
 
 Future corrections or additional Agency recollections should update **this dossier first**.
