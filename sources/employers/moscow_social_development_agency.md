@@ -109,6 +109,18 @@ Because teams were distributed through a large / multi-floor building and people
 
 This is a small but useful example of solving an operational problem pragmatically rather than building unnecessary custom software.
 
+## Additional recovered implementation details
+
+The 2026-09-18 completeness audit found several Agency details in older experience / Greenhouse sources that were only partially represented above:
+
+- Anton **designed the initial IT architecture** covering workstations, servers, Ethernet, Wi-Fi, SIP telephony and business systems.
+- He led the IT team / function, planned department activity and controlled task execution; direct headcount is still not sufficiently supported for a hard number.
+- The GLPI rollout included automated inventory and was part of the initial service / asset operating model.
+- Anton built / led implementation of a **phone directory with employee-map display and Active Directory synchronization**. This is related to, but more specific than, the general floor / staff-location map described above.
+- He contributed to drafting automation requirements and organized documentation around equipment, internet contracts and telephony.
+
+These are supporting signals for greenfield architecture, operating control and internal-product delivery; they do not change the existing ~100-user scale claim.
+
 ## Strongest signals by role
 
 ### CIO / Head of IT
