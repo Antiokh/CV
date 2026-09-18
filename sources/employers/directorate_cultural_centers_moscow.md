@@ -344,6 +344,9 @@ Primary raw and intermediate sources retained for traceability:
 - `sources/directorate_support_model_debrief_2026-09-15.md`
 - `sources/mosrazvitie.md` — historical assistant-formulation note; not primary factual source after this dossier
 - `portfolio/ais_mosrazvitie/README.md`
+- `details/confirmed_profile_updates_2026-08-11.md` — later confirmation of ~126-person functional coordination scope
+- `details/anton_nazarov_tech_path_raw.md` — detailed reporting / infrastructure / performance recollections
+- `GPT/anton_nazarov_profile.json` — structured historical profile facts and feature inventory
 - `RESUME.md` — master evidence inventory, not provenance by itself
 
 If future debriefs add or correct facts about this employer, update **this dossier first**, then update derived CV/evidence files.
