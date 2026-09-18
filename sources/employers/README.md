@@ -74,6 +74,10 @@ Existing top-level files such as:
 
 remain valid provenance. They should not normally be loaded as independent competing summaries after the facts have been consolidated here.
 
+## Completeness audit
+
+The first normalization pass was audited against structured profiles, raw technical paths, old CVs and current review attachments. See [COMPLETENESS_AUDIT_2026-09-18.md](./COMPLETENESS_AUDIT_2026-09-18.md) for recovered gaps, deliberately unresolved conflicts and reviewed source classes.
+
 ## Update rule
 
 When a new recollection conflicts with an employer dossier:
