@@ -11,6 +11,10 @@ This file does not redefine the modular contracts. Load:
 - `activity-log.md` when hiring/process evidence is encountered;
 - `role-entry-strategy-v1.md` for interview-derived role targeting and cold-entry priority.
 
+## Phase 0 — compact Queue before discovery
+
+Before snapshotting Jobs, scanning Queue, reading source inventories or creating any vacancy rows, run the tracker-defined Queue startup compaction. On live v7 delete only internal physical rows where trimmed A / Company, B / Position and Y / Row ID are all empty. Ignore formulas/helpers for the emptiness decision, delete ranges bottom-up, preserve trailing capacity, then discard cached row numbers and re-resolve by Row ID.
+
 ## Live inventories
 
 Before every broad discovery run read current WorkInterviews:
