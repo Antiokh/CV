@@ -65,6 +65,30 @@ General old CV / technical-path material should route to:
 - early independent practice → `freelance_private_practice_2009_2011.md`
 - Domodedovo → `domodedovo_airport.md`
 
+## Additional source-routing recovered by completeness audit
+
+- `details/anton_nazarov_tech_path_raw.md`
+  - Directorate reporting/infrastructure detail → `directorate_cultural_centers_moscow.md`
+  - Bank delivery cadence + multilingual service → `settlement_savings_bank.md`
+  - IscTravel technical case → `isctravel_law_agency.md`
+  - early-role technical details → matching early employer dossiers.
+- `details/anton_nazarov_enterprise_it_path_raw.md`
+  - ZIL AD/GLPI/Octagram/Synology/SoftEther/Hikvision/Zabbix detail → `zil_cultural_center.md`
+  - LEI/MS SQL integration context → `it_information_technology.md`.
+- `details/chatgpt_shared_cv_tech_survey_source.md`
+  - Domodedovo / I.T. / Bank / IscTravel raw technical recollections → matching employer dossiers.
+- `details/confirmed_profile_updates_2026-08-11.md`
+  - Directorate ~126 functional scope → Directorate dossier;
+  - ZIL operational team-scope nuance → ZIL dossier;
+  - NeedleBit delegated/parallel delivery and current cloud/AI context → NeedleBit dossier.
+- `GPT/_notebooklm_import/05E_RAW_STORY_05_EARLY_ROLES_SUMMARY.txt`
+  - Synergy / I.T. / Domodedovo / early freelance → matching employer dossiers;
+  - event / festival / promotion evidence → `sources/experience/event_promotion_and_2016_transition.md`.
+- structured profile's 2016 SMM/promotion transition → `sources/experience/event_promotion_and_2016_transition.md`, not a fabricated employer.
+- IscTravel → `isctravel_law_agency.md`.
+
+See `COMPLETENESS_AUDIT_2026-09-18.md` for the gap/fix inventory.
+
 ## Rule
 
 Legacy files are **not deprecated as evidence**; they are deprecated as the **first place to synthesize facts**. Use them to audit provenance or recover details, then reconcile the result back into the appropriate employer dossier.
