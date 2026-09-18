@@ -461,6 +461,10 @@ Older experience sources explicitly describe responsibility for both the **depar
 - `sources/cross_role_business_outcomes_second_pass_2026-09-15.md`
 - `sources/cross_role_business_outcomes_followup_2026-09-15.md`
 - historical 2020 ZIL IT presentation / source material referenced in repository evidence
+- `details/anton_nazarov_enterprise_it_path_raw.md` — detailed infrastructure / access / monitoring recollection
+- `details/confirmed_profile_updates_2026-08-11.md` — later team-scope confirmation
+- `details/linkedin/description.md` — preserved integrated infrastructure / phonebook wording
+- `sources/Anton_Nazarov_resume_greenhouse_noai.md` — older human-written CV evidence
 - `RESUME.md` as consolidated master inventory
 
 Future ZIL corrections or new recollections should update **this dossier first**.
