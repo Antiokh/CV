@@ -56,7 +56,9 @@ Anton recalls that the central system could hold a more complete management pict
 
 ## Product ownership and discovery
 
-Anton owned product logic, architecture, data model, workflows, reporting, access rules, governance, implementation decisions and user adoption.
+**Product-experience dating rule:** for CV/application purposes, Anton's sustained full product ownership can be counted from **January 2017**, when he took end-to-end ownership of AIS MosRazvitie in the Directorate. The formal title was `Senior Manager / IT Architect / Analyst`, but the responsibility pattern was Product Owner-level: product logic, architecture, data model, workflows, reporting, access rules, governance, implementation decisions, rollout and user adoption. Do not require the literal `Product Owner` title when calculating years of relevant product ownership.
+
+The earlier Settlement and Savings Bank role (2013–2015) already showed substantial end-to-end project/workflow ownership, but use **Jan 2017** as the clean, defensible start date for continuous full product ownership unless a specific application benefits from discussing the earlier precursor.
 
 A key discovery step was interviewing departments about how they actually used data. The inherited hierarchy did not match operating reality. Examples:
 
