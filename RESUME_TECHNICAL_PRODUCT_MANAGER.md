@@ -11,7 +11,7 @@ Work authorization: Serbia
 
 ## Profile
 
-Technical product leader with 18+ years across banking systems, enterprise platforms, public-sector products and founder-led SaaS. I am strongest where a product sits between business operations and engineering: complex workflows, APIs, integrations, access rules, data models, automation and internal or B2B platforms.
+Technical product leader with 18+ years across banking systems, enterprise platforms, public-sector products and founder-led SaaS. Sustained full product ownership is defensibly countable from 2017, when I took end-to-end ownership of AIS MosRazvitie across 100+ institutions, despite the formal role title being Senior Manager / IT Architect / Analyst. I am strongest where a product sits between business operations and engineering: complex workflows, APIs, integrations, access rules, data models, automation and internal or B2B platforms.
 
 My product work usually starts with an operating problem rather than a feature list. I reconstruct the real workflow with users and stakeholders, turn it into a product and data model, align implementation with engineering constraints, and stay involved through rollout, adoption and measurement.
 
