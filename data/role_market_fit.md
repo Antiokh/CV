@@ -105,9 +105,10 @@ These roles combine:
 - Motivator
 
 **Evidence**
+- Directorate / AIS MosRazvitie: sustained full product ownership from Jan 2017 across 100+ institutions; discovery, product logic, data/workflow model, prioritization, delivery, rollout and adoption despite a non-PO formal title
 - MetaFox: full ownership from idea to release
 - Dobri Visarun: full ownership from idea to release, Make.com workflow, client feedback
-- Bank: workflow mapping with leadership and PM ownership
+- Bank: earlier precursor case with workflow mapping, implementation ownership and leadership alignment
 
 **Market usefulness**
 - very high
