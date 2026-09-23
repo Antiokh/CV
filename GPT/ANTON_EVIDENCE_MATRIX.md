@@ -406,6 +406,8 @@ Always distinguish this from the 5+2 direct team.
 
 **Facts**
 
+- **Product-experience dating anchor:** sustained full product ownership is defensibly countable from **Jan 2017** with AIS MosRazvitie, despite the formal title `Senior Manager / IT Architect / Analyst`. Use Jan 2017 when a vacancy asks for years of Product Owner / Product Manager-equivalent experience.
+
 - Anton owned product logic, architecture, data model, workflows, access rules, reporting, governance, implementation and adoption.
 - Covered organizational structure, buildings/spaces, staff/positions, events, sections, accessibility, technical infrastructure, planning/KPI and other operational information.
 - Data was used for management planning/resource allocation; event volume influenced planning and funding.
