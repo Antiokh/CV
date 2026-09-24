@@ -190,3 +190,18 @@ Safe order:
 5. only then update live Agent Instructions to this v6 layout if they have not already been migrated atomically.
 
 The migration is idempotent at the schema level: it recognizes either the complete legacy layout or the complete v7 layout and refuses a mixed/unknown state before structural writes.
+
+
+## WorkApplications public-access inheritance
+
+`WorkApplications` is the canonical public application-artifact tree. Files verified inside `WorkApplications/<Company>/<PositionTitle>/` inherit the folder's anyone-with-link reader access for workflow purposes.
+
+Therefore, for tracker-linked `Position.md`, vacancy-owned CV Markdown, Cover TXT, and similar artifacts:
+
+- verify the exact file identity/content;
+- verify that the file is placed in the correct vacancy folder under `WorkApplications`;
+- do not require a separate per-file sharing mutation when the parent path is correct;
+- absence of child-level/inherited permission metadata from the connector is not a blocker by itself;
+- do not repeatedly attempt permission rewrites on every artifact;
+- if the file is outside the correct vacancy folder, move it there before accepting the public-access gate;
+- only record a public-access blocker when there is concrete contrary evidence that inherited access is actually unavailable.
