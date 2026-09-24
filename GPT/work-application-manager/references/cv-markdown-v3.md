@@ -114,3 +114,18 @@ Before a row is treated as `CV ready`:
 7. if a DOCX/PDF derivative is actually exported for final use, perform the required derivative visual QA at that time.
 
 Missing separately persisted DOCX/PDF files do not block readiness when K/L export links are valid.
+
+
+## WorkApplications inherited public access
+
+The canonical `WorkApplications` tree is shared for public link reading. When an application artifact is verified to reside inside the correct `WorkApplications/<Company>/<PositionTitle>/` vacancy folder, do not require a separate per-file permission mutation as a completion gate.
+
+For `Position.md`, vacancy-owned CV Markdown, Cover TXT, and other tracker-linked application artifacts, public-access validation is satisfied by:
+
+1. verified file identity and content readback;
+2. verified parent/path placement inside the correct vacancy folder under the public `WorkApplications` tree;
+3. no concrete contrary evidence that inherited access is restricted or broken.
+
+A connector failing to expose child-level or inherited permission metadata is not by itself an access blocker. Do not repeatedly attempt to rewrite permissions on every artifact.
+
+If an artifact was created outside the correct vacancy folder, move it into that folder before treating the inherited-public-access gate as satisfied. If there is concrete contrary evidence that the file is not publicly reachable despite correct placement, record that specific access blocker and recovery action.
