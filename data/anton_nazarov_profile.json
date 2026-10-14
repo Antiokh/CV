@@ -1,5 +1,5 @@
 {
-  "profile_version": "2026-09-10",
+  "profile_version": "2026-10-14",
   "purpose": "Canonical structured profile object for resumes, portfolio positioning, Upwork/LinkedIn rewriting, application generation, and agent-assisted profile maintenance.",
   "identity": {
     "full_name": "Anton Nazarov",
@@ -1490,7 +1490,8 @@
     "training in event management, promotion, and SMM",
     "training and mentoring",
     "webinars and onboarding",
-    "cross-domain thinking across IT, business, marketing, and operations"
+    "cross-domain thinking across IT, business, marketing, and operations",
+    "competitive Hustle / Discofox dancer; АСХ #11713, verified Radio Hustle profile (D0 / RS0; E: 5; BG: 13 as of 2026-10-14): https://radiohustle.online/dancers/11713"
   ],
   "source_documents": [
     "README.md",
