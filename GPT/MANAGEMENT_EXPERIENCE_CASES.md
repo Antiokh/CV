@@ -247,6 +247,31 @@ Anton treats AI-assisted development as a managed execution environment rather t
 - quality control
 - execution discipline under modern tooling
 
+## Case 8. TripleTen — rapid automation-operations assessment (short engagement)
+
+### Best-fit labels
+
+- operational due diligence and technology governance
+- engineering delivery / intake diagnosis
+- software portfolio economics and continuity assessment
+
+### What actually happened
+
+Anton joined TripleTen formally as **CRM Automation Manager** for a short engagement in late October–early November 2026. He investigated how Product Automations work was requested, prioritised, planned and handed off across US and LATAM teams. In parallel, he assessed available SaaS ownership/licensing information and opportunities for rationalising software spend.
+
+He established a version-controlled evidence base connecting process drafts, automation records and system inventories; improved automation backup/change-inspection tools; developed task/time-classification and SaaS-access data models; and documented ownership, service-routing and measurement gaps. Some integration components were implemented, while the process portal and migration work remained prototypes or investigations.
+
+### What this proves
+
+- ability to reconstruct an unfamiliar engineering operating model quickly
+- judgment about key-person risk and knowledge continuity
+- business-oriented diagnosis of software spend and vendor trade-offs
+- hands-on implementation of governance and reporting foundations
+
+### Usage and proof limits
+
+**Supporting case, not primary chronology.** The formal position was CRM Automation Manager, not a C-level appointment. No company-wide redesign, validated team-performance improvement or realised savings was measured during this short engagement. Prefer sustained leadership cases for primary executive evidence. Source: [TripleTen employer dossier](../sources/employers/tripleten.md).
+
 ## Cross-case managerial pattern
 
 Across these cases, the recurring leadership pattern is:
