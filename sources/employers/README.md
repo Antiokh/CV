@@ -28,6 +28,10 @@ Employer dossiers contain source/provenance labels and caveats. **Those labels a
 - [OTUS](./otus.md) — Sep–Dec 2023
 - [New Business Environment](./new_business_environment.md) — Aug–Nov 2022
 
+### Short engagements — supporting evidence only
+
+- [TripleTen](./tripleten.md) — CRM Automation Manager, late Oct–early Nov 2026. Rapid delivery/automation-operations assessment and software-economics groundwork; not a default chronological CV entry.
+
 ### Major management / product roles
 
 - [ZIL Cultural Center](./zil_cultural_center.md) — Mar 2020–Jun 2022
