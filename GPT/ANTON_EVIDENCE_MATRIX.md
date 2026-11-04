@@ -826,6 +826,36 @@ CTO, CIO, Solutions Architect, ERP/Business Apps.
 
 ---
 
+### A31 — TripleTen rapid automation-operations assessment (short engagement)
+
+**Facts**
+
+- In the formal CRM Automation Manager role, examined the Product Automations intake, sprint commitments, cross-team ownership and workflow-documentation gaps across US and LATAM.
+- Built an evidence-linked knowledge and technical handover foundation; improved Make configuration archive tooling and developed work-measurement and SaaS-entitlement data models.
+- Evaluated software portfolio cost-optimization hypotheses and dependency risks; full spend reconciliation, savings and organisation-wide rollout were not completed.
+
+**Best signals**
+
+- E18 Operating-model diagnosis: **4**
+- E04 Delivery/workflow analysis: **3**
+- E08 Technology economics discovery: **3**
+- E11 Continuity-risk assessment: **3**
+- E15 Operational visibility: **3**
+
+**Best role use**
+
+Selective support for Fractional CTO-style discovery, technology operations, automation governance or delivery-transformation roles. Use sustained roles as primary proof of long-term results.
+
+**Guardrails**
+
+Short tenure, non-C-level title, no quantified savings, validated SLA improvement or production-wide transformation. Do not turn observed risks or proposed changes into achieved outcomes. Public CV repository omits private employer evidence links and internal operational numbers.
+
+**Source**
+
+- `sources/employers/tripleten.md` (canonical dossier; separate private technical archive)
+
+---
+
 ## Fast expectation-to-evidence lookup
 
 | Expectation | Primary evidence | Secondary evidence | Main caveat |
