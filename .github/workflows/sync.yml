@@ -32,8 +32,40 @@ jobs:
         with:
           path: destination
 
-      - name: Fetch private public directory without submodule processing
+      - name: Check whether relevant private sources changed
+        id: changes
         if: env.HAS_WORKSPACE_PAT == 'true'
+        shell: bash
+        env:
+          WORKSPACE_PAT: ${{ secrets.CV_WORKSPACE_PAT }}
+        run: |
+          set -euo pipefail
+          # Check commit metadata only. No private source files are downloaded.
+          latest_commit() {
+            local source_path="$1"
+            curl --fail --silent --show-error --retry 2 \
+              -H "Authorization: Bearer $WORKSPACE_PAT" \
+              -H "Accept: application/vnd.github+json" \
+              -H "X-GitHub-Api-Version: 2022-11-28" \
+              "https://api.github.com/repos/Antiokh/cv-workspace/commits?path=${source_path}&per_page=1" \
+              | jq -er '.[0].sha'
+          }
+          public_sha="$(latest_commit public)"
+          data_sha="$(latest_commit data/anton_nazarov_profile.json)"
+          exporter_sha="$(latest_commit tools/export_public_cv.py)"
+          fingerprint="$(printf '%s\n%s\n%s\n' "$public_sha" "$data_sha" "$exporter_sha" | sha256sum | cut -d' ' -f1)"
+          echo "source_hash=$fingerprint" >> "$GITHUB_OUTPUT"
+          if [[ "$GITHUB_EVENT_NAME" != "schedule" || ! -f destination/.sync-state ||
+                "$(cat destination/.sync-state)" != "$fingerprint" ]]; then
+            echo "needed=true" >> "$GITHUB_OUTPUT"
+            echo "Source changed or manual run: rebuild required."
+          else
+            echo "needed=false" >> "$GITHUB_OUTPUT"
+            echo "No relevant private changes: skipping checkout and conversion."
+          fi
+
+      - name: Fetch private public directory without submodule processing
+        if: env.HAS_WORKSPACE_PAT == 'true' && steps.changes.outputs.needed == 'true'
         shell: bash
         env:
           WORKSPACE_PAT: ${{ secrets.CV_WORKSPACE_PAT }}
@@ -50,7 +82,7 @@ jobs:
           unset GIT_CONFIG_COUNT GIT_CONFIG_KEY_0 GIT_CONFIG_VALUE_0 WORKSPACE_PAT
 
       - name: Validate and publish exactly public/
-        if: env.HAS_WORKSPACE_PAT == 'true'
+        if: env.HAS_WORKSPACE_PAT == 'true' && steps.changes.outputs.needed == 'true'
         shell: bash
         run: |
           set -euo pipefail
@@ -69,6 +101,7 @@ jobs:
             --input workspace/data/anton_nazarov_profile.json --out destination
           python3 -m json.tool destination/resume.json > /dev/null
           python3 -m json.tool destination/person.jsonld > /dev/null
+          printf '%s\n' "${{ steps.changes.outputs.source_hash }}" > destination/.sync-state
           cd destination
           git add --all
           if git diff --cached --quiet; then
