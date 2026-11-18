@@ -45,7 +45,7 @@ jobs:
           export GIT_CONFIG_VALUE_0="AUTHORIZATION: basic $(printf 'x-access-token:%s' "$WORKSPACE_PAT" | base64 -w0)"
           git clone --quiet --filter=blob:none --no-checkout --depth=1 --branch main \
             https://github.com/Antiokh/cv-workspace.git workspace
-          git -C workspace sparse-checkout set public
+          git -C workspace sparse-checkout set --no-cone /public/ /data/anton_nazarov_profile.json /tools/export_public_cv.py
           git -C workspace checkout --quiet main
           unset GIT_CONFIG_COUNT GIT_CONFIG_KEY_0 GIT_CONFIG_VALUE_0 WORKSPACE_PAT
 
@@ -56,6 +56,8 @@ jobs:
           set -euo pipefail
           test -f workspace/public/.publish-root
           test -f workspace/public/README.md
+          test -s workspace/data/anton_nazarov_profile.json
+          test -s workspace/tools/export_public_cv.py
           for name in GPT sources details data workflows .git; do
             test ! -e "workspace/public/$name" || { echo "Forbidden public path: $name"; exit 1; }
           done
@@ -63,6 +65,10 @@ jobs:
             echo "Symlinks are not permitted in public/"; exit 1
           fi
           rsync -a --delete --exclude='.git/' workspace/public/ destination/
+          python3 workspace/tools/export_public_cv.py \
+            --input workspace/data/anton_nazarov_profile.json --out destination
+          python3 -m json.tool destination/resume.json > /dev/null
+          python3 -m json.tool destination/person.jsonld > /dev/null
           cd destination
           git add --all
           if git diff --cached --quiet; then
