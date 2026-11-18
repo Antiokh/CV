@@ -32,17 +32,22 @@ jobs:
         with:
           path: destination
 
-      - name: Checkout private workspace read-only
+      - name: Fetch private public directory without submodule processing
         if: env.HAS_WORKSPACE_PAT == 'true'
-        uses: actions/checkout@v4
-        with:
-          repository: Antiokh/cv-workspace
-          ref: main
-          path: workspace
-          sparse-checkout: public
-          sparse-checkout-cone-mode: true
-          token: ${{ secrets.CV_WORKSPACE_PAT }}
-          persist-credentials: false
+        shell: bash
+        env:
+          WORKSPACE_PAT: ${{ secrets.CV_WORKSPACE_PAT }}
+        run: |
+          set -euo pipefail
+          # Pass credentials ephemerally; never store them in Git config or URLs.
+          export GIT_CONFIG_COUNT=1
+          export GIT_CONFIG_KEY_0=http.https://github.com/.extraheader
+          export GIT_CONFIG_VALUE_0="AUTHORIZATION: basic $(printf 'x-access-token:%s' "$WORKSPACE_PAT" | base64 -w0)"
+          git clone --quiet --filter=blob:none --no-checkout --depth=1 --branch main \
+            https://github.com/Antiokh/cv-workspace.git workspace
+          git -C workspace sparse-checkout set public
+          git -C workspace checkout --quiet main
+          unset GIT_CONFIG_COUNT GIT_CONFIG_KEY_0 GIT_CONFIG_VALUE_0 WORKSPACE_PAT
 
       - name: Validate and publish exactly public/
         if: env.HAS_WORKSPACE_PAT == 'true'
