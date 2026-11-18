@@ -1,0 +1,64 @@
+name: Sync public CV
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 * * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cv-public-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    env:
+      HAS_WORKSPACE_KEY: ${{ secrets.CV_WORKSPACE_DEPLOY_KEY != '' }}
+    steps:
+      - name: Explain missing credentials
+        if: env.HAS_WORKSPACE_KEY != 'true'
+        run: echo "::notice::Set the CV_WORKSPACE_DEPLOY_KEY repository secret to enable sync."
+
+      - name: Checkout public repository
+        if: env.HAS_WORKSPACE_KEY == 'true'
+        uses: actions/checkout@v4
+        with:
+          path: destination
+
+      - name: Checkout private workspace read-only
+        if: env.HAS_WORKSPACE_KEY == 'true'
+        uses: actions/checkout@v4
+        with:
+          repository: Antiokh/cv-workspace
+          ref: main
+          path: workspace
+          ssh-key: ${{ secrets.CV_WORKSPACE_DEPLOY_KEY }}
+          persist-credentials: false
+
+      - name: Validate and publish exactly public/
+        if: env.HAS_WORKSPACE_KEY == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f workspace/public/.publish-root
+          test -f workspace/public/README.md
+          for name in GPT sources details data workflows .git; do
+            test ! -e "workspace/public/$name" || { echo "Forbidden public path: $name"; exit 1; }
+          done
+          if find workspace/public -type l -print -quit | grep -q .; then
+            echo "Symlinks are not permitted in public/"; exit 1
+          fi
+          rsync -a --delete --exclude='.git/' workspace/public/ destination/
+          cd destination
+          git add --all
+          if git diff --cached --quiet; then
+            echo "Public CV already up to date."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Sync public CV from cv-workspace/public"
+          git push origin HEAD:main
