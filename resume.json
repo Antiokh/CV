@@ -28,7 +28,7 @@
       "startDate": "2022-11",
       "highlights": [
         "reduced service time from hours to minutes through automation",
-        "increased client revenue up to x13 through redesign and process restructuring",
+        "helped redesign customer intake and operations for a service business, contributing to approximately 10x organic revenue growth over three months",
         "built PWA products that removed dependency on App Stores",
         "improved PostgreSQL function versioning and auditable SQL workflows"
       ]
@@ -52,7 +52,7 @@
       "endDate": "2022-06",
       "highlights": [
         "migrated 100+ employees to remote work during COVID",
-        "stabilized a neglected IT environment with a lean 3-person core team and later scaled the in-house team to 5",
+        "led a direct team of 5 IT staff and 2 installation engineers, with defined service responsibilities and specialist ownership",
         "launched HelpDesk plus seven support services based on GLPI with automated asset inventory",
         "rebuilt service discipline and request transparency through structured HelpDesk governance"
       ]
@@ -79,7 +79,8 @@
         "automated structured data collection across about 100 library and cultural institutions",
         "reshaped a legacy portal into a more practical operational source of truth for departments and institutions",
         "implemented edit-locking, conditional visibility, live session-based settings, filtered exports, full-text search, and a feedback section in one institutional platform"
-      ]
+      ],
+      "summary": "Long-running concurrent appointment across the institutional network."
     },
     {
       "name": "Settlement and Savings Bank",
@@ -198,7 +199,7 @@
       "description": "Service-business automation PWA",
       "highlights": [
         "drastically reduced client handling time",
-        "supported revenue growth up to x10-x13 through operational automation and restructuring"
+        "supported approximately 10x organic revenue growth through customer-flow and operational redesign"
       ]
     },
     {

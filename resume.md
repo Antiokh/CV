@@ -15,7 +15,7 @@ Builds and restructures complex systems at the intersection of engineering, busi
 2022-11 – Present
 
 - Reduced service time from hours to minutes through automation.
-- Increased client revenue up to x13 through redesign and process restructuring.
+- Helped redesign customer intake and operations for a service business, contributing to approximately 10x organic revenue growth over three months.
 - Built PWA products that removed dependency on App Stores.
 - Improved PostgreSQL function versioning and auditable SQL workflows.
 
@@ -33,7 +33,7 @@ Builds and restructures complex systems at the intersection of engineering, busi
 2020-03 – 2022-06
 
 - Migrated 100+ employees to remote work during COVID.
-- Stabilized a neglected IT environment with a lean 3-person core team and later scaled the in-house team to 5.
+- Led a direct team of 5 IT staff and 2 installation engineers, with defined service responsibilities and specialist ownership.
 - Launched HelpDesk plus seven support services based on GLPI with automated asset inventory.
 - Rebuilt service discipline and request transparency through structured HelpDesk governance.
 
@@ -48,6 +48,8 @@ Builds and restructures complex systems at the intersection of engineering, busi
 ### IT Architect / Senior Manager — Directorate of Cultural Centers of Moscow
 
 2017-01 – 2023-05
+
+*Long-running concurrent appointment across the institutional network.*
 
 - Turned AIS MosRazvitie from a broadly disliked legacy reporting system into a fast, trusted operational core and source of truth for CRM and reporting workflows across 100+ Moscow cultural institutions and libraries.
 - Built and evolved a scalable industry-level information system for cultural institutions.
@@ -99,7 +101,7 @@ Government-scale information system.
 Service-business automation PWA.
 
 - Drastically reduced client handling time.
-- Supported revenue growth up to x10-x13 through operational automation and restructuring.
+- Supported approximately 10x organic revenue growth through customer-flow and operational redesign.
 
 ### MetaFox Strengths Explorer
 
