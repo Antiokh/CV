@@ -2,29 +2,40 @@
 
 **Technology & Transformation Leader · Systems Architect**
 
-Belgrade, Serbia · [LinkedIn](https://www.linkedin.com/in/nazarovanton/)
+Belgrade, Serbia · [LinkedIn](https://www.linkedin.com/in/nazarovanton/) · [GitHub](https://github.com/Antiokh)
 
-I design, build and improve business-critical systems, combining architecture, implementation and operational leadership. My work spans enterprise IT, government systems, internal platforms, automation and AI-assisted engineering.
+I build and improve business-critical systems across enterprise IT, operations, products and AI-assisted engineering. I combine architecture with implementation, process redesign, adoption and technical leadership.
 
-## Focus
+## Resume
 
-- Systems and solution architecture
-- Digital transformation and business-process automation
-- ERP/CRM and operational platforms
-- Technical leadership, delivery and adoption
-- PostgreSQL, Supabase, integrations and AI workflows
+- **[Readable CV (Markdown)](./resume.md)**
+- **[JSON Resume](./resume.json)** — structured resume following the [JSON Resume schema](https://jsonresume.org/schema)
+- **[schema.org Person (JSON-LD)](./person.jsonld)** — semantic profile for structured-data consumers
+- **[HR-XML 2.5 Resume mapping](./resume.hrxml.xml)** — XML export, **experimental** until validated against the HR-XML 2.5 XSD
 
-## Selected experience
+All four files are generated from one private canonical profile through an explicit publication allowlist. They contain a curated subset of career data, not a copy of the underlying private record.
 
-- Led IT operations, security and modernization for a large public-sector cultural institution.
-- Designed and evolved information systems supporting networks of cultural institutions.
-- Built operational platforms and automation systems for businesses, including database migration, reporting and field-service workflows.
-- Worked directly with founders and management teams on technology choices, implementation and long-term maintainability.
+## Areas of work
 
-## Public engineering work
+Systems architecture and technology strategy · ERP/CRM and internal business platforms · PostgreSQL and Supabase · Workflow automation and integration · IT operations and governance · AI-assisted product engineering · Technical and organizational change
+
+## Selected results
+
+- Migrated approximately 70,000 historical documents into a structured backend for an inspection and reporting platform.
+- Modernized information systems and reporting for networks of approximately 100 cultural institutions.
+- Moved more than 100 employees to remote operations during COVID and introduced structured IT support.
+- Built customer-service and operational automation that reduced routine handling from hours to minutes.
+
+## Public projects
 
 - [Supabase Project Starter](https://github.com/Antiokh/supabase-project-starter)
 - [WeWeb Component Starter](https://github.com/Antiokh/ww-component-starter)
 - [humanizer_russian](https://github.com/Antiokh/humanizer_russian)
+- [RSLive](https://rslive.ru/)
+- [Markdown Drive](https://markdown-drive.pages.dev/)
 
-This is a curated public profile. More detailed role-specific resumes are provided for relevant opportunities.
+## About this repository
+
+This is a public professional profile, not the internal CV workspace. Machine-readable exports are regenerated automatically. The private career records, internal instructions, process notes and sensitive information are not published.
+
+The JSON Resume and JSON-LD exports are practical structured outputs. HR-XML interoperability and ATS support depend on the receiving system; the XML export currently passes syntax checks but is **not claimed to be XSD-certified**.
