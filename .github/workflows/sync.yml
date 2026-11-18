@@ -1,6 +1,10 @@
 name: Sync public CV
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/sync.yml'
   workflow_dispatch:
   schedule:
     - cron: '17 * * * *'
