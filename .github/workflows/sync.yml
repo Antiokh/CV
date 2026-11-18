@@ -16,20 +16,20 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     env:
-      HAS_WORKSPACE_KEY: ${{ secrets.CV_WORKSPACE_DEPLOY_KEY != '' }}
+      HAS_WORKSPACE_PAT: ${{ secrets.CV_WORKSPACE_PAT != '' }}
     steps:
       - name: Explain missing credentials
-        if: env.HAS_WORKSPACE_KEY != 'true'
-        run: echo "::notice::Set the CV_WORKSPACE_DEPLOY_KEY repository secret to enable sync."
+        if: env.HAS_WORKSPACE_PAT != 'true'
+        run: echo "::notice::Set the CV_WORKSPACE_PAT repository secret to enable sync."
 
       - name: Checkout public repository
-        if: env.HAS_WORKSPACE_KEY == 'true'
+        if: env.HAS_WORKSPACE_PAT == 'true'
         uses: actions/checkout@v4
         with:
           path: destination
 
       - name: Checkout private workspace read-only
-        if: env.HAS_WORKSPACE_KEY == 'true'
+        if: env.HAS_WORKSPACE_PAT == 'true'
         uses: actions/checkout@v4
         with:
           repository: Antiokh/cv-workspace
@@ -37,11 +37,11 @@ jobs:
           path: workspace
           sparse-checkout: public
           sparse-checkout-cone-mode: true
-          ssh-key: ${{ secrets.CV_WORKSPACE_DEPLOY_KEY }}
+          token: ${{ secrets.CV_WORKSPACE_PAT }}
           persist-credentials: false
 
       - name: Validate and publish exactly public/
-        if: env.HAS_WORKSPACE_KEY == 'true'
+        if: env.HAS_WORKSPACE_PAT == 'true'
         shell: bash
         run: |
           set -euo pipefail
