@@ -1,0 +1,226 @@
+{
+  "basics": {
+    "name": "Anton Nazarov",
+    "label": "Technology & Transformation Leader | Systems Architect",
+    "url": "https://github.com/Antiokh/CV",
+    "summary": "Builds and restructures complex systems at the intersection of engineering, business, and operations, turning weak or disliked tools into trusted systems people actually use.",
+    "location": {
+      "city": "Belgrade",
+      "countryCode": "RS"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "nazarovanton",
+        "url": "https://www.linkedin.com/in/nazarovanton/"
+      },
+      {
+        "network": "GitHub",
+        "username": "Antiokh",
+        "url": "https://github.com/Antiokh"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "NeedleBit",
+      "position": "Founder / CTO / Systems Architect",
+      "startDate": "2022-11",
+      "highlights": [
+        "reduced service time from hours to minutes through automation",
+        "increased client revenue up to x13 through redesign and process restructuring",
+        "built PWA products that removed dependency on App Stores",
+        "improved PostgreSQL function versioning and auditable SQL workflows"
+      ]
+    },
+    {
+      "name": "New Business Environment",
+      "position": "Implementation Curator / Product Manager",
+      "startDate": "2022-08",
+      "endDate": "2022-11",
+      "highlights": [
+        "analyzed why adoption stalled after ERP/CRM delivery in a commercial automation environment",
+        "improved the project delivery model",
+        "clarified responsibility gaps that weakened decision-making and implementation control",
+        "increased system adoption and manager engagement"
+      ]
+    },
+    {
+      "name": "ZIL Cultural Center",
+      "position": "Head of IT",
+      "startDate": "2020-03",
+      "endDate": "2022-06",
+      "highlights": [
+        "migrated 100+ employees to remote work during COVID",
+        "stabilized a neglected IT environment with a lean 3-person core team and later scaled the in-house team to 5",
+        "launched HelpDesk plus seven support services based on GLPI with automated asset inventory",
+        "rebuilt service discipline and request transparency through structured HelpDesk governance"
+      ]
+    },
+    {
+      "name": "Moscow Social Development Agency",
+      "position": "Deputy Head of IT",
+      "startDate": "2019-09",
+      "endDate": "2020-03",
+      "highlights": [
+        "launched full IT operations for a new organization including infrastructure, support, and documentation",
+        "implemented HelpDesk and internal service workflows",
+        "established a practical operating structure for support, licensing, hardware movement, and security"
+      ]
+    },
+    {
+      "name": "Directorate of Cultural Centers of Moscow",
+      "position": "IT Architect / Senior Manager",
+      "startDate": "2017-01",
+      "endDate": "2023-05",
+      "highlights": [
+        "turned AIS MosRazvitie from a broadly disliked legacy reporting system into a fast, trusted operational core and source of truth for CRM and reporting workflows across 100+ Moscow cultural institutions and libraries",
+        "built and evolved a scalable industry-level information system for cultural institutions",
+        "automated structured data collection across about 100 library and cultural institutions",
+        "reshaped a legacy portal into a more practical operational source of truth for departments and institutions",
+        "implemented edit-locking, conditional visibility, live session-based settings, filtered exports, full-text search, and a feedback section in one institutional platform"
+      ]
+    },
+    {
+      "name": "Settlement and Savings Bank",
+      "position": "Lead Developer / Systems Architect",
+      "startDate": "2013-01",
+      "endDate": "2015-09",
+      "highlights": [
+        "mapped document-routing paths with bank leadership and turned them into automation requirements",
+        "coordinated 1C and Lotus developers around one delivery track",
+        "designed and built an internal document management system from scratch",
+        "implemented XML-based integration with 1C and related internal data flows"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "ГБОУ СПО Коммерческо-банковский колледж № 6",
+      "area": "Accounting and Finance",
+      "studyType": "College",
+      "endDate": "2008"
+    },
+    {
+      "institution": "National Institute of Business, Moscow",
+      "area": "Management",
+      "studyType": "Bachelor",
+      "endDate": "2019"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Architecture & delivery",
+      "keywords": [
+        "system architecture",
+        "solutions architecture",
+        "technical strategy",
+        "implementation management"
+      ]
+    },
+    {
+      "name": "Backend & data",
+      "keywords": [
+        "Supabase",
+        "PostgreSQL",
+        "SQL",
+        "REST APIs",
+        "RLS",
+        "Supabase Edge Functions"
+      ]
+    },
+    {
+      "name": "Software engineering",
+      "keywords": [
+        "JavaScript",
+        "TypeScript",
+        "Python",
+        "Node.js",
+        "Docker",
+        "Git"
+      ]
+    },
+    {
+      "name": "Platforms & automation",
+      "keywords": [
+        "WeWeb",
+        "n8n",
+        "Make.com",
+        "Cloudflare"
+      ]
+    },
+    {
+      "name": "Enterprise IT",
+      "keywords": [
+        "Linux",
+        "NGINX",
+        "Active Directory",
+        "IBM Domino / Lotus Notes",
+        "GLPI"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "PromptlessPress",
+      "description": "AI-assisted visual content platform",
+      "highlights": [
+        "formalized a reproducible AI generation workflow instead of a simple prompt shell",
+        "created a clearer engineering operating model around prompts, debug flows, Edge Functions, and SQL discipline"
+      ]
+    },
+    {
+      "name": "Exit Lead",
+      "description": "Inspection and reporting platform",
+      "highlights": [
+        "migrated approximately 70,000 historical documents from Google Drive into Supabase",
+        "connected field operations, client portal workflows, and automated report delivery in one system"
+      ]
+    },
+    {
+      "name": "Andronyevskaya ERP",
+      "description": "Self-hosted ERP for property technical support",
+      "highlights": [
+        "reduced onboarding friction through Telegram Mini App login",
+        "combined field tasks, asset logic, and role-based administration in a self-hosted operational ERP"
+      ]
+    },
+    {
+      "name": "AIS MosRazvitie",
+      "description": "Government-scale information system",
+      "highlights": [
+        "turned a broadly disliked legacy reporting system into a fast, trusted operational core and source of truth for CRM and reporting workflows across 100+ Moscow cultural institutions and libraries",
+        "owned product logic, architecture, reporting workflows, questionnaires, data exchange, service operations, and governance rules for a city-scale institutional system"
+      ]
+    },
+    {
+      "name": "Dobri Visarun",
+      "description": "Service-business automation PWA",
+      "highlights": [
+        "drastically reduced client handling time",
+        "supported revenue growth up to x10-x13 through operational automation and restructuring"
+      ]
+    },
+    {
+      "name": "MetaFox Strengths Explorer",
+      "description": "Assessment and coaching platform",
+      "highlights": [
+        "turned an evolving assessment model into a usable product with scoring, reporting, and peer-feedback flows"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Russian",
+      "fluency": "Native"
+    },
+    {
+      "language": "English",
+      "fluency": "Fluent"
+    },
+    {
+      "language": "Serbian",
+      "fluency": "Fluent"
+    }
+  ]
+}

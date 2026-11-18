@@ -1,0 +1,67 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Anton Nazarov",
+  "url": "https://github.com/Antiokh/CV",
+  "description": "Builds and restructures complex systems at the intersection of engineering, business, and operations, turning weak or disliked tools into trusted systems people actually use.",
+  "jobTitle": "Systems Architect",
+  "homeLocation": {
+    "@type": "Place",
+    "name": "Belgrade, Serbia"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/nazarovanton/",
+    "https://github.com/Antiokh"
+  ],
+  "knowsAbout": [
+    "system architecture",
+    "solutions architecture",
+    "technical strategy",
+    "implementation management",
+    "Supabase",
+    "PostgreSQL",
+    "SQL",
+    "REST APIs",
+    "RLS",
+    "Supabase Edge Functions",
+    "JavaScript",
+    "TypeScript",
+    "Python",
+    "Node.js",
+    "Docker",
+    "Git",
+    "WeWeb",
+    "n8n",
+    "Make.com",
+    "Cloudflare",
+    "Linux",
+    "NGINX",
+    "Active Directory",
+    "IBM Domino / Lotus Notes",
+    "GLPI"
+  ],
+  "hasOccupation": [
+    {
+      "@type": "Occupation",
+      "name": "Systems Architect"
+    },
+    {
+      "@type": "Occupation",
+      "name": "Head of IT"
+    },
+    {
+      "@type": "Occupation",
+      "name": "Technology Director"
+    }
+  ],
+  "alumniOf": [
+    {
+      "@type": "EducationalOrganization",
+      "name": "ГБОУ СПО Коммерческо-банковский колледж № 6"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "name": "National Institute of Business, Moscow"
+    }
+  ]
+}
