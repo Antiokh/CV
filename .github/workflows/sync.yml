@@ -35,6 +35,8 @@ jobs:
           repository: Antiokh/cv-workspace
           ref: main
           path: workspace
+          sparse-checkout: public
+          sparse-checkout-cone-mode: true
           ssh-key: ${{ secrets.CV_WORKSPACE_DEPLOY_KEY }}
           persist-credentials: false
 
